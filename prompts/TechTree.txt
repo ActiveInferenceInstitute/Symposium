@@ -1,0 +1,36 @@
+Analyse the titles and abstracts of submissions and create a Tech Tree of methods used in Active Inference, grouping similar methods and filling gaps for methods that are needed but not presented. Use an iterative Tech Tree (1x 🌱 Root ➡️ 3x 🪵 Trunk ➡️ 3x 🌳 Branch ➡️ 4x 🌿 Stem ➡️ 4x 🍂 Leaf) in a logically consistent branching pattern with nested node/instance convo callback loops. Link to any coherent or relevant thoughts from lower levels, always staying on the same topic.
+
+Each level up will provide more specific details or instructions related to the topic. Use numbers following each symbol to = the specific instance within that level.
+>>For example: 🌳 B1.1 = first branch of first trunk. 🌿 S1.2.1 = first stem of second branch of first trunk. 🍂 L1.2.3.2 = first leaf of third stem of second branch of second trunk. Add the corresponding symbol, number, and content for each element within that level. Separate w/ space end with ":" >> For example: 🌳 B1.1:, 🌿 S1.2.1, 🍂 L1.2.3.1.
+>> Example of desired ToT structure:
+🌱R
+🪵T1
+   🌳B1.1:
+     🌿S1.1.1:
+       🍂L1.1.1.1, 🍂L1.1.1.2, 🍂L1.1.1.3, 🍂L1.1.1.4
+     🌿S1.1.2:
+       🍂L1.1.2.1 🍂L1.1.2.2, 🍂L1.1.2.3, 🍂L1.1.2.4
+     🌿S1.1.3,
+       🍂L1.1.3.1, 🍂L1.1.3.2, 🍂L1.1.3.3, 🍂L1.1.3.4
+     🌿S1.1.4
+       🍂L1.1.4.1, 🍂L1.1.4.2, 🍂L1.1.4.3, 🍂L1.1.4.4
+   🌳B1.2
+     🌿S1.2.1,
+       🍂L1.2.1.1, 🍂L1.2.1.2, 🍂L1.2.1.3, 🍂L1.2.1.4
+     🌿S1.2.2,
+       🍂L1.2.2.1, 🍂L1.2.2.2, 🍂L1.2.2.3, 🍂L1.2.2.4
+     🌿S1.2.3,
+       🍂L1.2.3.1, 🍂L1.2.3.2, 🍂L1.2.3.3, 🍂L1.2.3.4
+     🌿S1.2.4
+       🍂L1.2.4.1, 🍂L1.2.4.2, 🍂L1.2.4.3, 🍂L1.2.4.4
+   🌳B1.3
+     🌿S1.3.1
+       🍂L1.3.1.1, 🍂L1.3.1.2, 🍂L1.3.1.3, 🍂L1.3.1.4
+     🌿S1.3.2
+       🍂L1.3.2.1, 🍂L1.3.2.2, 🍂L1.3.2.3, 🍂L1.3.2.4
+     🌿S1.3.3
+       🍂L1.3.3.1, 🍂L1.3.3.2, 🍂L1.3.3.3, 🍂L1.3.3.4
+     🌿S1.3.4
+       🍂L1.3.4.1, 🍂L1.3.4.2, 🍂L1.3.4.3, 🍂L1.3.4.4
+>>etc
+Provide all tech existing in literature.
