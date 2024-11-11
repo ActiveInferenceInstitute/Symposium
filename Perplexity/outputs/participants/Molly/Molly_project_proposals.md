@@ -1,0 +1,86 @@
+# Active Inference Project Proposals: Molly
+
+Generated on: 2024-11-11 14:52:30
+
+---
+
+### Proposal 1: Immediate, Smaller-Scope Project - Implementing a Simple Active Inference Model
+
+#### 1. What are you trying to do?
+Create a basic Active Inference model to understand how an agent can learn to navigate towards a target location through situated interactions.
+
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, Active Inference models are implemented using various programming languages and frameworks, but they often require a strong background in Bayesian inference and computational neuroscience. The limits include the complexity of mathematical concepts and the need for extensive computational resources.
+
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will use Python libraries like PyTorch or TensorFlow to simplify the implementation process. By following tutorials and examples provided by the Active Inference community, such as those from the BIASlab project[4], Molly can create a simple model that demonstrates the core principles of Active Inference. This approach will be successful because it leverages existing resources and community support, making it more accessible.
+
+#### 4. Who cares? If you succeed, what difference will it make?
+Success in this project will help Molly understand the fundamental concepts of Active Inference and how to apply them in a practical setting. This will make her more competent in participating in discussions and contributing to future projects within the Active Inference community.
+
+#### 5. What are the risks?
+The main risks include the complexity of the mathematical concepts and the potential for errors in implementation. However, these risks can be mitigated by following established tutorials and seeking help from online forums.
+
+#### 6. How much will it cost?
+This project will not incur significant costs, as it relies on free and open-source resources such as PyTorch, TensorFlow, and community-provided tutorials.
+
+#### 7. How long will it take?
+This project should take around 2-4 weeks to complete, depending on the amount of time Molly can dedicate each week.
+
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Mid-term Check Point**: After one week, Molly should have a basic understanding of the necessary libraries and have started implementing the model. She should review her progress and adjust her plan if necessary.
+- **Final Check Point**: After completing the model, Molly should test it and compare the results with expected outcomes. She should also document her process and share it with the community for feedback.
+
+### Proposal 2: Medium-Term, Moderate-Scope Project - Developing a Hybrid Active Inference Model for Decision-Making
+
+#### 1. What are you trying to do?
+Develop a hybrid Active Inference model that integrates both discrete and continuous variables to enhance decision-making in dynamic environments.
+
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, Active Inference models are often limited to either discrete or continuous state-spaces. Hybrid models are less common and require advanced mathematical and computational skills. The limits include the complexity of integrating different types of variables and the need for robust validation.
+
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will build on recent work on hybrid Active Inference models, such as the use of recurrent switching linear dynamical systems (rSLDS)[1]. By combining resources from the Active Inference Institute and academic papers on hybrid models, Molly can develop a more versatile decision-making model. This approach will be successful because it leverages the latest research and community resources.
+
+#### 4. Who cares? If you succeed, what difference will it make?
+Success in this project will contribute to the advancement of Active Inference in real-world decision-making scenarios, such as autonomous vehicles or clinical applications. It will also enhance Molly's expertise and her ability to collaborate on more complex projects.
+
+#### 5. What are the risks?
+The main risks include the complexity of integrating discrete and continuous variables and the potential for errors in model validation. However, these risks can be mitigated by thorough testing and validation against existing datasets.
+
+#### 6. How much will it cost?
+This project may require access to more advanced computational resources or software tools, but these can often be accessed through academic or open-source channels.
+
+#### 7. How long will it take?
+This project should take around 3-6 months to complete, depending on the depth of the model and the amount of time Molly can dedicate.
+
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Mid-term Check Point**: After two months, Molly should have a functional hybrid model and should have started testing it. She should review her progress and adjust her plan if necessary.
+- **Final Check Point**: After completing the model, Molly should thoroughly validate it against various datasets and document her findings. She should also share her work with the community for feedback and peer review.
+
+### Proposal 3: Ambitious, Longer-Term Project - Applying Active Inference to Therapeutic and Clinical Settings
+
+#### 1. What are you trying to do?
+Apply Active Inference to understand therapeutic alliances and cooperative communication in clinical settings, with the goal of improving patient outcomes.
+
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, therapeutic alliances and cooperative communication are studied using traditional psychological and clinical methods. These methods lack a robust computational framework to predict and optimize therapeutic interactions. The limits include the absence of a unified theoretical framework and the lack of empirical validation.
+
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will use Active Inference to model therapeutic interactions as probabilistic inference tasks. By leveraging resources from the Computational Psychiatry course and recent papers on Active Inference in clinical settings[4], Molly can develop a novel framework for understanding and optimizing therapeutic alliances. This approach will be successful because it integrates cutting-edge computational methods with clinical practice.
+
+#### 4. Who cares? If you succeed, what difference will it make?
+Success in this project will significantly impact clinical practice by providing a computational framework to predict and optimize therapeutic interactions. This could lead to better patient outcomes and more effective therapeutic strategies.
+
+#### 5. What are the risks?
+The main risks include the complexity of applying a computational framework to a highly nuanced and human-centric field, and the need for rigorous empirical validation. However, these risks can be mitigated by close collaboration with clinical practitioners and thorough testing.
+
+#### 6. How much will it cost?
+This project may require funding for data collection, computational resources, and potential collaborations with clinical institutions.
+
+#### 7. How long will it take?
+This project is expected to take around 6-12 months to complete, depending on the scope of the data collection and the complexity of the model.
+
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Mid-term Check Point**: After three months, Molly should have a preliminary model and should have started collecting data. She should review her progress and adjust her plan if necessary.
+- **Final Check Point**: After completing the model and data collection, Molly should thoroughly validate her findings and prepare a manuscript for publication. She should also present her work at relevant conferences and seek feedback from both the computational and clinical communities.
