@@ -18,11 +18,11 @@ class CustomLLMClient:
         self.output_dir = Path("Outputs")
         self.output_dir.mkdir(exist_ok=True)
         
-        # Use your friend's endpoint as default
+        # Use the exact endpoint URL
         self.endpoint_url = (
             endpoint_url or 
             os.getenv('LLM_ENDPOINT_URL') or 
-            "https://lil-stability-smoke-consultancy.trycloudflare.com/v1/chat/completions"  # OpenAI-compatible endpoint
+            "https://lil-stability-smoke-consultancy.trycloudflare.com/v1/chat/completions"
         )
 
     async def check_endpoint(self) -> bool:
@@ -56,7 +56,7 @@ class CustomLLMClient:
         async with aiohttp.ClientSession() as session:
             try:
                 payload = {
-                    "model": "gpt-3.5-turbo",  # Add model parameter for OpenAI compatibility
+                    "model": "mistralai/Mistral-Nemo-Instruct-2407",  # Specific model
                     "messages": [{"role": "user", "content": prompt}],
                     "temperature": 0.7,
                     "max_tokens": 1000
@@ -79,15 +79,8 @@ class CustomLLMClient:
                     
                     return await response.json()
                     
-            except aiohttp.ClientConnectorError as e:
-                print(f"Connection error: {str(e)}")
-                print(f"Please verify the endpoint URL is correct: {self.endpoint_url}")
-                return None
-            except aiohttp.ClientTimeout:
-                print("Request timed out after 30 seconds")
-                return None
             except Exception as e:
-                print(f"Unexpected error: {str(e)}")
+                print(f"Error: {str(e)}")
                 return None
 
     def save_response(self, prompt: str, response: dict) -> None:
