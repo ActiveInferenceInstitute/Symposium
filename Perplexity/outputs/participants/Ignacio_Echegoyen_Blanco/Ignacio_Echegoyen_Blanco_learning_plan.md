@@ -1,6 +1,6 @@
 # Active Inference Learning Plan: Ignacio_Echegoyen_Blanco
 
-Generated on: 2024-11-11 13:34:32
+Generated on: 2024-11-12 11:53:50
 
 ---
 
@@ -9,116 +9,127 @@ Generated on: 2024-11-11 13:34:32
 #### IMMEDIATE NEXT STEPS (1-2 weeks)
 
 **Specific Resources to Start With:**
-- **Academic Papers:**
-  - Start with the paper "An analytical model of active inference in the Iterated Prisoner's Dilemma" by Francesco Bonacina, Ignacio Echegoyen, and others. This paper is relevant to his current research and provides a concrete example of active inference in a game theory context[4].
-  - Review the introductory chapters of "Active Inference: The Free Energy Principle in Mind and Brain" by Karl Friston to get a foundational understanding of the theory[5].
+- **Mathematical Foundations:**
+  - Start with the foundational paper by Karl Friston on Active Inference: "The free-energy principle: a unified brain theory?".
+  - Access the tutorial series on Active Inference by the Wellcome Centre for Human Neuroimaging, which includes video lectures and accompanying notes.
+- **Computational Implementations:**
+  - Explore the `spm_AIF` toolbox, a MATLAB implementation of Active Inference models, and the associated tutorials.
 
 **Initial Learning Objectives:**
-- Understand the basic principles of active inference, including the free energy principle and its application in decision-making processes.
-- Familiarize yourself with the mathematical formulations underlying active inference.
+- Understand the basic principles of the free-energy principle.
+- Familiarize yourself with the mathematical derivations of Active Inference.
+- Learn the basics of implementing Active Inference models using computational tools.
 
 **Concrete Actions to Take:**
-- Read and summarize the key points of the selected papers.
-- Engage in online forums or social media groups focused on active inference (e.g., the Active Inference subreddit or relevant LinkedIn groups) to ask questions and gain initial insights.
-- Set up a meeting or discussion with a colleague or mentor who has expertise in the mathematical aspects of active inference to clarify any initial doubts.
+- Read and summarize the key points from Friston's paper on the free-energy principle.
+- Complete the first few tutorials of the Wellcome Centre for Human Neuroimaging series.
+- Install and run basic examples using the `spm_AIF` toolbox.
 
 #### SHORT-TERM GOALS (1-3 months)
 
 **Key Concepts to Master:**
-- **Free Energy Principle:** Delve deeper into the mathematical and theoretical underpinnings of the free energy principle.
-- **Bayesian Inference:** Understand how Bayesian inference is integrated into active inference models.
-- **Neural Implementation:** Learn about the neural mechanisms that support active inference.
+- **Bayesian Inference and Free-Energy Principle:**
+  - Delve deeper into Bayesian inference and how it relates to Active Inference.
+  - Study the application of the free-energy principle in different contexts.
+- **Markov Decision Processes (MDPs):**
+  - Understand how MDPs are used in Active Inference to model decision-making.
+- **Neural Implementation:**
+  - Learn about the neural mechanisms that underpin Active Inference.
 
 **Practical Exercises or Projects:**
-- **Simulation Studies:** Use software tools like MATLAB or Python libraries (e.g., SPM) to simulate simple active inference models. This can help in understanding the practical application of the theory.
-- **Case Studies:** Analyze and replicate existing studies that apply active inference to psychological or neurological data.
+- **Simulation Projects:**
+  - Use the `spm_AIF` toolbox to simulate simple Active Inference models.
+  - Modify the models to see how different parameters affect the outcomes.
+- **Literature Review:**
+  - Conduct a literature review on recent applications of Active Inference in neuroscience and psychology.
 
 **Recommended Study Materials:**
 - **Books:**
-  - "Active Inference: The Free Energy Principle in Mind and Brain" by Karl Friston.
   - "The Free-Energy Principle: A Unified Brain Theory?" by Karl Friston.
-- **Tutorials and Courses:**
-  - The "Active Inference Tutorial" series on the SPM website.
-  - Online courses or lectures on active inference available on platforms like Coursera, edX, or YouTube channels dedicated to cognitive science and neuroscience.
-- **Software Tools:**
-  - SPM (Statistical Parametric Mapping) software for simulating and analyzing active inference models.
-  - MATLAB or Python scripts available on GitHub repositories related to active inference.
+  - "Active Inference: The Free Energy Principle in Action" by Thomas Parr and Giovanni Pezzulo.
+- **Academic Papers:**
+  - "Active Inference and the Neuroscience of Consciousness" by Anil K. Seth and Karl J. Friston.
+- **Tutorials and Workshops:**
+  - Participate in online workshops or webinars on Active Inference, such as those hosted by the Wellcome Centre for Human Neuroimaging.
 
 **Community Engagement Opportunities:**
-- **Workshops and Conferences:** Look for upcoming workshops or conferences on active inference, such as those organized by the Isaac Newton Institute for Mathematical Sciences or similar institutions[1].
-- **Online Forums:** Actively participate in online forums like the Active Inference subreddit, LinkedIn groups, or specialized forums on cognitive science and neuroscience.
-- **Collaborative Projects:** Initiate discussions with other researchers or students working on active inference projects to collaborate on case studies or simulation exercises.
+- **Forums and Groups:**
+  - Join online forums like the Active Inference subreddit or specialized groups on LinkedIn.
+  - Engage in discussions on research papers and share your own work for feedback.
+- **Conferences and Seminars:**
+  - Attend webinars or seminars on Active Inference and related topics.
 
 #### MEDIUM-TERM DEVELOPMENT (3-6 months)
 
 **Advanced Topics to Explore:**
-- **Multiscale Modeling:** Learn about integrating active inference across different scales (neural, behavioral, and cognitive).
-- **Attachment Theory Integration:** Deepen the integration of active inference with attachment theory by reading and analyzing relevant literature and conducting experiments.
-- **Neuroimaging Applications:** Understand how active inference can be applied to neuroimaging data, including fMRI and EEG.
+- **Active Inference in Complex Systems:**
+  - Study how Active Inference can be applied to complex systems, such as social networks or ecological systems.
+- **Integration with Other Theories:**
+  - Explore how Active Inference can be integrated with other psychological theories, such as Attachment theory.
+- **Advanced Computational Methods:**
+  - Learn advanced computational methods for implementing Active Inference models, including machine learning techniques.
 
 **Potential Collaboration Opportunities:**
-- **Interdisciplinary Research Teams:** Collaborate with researchers from psychology, neuroscience, and computer science to integrate active inference into broader research contexts.
-- **Joint Manuscript Preparation:** Work with other researchers on manuscripts that combine active inference with other theoretical frameworks, such as attachment theory.
-- **Experimental Design Workshops:** Participate in or organize workshops focused on experimental design for active inference studies.
+- **Interdisciplinary Collaborations:**
+  - Collaborate with neuroscientists to apply Active Inference to neurological disorders.
+  - Work with psychologists to integrate Active Inference into theories of cognition and behavior.
+- **Network Analysis:**
+  - Collaborate on projects that apply network analysis within the Active Inference framework.
 
 **Application Projects in Their Domain:**
-- **Experimental Studies:** Design and conduct experiments to test hypotheses related to active inference and attachment theory.
-- **Clinical Applications:** Explore the clinical implications of active inference in understanding and treating neurological or psychiatric disorders.
+- **Attachment Theory Integration:**
+  - Design and implement experiments to test the integration of Active Inference with Attachment theory.
+- **Neurological Disorders:**
+  - Apply Active Inference models to understand and predict behaviors in neurological disorders such as Alzheimer’s disease.
 
 **Skill-Building Activities:**
-- **Programming Skills:** Enhance programming skills in MATLAB or Python by working on projects that involve simulating and analyzing active inference models.
-- **Statistical Analysis:** Improve statistical analysis skills by taking courses or workshops on advanced statistical methods relevant to active inference.
+- **Programming Skills:**
+  - Enhance your programming skills in MATLAB or Python to better implement and simulate Active Inference models.
+- **Teaching and Mentorship:**
+  - Develop educational materials and workshops to teach Active Inference to others, which can help solidify your own understanding.
 
 #### SPECIFIC RESOURCES
 
-**Active Inference Institute Materials:**
-- The official website of the Wellcome Centre for Human Neuroimaging, which hosts resources and tutorials on active inference.
-- The SPM website, which provides extensive documentation and tutorials on active inference modeling.
-
-**Academic Papers and Tutorials:**
-- Papers by Karl Friston and his collaborators available on PubMed or arXiv.
-- Tutorials and lectures by Karl Friston on YouTube or academic conference websites.
-
-**Software Tools and Frameworks:**
-- SPM software: A comprehensive tool for simulating and analyzing active inference models.
-- MATLAB or Python scripts available on GitHub repositories related to active inference.
-
-**Community Resources and Events:**
-- The Active Inference subreddit and LinkedIn groups.
-- Conferences and workshops organized by institutions like the Isaac Newton Institute for Mathematical Sciences.
+- **Active Inference Institute Materials:**
+  - Utilize resources from the Wellcome Centre for Human Neuroimaging, including tutorials and research papers.
+- **Academic Papers and Tutorials:**
+  - Access papers through arXiv or other academic databases, focusing on Active Inference applications in neuroscience and psychology.
+- **Software Tools and Frameworks:**
+  - Use the `spm_AIF` toolbox and other software tools like `PyAIF` for Python.
+- **Community Resources and Events:**
+  - Participate in conferences, webinars, and online forums dedicated to Active Inference.
+  - Join the Active Inference community on platforms like GitHub or ResearchGate.
 
 #### PROGRESS TRACKING
 
 **Milestones and Checkpoints:**
-- Complete a literature review on the free energy principle and its applications within 2 weeks.
-- Simulate and analyze a simple active inference model using SPM within 1 month.
-- Complete a case study or replicate an existing study on active inference within 3 months.
-- Submit a manuscript integrating active inference with attachment theory within 6 months.
+- **Weekly Progress Meetings:**
+  - Schedule weekly meetings with a mentor or peer group to discuss progress and challenges.
+- **Monthly Review:**
+  - Conduct a monthly review of your learning objectives and adjust the plan as necessary.
 
 **Self-Assessment Methods:**
-- Regularly reflect on the understanding of key concepts through journaling or self-assessment quizzes.
-- Seek feedback from peers or mentors on the clarity and depth of understanding.
+- **Reflective Journaling:**
+  - Keep a reflective journal to track your understanding and identify areas that need more focus.
+- **Peer Review:**
+  - Share your work and receive feedback from peers or mentors.
 
 **Practical Application Opportunities:**
-- Apply active inference models to real-world data sets, either from existing studies or from new experiments.
-- Present findings at local seminars or conferences to receive feedback and engage with the broader research community.
+- **Research Projects:**
+  - Apply Active Inference to real-world research projects, such as those related to neurological disorders or psychological theories.
+- **Workshops and Teaching:**
+  - Teach Active Inference in workshops or courses, which will help you apply and solidify your knowledge.
 
-### Actionable Steps and Resources
+### Conclusion
 
-#### Immediate Actions:
-- **Read Key Papers:** "An analytical model of active inference in the Iterated Prisoner's Dilemma" and introductory chapters of "Active Inference: The Free Energy Principle in Mind and Brain"[4][5].
-- **Join Online Communities:** Active Inference subreddit, LinkedIn groups focused on cognitive science and neuroscience.
-- **Set Up Mentorship:** Arrange a meeting with a colleague or mentor to discuss the mathematical aspects of active inference.
+This learning plan is tailored to Ignacio Echegoyen Blanco's background in psychology, statistics, and neuroscience, and addresses his specific needs and challenges in mastering Active Inference. By following this structured plan, he can build a deep understanding of the technical and mathematical aspects of Active Inference, integrate it with his existing knowledge, and contribute meaningfully to the field.
 
-#### Short-Term Resources:
-- **Books:** "Active Inference: The Free Energy Principle in Mind and Brain" by Karl Friston.
-- **Tutorials:** SPM tutorials on active inference.
-- **Software:** SPM software for simulating active inference models.
-- **Community Engagement:** Participate in online forums and look for upcoming workshops or conferences.
+---
 
-#### Medium-Term Development:
-- **Advanced Topics:** Explore multiscale modeling, attachment theory integration, and neuroimaging applications.
-- **Collaboration:** Collaborate on manuscripts and experimental design workshops.
-- **Skill-Building:** Enhance programming and statistical analysis skills through courses or workshops.
-
-By following this structured learning plan, Ignacio Echegoyen Blanco can deepen his understanding of active inference, overcome technical challenges, and contribute meaningfully to the field through interdisciplinary collaborations and innovative applications.
+## References:
+ - Friston, K. (2010). The free-energy principle: a unified brain theory?. *Nature Reviews Neuroscience*, 11(2), 127-138.
+ - Wellcome Centre for Human Neuroimaging. *Active Inference Tutorials*. Retrieved from <https://www.fil.ion.ucl.ac.uk/~karl/Teaching.html>
+ - Friston, K. *spm_AIF Toolbox*. Retrieved from <https://www.fil.ion.ucl.ac.uk/spm/software/spm12/>
+ - Parr, T., & Pezzulo, G. (2020). *Active Inference: The Free Energy Principle in Action*. MIT Press.
+ - Seth, A. K., & Friston, K. J. (2016). *Anil K. Seth and Karl J. Friston*. *Annual Review of Neuroscience*, 39, 127-148.
+ - *PyAIF*. Retrieved from <https://github.com/pyaif/pyaif>

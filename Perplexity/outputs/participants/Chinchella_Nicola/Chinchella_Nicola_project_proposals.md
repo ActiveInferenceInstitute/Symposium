@@ -1,90 +1,99 @@
 # Active Inference Project Proposals: Chinchella_Nicola
 
-Generated on: 2024-11-11 15:06:28
+Generated on: 2024-11-12 12:39:39
 
 ---
 
-### Project Proposal 1: Implementing Simple Active Inference Models for Grid-World Tasks
+### Project Proposal 1: Immediate, Smaller-Scope Project - Implementing Active Inference in a Simple Embodied Cognition Scenario
 
 #### 1. What are you trying to do?
-Implement simple Active Inference models in Matlab to solve basic grid-world tasks, such as navigating a grid to reach a goal while minimizing free energy.
+Implement a simple Active Inference model to simulate decision-making and action in an embodied cognition scenario, such as a robot navigating a small environment.
 
 #### 2. How is it done today, and what are the limits of current practice?
-Currently, Active Inference models are often implemented in discrete state-spaces using categorical distributions and transition matrices. However, the transition from theoretical understanding to practical implementation in Matlab can be challenging, especially for those new to the field. The limits include the complexity of translating mathematical concepts into code and the need for clear guidance on which variables to plot and interpret.
+Currently, Active Inference models are often implemented in abstract or grid-world environments. However, there is a lack of practical examples that integrate embodied and enactive cognitive frameworks. The limits of current practice include the complexity of modeling continuous and discrete variables simultaneously and the scarcity of examples that demonstrate the application of Active Inference in real-world, embodied scenarios.
 
 #### 3. What is new in your approach and why do you think it will be successful?
-This project will start with a structured approach using the "Spinning Up in Active Inference and the Free Energy Principle" syllabus by Jared Tumiel. It will leverage tutorials and workshops to bridge the gap between theoretical concepts and practical coding. By focusing on simple grid-world tasks, the project will gradually build complexity, allowing for a solid foundation in both the theory and the coding aspects of Active Inference.
+This project will use Matlab to implement an Active Inference model that incorporates both discrete and continuous variables, simulating an embodied agent navigating a simple environment. The new approach involves using hybrid active inference models to integrate high-level discrete planning with low-level continuous control. This will be successful because it leverages Nicola's background in 4E-cognition and provides a practical, hands-on example that can be scaled up.
 
 #### 4. Who cares? If you succeed, what difference will it make?
-Success in this project will provide Chinchella Nicola with practical skills in implementing Active Inference models, enabling them to apply the theory to more complex tasks and contribute to the field. It will also serve as a foundational step for more advanced projects, such as scaling Active Inference using deep neural networks.
+Success in this project will provide a tangible example of how Active Inference can be applied to embodied cognition, making it more accessible to researchers in cognitive science and philosophy. It will also contribute to the development of more realistic models of cognitive processes.
 
 #### 5. What are the risks?
-The primary risks include the difficulty in translating mathematical concepts into Matlab code and the potential for misunderstandings in plotting and interpreting key variables. However, these risks can be mitigated by using detailed tutorials and seeking feedback from peers and experts.
+The primary risks include the technical challenges of integrating discrete and continuous variables and the potential for the model to be overly simplistic, failing to capture the complexity of real-world scenarios.
 
 #### 6. How much will it cost?
-This project will not incur significant costs beyond the time and effort of the researcher. It will utilize freely available resources such as the "Spinning Up in Active Inference" syllabus and Neuromatch Academy materials.
+This project will primarily require time and computational resources, which are already available through Nicola's current setup. There are no additional costs anticipated.
 
 #### 7. How long will it take?
-This project is expected to take 1-2 weeks to complete the initial implementation and 1-3 months to refine and expand the models to more complex grid-world tasks.
+The project is expected to take approximately 2-3 months to complete, given the current level of expertise and resources.
 
 #### 8. What are the mid-term and final "check points" to see if you're on track?
-- **Weekly Progress Meetings**: Schedule weekly meetings to discuss progress, challenges, and insights.
-- **Monthly Review**: Conduct a monthly review to assess the learning objectives achieved and adjust the plan as necessary.
-- **Mid-term Checkpoint**: After 1 month, evaluate the ability to implement simple Active Inference models and plot key variables correctly.
-- **Final Checkpoint**: After 3 months, assess the ability to handle more complex grid-world tasks and the overall proficiency in using Active Inference in Matlab.
+- **Mid-term Check Point (1 month):** Successful implementation of the basic Active Inference model in Matlab.
+- **Final Check Point (3 months):** Completion of the hybrid model integrating discrete and continuous variables, with a functional simulation of the embodied agent.
 
-### Project Proposal 2: Scaling Active Inference Models Using Deep Neural Networks
+**Resources and Collaborators:**
+- Utilize resources from the Neuromatch Academy and the Active Inference Institute.
+- Collaborate with researchers from cognitive science and philosophy to ensure the model aligns with theoretical frameworks.
+
+### Project Proposal 2: Medium-Term, Moderate-Scope Project - Applying Active Inference to Decision-Making in Enactive Cognitive Frameworks
 
 #### 1. What are you trying to do?
-Scale Active Inference models from discrete state-spaces to more complex tasks using deep neural networks, enabling the application of Active Inference to a broader range of problems.
+Develop an Active Inference model to study decision-making processes in enactive cognitive frameworks, focusing on how agents perceive, act, and make decisions in dynamic environments.
 
 #### 2. How is it done today, and what are the limits of current practice?
-Currently, Active Inference is often restricted to discrete grid-world environments due to the analytical solvability of these models. Scaling these models to more complex tasks is challenging and typically involves using deep reinforcement learning techniques. The limits include the need for advanced mathematical and coding skills, as well as the lack of clear guidelines on how to integrate deep neural networks with Active Inference.
+Current models of decision-making often rely on abstract representations and do not fully incorporate the enactive perspective, which emphasizes the agent's active engagement with the environment. The limits include the lack of empirical validation and the complexity of modeling the agent-environment loop.
 
 #### 3. What is new in your approach and why do you think it will be successful?
-This project will leverage the work of researchers like Beren Millidge, who have successfully scaled Active Inference using deep neural networks. By using resources such as "A Retrospective on Active Inference" and the "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior" book, Nicola will gain insights into how to parametrize distributions using deep neural networks and integrate them into Active Inference models. The project will also involve collaboration with experts in deep reinforcement learning to ensure the models are optimized and scalable.
+This project will use advanced Active Inference techniques, such as hybrid active inference models, to simulate decision-making in enactive cognitive frameworks. The new approach involves integrating epistemic and pragmatic behaviors within the model, allowing for a more nuanced understanding of decision-making processes. This will be successful because it leverages Nicola's expertise in 4E-cognition and the practical application of Active Inference.
 
 #### 4. Who cares? If you succeed, what difference will it make?
-Success in scaling Active Inference models will significantly expand the applicability of the theory, allowing it to be used in more complex real-world tasks. This will make a substantial difference in fields such as cognitive science, neuroscience, and artificial intelligence, enabling more sophisticated decision-making and action selection models.
+Success in this project will contribute significantly to the understanding of decision-making in enactive cognitive frameworks, providing insights that can be applied in various fields such as cognitive science, philosophy, and robotics. It will also enhance the practical applicability of Active Inference.
 
 #### 5. What are the risks?
-The risks include the complexity of integrating deep neural networks with Active Inference, potential computational challenges, and the need for advanced coding skills. However, these risks can be mitigated by collaborating with experts and using well-documented resources.
+The primary risks include the complexity of modeling the agent-environment loop, the need for empirical validation, and the potential for the model to be too complex to yield meaningful insights.
 
 #### 6. How much will it cost?
-This project may require access to computational resources and potentially some funding for attending workshops or conferences. However, the primary cost will be the time and effort of the researcher.
+This project may require additional computational resources and possibly collaboration with other researchers, which could involve some travel or workshop participation costs.
 
 #### 7. How long will it take?
-This project is expected to take 3-6 months to complete, depending on the complexity of the tasks and the depth of the integration.
+The project is expected to take approximately 6 months to complete, considering the need for deeper theoretical understanding and practical implementation.
 
 #### 8. What are the mid-term and final "check points" to see if you're on track?
-- **Quarterly Progress Meetings**: Schedule quarterly meetings to discuss progress, challenges, and insights.
-- **Mid-term Checkpoint**: After 3 months, evaluate the ability to integrate deep neural networks with Active Inference models for simple tasks.
-- **Final Checkpoint**: After 6 months, assess the ability to apply the scaled models to more complex tasks and evaluate the overall performance and scalability of the models.
+- **Mid-term Check Point (3 months):** Successful implementation of the basic Active Inference model for decision-making in an enactive framework.
+- **Final Check Point (6 months):** Completion of the hybrid model with empirical validation and a comprehensive analysis of the decision-making processes.
 
-### Project Proposal 3: Integrating Active Inference with Computational Phenomenology to Model Adversarial Inference
+**Resources and Collaborators:**
+- Utilize resources from the Computational Psychiatry course and the Active Inference Institute.
+- Collaborate with researchers in cognitive science, philosophy, and robotics to ensure a multidisciplinary approach.
+
+### Project Proposal 3: Ambitious, Longer-Term Project - Developing a Scalable Active Inference Framework for Complex Cognitive Processes
 
 #### 1. What are you trying to do?
-Integrate Active Inference with computational phenomenology to model Adversarial Inference, exploring how embodied and enactive aspects of cognition influence decision-making and action selection in adversarial scenarios.
+Develop a scalable Active Inference framework that can model complex cognitive processes, including perception, action, and decision-making, in both embodied and enactive cognitive frameworks. This framework should be capable of handling real-world, dynamic environments.
 
 #### 2. How is it done today, and what are the limits of current practice?
-Currently, Active Inference is primarily applied to decision-making and action selection in non-adversarial contexts. Integrating it with computational phenomenology to model Adversarial Inference is a novel approach that requires a deep understanding of both the theoretical frameworks and the practical implementation. The limits include the lack of existing models that combine these two areas and the complexity of modeling adversarial scenarios.
+Current Active Inference models are often limited to discrete grid-worlds or simple environments. The scalability to more complex, real-world environments is a significant challenge. The limits include the computational complexity, the need for advanced modeling techniques, and the lack of strong empirical neuroscientific backing.
 
 #### 3. What is new in your approach and why do you think it will be successful?
-This project will leverage Nicola's background in 4E-cognition and phenomenology to integrate the enactive and embodied aspects of cognition into Active Inference models. By using resources such as "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior" and collaborating with researchers like John Vervaeke, Nicola will develop models that capture the essence of Adversarial Inference in a computationally phenomenological context. The project will also involve simulating and experimenting with these models using computational neuroscience tools.
+This project will integrate advanced modeling techniques such as deep neural networks and hybrid active inference models to create a scalable framework. The new approach involves leveraging recent advancements in machine learning and computational neuroscience to handle complex environments. This will be successful because it combines Nicola's theoretical background with practical implementation skills and collaboration with experts in advanced modeling techniques.
 
 #### 4. Who cares? If you succeed, what difference will it make?
-Success in this project will provide a novel framework for understanding decision-making and action selection in adversarial scenarios, combining the strengths of Active Inference and computational phenomenology. This will make a significant difference in fields such as cognitive science, neuroscience, and artificial intelligence, particularly in areas like game theory and adversarial decision-making.
+Success in this project will revolutionize the field of Active Inference by providing a scalable framework that can be applied to a wide range of cognitive processes. It will make a significant difference in fields such as cognitive science, philosophy, robotics, and computational neuroscience.
 
 #### 5. What are the risks?
-The risks include the complexity of integrating two distinct theoretical frameworks, the potential for misunderstandings in modeling adversarial scenarios, and the need for advanced computational skills. However, these risks can be mitigated by close collaboration with experts and thorough testing of the models.
+The primary risks include the high computational complexity, the need for significant resources and collaboration, and the potential for the model to be too complex to yield meaningful insights.
 
 #### 6. How much will it cost?
-This project may require funding for attending specialized workshops or conferences, as well as access to computational resources. However, the primary cost will be the time and effort of the researcher.
+This project will require significant computational resources, possibly additional funding for travel and workshops, and collaboration with other researchers, which could involve some costs.
 
 #### 7. How long will it take?
-This project is expected to take 6-12 months to complete, depending on the complexity of the models and the depth of the integration.
+The project is expected to take approximately 12-18 months to complete, given the scope and the need for extensive research and development.
 
 #### 8. What are the mid-term and final "check points" to see if you're on track?
-- **Bi-Quarterly Progress Meetings**: Schedule bi-quarterly meetings to discuss progress, challenges, and insights.
-- **Mid-term Checkpoint**: After 6 months, evaluate the ability to integrate Active Inference with computational phenomenology for simple adversarial scenarios.
-- **Final Checkpoint**: After 12 months, assess the ability to apply the integrated models to complex adversarial scenarios and evaluate the overall performance and validity of the models.
+- **Mid-term Check Point (6 months):** Successful implementation of the basic scalable Active Inference framework using deep neural networks.
+- **Final Check Point (12-18 months):** Completion of the full framework with empirical validation and comprehensive analysis of complex cognitive processes.
+
+**Resources and Collaborators:**
+- Utilize resources from the Active Inference Institute, Neuromatch Academy, and computational neuroscience courses.
+- Collaborate with researchers in cognitive science, philosophy, robotics, and computational neuroscience to ensure a comprehensive and multidisciplinary approach.
+- Use software tools and frameworks such as Hugging Face or Papers with Code for scaling models[1][5].

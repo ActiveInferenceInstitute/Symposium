@@ -1,114 +1,111 @@
 # Active Inference Project Proposals: Ignacio_Echegoyen_Blanco
 
-Generated on: 2024-11-11 14:57:40
+Generated on: 2024-11-12 12:30:30
 
 ---
 
-### Project Proposal 1: Immediate, Smaller-Scope Project - Simulating Active Inference in Decision-Making
+### Proposal 1: Immediate, Smaller-Scope Project - Integrating Active Inference with Attachment Theory in Simple Decision-Making Scenarios
 
 #### 1. What are you trying to do?
-The objective is to simulate and analyze a simple active inference model in a decision-making context to understand the basic principles and mathematical formulations of active inference.
+Articulate your objectives using absolutely no jargon:
+- Develop a simple model that integrates Active Inference with Attachment theory to understand how attachment styles influence decision-making in everyday scenarios.
 
 #### 2. How is it done today, and what are the limits of current practice?
-Currently, active inference models are simulated using specialized software like SPM (Statistical Parametric Mapping). However, many researchers, especially those new to the field, face challenges in understanding the technical and mathematical details. The limits include the lack of accessible tutorials and the complexity of the software.
+- Currently, Active Inference models focus on general decision-making processes, while Attachment theory is studied separately in psychology. The integration of these two theories is limited, and there is a lack of concrete models that show how attachment styles affect decision-making processes.
 
 #### 3. What is new in your approach and why do you think it will be successful?
-This project will involve creating a step-by-step guide and tutorial on simulating a simple active inference model using SPM software. The approach will be new because it will integrate detailed explanations of the mathematical formulations with practical steps, making it more accessible to new researchers. Success is likely because it will fill a gap in current resources by providing a clear, hands-on guide.
+- This project will use the `spm_AIF` toolbox to simulate Active Inference models and incorporate parameters that reflect different attachment styles (secure, anxious, avoidant). The new approach involves:
+  - Modifying the free-energy principle to include attachment-related variables.
+  - Simulating decision-making scenarios to observe how different attachment styles impact the outcomes.
+  - The success of this approach lies in its ability to provide a quantitative framework for understanding the interplay between attachment and decision-making, which can be validated through experimental data.
 
 #### 4. Who cares? If you succeed, what difference will it make?
-This project will benefit researchers and students new to active inference by providing a clear and practical introduction to the field. It will also aid in the dissemination of active inference principles, making the theory more accessible and encouraging more researchers to engage with it.
+- This project will be valuable to psychologists and neuroscientists studying attachment and decision-making. It will provide a new tool for understanding how attachment styles influence behavior, potentially leading to better therapeutic strategies.
 
 #### 5. What are the risks?
-The main risk is the complexity of the mathematical formulations, which might make the tutorial too dense or difficult to follow. Additionally, there is a risk that the guide might not cover all the necessary aspects, leading to incomplete understanding.
+- The main risk is the technical complexity of integrating two disparate theories, which might require significant adjustments to the existing Active Inference models. Additionally, there is a risk that the simulations may not accurately reflect real-world decision-making processes.
 
 #### 6. How much will it cost?
-This project will require minimal costs, primarily involving time and access to SPM software, which is already available.
+- This project will primarily require computational resources and access to the `spm_AIF` toolbox, which is freely available. There may be minimal costs associated with attending relevant workshops or conferences.
 
 #### 7. How long will it take?
-The project is expected to take about 1-2 months to complete, including the creation of the tutorial, testing, and feedback from peers.
+- This project is expected to take approximately 2-3 months, given the focused scope and the availability of the necessary tools and resources.
 
 #### 8. What are the mid-term and final "check points" to see if you're on track?
-- **Mid-term Checkpoint:** Complete a draft of the tutorial within 4 weeks.
-  - Review and feedback from at least two peers.
-  - Test the tutorial with a small group of students or junior researchers.
-- **Final Checkpoint:** Publish the tutorial on a relevant platform (e.g., GitHub, research blog) within 8 weeks.
-  - Gather feedback from a broader audience and make necessary revisions.
+- **Mid-term Check Point (1 month):**
+  - Complete the literature review on Attachment theory and its potential integration with Active Inference.
+  - Modify the `spm_AIF` toolbox to include attachment-related parameters.
+- **Final Check Point (2-3 months):**
+  - Run and analyze the simulations to observe the impact of different attachment styles on decision-making.
+  - Prepare a draft manuscript for submission to a relevant journal.
 
-**Collaborators/Resources:**
-- Karl Friston's tutorials on SPM website
-- Online forums like the Active Inference subreddit
-- Colleagues or mentors with expertise in active inference
-
-### Project Proposal 2: Medium-Term, Moderate-Scope Project - Integrating Active Inference with Attachment Theory
+### Proposal 2: Medium-Term, Moderate-Scope Project - Applying Active Inference to Neurological Disorders: A Case Study on Alzheimer’s Disease
 
 #### 1. What are you trying to do?
-The objective is to integrate active inference with attachment theory by developing a theoretical framework and conducting experiments to test its validity.
+Articulate your objectives using absolutely no jargon:
+- Develop an Active Inference model to understand and predict behavioral changes in patients with Alzheimer’s disease, leveraging Echegoyen’s expertise in functional brain networks.
 
 #### 2. How is it done today, and what are the limits of current practice?
-Currently, active inference and attachment theory are studied separately. The integration of these two theories is limited by the lack of a clear theoretical framework and the complexity of designing experiments that can capture the nuances of both theories.
+- Currently, models of Alzheimer’s disease focus on structural changes in the brain but lack a comprehensive understanding of how these changes affect behavior. Active Inference models have not been extensively applied to this area, and existing models do not account for the complex network dynamics involved.
 
 #### 3. What is new in your approach and why do you think it will be successful?
-This project will involve developing a new theoretical framework that combines active inference and attachment theory. The approach will be novel because it will provide a structured way to understand how attachment styles influence decision-making processes through the lens of active inference. Success is likely because it leverages Ignacio Echegoyen's existing work on attachment theory and active inference, and it addresses a significant gap in the current literature.
+- This project will:
+  - Use functional brain network data to inform the parameters of the Active Inference model.
+  - Integrate Markov Decision Processes (MDPs) to model decision-making in Alzheimer’s patients.
+  - The new approach involves applying the free-energy principle to understand how the deterioration of brain networks affects behavioral outcomes. Success is likely due to the integration of Echegoyen’s expertise in functional brain networks and the theoretical framework of Active Inference.
 
 #### 4. Who cares? If you succeed, what difference will it make?
-This project will be significant for researchers in psychology and neuroscience, as it will provide a new perspective on how attachment styles influence cognitive and behavioral processes. It will also contribute to the broader integration of active inference into psychological theories.
+- This project will be significant for neuroscientists, clinicians, and patients with Alzheimer’s disease. It could provide new insights into the behavioral manifestations of the disease and potentially lead to more personalized treatment strategies.
 
 #### 5. What are the risks?
-The main risks include the complexity of integrating two complex theories, the challenge of designing experiments that can capture the interactions between attachment styles and active inference, and the potential for mixed results that may not support the hypothesized framework.
+- The main risks include the complexity of integrating brain network data into Active Inference models and the need for large datasets to validate the model. There is also a risk that the model may not capture the full range of behavioral changes observed in Alzheimer’s patients.
 
 #### 6. How much will it cost?
-This project will require moderate costs, including funding for experiments, participant compensation, and potentially some software or equipment.
+- This project may require access to clinical datasets, which could involve collaboration with hospitals or research institutions. There may be costs associated with data acquisition, computational resources, and potentially attending relevant conferences.
 
 #### 7. How long will it take?
-The project is expected to take about 6-9 months to complete, including the development of the theoretical framework, experimental design, data collection, and analysis.
+- This project is expected to take approximately 6-9 months, considering the need to collect and analyze data, develop the model, and validate the results.
 
 #### 8. What are the mid-term and final "check points" to see if you're on track?
-- **Mid-term Checkpoint:** Develop a draft of the theoretical framework and experimental design within 3 months.
-  - Present the framework at a local seminar or workshop to gather feedback.
-  - Begin data collection.
-- **Final Checkpoint:** Complete data analysis and submit a manuscript to a relevant journal within 9 months.
-  - Gather feedback from peers and make necessary revisions before submission.
+- **Mid-term Check Point (3 months):**
+  - Complete the data collection and preliminary analysis of functional brain networks in Alzheimer’s patients.
+  - Develop a basic Active Inference model incorporating MDPs.
+- **Final Check Point (6-9 months):**
+  - Run and analyze the simulations to predict behavioral changes in Alzheimer’s patients.
+  - Prepare a draft manuscript for submission to a relevant journal and present the findings at a conference.
 
-**Collaborators/Resources:**
-- Colleagues with expertise in attachment theory
-- Researchers in the active inference community
-- Access to experimental facilities and participant pools
-
-### Project Proposal 3: Ambitious, Longer-Term Project - Developing a Multiscale Active Inference Model for Neurological Disorders
+### Proposal 3: Ambitious, Longer-Term Project - Developing a Multilayer Active Inference Model for Complex Social Networks
 
 #### 1. What are you trying to do?
-The objective is to develop a multiscale active inference model that spans neural, behavioral, and cognitive levels to understand and predict the progression of neurological disorders such as Alzheimer’s disease.
+Articulate your objectives using absolutely no jargon:
+- Develop a multilayer Active Inference model to understand and predict behavior in complex social networks, such as those involving multiple forms of social interaction (e.g., online and offline).
 
 #### 2. How is it done today, and what are the limits of current practice?
-Currently, active inference models are often applied at a single scale (e.g., neural or behavioral) and lack the integration across multiple scales. This limitation hampers the comprehensive understanding of complex neurological disorders.
+- Current Active Inference models are typically applied to individual decision-making or simple social interactions. There is a lack of models that can handle the complexity of multilayer social networks, where individuals interact through various channels.
 
 #### 3. What is new in your approach and why do you think it will be successful?
-This project will involve developing a novel multiscale active inference model that integrates data from neuroimaging (e.g., fMRI, EEG), behavioral experiments, and cognitive assessments. The approach will be groundbreaking because it will provide a holistic view of how active inference processes are disrupted in neurological disorders. Success is likely because it leverages Ignacio Echegoyen's expertise in functional brain networks and active inference, and it addresses a critical need for more comprehensive models in neuroscience.
+- This project will:
+  - Extend the Active Inference framework to incorporate multilayer network analysis, similar to Echegoyen’s work on functional brain networks.
+  - Use advanced computational methods, such as machine learning techniques, to handle the complexity of multilayer networks.
+  - The success of this approach lies in its ability to capture the intricate interactions within social networks, providing a more comprehensive understanding of social behavior.
 
 #### 4. Who cares? If you succeed, what difference will it make?
-This project will be crucial for researchers and clinicians working on neurological disorders. It will provide a new framework for understanding the pathophysiology of these disorders and could lead to better diagnostic tools and therapeutic strategies.
+- This project will be significant for social scientists, network theorists, and anyone interested in understanding complex social behaviors. It could lead to new insights into how social networks influence behavior and potentially inform strategies for social intervention and policy-making.
 
 #### 5. What are the risks?
-The main risks include the complexity of integrating data across multiple scales, the challenge of validating the model with real-world data, and the potential for significant computational and analytical challenges.
+- The main risks include the technical complexity of developing a multilayer Active Inference model, the need for large and diverse datasets, and the potential for the model to be overly complex and difficult to interpret.
 
 #### 6. How much will it cost?
-This project will require substantial costs, including funding for data collection (neuroimaging, behavioral experiments), software and computational resources, and potentially collaboration with multiple institutions.
+- This project will require significant computational resources, access to large datasets, and potentially collaboration with experts in social network analysis. There may be costs associated with data acquisition, attending conferences, and workshops.
 
 #### 7. How long will it take?
-The project is expected to take about 12-18 months to complete, including the development of the theoretical framework, data collection, model development, and validation.
+- This project is expected to take approximately 1-2 years, considering the complexity of the model, the need for extensive data collection and analysis, and the validation of the results.
 
 #### 8. What are the mid-term and final "check points" to see if you're on track?
-- **Mid-term Checkpoint 1:** Develop a draft of the theoretical framework within 4 months.
-  - Present the framework at an international conference to gather feedback.
-- **Mid-term Checkpoint 2:** Complete data collection and initial model development within 9 months.
-  - Test the model with a subset of data to validate its performance.
-- **Final Checkpoint:** Complete model validation and submit a manuscript to a high-impact journal within 18 months.
-  - Gather feedback from peers and make necessary revisions before submission.
-
-**Collaborators/Resources:**
-- Researchers in neuroscience and neuroimaging
-- Clinicians specializing in neurological disorders
-- Access to neuroimaging facilities and computational resources
-- Collaboration with institutions like the Wellcome Centre for Human Neuroimaging
-
-Each of these proposals aligns with Ignacio Echegoyen's background, interests, and current stage in the field of active inference, offering a structured path for growth and contribution.
+- **Mid-term Check Point (6 months):**
+  - Develop the theoretical framework for the multilayer Active Inference model.
+  - Collect and preprocess the necessary datasets.
+- **Final Check Point (1-2 years):**
+  - Implement and validate the multilayer Active Inference model using the collected data.
+  - Prepare a comprehensive manuscript for submission to a high-impact journal and present the findings at a major conference.
+  - Organize a workshop or seminar to share the model and gather feedback from the broader research community.

@@ -1,101 +1,111 @@
 # Active Inference Project Proposals: Jon_Mackey
 
-Generated on: 2024-11-11 15:05:51
+Generated on: 2024-11-12 12:39:07
 
 ---
 
-### Proposal 1: Immediate, Smaller-Scope Project - Simulating Active Inference in Skill Acquisition
+### Proposal 1: Immediate, Smaller-Scope Project - Developing a Simplified Active Inference Tutorial
 
-**1. What are you trying to do?**
-Create a simple simulation to demonstrate how Active Inference can be applied to the process of skill acquisition in sports, specifically focusing on the decision-making and learning aspects of athletes.
+#### 1. What are you trying to do?
+Create a simplified tutorial or workshop to help beginners, including PhD candidates like Jon Mackey, understand the basic principles of Active Inference without getting overwhelmed by the complex mathematical and theoretical frameworks.
 
-**2. How is it done today, and what are the limits of current practice?**
-Currently, skill acquisition in sports is often analyzed using traditional coaching methods and psychological theories that may not fully account for the dynamic and uncertain nature of athletic performance. These methods lack a unified framework that integrates decision-making, learning, and adaptation under uncertainty.
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, resources on Active Inference are often highly technical and geared towards advanced researchers. This limits accessibility for those new to the field, such as PhD candidates, who may struggle to apply the theories in practical settings like sport coaching.
 
-**3. What is new in your approach and why do you think it will be successful?**
-This project will utilize Active Inference to model how athletes make decisions and learn new skills. By using Bayesian inference and control theory, the simulation will capture the dynamic interaction between the athlete's internal models and the external environment. This approach is new because it integrates a theoretical framework that can predict and explain the adaptive behavior of athletes in a more comprehensive and quantitative manner.
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will involve creating a step-by-step, jargon-free tutorial that breaks down the core concepts of Active Inference into manageable parts. It will include interactive simulations, case studies, and practical exercises tailored to the needs of sport coaches and skill acquisition researchers. The tutorial will be developed in collaboration with experts in the field, such as Sonny Sahota, to ensure both theoretical accuracy and practical relevance.
 
-**4. Who cares? If you succeed, what difference will it make?**
-Coaches, athletes, and sports scientists will benefit from this simulation as it provides a more nuanced understanding of the skill acquisition process. It can help in designing more effective coaching strategies and improving athlete performance by better understanding how athletes learn and adapt.
+#### 4. Who cares? If you succeed, what difference will it make?
+Success in this project will make Active Inference more accessible to a broader audience, including sport coaches, skill acquisition researchers, and PhD candidates. This will facilitate the integration of Active Inference into various practical domains, potentially leading to innovative coaching methods and improved athlete performance.
 
-**5. What are the risks?**
-The main risk is the complexity of the mathematical models involved in Active Inference, which might be challenging to implement accurately. Additionally, the simplicity of the simulation might not fully capture the complexity of real-world scenarios.
+#### 5. What are the risks?
+The main risks include the difficulty in simplifying complex theories without losing their essence, the need for continuous feedback and validation from experts, and the challenge of engaging a broad audience.
 
-**6. How much will it cost?**
-The project will primarily require computational resources (e.g., a computer with MATLAB or Python) and access to relevant literature and online resources, which are likely already available.
+#### 6. How much will it cost?
+The costs will be relatively low, primarily involving time and effort from the project team. Potential costs could include:
+- Software and simulation tools
+- Collaboration fees for experts
+- Hosting and maintenance of the tutorial online
 
-**7. How long will it take?**
-This project can be completed within 1-2 months, depending on the depth of the simulation and the amount of time dedicated to it each week.
+#### 7. How long will it take?
+This project can be completed within 1-2 months, depending on the complexity of the content and the availability of collaborators.
 
-**8. What are the mid-term and final "check points" to see if you're on track?**
-- **Mid-term Check Point:** After 4 weeks, evaluate the initial simulation results and ensure that the basic principles of Active Inference are correctly implemented.
-- **Final Check Point:** After 8 weeks, complete the simulation, analyze the results, and write a short report detailing the findings and implications for coaching strategies.
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Weekly Checkpoints:** Regular meetings with the project team to review progress and address any challenges.
+- **Mid-Term Review (1 month):** Conduct a preliminary review of the tutorial content to ensure it meets the objectives and gather initial feedback from a small group of testers.
+- **Final Review (2 months):** Launch the tutorial and gather comprehensive feedback from a larger audience to make any necessary adjustments.
 
-**Potential Collaborators or Resources:**
-- Collaborate with other researchers or students interested in Active Inference.
-- Utilize resources from the Wellcome Centre for Human Neuroimaging and online forums dedicated to Active Inference.
+### Proposal 2: Medium-Term, Moderate-Scope Project - Designing and Implementing Active Inference-Based Training Programs
 
-### Proposal 2: Medium-Term, Moderate-Scope Project - Developing Active Inference-Based Coaching Strategies
+#### 1. What are you trying to do?
+Design, implement, and evaluate training programs for athletes using the principles of Active Inference to optimize performance and learning.
 
-**1. What are you trying to do?**
-Develop and implement coaching strategies for athletes based on the principles of Active Inference, focusing on improving decision-making and learning under uncertainty.
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, training programs in sports often rely on traditional methods that may not fully leverage the latest advancements in cognitive science and control theory. These methods can be less personalized and less adaptive to the athlete's learning process.
 
-**2. How is it done today, and what are the limits of current practice?**
-Currently, coaching strategies are often based on empirical methods and traditional psychological theories that do not fully incorporate the dynamic and adaptive nature of athletic performance. These methods lack a systematic approach to understanding how athletes make decisions and learn new skills.
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will use Active Inference to develop predictive models that can adapt to an athlete's performance and learning patterns. The approach will involve:
+- Collaborating with coaches and athletes to gather data on performance and learning.
+- Using Bayesian inference and control theory to create personalized training plans.
+- Implementing and testing these plans in real-world coaching settings.
+- Evaluating the effectiveness of the programs through both quantitative and qualitative feedback.
 
-**3. What is new in your approach and why do you think it will be successful?**
-This project will apply Active Inference to design coaching strategies that explicitly model the athlete's internal models and their interaction with the environment. By using Bayesian inference and control theory, these strategies will be more adaptive and responsive to the athlete's needs, leading to more effective skill acquisition and performance improvement.
+#### 4. Who cares? If you succeed, what difference will it make?
+Success in this project will lead to more effective, personalized, and adaptive training programs that can significantly improve athlete performance. This could have a substantial impact on the field of sport coaching, enhancing both the efficiency and efficacy of training methods.
 
-**4. Who cares? If you succeed, what difference will it make?**
-Coaches, athletes, and sports organizations will benefit from these strategies as they can lead to improved performance, faster skill acquisition, and better decision-making under pressure.
+#### 5. What are the risks?
+The main risks include the complexity of integrating Active Inference into existing coaching practices, the need for robust data collection and analysis, and the potential resistance from traditional coaches to adopt new methodologies.
 
-**5. What are the risks?**
-The main risks include the complexity of translating theoretical models into practical coaching strategies and the potential resistance from coaches and athletes to adopt new methodologies.
+#### 6. How much will it cost?
+The costs will include:
+- Data collection and analysis tools
+- Software for implementing Bayesian models and simulations
+- Collaboration fees for coaches and experts
+- Potential travel costs for on-site evaluations
 
-**6. How much will it cost?**
-The project may require some funding for data collection tools, software, and potential collaboration with other experts. However, the primary costs will be in terms of time and effort.
+#### 7. How long will it take?
+This project is expected to take around 3-6 months, including data collection, model development, implementation, and evaluation.
 
-**7. How long will it take?**
-This project can be completed within 3-6 months, depending on the scope of the strategies and the amount of data collected.
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Monthly Checkpoints:** Regular reviews of data collection progress and model development.
+- **Mid-Term Review (3 months):** Initial implementation of the training programs with a small group of athletes to gather preliminary feedback.
+- **Final Review (6 months):** Comprehensive evaluation of the training programs with a larger group of athletes, including both quantitative and qualitative feedback.
 
-**8. What are the mid-term and final "check points" to see if you're on track?**
-- **Mid-term Check Point:** After 3 months, evaluate the initial coaching strategies and gather feedback from athletes and coaches.
-- **Final Check Point:** After 6 months, complete the implementation, collect and analyze data on the effectiveness of the strategies, and write a comprehensive report.
+### Proposal 3: Ambitious, Longer-Term Project - Developing an Integrated Active Inference Framework for Interdisciplinary Skill Acquisition Research
 
-**Potential Collaborators or Resources:**
-- Collaborate with coaches and athletes from various sports.
-- Utilize resources from sports science departments and the Wellcome Centre for Human Neuroimaging.
-- Engage with online forums and discussion groups focused on Active Inference and sports coaching.
+#### 1. What are you trying to do?
+Develop a comprehensive, integrated framework that combines Active Inference with other relevant theories (such as ecological dynamics and cognitive neuroscience) to create a holistic approach to skill acquisition research across various disciplines.
 
-### Proposal 3: Ambitious, Longer-Term Project - Integrating Active Inference with Interdisciplinary Research in Elite Performance
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, skill acquisition research is often fragmented, with different disciplines using separate theories and methodologies. This fragmentation limits the comprehensive understanding and application of skill acquisition principles.
 
-**1. What are you trying to do?**
-Conduct an interdisciplinary research project integrating Active Inference with psychology, neuroscience, and computer science to develop a comprehensive framework for understanding and enhancing elite athletic performance.
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will involve:
+- Conducting a thorough literature review to integrate key concepts from Active Inference, ecological dynamics, and cognitive neuroscience.
+- Collaborating with researchers from multiple disciplines (cognitive psychology, neuroscience, control theory) to develop a unified framework.
+- Developing advanced Bayesian models and simulation tools to implement and test the framework.
+- Applying the framework in various practical settings, such as sport coaching, education, and rehabilitation.
 
-**2. How is it done today, and what are the limits of current practice?**
-Current research in elite athletic performance often involves fragmented approaches from different disciplines without a unified theoretical framework. This lack of integration limits the depth and breadth of understanding how athletes perform and adapt.
+The success of this approach hinges on the interdisciplinary collaboration and the use of advanced computational tools to model and simulate complex learning processes.
 
-**3. What is new in your approach and why do you think it will be successful?**
-This project will integrate Active Inference with insights from psychology, neuroscience, and computer science to create a holistic model of athletic performance. By combining Bayesian inference, control theory, and advanced data analysis techniques, the project will provide a more complete understanding of how athletes make decisions, learn, and adapt under uncertainty.
+#### 4. Who cares? If you succeed, what difference will it make?
+Success in this project will lead to a groundbreaking, integrated framework for understanding and enhancing skill acquisition across multiple disciplines. This could revolutionize the way skills are taught and learned, impacting fields such as sports, education, and healthcare.
 
-**4. Who cares? If you succeed, what difference will it make?**
-This project will have significant implications for sports science, coaching practices, and athlete development. It can lead to the development of more effective training programs, better decision-making strategies, and enhanced overall performance.
+#### 5. What are the risks?
+The main risks include the complexity of integrating diverse theoretical frameworks, the need for extensive interdisciplinary collaboration, and the challenge of validating the framework through empirical studies.
 
-**5. What are the risks?**
-The main risks include the complexity of integrating multiple disciplines, the need for significant resources (time, funding, collaborators), and the potential for resistance to new methodologies.
+#### 6. How much will it cost?
+The costs will be significant and will include:
+- Funding for interdisciplinary research collaborations
+- Advanced computational tools and software
+- Travel and conference costs for international collaborations
+- Potential funding for pilot studies and large-scale implementations
 
-**6. How much will it cost?**
-The project will likely require substantial funding for data collection, software, and collaboration with experts from various fields.
+#### 7. How long will it take?
+This project is expected to take around 1-2 years, considering the extensive literature review, model development, and empirical validation required.
 
-**7. How long will it take?**
-This project can span 1-2 years, depending on the scope and the complexity of the research.
-
-**8. What are the mid-term and final "check points" to see if you're on track?**
-- **Mid-term Check Point:** After 6 months, evaluate the progress of the interdisciplinary collaboration and the initial results of the integrated model.
-- **Mid-term Check Point:** After 1 year, complete the data collection and initial analysis, and present preliminary findings at a conference or workshop.
-- **Final Check Point:** After 2 years, complete the final analysis, write and publish a research paper, and present the findings at a major conference.
-
-**Potential Collaborators or Resources:**
-- Collaborate with researchers from psychology, neuroscience, and computer science departments.
-- Utilize resources from the Wellcome Centre for Human Neuroimaging, sports science departments, and relevant academic journals.
-- Engage with international conferences and workshops focused on Active Inference and sports science.
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Quarterly Checkpoints:** Regular reviews of literature and model development progress.
+- **Mid-Term Review (6 months):** Preliminary presentation of the integrated framework at a conference or workshop to gather feedback from the academic community.
+- **Mid-Term Review (1 year):** Initial pilot studies to test the framework in specific practical settings.
+- **Final Review (2 years):** Comprehensive evaluation and publication of the framework, including results from large-scale empirical studies.

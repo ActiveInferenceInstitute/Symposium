@@ -1,92 +1,91 @@
 # Active Inference Learning Plan: Oleg
 
-Generated on: 2024-11-11 13:22:41
+Generated on: 2024-11-12 11:38:47
 
 ---
 
-### Learning Plan for Oleg: Active Inference and Autonomous Agents
+### Personalized Learning Plan for Oleg: Active Inference
 
 #### IMMEDIATE NEXT STEPS (1-2 weeks)
 
 **Specific Resources to Start With:**
-- **Tutorial on Active Inference**: Begin with the "A Step-by-Step Tutorial on Active Inference and its Application to Empirical Data" by Ryan Smith, Karl J. Friston, and Christopher J. Whyte. This tutorial provides a comprehensive introduction to active inference and its practical applications[3].
-- **YouTube Tutorial**: Watch the video tutorial on Active Inference by Ryan Smith, which covers the basics and applications of active inference in an interactive and question-answer format[2].
+- **Tutorial Video:** Watch the "A Step-by-Step Tutorial on Active Inference and its Application to Empirical Data" by Ryan Smith, Karl Friston, and Christopher Whyte. This video provides a comprehensive introduction and practical application of Active Inference[2].
+- **Research Paper:** Read "A Step-by-Step Tutorial on Active Inference and its Application to Empirical Data" (2021) by Ryan Smith, Karl Friston, and Christopher Whyte. This paper offers a detailed walkthrough of the mathematical basis and application of Active Inference[1].
 
 **Initial Learning Objectives:**
-- Understand the fundamental principles of Active Inference, including the free energy principle and variational Bayesian inference.
-- Familiarize yourself with the concept of preference distributions and how rewards are treated in active inference.
+- Understand the core concepts of Active Inference, including the free energy principle and variational inference.
+- Familiarize yourself with the different strands of Active Inference (discrete, continuous, and deep Active Inference).
 
 **Concrete Actions to Take:**
-- Complete the step-by-step tutorial and take notes on key concepts.
-- Engage with the YouTube live stream or its comments to clarify any questions.
-- Start exploring the GitHub repository for deep active inference agents using Monte-Carlo methods to understand the practical implementation[1].
+- Implement the MATLAB code provided in the tutorial to get hands-on experience with discrete-state-space Active Inference.
+- Join the Active Inference Institute's Discord channel to engage with the community and ask questions about the tutorial and paper[3].
 
 #### SHORT-TERM GOALS (1-3 months)
 
 **Key Concepts to Master:**
-- **Variational Free Energy**: Delve deeper into the mathematical formulation of variational free energy and its role in active inference.
-- **Generative Models**: Understand how generative models are used in active inference to make predictions and update beliefs.
-- **Epistemic and Extrinsic Value**: Learn about the distinction between epistemic and extrinsic value in active inference and how agents balance these values.
+- **Variational Inference:** Delve deeper into the mathematical basis of variational inference and its role in Active Inference.
+- **Preference Distributions:** Understand how preference distributions are used in Active Inference to drive decision-making and action selection.
+- **Deep Active Inference:** Explore the integration of Active Inference with deep learning techniques.
 
 **Practical Exercises or Projects:**
-- **Implement a Simple Active Inference Agent**: Use the resources from the GitHub repository to implement a basic active inference agent in a simple environment, such as a grid world.
-- **Experiment with Different EFE Functionals**: Follow the experiments outlined in the paper on deep active inference agents to compare different formulations of the expected free energy functional[1].
+- **Project 1:** Implement a simple discrete-state-space Active Inference model using MATLAB or Python. Use the code from the tutorial as a starting point.
+- **Project 2:** Experiment with using deep neural networks to scale Active Inference, following the approach described by David Bloomin[3].
 
 **Recommended Study Materials:**
-- **"Active inference: demystified and compared"**: Read this paper to understand the discrete-state formulation of active inference and its comparison with reinforcement learning[4].
-- **Neuromatch Academy Summer School**: Participate in or review the materials from the Neuromatch Academy Summer School, which includes content on computational neuroscience and deep learning[5].
+- **Syllabus:** Follow the syllabus outlined in "Spinning Up in Active Inference and the Free Energy Principle" to ensure a comprehensive understanding of the prerequisites and core concepts[5].
+- **Neuromatch Academy:** Enroll in the Neuromatch Academy summer school for computational neuroscience, which includes deep learning and reinforcement learning content relevant to Active Inference[5].
 
 **Community Engagement Opportunities:**
-- **Active Inference Community**: Join the active inference community through the Active Inference Institute or forums like activeinference.org to engage with other researchers and practitioners.
-- **Attend Webinars or Workshops**: Look for upcoming webinars or workshops on active inference and related topics to stay updated and network with peers.
+- **Active Inference Institute:** Participate in the Active Inference Institute's livestreams and discussions to stay updated on the latest developments and engage with other researchers[3].
+- **GitHub Repository:** Contribute to or follow the FEP and Active Inference Paper Repository on GitHub to stay updated on the latest research and implementations[1].
 
 #### MEDIUM-TERM DEVELOPMENT (3-6 months)
 
 **Advanced Topics to Explore:**
-- **Hierarchical Active Inference**: Study hierarchical active inference models and their applications in more complex decision-making scenarios[3].
-- **Neuromodulatory Mechanisms**: Investigate how neuromodulatory mechanisms, such as those involving the locus coeruleus, are integrated into active inference models to enhance learning and adaptability[3].
+- **Multi-Agent Environments:** Study the approach of training Active Inference agents in multi-agent competitive environments as proposed by David Bloomin[3].
+- **Scaling Active Inference:** Dive into the challenges and solutions for scaling Active Inference to more complex environments, including the use of deep neural networks[4].
 
 **Potential Collaboration Opportunities:**
-- **Collaborate with Denis Dimitrov**: Reach out to Denis Dimitrov from Sber AI Research to explore integrating active inference with large language models or multimodal models.
-- **Collaborate with Andrey Savchenko**: Collaborate with Andrey Savchenko from Sber AI Lab to apply active inference in computer vision and multimodal architectures.
+- **Research Collaborations:** Reach out to researchers like Beren Millidge or Andrey Savchenko to explore potential collaborations on integrating Active Inference with deep learning and multi-agent systems.
+- **Active Inference Community:** Engage with the broader Active Inference community through the institute's website, Twitter, and Discord to find collaborators and stay updated on new developments[3].
 
 **Application Projects in Their Domain:**
-- **Autonomous Agents in Complex Environments**: Apply active inference to autonomous agents operating in complex, dynamic environments, such as robotics or autonomous vehicles.
-- **VLA Models for Decision-Making**: Use VLA models integrated with active inference to improve decision-making in scenarios requiring robust adaptation and learning.
+- **Autonomous Agents:** Apply Active Inference to more complex autonomous agent scenarios, such as navigation in dynamic environments.
+- **VLAs and Deep Learning:** Integrate VLA models with deep learning techniques to enhance the decision-making capabilities of autonomous agents.
 
 **Skill-Building Activities:**
-- **Advanced Bayesian Inference**: Deepen your understanding of Bayesian inference through courses or tutorials, such as those offered by David MacKay’s book "Information Theory, Inference, and Learning Algorithms"[5].
-- **Software Development**: Enhance your skills in software development by contributing to or creating tools for active inference, leveraging frameworks like TensorFlow or PyTorch.
+- **Bayesian Methods:** Deepen your understanding of Bayesian methods and their application in reinforcement learning and decision-making.
+- **Computational Complexity:** Address the computational complexity of implementing Active Inference by exploring efficient algorithms and approximations.
 
 #### SPECIFIC RESOURCES
 
-**Active Inference Institute Materials:**
-- **Tutorials and Papers**: Utilize the resources available on activeinference.org, including tutorials, papers, and community discussions[2][3].
-
-**Academic Papers and Tutorials:**
-- **Deep Active Inference Agents**: Study the paper on deep active inference agents using Monte-Carlo methods for insights into practical implementations[1].
-- **Step-by-Step Tutorial**: Follow the step-by-step tutorial by Smith et al. for a comprehensive introduction to active inference[3].
-
-**Software Tools and Frameworks:**
-- **GitHub Repository**: Use the GitHub repository for deep active inference agents to access code and data for practical implementation[1].
-- **Neuromatch Academy Materials**: Utilize the computational neuroscience and deep learning materials from Neuromatch Academy to set up experiments and simulations[5].
-
-**Community Resources and Events:**
-- **Active Inference Community Forum**: Engage with the community through forums and discussions on activeinference.org.
-- **Conferences and Workshops**: Attend or participate in conferences and workshops focused on active inference and related fields.
+- **Active Inference Institute Materials:**
+  - Website: https://activeinference.org/
+  - Discord: https://discord.gg/8VNKNp4jtx
+  - YouTube: https://www.youtube.com/c/ActiveInference/[3]
+- **Academic Papers and Tutorials:**
+  - "A Step-by-Step Tutorial on Active Inference and its Application to Empirical Data" (2021) by Ryan Smith, Karl Friston, and Christopher Whyte[1].
+  - "The free energy principle for action and perception: A mathematical review" (2017) by Christopher L Buckley and Chang Sub Kim and Simon McGregor and Anil K Seth[1].
+- **Software Tools and Frameworks:**
+  - MATLAB code for discrete-state-space Active Inference[1].
+  - GitHub repository for Deep Learning Active Inference by David Bloomin: https://github.com/daveey[3].
+- **Community Resources and Events:**
+  - Neuromatch Academy summer school: https://www.beren.io/2024-07-27-A-Retrospective-on-Active-Inference/[5].
+  - Active Inference Institute livestreams: https://coda.io/@active-inference-institute/livestreams[3].
 
 #### PROGRESS TRACKING
 
 **Milestones and Checkpoints:**
-- **Weekly Review**: Set aside time each week to review progress, note challenges, and plan the next steps.
-- **Monthly Project Reviews**: Conduct a monthly review of projects and experiments to assess progress and identify areas for improvement.
+- **Week 1-2:** Complete the initial tutorial and implement the MATLAB code.
+- **Month 1-3:** Master key concepts, complete practical projects, and engage with the community.
+- **Month 3-6:** Explore advanced topics, collaborate with other researchers, and apply Active Inference to complex domains.
 
 **Self-Assessment Methods:**
-- **Reflective Journaling**: Keep a journal to reflect on what you have learned, what challenges you faced, and how you overcame them.
-- **Peer Review**: Engage in peer review sessions with colleagues or community members to get feedback on your work.
+- Regularly review and reflect on the understanding of key concepts.
+- Evaluate the performance of implemented models and projects.
+- Seek feedback from the community and collaborators.
 
 **Practical Application Opportunities:**
-- **Case Studies**: Apply active inference to real-world case studies or projects within your domain to test and refine your understanding.
-- **Collaborative Projects**: Participate in collaborative projects with other researchers to apply active inference in diverse contexts.
-
-By following this structured learning plan, Oleg can deepen his understanding of active inference, address the challenges of developing mature software tools, and leverage collaborations to advance his research in autonomous agents and VLA models.
+- Apply Active Inference to real-world autonomous agent scenarios.
+- Participate in hackathons or research competitions to implement and test new ideas.
+- Share findings and implementations through blog posts or research papers to receive feedback and engage with the broader community.

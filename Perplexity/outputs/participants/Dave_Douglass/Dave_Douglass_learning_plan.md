@@ -1,99 +1,124 @@
 # Active Inference Learning Plan: Dave_Douglass
 
-Generated on: 2024-11-11 13:27:56
+Generated on: 2024-11-12 11:45:02
 
 ---
 
-### Immediate Next Steps (1-2 weeks)
+### IMMEDIATE NEXT STEPS (1-2 weeks)
 
-#### Specific Resources to Start With:
-- **Active Inference Institute's Livestreams and Discussions**:
-  - Start with the upcoming "Applied Active Inference Symposium" on November 13-14, 2024, to stay updated on the latest developments and network with other researchers[1].
-  - Watch past livestreams such as "Insights #023" with Iain McGilchrist on "Hemispheric Lateralisation, Relationality, Being-In-The-World" to deepen understanding of the theoretical foundations[1].
+#### Specific Resources to Start With
+- **Livestreams and Discussions**:
+  - Participate in the upcoming Applied Active Inference Symposium (November 13-14, 2024) to stay updated on the latest developments and applications of Active Inference[3].
+  - Review recent livestreams such as "Active Data Sampling" with Thomas Parr and "The Nature of Habits and Agential Systems" with Jesse G to reinforce current understanding[1].
 
-#### Initial Learning Objectives:
-- Gain a refreshed understanding of the core principles of Active Inference, particularly its application in various fields.
-- Identify potential collaboration opportunities within the Active Inference community.
+#### Initial Learning Objectives
+- **Refresh Foundational Concepts**:
+  - Revisit the basics of the Free Energy Principle (FEP) and Active Inference through resources like the video "The Free Energy Principle and Active Inference: From Physics to Mind" featuring Dr. Karl Friston[5].
+  - Review the article "A tale of two densities: active inference is enactive inference" to clarify central constructs of Active Inference[2].
 
-#### Concrete Actions to Take:
-- Register for the "Applied Active Inference Symposium" and prepare questions or topics for discussion.
-- Review the recent newsletter from the Active Inference Institute to stay informed about ongoing projects and initiatives[4].
-- Engage with the community by participating in the discussion forums or commenting on recent livestreams.
+#### Concrete Actions to Take
+- **Engage with Community**:
+  - Join and actively participate in the #sym-cog-robotics Discord channel to stay updated on symbolic cognitive robotics and engage in discussions[1].
+  - Reach out to Susan Hasty regarding her work on AI-assisted negotiation tools to explore potential collaboration opportunities[1].
 
-### Short-Term Goals (1-3 months)
+### SHORT-TERM GOALS (1-3 months)
 
-#### Key Concepts to Master:
-- **Advanced Mathematical and Computational Tools**:
-  - Delve deeper into mathematical modeling and computational neuroscience. Join the informal Math Group sessions offered by the Active Inference Institute[4].
-  - Study the basics of variational free energy and its application in Active Inference, using resources like the article "A tale of two densities: active inference is enactive inference"[2].
+#### Key Concepts to Master
+- **Advanced Mathematical and Computational Techniques**:
+  - Dive into the Textbook Group (Parr, Pezzulo, Friston 2022) materials, focusing on RxInfer.jl usage and informal Math Group sessions starting on July 15th (though delayed, the materials will still be valuable)[1].
+  - Study "Information Theory, Inference, and Learning Algorithms" by David MacKay to deepen understanding of information theory and Bayesian inference[4].
 
-#### Practical Exercises or Projects:
-- **Ontology Integration Project**:
-  - Continue working on integrating Active Inference ontology with other systems, using the resources from the "Aligning Active Inference Ontology to SUMO" and "Aligning Spatial Web Terms to SUMO" projects[1].
-  - Collaborate with Andrew Pashea on the “Active Agents: An Active Inference Approach to Agent-Based Modeling in the Social Sciences” project to apply ontological frameworks in modeling complex systems[1].
+#### Practical Exercises or Projects
+- **Apply Active Inference to Projects**:
+  - Participate in or lead a project within the Action Research on Collective Foraging or the Symbolic cognitive robotics project to apply Active Inference in practical contexts[1].
+  - Start exploring the use of Active Inference in negotiation affordances, leveraging Susan Hasty’s work as a starting point[1].
 
-#### Recommended Study Materials:
-- **Textbook and Tutorial Resources**:
-  - Participate in the Textbook Group project, which includes Cohort 7 and Cohort 6, starting on July 15th. This will involve using RxInfer.jl for better understanding and applicability of textbook materials[4].
-  - Use the syllabus provided by Jared Tumiel for spinning up in Active Inference and the Free Energy Principle, which includes background in neuroscience, control theory, physics, and computer science[5].
+#### Recommended Study Materials
+- **Syllabus for FEP and Active Inference**:
+  - Use the syllabus outlined in "Spinning Up in Active Inference and the Free Energy Principle" to guide your learning, focusing on sections relevant to your background and interests[4].
+  - Utilize resources from Neuromatch Academy for computational neuroscience and deep learning content[4].
 
-#### Community Engagement Opportunities:
-- **Roundtable Discussions and Livestreams**:
-  - Attend the MathArtStream sessions, such as "Mathematical Holiday Poetry" on December 13, 2024, to engage with interdisciplinary discussions[1].
-  - Participate in the Active Inference Insights series, such as the upcoming episodes, to stay updated with the latest research and insights[1].
+#### Community Engagement Opportunities
+- **Attend Livestreams and Discussions**:
+  - Regularly attend livestreams and discussions hosted by the Active Inference Institute, such as the MathArtStream series, to stay engaged with the community and learn from various perspectives[3].
+  - Engage with the Active Inference Institute’s educational projects, such as the Textbook Group and the Fundamentals of Active Inference project[1].
 
-### Medium-Term Development (3-6 months)
+### MEDIUM-TERM DEVELOPMENT (3-6 months)
 
-#### Advanced Topics to Explore:
-- **Deep Dive into Free Energy Principle**:
-  - Watch the video "The Free Energy Principle and Active Inference: From Physics to Mind" featuring Dr. Karl Friston to understand the foundational concepts of the Free Energy Principle and its implications[3].
-  - Study advanced topics such as Markov blankets, internal and external states, and circular causality as discussed in the video and related academic papers[3].
+#### Advanced Topics to Explore
+- **Ontological Integrations**:
+  - Delve deeper into ontological works, such as "Aligning Active Inference Ontology to SUMO" and "Aligning Spatial Web Terms to SUMO," and explore how these integrations can be applied in various domains[1].
+  - Study the intersections of Active Inference with cybernetic learning theory and neuropsychoanalytic metatheory to enhance interdisciplinary understanding[1].
 
-#### Potential Collaboration Opportunities:
-- **Interdisciplinary Projects**:
-  - Collaborate with Sanjeev Namjoshi on his upcoming textbook to ensure the educational materials are comprehensive and aligned with the latest research[4].
-  - Engage with the Unifysica project, particularly with Ana Magdalena Hurtado, to explore social sciences ontologies for health and disease[4].
+#### Potential Collaboration Opportunities
+- **Cross-Disciplinary Projects**:
+  - Collaborate with researchers from the Institute of General Semantics and the American Society for Cybernetics to integrate insights from general semantics and cybernetics into Active Inference projects[1].
+  - Work with Sanjeev Namjoshi and other contributors to the Active Inference Institute on educational and research initiatives[1].
 
-#### Application Projects in Their Domain:
-- **Systems Memetics and General Semantics**:
-  - Apply Active Inference principles to Systems Memetics and General Semantics by integrating ontological frameworks and conducting case studies.
-  - Develop a project proposal to integrate Active Inference with existing frameworks in these fields, leveraging his background in machine translation and nonprofit work.
+#### Application Projects in Their Domain
+- **AI-Assisted Negotiation Tools**:
+  - Develop and refine AI-assisted negotiation tools comparing Reinforcement Learning with Active Inference, leveraging the capabilities of the Active Inference network[1].
+  - Apply Active Inference to commercial and social negotiation scenarios, drawing from Douglass’s background in machine translation and AI.
 
-#### Skill-Building Activities:
-- **Software Tools and Frameworks**:
-  - Learn to use RxInfer.jl and other software tools relevant to Active Inference, through the Math Group sessions and other educational programs offered by the Active Inference Institute[4].
-  - Participate in coding projects, such as those in the Symbolic cognitive robotics project, to gain practical experience in applying Active Inference in computational contexts[4].
+#### Skill-Building Activities
+- **Editorial and Communication Skills**:
+  - Use his editorial skills to contribute to the dissemination of Active Inference research and applications through blog posts, articles, or educational materials.
+  - Organize and participate in workshops or webinars to communicate complex Active Inference concepts to a broader audience.
 
-### Specific Resources
+### SPECIFIC RESOURCES
 
-#### Active Inference Institute Materials:
-- **Livestreams and Discussions**: Utilize the various livestream series like GuestStream, MathStream, and Insights[1].
-- **Textbook Group**: Join the Textbook Group project for comprehensive learning and application of Active Inference principles[4].
+#### Active Inference Institute Materials
+- **Textbook Group Materials**: Access the materials and resources provided by the Textbook Group (Parr, Pezzulo, Friston 2022) including RxInfer.jl usage[1].
+- **Livestreams and Discussions**: Engage with the various livestreams and discussion series hosted by the Active Inference Institute, such as the MathArtStream and Insights series[3].
 
-#### Academic Papers and Tutorials:
-- **"A tale of two densities: active inference is enactive inference"**: Study this article to understand the core constructs of Active Inference and its distinction from other Bayesian theories[2].
-- **Syllabus by Jared Tumiel**: Use this syllabus as a guide to understand the necessary background and map of the territory for Active Inference[5].
+#### Academic Papers and Tutorials
+- **"A tale of two densities: active inference is enactive inference"**: This article provides a detailed explanation of the central constructs of Active Inference[2].
+- **"Spinning Up in Active Inference and the Free Energy Principle"**: Use this syllabus as a guide to navigate the complex field of Active Inference and the Free Energy Principle[4].
 
-#### Software Tools and Frameworks:
-- **RxInfer.jl**: Learn and apply this software tool through the Math Group sessions and other educational programs[4].
-- **GitHub Repositories**: Engage with open-source projects like the Symbolic cognitive robotics project to gain practical experience[4].
+#### Software Tools and Frameworks
+- **RxInfer.jl**: Utilize this tool for better understanding and applicability of Active Inference textbook materials[1].
+- **Neuromatch Academy Resources**: Use these resources for computational neuroscience and deep learning content[4].
 
-#### Community Resources and Events:
-- **Active Inference Institute's Community Forum**: Engage actively in the community forums to discuss ideas, ask questions, and collaborate with other researchers[1].
-- **Upcoming Symposia and Workshops**: Attend events like the "Applied Active Inference Symposium" to network and stay updated[1].
+#### Community Resources and Events
+- **#sym-cog-robotics Discord Channel**: Engage with this community to stay updated on symbolic cognitive robotics and participate in discussions[1].
+- **Applied Active Inference Symposium**: Attend this symposium to learn from current research and applications of Active Inference[3].
 
-### Progress Tracking
+### PROGRESS TRACKING
 
-#### Milestones and Checkpoints:
-- **Monthly Review**: Set a monthly review to assess progress on current projects and learning objectives.
-- **Project Completion**: Track the completion of specific projects, such as the ontology integration or the application of Active Inference in Systems Memetics.
+#### Milestones and Checkpoints
+- **Monthly Review Meetings**: Schedule monthly review meetings with peers or mentors to discuss progress and address any challenges.
+- **Project Milestones**: Set specific milestones for projects, such as completing a draft of AI-assisted negotiation tools or publishing an article on the application of Active Inference.
 
-#### Self-Assessment Methods:
-- **Reflective Journaling**: Maintain a reflective journal to document learning progress, challenges faced, and insights gained.
-- **Peer Feedback**: Seek feedback from peers and collaborators on the projects and learning outcomes.
+#### Self-Assessment Methods
+- **Reflective Journaling**: Maintain a reflective journal to track understanding and application of Active Inference concepts.
+- **Peer Feedback**: Seek feedback from peers and mentors on project work and presentations to ensure continuous improvement.
 
-#### Practical Application Opportunities:
-- **Case Studies**: Conduct case studies in applying Active Inference to real-world problems in Systems Memetics and General Semantics.
-- **Community Presentations**: Present the findings and applications of Active Inference at community events or roundtable discussions to receive feedback and validation.
+#### Practical Application Opportunities
+- **Case Studies**: Apply Active Inference to real-world case studies, such as negotiation scenarios or cognitive robotics applications, to reinforce theoretical understanding.
+- **Workshops and Webinars**: Organize or participate in workshops and webinars to apply and disseminate knowledge on Active Inference.
 
-By following this structured learning plan, Dave Douglass can leverage his diverse background and current contributions to deepen his understanding of Active Inference, enhance his skills, and contribute meaningfully to the community.
+### Actionable Plan Summary
+
+#### Immediate Next Steps
+- Participate in the Applied Active Inference Symposium.
+- Review recent livestreams and foundational resources.
+- Engage with the #sym-cog-robotics Discord channel.
+
+#### Short-Term Goals
+- Master advanced mathematical and computational techniques through the Textbook Group materials and Neuromatch Academy resources.
+- Apply Active Inference to practical projects such as AI-assisted negotiation tools.
+- Engage in community activities like livestreams and discussions.
+
+#### Medium-Term Development
+- Explore advanced topics such as ontological integrations and interdisciplinary collaborations.
+- Develop and refine AI-assisted negotiation tools.
+- Enhance skill-building activities in editorial and communication skills.
+
+#### Specific Resources
+- Utilize Active Inference Institute materials, academic papers, software tools, and community resources.
+- Engage with the #sym-cog-robotics Discord channel and attend relevant symposia.
+
+#### Progress Tracking
+- Schedule monthly review meetings and set project milestones.
+- Use reflective journaling and peer feedback for self-assessment.
+- Apply Active Inference to real-world case studies and participate in workshops and webinars.

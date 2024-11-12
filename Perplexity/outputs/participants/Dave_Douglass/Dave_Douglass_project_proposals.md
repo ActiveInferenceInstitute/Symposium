@@ -1,106 +1,113 @@
 # Active Inference Project Proposals: Dave_Douglass
 
-Generated on: 2024-11-11 14:49:46
+Generated on: 2024-11-12 12:19:50
 
 ---
 
-### Proposal 1: Immediate, Smaller-Scope Project - Integrating Active Inference Ontology in Educational Materials
+### Proposal 1: Immediate, Smaller-Scope Project - Developing AI-Assisted Negotiation Tools Using Active Inference
 
-**1. What are you trying to do?**
-Articulate your objectives using absolutely no jargon:
-- Enhance the educational materials for Active Inference by integrating the recently developed ontological works into the Textbook Group project.
+#### 1. What are you trying to do?
+Create a basic AI-assisted negotiation tool that compares the efficacy of Active Inference with Reinforcement Learning in real-world negotiation scenarios.
 
-**2. How is it done today, and what are the limits of current practice?**
-- Currently, the Textbook Group project focuses on preparing and refining educational materials for Active Inference, but these materials may lack a comprehensive ontological framework. The limits include the absence of a unified ontological structure that can facilitate better understanding and application of Active Inference principles.
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, negotiation tools often rely on Reinforcement Learning, which can be limited by the need for extensive training data and the lack of a built-in mechanism for belief updating and precision weighting. Active Inference offers a promising alternative by incorporating Bayesian inference and free energy minimization, but it has not been widely applied in negotiation tools.
 
-**3. What is new in your approach and why do you think it will be successful?**
-- The new approach involves integrating the ontological works “Aligning Active Inference Ontology to SUMO” and “Aligning Spatial Web Terms to SUMO” into the educational materials. This integration will provide a structured and unified framework, making it easier for learners to understand and apply Active Inference. The success is anticipated because it leverages Dave Douglass's expertise in ontology and his involvement in the Textbook Group project.
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will integrate Active Inference into negotiation tools, leveraging its ability to update beliefs based on sensory precision and prior knowledge. This approach is new because it applies the theoretical foundations of Active Inference to a practical negotiation context, potentially enhancing the adaptability and efficiency of negotiation processes.
 
-**4. Who cares? If you succeed, what difference will it make?**
-- The success of this project will benefit the entire Active Inference community, particularly students and educators involved in the Textbook Group. It will enhance the clarity and coherence of the educational materials, facilitating a deeper understanding of Active Inference.
+#### 4. Who cares? If you succeed, what difference will it make?
+This project will benefit researchers and practitioners in the fields of AI, negotiation, and conflict resolution. Successful implementation could lead to more effective and adaptive negotiation tools, improving outcomes in various negotiation scenarios, from business to humanitarian contexts.
 
-**5. What are the risks?**
-- The primary risk is the complexity of integrating ontological frameworks into educational materials without making them overly technical or inaccessible to a broad audience.
+#### 5. What are the risks?
+- Technical risks: Integrating Active Inference with existing negotiation frameworks could be challenging.
+- Practical risks: The tool may not perform better than existing Reinforcement Learning-based tools in all scenarios.
+- Collaboration risks: Coordinating with other researchers and stakeholders might be time-consuming.
 
-**6. How much will it cost?**
-- This project is expected to be low-cost, as it primarily involves the time and effort of Dave Douglass and other participants in the Textbook Group. No additional funding is anticipated.
+#### 6. How much will it cost?
+This project will primarily require time and computational resources, which are likely available through the Active Inference Institute. No significant additional funding is expected.
 
-**7. How long will it take?**
-- The project is expected to take approximately 1-2 months, aligning with the upcoming cohort sessions of the Textbook Group.
+#### 7. How long will it take?
+- Initial development: 1-2 months
+- Testing and refinement: 1-2 months
+- Total duration: 2-4 months
 
-**8. What are the mid-term and final "check points" to see if you're on track?**
-- **Mid-term Check Point:** Review the integrated materials with a small group of learners to gather feedback on clarity and effectiveness.
-- **Final Check Point:** Assess the overall impact on the learning outcomes of the Textbook Group participants after the completion of the cohort.
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Mid-term Check Point**: Complete the initial integration of Active Inference into the negotiation tool and conduct preliminary tests (1 month).
+- **Final Check Point**: Conduct comprehensive testing, gather feedback, and refine the tool based on results (2 months).
 
-**Collaborators/Resources:**
-- Collaborate with Sanjeev Namjoshi and other participants in the Textbook Group.
-- Utilize the resources from the Active Inference Institute, including the ontological works and the Textbook Group project materials.
+**Potential Collaborators/Resources:**
+- Susan Hasty for her work on AI-assisted negotiation tools.
+- Active Inference Institute resources, including the Textbook Group materials and RxInfer.jl.
 
----
+### Proposal 2: Medium-Term, Moderate-Scope Project - Integrating Active Inference with Ontological Systems for Enhanced Knowledge Representation
 
-### Proposal 2: Medium-Term, Moderate-Scope Project - Applying Active Inference to Systems Memetics
+#### 1. What are you trying to do?
+Develop and apply an integrated framework that aligns Active Inference with ontological systems like SUMO (Suggested Upper Merged Ontology) to enhance knowledge representation and reasoning in complex domains.
 
-**1. What are you trying to do?**
-Articulate your objectives using absolutely no jargon:
-- Develop and apply Active Inference principles to the field of Systems Memetics, creating a framework that integrates ontological structures and case studies.
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, Active Inference is applied in various domains but often lacks a unified ontological framework. Ontological systems like SUMO provide a structured way of representing knowledge, but they do not inherently incorporate the dynamic belief updating of Active Inference. The current practice is limited by the lack of integration between these two approaches.
 
-**2. How is it done today, and what are the limits of current practice?**
-- Currently, Systems Memetics lacks a formal theoretical framework that incorporates the predictive and inferential aspects of Active Inference. The limits include the lack of a structured approach to understanding and modeling memetic systems.
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will integrate the belief updating and precision weighting mechanisms of Active Inference with the structured knowledge representation of ontological systems. This integration is new and promising because it combines the strengths of both approaches, enabling more robust and adaptive knowledge representation and reasoning.
 
-**3. What is new in your approach and why do you think it will be successful?**
-- The new approach involves applying the Active Inference Framework (AIF) to Systems Memetics, leveraging Bayesian inference and predictive coding to model how memes propagate and evolve. This integration will provide a more robust and predictive framework for understanding memetic systems. Success is anticipated due to Dave Douglass's background in machine translation and his experience with ontological works.
+#### 4. Who cares? If you succeed, what difference will it make?
+This project will benefit researchers and practitioners in AI, cognitive science, and knowledge representation. Successful integration could lead to more robust and adaptive knowledge systems, enhancing decision-making and reasoning in various complex domains.
 
-**4. Who cares? If you succeed, what difference will it make?**
-- The success of this project will benefit researchers and practitioners in the fields of Systems Memetics and General Semantics. It will provide a new theoretical tool for analyzing and predicting the behavior of memetic systems, enhancing our understanding of cultural and social dynamics.
+#### 5. What are the risks?
+- Technical risks: Integrating Active Inference with ontological systems could be complex.
+- Practical risks: The integrated framework may not perform better than existing systems in all scenarios.
+- Collaboration risks: Coordinating with ontologists and AI researchers might be challenging.
 
-**5. What are the risks?**
-- The primary risks include the complexity of integrating Active Inference with a new field and the potential resistance to new theoretical approaches within the existing community.
+#### 6. How much will it cost?
+This project may require some additional funding for software tools and potential collaborations, but it is largely dependent on existing resources and expertise within the Active Inference Institute.
 
-**6. How much will it cost?**
-- This project may require some funding for resources such as access to computational tools and potential collaboration with other researchers. However, the costs are expected to be moderate.
+#### 7. How long will it take?
+- Initial integration and testing: 3-4 months
+- Refinement and validation: 3-4 months
+- Total duration: 6-8 months
 
-**7. How long will it take?**
-- The project is expected to take approximately 3-6 months, allowing for the development of the framework, case studies, and initial validation.
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Mid-term Check Point**: Complete the initial integration of Active Inference with the ontological system and conduct preliminary tests (3 months).
+- **Final Check Point**: Conduct comprehensive testing, gather feedback, and refine the framework based on results (6 months).
 
-**8. What are the mid-term and final "check points" to see if you're on track?**
-- **Mid-term Check Point:** Present the initial framework and case studies to a peer group for feedback and validation.
-- **Final Check Point:** Publish a paper or present at a conference to disseminate the findings and gather broader feedback from the academic community.
+**Potential Collaborators/Resources:**
+- Dave Douglass’s previous work on “Aligning Active Inference Ontology to SUMO.”
+- Active Inference Institute resources, including the Ontology project.
+- Collaboration with ontologists and AI researchers.
 
-**Collaborators/Resources:**
-- Collaborate with researchers in Systems Memetics and General Semantics.
-- Utilize resources from the Active Inference Institute, including the Math Group sessions and the Symbolic cognitive robotics project for computational tools and methodologies.
+### Proposal 3: Ambitious, Longer-Term Project - Applying Active Inference to Collective Foraging and Social Negotiation in Real-World Scenarios
 
----
+#### 1. What are you trying to do?
+Develop and apply Active Inference models to real-world collective foraging and social negotiation scenarios, such as humanitarian crisis management, to improve decision-making and collective behavior.
 
-### Proposal 3: Ambitious, Longer-Term Project - Developing an Integrated Neuro-Bio-Social Model for Collective Behavior
+#### 2. How is it done today, and what are the limits of current practice?
+Currently, collective foraging and social negotiation in complex scenarios often rely on simplistic models that do not fully account for the dynamic and adaptive nature of human behavior. Active Inference offers a more comprehensive approach by incorporating Bayesian inference and free energy minimization, but it has not been widely applied in these contexts.
 
-**1. What are you trying to do?**
-Articulate your objectives using absolutely no jargon:
-- Develop an integrated neuro-bio-social model that applies Active Inference to understand collective behavior and social dynamics, incorporating insights from sociology, neuroscience, and cognitive science.
+#### 3. What is new in your approach and why do you think it will be successful?
+This project will apply Active Inference to model and predict collective behavior in real-world scenarios, leveraging its ability to update beliefs and precision weights dynamically. This approach is new because it integrates theoretical Active Inference models with practical applications in collective foraging and social negotiation, potentially enhancing decision-making and collective outcomes.
 
-**2. How is it done today, and what are the limits of current practice?**
-- Currently, models of collective behavior often lack a unified framework that integrates neurological, biological, and social aspects. The limits include the fragmented nature of current models, which do not fully capture the interdependencies between these domains.
+#### 4. Who cares? If you succeed, what difference will it make?
+This project will benefit researchers, policymakers, and practitioners in fields such as humanitarian aid, social sciences, and AI. Successful implementation could lead to more effective management of collective behavior in crisis scenarios, improving outcomes and saving lives.
 
-**3. What is new in your approach and why do you think it will be successful?**
-- The new approach involves using the Active Inference Framework (AIF) to develop a model that integrates predictive coding, Bayesian inference, and social dynamics. This model will provide a principled normative account of how brains interact within social contexts, enabling a more comprehensive understanding of collective behavior. Success is anticipated due to the interdisciplinary nature of the project, leveraging Dave Douglass's background in psychology, machine translation, and his experience with ontological works.
+#### 5. What are the risks?
+- Technical risks: Applying Active Inference to complex real-world scenarios could be challenging.
+- Practical risks: The models may not perform better than existing approaches in all scenarios.
+- Collaboration risks: Coordinating with stakeholders from various fields might be time-consuming and challenging.
 
-**4. Who cares? If you succeed, what difference will it make?**
-- The success of this project will have significant implications for fields such as sociology, neuroscience, and cognitive science. It will provide a new paradigm for understanding collective behavior, which can be applied in various areas like social policy, education, and public health.
+#### 6. How much will it cost?
+This project will likely require significant funding for data collection, software development, and collaborations with various stakeholders.
 
-**5. What are the risks?**
-- The primary risks include the complexity of integrating multiple disciplines, the need for significant interdisciplinary collaboration, and the potential resistance to new theoretical approaches.
+#### 7. How long will it take?
+- Initial model development and testing: 6-9 months
+- Field testing and validation: 9-12 months
+- Total duration: 15-21 months
 
-**6. How much will it cost?**
-- This project is expected to require substantial funding to support the interdisciplinary research team, computational resources, and potential field studies.
+#### 8. What are the mid-term and final "check points" to see if you're on track?
+- **Mid-term Check Point**: Complete the initial model development and conduct preliminary field tests (6 months).
+- **Final Check Point**: Conduct comprehensive field testing, gather feedback, and refine the models based on results (15 months).
 
-**7. How long will it take?**
-- The project is expected to take approximately 1-2 years, allowing for the development of the model, data collection, validation, and dissemination of findings.
-
-**8. What are the mid-term and final "check points" to see if you're on track?**
-- **Mid-term Check Point:** Present the initial model and preliminary findings at a major conference to gather feedback from the broader academic community.
-- **Final Check Point:** Publish a comprehensive paper or book detailing the model, its applications, and the empirical evidence supporting it.
-
-**Collaborators/Resources:**
-- Collaborate with researchers from sociology, neuroscience, and cognitive science.
-- Utilize resources from the Active Inference Institute, including the Math Group sessions, the Symbolic cognitive robotics project, and other interdisciplinary initiatives.
-- Engage with projects like the “Active Agents: An Active Inference Approach to Agent-Based Modeling in the Social Sciences” for methodological support and validation[1][2].
+**Potential Collaborators/Resources:**
+- Susan Hasty for her work on negotiation affordances.
+- Active Inference Institute resources, including the Action Research on Collective Foraging project.
+- Collaboration with humanitarian organizations, policymakers, and researchers from social sciences and AI.
+- Funding opportunities through ARPA-H or similar programs focused on advanced analysis and collective behavior[3].

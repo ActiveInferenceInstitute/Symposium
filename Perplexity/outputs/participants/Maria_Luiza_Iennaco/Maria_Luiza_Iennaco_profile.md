@@ -1,52 +1,56 @@
 # Research Profile: Maria Luiza Iennaco
 
-Generated on: 2024-11-11 13:14:05
+Generated on: 2024-11-12 11:19:30
 
 ---
 
 ### Background Analysis: Expertise and Experience
 
-Maria Luiza Iennaco has a diverse academic and professional background that sets a strong foundation for her work in Active Inference. Here are the key points:
+Maria Luiza Iennaco has a diverse and interdisciplinary background that is well-suited for her current research focus on Active Inference.
 
-- **Academic Formation**: Iennaco has a background in psychology, having worked as a CBT (Cognitive Behavioral Therapy) therapist. This experience likely provides her with a practical understanding of cognitive processes and behavioral theories.
-- **Master’s in Philosophy**: Her master’s research focused on the interrelation between the Multiple Drafts Model and Predictive Processing for consciousness studies. This indicates a deep interest in theoretical frameworks related to cognitive science and philosophy of mind.
-- **PhD Project**: Currently, she is pursuing a PhD in philosophy at the University of São Paulo, with a specific focus on conceptualizing attention through the lens of Active Inference[1][2][4].
+- **Educational Background**: She holds a bachelor's degree in Psychology from the Federal University of Juiz de Fora and a master's degree in Philosophy of Cognitive Sciences from the University of São Paulo. She is currently a PhD student in the same field at the University of São Paulo[2][4].
+- **Professional Experience**: Iennaco has experience as a Cognitive-Behavioral Therapy (CBT) therapist, research assistant, and has held various roles in education, marketing, and human resources. Her research experience includes working on projects related to smoking cessation, computerized interventions, and philosophical models of consciousness[2].
+- **Affiliations**: She is a member of the Active Inference Institute and has been involved in several research assistant roles, including at the Active Inference Lab[2][4].
 
-While her background is rich in theoretical and practical aspects of psychology and philosophy, it is important to note that her mathematical expertise, a crucial component of Active Inference, is an area she acknowledges needing to develop further.
+While her background in psychology and philosophy provides a strong foundation for understanding the theoretical aspects of Active Inference, her lack of extensive mathematical training is acknowledged as a limitation.
 
 ### Active Inference Journey: Current Understanding and Application Stage
 
-Iennaco is actively engaged in the study and application of Active Inference, particularly in the context of attention:
+Iennaco's journey with Active Inference is marked by a deep philosophical engagement with the framework.
 
-- **Current Understanding**: Her PhD project involves the conceptualization of attention using Active Inference terms, which suggests she has a solid philosophical understanding of the framework. However, she acknowledges that her understanding is limited by her lack of mathematical expertise.
-- **Application Stage**: She aims to apply scale-free Active Inference to describe attention, encompassing multiple processes and mechanisms. This is both a philosophical and potentially empirical endeavor, depending on the availability of collaborators.
+- **Current Understanding**: Her master's work focused on the interrelation between Dennett's Multiple Drafts Model and Predictive Processing, which laid the groundwork for her current PhD project. She is now exploring the role of attention in perception and consciousness using Active Inference, which she sees as an extension of Predictive Processing[4].
+- **Application Stage**: Iennaco aims to apply scale-free Active Inference to provide a robust description of attention, encompassing multiple processes and mechanisms. While her approach is primarily philosophical, she expresses an interest in potential empirical applications if she finds suitable collaborators[4].
+
+Her current stage is characterized by a strong theoretical grasp but a recognition of the need for deeper mathematical understanding to fully engage with the empirical aspects of Active Inference.
 
 ### Learning Path: Specific Needs and Potential Resources
 
-Given Iennaco's self-identified challenges and learning needs, here are some key points:
+Iennaco identifies several learning needs to advance her work in Active Inference:
 
-- **Mathematical Foundations**: The primary learning need is to acquire a stronger grasp of the mathematical underpinnings of Active Inference. This could involve dedicated time to study and simulate basic models of Active Inference.
-- **Resources**: Potential resources include:
-  - Attending workshops or symposia focused on Active Inference, such as the Applied Active Inference Symposium[3].
-  - Engaging with online courses or tutorials that cover the mathematical aspects of Active Inference.
-  - Collaborating with researchers who have a stronger mathematical background to complement her philosophical insights.
+- **Mathematical Training**: The primary challenge she faces is the lack of mathematical knowledge, which she acknowledges is necessary for a complete understanding of Active Inference. Setting aside time to learn and simulate Active Inference basic models is her stated goal[4].
+- **Resources**: To address this, she could benefit from resources such as:
+  - Mathematical courses or workshops focused on variational inference and free energy principles.
+  - Collaborations with researchers who have a strong mathematical background in Active Inference.
+  - Utilizing online resources, such as tutorials and research papers, that provide a mathematical introduction to Active Inference[5].
 
 ### Collaboration Potential: Possible Synergies with Other Participants/Presenters
 
-Iennaco's interdisciplinary background and current research focus position her well for collaborations:
+Iennaco's interdisciplinary background and current research focus make her a valuable potential collaborator.
 
-- **Interdisciplinary Collaborations**: Her work at the intersection of philosophy and psychology can benefit from collaborations with researchers from neuroscience, computer science, and mathematics. This could enhance the empirical and mathematical aspects of her research.
-- **Network and Community**: Participating in symposia and conferences related to Active Inference, such as those organized by the Active Inference Lab, can help her connect with other researchers and expand her network[3].
+- **Synergies**: Her work on attention and consciousness using Active Inference could align well with researchers from neuroscience, philosophy, and cognitive science. Collaborations could enhance her mathematical understanding and provide empirical validation for her philosophical interpretations.
+- **Potential Collaborators**: Researchers like Beren Millidge, Alexander Tschantz, Anil K Seth, and Christopher L Buckley, who have published work on the theoretical and mathematical aspects of Active Inference, could be valuable collaborators[5].
 
 ### Challenges & Opportunities: Personal and Field-Wide Perspectives
 
 #### Personal Challenges
-- **Mathematical Expertise**: The most significant personal challenge is overcoming the lack of mathematical skills necessary for a comprehensive understanding of Active Inference. Addressing this gap will be crucial for her research.
-- **Interdisciplinarity**: Balancing the need for interdisciplinary approaches while avoiding specialization in a single area is another challenge she faces.
+
+- **Mathematical Knowledge**: The most significant personal challenge Iennaco faces is acquiring the necessary mathematical skills to fully engage with Active Inference.
+- **Interdisciplinarity**: Maintaining an interdisciplinary approach without specializing too narrowly is another challenge she highlights[4].
 
 #### Field-Wide Challenges and Opportunities
-- **Interdisciplinarity**: The field of Active Inference is inherently interdisciplinary, requiring integration of insights from psychology, neuroscience, philosophy, and mathematics. This presents both challenges and opportunities for comprehensive understanding and innovation[5].
-- **Empirical and Theoretical Integration**: There is a continuous need to integrate empirical findings with theoretical models, which Iennaco’s work aims to address by applying scale-free Active Inference to attention studies.
-- **Community and Resources**: The growth of the Active Inference community, along with increasing resources and collaborations, offers opportunities for researchers like Iennaco to leverage collective knowledge and advance the field.
 
-In summary, Maria Luiza Iennaco has a strong foundation in the philosophical and psychological aspects of Active Inference, but faces the challenge of enhancing her mathematical skills. Her interdisciplinary approach and engagement with the Active Inference community position her well for meaningful collaborations and contributions to the field.
+- **Interdisciplinary Integration**: One of the broader challenges in the field of Active Inference is integrating insights from multiple disciplines (e.g., neuroscience, philosophy, mathematics) without losing focus on the core principles of the framework.
+- **Empirical Validation**: There is an opportunity for empirical studies to validate the philosophical and theoretical models of Active Inference, which could be facilitated by collaborations between theorists and empiricists.
+- **Cross-Disciplinary Synergies**: The field stands to benefit from synergies between different research groups and disciplines, which can help in overcoming the challenges of interdisciplinarity and in developing more comprehensive models of cognition and behavior[1][5].
+
+In summary, Maria Luiza Iennaco's profile reflects a strong theoretical foundation in Active Inference, with clear personal and field-wide challenges and opportunities. Addressing the mathematical gap and fostering interdisciplinary collaborations are key steps for her and the broader community to advance in this field.

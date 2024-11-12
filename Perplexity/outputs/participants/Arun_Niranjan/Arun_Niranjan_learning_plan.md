@@ -1,6 +1,6 @@
 # Active Inference Learning Plan: Arun_Niranjan
 
-Generated on: 2024-11-11 13:25:39
+Generated on: 2024-11-12 11:42:00
 
 ---
 
@@ -9,100 +9,111 @@ Generated on: 2024-11-11 13:25:39
 #### IMMEDIATE NEXT STEPS (1-2 weeks)
 
 **Specific Resources to Start With:**
-- **pymdp Documentation and Tutorials**: Review the latest documentation and tutorials for the `pymdp` library to ensure you are up-to-date with all the features and updates[3][5].
-- **Active Inference Basics**: Refresh your understanding of the foundational concepts of active inference, including Bayesian inference, partially-observable Markov Decision Processes (POMDPs), and the integration of perception, action, and learning. A good starting point is the pymdp documentation and associated research papers[3][5].
+- **pymdp Documentation and Tutorials**: Start by reviewing the latest documentation and tutorials provided by the `pymdp` library. This will ensure you are updated with the latest features and best practices[2][5].
+  - Link: [pymdp Documentation](https://github.com/arun-niranjan/infer-actively/pymdp)
+- **Key Academic Papers**: Read recent papers by Karl Friston and other key figures in the field to deepen your understanding of the theoretical foundations of active inference.
+  - Suggested Papers:
+    - Friston, K., et al. (2012). "Active inference and agency: optimal control of non-conservative systems." *Biological Cybernetics*, 106(8), 411-426.
+    - Friston, K. (2010). "The free-energy principle: a unified brain theory?" *Nature Reviews Neuroscience*, 11(2), 127-138.
 
 **Initial Learning Objectives:**
-- Understand the latest updates and features in the `pymdp` library.
-- Reinforce the basics of active inference and its application in discrete state spaces.
+- Refresh understanding of the theoretical foundations of active inference.
+- Familiarize yourself with the latest updates and features in the `pymdp` library.
 
 **Concrete Actions to Take:**
-- Go through the `pymdp-cookbook` repository on GitHub to update your examples and ensure they reflect the latest library features.
-- Read key papers such as "Active inference is an account of cognition and behavior in complex systems" to reinforce your understanding of the theoretical underpinnings[5].
+- Complete the tutorials in the `pymdp-cookbook` repository to ensure proficiency in setting up and running active inference models.
+- Implement a simple active inference model using `pymdp` to reinforce your understanding.
 
 #### SHORT-TERM GOALS (1-3 months)
 
 **Key Concepts to Master:**
-- **Advanced POMDPs**: Delve deeper into advanced POMDP models, including stochastic dynamics approximation with conditional variational inference[2].
-- **Integration with Reinforcement Learning**: Study the intersection of planning and learning, particularly model-based reinforcement learning and its combination with active inference[2].
+- **Advanced POMDP Models**: Delve deeper into complex POMDP models, including those with stochastic dynamics and continuous action spaces.
+- **Integration with Deep Learning**: Explore how to integrate active inference with deep learning methods, such as using neural networks for dynamics model learning[1].
 
 **Practical Exercises or Projects:**
-- **Simulate Complex Scenarios**: Use `pymdp` to simulate complex scenarios involving multi-modal transitions and continuous action spaces, as described in the TU Delft dissertation on the intersection of planning and learning[2].
-- **Integrate with Reinforcement Learning**: Implement examples where active inference is used to aid task specification in sequential decision-making problems, such as those outlined in the UT Austin research[1].
+- **Stochastic Dynamics Model Learning**: Implement a project that involves learning stochastic dynamics models using neural networks, as described in the dissertation on the intersection of planning and learning[1].
+  - Resource: [The Intersection of Planning and Learning](https://pure.tudelft.nl/ws/portalfiles/portal/87263090/Moerland_Intersection_of_Planning_and_Learning.pdf)
+- **Active Inference in Continuous Action Spaces**: Extend your current work to handle continuous action spaces, using approaches similar to those described in the AlphaZero extension[1].
 
 **Recommended Study Materials:**
-- **TU Delft Dissertation**: Read the dissertation on "The Intersection of Planning and Learning" to get a comprehensive view of how planning and learning can be combined[2].
-- **UT Austin Research Papers**: Study papers from the UT Austin machine learning research group, particularly those related to natural language feedback in reinforcement learning and task specification[1].
+- **Books and Chapters**:
+  - "Active Inference: The Free Energy Principle in Action" by Karl Friston.
+  - Chapters on model-based reinforcement learning and planning from the dissertation mentioned above[1].
+- **Workshops and Webinars**: Participate in workshops or webinars focused on active inference, such as those organized by the Active Inference Institute or similar research groups.
 
 **Community Engagement Opportunities:**
-- **Attend Workshops and Conferences**: Look for upcoming workshops and conferences on active inference, reinforcement learning, and cognitive neuroscience. Participate in events like the Conference on Robot Learning (CoRL) or the Annual Conference of the Association for Computational Linguistics (ACL)[1][2].
-- **Engage on Forums**: Join forums and discussion groups related to active inference, such as those on GitHub or research community platforms, to stay updated and share knowledge.
+- **Join Active Inference Communities**: Engage with online forums, GitHub discussions, and research groups focused on active inference.
+  - Link: [Active Inference GitHub Community](https://github.com/arun-niranjan/infer-actively/pymdp/issues)
 
 #### MEDIUM-TERM DEVELOPMENT (3-6 months)
 
 **Advanced Topics to Explore:**
-- **Control Theory Applications**: Explore how active inference is applied in control theory, including the work by Baioumy et al. and Baltieri & Buckley[5].
-- **Cognitive Neuroscience and Psychopathology**: Study the applications of active inference in cognitive neuroscience and psychopathology, such as the work by Montague et al. and Smith et al.[5].
+- **Social Cognition and Active Inference**: Investigate the application of active inference in social cognition, including modeling decision-making in social contexts[5].
+- **Real-World Engineering Applications**: Explore how active inference can be applied to real-world engineering problems, such as control theory and robotics[5].
 
 **Potential Collaboration Opportunities:**
-- **Collaborate with Cognitive Neuroscientists**: Reach out to researchers in cognitive neuroscience to collaborate on projects that model human or animal behavior using active inference.
-- **Work with Control Theorists**: Collaborate with control theorists to integrate active inference into real-world engineering problems.
+- **Cross-Disciplinary Research Projects**: Collaborate with researchers from cognitive neuroscience, psychology, and engineering to apply active inference in diverse domains.
+  - Potential Collaborators: Researchers from UCL Centre For Advanced Biomedical Imaging, UT Austin AI Lab, etc.
 
 **Application Projects in Their Domain:**
-- **Real-World Engineering Applications**: Apply active inference to real-world engineering problems, such as those involving complex system control or decision-making under uncertainty.
-- **Social Cognition Projects**: Explore projects in social cognition, leveraging active inference to model social interactions and behaviors.
+- **Biomedical Imaging and Active Inference**: Develop projects that integrate active inference with biomedical imaging, such as modeling decision-making processes in medical diagnosis.
+  - Resource: [UCL Centre For Advanced Biomedical Imaging](https://www.ucl.ac.uk/biomedical-imaging)
 
 **Skill-Building Activities:**
-- **Advanced Coding Skills**: Enhance your coding skills by contributing to or creating new features in the `pymdp` library.
-- **Interdisciplinary Research**: Engage in interdisciplinary research projects that combine active inference with other computational approaches like deep learning.
+- **Customizing pymdp for Specific Domains**: Learn to customize the `pymdp` library for specific application domains, such as social cognition or biomedical imaging.
+  - Link: [Customizing pymdp](https://github.com/arun-niranjan/infer-actively/pymdp#customizing-pymdp)
 
 #### SPECIFIC RESOURCES
 
-**Active Inference Institute Materials:**
-- **pymdp Library**: Utilize the `pymdp` library and its associated documentation and tutorials[3][5].
-
-**Academic Papers and Tutorials:**
-- **TU Delft Dissertation**: "The Intersection of Planning and Learning"[2].
-- **UT Austin Research Papers**: Papers on natural language feedback in reinforcement learning and task specification[1].
-- **Active Inference Papers**: Papers by Friston et al. and other key researchers in the field[5].
-
-**Software Tools and Frameworks:**
-- **pymdp**: The Python library for active inference in discrete state spaces[3][5].
-- **OpenAIGym**: Use the OpenAIGym framework for integrating active inference agents with external environments[3].
-
-**Community Resources and Events:**
-- **GitHub Forums**: Engage with the community through GitHub forums related to `pymdp` and active inference.
-- **Conferences and Workshops**: Attend conferences like CoRL and ACL, and workshops on active inference and related fields[1][2].
+- **Active Inference Institute Materials**:
+  - [Active Inference Tutorials](https://github.com/arun-niranjan/infer-actively/pymdp#tutorials)
+- **Academic Papers and Tutorials**:
+  - Friston, K., et al. (2012). "Active inference and agency: optimal control of non-conservative systems."
+  - [pymdp Documentation](https://github.com/arun-niranjan/infer-actively/pymdp)
+- **Software Tools and Frameworks**:
+  - `pymdp` library
+  - DEM toolbox within SPM in MATLAB for comparison and advanced modeling[5]
+- **Community Resources and Events**:
+  - Active Inference GitHub Community
+  - Workshops and conferences on active inference and related fields
 
 #### PROGRESS TRACKING
 
 **Milestones and Checkpoints:**
-- **Weekly Review**: Set aside time each week to review progress on current projects and learning objectives.
-- **Monthly Goals**: Establish monthly goals that align with the short-term and medium-term objectives outlined above.
+- **Weekly Progress Meetings**: Hold weekly meetings to review progress, discuss challenges, and set new goals.
+- **Monthly Project Reviews**: Conduct monthly reviews of ongoing projects to assess progress and adjust the learning plan as necessary.
 
 **Self-Assessment Methods:**
-- **Project Outcomes**: Evaluate the success of projects implemented using `pymdp` and active inference.
-- **Peer Feedback**: Seek feedback from peers and collaborators on your projects and contributions to the `pymdp` library.
+- **Reflective Journaling**: Maintain a reflective journal to track your understanding and application of active inference concepts.
+- **Peer Review**: Engage in peer review of your projects and code with other researchers in the community.
 
 **Practical Application Opportunities:**
-- **Real-World Projects**: Apply active inference to real-world problems, both in engineering and in cognitive neuroscience or psychopathology.
-- **Community Contributions**: Contribute to the `pymdp-cookbook` and other community resources to ensure practical applications are well-documented.
+- **Real-World Projects**: Apply active inference to real-world problems in your domain of expertise, such as biomedical imaging or cognitive neuroscience.
+  - Example Project: Developing an active inference model to predict patient behavior in medical diagnosis scenarios.
 
-### Actionable Plan
+### Actionable Plan Summary
 
-#### Week 1-2:
-- **Review pymdp Documentation**: Go through the latest `pymdp` documentation and tutorials.
-- **Refresh Active Inference Basics**: Read key papers on the foundational concepts of active inference.
+#### Immediate Next Steps
+- Review `pymdp` documentation and complete tutorials.
+- Read key academic papers on active inference.
 
-#### Month 1-3:
-- **Simulate Complex Scenarios**: Use `pymdp` to simulate scenarios involving multi-modal transitions and continuous action spaces.
-- **Integrate with Reinforcement Learning**: Implement examples where active inference aids task specification in sequential decision-making problems.
-- **Attend Workshops/Conferences**: Look for and attend relevant workshops and conferences.
+#### Short-Term Goals
+- Master advanced POMDP models and integrate active inference with deep learning.
+- Implement projects on stochastic dynamics model learning and continuous action spaces.
+- Engage with the active inference community through forums and workshops.
 
-#### Month 4-6:
-- **Explore Control Theory Applications**: Study how active inference is applied in control theory.
-- **Collaborate on Interdisciplinary Projects**: Reach out to researchers in cognitive neuroscience and control theory for collaboration.
-- **Apply to Real-World Engineering Problems**: Use active inference in real-world engineering projects.
-- **Contribute to Community Resources**: Update the `pymdp-cookbook` with new examples and best practices.
+#### Medium-Term Development
+- Explore social cognition and real-world engineering applications.
+- Collaborate on cross-disciplinary research projects.
+- Customize `pymdp` for specific domains and develop application projects in biomedical imaging.
 
-By following this structured plan, Arun Niranjan can deepen his understanding of active inference, stay updated with the latest developments, and contribute meaningfully to the community while applying these concepts to real-world problems.
+#### Specific Resources
+- Utilize `pymdp` documentation, academic papers, and community resources.
+- Engage with workshops and conferences.
+
+#### Progress Tracking
+- Conduct weekly progress meetings and monthly project reviews.
+- Use reflective journaling and peer review for self-assessment.
+- Apply active inference to real-world projects in your domain.
+
+By following this structured learning plan, Arun Niranjan can deepen his understanding of active inference, expand his skills in advanced applications, and contribute meaningfully to the field through collaborations and innovative projects.
