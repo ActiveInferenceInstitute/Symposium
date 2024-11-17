@@ -1,0 +1,94 @@
+# Hypotheses and Claims Ontology (HYCL)
+# =====================================
+
+@prefix hycl: <http://purl.org/petapico/o/hycl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+
+
+# Semi-formal and Informal Statements
+# -----------------------------------
+
+hycl:Statement rdf:type rdfs:Class .
+hycl:Formula rdfs:subClassOf hycl:Statement .
+hycl:Formula rdfs:subClassOf rdfg:Graph .
+hycl:Sentence rdfs:subClassOf hycl:Statement .
+hycl:AIDA-Sentence rdfs:subClassOf hycl:Sentence .
+
+
+# Relations among Statements
+# --------------------------
+
+hycl:hasInconsistentMeaning rdfs:subClassOf hycl:Statement .
+
+hycl:hasTautologicalMeaning rdfs:subClassOf hycl:Statement .
+
+hycl:hasSameMeaning rdf:type rdf:Property .
+hycl:hasSameMeaning rdfs:domain hycl:Statement .
+hycl:hasSameMeaning rdfs:range hycl:Statement .
+
+hycl:hasDifferentMeaning rdf:type rdf:Property .
+hycl:hasDifferentMeaning rdfs:domain hycl:Statement .
+hycl:hasDifferentMeaning rdfs:range hycl:Statement .
+
+hycl:hasOppositeMeaning rdf:type rdf:Property .
+hycl:hasOppositeMeaning rdfs:domain hycl:Statement .
+hycl:hasOppositeMeaning rdfs:range hycl:Statement .
+
+hycl:hasNonoppositeMeaning rdf:type rdf:Property .
+hycl:hasNonoppositeMeaning rdfs:domain hycl:Statement .
+hycl:hasNonoppositeMeaning rdfs:range hycl:Statement .
+
+hycl:hasConflictingMeaning rdf:type rdf:Property .
+hycl:hasConflictingMeaning rdfs:domain hycl:Statement .
+hycl:hasConflictingMeaning rdfs:range hycl:Statement .
+
+hycl:hasConsistentMeaning rdf:type rdf:Property .
+hycl:hasConsistentMeaning rdfs:domain hycl:Statement .
+hycl:hasConsistentMeaning rdfs:range hycl:Statement .
+
+hycl:hasMoreGeneralMeaningThan rdf:type rdf:Property .
+hycl:hasMoreGeneralMeaningThan rdfs:domain hycl:Statement .
+hycl:hasMoreGeneralMeaningThan rdfs:range hycl:Statement .
+
+hycl:hasMoreSpecificMeaningThan rdf:type rdf:Property .
+hycl:hasMoreSpecificMeaningThan rdfs:domain hycl:Statement .
+hycl:hasMoreSpecificMeaningThan rdfs:range hycl:Statement .
+
+hycl:hasRelatedMeaning rdf:type rdf:Property .
+hycl:hasRelatedMeaning rdfs:domain hycl:Statement .
+hycl:hasRelatedMeaning rdfs:range hycl:Statement .
+
+hycl:hasUnrelatedMeaning rdf:type rdf:Property .
+hycl:hasUnrelatedMeaning rdfs:domain hycl:Statement .
+hycl:hasUnrelatedMeaning rdfs:range hycl:Statement .
+
+hycl:isImprovedVersionOf rdfs:subPropertyOf hycl:hasSameMeaning .
+hycl:isImprovedVersionOf rdfs:domain hycl:Statement .
+hycl:isImprovedVersionOf rdfs:range hycl:Statement .
+
+
+# Relations between Works/People and Statements
+# ---------------------------------------------
+
+hycl:claims rdf:type rdf:Property .
+hycl:claims rdfs:range hycl:Statement .
+
+hycl:discusses rdf:type rdf:Property .
+hycl:discusses rdfs:range hycl:Statement .
+
+hycl:hypothesizes rdf:type rdf:Property .
+hycl:hypothesizes rdfs:range hycl:Statement .
+
+hycl:investigates rdf:type rdf:Property .
+hycl:investigates rdfs:range hycl:Statement .
+
+hycl:refutes rdf:type rdf:Property .
+hycl:refutes rdfs:range hycl:Statement .
+
+hycl:reviews rdf:type rdf:Property .
+hycl:reviews rdfs:range hycl:Statement .
