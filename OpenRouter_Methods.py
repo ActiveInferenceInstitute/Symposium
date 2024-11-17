@@ -56,7 +56,7 @@ def get_openrouter_response_with_retry(client, prompt: str,
     while retries < max_retries:
         try:
             response = client.chat.completions.create(
-                model="google/gemini-flash-1.5-exp",
+                model="google/gemini-pro-1.5-exp",
                 messages=[{"role": "user", "content": prompt}]
             )
 
@@ -75,6 +75,10 @@ def get_openrouter_response_with_retry(client, prompt: str,
                 time.sleep(retry_delay)
             else:
                 logging.error(f"Unexpected error: {e}")
+                if '400' in str(e):
+                    logging.error("Request details for debugging:")
+                    logging.error(f"Prompt length: {len(prompt)}")
+                    logging.error(f"First 100 chars of prompt: {prompt[:100]}...")
 
         retries += 1
         time.sleep(retry_delay)
@@ -124,3 +128,4 @@ def save_json_report(content: str, filepath: Path, metadata: dict):
     except Exception as e:
         logging.error(f"Error saving JSON report: {e}")
         raise
+
