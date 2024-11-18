@@ -1,6 +1,6 @@
 # IdeaSHIFT: Transformative Research Domain Shifting for Next-Gen Scientific Idea Generation
 
-**IdeaSHIFT** is a platform designed to facilitate the massive exploration and combination of ideas across disciplines. By analyzing researchers' profiles and publications, IdeaSHIFT generates research roadmaps, and novel project concepts aimed at pushing the boundaries of conventional research. Leveraging a domain-shifting approach, IdeaSHIFT systematically explores combinations of ideas from different fields, enabling the discovery of new, high-impact research directions.
+**IdeaSHIFT** is a platform designed to facilitate the massive exploration and combination of ideas across disciplines. By analyzing researchers' profiles and publications, IdeaSHIFT generates research profiles in relation to a given field with a trajectory and contributions to the field, open questions and concepts aimed at pushing the boundaries of conventional research. IdeaSHIFT systematically explores combinations of ideas from different fields by leveraging a domain-shifting approach of the given research field, enabling the discovery of new, high-impact research directions that can be presented in  a form of detailed projects.
 
 This project originated during the preparation of two events:
 1. [SoftComp Workshop on Intelligent Soft Matter](https://softmat.net/intelligent-soft-matter/)
@@ -9,7 +9,6 @@ This project originated during the preparation of two events:
 ## Background: A Shift in Scientific Publishing and Evaluation
 
 The academic publishing system, based largely on descriptive texts, bibliometrics and journal reputation, has remained largely unchanged for decades. The rise of LLMs only underscores the inadequacies of this system. There is an urgent need to rethink research sense-making and reintegrate creativity back into scientific progress. IdeaSHIFT was developed to address this need for a more dynamic and open-ended approach, enabling researchers to systematically explore, combine, and prioritize ideas that may be unconventional or unfeasible but carry transformative potential.
-
 
 ## Core Functionalities
 
