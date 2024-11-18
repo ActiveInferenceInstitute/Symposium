@@ -58,8 +58,8 @@ Please create a detailed, structured learning plan that includes:
    - Skill-building activities
 
 4. SPECIFIC RESOURCES:
-   - Active Inference Institute materials
-   - Academic papers and tutorials
+   - Active Inference materials, from Active Inference Institute and others
+   - Relevant Academic papers and tutorials
    - Software tools and frameworks
    - Community resources and events
    - Domain-specific applications
