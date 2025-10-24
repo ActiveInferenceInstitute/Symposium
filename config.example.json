@@ -1,0 +1,26 @@
+{
+  "api": {
+    "provider": "perplexity",
+    "perplexity": {
+      "model": "sonar",
+      "temperature": 0.7,
+      "max_tokens": 2000
+    },
+    "openrouter": {
+      "model": "tngtech/deepseek-r1t2-chimera:free",
+      "temperature": 0.7,
+      "max_tokens": 2000,
+      "max_retries": 5
+    }
+  },
+  "data": {
+    "max_rows_per_file": 10,
+    "max_prompt_tokens": 12000
+  },
+  "paths": {
+    "data_dir": "data",
+    "inputs_dir": "data/inputs",
+    "outputs_dir": "outputs",
+    "catechisms_dir": "data/catechisms"
+  }
+}

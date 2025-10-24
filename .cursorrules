@@ -1,0 +1,173 @@
+# Symposium Package Development Rules
+
+## Overview
+These rules ensure consistent, high-quality development of the Symposium package for Active Inference research analysis and project generation.
+
+## Code Standards
+
+### Python Style
+- **PEP 8**: Follow Python style guidelines
+- **Type Hints**: Use typing module for all functions
+- **Docstrings**: Google-style docstrings for all public functions
+- **Imports**: Group standard library, third-party, local imports
+- **Naming**: snake_case for functions/variables, PascalCase for classes
+
+### File Organization
+- **Modules**: One class per file, related functions grouped
+- **Tests**: Mirror source structure in tests/
+- **Documentation**: README.md and AGENTS.md in every analysis level
+- **Data**: Organized in data/ with clear hierarchy
+
+### Documentation Requirements
+- **README.md**: Overview, usage, integration in every module
+- **AGENTS.md**: AI agents and their roles in every analysis level
+- **Docstrings**: Complete parameter and return documentation
+- **Comments**: Complex logic explained, TODO/FIXME tracked
+
+## Development Workflow
+
+### Testing Standards
+- **Unit Tests**: All functions have corresponding tests
+- **Integration Tests**: End-to-end workflow validation
+- **Real API Tests**: Live LLM provider testing (optional)
+- **Coverage**: > 90% overall, > 95% critical paths
+- **Mocking**: Realistic test data, comprehensive edge cases
+
+### Code Review
+- **Functionality**: All features work as specified
+- **Error Handling**: Graceful degradation, user-friendly messages
+- **Performance**: Efficient algorithms, memory optimization
+- **Security**: Input validation, safe file operations
+- **Documentation**: Complete and accurate
+
+## LLM Integration
+
+### API Standards
+- **Providers**: Perplexity (sonar), OpenRouter (claude-3.5-sonnet)
+- **Configuration**: Environment variables with JSON file override
+- **Error Handling**: Retry logic, graceful fallbacks
+- **Rate Limiting**: Respect API limits, exponential backoff
+- **Token Management**: Accurate counting, truncation strategies
+
+### Output Standards
+- **Markdown**: Structured, readable research profiles
+- **JSON**: Metadata-rich, machine-readable data
+- **Dual Format**: Both human and machine readable outputs
+- **Validation**: Content quality, completeness verification
+
+## Data Management
+
+### File Standards
+- **CSV**: UTF-8, proper headers, validated structure
+- **JSON**: Valid syntax, consistent schema, secure content
+- **Markdown**: Clean formatting, consistent structure
+- **Directory**: Organized hierarchy, clear naming conventions
+
+### Security Standards
+- **Path Validation**: All paths checked for directory traversal
+- **Input Sanitization**: All user input validated and cleaned
+- **File Permissions**: Appropriate permissions set
+- **Backup Integrity**: Regular backups with verification
+
+## Quality Gates
+
+### Code Quality
+- **Linting**: No style violations, clean code
+- **Type Checking**: No type errors, complete annotations
+- **Security Scanning**: No vulnerabilities, safe operations
+- **Performance**: Benchmarks met, efficient execution
+
+### Testing Quality
+- **Coverage**: Minimum thresholds met
+- **Reliability**: Tests pass consistently
+- **Speed**: Fast execution, parallel where possible
+- **Maintenance**: Clear, documented test structure
+
+## Package Structure
+
+### Core Modules (Required Documentation)
+```
+src/symposium/
+├── core/           # API, config, data loading, logging
+├── analysis/       # Research and participant analysis
+├── generation/     # Profile and project generation
+├── io/             # File reading and writing
+├── cli/            # Command-line interface
+└── visualization/  # Data visualization tools
+
+tests/              # Complete test coverage
+├── test_core/      # Core functionality tests
+├── test_analysis/  # Analysis module tests
+├── test_generation/# Generation module tests
+├── test_integration/# End-to-end tests
+└── test_io/        # I/O operation tests
+
+data/               # Organized research data
+├── inputs/         # Academic and participant data
+├── catechisms/     # Project proposal templates
+├── domains/        # Domain knowledge bases
+└── prompts/        # System prompt templates
+```
+
+### Documentation Standards
+- **Module README**: Purpose, components, usage examples
+- **Module AGENTS**: AI agents and their roles
+- **Integration Docs**: How modules work together
+- **API Documentation**: Complete function documentation
+
+## Performance Standards
+
+### Execution Time
+- **API Calls**: < 2 seconds average response time
+- **File Operations**: < 100ms for typical files
+- **Analysis**: < 30 seconds for typical datasets
+- **Generation**: < 1 minute for complete workflows
+
+### Resource Usage
+- **Memory**: < 500MB peak usage
+- **Disk Space**: Efficient storage, compression where appropriate
+- **Network**: Minimal bandwidth, cached where possible
+
+## Maintenance Standards
+
+### Code Clarity
+- **Single Responsibility**: Each function has one clear purpose
+- **Dependency Injection**: Clear interfaces, easy testing
+- **Error Propagation**: Meaningful error messages
+- **Logging**: Comprehensive logging for debugging
+
+### Version Management
+- **Semantic Versioning**: Clear version increments
+- **Backward Compatibility**: Migration paths for breaking changes
+- **Deprecation**: Clear deprecation warnings
+- **Changelog**: Complete change documentation
+
+## Active Inference Focus
+
+### Research Standards
+- **Academic Rigor**: Evidence-based analysis
+- **Domain Expertise**: Active Inference specific knowledge
+- **Method Accuracy**: Correct research method identification
+- **Collaboration Focus**: Meaningful partnership suggestions
+
+### Symposium Integration
+- **Data Compatibility**: OpenAlex and academic data formats
+- **Template Alignment**: Catechism-based proposal generation
+- **Community Standards**: Active Inference Institute guidelines
+- **Research Ethics**: Responsible AI and research practices
+
+## Enforcement
+
+These rules are enforced through:
+- **Pre-commit Hooks**: Style and basic validation
+- **CI/CD Pipeline**: Comprehensive testing and validation
+- **Code Review**: Peer review with checklist
+- **Automated Tools**: Linting, type checking, security scanning
+
+## Updates
+
+These rules evolve with:
+- **Technology Changes**: New tools and best practices
+- **Research Advances**: Active Inference developments
+- **Community Feedback**: User and contributor input
+- **Performance Improvements**: Optimization opportunities

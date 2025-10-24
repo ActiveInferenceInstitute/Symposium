@@ -1,41 +1,318 @@
-# IdeaSHIFT: Transformative Research Domain Shifting for Next-Gen Scientific Idea Generation
+# Symposium: Active Inference Symposium Research Tools
 
-**IdeaSHIFT** is a platform designed to facilitate the massive exploration and combination of ideas across disciplines. By analyzing researchers' profiles and publications, IdeaSHIFT generates research profiles in relation to a given field with a trajectory and contributions to the field, open questions and concepts aimed at pushing the boundaries of conventional research. IdeaSHIFT systematically explores combinations of ideas from different fields by leveraging a domain-shifting approach of the given research field, enabling the discovery of new, high-impact research directions that can be presented in  a form of detailed projects.
+[![Tests](https://github.com/ActiveInferenceInstitute/symposium/workflows/Tests/badge.svg)](https://github.com/ActiveInferenceInstitute/symposium/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project originated during the preparation of two events:
-1. [SoftComp Workshop on Intelligent Soft Matter](https://softmat.net/intelligent-soft-matter/)
-2. [4th Applied Active Inference Symposium](https://symposium.activeinference.institute/)
+> Research analysis and project generation tools for the Active Inference Symposium
 
-## Background: A Shift in Scientific Publishing and Evaluation
+## Overview
 
-The academic publishing system, based largely on descriptive texts, bibliometrics and journal reputation, has remained largely unchanged for decades. The rise of LLMs only underscores the inadequacies of this system. There is an urgent need to rethink research sense-making and reintegrate creativity back into scientific progress. IdeaSHIFT was developed to address this need for a more dynamic and open-ended approach, enabling researchers to systematically explore, combine, and prioritize ideas that may be unconventional or unfeasible but carry transformative potential.
+Symposium is a comprehensive Python package designed to facilitate research analysis, participant profiling, and project proposal generation for the [Active Inference Symposium](https://symposium.activeinference.institute/). The package provides modular tools for:
 
-## Core Functionalities
+- **Research Analysis**: Automated analysis of presenter publications and research profiles
+- **Participant Profiling**: Comprehensive participant profiling based on registration data  
+- **Profile Generation**: Research profile and methods documentation
+- **Project Proposals**: Structured proposal generation using catechism templates
+- **Collaboration Matching**: Identifying synergies and collaboration opportunities
 
-1. **State of the Art Analysis**
-   IdeaSHIFT starts by analyzing researcher profiles and publications, compiling a concise description of the field’s background and current state of the art. It provides a summary of major contributions, trends, and existing research. This serves as a context of the background for LLM agents. 
+## Features
 
-2. **Future Roadmap: Building Paths to Discovery**
-   IdeaSHIFT employs two LLM agents to craft a roadmap for meaningful research advances:
-   - **Critical Referee Agent:** This agent examines the field very critically, identifying overlooked topics, biases, and gaps in current research methodologies and concepts. By surfacing these shortcomings, it provides the essential critical insight to the next agent.
-   - **Creative Solution Agent:** The creative agent addresses the shortcomings highlighted by the Referee Agent, proposing novel solutions and outlining a “Tech Tree” This roadmap points to potential breakthroughs and new paths for researchers willing to push the field forward.
+- 🔬 **Multi-Provider LLM Support**: Unified interface for Perplexity and OpenRouter APIs
+- 📊 **Data Processing**: OpenAlex publication data analysis with token-aware handling
+- 📝 **Structured Outputs**: Dual format reports (Markdown + JSON)
+- 🎯 **Flexible Configuration**: Environment-based and file-based configuration
+- 🧪 **Well-Tested**: Comprehensive test suite with >80% coverage
+- 🚀 **Modern Tooling**: Built with uv, pytest, ruff, and black
 
-3. **Cross-Domain Idea Generation**
-   Utilizing domain-shifting techniques, IdeaSHIFT explores innovative combinations of ideas across disciplines. This feature enables researchers to break through traditional boundaries by identifying unique, interdisciplinary questions that have yet to be addressed, providing a springboard for creative and impactful research ideas.
-
-4. **Open Innovation Project Development**
-   IdeaSHIFT aims to catalyze ideas for the development of high-risk, high-reward projects. With IdeaSHIFT, researchers are encouraged to embrace the unknown, developing new directions that are more about pushing boundaries than fitting within established paradigms.
-
-## Getting Started
-
-### Requirements
-- Python 3.7+
-- API keys for LLM services (e.g., [OpenAI](https://platform.openai.com/) API)
+## Quick Start
 
 ### Installation
-Clone this repository and install dependencies:
+
+Install using [uv](https://docs.astral.sh/uv/) (recommended):
 
 ```bash
-git clone https://github.com/ActiveInferenceInstitute/IdeaSHIFT.git
-cd IdeaSHIFT
-pip install -r requirements.txt
+# Clone repository
+git clone https://github.com/ActiveInferenceInstitute/symposium.git
+cd symposium
+
+# Install with uv
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+uv pip install -e ".[dev]"
+```
+
+### Interactive Interface
+
+The easiest way to use Symposium is through the interactive interface:
+
+```bash
+# The system will automatically install the package if needed
+python run.py
+```
+
+The interactive interface provides numbered options for:
+1. **📊 List Available Data** - Explore research datasets
+2. **🔍 Research Individual** - Use Perplexity for researcher analysis
+3. **👥 Process Participants** - Use OpenRouter for participant analysis
+4. **📝 Generate Research Profiles** - Create comprehensive profiles
+5. **🎯 Generate Project Proposals** - Create structured proposals
+6. **🌐 Create Visualizations** - Generate network and embedding plots
+7. **🔧 Configuration Management** - Setup API keys and settings
+8. **📈 Run Analysis Pipeline** - Execute complete workflows
+9. **🧪 Test System Components** - Validate system functionality
+10. **🎯 Generate All** - Complete end-to-end workflow (new!)
+11. **🚪 Exit** - Close the interface
+
+#### Advanced Features
+- **🎯 Generate All**: Runs complete pipeline (profiles → proposals → visualizations)
+- **🌐 All Visualizations**: Creates embeddings, networks, and distributions in one command
+- **🔧 Smart Configuration**: Automatic virtual environment detection and activation
+- **📝 Comprehensive Logging**: Real-time progress tracking with file persistence
+- **🛡️ Error Recovery**: Robust error handling with clear user guidance
+
+### Command Line Interface
+
+Alternatively, use the CLI directly:
+
+#### Visualization Commands
+```bash
+# Create embedding visualizations
+symposium visualize embeddings --input-dir <dir> --output-dir <dir> --method pca
+
+# Create network visualizations
+symposium visualize networks --input-dir <dir> --output-dir <dir> --layout spring
+
+# Create distribution plots
+symposium visualize distributions --input-dir <dir> --output-dir <dir>
+
+# Create all visualizations at once
+symposium visualize all --input-dir <dir> --output-dir <dir> --method pca --layout spring
+```
+
+### Configuration
+
+Create a `.env` file with your API keys:
+
+```bash
+PERPLEXITY_API_KEY=your_perplexity_key_here
+OPENROUTER_API_KEY=your_openrouter_key_here
+```
+
+**API Models:**
+- **Perplexity**: `sonar` (search-enhanced responses)
+- **OpenRouter**: `tngtech/deepseek-r1t2-chimera:free` (advanced reasoning)
+
+### Setup Validation
+
+Run the setup script to validate your environment:
+
+```bash
+python setup.py
+```
+
+This will check:
+- Python version and dependencies
+- API key configuration
+- Data directory structure
+- Package installation
+- API connectivity
+
+### Interactive Launcher
+
+For the easiest experience, use the launcher script:
+
+```bash
+python launch.py
+```
+
+This provides:
+- **Automatic virtual environment activation**
+- **Comprehensive logging** to both console and file
+- **Setup validation** with dependency checking
+- **Interactive text interface** with 10 numbered options
+- **Guided workflow** for all symposium operations
+- **Error handling** and user guidance
+- **Real-time progress tracking**
+
+#### Logging Features
+- Console logging with timestamps and levels
+- File logging to `symposium.log` and `setup.log`
+- Detailed import and configuration tracking
+- API connectivity monitoring
+- Error tracking with stack traces
+
+#### Virtual Environment Management
+- Automatic detection and activation
+- Graceful fallback if not in virtual environment
+- Clear error messages and setup instructions
+- Cross-platform compatibility
+
+### Basic Usage
+
+#### Analyze Presenter Research Profiles
+
+```bash
+symposium analyze presenters \
+  --data-dir data/inputs/aif_2025/ \
+  --output-dir outputs/profiles/ \
+  --domain-file data/domains/active_inference.md
+```
+
+#### Generate Research Profiles and Methods
+
+```bash
+symposium generate profiles \
+  --data-dir data/inputs/aif_2025/ \
+  --output-dir outputs/profiles/ \
+  --include-methods
+```
+
+#### Generate Project Proposals
+
+```bash
+symposium generate projects \
+  --profiles-dir outputs/profiles/ \
+  --output-dir outputs/projects/ \
+  --domain-file data/domains/active_inference.md \
+  --catechism KarmaGAP \
+  --collaborators-file data/collaborators.md
+```
+
+### Python API
+
+```python
+from symposium.core.api import APIClient
+from symposium.core.config import Config
+from symposium.analysis.presenters import PresenterAnalyzer
+from pathlib import Path
+
+# Initialize
+config = Config()
+api_client = APIClient.create("perplexity")
+
+# Analyze presenters
+analyzer = PresenterAnalyzer(api_client)
+results = analyzer.analyze_all_presenters(
+    data_path=Path("data/inputs/aif_2025"),
+    output_dir=Path("outputs/profiles")
+)
+```
+
+## Documentation
+
+- [Architecture Overview](docs/architecture.md)
+- [API Guide](docs/api_guide.md)
+- [User Guide](docs/user_guide.md)
+- [Development Guide](docs/development.md)
+
+## Project Structure
+
+```
+symposium/
+├── src/symposium/          # Main package
+│   ├── core/              # Core functionality (API, config, logging)
+│   ├── analysis/          # Analysis modules
+│   ├── generation/        # Content generation
+│   ├── io/                # Input/output operations
+│   ├── visualization/     # Visualization tools
+│   └── cli/               # Command-line interfaces
+├── tests/                 # Test suite
+├── data/                  # Data and templates
+│   ├── inputs/           # Input data (OpenAlex, registrations)
+│   ├── catechisms/       # Proposal templates
+│   ├── domains/          # Domain knowledge bases
+│   └── prompts/          # System prompts
+├── docs/                  # Documentation
+└── outputs/              # Generated outputs (gitignored)
+```
+
+## Development
+
+### Setup Development Environment
+
+```bash
+# Install development dependencies
+uv pip install -e ".[dev]"
+
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov=src/symposium --cov-report=html
+
+# Run linting
+ruff check src/ tests/
+black --check src/ tests/
+
+# Format code
+black src/ tests/
+```
+
+### Running Tests
+
+```bash
+# All tests
+pytest
+
+# Specific test file
+pytest tests/test_core/test_api.py
+
+# With coverage
+pytest --cov=src/symposium --cov-report=term --cov-report=html
+```
+
+## Migration from v1.x
+
+The 2.0 release represents a comprehensive refactor. See [MIGRATION.md](docs/MIGRATION.md) for detailed migration instructions.
+
+Key changes:
+- Unified API client interface
+- Modular package structure
+- Configuration management
+- CLI commands replace numbered scripts
+- Data reorganization
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Citation
+
+If you use this software in your research, please cite:
+
+```bibtex
+@software{symposium2024,
+  title = {Symposium: Research Analysis Tools for Active Inference Symposium},
+  author = {Active Inference Institute},
+  year = {2024},
+  url = {https://github.com/ActiveInferenceInstitute/symposium}
+}
+```
+
+## Acknowledgments
+
+- [Active Inference Institute](https://activeinference.institute/)
+- [OpenAlex](https://openalex.org/) for publication data
+- [Perplexity AI](https://www.perplexity.ai/) and [OpenRouter](https://openrouter.ai/) for LLM access
+
+## Support
+
+- [Submit Issues](https://github.com/ActiveInferenceInstitute/symposium/issues)
+- [Discussions](https://github.com/ActiveInferenceInstitute/symposium/discussions)
+- Email: [contact@activeinference.institute](mailto:contact@activeinference.institute)
+
+## Roadmap
+
+- [ ] Real-time analysis updates
+- [ ] Interactive visualization dashboard
+- [ ] Multi-symposium support
+- [ ] Enhanced collaboration matching
+- [ ] Impact tracking and analytics
+
+---
+
+**Prepared for the 2025 Active Inference Symposium**
