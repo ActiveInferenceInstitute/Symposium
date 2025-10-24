@@ -50,9 +50,6 @@ htmlcov/
 llm_keys.key
 
 # Outputs (generated data)
-outputs/
-synthetic/
-data/outputs/
 *.log
 
 # OS
