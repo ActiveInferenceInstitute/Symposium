@@ -219,6 +219,7 @@ def visualize_all(args):
             from sklearn.feature_extraction.text import TfidfVectorizer
             from sklearn.decomposition import PCA
             from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
+            from symposium.visualization.pca_analysis import PCAAnalyzer
 
             # Load documents
             documents, filenames, labels = [], [], []
@@ -238,9 +239,12 @@ def visualize_all(args):
                 visualizer = TextVisualizer()
                 reducer = DimensionReducer()
 
+                # Ensure we have enough components for comprehensive PCA analysis
+                n_comp_analysis = max(args.n_components, 50) if args.method == 'pca' else args.n_components
+                
                 reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
                     documents,
-                    n_components=args.n_components,
+                    n_components=n_comp_analysis,
                     method=args.method
                 )
 
@@ -264,6 +268,24 @@ def visualize_all(args):
                     freq_path = output_dir / "term_frequency.png"
                     visualizer.plot_term_frequency(documents, "Term Frequency Distribution", freq_path)
 
+                    # Comprehensive PCA analysis if using PCA method
+                    if args.method == 'pca' and reduction_model is not None and vectorizer is not None:
+                        print("📊 Creating comprehensive PCA analysis visualizations...")
+                        pca_analyzer = PCAAnalyzer()
+                        pca_results = pca_analyzer.create_comprehensive_pca_report(
+                            reduction_model,
+                            reduced_matrix,
+                            vectorizer,
+                            labels,
+                            output_dir,
+                            prefix="pca_analysis"
+                        )
+                        
+                        successful_pca = sum(pca_results.values())
+                        total_pca = len(pca_results)
+                        print(f"   └─ PCA analysis: {successful_pca}/{total_pca} visualizations created")
+                        logger.info(f"PCA analysis: {successful_pca}/{total_pca} visualizations created")
+                    
                     print("✅ Embedding visualizations completed")
                     logger.info("Embedding visualizations completed")
                 else:
