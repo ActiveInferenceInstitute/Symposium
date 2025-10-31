@@ -56,7 +56,7 @@ The interactive interface provides numbered options for:
 3. **👥 Process Participants** - Use OpenRouter for participant analysis
 4. **📝 Generate Research Profiles** - Create comprehensive profiles
 5. **🎯 Generate Project Proposals** - Create structured proposals
-6. **🌐 Create Visualizations** - Generate network and embedding plots
+6. **🌐 Create Visualizations** - Generate network, embedding, and distribution plots from CSV or markdown data
 7. **🔧 Configuration Management** - Setup API keys and settings
 8. **📈 Run Analysis Pipeline** - Execute complete workflows
 9. **🧪 Test System Components** - Validate system functionality
@@ -65,7 +65,10 @@ The interactive interface provides numbered options for:
 
 #### Advanced Features
 - **🎯 Generate All**: Runs complete pipeline (profiles → proposals → visualizations)
-- **🌐 All Visualizations**: Creates embeddings, networks, and distributions in one command
+- **🌐 All Visualizations**: Creates embeddings, networks, and distributions in one command from CSV or markdown
+- **📊 CSV Visualizations**: Direct visualization support for participant CSV data with word clouds and PCA embeddings
+- **☁️ Per-Column Word Clouds**: Separate word clouds for each question/column with custom stop words
+- **🧮 Advanced Methods**: 7 dimension reduction methods (PCA, LSA, t-SNE, UMAP, Isomap, NMF, LDA)
 - **🔧 Smart Configuration**: Automatic virtual environment detection and activation
 - **📝 Comprehensive Logging**: Real-time progress tracking with file persistence
 - **🛡️ Error Recovery**: Robust error handling with clear user guidance
@@ -75,19 +78,44 @@ The interactive interface provides numbered options for:
 Alternatively, use the CLI directly:
 
 #### Visualization Commands
+
+**From Markdown Files:**
 ```bash
-# Create embedding visualizations
+# Create embedding visualizations (PCA, LSA, t-SNE)
 symposium visualize embeddings --input-dir <dir> --output-dir <dir> --method pca
 
-# Create network visualizations
+# Create network visualizations (similarity networks, community analysis)
 symposium visualize networks --input-dir <dir> --output-dir <dir> --layout spring
 
-# Create distribution plots
+# Create distribution plots (document length, TF-IDF distributions)
 symposium visualize distributions --input-dir <dir> --output-dir <dir>
 
 # Create all visualizations at once
 symposium visualize all --input-dir <dir> --output-dir <dir> --method pca --layout spring
 ```
+
+**From CSV Participant Data:**
+```bash
+# Create embedding visualizations from participant CSV
+symposium visualize embeddings --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations --method pca
+
+# Create network visualizations from participant CSV
+symposium visualize networks --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations --layout spring
+
+# Create distribution plots from participant CSV
+symposium visualize distributions --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations
+
+# Create all visualizations from participant CSV
+symposium visualize all --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations --method pca --layout spring
+```
+
+**Generated Visualizations:**
+- **📊 PCA/LSA/t-SNE Embeddings**: 2D and 3D dimension reduction plots
+- **☁️ Word Clouds**: Term frequency visualization
+- **📈 Term Frequency**: Distribution of terms across documents
+- **🌐 Similarity Networks**: Document similarity networks with community detection
+- **📋 Community Analysis**: Network community structure visualization
+- **📊 Document Length Distributions**: Statistical analysis of text lengths
 
 ### Configuration
 

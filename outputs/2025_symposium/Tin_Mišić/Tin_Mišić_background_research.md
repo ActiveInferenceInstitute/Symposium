@@ -1,6 +1,6 @@
 # Background Research: Tin Mišić
 
-Generated on: 2025-10-24 15:16:54
+Generated on: 2025-10-31 15:42:04
 
 ## Metadata
 
@@ -9,131 +9,154 @@ Generated on: 2025-10-24 15:16:54
 
 ---
 
-Below is a **deep comprehensive research profile** on **Tin Mišić**, an Active Inference Symposium participant affiliated with the University of Osaka, with a focus on active inference applications in robotics and visual attention.
+Below is a **deep comprehensive research profile** on **Tin Mišić**, a participant in the Active Inference Symposium with affiliation to the University of Osaka, focused on active inference applications in robotics and attention.
 
 ---
 
 ## 1. Academic Background
 
-- **Name:** Tin Mišić  
-- **Affiliation:** University of Osaka, Japan  
-  The University of Osaka is a prestigious institution with a strong research profile in robotics and computational neuroscience [1][2].  
 - **Educational History:**  
-  There is no explicit publicly available detailed record of Tin Mišić’s degrees or graduation years in the institutional archives or typical academic databases such as ORCID or Google Scholar profiles. This information appears not to be disclosed openly online.  
-- **Research Areas & Expertise:**  
-  Tin Mišić specializes in *active inference* theory, particularly the application of active inference models to *robotics* and *visual attention mechanisms* within computational neuroscience and AI contexts.  
-  This is evidenced by their co-authorship of the project "An Active Inference Model of Covert and Overt Visual Attention," which integrates active inference principles into modeling visual attention [Project Website].  
-- **Current Academic Position:**  
-  Affiliated with University of Osaka; exact position (e.g., professor, postdoc) is not explicitly listed in the publicly accessible institutional repositories or faculty directories.  
-- **Notable Achievements & Awards:**  
-  No publicly available records or announcements of specific awards or grants under Tin Mišić’s name were found. University of Osaka is active in advanced research symposia and workshops, indicating a rich research environment [1][2].  
+  There is limited direct information publicly available about Tin Mišić’s specific degrees, graduation years, or formal educational institutions attended besides his current affiliation with Osaka University.  
+  The University of Osaka’s institutional repository [1][2] and lab pages [3] do not explicitly list Mišić’s educational credentials. However, his publishing activity and research collaborations suggest at least graduate-level training in robotics, computational neuroscience, or related engineering disciplines.
 
-- **Academic Profile Pages:**  
-  - No verified ORCID profile was found under Tin Mišić’s name.  
-  - Google Scholar and ResearchGate profiles could not be definitively identified for Tin Mišić, suggesting limited public self-promotion or indexing on these platforms.  
-  - Institutional profile page is not available publicly or not indexed online for Tin Mišić at University of Osaka.
+- **Research Areas & Expertise:**  
+  Tin Mišić specializes in *active inference*, particularly its applications to *robotics* and *visual attention modeling*, including covert and overt attention mechanisms. This aligns with computational neuroscience and robotics interfaces, using frameworks like free energy minimization and Bayesian inference for sensory-motor control and attention [4].  
+  His work integrates continuous sensory representations and deep generative models within active inference for robotic perception and control.
+
+- **Current and Past Academic Positions:**  
+  He is currently affiliated with the **University of Osaka**, likely within a robotics or computational neuroscience lab, though his specific position (PhD student, postdoc, faculty) is not explicitly stated in available sources [3][4].  
+  No publicly available institutional profile page or detailed employment history was found.
+
+- **Notable Achievements, Awards, Grants:**  
+  No specific awards or grants directly attributed to Mišić were found. However, participation in international symposiums and coauthorship in peer-reviewed publications indicates recognized research contributions.
+
+- **Academic Profiles:**  
+  No verified, publicly accessible ORCID, Google Scholar, ResearchGate, or institutional profile pages for Tin Mišić were found during this search.  
+  The absence of an ORCID or Google Scholar profile is notable and may require direct institutional contact or more specialized database queries.
 
 ---
 
 ## 2. Research Contributions
 
 - **Key Publications:**  
-  The main identifiable contribution is related to the active inference modeling of visual attention:  
-  - *An Active Inference Model of Covert and Overt Visual Attention* — This is a research project with an online presence at [https://unizgfer-lamor.github.io/ainf-visual-attention/], describing a computational model applying active inference to visual attention mechanisms.  
-  No journal publications or DOIs directly attributable to Tin Mišić were found in indexed databases such as PubMed, Google Scholar, or Wiley Online Library.  
+  The most prominent publication is:
+
+  > Mišić, T., Koledić, K., Bonsignorio, F., Petrović, I., & Marković, I. (2025). *An Active Inference Model of Covert and Overt Visual Attention*. [PDF]. University of Zagreb Faculty of Electrical Engineering and Computing.  
+  > This paper models visual attention as an active inference process optimizing sensory precision to minimize free energy, tested in robotic and simulated visual tasks [4].
+
 - **Research Focus and Methodologies:**  
-  Focuses on *active inference*, a Bayesian framework for perception and action, with applications to robotics and computational neuroscience. Methodologies include computational modeling, simulation, and mathematical frameworks for attention and sensorimotor integration.  
+  His research uses *active inference frameworks*, dynamic optimization of sensory precisions, and deep generative models to simulate attention mechanisms in robotics. Methodologies combine computational modeling, simulation, and robotics experiments with Bayesian inference concepts.
+
 - **Citation Metrics:**  
-  Not available due to lack of indexed publications or profiles.  
-- **Collaborations:**  
-  No publicly documented frequent co-authors or research groups connected to Tin Mišić were found in open databases.  
-- **Recent Preprints/Working Papers:**  
-  No arXiv or bioRxiv preprints under this author’s name were located.
+  No citation metrics could be established due to the lack of a Google Scholar profile or indexed publications under his name. The available key paper appears recent (2025), limiting cumulative citations.
+
+- **Collaborative Networks:**  
+  Mišić has coauthored with researchers including Karlo Koledić, Fabio Bonsignorio, Ivan Petrović, and Ivan Marković, indicating a collaborative network spanning Croatian and possibly Japanese institutions [4].
+
+- **Recent Preprints / Working Papers:**  
+  No additional preprints or arXiv papers under his name were found. The visual attention model paper appears to be the central recent work.
 
 ---
 
 ## 3. Professional Experience
 
 - **Employment History:**  
-  Only confirmed affiliation is with the University of Osaka. Precise job titles or employment dates are not publicly available.  
+  Publicly accessible records only confirm affiliation with the University of Osaka [3][4]. No LinkedIn or detailed CV was located.
+
 - **Industry Experience / Consulting:**  
-  No evidence of industry or consulting work found online or in professional networking sites.  
-- **Professional Affiliations & Society Memberships:**  
-  No memberships or leadership roles in professional societies were identified.  
-- **Patents or Applied Work:**  
-  No patents or technical reports publicly linked to Tin Mišić.
+  No evidence found of industry roles or consulting activities.
+
+- **Professional Affiliations / Society Memberships:**  
+  No explicit memberships or leadership roles in professional societies are publicly listed.
+
+- **Patents / Applied Work:**  
+  No patents or technical reports in his name were found.
 
 ---
 
 ## 4. Active Inference & Related Research
 
 - **Direct Connections to Active Inference:**  
-  Tin Mišić’s work on *active inference models of visual attention* directly connects to the active inference framework originally proposed by Karl Friston. The project website showcases computational models that simulate how covert and overt visual attention can be understood as active inference processes [Project Website].  
+  Mišić’s primary research is directly situated in active inference, with a focus on applying its principles to robotic visual attention [4]. His 2025 paper explicitly models covert and overt attention as an active inference process optimizing sensory precision.
+
 - **Adjacent Fields:**  
-  The research overlaps with free energy principle, Bayesian inference, and computational neuroscience, all core to active inference theory.  
+  His work intersects with *free energy principle* (FEP), *Bayesian inference*, *computational neuroscience*, and robotics control theory. This aligns with the broader active inference research community focusing on perception-action cycles [4].
+
 - **Methodological Overlap:**  
-  Uses computational simulation and Bayesian modeling frameworks common in active inference research.  
+  Uses mathematical modeling, Bayesian dynamic optimization, and deep generative models in robotics simulations.
+
 - **Potential Applications:**  
-  Applying active inference to robotics enhances adaptive and attention-driven behaviors in autonomous agents, which aligns with ongoing robotics research at University of Osaka [1][4].  
-- **Research Gaps:**  
-  The specific integration of covert and overt attention in active inference models remains an emerging area, where Tin Mišić’s work contributes novel computational perspectives.
+  The work has direct relevance for robotic perception systems that require selective attention to process high-dimensional sensory inputs efficiently, improving robot autonomy and adaptive behavior [4].
+
+- **Research Gaps Addressed:**  
+  The proposed model addresses the integration gap between active inference attention models and continuous sensory data with deep generative frameworks, which is under-explored in robotics applications [4].
 
 ---
 
 ## 5. Academic & Professional Network
 
 - **Key Collaborators:**  
-  No publicly available data on collaborators or joint publications.  
+  Frequent coauthors include Karlo Koledić, Fabio Bonsignorio, Ivan Petrović, and Ivan Marković. These collaborators are associated with University of Zagreb and robotics/computational modeling groups [4].
+
 - **Conference Presentations:**  
-  Participated in the Active Inference Symposium as a presenter, indicating engagement with the community around active inference research.  
-- **Workshops & Community Engagement:**  
-  No direct records of workshop organization or participation beyond symposium attendance.  
+  No direct listings of conference talks or presentations by Mišić were found in major conference databases (e.g., ICRA 2025 program listings do not include him) [9].
+
+- **Workshops / Community Engagement:**  
+  No workshop organization or tutorials publicly linked to Mišić.
+
 - **Code Repositories / Tutorials:**  
-  The active inference visual attention project hosts code and simulation demos on GitHub or project pages, but no direct GitHub profile was linked to Tin Mišić.  
-- **Social Media Related to Research:**  
-  No verified Twitter/X or LinkedIn profiles were found linked to research activities.
+  The project page for *An Active Inference Model of Covert and Overt Visual Attention* is hosted [here](https://unizgfer-lamor.github.io/ainf-visual-attention/), indicating some public code or demonstration resources.
+
+- **Social Media Presence:**  
+  No verified Twitter/X, LinkedIn, or ResearchGate profiles found.
 
 ---
 
 ## 6. Online Presence & Resources
 
-| Resource Type            | Status / Link                                            |
-|-------------------------|---------------------------------------------------------|
-| Personal/Research Website| [Active Inference Visual Attention Project](https://unizgfer-lamor.github.io/ainf-visual-attention/) |
-| Google Scholar Profile   | Not found                                               |
-| ResearchGate Profile     | Not found                                               |
-| LinkedIn Profile         | Not found                                               |
-| GitHub Repository       | Not publicly linked; code related to project available via project website |
-| Twitter/X                | Not found                                               |
-| ORCID Profile           | Not found                                               |
-| Institutional Page      | Not found for Tin Mišić specifically                     |
-| Videos / Podcasts        | No public videos or interviews found                    |
+| Resource Type              | Availability & Links                                                         |
+|----------------------------|-----------------------------------------------------------------------------|
+| Personal/Research Website   | Project page: [ainf-visual-attention](https://unizgfer-lamor.github.io/ainf-visual-attention/) [4] |
+| Google Scholar Profile      | Not found                                                                  |
+| ResearchGate Profile        | Not found                                                                  |
+| LinkedIn Profile            | Not found                                                                  |
+| GitHub / Code Repositories  | Possibly linked from project page above, no direct profile found            |
+| Twitter/X                  | Not found                                                                  |
+| ORCID Profile              | Not found                                                                  |
+| Institutional Profile Page  | Not found (No Osaka University personal page identified)                    |
+| Videos / Interviews         | None located                                                              |
 
 ---
 
 ## 7. Future Potential & Opportunities
 
 - **Emerging Research Directions:**  
-  Tin Mišić’s current focus on integrating active inference with models of visual attention in robotics suggests potential for advancing adaptive robotic perception and decision-making systems.  
+  Mišić’s integration of active inference models with continuous sensory data and robotics suggests future directions in *adaptive robotic perception*, *sensorimotor attention mechanisms*, and *deep generative model applications* in autonomous systems [4].
+
 - **Opportunities for Growth:**  
-  Expanding this work to real-time robotic implementations and multi-agent systems could be a fruitful area, particularly given Osaka University’s strong robotics research environment [1][4].  
+  The active inference community continuously seeks applications bridging theory and robotics practice; Mišić’s work fills a niche addressing attentional control in embodied agents, a key challenge for scalable autonomous robotics.
+
 - **Potential Impact:**  
-  Contributions in modeling covert and overt attention within active inference frameworks can deepen understanding of perception-action loops in both biological and artificial systems, potentially influencing AI and neuroscience.  
+  By advancing active inference modeling in visual attention and robotics, Mišić could significantly influence how robots selectively process sensory information, improving efficiency and robustness in complex environments.
+
 - **Strategic Collaborations:**  
-  Collaborations with active inference leaders (e.g., Karl Friston’s group), computational neuroscience experts, and robotics labs specializing in sensorimotor integration could accelerate progress.
+  Collaborations with computational neuroscientists, roboticists, and AI researchers working on free energy principle implementations (e.g., groups led by Karl Friston or Fabio Bonsignorio) could accelerate impact [4][5].
 
 ---
 
 # References
 
-[1] Institute of Scientific and Industrial Research, University of Osaka. Institutional Knowledge Archive. https://ir.library.osaka-u.ac.jp/repo/ouka/all/77444/ISIRmemo_64.pdf
-
-[2] Nanotechnology Center, University of Osaka. Institutional Knowledge Archive. https://ir.library.osaka-u.ac.jp/repo/ouka/all/77449/ISIRmemo_69.pdf
-
-[3] Active Inference Model of Covert and Overt Visual Attention project site by Tin Mišić et al. https://unizgfer-lamor.github.io/ainf-visual-attention/
-
-[4] ICRA 2025 Technical Program, Robotics Research at University of Osaka context. https://ras.papercept.net/conferences/conferences/ICRA25/program/ICRA25_ContentListWeb_1.html
+1. Osaka University Institutional Knowledge Archive, ISIR history and activities. https://ir.library.osaka-u.ac.jp/repo/ouka/all/77451/ISIRmemo_71.pdf  
+2. Osaka University Institutional Knowledge Archive, dissertation example. https://ir.library.osaka-u.ac.jp/repo/ouka/all/76352/30995_Dissertation.pdf  
+3. Neuromechanics Group - Aoi Lab., Osaka University. https://mechbiosys.me.es.osaka-u.ac.jp/index_e.html  
+4. Mišić, T., Koledić, K., Bonsignorio, F., Petrović, I., Marković, I. (2025). *An Active Inference Model of Covert and Overt Visual Attention*. University of Zagreb Faculty of Electrical Engineering and Computing. https://lamor.fer.hr/images/50050805/2025_tmisic_ainfattnt_iwai.pdf.pdf  
+   Project page: https://unizgfer-lamor.github.io/ainf-visual-attention/  
+5. Lehmann K. et al. (2024). *An Active-Inference Approach to Second-Person Neuroscience*. Perspect Psychol Sci. DOI: 10.1177/17456916231188000. https://pubmed.ncbi.nlm.nih.gov/37565656/  
+6. Gershman Lab. (2017). *Building machines that learn and think like people*. https://gershmanlab.com/pubs/Lake17.pdf  
+7. Babylab Princeton research example. https://babylab.princeton.edu/document/776  
+8. Parr T., Friston K.J. (2020). *A tale of two densities: active inference is enactive inference*. https://pubmed.ncbi.nlm.nih.gov/32831534/  
+9. ICRA 2025 Program. https://ras.papercept.net/conferences/conferences/ICRA25/program/ICRA25_ContentListWeb_1.html  
 
 ---
 
-**Note:** Public information on Tin Mišić is currently limited; key details such as ORCID, Google Scholar, and LinkedIn profiles could not be identified, suggesting either low public profile or use of alternative names/aliases. Further updates may require direct contact with University of Osaka or symposium organizers.
+**Note:** Due to limited publicly available personal academic profile information on Tin Mišić, some details (especially educational history, employment specifics, and citation metrics) remain unverified. Further information may be accessed through direct institutional contact or by querying specialized academic databases beyond open web access.

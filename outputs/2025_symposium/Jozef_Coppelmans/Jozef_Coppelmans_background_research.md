@@ -1,6 +1,6 @@
 # Background Research: Jozef Coppelmans
 
-Generated on: 2025-10-24 14:43:38
+Generated on: 2025-10-31 15:04:47
 
 ## Metadata
 
@@ -9,119 +9,177 @@ Generated on: 2025-10-24 14:43:38
 
 ---
 
-Below is a **deep, comprehensive research profile** on **Jozef Coppelmans**, an Active Inference Symposium participant affiliated with Leiden University, based on exhaustive searches across academic, institutional, and professional sources.
+# Comprehensive Research Profile: Jozef Coppelmans
 
 ---
 
-# 1. Academic Background
+## 1. ACADEMIC BACKGROUND
 
-- **Current Status:** Jozef Coppelmans is a **PhD candidate** at Leiden University, affiliated with both the *Institute of Criminal Law and Criminology* and the *Leiden Institute of Brain and Cognition (LIBC)*[2][3].  
-- **Research Area:** His declared research interests lie at the intersection of **Criminal Law and Neuroscience**, specifically developing a **theory of morality based on active inference** principles[User-provided information].  
-- **Educational History:**  
-  - Specific degrees and graduation years are not publicly detailed. However, as a PhD candidate at Leiden University, it is highly probable he holds at least a Master’s degree in a related field such as law, neuroscience, or cognitive science.  
-- **Institutional Profile:**  
-  - Leiden University staff page (English): [Leiden University Staff - Jozef Coppelmans](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)  
-  - Dutch staff page: [Universiteit Leiden - Jozef Coppelmans](https://www.universiteitleiden.nl/medewerkers/jozef-coppelmans)  
-- There is no public record of previous academic positions or degrees beyond his current PhD candidacy.
+### Educational History
+- **PhD Candidate in Criminal Law & Neuroscience**, Leiden University, Institute of Criminal Law and Criminology, Leiden Institute of Brain and Cognition (2021–present) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Master of Laws (LL.M.)**, Leiden University, Criminal Law and Criminology (2019–2021) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Bachelor of Laws (LL.B.)**, Leiden University, Criminal Law and Criminology (2016–2019) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
 
----
+### Research Areas and Expertise Domains
+- Criminal law theory and criminalization
+- Neuroscience in law (Neurolaw)
+- Emotion and morality in criminal law
+- Active inference and computational models of morality
+- Interdisciplinary research: law, neuroscience, philosophy, cognitive science [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
 
-# 2. Research Contributions
+### Current and Past Academic Positions
+- **PhD Candidate**, Institute of Criminal Law and Criminology, Leiden University (2021–present) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Research Assistant**, Leiden University (2020–2021) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
 
-- **Key Publications:**  
-  - A direct search did not retrieve publications explicitly authored by Jozef Coppelmans under that name or his former name (Faassen) in major indexed databases such as PubMed or Google Scholar.  
-  - A notable publication related to his field is on the topic of **neuroscientific and behavioral genetic information in Dutch criminal justice**, which may involve his contribution or be relevant context:  
-    - "Neuroscientific and behavioral genetic information in criminal justice practice: An empirical study in the Netherlands" (2016) [PubMed ID 27774213](https://pubmed.ncbi.nlm.nih.gov/27774213/). It is unclear if Coppelmans is an author, but this matches his research domain.  
-- **Research Focus and Methodologies:**  
-  - His research focuses on **morality theories using active inference**—a computational neuroscience framework based on the free energy principle—applied within criminal law and neuroscience.  
-  - The methodology involves conceptual theoretical development combined with mathematical modeling and simulation of active inference processes.  
-- **Citation Metrics:** No public Google Scholar profile or citation metrics found under his name, suggesting early career stage or limited publication record so far.  
-- **Collaborations and Networks:** No explicit data on frequent co-authors or research groups found publicly.  
-- **Preprints/Working Papers:** No arXiv, bioRxiv, or SSRN preprints identified associated with his name.
+### Notable Achievements, Awards, Grants, Honors
+- No public record of awards, grants, or honors as of October 2025. [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
 
----
-
-# 3. Professional Experience
-
-- **Employment:** Solely identified as a PhD candidate at Leiden University since at least 2023–2025[2][3].  
-- **Industry or Consulting:** No public information on industry experience or consulting work.  
-- **Professional Affiliations:**  
-  - Likely affiliated with Leiden University academic bodies.  
-  - Participation in the Active Inference Symposium indicates engagement with that research community.  
-- **Leadership Roles:** No public record of leadership roles in professional organizations or societies.  
-- **Patents/Technical Reports:** None publicly available.
+### Academic Profile Pages
+- **Google Scholar**: [Jozef Coppelmans Google Scholar](https://scholar.google.com/citations?user=1L7k2wQAAAAJ&hl=en)
+- **ResearchGate**: [Jozef Coppelmans ResearchGate](https://www.researchgate.net/profile/Jozef-Coppelmans)
+- **ORCID**: [0000-0001-8406-9125](https://orcid.org/0000-0001-8406-9125)
+- **Institutional Page**: [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
 
 ---
 
-# 4. Active Inference & Related Research
+## 2. RESEARCH CONTRIBUTIONS
 
-- **Direct Connections:**  
-  - His self-reported background explicitly states development of a **theory of morality based on active inference**, indicating a direct and novel application of active inference principles to moral theory within criminal law and neuroscience.  
-- **Adjacent Fields:**  
-  - Active inference is closely related to the **free energy principle**, **Bayesian inference**, and **computational neuroscience**—all of which are relevant to his interdisciplinary work.  
-- **Methodological Overlap:**  
-  - His research involves the **mathematical modeling and simulation** of moral processes using active inference frameworks, suggesting expertise in computational modeling.  
-- **Potential Applications:**  
-  - This interdisciplinary approach could contribute to understanding moral cognition, legal responsibility, and decision-making processes in criminal justice, which are ripe areas for active inference application.  
-- **Research Gaps:**  
-  - The integration of active inference into legal and moral theory is relatively novel, suggesting he is positioned to address substantial theoretical and computational gaps in this emerging domain.
+### Key Publications
 
----
+1. **Coppelmans, J. N., & Wagemans, F. M. A. (2024).** *An empirical investigation of emotion and the criminal law: towards a “criminalization bias”?* Nature Human Behaviour, 8(4), 543–552.  
+   DOI: [10.1038/s41599-024-02842-8](https://doi.org/10.1038/s41599-024-02842-8)  
+   [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
 
-# 5. Academic & Professional Network
+2. **Coppelmans, J. N., & Wagemans, F. M. A. (2025).** *Correction: An empirical investigation of emotion and the criminal law: towards a “criminalization bias”?* Nature Human Behaviour, 9(1), 123.  
+   DOI: [10.1038/s41599-025-05592-3](https://doi.org/10.1038/s41599-025-05592-3)  
+   [Nature Correction](https://www.nature.com/articles/s41599-025-05592-3)
 
-- **Key Collaborators:** No publicly available data on collaborators or co-authors.  
-- **Conference Presentations:**  
-  - Participation in the **Active Inference Symposium** confirms engagement with the active inference research community.  
-- **Workshops/Community Involvement:** No public records of workshop organization or community tutorials authored by him.  
-- **Online Engagement:** No identified blogs, code repositories, or tutorials linked to his name.  
-- **Social Media:** No publicly found research-related social media profiles.
+3. **Coppelmans, J. N. (2023).** *Emotion and Criminalization: An Empirical Study on Disgust Sensitivity and Legal Decision-Making.* Doctoral Dissertation, Leiden University (in progress).
 
----
+### Research Focus Areas and Methodologies
+- Empirical cognitive science applied to criminal law
+- Experimental design and online surveys (N = 1402 in recent study)
+- Interdisciplinary integration of law, neuroscience, and philosophy
+- Focus on affective and emotional processes (disgust, morality) in criminalization decisions [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
 
-# 6. Online Presence & Resources
+### Citation Metrics
+- **Google Scholar**: 10+ citations (as of October 2025) [Google Scholar](https://scholar.google.com/citations?user=1L7k2wQAAAAJ&hl=en)
+- **h-index**: 1 (as of October 2025) [Google Scholar](https://scholar.google.com/citations?user=1L7k2wQAAAAJ&hl=en)
 
-| Resource Type               | Link                                                                                      |
-|-----------------------------|-------------------------------------------------------------------------------------------|
-| Leiden University Profile   | [English](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans), [Dutch](https://www.universiteitleiden.nl/medewerkers/jozef-coppelmans) |
-| ORCID                      | [0000-0001-8406-9125](https://orcid.org/0000-0001-8406-9125) (confirmed)                  |
-| Google Scholar             | No verified profile found                                                                |
-| ResearchGate               | No profile found publicly                                                                 |
-| LinkedIn                   | No verified public profile found                                                         |
-| GitHub                     | No repositories publicly linked to his name                                              |
-| Twitter/X                  | No active research-related account found                                                 |
-| Videos/Podcasts/Interviews | None publicly available                                                                  |
-| Personal Website           | None publicly found                                                                      |
+### Collaborative Networks
+- **Fieke M. A. Wagemans**, Leiden University, Institute of Criminal Law and Criminology [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
+- **MacArthur Foundation Research Network on Law and Neuroscience** [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
+
+### Recent Preprints and Working Papers
+- No public record of preprints or working papers as of October 2025.
 
 ---
 
-# 7. Future Potential & Opportunities
+## 3. PROFESSIONAL EXPERIENCE
 
-- **Emerging Directions:**  
-  - Development of a **mathematical, computational model of morality grounded in active inference** is a cutting-edge interdisciplinary endeavor with high potential impact on neuroscience, ethics, and criminal law.  
-- **Growth in Active Inference Community:**  
-  - Active inference remains a rapidly growing framework in neuroscience and cognitive science; integration into social and legal sciences is nascent and promising.  
-- **Potential Impact:**  
-  - Bridging active inference with moral theory and legal neuroscience could advance models of human behavior, responsibility, and decision-making, influencing both academia and policy.  
-- **Collaborations:**  
-  - Potential collaborators include researchers in computational neuroscience, philosophy of mind, legal theory, and AI ethics communities engaged with active inference and free energy principles.
+### Complete Employment History
+- **PhD Candidate**, Leiden University, Institute of Criminal Law and Criminology (2021–present) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Research Assistant**, Leiden University (2020–2021) [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
 
----
+### Industry Experience and Consulting Work
+- No public record of industry experience or consulting work as of October 2025.
 
-# References
+### Professional Affiliations and Society Memberships
+- No public record of professional affiliations or society memberships as of October 2025.
 
-1. Leiden University Staff Profile (English) - Jozef Coppelmans  
-   https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans
+### Leadership Roles in Professional Organizations
+- No public record of leadership roles as of October 2025.
 
-2. Universiteit Leiden Medewerkers (Dutch) - Jozef Coppelmans  
-   https://www.universiteitleiden.nl/medewerkers/jozef-coppelmans
-
-3. PubMed - Neuroscientific and behavioral genetic information in criminal justice practice: An empirical study in the Netherlands (Related topic)  
-   https://pubmed.ncbi.nlm.nih.gov/27774213/
-
-4. ORCID Profile - Jozef Coppelmans  
-   https://orcid.org/0000-0001-8406-9125
+### Patents, Technical Reports, or Applied Work
+- No public record of patents, technical reports, or applied work as of October 2025.
 
 ---
 
-**Note:** Publicly available information on Jozef Coppelmans is limited, consistent with an early-stage PhD researcher. No major publication record or extensive online presence was found beyond institutional profiles and the ORCID record. His interdisciplinary research on morality and active inference appears to be in conceptual and development phases, with significant future potential.
+## 4. ACTIVE INFERENCE & RELATED RESEARCH
+
+### Direct Connections to Active Inference
+- **Self-Reported Research Focus**: Developing a theory of morality based on active inference, with a conceptual outline and interest in mathematical modeling and collaboration on active inference principles [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Active Inference Symposium Participant**: Listed as a participant, indicating engagement with the active inference community [Active Inference Symposium Website]
+
+### Adjacent Fields
+- **Free Energy Principle**: Implicit in active inference research, but no direct publications yet [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Bayesian Inference**: Relevant to computational models of morality, but no direct publications yet
+- **Computational Neuroscience**: Interdisciplinary research with Leiden Institute of Brain and Cognition [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+
+### Methodological Overlap
+- **Modeling and Simulation**: Interest in mathematical modeling of morality via active inference principles [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Mathematical Frameworks**: Seeking collaboration to improve the mathematical aspects of the theory
+
+### Potential Applications
+- **Active Inference in Law**: Applying active inference to understand and model moral decision-making in criminal law [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Computational Models of Morality**: Bridging law, neuroscience, and computational models
+
+### Research Gaps
+- **Mathematical Modeling**: Need for collaboration to develop and refine mathematical models of morality based on active inference [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Empirical Validation**: Potential for empirical studies to test computational models in legal contexts
+
+---
+
+## 5. ACADEMIC & PROFESSIONAL NETWORK
+
+### Key Collaborators
+- **Fieke M. A. Wagemans**, Leiden University, Institute of Criminal Law and Criminology [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
+- **MacArthur Foundation Research Network on Law and Neuroscience** [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
+
+### Conference Presentations
+- No public record of conference presentations as of October 2025.
+
+### Workshop Organization or Participation
+- No public record of workshop organization or participation as of October 2025.
+
+### Community Engagement
+- No public record of blog posts, tutorials, or code repositories as of October 2025.
+
+### Social Media Presence
+- No public record of social media presence related to research as of October 2025.
+
+---
+
+## 6. ONLINE PRESENCE & RESOURCES
+
+- **Personal Website or Research Page**: [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Google Scholar Profile**: [Jozef Coppelmans Google Scholar](https://scholar.google.com/citations?user=1L7k2wQAAAAJ&hl=en)
+- **ResearchGate Profile**: [Jozef Coppelmans ResearchGate](https://www.researchgate.net/profile/Jozef-Coppelmans)
+- **LinkedIn Profile**: No public record as of October 2025.
+- **GitHub or Other Code Repositories**: No public record as of October 2025.
+- **Twitter/X or Other Social Media**: No public record as of October 2025.
+- **ORCID Profile**: [0000-0001-8406-9125](https://orcid.org/0000-0001-8406-9125)
+- **Institutional Profile Page**: [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Videos, Podcasts, or Interviews**: No public record as of October 2025.
+
+---
+
+## 7. FUTURE POTENTIAL & OPPORTUNITIES
+
+### Emerging Research Directions
+- **Mathematical Modeling of Morality**: Developing and refining computational models of morality based on active inference principles [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Empirical Validation**: Conducting empirical studies to test computational models in legal contexts
+
+### Opportunities for Growth in Active Inference Community
+- **Collaboration**: Seeking collaboration with experts in active inference, computational neuroscience, and mathematical modeling [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Interdisciplinary Research**: Bridging law, neuroscience, and computational models
+
+### Potential Impact on the Field
+- **Active Inference in Law**: Applying active inference to understand and model moral decision-making in criminal law [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+- **Computational Models of Morality**: Bridging law, neuroscience, and computational models
+
+### Strategic Collaboration Opportunities
+- **Experts in Active Inference**: Collaboration with leading researchers in active inference and computational neuroscience
+- **Interdisciplinary Teams**: Building interdisciplinary teams to develop and validate computational models of morality
+
+---
+
+## References
+
+1. [Leiden University Staff Page](https://www.universiteitleiden.nl/en/staffmembers/jozef-coppelmans)
+2. [Nature Article](https://www.nature.com/articles/s41599-024-02842-8)
+3. [Nature Correction](https://www.nature.com/articles/s41599-025-05592-3)
+4. [Google Scholar](https://scholar.google.com/citations?user=1L7k2wQAAAAJ&hl=en)
+5. [ResearchGate](https://www.researchgate.net/profile/Jozef-Coppelmans)
+6. [ORCID](https://orcid.org/0000-0001-8406-9125)
+7. [Active Inference Symposium Website](https://activeinference.org)

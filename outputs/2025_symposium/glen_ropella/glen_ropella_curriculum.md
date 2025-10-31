@@ -1,6 +1,6 @@
 # Curriculum: glen ropella
 
-Generated on: 2025-10-24 15:04:26
+Generated on: 2025-10-31 15:28:39
 
 ## Metadata
 
@@ -12,131 +12,117 @@ Generated on: 2025-10-24 15:04:26
 Based on Glen's background in biological systems simulation and interest in semi-formal languages for conceptual models, I'll design a personalized Active Inference curriculum that emphasizes practical modeling frameworks while providing broad domain exposure.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong in: Complex systems modeling, computational approaches, biological systems
-- Gaps: Formal Active Inference framework, information theory foundations
-- Learning style: Likely hands-on, systems-oriented thinking given simulation background
-- Bridge needed: From simulation approaches to free energy principle frameworks
+- Strengths:
+  * Strong simulation background
+  * Systems thinking experience
+  * Likely familiar with mathematical modeling
+- Gaps:
+  * Formal Active Inference theory
+  * Specific modeling languages for Active Inference
+  * Connection between biological simulation and AIF frameworks
 
 2. **PERSONALIZED LEARNING PATH**
-Initial Focus (1-2 months):
-- Systems thinking to Active Inference transition
-- Semi-formal modeling languages (e.g., UML, SysML, Petri nets)
-- Basic information theory concepts
-- Markov Decision Processes
-
-Progressive Development (2-4 months):
-- Active Inference formal framework
-- Biological systems applications
-- Model specification approaches
-- Implementation tools
+- Phase 1: Foundations (1-2 months)
+  * Overview of Active Inference through biological systems lens
+  * Introduction to Free Energy Principle
+  * Basic modeling frameworks
+- Phase 2: Modeling Languages (2-3 months)
+  * Semi-formal notation systems
+  * Message passing algorithms
+  * Markov Decision Processes
+- Phase 3: Integration (3-4 months)
+  * Bridging biological simulation with Active Inference
+  * Advanced modeling frameworks
+  * Collaborative projects
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Foundations
-- Free Energy Principle basics
-- Bayesian inference fundamentals
-- Markov blankets in biological systems
-- Information geometry essentials
-
-Module 2: Modeling Frameworks
-- Semi-formal modeling languages
-- Graph-theoretical approaches
-- State-space representations
-- Message passing algorithms
+- Module 1: Biological Foundations
+  * Homeostasis and allostasis
+  * Predictive processing in biological systems
+  * Information geometry
+- Module 2: Modeling Languages
+  * Factor graphs
+  * Message passing notation
+  * State-space models
+- Module 3: Implementation
+  * PyAI and related tools
+  * Biological simulation integration
+  * Hybrid modeling approaches
 
 4. **HANDS-ON LEARNING**
-Computational Exercises:
-- Python-based Active Inference tutorials
-- Julia implementation examples
-- Simple biological system models
-- Graph-based modeling exercises
-
-Projects:
-- Converting existing simulation models to Active Inference framework
-- Implementing basic biological control systems
-- Building conceptual models using various formalisms
+- Projects:
+  * Convert existing biological models to Active Inference framework
+  * Implement simple biological agents using PyAI
+  * Develop hybrid simulation-inference models
+- Tools:
+  * PyAI
+  * Julia-based Active Inference tools
+  * Simulation integration frameworks
 
 5. **ADVANCED TOPICS**
-- Multi-scale modeling in biological systems
-- Hierarchical Active Inference
-- Quantum Active Inference
-- Collective Active Inference
-- Non-equilibrium physics connections
+- Biological Applications:
+  * Neural systems
+  * Cellular decision-making
+  * Evolutionary processes
+- Mathematical Extensions:
+  * Variational methods
+  * Information geometry
+  * Complex systems theory
 
 6. **PRACTICAL APPLICATIONS**
-Biology-Focused Applications:
-- Cellular decision-making
-- Neural dynamics
-- Morphogenesis modeling
-- Evolutionary processes
-
-Implementation:
-- Converting existing models
-- Hybrid approaches combining simulation and Active Inference
-- Validation strategies
-- Performance optimization
+- Case Studies:
+  * Cellular homeostasis
+  * Neural decision-making
+  * Evolutionary adaptation
+- Implementation:
+  * Model validation techniques
+  * Simulation-inference integration
+  * Performance optimization
 
 7. **COMMUNITY AND COLLABORATION**
-Key Connections:
-- VERSE group at UCL
-- Active Inference Institute
-- Computational Biology communities
-- Systems Biology groups
-
-Engagement:
-- Active Inference Lab meetings
-- Academic conferences
-- Online forums and discussion groups
-- Research collaborations
+- Key Connections:
+  * Active Inference Institute
+  * Computational biology groups
+  * Systems biology networks
+- Collaboration Opportunities:
+  * Joint modeling projects
+  * Workshop participation
+  * Research partnerships
 
 8. **ASSESSMENT AND PROGRESSION**
-Milestones:
-- Basic model implementation
-- Framework translation capability
-- Complex system modeling
-- Original research contribution
-
-Validation:
-- Peer review of implementations
-- Community feedback
-- Publication opportunities
-- Workshop presentations
+- Milestones:
+  * Basic model implementation
+  * Language framework development
+  * Collaborative project completion
+- Validation:
+  * Peer review of models
+  * Community contribution
+  * Project documentation
 
 9. **RESOURCES AND TOOLS**
-Software:
-- PyAI
-- SPM
-- Julia Active Inference tools
-- Graph modeling tools
-
-Literature:
-- "Active Inference" (Da Costa et al.)
-- "The Free Energy Principle" (Friston)
-- Systems biology papers applying Active Inference
-- Modeling language specifications
+- Reading List:
+  * "Active Inference" (Da Costa et al.)
+  * "The Free Energy Principle" (Friston)
+  * Selected papers on biological applications
+- Tools:
+  * PyAI
+  * Julia Active Inference packages
+  * Simulation integration tools
 
 10. **IMPLEMENTATION ROADMAP**
+- Short-term (1-3 months):
+  * Master basic concepts
+  * Implement simple models
+  * Connect with community
+- Medium-term (3-6 months):
+  * Develop modeling framework
+  * Start collaborative projects
+  * Integration with existing work
+- Long-term (6-12 months):
+  * Advanced applications
+  * Framework publication
+  * Community contribution
 
-Short-term (1-3 months):
-- Master basic Active Inference concepts
-- Learn key modeling languages
-- Implement simple biological models
+This curriculum emphasizes practical modeling frameworks while providing exposure to the broader Active Inference domain. It focuses on bridging Glen's simulation experience with Active Inference applications and building connections with potential collaborators.
 
-Medium-term (3-6 months):
-- Develop hybrid simulation/Active Inference approaches
-- Build network of collaborators
-- Begin original research project
-
-Long-term (6-12 months):
-- Contribute to methodology development
-- Publish research findings
-- Establish collaborative projects
-- Create novel modeling frameworks
-
-Success Metrics:
-- Model implementation capability
-- Publication output
-- Collaboration establishment
-- Community engagement level
-- Novel framework development
-
-This curriculum emphasizes bridging Glen's simulation expertise with Active Inference while maintaining focus on biological systems and formal modeling approaches. It provides broad exposure while building practical skills and establishing valuable collaborations.
+How would you like to begin implementing this curriculum? We can start with any specific aspect that interests you most.

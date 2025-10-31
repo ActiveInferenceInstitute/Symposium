@@ -1,6 +1,6 @@
 # Curriculum: Jozef Coppelmans
 
-Generated on: 2025-10-24 14:43:54
+Generated on: 2025-10-31 15:05:10
 
 ## Metadata
 
@@ -9,112 +9,117 @@ Generated on: 2025-10-24 14:43:54
 
 ---
 
-I'll design a personalized curriculum for Jozef that bridges his background in law/philosophy with Active Inference modeling, focusing on making the mathematical concepts accessible while maintaining rigor.
+I'll design a personalized curriculum for Jozef that bridges philosophical/legal theory with Active Inference modeling, focusing on accessible mathematical concepts.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong conceptual understanding of Active Inference in moral cognition
-- Limited mathematical/computational background
-- Academic research orientation
-- Needs: Translation between philosophical concepts and mathematical models
-- Learning style: Likely conceptual-first, with gradual mathematical integration
+- Strong: Conceptual understanding of Active Inference, philosophical foundations
+- Gaps: Mathematical formalization, computational modeling
+- Learning style: Theoretical/conceptual learner with humanities background
+- Need: Bridge between philosophical concepts and mathematical implementation
 
 2. **PERSONALIZED LEARNING PATH**
-Months 1-2: Foundational Concepts
-- Active Inference basics through philosophical/conceptual lens
-- Gradual introduction to mathematical notation
-- Basic probability concepts through moral decision-making examples
+Phase 1 (Months 1-2): Mathematical Foundations
+- Basic probability theory through moral decision-making examples
+- Introduction to Bayesian inference using ethical dilemmas
+- Foundational concepts of free energy principle
 
-Months 3-4: Basic Modeling
-- Simple computational models using moral dilemmas
-- Introduction to free energy principle through intuitive examples
-- Basic Python programming for model implementation
+Phase 2 (Months 2-4): Basic Modeling
+- Simple computational models using accessible tools
+- Visual/graphical representations of active inference
+- Connecting mathematical concepts to moral theory
 
-Months 5-6: Advanced Integration
-- Connecting moral theory with Active Inference mathematics
-- Collaborative project development
-- Research paper preparation
+Phase 3 (Months 4-6): Applied Integration
+- Implementing moral frameworks in active inference models
+- Collaborative projects with technical partners
+- Publishing and sharing findings
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Conceptual Foundations
-- Free Energy Principle in moral decision-making
-- Belief updating in moral contexts
-- Precision and uncertainty in moral judgments
+Module 1: Mathematical Basics
+- Probability basics through moral choice scenarios
+- Introduction to Bayesian networks
+- Basic calculus concepts relevant to active inference
 
-Module 2: Mathematical Basics
-- Probability theory through moral examples
-- Bayesian inference in ethical reasoning
-- Basic calculus concepts needed for Active Inference
+Module 2: Active Inference Fundamentals
+- Free energy principle simplified
+- Belief updating in moral contexts
+- Action selection and policy evaluation
+
+Module 3: Moral Theory Integration
+- Mapping ethical principles to mathematical frameworks
+- Modeling moral decision-making
+- Representing values in active inference models
 
 4. **HANDS-ON LEARNING**
-- Using Jupyter notebooks with pre-written code
-- Moral decision-making simulations
-- Modified tutorials from Active Inference Lab
-- Collaborative coding sessions with mentors
+- Start with visual modeling tools (e.g., Lucidchart)
+- Progress to simplified Python notebooks
+- Group workshops with technical collaborators
+- Small-scale models of moral decision scenarios
 
 5. **ADVANCED TOPICS**
-- Hierarchical moral inference
-- Social Active Inference models
-- Group moral behavior modeling
-- Integration with legal theory
+- Multi-agent moral systems
+- Hierarchical active inference models
+- Integration with legal frameworks
+- Emerging research in moral AI
 
 6. **PRACTICAL APPLICATIONS**
-- Building simple models of moral decision-making
-- Case studies from legal/ethical dilemmas
-- Implementation in legal reasoning
-- Validation against empirical moral psychology data
+Case Studies:
+- Modeling moral development
+- Legal decision-making frameworks
+- Ethical AI systems
+- Criminal behavior prediction
 
 7. **COMMUNITY AND COLLABORATION**
 - Join Active Inference Institute
-- Connect with computational ethicists
-- Participate in Active Inference Journal Club
-- Present at interdisciplinary workshops
+- Attend workshops combining AI and ethics
+- Connect with computational neuroscience groups
+- Participate in philosophy of mind conferences
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Basic model implementation
-- First collaborative paper draft
-- Conference presentation preparation
-- Research network development
+- Basic mathematical model implementation
+- First collaborative project completion
+- Conference presentation
+- Paper draft combining theory and modeling
 
 9. **RESOURCES AND TOOLS**
-Readings:
+Essential Reading:
 - "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
-- Selected papers on moral cognition and Active Inference
-- Simplified mathematical tutorials
+- Selected papers from Karl Friston
+- Ethics and AI papers relating to active inference
 
 Tools:
-- Python (basic)
-- Active Inference tutorials
-- Google Colab for accessible computing
+- Python with simplified modeling libraries
+- Visual modeling software
+- Collaborative platforms for shared projects
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
-- Master conceptual foundations
-- Basic mathematical literacy
-- Initial model sketches
+- Master basic mathematical concepts
+- Create first simple models
+- Establish collaboration network
 
 Medium-term (3-6 months):
-- Simple model implementation
-- First collaborative paper draft
+- Implement basic moral decision models
 - Present at workshop/conference
+- Begin collaborative project
 
 Long-term (6-12 months):
-- Complete working model
-- Published paper
-- Established research network
+- Complete integrated theory-model framework
+- Submit paper for publication
+- Establish research group/network
 
 Success Metrics:
-- Working computational model of moral inference
-- Published collaborative paper
-- Established research partnerships
-- Conference presentation
+- Implementation of working models
+- Publication acceptance
+- Established collaborations
+- Integration into dissertation
 
-This curriculum emphasizes:
-- Conceptual understanding before mathematical formalism
-- Practical applications in moral/legal contexts
-- Building collaborative relationships
-- Gradual skill development
-- Regular feedback and adjustment
+Recommended Next Steps:
+1. Join Active Inference Institute
+2. Begin basic mathematics tutorials
+3. Identify potential technical collaborators
+4. Start simple modeling exercises
+5. Schedule regular progress reviews
 
-I recommend starting with conceptual mastery and gradually introducing mathematical concepts through relevant examples from moral philosophy and legal theory. This approach will make the technical aspects more accessible while maintaining focus on the practical applications in Jozef's field.
+This curriculum emphasizes accessibility while ensuring rigorous development of necessary technical skills, always maintaining focus on the moral/legal theory application of Active Inference.

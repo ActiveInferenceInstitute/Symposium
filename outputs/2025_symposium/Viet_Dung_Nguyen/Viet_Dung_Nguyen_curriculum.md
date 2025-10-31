@@ -1,6 +1,6 @@
 # Curriculum: Viet Dung Nguyen
 
-Generated on: 2025-10-24 15:06:19
+Generated on: 2025-10-31 15:30:32
 
 ## Metadata
 
@@ -9,131 +9,121 @@ Generated on: 2025-10-24 15:06:19
 
 ---
 
-Based on Viet Dung Nguyen's background and specific interests, I'll design a personalized Active Inference curriculum focusing on robotics applications and from-scratch implementation.
+I'll design a personalized curriculum for Viet Dung Nguyen, focusing on their robotics background and interest in coding-based learning of Active Inference.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong: Implementation experience, robotics applications, published research
-- Needs Development: Deep understanding of epistemic uncertainty in deep neural networks
-- Learning Style: Hands-on coding, from-scratch implementation preferred
-- Focus Area: Embodied robotics and uncertainty quantification
+- Strong: Implementation experience in robotics, published research
+- Needs Development: Deep understanding of epistemic uncertainty in EFE
+- Learning Style: Hands-on coding, from-scratch implementation
+- Knowledge Gap: Theory-practice connection in exploration mechanisms
 
 2. **PERSONALIZED LEARNING PATH**
-Phase 1 (1-2 months): Epistemic Uncertainty Foundations
-- Mathematical foundations of uncertainty in Active Inference
-- Implementation of basic uncertainty quantification
-- Connection to exploration strategies
+Month 1-2: Foundations & Mathematical Framework
+- Deep dive into Free Energy Principle mathematics
+- Implementation of basic Active Inference models from scratch
+- Focus on epistemic value computation
 
-Phase 2 (2-4 months): Deep Neural Network Integration
-- Custom implementation of Active Inference with DNNs
-- Exploration mechanisms in deep learning
-- Uncertainty propagation in neural networks
+Month 3-4: Advanced Implementation
+- Neural network integration with Active Inference
+- Exploration mechanisms in continuous spaces
+- Custom implementation of uncertainty estimation
 
-Phase 3 (4-6 months): Advanced Robotics Applications
-- Embodied Active Inference for manipulation
-- Novel formulations for robotic learning
-- Research-level implementations
+Month 5-6: Research & Innovation
+- Novel formulations for robotics applications
+- Integration with existing robotics frameworks
+- Publication-ready implementations
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Epistemic Uncertainty
-- Information theory foundations
-- Expected Free Energy decomposition
-- Uncertainty types in Active Inference
+Module 1: Mathematical Foundations
+- Variational Free Energy derivation
+- Information geometry in Active Inference
+- Belief updating mechanisms
 
-Module 2: Neural Network Integration
-- Bayesian neural networks
-- Variational inference in deep learning
-- Custom loss functions for Active Inference
+Module 2: Uncertainty & Exploration
+- Different forms of uncertainty in Active Inference
+- Epistemic value computation methods
+- Exploration-exploitation trade-offs
 
-Module 3: Robotics-Specific Theory
-- State-space representations
-- Action selection mechanisms
-- Hierarchical models for manipulation
+Module 3: Neural Network Integration
+- Deep Active Inference architectures
+- Gradient-based optimization in Active Inference
+- Uncertainty estimation in deep networks
 
 4. **HANDS-ON LEARNING**
 Project 1: Basic Implementation
-```python
-# From-scratch implementation of EFE calculation
-def calculate_efe(state_belief, transition_model, observation_model):
-    # Custom implementation without frameworks
-    pass
-```
+- Create simple Active Inference agent from scratch
+- Implement various uncertainty measures
+- Compare different exploration strategies
 
-Project 2: Uncertainty Quantification
-```python
-# Custom uncertainty estimation in neural networks
-def estimate_epistemic_uncertainty(model, input_data):
-    # Implementation using basic PyTorch operations
-    pass
-```
-
-Project 3: Robotic Task Implementation
-- Complete manipulation task implementation
-- Custom exploration strategy
-- Uncertainty-driven action selection
+Project 2: Robotics Integration
+- Implement Active Inference for manipulation tasks
+- Build custom uncertainty estimation modules
+- Develop exploration mechanisms for continuous action spaces
 
 5. **ADVANCED TOPICS**
 - Novel uncertainty estimation methods
-- Information-theoretic exploration strategies
-- Hierarchical Active Inference models
-- Multi-agent Active Inference systems
+- Information-theoretic approaches to exploration
+- Multi-agent Active Inference
+- Hierarchical Active Inference in robotics
 
 6. **PRACTICAL APPLICATIONS**
-Case Study 1: Manipulation Task
-- Uncertainty-driven exploration
-- Custom implementation of state estimation
-- Performance comparison with standard approaches
-
-Case Study 2: Novel Formulation
-- Development of new Active Inference variant
-- Implementation and testing
-- Comparison with existing methods
+Implementation Focus:
+- Custom Python implementations of core algorithms
+- Integration with PyTorch for deep learning components
+- Robotics-specific adaptations
+- Benchmarking and evaluation frameworks
 
 7. **COMMUNITY AND COLLABORATION**
-- Active participation in robotics conferences
-- Contribution to open-source implementations
-- Collaboration with Active Inference research groups
-- Regular paper submissions and presentations
+- Join Active Inference Institute
+- Participate in robotics-focused Active Inference workshops
+- Share implementations on GitHub
+- Present at ICRA/CoRL workshops
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Complete from-scratch implementation
-- Novel uncertainty quantification method
-- Published findings on epistemic uncertainty
-- Successful robotic task demonstration
+- Working implementation of uncertainty estimation
+- Novel exploration mechanism
+- Integration with existing robotics system
+- Publication-ready results
 
 9. **RESOURCES AND TOOLS**
-Essential Reading:
-- "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
-- Key papers on uncertainty in Active Inference
-- Recent robotics applications papers
+Key Papers:
+- "Active Inference: A Process Theory" (Friston et al.)
+- "Deep Active Inference" (Millidge et al.)
+- "Active Inference for Robot Control" (relevant papers)
 
 Tools:
-- Python for core implementations
-- Basic PyTorch for neural networks
-- Robot simulation environments
-- Custom visualization tools
+- Python/PyTorch for implementation
+- Custom testing environments
+- Robotics simulation platforms
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
-- Develop custom uncertainty quantification
-- Implement basic Active Inference from scratch
-- Begin robotics integration
+- Develop custom implementation of basic Active Inference
+- Create uncertainty estimation module
+- Build test environments
 
 Medium-term (3-6 months):
-- Complete novel formulation
-- Integrate with deep learning
-- Submit research findings
+- Integrate with robotics systems
+- Develop novel exploration mechanisms
+- Begin writing new paper
 
 Long-term (6-12 months):
-- Publish comprehensive implementation
-- Develop new theoretical frameworks
-- Establish research direction
+- Complete novel formulation
+- Submit to major conference
+- Open-source implementation
 
 Success Metrics:
-- Published implementation
-- Novel theoretical contributions
-- Successful robotic demonstrations
-- Research impact and citations
+- Working implementation
+- Novel contribution to field
+- Published paper
+- Practical robotics application
 
-This curriculum emphasizes hands-on implementation while addressing the specific interest in epistemic uncertainty and exploration in robotic systems. The focus on from-scratch implementation will ensure deep understanding of the principles involved.
+Special Focus Areas:
+1. Epistemic uncertainty optimization
+2. From-scratch implementation
+3. Robotics integration
+4. Novel formulations
+
+This curriculum emphasizes coding-based learning while maintaining theoretical rigor, focusing specifically on the connection between epistemic uncertainty and exploration in robotic systems.

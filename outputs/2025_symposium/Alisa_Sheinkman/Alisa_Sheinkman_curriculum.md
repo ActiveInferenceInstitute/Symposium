@@ -1,6 +1,6 @@
 # Curriculum: Alisa Sheinkman
 
-Generated on: 2025-10-24 14:49:48
+Generated on: 2025-10-31 15:10:46
 
 ## Metadata
 
@@ -9,31 +9,36 @@ Generated on: 2025-10-24 14:49:48
 
 ---
 
-I notice that several key pieces of information about Alisa Sheinkman are missing from the profile. To create a truly personalized and effective curriculum, I'll need details about:
+I notice that the background information, current Active Inference application, learning needs, challenges, and pragmatic/epistemic values sought for Alisa Sheinkman are not provided. To create a truly personalized and effective curriculum, I'll need these details.
 
-1. Her background (academic/professional experience)
-2. Current Active Inference applications she's working on
-3. Specific learning needs and goals
-4. Challenges she's facing
-5. The pragmatic and epistemic value she's seeking
+Could you please provide:
 
-Would you be able to provide these details? Once you do, I can design a curriculum that:
+1. **Background**: 
+- Educational/professional background
+- Current field of work/study
+- Prior experience with related concepts (e.g., Bayesian inference, machine learning, cognitive science)
 
-- Builds on her existing knowledge
-- Addresses her specific challenges
-- Aligns with her learning style
-- Focuses on her areas of application
-- Meets her pragmatic and epistemic goals
+2. **Current Active Inference Application**:
+- How they currently use or plan to use Active Inference
+- Specific domain of application
 
-In the meantime, I can suggest some general questions to help assess her current level:
+3. **Learning Needs**:
+- Specific skills they want to develop
+- Knowledge gaps they want to address
 
-**Initial Assessment Questions:**
-1. What is your current understanding of Active Inference?
-2. How do you plan to apply Active Inference in your work?
-3. What is your mathematical/computational background?
-4. What learning formats work best for you?
-5. How much time can you dedicate to this learning journey?
+4. **Challenges**:
+- Current obstacles in understanding/applying Active Inference
+- Time constraints or other practical limitations
 
-Once you provide more information about Alisa, I can create a detailed, personalized curriculum that matches her specific needs and goals.
+5. **Pragmatic/Epistemic Value Sought**:
+- Practical outcomes they hope to achieve
+- Theoretical understanding they wish to develop
 
-Would you like to provide these additional details so I can design a more targeted curriculum?
+Once you provide these details, I can create a highly personalized curriculum that:
+- Builds on their existing knowledge
+- Addresses their specific challenges
+- Aligns with their learning style
+- Focuses on their intended applications
+- Meets their pragmatic and epistemic goals
+
+Would you please share these details about Alisa so I can design an optimized learning path?

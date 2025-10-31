@@ -1,6 +1,6 @@
 # Curriculum: Nacho Echegoyen
 
-Generated on: 2025-10-24 15:08:08
+Generated on: 2025-10-31 15:32:56
 
 ## Metadata
 
@@ -9,22 +9,47 @@ Generated on: 2025-10-24 15:08:08
 
 ---
 
-I notice the background, current Active Inference application, learning needs, challenges, and pragmatic/epistemic value sections are empty. To create a truly personalized curriculum, I would need information about:
+I notice that the background, current Active Inference application, learning needs, challenges, and pragmatic/epistemic values sought are not provided. To create a truly personalized curriculum, I'll need these details about Nacho Echegoyen. 
 
-1. Their academic/professional background
-2. Current understanding/use of Active Inference
-3. Specific learning goals and needs
-4. Challenges they're facing
-5. What they hope to achieve (pragmatic value)
-6. What they want to understand (epistemic value)
+For now, I can outline how I would structure the assessment to gather this critical information:
 
-Would you like to provide these details so I can create a tailored curriculum? Or would you prefer I design a more general curriculum that can be refined once these details are available?
+**Initial Assessment Questions:**
 
-In either case, I can:
-- Structure the learning path from foundational to advanced concepts
-- Include both theoretical understanding and practical applications
-- Incorporate multiple learning modalities (reading, computation, projects)
-- Focus on real-world implementation
-- Build in assessment and progress tracking
+1. **Background Assessment:**
+- Academic/professional background
+- Current role and responsibilities
+- Prior experience with related concepts (e.g., Bayesian inference, information theory)
+- Mathematical/computational skill level
 
-Please let me know which approach you'd prefer and provide any additional information available about the participant.
+2. **Current Active Inference Understanding:**
+- Familiarity with Active Inference concepts
+- Any current applications or projects
+- Tools/frameworks currently using
+- Specific areas of interest
+
+3. **Learning Needs Assessment:**
+- Primary goals for learning Active Inference
+- Preferred learning style
+- Time availability for study
+- Access to resources/tools
+
+4. **Challenges Identification:**
+- Current obstacles in understanding/applying Active Inference
+- Technical limitations
+- Resource constraints
+- Time restrictions
+
+5. **Value Assessment:**
+- Pragmatic goals (concrete applications)
+- Epistemic goals (theoretical understanding)
+- Desired outcomes
+- Success metrics
+
+Would you like to provide these details about Nacho Echegoyen? With this information, I can create a highly personalized curriculum that:
+- Aligns with their specific background
+- Addresses their unique challenges
+- Focuses on their areas of interest
+- Matches their learning style
+- Achieves their practical goals
+
+Please share the relevant information, and I'll design a detailed, customized curriculum following the structure outlined in your request.

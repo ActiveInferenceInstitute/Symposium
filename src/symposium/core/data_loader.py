@@ -118,6 +118,10 @@ class DataLoader:
         """
         presenters = {}
         
+        # Convert string to Path if needed
+        if isinstance(base_path, str):
+            base_path = Path(base_path)
+        
         if not base_path.exists():
             logger.error(f"Base path does not exist: {base_path}")
             return presenters
@@ -188,6 +192,10 @@ class DataLoader:
             Dictionary mapping participant names to their profiles
         """
         participants = {}
+        
+        # Convert string to Path if needed
+        if isinstance(base_path, str):
+            base_path = Path(base_path)
         
         if not base_path.exists():
             logger.error(f"Base path does not exist: {base_path}")

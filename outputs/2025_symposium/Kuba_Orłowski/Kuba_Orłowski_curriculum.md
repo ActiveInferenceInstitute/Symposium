@@ -1,6 +1,6 @@
 # Curriculum: Kuba Orłowski
 
-Generated on: 2025-10-24 15:12:55
+Generated on: 2025-10-31 15:38:49
 
 ## Metadata
 
@@ -9,46 +9,28 @@ Generated on: 2025-10-24 15:12:55
 
 ---
 
-I notice that the key background information fields are empty. To create a truly personalized and effective curriculum for Kuba Orłowski, I'll need some essential information:
+I notice that the background information, current Active Inference application, learning needs, challenges, and value sought sections are empty. To create a truly personalized curriculum for Kuba Orłowski, I'll need these details to:
+
+1. Align the curriculum with their specific background and experience level
+2. Address their particular challenges and learning needs
+3. Focus on relevant applications in their domain
+4. Set appropriate pace and depth of technical content
+5. Recommend suitable learning resources and tools
 
 Could you please provide:
 
-1. **Background:**
-- Academic/professional background
-- Current field of work/study
-- Level of mathematical/computational expertise
-- Prior exposure to related concepts (e.g., Bayesian inference, machine learning)
+1. Kuba's professional/academic background
+2. Current understanding/application of Active Inference (if any)
+3. Specific learning goals and needs
+4. Challenges they're facing in learning/applying Active Inference
+5. What they hope to achieve (pragmatic value)
+6. What they want to understand (epistemic value)
 
-2. **Current Active Inference Application:**
-- How they currently use or plan to use Active Inference
-- Specific domain of application
-- Current projects or research interests
-
-3. **Learning Needs:**
-- Specific aspects of Active Inference they want to master
-- Skills they want to develop
-- Time availability for learning
-
-4. **Challenges:**
-- Current obstacles in understanding/applying Active Inference
-- Technical or conceptual difficulties
-- Resource or time constraints
-
-5. **Pragmatic Value Sought:**
-- Practical outcomes they hope to achieve
-- Specific problems they want to solve
-- Implementation goals
-
-6. **Epistemic Value Sought:**
-- Theoretical understanding they wish to develop
-- Research interests
-- Depth of mathematical/theoretical knowledge desired
-
-Once you provide these details, I can create a highly personalized curriculum that:
-- Builds on their existing knowledge
+With this information, I can design a curriculum that:
+- Matches their current knowledge level
 - Addresses their specific challenges
-- Aligns with their learning style
-- Focuses on their desired applications
-- Meets their practical and theoretical goals
+- Focuses on relevant applications
+- Provides appropriate learning resources
+- Sets realistic timelines and milestones
 
-Would you please share these details about Kuba so I can design the most effective learning path?
+Would you be able to provide these details so I can create a properly tailored curriculum?

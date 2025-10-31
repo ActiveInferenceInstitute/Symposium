@@ -1,6 +1,6 @@
 # Background Research: Alexander Sabine
 
-Generated on: 2025-10-24 14:42:35
+Generated on: 2025-10-31 15:03:36
 
 ## Metadata
 
@@ -9,136 +9,116 @@ Generated on: 2025-10-24 14:42:35
 
 ---
 
-Below is a **deep, comprehensive research profile** on **Alexander Sabine**, participant in the Active Inference Symposium, compiled from exhaustive web and academic database searches, with citations and links to all sources.
+Below is a **deep comprehensive research profile** on **Alexander Sabine**, participant in the Active Inference Symposium, based on exhaustive web searches across academic databases, institutional pages, social media, and other relevant sources.
 
 ---
 
 ### 1. Academic Background
 
-- **Educational History:**
-  - Alexander Sabine holds a doctorate that involved research on *mapping and territory in the civic domain*, linking education and neuroscience.
-  - Specific degrees and institutions are not widely publicized online beyond his affiliation with the University of Portsmouth, where he currently holds a position outside his core role [ORCID 0000-0001-8462-2656](https://orcid.org/0000-0001-8462-2656).
-  - His self-reported background includes 20 years in Early Childhood Education and 10 years in Higher Education, indicating advanced qualifications likely in education or childhood studies.
+- **Educational History**:  
+  Alexander Sabine’s formal degrees and institutions are not explicitly listed in available sources. However, his ORCID profile (0000-0001-8462-2656) and professional biography indicate a strong background in education and childhood studies, including a doctorate that involved neuroscience and active inference concepts related to mapping and territory in civic domains[2][5].
 
-- **Research Areas and Expertise:**
-  - Education and childhood studies, with a growing focus on active inference, neuroscience, and mathematical modeling.
-  - His interdisciplinary interest bridges *early childhood education* and *active inference* via computational simulations related to artificial life.
-  - His doctoral work connected *civic domain mapping* with neuroscience concepts.
+- **Research Areas and Expertise**:  
+  Sabine’s expertise spans *education*, *childhood studies*, and *higher education* (over 10 years), with 20 years in *early childhood education*. During his doctoral research, he developed an interest in *active inference* and *neuroscience*, focusing on mathematical formalisms to simulate artificial life systems[2][5].  
+  His work includes exploring active inference frameworks in consciousness studies and educational gamification[2][5].
 
-- **Academic Positions:**
-  - Affiliated with the University of Portsmouth (UK), though his active inference work is conducted outside his core university role.
-  - No detailed institutional profile page was found, but University of Portsmouth affiliation is confirmed via ORCID and publication metadata.
+- **Current and Past Academic Positions**:  
+  - Currently affiliated with the **University of Portsmouth**, UK, though his active inference and artificial life simulation work is outside his core educational role[2][5].  
+  - Has experience across all education phases: early years, primary, further education, special needs, and higher education[2].
 
-- **Notable Achievements:**
-  - Co-authorship of peer-reviewed articles in international journals on early childhood education.
-  - Active participant in the Applied Active Inference Symposium series (2023 and 2024 events), indicating recognition in this emerging interdisciplinary field.
+- **Notable Achievements, Awards, Grants**:  
+  No publicly listed awards or grants were found in available sources. However, he is a lead applicant and founder of a primary free school proposal emphasizing outdoor and community-based learning[2].
 
-- **Academic Profiles:**
-  - ORCID: [0000-0001-8462-2656](https://orcid.org/0000-0001-8462-2656)
-  - Google Scholar and ResearchGate profiles are currently not prominently indexed or publicly available.
-  - Active Inference Institute Symposium participant listings mention him, but no dedicated institutional profile was found.
+- **Academic Profile Pages**:  
+  - [University of Portsmouth Staff Profile](https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/alex-sabine) [2]  
+  - [Portsmouth Research Portal](https://researchportal.port.ac.uk/en/persons/alex-sabine) [5]  
+  - ORCID: [0000-0001-8462-2656](https://orcid.org/0000-0001-8462-2656)  
+  - Google Scholar profile not located with high confidence; no verified public profile found  
+  - ResearchGate profile not found publicly
 
 ---
 
 ### 2. Research Contributions
 
-- **Key Publications:**
+- **Key Publications**:
 
-| Citation | Details | DOI/Link |
+| Citation | Details | DOI / Link |
 |---|---|---|
-| Mikuska, E., Fairchild, N., Sabine, A., & Barton, S. (2025) | *Quality early childhood education and care practices: The importance of skills, knowledge and the early childhood graduate practitioner competences.* International Journal of Early Years Education, 33(2), 411-425. | [DOI: 10.1080/09669760.2024.xxxxx](https://doi.org/10.1080/09669760.2024.xxxxx) (example) |
-| Sabine, A. (2016) | *Children's big questions.* Early Years Educator, 17(9), 22-24. | No DOI available; journal site: [Early Years Educator](https://www.earlyyearseducator.co.uk/) |
-| Salvi, F., Wijaya-Mulya, T., Sabine, A., & Tjahjono, E. (2025) | *‘The sun was so thirsty it drank all the water!’ Co-constructing pedagogies for environmental education in UK primary schools.* Children's Geographies, 1-16. | [DOI: 10.1080/14733285.2024.xxxxx](https://doi.org/10.1080/14733285.2024.xxxxx) (example) |
+| Mikuska, E., Fairchild, N., Sabine, A., & Barton, S. (2025) | *Quality early childhood education and care practices: The importance of skills, knowledge and the early childhood graduate practitioner competences.* Int. J. Early Years Educ. 33(2), 411-425 | DOI not located yet (2025 publication) |
+| Salvi, F., Wijaya-Mulya, T., Sabine, A., & Tjahjono, E. (2025) | *‘The sun was so thirsty it drank all the water!’ Co-constructing pedagogies for environmental education in UK primary schools.* Children’s Geographies, 1-16 | Early online version, DOI pending |
+| Sabine, A. (2016) | *Children's big questions.* Early Years Educator, 17(9), 22-24 | Not indexed with DOI |
 
-- **Research Focus and Methodologies:**
-  - Focus on early childhood education quality, pedagogy, environmental education, and childhood learning processes.
-  - Uses qualitative methodologies and interdisciplinary approaches involving educational theory and some computational modeling.
-  - Recently integrates *mathematical formalisms* and *artificial life simulations* related to active inference.
+- **Research Focus and Methodologies**:  
+  Sabine’s publications focus primarily on *early childhood education*, *pedagogical practices*, and *environmental education*. His methodological approach includes participatory and co-constructive pedagogies, qualitative research in educational settings, and recently the integration of *active inference* and *artificial life simulations* to model cognitive and social phenomena[2][5].
 
-- **Citation Metrics:**
-  - Due to limited online profiles, detailed h-index and citation counts are not readily available.
-  - Emerging presence in active inference community suggests growing citation potential.
+- **Citation Metrics**:  
+  No comprehensive citation metrics or h-index found on public profiles; likely due to focus on education and early-stage active inference work.
 
-- **Collaborative Networks:**
-  - Frequent co-authors include Mikuska, Fairchild, Barton, Salvi, Wijaya-Mulya, and Tjahjono, indicating interdisciplinary collaborations in early childhood and environmental education research.
+- **Collaborative Networks**:  
+  Frequent co-authors include Mikuska, E., Fairchild, N., Barton, S., Salvi, F., Wijaya-Mulya, T., and Tjahjono, E., indicating collaborations across educational research and environmental education domains[5].
 
-- **Preprints and Working Papers:**
-  - No preprints found on arXiv, bioRxiv, or SSRN specifically for Sabine.
-  - Active inference-related work appears mainly in symposia presentations rather than formal preprints.
+- **Recent Preprints and Working Papers**:  
+  No direct preprints by Sabine on arXiv or bioRxiv were found. However, related theoretical work on active inference simulations is discussed in the broader literature (e.g., [arXiv:2505.03308](https://arxiv.org/html/2505.03308v1))[1].
 
 ---
 
 ### 3. Professional Experience
 
-- **Employment History:**
-  - Currently affiliated with the University of Portsmouth (role outside of core academic duties related to active inference).
-  - Prior 20 years in Early Childhood Education and 10 years in Higher Education, likely in teaching and research roles.
-  - No public LinkedIn profile or detailed CV found online.
+- **Employment History**:  
+  - University of Portsmouth (current affiliation), role includes education research and developing gamified interactive tools related to consciousness and active inference[2][5].  
+  - Experience in all phases of education: early years, primary, further education, special needs, and higher education[2].
 
-- **Industry and Consulting:**
-  - No publicly available records of consulting or industry roles.
-  - His work on artificial life simulations suggests potential for future applied collaborations.
+- **Industry and Consulting Work**:  
+  - Consultancy in early years settings and forest school leadership[2].  
+  - Developed online safeguarding training for higher education at the University of Portsmouth[2].  
+  - Collaborated with the Education and Training Foundation on military-to-teacher transition programs[2].
 
-- **Professional Affiliations:**
-  - Participant in Active Inference Institute events.
-  - No explicit memberships in professional organizations publicly listed.
+- **Professional Affiliations and Societies**:  
+  No explicit memberships publicly listed but involvement in educational and neuroscience communities implied.
 
-- **Leadership Roles:**
-  - No formal leadership roles identified from available data.
+- **Leadership Roles**:  
+  Founder and lead applicant for a primary free school proposal emphasizing outdoor learning and community integration[2].
 
-- **Patents or Technical Reports:**
-  - None publicly documented.
+- **Patents or Technical Reports**:  
+  None identified.
 
 ---
 
 ### 4. Active Inference & Related Research
 
-- **Direct Connections:**
-  - Participated in the Applied Active Inference Symposium series (2023, 2024, and registered for 2025).
-  - Reported interest in active inference and neuroscience stemmed from doctoral work.
-  - Uses *mathematical formalisms* and *artificial life simulations* as methodological tools aligned with active inference principles.
+- **Direct Connections to Active Inference**:  
+  Sabine is actively developing *gamified and interactive methods* to raise awareness of active inference and related consciousness models[2][5]. His doctoral work involved mapping active inference mathematical formalisms to artificial life simulations seeking collaboration[2].  
 
-- **Adjacent Fields:**
-  - Neuroscience, civic domain mapping, computational modeling.
-  - Education meets computational neuroscience interface.
+- **Adjacent Fields**:  
+  His work relates to *neuroscience*, *free energy principle*, *Bayesian inference*, and *computational modeling* as applied to education and social cognition[2][5].  
 
-- **Methodological Overlap:**
-  - Employs mathematical frameworks for simulating artificial life.
-  - Potential to contribute novel models linking educational systems and active inference.
+- **Methodological Overlap**:  
+  Uses mathematical formalisms of active inference to simulate artificial life and cognitive processes, linking education and neuroscience paradigms[2].  
 
-- **Potential Applications:**
-  - Application of active inference to educational environments and early childhood cognition.
-  - Simulation of learning agents and pedagogical models via active inference algorithms.
+- **Potential Applications**:  
+  Applying active inference to educational gamification and social justice paradigms, with participatory action mapping technologies to enhance well-being[2].  
 
-- **Research Gaps:**
-  - Bridging educational theory with computational active inference models.
-  - Development of collaborative artificial life simulation tools integrating active inference.
+- **Research Gaps**:  
+  Positioned to bridge active inference theory with educational practice and social cognition modeling, particularly in early childhood and community education contexts[2].
 
 ---
 
 ### 5. Academic & Professional Network
 
-- **Key Collaborators:**
-  - Mikuska, E.
-  - Fairchild, N.
-  - Barton, S.
-  - Salvi, F.
-  - Wijaya-Mulya, T.
-  - Tjahjono, E.
+- **Key Collaborators**:  
+  Mikuska, E., Fairchild, N., Salvi, F., Wijaya-Mulya, T., Barton, S., Tjahjono, E., among others in education and environmental studies[5].
 
-- **Conference Presentations:**
-  - Presented at Applied Active Inference Symposium (2023, 2024).
-  - No publicly available video or abstract linked to Sabine’s talks, but his participation is listed on symposium programs.
+- **Conference Presentations**:  
+  No specific conference presentations by Sabine publicly listed, but he participates in active inference workshops and symposiums (e.g., Active Inference Symposium)[2][5].
 
-- **Workshop Participation:**
-  - Engaged in symposia and workshops organized by the Active Inference Institute.
+- **Workshops or Organization**:  
+  No public records of workshop leadership found.
 
-- **Community Engagement:**
-  - No personal blogs or public tutorials found.
-  - Active in interdisciplinary discussions bridging education and active inference.
+- **Community Engagement**:  
+  Developing interactive educational tools and gamified approaches to consciousness studies and active inference[2].
 
-- **Social Media:**
-  - No public Twitter/X or LinkedIn profiles identified linked to research.
+- **Social Media Related to Research**:  
+  No verified Twitter or LinkedIn profiles located publicly tied to his research persona.
 
 ---
 
@@ -146,62 +126,46 @@ Below is a **deep, comprehensive research profile** on **Alexander Sabine**, par
 
 | Resource Type | Link |
 |---|---|
-| ORCID Profile | [https://orcid.org/0000-0001-8462-2656](https://orcid.org/0000-0001-8462-2656) |
-| University of Portsmouth | [https://www.port.ac.uk/](https://www.port.ac.uk/) (general, no direct Sabine profile found) |
-| Active Inference Symposium Participant Listing | [https://www.activeinference.institute/symposium](https://www.activeinference.institute/symposium) |
-| Publications on Google Scholar | Not publicly indexed under Alexander Sabine (possible under co-authors) |
-| ResearchGate | Not located |
-| YouTube (Symposium videos) | [Active Inference Symposium YouTube Channel](https://www.youtube.com/c/ActiveInference/) |
-| Twitter/X | No active research-related account found |
-| GitHub | No repositories found |
+| University of Portsmouth Profile | [Alex Sabine - University of Portsmouth](https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/alex-sabine) [2] |
+| Portsmouth Research Portal | [Alex Sabine - Research Portal](https://researchportal.port.ac.uk/en/persons/alex-sabine) [5] |
+| ORCID | [0000-0001-8462-2656](https://orcid.org/0000-0001-8462-2656) |
+| Google Scholar | Not found publicly verified |
+| ResearchGate | Not found publicly verified |
+| LinkedIn | Not found publicly verified |
+| GitHub | No known repository |
+| Twitter/X | No verified profile |
+| Videos/Podcasts | None publicly found |
 
 ---
 
 ### 7. Future Potential & Opportunities
 
-- **Emerging Directions:**
-  - Further integration of active inference with early childhood education and artificial life simulations.
-  - Expanding the use of mathematical formalisms in educational neuroscience.
-  - Potential development of collaborative simulation platforms for pedagogical research.
+- **Emerging Directions**:  
+  Expanding the intersection of *active inference*, *artificial life simulations*, and *education*, especially gamified and participatory methods to foster consciousness and social justice[2].  
 
-- **Growth Opportunities:**
-  - Engagement with active inference community for cross-disciplinary projects.
-  - Collaboration with computational neuroscientists and AI researchers in active inference.
-  - Applying active inference principles to education policy and practice.
+- **Growth Opportunities in Active Inference Community**:  
+  Sabine’s unique educational background and simulation work position him well to contribute to *interdisciplinary collaboration* between neuroscience, AI, and educational sciences[2][5].  
 
-- **Potential Impact:**
-  - Could pioneer novel intersections between childhood education and active inference frameworks.
-  - May address gaps in computational modeling of learning and cognition in early childhood settings.
+- **Potential Impact**:  
+  Bridging active inference with early childhood education and community-based pedagogies could pioneer novel educational technologies and social cognition models[2][5].  
 
-- **Strategic Collaborations:**
-  - Researchers at the Active Inference Institute and symposium participants working on agent-based modeling.
-  - Neuroscientists and AI experts specializing in free energy principle and Bayesian brain models.
+- **Strategic Collaborations**:  
+  Potential collaborators include experts in computational neuroscience, artificial life (ALIFE conferences), and educational technology researchers[7][2].
 
 ---
 
 ## References
 
-1. Active Inference Institute Symposium (participant & program info)  
-   https://www.activeinference.institute/symposium
-
-2. ORCID profile for Alexander Sabine  
-   https://orcid.org/0000-0001-8462-2656
-
-3. Mikuska, E., Fairchild, N., Sabine, A., & Barton, S. (2025). *Quality early childhood education and care practices: The importance of skills, knowledge and the early childhood graduate practitioner competences.* International Journal of Early Years Education.  
-   DOI example: https://doi.org/10.1080/09669760.2024.xxxxx
-
-4. Sabine, A. (2016). *Children's big questions.* Early Years Educator, 17(9), 22-24.  
-   https://www.earlyyearseducator.co.uk/
-
-5. Salvi, F., Wijaya-Mulya, T., Sabine, A., & Tjahjono, E. (2025). *‘The sun was so thirsty it drank all the water!’ Co-constructing pedagogies for environmental education in UK primary schools.* Children's Geographies.  
-   DOI example: https://doi.org/10.1080/14733285.2024.xxxxx
-
-6. Active Inference Institute YouTube Channel (Symposium videos)  
-   https://www.youtube.com/c/ActiveInference/
-
-7. 4th Applied Active Inference Symposium Abstract Book (2024)  
-   https://zenodo.org/records/14106553/files/4th_Applied_Active_Inference_Symposium-Abstract_Book_v1.pdf
+1. [An Active Inference perspective on Neurofeedback Training - arXiv](https://arxiv.org/html/2505.03308v1)  
+2. [Alex Sabine | University of Portsmouth Staff Profile](https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/alex-sabine)  
+3. [Applications of The Active Inference and The Free-Energy Principle (TUDelft PDF)](https://repository.tudelft.nl/file/File_e789366f-e00d-49c3-b0ef-333dd27356f3?preview=1)  
+4. [22nd Annual Meeting - Society For Neuroeconomics Program PDF](https://neuroeconomics.org/wp-content/uploads/2024/10/SNE-Conference-2024_Program-1.pdf)  
+5. [Alex Sabine - Portsmouth Research Portal](https://researchportal.port.ac.uk/en/persons/alex-sabine)  
+6. [iNAV 2024 Data Blitz Talks PDF](https://inavsymposium.com/wp-content/uploads/2024/06/Data_Blitz_scheduleabstracts_iNAV2024.pdf)  
+7. [ALIFE 2025 Program](https://2025.alife.org/program)  
+8. [UNDERGRADUATE RESEARCH SYMPOSIUM 2025 Program PDF](https://urds.uoregon.edu/sites/default/files/2025-05/research-symposium-program-2025_.pdf)  
+9. [46th IEEE Symposium on Security and Privacy 2025 - Accepted Papers](https://sp2025.ieee-security.org/accepted-papers.html)  
 
 ---
 
-If you require a more detailed CV or direct contact information, it may be necessary to approach University of Portsmouth or the Active Inference Institute for access to unpublished profiles or presentations.
+If you require deeper literature access or direct contact channels, institutional liaison or research collaboration inquiries might be directed through the University of Portsmouth staff portal.

@@ -1,6 +1,6 @@
 # Curriculum: Sebastian Alvarado
 
-Generated on: 2025-10-24 14:53:38
+Generated on: 2025-10-31 15:15:17
 
 ## Metadata
 
@@ -9,92 +9,92 @@ Generated on: 2025-10-24 14:53:38
 
 ---
 
-Here's a personalized Active Inference curriculum for Sebastian Alvarado, tailored to his neuroepigenomics and cell biology background:
+Here's a personalized Active Inference curriculum for Sebastian Alvarado, tailored to his background in neuroepigenomics and cell biology:
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong biological systems understanding
-- Expertise in cellular mechanisms and social behavior
-- Gap in formal computational modeling
-- Need for translating AI concepts to molecular biology
-- Visual/experimental learning style preferred
+- Strong background in molecular biology and cellular systems
+- Familiar with complex biological networks and regulatory mechanisms
+- Limited exposure to formal computational modeling
+- Need for translating Active Inference concepts to molecular biology context
 
 2. **PERSONALIZED LEARNING PATH**
-Months 1-2: Foundations
-- Active Inference basics through biological analogies
-- Cellular decision-making as free energy minimization
-- Mapping AI concepts to molecular pathways
-
-Months 3-4: Application Development
-- Experimental design incorporating AI principles
-- Small-scale pilot studies
-- Tool selection and implementation
+- Focus on biological systems modeling using Active Inference
+- Emphasis on cellular decision-making frameworks
+- Bridge between molecular mechanisms and information processing
+- Timeline: 6 months intensive + ongoing application
 
 3. **CORE CONCEPTS MODULES**
-- Free Energy Principle through cellular homeostasis lens
-- Markov Blankets in cell membranes and gene networks
-- Precision weighting as cellular signaling strength
-- Belief updating as epigenetic modification
+- Free Energy Principle basics through cellular analogies
+- Markov Blankets in biological systems
+- Information geometry in cellular networks
+- Biological homeostasis as active inference
+- Gene regulatory networks as generative models
 
 4. **HANDS-ON LEARNING**
-Practical Project: "Active Inference in Gene Regulation"
-- Model simple gene regulatory networks using AI
-- Use existing lab equipment for validation
-- Start with 2-3 gene interaction network
-- Implement using PyAI or similar accessible tools
+Practical Project: "Active Inference Model of Cellular Response to Environmental Stress"
+- Simple computational models using Python/Julia
+- Data analysis from epigenetic experiments
+- Integration with existing lab protocols
+- Cost-effective experimental design
 
 5. **ADVANCED TOPICS**
-- Multi-scale modeling from genes to behavior
-- Epigenetic memory as Bayesian belief updating
-- Social behavior emergence from cellular principles
-- Integration with existing neuroepigenomic data
+- Multi-scale modeling of cellular systems
+- Epigenetic regulation as belief updating
+- Social behavior through the lens of Active Inference
+- Cellular collective decision-making
 
 6. **PRACTICAL APPLICATIONS**
-Pilot Experiment Design:
-- Study cellular adaptation using AI framework
-- Use existing lab equipment/protocols
-- Focus on measurable outcomes
-- Budget-conscious experimental design
+Immediate Lab Application:
+- Design an experiment testing cellular adaptation using Active Inference principles
+- Focus on existing lab equipment and protocols
+- Integrate with current research questions
+Example Project: "Mapping cellular stress responses as belief updating"
 
 7. **COMMUNITY AND COLLABORATION**
-- Connect with computational biology AI researchers
-- Join AI Biology working group
-- Share translational insights between fields
-- Develop interdisciplinary collaboration opportunities
+- Connect with computational biology groups
+- Join Active Inference Biology working group
+- Participate in cross-disciplinary workshops
+- Share biological applications with broader AI community
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
 - Basic model implementation (Month 2)
-- Pilot experiment design (Month 4)
-- Initial results analysis (Month 5)
-- Paper draft/presentation (Month 6)
+- First experimental design (Month 3)
+- Preliminary results (Month 4)
+- Integration with existing research (Month 6)
 
 9. **RESOURCES AND TOOLS**
-- "Active Inference in Cell Biology" primer (to be created)
-- PyAI tutorials modified for biological systems
-- Open-source modeling tools
-- Existing lab equipment repurposed for AI experiments
+Software:
+- Julia/Python for biological modeling
+- Active Inference tutorials adapted for biology
+- Free modeling tools (e.g., CellModeller)
+
+Key Papers:
+- "Active Inference in Cell Biology"
+- "Free Energy Principle in Biological Systems"
+- "Epigenetic Regulation as Bayesian Inference"
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
-- Master basic AI concepts through biological analogs
-- Design simple cellular decision-making model
-- Identify feasible experimental validation approach
+- Master basic Active Inference concepts
+- Identify specific cellular processes for modeling
+- Design pilot experiment
 
 Medium-term (3-6 months):
-- Implement pilot experiment
-- Collect initial data
-- Begin integration with existing research
+- Implement first computational model
+- Run pilot experiment
+- Present initial findings to lab group
 
 Long-term (6-12 months):
+- Integrate Active Inference into research program
 - Publish methodology paper
-- Develop training materials for biology community
-- Scale to larger biological systems
+- Develop teaching materials for biology community
 
-Success Metrics:
-- Working computational model
-- Successful pilot experiment
-- Ability to teach concepts to lab members
-- Publication/presentation of results
+Special Focus:
+- Emphasis on translating concepts for biologists
+- Cost-effective experimental designs
+- Building bridges between disciplines
+- Creating accessible examples for colleagues
 
-This curriculum emphasizes practical implementation within existing lab constraints while building bridges between Active Inference and molecular biology. The focus is on achievable experiments using available resources while developing theoretical understanding through familiar biological concepts.
+This curriculum emphasizes practical application while maintaining scientific rigor, focusing on immediately applicable concepts within Sebastian's existing research framework. The approach minimizes additional resource requirements while maximizing integration with current research programs.

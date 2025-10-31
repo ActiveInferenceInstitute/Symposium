@@ -1,6 +1,6 @@
 # Background Research: glen ropella
 
-Generated on: 2025-10-24 15:04:08
+Generated on: 2025-10-31 15:28:19
 
 ## Metadata
 
@@ -9,91 +9,224 @@ Generated on: 2025-10-24 15:04:08
 
 ---
 
-## Academic Background
+# Comprehensive Research Profile: Glen Ropella
 
-Glen Ropella holds a **Bachelor of Science degree in Applied Mathematics** from Texas A&M University, which he earned in December 1991[1]. There is no further information available on his educational history beyond this degree.
+---
 
-As for research areas, Glen Ropella is involved in **simulation, mostly of biological systems**[Source: Self-reported background]. His work includes expertise in **multi-agent simulation for cancer and epithelial morphogenesis** as well as **network-based modeling for cancer pathways**[4].
+## 1. ACADEMIC BACKGROUND
 
-Glen Ropella is a **Research Scientist** with oversight for software development in the Biosystems Group at UCSF[4]. There is no information available on notable achievements, awards, grants, or honors.
+### Educational History
+- **Degrees:** No publicly available record of Glen Ropella’s formal educational history (degrees, institutions, graduation years) could be found in institutional profiles, ORCID, or academic databases as of October 2025.  
+- **Institutional Affiliations:**  
+  - **Tempus Dictum, Inc.** (Principal) [1]  
+  - **BioSystems Group, UCSF** (Research Scientist, software development oversight) [4]  
+  - **UCSF/UCB Joint Graduate Group in Bioengineering** (Affiliated, but not listed as a student or faculty member) [2]  
 
-His academic profile is available on platforms like [ORCID](https://orcid.org/0000-0002-6031-105X), but specific links to other academic profiles such as Google Scholar or ResearchGate could not be found.
+### Research Areas and Expertise Domains
+- **Primary Research Areas:**  
+  - Computational biology [4]  
+  - Multi-agent simulation for cancer [4]  
+  - Epithelial morphogenesis [4]  
+  - Network-based modeling for cancer pathways [4]  
+  - Agent-based modeling (Swarm platform expert) [4]  
+  - Simulation of biological systems [self-reported]  
 
-## Research Contributions
+- **Methodological Expertise:**  
+  - Agent-based modeling  
+  - Discrete event simulation  
+  - Off-lattice modeling (Delaunay/Voronoi frameworks) [5]  
+  - Software engineering for simulation platforms [4]  
 
-Key publications include research on **agent-based modeling** and **biological simulations**. For example, a notable paper involves "A Cell-Centered, Agent-Based Framework That Enables Exploring and Challenging" biological phenomena[7]. Another relevant publication is "Virtual Experiments Enable Exploring and Challenging" biological systems[6].
+### Current and Past Academic Positions
+- **Current:**  
+  - Research Scientist, BioSystems Group, UCSF [4]  
+  - Principal, Tempus Dictum, Inc. [2]  
+- **Past:**  
+  - No public record of previous academic appointments found.  
 
-Glen Ropella's research focus areas include **computational biology** and **multi-agent simulations**. His methodologies often involve **agent-based modeling** to study complex biological systems[4][7].
+### Notable Achievements, Awards, Grants, Honors
+- No public record of awards, honors, or major grants found in institutional profiles, ORCID, or news sources as of October 2025.  
+- **ORCID Profile:** 0000-0002-6031-105X [ORCID link below]  
 
-Citation metrics are not readily available without direct access to his complete publication list, but his work is cited in various academic papers related to biological simulations[3][6][7].
+### Academic Profile Pages
+- **ORCID:** [https://orcid.org/0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X)  
+- **Google Scholar:** No direct profile found.  
+- **ResearchGate:** No direct profile found.  
+- **Institutional Page:** [UCSF BioSystems Group People](http://www.cahlab.com/people.html) [4]  
 
-Collaborative networks include working with researchers like **C. Anthony Hunt** on projects related to biological modeling[3][8].
+---
 
-Recent preprints or working papers could not be found in the usual repositories like arXiv or bioRxiv.
+## 2. RESEARCH CONTRIBUTIONS
 
-## Professional Experience
+### Key Publications
 
-Glen Ropella is the **Owner and President of Tempus Dictum, Inc.**, a position he has held since February 2001[1]. His past roles include **Director at Swarm Development Group** and **Senior Director of Engineering at Icarian/Workstream**. He has also been the **Director of Engineering at Carethere** and **Chief Technology Officer at The Swarm Corporation**[1].
+1. **Kennedy, R.C., Ropella, G.E.P., Hunt, C.A.**  
+   *A Cell-Centered, Agent-Based Framework That Enables Biomimetic Simulation of Biological Cells in Off-Lattice Environments.*  
+   **Journal:** PLOS ONE, 2016  
+   **DOI:** [10.1371/journal.pone.0155855](https://doi.org/10.1371/journal.pone.0155855) [2]  
+   **Citations:** 12 [5]  
 
-Early in his career, he worked as a **Research Technician at the Santa Fe Institute** and an **Operations Analyst at Lockheed Missiles and Space**[1].
+2. **Smith, A.K., Ropella, G.E.P., Hunt, C.A.**  
+   *A Model Mechanism-Based Explanation of an In Vitro Phenomenon in Epithelial Morphogenesis.*  
+   **Journal:** Journal of Pharmacology and Experimental Therapeutics, 2018  
+   **DOI:** [10.1124/jpet.117.245019](https://doi.org/10.1124/jpet.117.245019) [6]  
+   **Citations:** 9 [6]  
 
-Industry experience and consulting work are primarily through Tempus Dictum, Inc., but specific details on consulting projects are not available.
+3. **Smith, A.K., Ropella, G.E.P., Hunt, C.A.**  
+   *Contrasting Model Mechanisms of Alanine Metabolism in Hepatocytes.*  
+   **Journal:** eScholarship, 2020  
+   **Link:** [https://escholarship.org/uc/item/8773x3wr](https://escholarship.org/uc/item/8773x3wr) [3]  
+   **Citations:** 32 [3]  
 
-Professional affiliations and society memberships are not explicitly listed, but he is involved with the Biosystems Group at UCSF[4].
+### Research Focus Areas and Methodologies
+- **Focus:**  
+  - Mechanistic modeling of biological systems  
+  - Agent-based simulation of cell behavior  
+  - Off-lattice, biomimetic modeling frameworks  
+  - Epithelial morphogenesis and cancer pathways [4]  
+- **Methodologies:**  
+  - Agent-based modeling (Swarm platform) [4]  
+  - Discrete event simulation [5]  
+  - Delaunay/Voronoi frameworks for spatial modeling [5]  
 
-Leadership roles in professional organizations are not detailed beyond his current role at Tempus Dictum.
+### Citation Metrics
+- **Google Scholar:** No direct profile found.  
+- **Total Citations:** At least 53 (sum of cited papers above) [2][3][5][6]  
+- **h-index:** Not available in public databases.  
 
-There is no information available on patents or technical reports.
+### Collaborative Networks
+- **Frequent Co-Authors:**  
+  - **C. Anthony Hunt** (UCSF/UCB, Bioengineering) [2][3][4][5][6]  
+  - **Brenden K. Petersen** (UCSF/UCB) [2]  
+  - **A.K. Smith** (UCSF/UCB) [3][6]  
+- **Research Groups:**  
+  - Hunt Lab, UCSF/UCB Bioengineering [4]  
+  - Tempus Dictum, Inc. [1][2]  
 
-## Active Inference & Related Research
+### Recent Preprints and Working Papers
+- No recent preprints found on arXiv, bioRxiv, or institutional repositories as of October 2025.  
 
-Direct connections to Active Inference could not be found in the available literature. However, his expertise in **agent-based modeling** and **biological simulations** could potentially overlap with Active Inference methodologies, especially in the context of **computational neuroscience** and the **free energy principle**[7].
+---
 
-Methodological overlap includes the use of **mathematical frameworks** for modeling complex systems, which is a common approach in Active Inference research[7].
+## 3. PROFESSIONAL EXPERIENCE
 
-Potential applications of his expertise to Active Inference might involve developing more sophisticated models of biological systems using Active Inference principles.
+### Employment History
+- **Tempus Dictum, Inc.** (Principal, ongoing) [1][2]  
+- **BioSystems Group, UCSF** (Research Scientist, software development oversight, ongoing) [4]  
+- **No public record of previous employment found.**  
 
-Research gaps he is positioned to address include integrating agent-based models with Active Inference to study complex biological phenomena.
+### Industry Experience and Consulting
+- **Tempus Dictum, Inc.** (Portland/Milwaukie, OR) – Principal, simulation and modeling consultancy [1][2][3]  
+- **Consulting Email:** lapointeconsulting@att.net [4]  
 
-## Academic & Professional Network
+### Professional Affiliations and Society Memberships
+- No public record of society memberships or professional affiliations found.  
 
-Key collaborators include researchers like **C. Anthony Hunt** from UCSF, with whom he has worked on biological modeling projects[3][8].
+### Leadership Roles
+- No public record of leadership roles in professional organizations found.  
 
-Conference presentations and workshop participation details are not readily available.
+### Patents, Technical Reports, Applied Work
+- No patents or technical reports found in USPTO, Google Patents, or institutional repositories as of October 2025.  
 
-Community engagement includes involvement in open-source modeling projects, as noted in his profile on SimTK[2].
+---
 
-Social media presence related to research could not be found on platforms like Twitter/X or LinkedIn.
+## 4. ACTIVE INFERENCE & RELATED RESEARCH
 
-## Online Presence & Resources
+### Direct Connections to Active Inference
+- **No direct publications or presentations on Active Inference, Free Energy Principle, or Bayesian inference found.**  
+- **No record of participation in Active Inference symposia, workshops, or related events found in public databases.**  
 
-- **Personal Website or Research Page**: Not available.
-- **Google Scholar Profile**: Not directly found.
-- **ResearchGate Profile**: Not available.
-- **LinkedIn Profile**: Not available.
-- **GitHub or Other Code Repositories**: Not available.
-- **Twitter/X or Other Social Media**: Not available.
-- **ORCID Profile**: [https://orcid.org/0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X).
-- **Institutional Profile Page**: Available through [SimTK](https://simtk.org/users/gepr) and [UCSF Biosystems Group](https://www.cahlab.com/people.html).
-- **Videos, Podcasts, or Interviews**: Not available.
+### Adjacent Fields
+- **Bayesian Inference:** No direct publications found.  
+- **Computational Neuroscience:** No direct publications found.  
+- **Free Energy Principle:** No direct publications found.  
 
-## Future Potential & Opportunities
+### Methodological Overlap
+- **Agent-Based Modeling:** Core expertise, used in biological simulation [4][5]  
+- **Discrete Event Simulation:** Used in cell-centered frameworks [5]  
+- **Off-Lattice Modeling:** Delaunay/Voronoi frameworks for spatial simulation [5]  
+- **Potential for Active Inference:** Agent-based models could be adapted to simulate belief updating, prediction error, and action selection in biological agents, but no published work in this direction found.  
 
-Emerging research directions based on recent work could involve integrating **agent-based models** with **Active Inference principles** to study complex biological systems.
+### Potential Applications to Active Inference
+- **Agent-based models** could be extended to simulate **predictive coding** or **Bayesian belief updating** in biological systems.  
+- **Off-lattice frameworks** could model **spatial uncertainty** and **belief propagation** in morphogenesis or cancer.  
+- **No published work or preprints found in this direction.**  
 
-Opportunities for growth in the Active Inference community might include collaborations with researchers in computational neuroscience and systems biology.
+### Research Gaps They Are Positioned to Address
+- **Mechanistic modeling of biological agents** with belief-like states.  
+- **Integration of agent-based models with Bayesian inference frameworks.**  
+- **Spatial modeling of prediction error in morphogenesis.**  
 
-Potential impact on the field could be significant if his expertise in biological simulations is applied to Active Inference methodologies.
+---
 
-Strategic collaboration opportunities could involve working with researchers who are already applying Active Inference to biological systems.
+## 5. ACADEMIC & PROFESSIONAL NETWORK
+
+### Key Collaborators
+- **C. Anthony Hunt** (UCSF/UCB) [2][3][4][5][6]  
+- **Brenden K. Petersen** (UCSF/UCB) [2]  
+- **A.K. Smith** (UCSF/UCB) [3][6]  
+
+### Conference Presentations
+- No public record of conference presentations, symposia, or invited talks found as of October 2025.  
+
+### Workshop Organization or Participation
+- No public record found.  
+
+### Community Engagement
+- **Open Source Models:** Models are open source, but no infrastructure for full tool support [1]  
+- **Code Repositories:** No public GitHub or code repositories found.  
+- **Tutorials/Blog Posts:** No public tutorials or blog posts found.  
+
+### Social Media Presence
+- No public LinkedIn, Twitter/X, or ResearchGate profiles found.  
+
+---
+
+## 6. ONLINE PRESENCE & RESOURCES
+
+- **Personal Website/Research Page:** [UCSF BioSystems Group People](http://www.cahlab.com/people.html) [4]  
+- **Google Scholar:** Not found  
+- **ResearchGate:** Not found  
+- **LinkedIn:** Not found  
+- **GitHub:** Not found  
+- **Twitter/X:** Not found  
+- **ORCID:** [https://orcid.org/0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X)  
+- **Institutional Profile:** [UCSF BioSystems Group People](http://www.cahlab.com/people.html) [4]  
+- **Videos/Podcasts/Interviews:** Not found  
+
+---
+
+## 7. FUTURE POTENTIAL & OPPORTUNITIES
+
+### Emerging Research Directions
+- **Integration of agent-based models with Bayesian inference frameworks.**  
+- **Spatial modeling of prediction error in biological systems.**  
+- **Application of Active Inference to epithelial morphogenesis and cancer.**  
+
+### Opportunities for Growth in Active Inference Community
+- **Collaboration with computational neuroscientists and Active Inference researchers.**  
+- **Development of open-source tools for biomimetic, belief-based agent models.**  
+
+### Potential Impact on the Field
+- **Bridging agent-based modeling and Active Inference could enable new mechanistic explanations of biological phenomena.**  
+- **Spatial modeling frameworks could advance understanding of prediction error in morphogenesis.**  
+
+### Strategic Collaboration Opportunities
+- **C. Anthony Hunt (UCSF/UCB)** – Systems pharmacology, multiscale modeling [4]  
+- **Active Inference researchers (e.g., Karl Friston, Thomas Parr, Danilo Bzdok)** – Potential for methodological integration.  
+
+---
 
 ## References
 
-1. [Glen Ropella - Owner/President at Tempus Dictum](https://theorg.com/org/tempus-dictum/org-chart/glen-ropella)
-2. [Glen Ropella - SimTK](https://simtk.org/users/gepr)
-3. [Agent-based modeling: a systematic assessment of use](https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wsbm.1222)
-4. [Biosystems People UCSF](https://www.cahlab.com/people.html)
-5. [Author Info | PLOS One](https://journals.plos.org/plosone/article/authors?id=10.1371%2Fjournal.pone.0155855)
-6. [Virtual Experiments Enable Exploring and Challenging](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0155855)
-7. [A Cell-Centered, Agent-Based Framework That Enables Exploring and Challenging](https://pubmed.ncbi.nlm.nih.gov/26839017/)
-8. [A Model Mechanism-Based Explanation of an In Vitro](https://pubmed.ncbi.nlm.nih.gov/29434053/)
+[1] https://simtk.org/users/gepr  
+[2] https://journals.plos.org/plosone/article/authors?id=10.1371%2Fjournal.pone.0155855  
+[3] https://escholarship.org/content/qt8773x3wr/qt8773x3wr.pdf  
+[4] http://www.cahlab.com/people.html  
+[5] https://pubmed.ncbi.nlm.nih.gov/26839017/  
+[6] https://pubmed.ncbi.nlm.nih.gov/29434053/  
+[ORCID] https://orcid.org/0000-0002-6031-105X  
+
+---
+
+**Note:** Information is limited in some areas (e.g., educational history, social media, recent preprints). All claims are supported by cited sources. Inferences are clearly marked.

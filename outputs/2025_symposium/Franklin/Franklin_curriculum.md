@@ -1,6 +1,6 @@
 # Curriculum: Franklin
 
-Generated on: 2025-10-24 15:02:50
+Generated on: 2025-10-31 15:26:37
 
 ## Metadata
 
@@ -9,41 +9,35 @@ Generated on: 2025-10-24 15:02:50
 
 ---
 
-I notice that the participant information fields are empty. To create a truly personalized and effective curriculum for Franklin, I'll need some key information about:
+I notice the background information, current Active Inference application, learning needs, challenges, and pragmatic/epistemic values are blank in your request. To create a truly personalized and effective curriculum for Franklin, I'll need these details to:
 
-1. **Background:**
-- Academic/professional background
-- Current knowledge level in mathematics, programming, and cognitive sciences
-- Prior experience with related fields (e.g., Bayesian inference, machine learning)
+1. Align the content with their existing knowledge
+2. Address specific learning gaps
+3. Focus on relevant applications
+4. Account for particular challenges
+5. Target desired outcomes
 
-2. **Current Active Inference Application:**
-- How they currently use or plan to use Active Inference
-- Their specific domain or field of application
-- Current projects or research interests
+Could you please provide:
 
-3. **Learning Needs:**
-- Specific aspects of Active Inference they want to master
-- Skills they want to develop
-- Desired outcomes from learning Active Inference
+1. **Background**: Franklin's educational/professional background, current role, and domain expertise
 
-4. **Challenges:**
-- Current obstacles in understanding or applying Active Inference
-- Time constraints or resource limitations
-- Specific conceptual difficulties
+2. **Current Active Inference Application**: How they're currently using or planning to use Active Inference
 
-5. **Pragmatic Value Sought:**
-- Practical applications they want to achieve
-- Real-world problems they want to solve
-- Implementation goals
+3. **Learning Needs**: Specific skills or knowledge they want to develop
 
-6. **Epistemic Value Sought:**
-- Theoretical understanding they wish to develop
-- Research interests
-- Conceptual frameworks they want to master
+4. **Challenges**: Current obstacles in learning or applying Active Inference
 
-Could you provide these details about Franklin? With this information, I can create a highly personalized curriculum that:
-- Builds on existing knowledge
-- Addresses specific challenges
-- Focuses on relevant applications
-- Aligns with learning style and preferences
-- Meets both practical and theoretical goals
+5. **Pragmatic Value**: What practical outcomes they hope to achieve
+
+6. **Epistemic Value**: What theoretical understanding they aim to develop
+
+With these details, I can design a curriculum that:
+- Starts from their current knowledge level
+- Focuses on their specific use cases
+- Addresses their unique challenges
+- Delivers their desired practical and theoretical outcomes
+- Provides relevant examples and applications
+- Sets appropriate pace and depth
+- Recommends suitable resources and tools
+
+Would you please provide these details so I can create a truly personalized curriculum for Franklin?

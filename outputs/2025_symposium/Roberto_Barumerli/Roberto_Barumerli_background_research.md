@@ -1,6 +1,6 @@
 # Background Research: Roberto Barumerli
 
-Generated on: 2025-10-24 14:51:01
+Generated on: 2025-10-31 15:12:48
 
 ## Metadata
 
@@ -9,125 +9,155 @@ Generated on: 2025-10-24 14:51:01
 
 ---
 
-Here is the **deep comprehensive research profile** on **Roberto Barumerli**, Active Inference Symposium participant affiliated with Dyson School of Design Engineering, Imperial College London, with ORCID 0000-0002-0155-3921.
+Here is a deep and comprehensive research profile on **Dr. Roberto Barumerli**, participant at the Active Inference Symposium, affiliated with the Dyson School of Design Engineering, Imperial College London, ORCID: 0000-0002-0155-3921.
 
 ---
 
 ### 1. Academic Background
 
-- **Educational History**: Specific degree titles, institutions, and graduation years for Roberto Barumerli are not explicitly listed in the accessible public profiles. His ORCID and institutional pages do not provide detailed educational records. However, his current academic affiliation is with Imperial College London, Dyson School of Design Engineering, indicating a high level of expertise consistent with a PhD-level researcher[2][3].
+- **Educational History:**  
+  Specific details about Dr. Barumerli’s degrees and graduation years are not explicitly found in public sources. However, his ORCID profile (0000-0002-0155-3921) and publication records link him with the University of Padova (Department of Information Engineering) where he was affiliated during earlier work, indicating likely prior education or research there. He currently holds a postdoctoral research position at Imperial College London.  
+  - [Imperial College London - Dyson School](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/)  
+  - [PubMed affiliation with University of Padova](https://pubmed.ncbi.nlm.nih.gov/33636155/)  
+  - [ORCID profile](https://orcid.org/0000-0002-0155-3921)
 
-- **Research Areas & Expertise**: According to his institutional profile and publications, Barumerli’s expertise lies primarily in **Bayesian inference, spatial hearing, probabilistic modeling, and computational techniques applied to design engineering**[2][1]. No direct mention of active inference as a main area, but Bayesian inference is closely related.
+- **Research Areas and Expertise:**  
+  His expertise centers on **spatial hearing, Bayesian statistics, auditory experiments, immersive real and virtual environments, and explainable AI**. His work integrates auditory perception with probabilistic Bayesian methods, aiming to improve personalized spatial audio and extended reality applications.  
+  - [Imperial College Research Staff Profile](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/)
 
-- **Current Academic Position**: Barumerli is a **Research Associate at the Dyson School of Design Engineering, Imperial College London**[2][3].
+- **Current Academic Position:**  
+  - Research Associate (MSCA Postdoctoral Fellow) at Dyson School of Design Engineering, Imperial College London, focusing on spatial hearing and Bayesian inference applied to immersive audio.  
+  - [Imperial College London Staff Page](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/)
 
-- **Notable Achievements/Awards**: No explicit awards, grants, or honors found in public profiles or publication acknowledgments.
+- **Notable Achievements, Awards, Grants:**  
+  Specific awards or grants are not publicly listed. His current position as a Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellow itself is prestigious and competitive.  
+  - [MSCA Fellowship Mention on Imperial Profile](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/)
 
-- **Academic Profile Pages**:
-  - [Imperial College London profile](https://profiles.imperial.ac.uk/r.barumerli)[2]
-  - [Google Scholar profile](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=de)[1]
-  - [ORCID profile](https://orcid.org/0000-0002-0155-3921) (linked via ORCID ID provided)
-  - No ResearchGate profile found publicly.
+- **Academic Profiles:**  
+  - Google Scholar: [Roberto Barumerli](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=en)  
+  - ORCID: [0000-0002-0155-3921](https://orcid.org/0000-0002-0155-3921)  
+  - Imperial College Profile: [Research Staff - Dyson School](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/)  
 
 ---
 
 ### 2. Research Contributions
 
-- **Key Publications**: Barumerli’s publications focus on **Bayesian models, spatial audio, and probabilistic approaches**. Representative recent works include:
+- **Key Publications:**  
+  - *Action planning and affective states within the auditory peripersonal space in normal hearing and cochlear-implanted listeners* (Neuropsychologia, 2021)  
+    DOI: [10.1016/j.neuropsychologia.2021.107790](https://doi.org/10.1016/j.neuropsychologia.2021.107790)  
+    Explores auditory perception in connection with motor planning and emotional states, involving both normal and cochlear-implanted listeners.  
+    - [PubMed](https://pubmed.ncbi.nlm.nih.gov/33636155/)
 
-  1. *"Bayesian inference for spatial hearing in complex environments"* (Journal details not fully specified in profile, but related papers listed on Google Scholar)[1]
-  2. Collaborative papers with Lorenzo Picinali and Paola Cesari on sound spatialization and computational auditory models[1].
+  - Additional publications mainly focus on **Bayesian inference methods in auditory perception and spatial hearing**, integrating experimental and computational approaches. Specific paper titles and full records are available via his Google Scholar profile.  
+    - [Google Scholar Publications](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=en)
 
-- **Research Focus & Methodologies**: Uses **Bayesian inference frameworks, probabilistic modeling, computational simulations** primarily applied to spatial hearing and design engineering problems[1][2].
+- **Research Focus and Methodologies:**  
+  Emphasizes **Bayesian statistics, probabilistic modeling, auditory spatial cognition, and explainable AI** for immersive audio technologies. Uses experimental auditory data combined with computational models to improve spatial audio rendering and personalized sound experiences.
 
-- **Citation Metrics** (from Google Scholar):
-  - h-index: Moderate (exact number not specified in snippet)
-  - Total citations: Not explicitly stated; presence of multiple cited papers indicates active research impact[1].
-  - Recent impact: Publications from the last 5 years indicate ongoing contributions.
+- **Citation Metrics:**  
+  - From Google Scholar (as of 2025): h-index and total citations are modest, reflecting an early career postdoctoral researcher. Exact metrics fluctuate, check [Google Scholar](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=en).
 
-- **Collaborative Networks**: Frequent collaborators include **Lorenzo Picinali** (Dyson School) and **Paola Cesari** (University of Verona), focusing on auditory neuroscience and computational models[1].
+- **Collaborative Networks:**  
+  Collaborates with researchers in neuroscience, auditory perception, and engineering, including co-authors such as Mehrdad Bahadori and Michele Geronazzo.  
+  - Example co-author: Mehrdad Bahadori (University of Verona)  
+  - [PubMed Co-authors](https://pubmed.ncbi.nlm.nih.gov/33636155/)
 
-- **Recent Preprints/Working Papers**: No arXiv or bioRxiv preprints located under his name.
+- **Recent Preprints/Working Papers:**  
+  No publicly available preprints on arXiv or bioRxiv were found, indicating that published journal articles are his primary research outputs currently.
 
 ---
 
 ### 3. Professional Experience
 
-- **Employment History**: Current position as Research Associate at Imperial College London Dyson School of Design Engineering. No other employment history publicly listed[2][3].
+- **Employment History:**  
+  - MSCA Postdoctoral Fellow, Dyson School of Design Engineering, Imperial College London (current)  
+  - Previously affiliated with University of Padova (Italy) during doctoral or earlier research phases  
+  - No publicly listed industry experience or consulting roles found.
 
-- **Industry Experience/Consulting**: No publicly available information on industry or consulting roles.
+- **Professional Affiliations and Memberships:**  
+  No explicit mentions of society memberships or leadership roles found online.
 
-- **Professional Affiliations**: No explicit memberships or society affiliations available publicly.
-
-- **Leadership Roles**: No records of leadership roles in professional organizations found.
-
-- **Patents or Technical Reports**: None found in public databases or profile pages.
+- **Patents or Applied Work:**  
+  No patents or technical reports attributed to him found in patent databases or public records.
 
 ---
 
 ### 4. Active Inference & Related Research
 
-- **Direct Connections to Active Inference**: No direct publications or projects explicitly mentioning active inference found. His self-reported background includes **some expertise in Bayesian inference**, which underpins active inference methodologies, but no direct active inference research or presentations documented[2].
+- **Direct Connections to Active Inference:**  
+  No direct publications or presentations explicitly mentioning *Active Inference* were found. His self-reported lack of background in active inference aligns with this.
 
-- **Adjacent Fields**: Strong background in **Bayesian inference and spatial hearing**, which are conceptually related to the Free Energy Principle and Active Inference frameworks[2][1].
+- **Adjacent Fields:**  
+  His expertise in **Bayesian inference** and **spatial hearing** relates methodologically to active inference frameworks, which are grounded in Bayesian brain theories and predictive coding. This positions him well to contribute to active inference modeling in sensory perception.
 
-- **Methodological Overlap**: Usage of **Bayesian probabilistic modeling and computational simulations** overlaps methodologically with active inference modeling approaches.
+- **Methodological Overlap:**  
+  Use of **probabilistic Bayesian models and explainable AI** intersects with the mathematical and computational frameworks underpinning active inference.
 
-- **Potential Applications to Active Inference**: Given expertise in Bayesian modeling and auditory spatial cognition, Barumerli could potentially contribute to **modeling sensory inference and spatial perception within active inference frameworks**.
+- **Potential Applications:**  
+  His work on **personalized spatial audio and immersive environments** could apply active inference principles for improved sensory prediction and perception modeling.
 
-- **Research Gaps**: Lack of direct active inference work suggests an opportunity to bridge Bayesian spatial hearing models with active inference theories.
+- **Research Gaps:**  
+  He is well-positioned to extend active inference models into **auditory spatial cognition and immersive audio** domains, areas currently less addressed in active inference literature.
 
 ---
 
 ### 5. Academic & Professional Network
 
-- **Key Collaborators**: 
-  - [Lorenzo Picinali](https://www.imperial.ac.uk/people/l.picinali) (Dyson School)
-  - [Paola Cesari](https://www.univr.it/en/node/9149) (University of Verona)[1]
+- **Key Collaborators:**  
+  - Mehrdad Bahadori (University of Verona)  
+  - Michele Geronazzo (Imperial College London)  
+  Their joint publication on auditory peripersonal space indicates active collaboration.  
+  - [PubMed co-authorship](https://pubmed.ncbi.nlm.nih.gov/33636155/)
 
-- **Conference Presentations**: No explicit records of conference talks or symposium presentations found online.
+- **Conference Contributions:**  
+  No specific conference presentations or workshop participations publicly listed. Given his early career stage, participation may be recent or forthcoming.
 
-- **Workshop Participation/Organization**: No information available.
+- **Community Engagement:**  
+  No public blog posts, tutorials, or public code repositories were found linked to him.
 
-- **Community Engagement**:
-  - No personal blog, tutorials, or public code repositories found.
-  - No social media presence related to research identified.
+- **Social Media Presence:**  
+  No verified Twitter/X or other social media accounts were found explicitly linked to Roberto Barumerli.
 
 ---
 
 ### 6. Online Presence & Resources
 
-| Resource Type                  | Link                                                                 |
-|-------------------------------|----------------------------------------------------------------------|
-| Imperial College Profile       | [Roberto Barumerli](https://profiles.imperial.ac.uk/r.barumerli) [2] |
-| Google Scholar Profile         | [Google Scholar](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=de) [1] |
-| ORCID Profile                 | [ORCID](https://orcid.org/0000-0002-0155-3921)                       |
-| ResearchGate                  | Not publicly found                                                  |
-| LinkedIn                      | Not publicly found                                                  |
-| GitHub                       | Not publicly found                                                  |
-| Twitter/X                    | Not publicly found                                                  |
-| Personal Website             | Not publicly found                                                  |
+| Resource Type            | Link                                                                                   |
+|-------------------------|----------------------------------------------------------------------------------------|
+| Personal/Institutional Profile | [Imperial College Dyson School](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/) |
+| Google Scholar          | [Roberto Barumerli](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=en)      |
+| ORCID                   | [0000-0002-0155-3921](https://orcid.org/0000-0002-0155-3921)                           |
+| ResearchGate            | Not found / No public profile identified                                              |
+| LinkedIn                | Not publicly available or unverified                                                  |
+| GitHub or Code Repos    | No public repositories found                                                         |
+| Twitter/X or Other Social Media | No verified accounts found                                                        |
 
 ---
 
 ### 7. Future Potential & Opportunities
 
-- **Emerging Research Directions**: Potential to expand work on **Bayesian spatial hearing models into active inference frameworks**, leveraging knowledge of design engineering and computational neuroscience[2][1].
+- **Emerging Research Directions:**  
+  His recent focus on **Bayesian spatial hearing and explainable AI for immersive environments** suggests potential growth in applying these methods to extended reality and personalized audio technologies. This overlaps with active inference's emphasis on predictive sensory modeling.
 
-- **Growth Opportunities in Active Inference Community**: Bridging gaps between **Bayesian auditory perception and active inference** modeling could open novel research avenues.
+- **Opportunities in Active Inference Community:**  
+  His background in Bayesian methods and auditory perception could catalyze novel applications of active inference in auditory neuroscience and virtual reality, especially in explainable AI integration.
 
-- **Potential Impact**: Integration of spatial auditory Bayesian models with active inference could enhance understanding of sensory perception and active sensing.
+- **Potential Impact:**  
+  By bridging spatial hearing and computational Bayesian frameworks, Dr. Barumerli could contribute new experimental and modeling insights into sensory predictive processing aligned with foundational active inference theory.
 
-- **Strategic Collaborations**: Collaborating with active inference experts—possibly linked to Imperial College or neuroscience groups—would enhance interdisciplinary impact.
+- **Strategic Collaborations:**  
+  Possible partnerships with active inference experts in computational neuroscience and AI (e.g., Karl Friston’s group) could accelerate cross-disciplinary research linking auditory spatial cognition with active inference frameworks.
 
 ---
 
 ## References
 
-1. Google Scholar: Roberto Barumerli - https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=de  
-2. Imperial College London Profile: Roberto Barumerli - https://profiles.imperial.ac.uk/r.barumerli  
-3. Dyson School of Design Engineering Research Staff - https://www.imperial.ac.uk/design-engineering/people/research-staff/research-staff/
+1. [Imperial College London - Dyson School Research Staff](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/)  
+2. [Google Scholar - Roberto Barumerli](https://scholar.google.com/citations?user=wvEHfo8AAAAJ&hl=en)  
+3. [Research Staff List - Dyson School](https://www.imperial.ac.uk/engineering/departments/design-engineering/people/research-staff/research-staff/)  
+4. Bahadori M, Barumerli R, Geronazzo M, Cesari P. *Action planning and affective states within the auditory peripersonal space in normal hearing and cochlear-implanted listeners*. Neuropsychologia. 2021 May 14;155:107790. doi:10.1016/j.neuropsychologia.2021.107790. [PubMed](https://pubmed.ncbi.nlm.nih.gov/33636155/)  
+5. ORCID Profile: [Roberto Barumerli](https://orcid.org/0000-0002-0155-3921)
 
 ---
 
-**Note:** Publicly available information on Roberto Barumerli is limited mainly to his current research associate position and Bayesian inference-related publications. No direct active inference research outputs or extensive professional history are currently accessible online.
+If you require further detailed digging into specific publications or collaborations, please advise.

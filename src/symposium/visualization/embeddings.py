@@ -3,7 +3,7 @@
 import os
 import logging
 from pathlib import Path
-from typing import List, Tuple, Optional, Dict, Any
+from typing import List, Tuple, Optional, Dict, Any, Set
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -47,41 +47,119 @@ class DimensionReducer:
         Args:
             documents: List of text documents
             n_components: Number of components for reduction
-            method: Reduction method ('pca', 'lsa', 'tsne')
+            method: Reduction method ('pca', 'lsa', 'tsne', 'umap', 'isomap', 'nmf', 'lda')
 
         Returns:
             Tuple of (reduced_matrix, vectorizer, reducer)
         """
         try:
-            # TF-IDF vectorization
+            # TF-IDF vectorization with improved parameters
             vectorizer = TfidfVectorizer(
-                max_features=5000,
+                max_features=10000,  # Increased for better representation
                 stop_words='english',
-                min_df=1,
-                max_df=0.95
+                min_df=2,  # Minimum document frequency
+                max_df=0.90,  # Maximum document frequency
+                ngram_range=(1, 2),  # Include bigrams
+                sublinear_tf=True  # Apply sublinear scaling
             )
             tfidf_matrix = vectorizer.fit_transform(documents)
 
             if method.lower() == "pca":
-                reducer = PCA(n_components=n_components, random_state=self.random_state)
+                # Enhanced PCA with whitening
+                reducer = PCA(
+                    n_components=n_components,
+                    random_state=self.random_state,
+                    whiten=True  # Normalize components
+                )
                 reduced_matrix = reducer.fit_transform(tfidf_matrix.toarray())
 
             elif method.lower() == "lsa":
-                reducer = TruncatedSVD(n_components=n_components, random_state=self.random_state)
+                # Latent Semantic Analysis (Truncated SVD)
+                reducer = TruncatedSVD(
+                    n_components=n_components,
+                    random_state=self.random_state,
+                    algorithm='randomized'  # Faster for large matrices
+                )
                 reduced_matrix = reducer.fit_transform(tfidf_matrix)
 
             elif method.lower() == "tsne":
-                # For t-SNE, first reduce with PCA to avoid memory issues
-                pca_temp = PCA(n_components=min(50, tfidf_matrix.shape[1] - 1), random_state=self.random_state)
+                # Enhanced t-SNE with better parameters
+                # First reduce with PCA to avoid memory issues
+                pca_temp = PCA(n_components=min(100, tfidf_matrix.shape[1] - 1), random_state=self.random_state)
                 tfidf_reduced = pca_temp.fit_transform(tfidf_matrix.toarray())
 
                 from sklearn.manifold import TSNE
-                reducer = TSNE(n_components=2, random_state=self.random_state, perplexity=30)
+                reducer = TSNE(
+                    n_components=n_components,
+                    random_state=self.random_state,
+                    perplexity=min(30, len(documents) - 1),  # Adaptive perplexity
+                    learning_rate=200.0,
+                    max_iter=1000,  # Use max_iter instead of n_iter
+                    init='pca'  # Better initialization
+                )
                 reduced_matrix = reducer.fit_transform(tfidf_reduced)
                 vectorizer = None  # t-SNE doesn't use vectorizer for feature names
 
+            elif method.lower() == "umap":
+                # UMAP for non-linear dimension reduction
+                try:
+                    from umap import UMAP
+                    reducer = UMAP(
+                        n_components=n_components,
+                        random_state=self.random_state,
+                        n_neighbors=min(15, len(documents) - 1),
+                        min_dist=0.1,
+                        metric='cosine'  # Better for text data
+                    )
+                    reduced_matrix = reducer.fit_transform(tfidf_matrix.toarray())
+                    vectorizer = None  # UMAP doesn't use vectorizer for feature names
+                except ImportError:
+                    logger.warning("UMAP not available, falling back to PCA")
+                    reducer = PCA(n_components=n_components, random_state=self.random_state)
+                    reduced_matrix = reducer.fit_transform(tfidf_matrix.toarray())
+
+            elif method.lower() == "isomap":
+                # Isomap for manifold learning
+                try:
+                    from sklearn.manifold import Isomap
+                    reducer = Isomap(
+                        n_components=n_components,
+                        n_neighbors=min(10, len(documents) - 1)
+                    )
+                    reduced_matrix = reducer.fit_transform(tfidf_matrix.toarray())
+                    vectorizer = None  # Isomap doesn't use vectorizer for feature names
+                except Exception as e:
+                    logger.warning(f"Isomap failed: {e}, falling back to PCA")
+                    reducer = PCA(n_components=n_components, random_state=self.random_state)
+                    reduced_matrix = reducer.fit_transform(tfidf_matrix.toarray())
+
+            elif method.lower() == "nmf":
+                # Non-negative Matrix Factorization
+                from sklearn.decomposition import NMF
+                reducer = NMF(
+                    n_components=n_components,
+                    random_state=self.random_state,
+                    max_iter=1000,
+                    alpha_W=0.1,
+                    alpha_H=0.1
+                )
+                # NMF requires non-negative input, use TF-IDF as is (already non-negative)
+                reduced_matrix = reducer.fit_transform(tfidf_matrix)
+
+            elif method.lower() == "lda":
+                # Latent Dirichlet Allocation (topic modeling)
+                from sklearn.decomposition import LatentDirichletAllocation
+                reducer = LatentDirichletAllocation(
+                    n_components=n_components,
+                    random_state=self.random_state,
+                    max_iter=100,
+                    learning_method='batch'
+                )
+                reduced_matrix = reducer.fit_transform(tfidf_matrix)
+
             else:
-                raise ValueError(f"Unknown reduction method: {method}")
+                available_methods = ['pca', 'lsa', 'tsne', 'umap', 'isomap', 'nmf', 'lda']
+                raise ValueError(f"Unknown reduction method: {method}. Available: {available_methods}")
 
             logger.info(f"Reduced {len(documents)} documents to {n_components}D using {method}")
             return reduced_matrix, vectorizer, reducer
@@ -134,18 +212,34 @@ class TextVisualizer:
         self.reducer = DimensionReducer(config)
         self._setup_matplotlib()
 
+        # Custom stop words for word clouds
+        self.custom_stopwords = {
+            'and', 'the', 'of', 'to', 'in', 'a', 'i', 'for', 'that', 'is',
+            'on', 'as', 'have', 'with', 'are', 'be', 'it', 'more', 'this',
+            'my', 'which', 'but', 'from', 'would', 'or', 'into', 'about',
+            # Additional common words to exclude
+            'am', 'an', 'at', 'by', 'do', 'go', 'if', 'me', 'no', 'so',
+            'up', 'we', 'you', 'all', 'can', 'did', 'get', 'had', 'has',
+            'her', 'him', 'his', 'how', 'its', 'let', 'may', 'new', 'not',
+            'now', 'old', 'our', 'out', 'put', 'see', 'she', 'too', 'use',
+            'way', 'who', 'why', 'yes', 'yet', 'what', 'when', 'where',
+            'will', 'work', 'was', 'were', 'been', 'being', 'there', 'here'
+        }
+
     def _setup_matplotlib(self):
         """Setup matplotlib for non-GUI environments."""
         plt.style.use('default')
         sns.set_palette("husl")
 
-    def create_word_cloud(self, documents: List[str], title: str, output_path: Path) -> bool:
+    def create_word_cloud(self, documents: List[str], title: str, output_path: Path,
+                         custom_stopwords: Optional[set] = None) -> bool:
         """Create word cloud visualization.
 
         Args:
             documents: List of text documents
             title: Plot title
             output_path: Output file path
+            custom_stopwords: Optional custom stop words to exclude
 
         Returns:
             Success status
@@ -154,34 +248,115 @@ class TextVisualizer:
             # Combine all documents
             text = ' '.join(documents)
 
-            # Generate word cloud
+            # Use custom stop words or default
+            stopwords = custom_stopwords or self.custom_stopwords
+
+            # Generate word cloud with enhanced parameters
             wordcloud = WordCloud(
-                width=1200,
-                height=600,
+                width=1600,
+                height=800,
                 background_color='white',
-                max_words=100,
-                colormap='viridis',
-                contour_width=1,
-                contour_color='steelblue'
+                max_words=150,
+                colormap='plasma',
+                contour_width=2,
+                contour_color='navy',
+                min_font_size=8,
+                max_font_size=120,
+                font_step=2,
+                prefer_horizontal=0.8,
+                relative_scaling=0.7,
+                normalize_plurals=True,
+                stopwords=stopwords
             ).generate(text)
 
-            # Plot
-            plt.figure(figsize=(20, 10))
+            # Plot with enhanced styling
+            plt.figure(figsize=(24, 12))
             plt.imshow(wordcloud, interpolation='bilinear')
             plt.axis('off')
-            plt.title(title, fontsize=20, fontweight='bold')
+            plt.title(title, fontsize=24, fontweight='bold', pad=20)
             plt.tight_layout()
 
             # Save
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
             plt.close()
 
-            logger.info(f"Word cloud saved to {output_path}")
+            logger.info(f"Enhanced word cloud saved to {output_path}")
             return True
 
         except Exception as e:
             logger.error(f"Error creating word cloud: {e}")
+            return False
+
+    def create_column_word_clouds(self, participants: Dict[str, Dict[str, Any]],
+                                  output_dir: Path, custom_stopwords: Optional[set] = None) -> bool:
+        """Create per-column word clouds for participant data.
+
+        Args:
+            participants: Dictionary of participant data
+            output_dir: Output directory for word clouds
+            custom_stopwords: Optional custom stop words to exclude
+
+        Returns:
+            Success status
+        """
+        try:
+            # Define columns to create word clouds for (text-rich columns)
+            text_columns = {
+                'background': 'Background & Prior Works',
+                'pragmatic_value': 'Pragmatic Value (Useful for Symposium)',
+                'epistemic_value': 'Epistemic Value (Interesting to Learn)',
+                'active_inference_application': 'Active Inference Applications',
+                'challenges': 'Challenges in Active Inference',
+                'learning_needs': 'Learning Needs & Resource Development',
+                'future_impact': 'Future Impact Vision (2026)',
+                'comments': 'Additional Comments & Questions'
+            }
+
+            stopwords = custom_stopwords or self.custom_stopwords
+            output_dir.mkdir(parents=True, exist_ok=True)
+
+            # Create overall word cloud first
+            all_texts = []
+            for participant_data in participants.values():
+                for field in text_columns.keys():
+                    text = participant_data.get(field, '')
+                    if text and str(text).strip():
+                        all_texts.append(str(text))
+
+            if all_texts:
+                overall_path = output_dir / "word_cloud_overall.png"
+                self.create_word_cloud(all_texts, "Overall Participant Responses Word Cloud", overall_path, stopwords)
+
+            # Create per-column word clouds
+            for column_key, column_title in text_columns.items():
+                column_texts = []
+
+                for participant_data in participants.values():
+                    text = participant_data.get(column_key, '')
+                    if text and str(text).strip():
+                        column_texts.append(str(text))
+
+                if column_texts:
+                    # Clean column key for filename
+                    safe_column_key = column_key.replace('_', '_')
+                    column_path = output_dir / f"word_cloud_{safe_column_key}.png"
+
+                    # Create column-specific word cloud
+                    self.create_word_cloud(
+                        column_texts,
+                        f"{column_title} Word Cloud",
+                        column_path,
+                        stopwords
+                    )
+
+                    logger.info(f"Created word cloud for column: {column_title}")
+
+            logger.info(f"Created {len(text_columns) + 1} word clouds in {output_dir}")
+            return True
+
+        except Exception as e:
+            logger.error(f"Error creating column word clouds: {e}")
             return False
 
     def plot_dimension_reduction(

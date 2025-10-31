@@ -7,6 +7,7 @@ Initializes the Symposium environment, checks dependencies, and validates config
 
 import os
 import sys
+import subprocess
 import logging
 from pathlib import Path
 from typing import List, Tuple

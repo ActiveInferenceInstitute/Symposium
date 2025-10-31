@@ -1,6 +1,6 @@
 # Curriculum: Frank Holzkamp
 
-Generated on: 2025-10-24 14:56:40
+Generated on: 2025-10-31 15:20:00
 
 ## Metadata
 
@@ -9,37 +9,42 @@ Generated on: 2025-10-24 14:56:40
 
 ---
 
-I notice that several key pieces of information about Frank Holzkamp are missing from the provided background. To create a truly personalized and effective curriculum, I'll need details about:
+I notice the background, current Active Inference application, learning needs, challenges, and pragmatic/epistemic value sections are empty. To create a truly personalized curriculum, I'll need these details about Frank Holzkamp.
 
-1. Frank's background (academic/professional experience)
-2. Current Active Inference application (if any)
-3. Specific learning needs
-4. Challenges they're facing
-5. Their pragmatic and epistemic goals
+Could you please provide information about:
 
-Would you be able to provide these details? Once you do, I can create a highly tailored curriculum that:
+1. **Background:**
+- Academic/professional background
+- Current field of work/study
+- Mathematical/programming proficiency
+- Prior exposure to related concepts
 
+2. **Current Active Inference Application:**
+- How they currently use or plan to use Active Inference
+- Specific domain/field of application
+- Current projects or research interests
+
+3. **Learning Needs:**
+- Specific skills they want to develop
+- Knowledge gaps they've identified
+- Areas of particular interest
+
+4. **Challenges:**
+- Current obstacles in understanding/applying Active Inference
+- Time constraints or resource limitations
+- Specific technical or conceptual difficulties
+
+5. **Values Sought:**
+- Pragmatic: Practical outcomes they hope to achieve
+- Epistemic: Theoretical understanding they wish to develop
+
+Once you provide these details, I can design a curriculum that:
 - Matches their current knowledge level
-- Addresses their specific challenges
-- Aligns with their learning style
+- Addresses specific gaps and challenges
+- Aligns with their learning style and preferences
 - Focuses on their intended applications
-- Meets both their practical and theoretical goals
+- Provides relevant examples and exercises
+- Sets appropriate pace and milestones
+- Recommends suitable resources and tools
 
-In the meantime, I can outline a flexible framework that we can adjust once we have more information:
-
-1. **ASSESSMENT OF CURRENT LEVEL**
-- Initial diagnostic assessment focusing on:
-  * Mathematical background
-  * Programming experience
-  * Prior exposure to Bayesian inference
-  * Domain expertise
-  * Learning preferences
-
-2. **PERSONALIZED LEARNING PATH**
-- Adaptable modules that can be calibrated to:
-  * Technical vs. conceptual emphasis
-  * Application-specific focus
-  * Preferred learning pace
-  * Available time commitment
-
-Would you like to provide more information about Frank so I can create a fully personalized curriculum?
+Would you please share these details about Frank so I can create a properly tailored curriculum?

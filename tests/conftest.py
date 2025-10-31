@@ -84,6 +84,22 @@ def sample_csv_file(temp_dir):
 
 
 @pytest.fixture
+def sample_participant_csv_file(temp_dir):
+    """Create a sample participant CSV file in the expected format."""
+    csv_path = temp_dir / "participants.csv"
+    df = pd.DataFrame({
+        'Name': ['Test Participant 1', 'Test Participant 2'],
+        'Affiliations': ['University A', 'University B'],
+        'Background': ['PhD in Computer Science', 'MSc in Mathematics'],
+        'Active Inference Application': ['Research', 'Teaching'],
+        'Learning Needs': ['Advanced topics', 'Practical applications'],
+        'Pragmatic Value': ['Understanding theory', 'Implementation']
+    })
+    df.to_csv(csv_path, index=False)
+    return csv_path
+
+
+@pytest.fixture
 def sample_json_file(temp_dir):
     """Create a sample JSON file."""
     import json

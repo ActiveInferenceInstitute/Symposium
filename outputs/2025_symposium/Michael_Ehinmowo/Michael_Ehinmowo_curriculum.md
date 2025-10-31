@@ -1,6 +1,6 @@
 # Curriculum: Michael Ehinmowo
 
-Generated on: 2025-10-24 15:02:32
+Generated on: 2025-10-31 15:26:11
 
 ## Metadata
 
@@ -9,122 +9,134 @@ Generated on: 2025-10-24 15:02:32
 
 ---
 
-Here's a personalized Active Inference curriculum for Michael Ehinmowo:
+Here's a personalized Active Inference curriculum for Michael Ehinmowo, leveraging his background in psychology and neuroscience:
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong foundation in neuroscience and psychology
-- Needs strengthening in mathematical formalization
-- Academic research background suggests comfort with scientific literature
-- Experiential learning style indicated by desire for mentorship and group collaboration
+- Current Understanding: Strong foundation in neuroscience and behavioral research
+- Knowledge Gaps: Mathematical formalization, computational implementation
+- Learning Style: Scientific/empirical background suggests preference for evidence-based, structured learning
+- Strengths: Understanding of neural and behavioral mechanisms
 
 2. **PERSONALIZED LEARNING PATH**
-Months 1-2: Mathematical Foundations
-- Linear algebra refresher
-- Probability theory basics
-- Bayesian inference fundamentals
+Month 1-2: Mathematical Foundations
+- Probability theory and Bayesian inference
+- Free energy principle basics
+- Information theory fundamentals
 
-Months 3-4: Active Inference Core Concepts
-- Free Energy Principle
+Month 3-4: Core Active Inference
 - Markov Decision Processes
 - Variational inference
+- Precision and uncertainty
 
-Months 5-6: Neuroscientific Applications
+Month 5-6: Neuroscientific Applications
 - Neural implementations
-- Computational psychiatry
 - Behavioral modeling
+- Clinical applications
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Mathematical Prerequisites
-- Calculus and differential equations
-- Information theory
-- Statistical modeling
+Mathematical Foundations:
+- Linear algebra review
+- Probability theory
+- Differential equations
 
-Module 2: Active Inference Foundations
+Theoretical Frameworks:
 - Free Energy Principle
-- Variational Bayes
-- Generative models
+- Predictive Processing
+- Bayesian Brain Hypothesis
 
-Module 3: Neuroscience Applications
-- Neural coding
-- Predictive processing
-- Hierarchical brain models
+Neuroscience Applications:
+- Neural circuits and Active Inference
+- Psychiatric disorders through Active Inference lens
+- Behavioral experiments design
 
 4. **HANDS-ON LEARNING**
 Computational Exercises:
 - Python programming for Active Inference
 - SPM12 tutorials
-- MATLAB implementations
+- Basic computational modeling
 
 Projects:
-- Implement simple behavioral models
-- Analyze neural data using Active Inference
-- Design experimental paradigms
+- Implementing simple behavioral models
+- Analyzing neural data using Active Inference
+- Designing experiments using Active Inference principles
 
 5. **ADVANCED TOPICS**
-- Sophisticated generative models
-- Dynamic causal modeling
-- Computational psychiatry applications
-- Multi-scale brain modeling
+- Advanced variational methods
+- Dynamic Causal Modeling
+- Multi-scale Active Inference
+- Psychiatric applications
+- Neural mass models
 
 6. **PRACTICAL APPLICATIONS**
-Neuroscience Focus:
-- Experimental design using Active Inference
-- Neural data analysis methods
+Neuroscience Applications:
+- Experimental paradigm design
+- Data analysis methods
+- Model comparison techniques
 - Clinical applications
-- Research methodology integration
 
 7. **COMMUNITY AND COLLABORATION**
-Engagement Strategy:
-- Join VERSES Active Inference Lab
-- Participate in Active Inference Institute events
-- Connect with neuroscience-focused Active Inference researchers
-- Attend computational psychiatry workshops
+Connect with:
+- Active Inference Institute
+- VERSE Group
+- Computational Psychiatry communities
+- Academic neuroscience labs using Active Inference
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Complete mathematical foundations course
-- Implement first behavioral model
-- Design original experiment
-- Submit research proposal/paper
+- Basic mathematical competency
+- First computational model implementation
+- Experimental design using Active Inference
+- Research proposal development
 
 9. **RESOURCES AND TOOLS**
 Essential Reading:
-- "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
+- "Active Inference" by Thomas Parr
 - Karl Friston's foundational papers
-- Computational Psychiatry papers
+- Recent neuroscience applications
 
-Tools:
+Software:
 - SPM12
-- PyAI
-- Julia Active Inference toolbox
+- Python (PyAI)
 - MATLAB
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
 - Master mathematical foundations
-- Join Active Inference community
+- Join Active Inference communities
 - Begin computational tutorials
 
 Medium-term (3-6 months):
 - Implement first models
-- Design experimental paradigm
+- Design preliminary experiments
 - Connect with potential collaborators
 
 Long-term (6-12 months):
-- Conduct original research
-- Submit paper/presentation
-- Develop research program
+- Develop research proposal
+- Present at conferences
+- Begin collaborative projects
 
-Special Considerations:
-- Focus on finding funding opportunities (grants, fellowships)
-- Emphasis on connecting with mentors in computational neuroscience
-- Build collaborative networks through online communities
+Additional Recommendations:
 
-Progress Tracking:
-- Weekly self-assessment
-- Monthly mentor meetings
-- Quarterly project reviews
-- Publication/presentation goals
+1. Funding Opportunities:
+- Research fellowships
+- Academic grants
+- Computational neuroscience training programs
 
-The curriculum emphasizes bridging Michael's strong neuroscience background with formal Active Inference mathematics while building practical implementation skills. The focus on community engagement addresses the stated need for collaboration and mentorship.
+2. Mentorship:
+- Connect with established Active Inference researchers
+- Join computational psychiatry networks
+- Participate in workshops and summer schools
+
+3. Community Building:
+- Start a local Active Inference study group
+- Organize seminars in your institution
+- Connect with other neuroscience researchers interested in Active Inference
+
+4. Progress Tracking:
+- Regular code repository contributions
+- Research blog or notes
+- Portfolio of implemented models
+- Documentation of experimental designs
+
+This curriculum emphasizes building from mathematical foundations while leveraging Michael's strong neuroscience background. The focus is on practical implementation and building toward collaborative research opportunities.

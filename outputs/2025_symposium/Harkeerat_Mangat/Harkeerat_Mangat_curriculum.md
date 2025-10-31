@@ -1,6 +1,6 @@
 # Curriculum: Harkeerat Mangat
 
-Generated on: 2025-10-24 14:46:49
+Generated on: 2025-10-31 15:08:08
 
 ## Metadata
 
@@ -9,119 +9,132 @@ Generated on: 2025-10-24 14:46:49
 
 ---
 
-Based on Harkeerat's background in Cognitive Science and specific interest in applying Active Inference to film fMRI and time perception, I'll design a personalized curriculum that bridges neuroscience with Active Inference principles.
+Here's a personalized Active Inference curriculum for Harkeerat Mangat, tailored to their cognitive neuroscience background and research interests in time perception and film fMRI.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Current Strengths:
-  * Strong background in cognitive neuroscience
-  * Experience with fMRI and dynamic functional connectivity
-  * Academic research environment with direct access to Active Inference expertise
-- Knowledge Gaps:
-  * Formal mathematical foundations of Active Inference
-  * Computational implementation
-  * Application to time perception specifically
-- Learning Style:
-  * Academic/research-oriented
-  * Preference for theoretical foundations with practical applications
+- Strong foundation in cognitive neuroscience and fMRI methods
+- Exposure to Active Inference through university coursework
+- Knowledge gaps likely in formal mathematical foundations and computational implementation
+- Academic learning style with research orientation
 
 2. **PERSONALIZED LEARNING PATH**
-Month 1-2: Foundations
-- Basic principles of Free Energy Principle
-- Markov Blankets and generative models
-- Relationship between Active Inference and predictive coding
+Months 1-2: Foundations
+- Free Energy Principle basics
+- Markov Blankets
+- Generative models
+- Variational inference
 
-Month 3-4: Computational Implementation
-- Variational Bayes
-- Message passing algorithms
-- SPM12 software environment
+Months 3-4: Neuroscience Applications
+- Predictive coding
+- Hierarchical processing
+- Temporal integration
+- Neural implementation
 
-Month 5-6: Specialized Applications
+Months 5-6: Advanced Applications
 - Time perception models
-- Naturalistic stimulus processing
-- Film neuroimaging applications
+- Naturalistic stimuli processing
+- Dynamic causal modeling
+- Research design
 
 3. **CORE CONCEPTS MODULES**
-- Module 1: Mathematical Foundations
-  * Variational free energy
-  * Bayesian inference
-  * Hierarchical generative models
+Module 1: Mathematical Foundations
+- Probability theory
+- Bayesian inference
+- Variational methods
+- Information geometry
 
-- Module 2: Neuroscientific Framework
-  * Predictive coding in the brain
-  * Hierarchical processing
-  * Temporal integration
+Module 2: Theoretical Framework
+- Free Energy Principle
+- POMDP formulation
+- Message passing
+- Precision and attention
 
-- Module 3: Time Perception
-  * Internal models of time
-  * Temporal inference
-  * Cinematographic perception
+Module 3: Neuroscientific Applications
+- Neural implementations
+- Empirical studies
+- Experimental paradigms
 
 4. **HANDS-ON LEARNING**
-- Computational Projects:
-  * Implementation of basic Active Inference models in MATLAB
-  * SPM12 tutorials for fMRI analysis
-  * Custom scripts for temporal modeling
+Computational Exercises:
+- SPM12 Active Inference tutorials
+- Python implementation exercises
+- MATLAB simulations
+- Dynamic Causal Modeling
 
-- Practical Exercises:
-  * Analysis of naturalistic fMRI data
-  * Implementation of time perception experiments
-  * Model comparison and validation
+Projects:
+- Simple time perception model
+- Film stimulus processing
+- Dynamic connectivity analysis
 
 5. **ADVANCED TOPICS**
-- Dynamic Causal Modeling
-- Temporal perception in continuous stimuli
-- Multi-scale modeling of narrative processing
-- Integration with existing fMRI analysis methods
+- Temporal deep active inference
+- Mixed generative models
+- Hierarchical temporal processing
+- Naturalistic paradigm design
+- Multi-modal integration
 
 6. **PRACTICAL APPLICATIONS**
-- Case Study Focus:
-  * Film perception studies
-  * Temporal integration in narrative processing
-  * Dynamic connectivity during naturalistic viewing
+Research Applications:
+- Experimental design for film fMRI
+- Time perception paradigms
+- Dynamic connectivity analysis
+- Model comparison methods
 
-- Implementation Strategies:
-  * Experimental design for film fMRI
-  * Model specification for temporal processing
-  * Integration with existing analysis pipelines
+Implementation:
+- SPM12 workflow
+- Custom model development
+- Parameter estimation
+- Results interpretation
 
 7. **COMMUNITY AND COLLABORATION**
-- Join Active Inference Institute
-- Participate in MIND 2024 conference
-- Connect with film neuroscience researchers
-- Engage with SPM/Active Inference forums
+- Join the Active Inference Institute
+- Participate in MIND group discussions
+- Attend Active Inference workshops
+- Connect with temporal processing researchers
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Basic model implementation (Month 2)
-- First temporal model (Month 4)
-- Preliminary PhD proposal (Month 6)
+- Basic model implementation
+- Experimental paradigm design
+- Pilot data analysis
+- Research proposal development
 
 9. **RESOURCES AND TOOLS**
 Essential Reading:
-- "Active Inference" by Da Costa et al.
-- "A Step-by-Step Tutorial on Active Inference" by Ramstead et al.
-- Key papers on temporal processing and film perception
+- "Active Inference" by Thomas Parr et al.
+- "The Free Energy Principle" by Karl Friston
+- Relevant papers on temporal processing
+- Film fMRI methodology papers
 
 Tools:
-- MATLAB
 - SPM12
-- Active Inference toolbox
-- Python (optional)
+- Python (PyAI)
+- MATLAB
+- Computational modeling tools
 
 10. **IMPLEMENTATION ROADMAP**
+
 Short-term (1-3 months):
-- Master foundational mathematics
-- Complete basic Active Inference tutorials
-- Begin experimental design
+- Master fundamental concepts
+- Complete basic tutorials
+- Develop computational skills
 
 Medium-term (3-6 months):
-- Implement first temporal models
-- Analyze pilot data
-- Draft PhD proposal
+- Design preliminary experiments
+- Implement basic models
+- Begin pilot data collection
 
 Long-term (6-12 months):
-- Complete preliminary studies
-- Present at conferences
-- Begin PhD program
+- Develop novel experimental paradigms
+- Create specialized models
+- Prepare PhD proposal
+- Submit conference abstract
 
-This curriculum emphasizes the bridge between traditional fMRI analysis and Active Inference while focusing on temporal aspects of film perception. It's designed to build towards a PhD proposal while maintaining practical applicability to current research.
+Specific Recommendations:
+1. Focus initially on bridging mathematical foundations with neuroscience applications
+2. Emphasize temporal aspects of Active Inference
+3. Develop expertise in naturalistic stimulus processing
+4. Build connections between dynamic connectivity and Active Inference
+5. Create novel applications for film fMRI
+
+This curriculum emphasizes practical implementation while building theoretical understanding, specifically focused on applications in time perception and film fMRI research.

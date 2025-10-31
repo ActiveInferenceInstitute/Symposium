@@ -237,7 +237,7 @@ class TestRealAPIWorkflows:
 
             analyzer = PresenterAnalyzer(api_client, config.to_dict().get('data', {}))
             results = analyzer.analyze_all_presenters(
-                temp_dir,
+                Path(temp_dir),
                 Path(temp_dir) / "real_outputs",
                 domain_context="Active Inference research in cognitive neuroscience",
                 max_rows=3
@@ -288,7 +288,7 @@ class TestRealAPIWorkflows:
 
             generator = ProfileGenerator(api_client, config.to_dict().get('data', {}))
             results = generator.generate_all_profiles(
-                temp_dir,
+                Path(temp_dir),
                 Path(temp_dir) / "real_profiles",
                 domain_context="Artificial Intelligence and Machine Learning research",
                 include_methods=True
@@ -348,7 +348,7 @@ class TestRealAPIWorkflows:
             for provider_name, provider in providers.items():
                 analyzer = PresenterAnalyzer(provider, {})
                 workflow_results = analyzer.analyze_all_presenters(
-                    temp_dir,
+                    Path(temp_dir),
                     Path(temp_dir) / f"outputs_{provider_name}",
                     max_rows=2
                 )

@@ -1,6 +1,6 @@
 # Profile Analysis: Harkeerat Mangat
 
-Generated on: 2025-10-24 14:46:25
+Generated on: 2025-10-31 15:07:17
 
 ## Metadata
 
@@ -13,80 +13,81 @@ Here's a comprehensive analysis of Harkeerat Mangat's profile:
 
 1. **EXPERTISE ASSESSMENT**
 - Beginner level in Active Inference
-- Strong background in cognitive science and neuroimaging
-- Technical expertise in fMRI and dynamic functional connectivity methods
-- Academic research experience in neuroscience
+- Strong technical background in fMRI and dynamic functional connectivity methods
+- Academic foundation in Cognitive Science
 - Connection to Active Inference through supervisor Ronald Sladky
+- Expertise in neuroimaging and time perception research
 
 2. **LEARNING OPPORTUNITIES**
-- Need for fundamental Active Inference theoretical framework
+- Need for foundational Active Inference concepts
 - Focus areas:
-  * Basic mathematical foundations
-  * Computational modeling principles
+  * Mathematical frameworks underlying Active Inference
   * Application to neuroimaging data
+  * Time perception modeling
 - Recommended resources:
-  * Introductory tutorials on Active Inference
-  * Online courses in computational modeling
-  * Literature on time perception and Active Inference
+  * Basic online courses in Active Inference
+  * Tutorials focusing on neuroimaging applications
+  * Literature connecting Active Inference to film fMRI
 
 3. **RESEARCH INTERESTS ALIGNMENT**
 - Strong alignment with:
+  * Temporal processing in the brain
+  * Naturalistic fMRI
   * Cognitive neuroscience
-  * Time perception
-  * Film fMRI applications
 - Potential research directions:
-  * Temporal processing in naturalistic settings
-  * Active Inference models of film viewing
-  * Integration with dynamic connectivity methods
+  * Active Inference models of temporal perception
+  * Integration with dynamic connectivity analysis
+  * Application to film viewing paradigms
 
 4. **COLLABORATION POTENTIAL**
 - Can contribute expertise in:
-  * fMRI analysis
-  * Dynamic connectivity methods
-  * Cognitive science perspectives
-- Potential collaborations:
-  * Computational neuroscientists
-  * Active Inference theorists
-  * Film cognition researchers
+  * fMRI analysis methods
+  * Dynamic connectivity approaches
+  * Cognitive science perspective
+- Collaboration opportunities:
+  * Working groups on neuroimaging applications
+  * Time perception research teams
+  * Methodological development groups
 
 5. **SYMPOSIUM PARTICIPATION STRATEGY**
 Priority focus areas:
-- Introductory sessions
-- Methods workshops
-- Applications in neuroscience
+- Introductory sessions on Active Inference
+- Neuroimaging applications workshops
+- Time perception related presentations
 - Networking with:
-  * Other early-career researchers
-  * Experts in time perception
-  * Computational modeling specialists
+  * Other neuroimaging researchers
+  * PhD students in related fields
+  * Active Inference experts working on temporal processing
 
 6. **DEVELOPMENT ROADMAP**
 Short-term:
-- Gain fundamental understanding
-- Identify potential PhD advisors
-- Build network in the field
+- Establish fundamental Active Inference understanding
+- Identify potential PhD research directions
 
 Medium-term:
-- Develop PhD proposal
-- Integrate Active Inference with film fMRI
-- Build computational skills
+- Develop specific Active Inference models for time perception
+- Begin PhD research implementation
 
 Long-term:
 - Contribute to simplified Active Inference models
 - Bridge academic and public understanding
-- Develop novel applications in film cognition
 
 7. **ACTIVE INFERENCE INTEGRATION**
-Opportunities:
-- Apply Active Inference to naturalistic viewing
-- Develop models of temporal processing
-- Bridge gap between theory and practical applications
-- Contribute to accessibility of Active Inference concepts
+- Natural integration points:
+  * Cognitive science background provides theoretical foundation
+  * fMRI expertise offers practical application pathway
+  * Time perception research aligns with Active Inference principles
+- Contribution potential:
+  * Developing accessible Active Inference models
+  * Applying framework to naturalistic viewing contexts
+  * Advancing understanding of temporal processing
 
-RECOMMENDATIONS:
-1. Focus on foundational understanding before technical details
+Recommendations:
+1. Focus on foundational Active Inference concepts initially
 2. Connect with researchers combining Active Inference and neuroimaging
-3. Develop computational skills alongside theoretical knowledge
-4. Leverage existing expertise in fMRI and cognitive science
-5. Build towards simplified models for broader accessibility
+3. Develop specific proposals for PhD research
+4. Consider contribution to making Active Inference more accessible
+5. Leverage current expertise while building new skills
+6. Maintain balance between theoretical understanding and practical applications
 
-This profile suggests someone well-positioned to contribute to bridging Active Inference theory with practical applications in cognitive neuroscience, particularly in the domain of time perception and film viewing.
+This profile suggests someone well-positioned to contribute to Active Inference's application in neuroimaging and temporal processing, with particular potential in making the framework more accessible to broader audiences.

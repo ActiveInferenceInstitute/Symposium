@@ -1,6 +1,6 @@
 # Curriculum: Roberto Barumerli
 
-Generated on: 2025-10-24 14:51:15
+Generated on: 2025-10-31 15:13:07
 
 ## Metadata
 
@@ -9,113 +9,109 @@ Generated on: 2025-10-24 14:51:15
 
 ---
 
-Based on Roberto's background in Bayesian inference and spatial hearing, along with his interest in practical applications, I'll design a personalized Active Inference curriculum that leverages his existing knowledge while focusing on practical implementation.
+Based on Roberto's background in Bayesian inference and spatial hearing, and his interest in seeing practical applications of Active Inference, I'll design a personalized curriculum that leverages his existing knowledge while focusing on practical implementations.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong foundation in Bayesian inference provides excellent starting point
-- Spatial hearing background suggests comfort with sensory processing models
-- Gap in Active Inference specific concepts and implementations
-- Technical background suggests suitability for computational approaches
+- Strong: Bayesian inference foundations, statistical modeling
+- Gaps: Active Inference specific concepts, Free Energy Principle
+- Learning style: Likely analytical with preference for mathematical/computational approaches
 
 2. **PERSONALIZED LEARNING PATH**
-Week 1-2: Foundations
-- Free Energy Principle basics
-- Connection between Bayesian inference and Active Inference
-- Basic generative models
+Months 1-2: Foundations
+- Bridge from Bayesian inference to Active Inference
+- Core mathematical framework
+- Basic implementations
 
-Week 3-4: Core Implementation
-- Computational frameworks
-- Simple examples in Python/MATLAB
-- Connection to spatial hearing models
+Months 3-4: Applications
+- Spatial hearing models using Active Inference
+- Practical implementations
+- Tool mastery
 
-Week 5-8: Advanced Applications
-- Complex generative models
-- Real-world implementations
-- Integration with existing research
+Months 5-6: Advanced Integration
+- Research applications
+- Complex modeling
+- Independent project development
 
 3. **CORE CONCEPTS MODULES**
-- Free Energy Principle fundamentals
-- Markov Blankets
+Module 1: Bridging Concepts
+- From Bayes to Active Inference
+- Free Energy Principle basics
+- Markov Decision Processes
+
+Module 2: Essential Mathematics
+- Variational inference
 - Generative models
-- Variational inference in Active Inference
 - Message passing algorithms
-- Connection to predictive coding
 
 4. **HANDS-ON LEARNING**
-- Start with PyAI tutorial series
-- Implement simple perception model
-- Build spatial hearing model using Active Inference
-- Work through SPM12 examples
-- Develop custom implementations
+Computational Exercises:
+- Start with SPM12 tutorials
+- Progress to PyAI implementation
+- Develop simple spatial hearing models
+
+Projects:
+1. Simple perception model
+2. Basic action-perception loop
+3. Complex spatial hearing model
 
 5. **ADVANCED TOPICS**
-- Mixed generative models
-- Hierarchical Active Inference
-- Temporal dynamics
-- Multi-agent systems
-- Applications in spatial audio processing
+- Hierarchical generative models
+- Precision weighting in spatial hearing
+- Multi-modal integration
+- Deep Active Inference
 
 6. **PRACTICAL APPLICATIONS**
-Focus areas:
-- Spatial hearing models using Active Inference
-- Sensory processing applications
-- Integration with existing Bayesian models
-- Practical implementation strategies
+Focus Areas:
+- Auditory processing models
+- Spatial localization
+- Sensor fusion applications
+- Real-time processing implementations
 
 7. **COMMUNITY AND COLLABORATION**
-- Join Active Inference Institute
-- Participate in FEP Discord server
-- Attend IWAI workshops
+- Join VERSE community
+- Participate in Active Inference Institute workshops
 - Connect with spatial hearing researchers using Active Inference
+- Attend relevant conferences
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Basic model implementation
-- Spatial hearing application
-- Original research contribution
-- Code portfolio development
+- Basic model implementation (Month 2)
+- First spatial hearing application (Month 4)
+- Independent project completion (Month 6)
 
 9. **RESOURCES AND TOOLS**
-Essential readings:
+Essential Reading:
 - "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
-- Karl Friston's tutorial papers
-- PyAI documentation
-- SPM12 manual
+- Key papers by Karl Friston on Active Inference
+- Spatial hearing literature incorporating Active Inference
 
 Tools:
-- PyAI
 - SPM12
-- Julia implementations
-- Custom Python frameworks
+- PyAI
+- Julia-based implementations
+- Custom modeling tools
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
-- Master fundamental concepts
+- Master core concepts
 - Complete basic implementations
-- Develop first spatial hearing model
+- Develop first simple model
 
 Medium-term (3-6 months):
-- Advanced model implementation
-- Integration with existing research
-- Community engagement
+- Apply to spatial hearing
+- Develop custom tools
+- Complete independent project
 
 Long-term (6-12 months):
-- Original research contribution
-- Advanced applications
-- Potential publication or presentation
-
-Success metrics:
-- Working implementations
 - Research integration
-- Community participation
-- Portfolio development
+- Advanced applications
+- Potential publications
 
-This curriculum emphasizes:
-1. Building on existing Bayesian knowledge
-2. Practical implementation focus
-3. Connection to spatial hearing domain
-4. Community engagement
-5. Portfolio development
+Special Recommendations:
+1. Focus initially on bridging Bayesian knowledge to Active Inference
+2. Emphasize computational implementations
+3. Build towards spatial hearing applications
+4. Develop practical tools for research application
 
-Recommended starting point: Begin with PyAI tutorials while studying fundamental concepts, then quickly move to practical implementations related to spatial hearing applications.
+This curriculum emphasizes practical implementation while building on Roberto's existing knowledge of Bayesian inference. The focus on spatial hearing applications provides immediate relevance to his field while ensuring deep understanding of Active Inference principles.
