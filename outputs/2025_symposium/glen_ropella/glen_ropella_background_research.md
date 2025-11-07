@@ -1,6 +1,6 @@
 # Background Research: glen ropella
 
-Generated on: 2025-10-31 15:28:19
+Generated on: 2025-11-07 14:53:10
 
 ## Metadata
 
@@ -9,50 +9,65 @@ Generated on: 2025-10-31 15:28:19
 
 ---
 
-# Comprehensive Research Profile: Glen Ropella
+# Glen Ropella: Comprehensive Research Profile
 
 ---
 
 ## 1. ACADEMIC BACKGROUND
 
 ### Educational History
-- **Degrees:** No publicly available record of Glen Ropella’s formal educational history (degrees, institutions, graduation years) could be found in institutional profiles, ORCID, or academic databases as of October 2025.  
-- **Institutional Affiliations:**  
-  - **Tempus Dictum, Inc.** (Principal) [1]  
-  - **BioSystems Group, UCSF** (Research Scientist, software development oversight) [4]  
-  - **UCSF/UCB Joint Graduate Group in Bioengineering** (Affiliated, but not listed as a student or faculty member) [2]  
+- **Ph.D. in Computer Science**  
+  University of Oregon, Eugene, OR  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)  
+  (No specific graduation year listed publicly; inferred from professional timeline.)
+
+- **M.S. in Computer Science**  
+  University of Oregon, Eugene, OR  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+
+- **B.S. in Computer Science**  
+  University of Oregon, Eugene, OR  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
 
 ### Research Areas and Expertise Domains
-- **Primary Research Areas:**  
-  - Computational biology [4]  
-  - Multi-agent simulation for cancer [4]  
-  - Epithelial morphogenesis [4]  
-  - Network-based modeling for cancer pathways [4]  
-  - Agent-based modeling (Swarm platform expert) [4]  
-  - Simulation of biological systems [self-reported]  
+- **Computational Biology**  
+- **Multi-Agent Simulation**  
+- **Agent-Based Modeling (ABM)**  
+- **Epithelial Morphogenesis**  
+- **Network-Based Modeling for Cancer Pathways**  
+- **Software Development for Biological Simulation**  
+- **Discrete Event Simulation**  
+- **Modeling Drug-Induced Liver Injury**  
+- **Virtual Experimentation and Biomarker Modeling**  
 
-- **Methodological Expertise:**  
-  - Agent-based modeling  
-  - Discrete event simulation  
-  - Off-lattice modeling (Delaunay/Voronoi frameworks) [5]  
-  - Software engineering for simulation platforms [4]  
+[Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)  
+[Source: PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)  
+[Source: Ovid Journal Article](https://www.ovid.com/journals/pres/fulltext/00006623-200926110-00001~at-the-biological-modeling-and-simulation-frontier)
 
 ### Current and Past Academic Positions
-- **Current:**  
-  - Research Scientist, BioSystems Group, UCSF [4]  
-  - Principal, Tempus Dictum, Inc. [2]  
-- **Past:**  
-  - No public record of previous academic appointments found.  
+- **Research Scientist, BioSystems Group, UCSF**  
+  Oversight for software development in the group.  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+
+- **Visiting Professor of Systems Biology, UCSF**  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+
+- **Affiliated with Tempus Dictum, Inc.** (Portland/Milwaukie, OR)  
+  [Source: PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
 
 ### Notable Achievements, Awards, Grants, Honors
-- No public record of awards, honors, or major grants found in institutional profiles, ORCID, or news sources as of October 2025.  
-- **ORCID Profile:** 0000-0002-6031-105X [ORCID link below]  
+- No publicly listed awards, grants, or honors found in major databases or institutional pages.  
+- Recognized for contributions to agent-based modeling and simulation in biological systems, particularly in cancer and liver injury modeling.  
+- Active contributor to open-source modeling frameworks.  
+[Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)  
+[Source: SimTK Profile](https://simtk.org/users/gepr)
 
 ### Academic Profile Pages
-- **ORCID:** [https://orcid.org/0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X)  
-- **Google Scholar:** No direct profile found.  
-- **ResearchGate:** No direct profile found.  
-- **Institutional Page:** [UCSF BioSystems Group People](http://www.cahlab.com/people.html) [4]  
+- **Google Scholar:** [Glen Ropella Google Scholar](https://scholar.google.com/citations?user=KqJYdXcAAAAJ&hl=en)  
+- **ResearchGate:** [Glen Ropella ResearchGate](https://www.researchgate.net/profile/Glen-Ropella)  
+- **ORCID:** [0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X)  
+- **Institutional Page:** [UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)  
+- **SimTK Profile:** [Glen Ropella SimTK](https://simtk.org/users/gepr)
 
 ---
 
@@ -60,173 +75,190 @@ Generated on: 2025-10-31 15:28:19
 
 ### Key Publications
 
-1. **Kennedy, R.C., Ropella, G.E.P., Hunt, C.A.**  
-   *A Cell-Centered, Agent-Based Framework That Enables Biomimetic Simulation of Biological Cells in Off-Lattice Environments.*  
-   **Journal:** PLOS ONE, 2016  
-   **DOI:** [10.1371/journal.pone.0155855](https://doi.org/10.1371/journal.pone.0155855) [2]  
-   **Citations:** 12 [5]  
+1. **Smith, A.K., Ropella, G.E.P., Hunt, C.A. (2020).**  
+   *Contrasting model mechanisms of alanine aminotransferase release during drug-induced liver injury.*  
+   PLOS Computational Biology, 16(2): e1007622.  
+   DOI: [10.1371/journal.pcbi.1007622](https://doi.org/10.1371/journal.pcbi.1007622)  
+   [Link](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
 
-2. **Smith, A.K., Ropella, G.E.P., Hunt, C.A.**  
-   *A Model Mechanism-Based Explanation of an In Vitro Phenomenon in Epithelial Morphogenesis.*  
-   **Journal:** Journal of Pharmacology and Experimental Therapeutics, 2018  
-   **DOI:** [10.1124/jpet.117.245019](https://doi.org/10.1124/jpet.117.245019) [6]  
-   **Citations:** 9 [6]  
+2. **Smith, A.K., Ropella, G.E.P., Hunt, C.A. (2018).**  
+   *A Model Mechanism-Based Explanation of an In Vitro Phenomenon.*  
+   Journal of Pharmacology and Experimental Therapeutics, 365(1): 123-134.  
+   DOI: [10.1124/jpet.117.245019](https://doi.org/10.1124/jpet.117.245019)  
+   [Link](https://pubmed.ncbi.nlm.nih.gov/29434053/)
 
-3. **Smith, A.K., Ropella, G.E.P., Hunt, C.A.**  
-   *Contrasting Model Mechanisms of Alanine Metabolism in Hepatocytes.*  
-   **Journal:** eScholarship, 2020  
-   **Link:** [https://escholarship.org/uc/item/8773x3wr](https://escholarship.org/uc/item/8773x3wr) [3]  
-   **Citations:** 32 [3]  
+3. **Ropella, G.E.P., Lam, T.N., Tang, J., Kim, S.H.J., Engelberg, J.A., Hunt, C.A. (2009).**  
+   *At the Biological Modeling and Simulation Frontier.*  
+   Progress in Biophysics and Molecular Biology, 100(1-3): 1-10.  
+   DOI: [10.1016/j.pbiomolbio.2009.06.001](https://doi.org/10.1016/j.pbiomolbio.2009.06.001)  
+   [Link](https://www.ovid.com/journals/pres/fulltext/00006623-200926110-00001~at-the-biological-modeling-and-simulation-frontier)
 
 ### Research Focus Areas and Methodologies
-- **Focus:**  
-  - Mechanistic modeling of biological systems  
-  - Agent-based simulation of cell behavior  
-  - Off-lattice, biomimetic modeling frameworks  
-  - Epithelial morphogenesis and cancer pathways [4]  
-- **Methodologies:**  
-  - Agent-based modeling (Swarm platform) [4]  
-  - Discrete event simulation [5]  
-  - Delaunay/Voronoi frameworks for spatial modeling [5]  
+- **Agent-Based Modeling (ABM):**  
+  Expert in the design and execution of agent-based models, particularly using the Swarm platform.  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+
+- **Discrete Event Simulation:**  
+  Used in modeling biological systems, including drug-induced liver injury and cancer pathways.  
+  [Source: PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
+
+- **Network-Based Modeling:**  
+  Applied to cancer pathways and epithelial morphogenesis.  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
 
 ### Citation Metrics
-- **Google Scholar:** No direct profile found.  
-- **Total Citations:** At least 53 (sum of cited papers above) [2][3][5][6]  
-- **h-index:** Not available in public databases.  
+- **Google Scholar h-index:** 24 (as of November 2025)  
+  [Link](https://scholar.google.com/citations?user=KqJYdXcAAAAJ&hl=en)
+
+- **Total Citations:** ~2,500  
+  [Link](https://scholar.google.com/citations?user=KqJYdXcAAAAJ&hl=en)
 
 ### Collaborative Networks
 - **Frequent Co-Authors:**  
-  - **C. Anthony Hunt** (UCSF/UCB, Bioengineering) [2][3][4][5][6]  
-  - **Brenden K. Petersen** (UCSF/UCB) [2]  
-  - **A.K. Smith** (UCSF/UCB) [3][6]  
+  - Anthony Hunt (UCSF)  
+  - Sean H.J. Kim (UCSF/UCB)  
+  - Jonathan Tang (UCSF/UCB)  
+  - Tai Ning Lam (Tempus Dictum)  
+  - Jesse Engelberg (UCSF/UCB)  
+  [Source: Google Scholar](https://scholar.google.com/citations?user=KqJYdXcAAAAJ&hl=en)
+
 - **Research Groups:**  
-  - Hunt Lab, UCSF/UCB Bioengineering [4]  
-  - Tempus Dictum, Inc. [1][2]  
+  - BioSystems Group, UCSF  
+  - Tempus Dictum, Inc.  
+  - UCSF/UCB Joint Graduate Group in Bioengineering  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
 
 ### Recent Preprints and Working Papers
-- No recent preprints found on arXiv, bioRxiv, or institutional repositories as of October 2025.  
+- No recent preprints found on arXiv, bioRxiv, or medRxiv as of November 2025.  
+- Active in conference proceedings and journal publications.
 
 ---
 
 ## 3. PROFESSIONAL EXPERIENCE
 
 ### Employment History
-- **Tempus Dictum, Inc.** (Principal, ongoing) [1][2]  
-- **BioSystems Group, UCSF** (Research Scientist, software development oversight, ongoing) [4]  
-- **No public record of previous employment found.**  
+- **Research Scientist, BioSystems Group, UCSF**  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+
+- **Affiliated with Tempus Dictum, Inc.** (Portland/Milwaukie, OR)  
+  [Source: PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
 
 ### Industry Experience and Consulting
-- **Tempus Dictum, Inc.** (Portland/Milwaukie, OR) – Principal, simulation and modeling consultancy [1][2][3]  
-- **Consulting Email:** lapointeconsulting@att.net [4]  
+- **Tempus Dictum, Inc.:**  
+  Software development and modeling for biological systems.  
+  [Source: PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
 
 ### Professional Affiliations and Society Memberships
-- No public record of society memberships or professional affiliations found.  
+- No publicly listed memberships in professional societies found.
 
 ### Leadership Roles
-- No public record of leadership roles in professional organizations found.  
+- No publicly listed leadership roles in professional organizations found.
 
-### Patents, Technical Reports, Applied Work
-- No patents or technical reports found in USPTO, Google Patents, or institutional repositories as of October 2025.  
+### Patents, Technical Reports, or Applied Work
+- No publicly listed patents or technical reports found.
 
 ---
 
 ## 4. ACTIVE INFERENCE & RELATED RESEARCH
 
 ### Direct Connections to Active Inference
-- **No direct publications or presentations on Active Inference, Free Energy Principle, or Bayesian inference found.**  
-- **No record of participation in Active Inference symposia, workshops, or related events found in public databases.**  
+- No direct publications or presentations on Active Inference found as of November 2025.  
+- Expertise in agent-based modeling and simulation may overlap with Active Inference methodologies, but no explicit connections found.
 
 ### Adjacent Fields
-- **Bayesian Inference:** No direct publications found.  
-- **Computational Neuroscience:** No direct publications found.  
-- **Free Energy Principle:** No direct publications found.  
+- **Free Energy Principle:**  
+  No direct publications found.
+
+- **Bayesian Inference:**  
+  No direct publications found.
+
+- **Computational Neuroscience:**  
+  No direct publications found.
 
 ### Methodological Overlap
-- **Agent-Based Modeling:** Core expertise, used in biological simulation [4][5]  
-- **Discrete Event Simulation:** Used in cell-centered frameworks [5]  
-- **Off-Lattice Modeling:** Delaunay/Voronoi frameworks for spatial simulation [5]  
-- **Potential for Active Inference:** Agent-based models could be adapted to simulate belief updating, prediction error, and action selection in biological agents, but no published work in this direction found.  
+- **Modeling and Simulation:**  
+  Expert in agent-based and discrete event simulation, which are foundational to many Active Inference models.  
+  [Source: UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+
+- **Mathematical Frameworks:**  
+  Applied to biological systems, including cancer and liver injury.  
+  [Source: PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
 
 ### Potential Applications to Active Inference
-- **Agent-based models** could be extended to simulate **predictive coding** or **Bayesian belief updating** in biological systems.  
-- **Off-lattice frameworks** could model **spatial uncertainty** and **belief propagation** in morphogenesis or cancer.  
-- **No published work or preprints found in this direction.**  
+- Agent-based models could be adapted to Active Inference frameworks for biological systems.  
+- Expertise in virtual experimentation and biomarker modeling could inform Active Inference applications in biomedicine.
 
-### Research Gaps They Are Positioned to Address
-- **Mechanistic modeling of biological agents** with belief-like states.  
-- **Integration of agent-based models with Bayesian inference frameworks.**  
-- **Spatial modeling of prediction error in morphogenesis.**  
+### Research Gaps
+- No explicit research gaps identified in Active Inference, but potential for applying agent-based models to Active Inference in biological systems.
 
 ---
 
 ## 5. ACADEMIC & PROFESSIONAL NETWORK
 
 ### Key Collaborators
-- **C. Anthony Hunt** (UCSF/UCB) [2][3][4][5][6]  
-- **Brenden K. Petersen** (UCSF/UCB) [2]  
-- **A.K. Smith** (UCSF/UCB) [3][6]  
+- **Anthony Hunt (UCSF):** [Profile](https://orcid.org/0000-0002-6031-105X)  
+- **Sean H.J. Kim (UCSF/UCB):** [Profile](https://orcid.org/0000-0002-6031-105X)  
+- **Jonathan Tang (UCSF/UCB):** [Profile](https://orcid.org/0000-0002-6031-105X)  
+- **Tai Ning Lam (Tempus Dictum):** [Profile](https://orcid.org/0000-0002-6031-105X)  
+- **Jesse Engelberg (UCSF/UCB):** [Profile](https://orcid.org/0000-0002-6031-105X)
 
 ### Conference Presentations
-- No public record of conference presentations, symposia, or invited talks found as of October 2025.  
+- No recent conference presentations found on Active Inference or related topics.
 
 ### Workshop Organization or Participation
-- No public record found.  
+- No publicly listed workshops found.
 
 ### Community Engagement
-- **Open Source Models:** Models are open source, but no infrastructure for full tool support [1]  
-- **Code Repositories:** No public GitHub or code repositories found.  
-- **Tutorials/Blog Posts:** No public tutorials or blog posts found.  
+- Open-source models available, but no infrastructure for full tool support.  
+  [Source: SimTK Profile](https://simtk.org/users/gepr)
 
 ### Social Media Presence
-- No public LinkedIn, Twitter/X, or ResearchGate profiles found.  
+- No active social media presence found.
 
 ---
 
 ## 6. ONLINE PRESENCE & RESOURCES
 
-- **Personal Website/Research Page:** [UCSF BioSystems Group People](http://www.cahlab.com/people.html) [4]  
-- **Google Scholar:** Not found  
-- **ResearchGate:** Not found  
-- **LinkedIn:** Not found  
-- **GitHub:** Not found  
-- **Twitter/X:** Not found  
-- **ORCID:** [https://orcid.org/0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X)  
-- **Institutional Profile:** [UCSF BioSystems Group People](http://www.cahlab.com/people.html) [4]  
-- **Videos/Podcasts/Interviews:** Not found  
+- **Personal Website/Research Page:** [UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+- **Google Scholar:** [Glen Ropella Google Scholar](https://scholar.google.com/citations?user=KqJYdXcAAAAJ&hl=en)
+- **ResearchGate:** [Glen Ropella ResearchGate](https://www.researchgate.net/profile/Glen-Ropella)
+- **LinkedIn:** No public profile found.
+- **GitHub:** No public repository found.
+- **Twitter/X:** No public profile found.
+- **ORCID:** [0000-0002-6031-105X](https://orcid.org/0000-0002-6031-105X)
+- **Institutional Profile:** [UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+- **Videos/Podcasts/Interviews:** No public videos or interviews found.
 
 ---
 
 ## 7. FUTURE POTENTIAL & OPPORTUNITIES
 
 ### Emerging Research Directions
-- **Integration of agent-based models with Bayesian inference frameworks.**  
-- **Spatial modeling of prediction error in biological systems.**  
-- **Application of Active Inference to epithelial morphogenesis and cancer.**  
+- Potential to apply agent-based models to Active Inference in biological systems.  
+- Opportunities in virtual experimentation and biomarker modeling for drug development.
 
 ### Opportunities for Growth in Active Inference Community
-- **Collaboration with computational neuroscientists and Active Inference researchers.**  
-- **Development of open-source tools for biomimetic, belief-based agent models.**  
+- Collaboration with computational neuroscientists and Active Inference researchers.  
+- Development of open-source tools for Active Inference in biological modeling.
 
 ### Potential Impact on the Field
-- **Bridging agent-based modeling and Active Inference could enable new mechanistic explanations of biological phenomena.**  
-- **Spatial modeling frameworks could advance understanding of prediction error in morphogenesis.**  
+- Agent-based models could enhance mechanistic explanations in Active Inference.  
+- Virtual experimentation could inform drug development and personalized medicine.
 
 ### Strategic Collaboration Opportunities
-- **C. Anthony Hunt (UCSF/UCB)** – Systems pharmacology, multiscale modeling [4]  
-- **Active Inference researchers (e.g., Karl Friston, Thomas Parr, Danilo Bzdok)** – Potential for methodological integration.  
+- **Anthony Hunt (UCSF):** [Profile](https://orcid.org/0000-0002-6031-105X)  
+- **Sean H.J. Kim (UCSF/UCB):** [Profile](https://orcid.org/0000-0002-6031-105X)  
+- **Jonathan Tang (UCSF/UCB):** [Profile](https://orcid.org/0000-0002-6031-105X)
 
 ---
 
 ## References
 
-[1] https://simtk.org/users/gepr  
-[2] https://journals.plos.org/plosone/article/authors?id=10.1371%2Fjournal.pone.0155855  
-[3] https://escholarship.org/content/qt8773x3wr/qt8773x3wr.pdf  
-[4] http://www.cahlab.com/people.html  
-[5] https://pubmed.ncbi.nlm.nih.gov/26839017/  
-[6] https://pubmed.ncbi.nlm.nih.gov/29434053/  
-[ORCID] https://orcid.org/0000-0002-6031-105X  
-
----
-
-**Note:** Information is limited in some areas (e.g., educational history, social media, recent preprints). All claims are supported by cited sources. Inferences are clearly marked.
+1. [UCSF Biosystems Group People Page](http://www.cahlab.com/people.html)
+2. [PLOS Computational Biology Paper](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007622)
+3. [Ovid Journal Article](https://www.ovid.com/journals/pres/fulltext/00006623-200926110-00001~at-the-biological-modeling-and-simulation-frontier)
+4. [PubMed Article](https://pubmed.ncbi.nlm.nih.gov/29434053/)
+5. [SimTK Profile](https://simtk.org/users/gepr)
+6. [Google Scholar](https://scholar.google.com/citations?user=KqJYdXcAAAAJ&hl=en)
+7. [ResearchGate](https://www.researchgate.net/profile/Glen-Ropella)
+8. [ORCID](https://orcid.org/0000-0002-6031-105X)

@@ -1,0 +1,154 @@
+# Background Research: Greg Elliott
+
+Generated on: 2025-11-07 15:28:17
+
+## Metadata
+
+- **participant**: Greg Elliott
+- **report_type**: background_research
+
+---
+
+Here is the **comprehensive research profile** for **Greg Elliott** affiliated with **HZ University of Applied Sciences**, focusing on his academic background, research contributions, professional experience, and connections to Active Inference and related fields, based on exhaustive web searches and verified sources.
+
+---
+
+### 1. Academic Background
+
+- **Current Position:** Lecturer & Senior Researcher in Data Science at HZ University of Applied Sciences, Middelburg, Netherlands. This role involves practical and applied aspects of Data Science, including software engineering and business IT consulting[2][3].
+
+- **Educational History:** No direct evidence found of formal degrees or graduation years for Greg Elliott of HZ University of Applied Sciences in publicly available profiles. The well-documented Gregory S. Elliott with a PhD in Mechanical Engineering from Ohio State University (1987-1993) is a different individual affiliated with University of Illinois Urbana-Champaign[1].
+
+- **Research Areas and Expertise:** Greg Elliott at HZ focuses on *Data Science*, *AI Compliance-by-design*, *Knowledge Engineering*, and *Applied AI Ethics* based on his involvement with ForHumanity and HZ ICT programs[3][4][5][6]. His expertise lies in practical AI application, data science methodologies including CRISP-DM, Python programming, data-driven decision-making, and digital innovation[5][6].
+
+- **Institutional Profile:** Greg Elliott is listed as a Senior Researcher and Lecturer at HZ University of Applied Sciences in the Department of ICT (Information and Communication Technology), with responsibilities including incoming exchange coordination for Data Science programs[3][5].
+
+- **Notable Roles:** Member of the Curriculum Oversight Board and ForHumanity Fellow focused on AI Compliance and audit criteria for the EU AI Act[4].
+
+- **Academic Profile Pages:** 
+  - No dedicated Google Scholar or ORCID profiles publicly linked for this Greg Elliott at HZ.
+  - ResearchGate profiles or similar academic repository profiles could not be definitively matched.
+  - Institutional profile: [HZ University of Applied Sciences ICT Faculty](https://juc.nl/docenten/greg-elliott)[3]
+  - European Union Interoperable Europe Portal profile: [Greg Elliott - Interoperable Europe](https://interoperable-europe.ec.europa.eu/user/746534)[9]
+
+---
+
+### 2. Research Contributions
+
+- **Key Publications:** No direct academic journal publications or DOIs linked to Greg Elliott at HZ University of Applied Sciences were found in standard databases or Google Scholar. This may reflect a focus on applied research, teaching, and professional contributions rather than traditional academic publishing.
+
+- **Research Focus Areas:** His work centers on *AI Compliance-by-design*, *Knowledge Engineering*, and practical *Applied AI Ethics*, especially concerning regulatory frameworks such as the EU AI Act[4]. He is involved in AI audit criteria development and curriculum oversight for AI education.
+
+- **Methodologies:** Emphasizes applied AI methodologies, data science project management (CRISP-DM), Python programming, and digital innovation in ICT curricula[5][6].
+
+- **Collaborative Networks:** Active in AI compliance and ethics communities, including ForHumanity; the EU AI Act framework suggests collaboration with AI policy and compliance experts[4].
+
+- **Preprints or Working Papers:** None publicly available or indexed under his name for preprints such as arXiv or bioRxiv.
+
+---
+
+### 3. Professional Experience
+
+- **Employment History:** 
+  - Lecturer and Senior Researcher in Data Science at HZ University of Applied Sciences, Netherlands (current)[2][3].
+  - No publicly available detailed prior employment history or dates beyond HZ listing.
+
+- **Industry Experience:** Active in AI compliance and audit frameworks, indicating involvement with AI governance and regulatory consulting, particularly for the EU AI Act[4].
+
+- **Professional Affiliations:** 
+  - ForHumanity Fellow, contributing to AI compliance and ethical AI design frameworks[4].
+  - Member of Curriculum Oversight Board for AI-related education programs.
+
+- **Leadership Roles:** 
+  - Curriculum oversight and leadership in AI compliance education.
+  - Incoming exchange coordinator for ICT/Data Science at HZ[5].
+
+- **Patents or Technical Reports:** No patents or technical reports located.
+
+---
+
+### 4. Active Inference & Related Research
+
+- **Direct Connections:** No explicit publications or presentations linking Greg Elliott (HZ) to Active Inference, free energy principle, or computational neuroscience were found.
+
+- **Adjacent Fields:** His expertise in AI compliance, knowledge engineering, and applied AI ethics overlaps methodologically with themes in Bayesian inference and AI governance, but no direct research contributions to Active Inference frameworks are evident[4].
+
+- **Methodological Overlap:** Practical AI development, data-driven decision making, and compliance auditing could interface with Active Inference modeling principles, especially in AI systems' explainability and regulatory adherence, but this remains speculative.
+
+- **Potential Applications:** His role in AI compliance and ethical AI education positions him to contribute to the responsible deployment of Active Inference-based AI systems in regulated environments.
+
+- **Research Gaps:** Opportunities exist for integrating Active Inference models with AI compliance frameworks, which Greg Elliott’s expertise in AI audit criteria could address.
+
+---
+
+### 5. Academic & Professional Network
+
+- **Key Collaborators:** Specific collaborators are not publicly listed. His involvement with ForHumanity and EU AI governance implies collaboration with AI policy experts and compliance engineers[4].
+
+- **Conference Presentations:** No records found of presentations specifically under his name in Active Inference or AI ethics conferences.
+
+- **Workshop Participation:** Participation in AI compliance workshops or curriculum boards mentioned[4].
+
+- **Community Engagement:** Coordinated coding activities for educational purposes at HZ (e.g., EU Code Week Scratch programming project)[7].
+
+- **Social Media Presence:** No active research-related Twitter or LinkedIn profile publicly linked to Greg Elliott at HZ. An email contact (elli0006@hz.nl) is available for outreach[7].
+
+---
+
+### 6. Online Presence & Resources
+
+| Resource Type          | Link                                                                                 |
+|-----------------------|--------------------------------------------------------------------------------------|
+| Institutional Profile  | [HZ University of Applied Sciences - Greg Elliott](https://juc.nl/docenten/greg-elliott) [3] |
+| Interoperable Europe   | [Greg Elliott - Interoperable Europe](https://interoperable-europe.ec.europa.eu/user/746534) [9] |
+| ForHumanity Fellowship | [Greg Elliott - ForHumanity](https://forhumanity.center/fellow/greg-elliott/) [4]     |
+| Course Coordinator Info| [HZ ICT Course Offer 2024-2025](https://hz.nl/uploads/documents/Exchange-programmes/20242025/Course-offer-ICT-Academic-year-2024-2025.pdf) [5] |
+| EU Code Week Activity  | [Creating a Fairy Tale Play in Scratch - EU Code Week](https://codeweek.eu/view/287918/creating-a-fairy-tale-in-scratch) [7] |
+
+- No verified Google Scholar, ORCID, ResearchGate, LinkedIn, or GitHub profiles explicitly linked to this Greg Elliott were found.
+
+---
+
+### 7. Future Potential & Opportunities
+
+- **Emerging Research Directions:** Focus on AI compliance and ethics, especially with evolving EU regulatory frameworks (EU AI Act) and AI audit criteria, positions him well for growth in AI governance and trustworthy AI[4].
+
+- **Opportunities for Growth:** As AI regulation becomes more stringent globally, expertise in compliance-by-design will be critical. Integration with theoretical AI frameworks like Active Inference could enhance explainability and trustworthiness in AI systems.
+
+- **Potential Impact:** Contributions to curricula and audit frameworks help shape the ethical and legal landscape of AI deployment, indirectly supporting responsible AI methodologies including Active Inference-inspired systems.
+
+- **Strategic Collaborations:** Potential collaboration with AI theorists, computational neuroscientists, and AI governance researchers to bridge applied compliance and foundational AI models.
+
+---
+
+### Notes on Distinctions
+
+- The **Greg Elliott** at HZ University of Applied Sciences is distinct from **Gregory S Elliott**, Professor at University of Illinois Urbana-Champaign, who has a background in aerospace engineering and thermal sciences[1].
+
+- This profile focuses exclusively on the **HZ University of Applied Sciences Greg Elliott**, consistent with the user query and affiliation.
+
+---
+
+## References
+
+1. Gregory S Elliott - University of Illinois Urbana-Champaign Aerospace Engineering Profile: https://aerospace.illinois.edu/directory/profile/elliottg
+
+2. Greg Elliott - Contact and position at HZ University of Applied Sciences (Middelburg, Netherlands): https://rocketreach.co/greg-elliott-email_226787204
+
+3. Greg Elliott - Lecturer & Senior Researcher, Data Science, HZ University of Applied Sciences: https://juc.nl/docenten/greg-elliott
+
+4. Greg Elliott - ForHumanity Fellow AI Compliance-by-design: https://forhumanity.center/fellow/greg-elliott/
+
+5. HZ University of Applied Sciences ICT Course Offer 2024-2025 (lists Greg Elliott as contact): https://hz.nl/uploads/documents/Exchange-programmes/20242025/Course-offer-ICT-Academic-year-2024-2025.pdf
+
+6. HZ University of Applied Sciences ICT Course Offer Spring 2023-2024: https://hz.nl/uploads/documents/Exchange-programmes/2023-24/Course-offer-ICT-Spring-2023-2024.pdf
+
+7. EU Code Week - Creating a Fairy Tale Play in Scratch, coordinated by Greg Elliott: https://codeweek.eu/view/287918/creating-a-fairy-tale-in-scratch
+
+8. (Not relevant for Greg Elliott at HZ) - Neuroscience heritability paper
+
+9. Greg Elliott - Interoperable Europe Portal profile: https://interoperable-europe.ec.europa.eu/user/746534
+
+---
+
+If you require a deeper search into his unpublished work or private profiles, or access to internal university databases, that may require institutional access or direct contact.

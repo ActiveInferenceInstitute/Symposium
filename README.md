@@ -52,26 +52,24 @@ python run.py
 
 The interactive interface provides numbered options for:
 1. **📊 List Available Data** - Explore research datasets
-2. **🔍 Research Individual** - Use Perplexity for researcher analysis
-3. **👥 Process Participants** - Use OpenRouter for participant analysis
-4. **📝 Generate Research Profiles** - Create comprehensive profiles
-5. **🎯 Generate Project Proposals** - Create structured proposals
+2. **🎯 Analyze 2025 Participants (Complete Analysis)** - Full participant analysis with background research and curricula
+3. **📊 Generate Column Summaries & Word Clouds** - Statistical analysis of participant responses
+4. **🔍 Background Research (Single Participant)** - Use Perplexity for individual researcher analysis
+5. **📚 Personalized Curriculum (Single Participant)** - Generate learning curriculum for one participant
 6. **🌐 Create Visualizations** - Generate network, embedding, and distribution plots from CSV or markdown data
 7. **🔧 Configuration Management** - Setup API keys and settings
-8. **📈 Run Analysis Pipeline** - Execute complete workflows
-9. **🧪 Test System Components** - Validate system functionality
-10. **🎯 Generate All** - Complete end-to-end workflow (new!)
-11. **🚪 Exit** - Close the interface
+8. **🧪 Test System Components** - Validate system functionality
+9. **🚪 Exit** - Close the interface
 
-#### Advanced Features
-- **🎯 Generate All**: Runs complete pipeline (profiles → proposals → visualizations)
-- **🌐 All Visualizations**: Creates embeddings, networks, and distributions in one command from CSV or markdown
+#### Advanced Features (CLI)
+- **🎯 Batch Generation**: CLI commands for complete pipelines (profiles → proposals → visualizations)
+- **🌐 All Visualizations**: CLI command to create embeddings, networks, and distributions in one command from CSV or markdown
 - **📊 CSV Visualizations**: Direct visualization support for participant CSV data with word clouds and PCA embeddings
 - **☁️ Per-Column Word Clouds**: Separate word clouds for each question/column with custom stop words
 - **🧮 Advanced Methods**: 7 dimension reduction methods (PCA, LSA, t-SNE, UMAP, Isomap, NMF, LDA)
 - **🔧 Smart Configuration**: Automatic virtual environment detection and activation
 - **📝 Comprehensive Logging**: Real-time progress tracking with file persistence
-- **🛡️ Error Recovery**: Robust error handling with clear user guidance
+- **🛡️ Error Recovery**: Robust error handling with clear user guidance, including PaymentRequiredError detection for API payment issues
 
 ### Command Line Interface
 
@@ -128,7 +126,12 @@ OPENROUTER_API_KEY=your_openrouter_key_here
 
 **API Models:**
 - **Perplexity**: `sonar` (search-enhanced responses)
-- **OpenRouter**: `tngtech/deepseek-r1t2-chimera:free` (advanced reasoning)
+- **OpenRouter**: `anthropic/claude-3.5-sonnet` (advanced reasoning)
+
+**Error Handling:**
+- Payment errors (402) are detected immediately and processing stops with clear guidance
+- Other errors allow graceful degradation and continue processing
+- See [API Guide](docs/api_guide.md) for detailed error handling documentation
 
 ### Setup Validation
 
@@ -157,7 +160,7 @@ This provides:
 - **Automatic virtual environment activation**
 - **Comprehensive logging** to both console and file
 - **Setup validation** with dependency checking
-- **Interactive text interface** with 10 numbered options
+- **Interactive text interface** with 9 numbered options
 - **Guided workflow** for all symposium operations
 - **Error handling** and user guidance
 - **Real-time progress tracking**
@@ -209,7 +212,7 @@ symposium generate projects \
 ### Python API
 
 ```python
-from symposium.core.api import APIClient
+from symposium.core.api import APIClient, PaymentRequiredError
 from symposium.core.config import Config
 from symposium.analysis.presenters import PresenterAnalyzer
 from pathlib import Path
@@ -218,16 +221,21 @@ from pathlib import Path
 config = Config()
 api_client = APIClient.create("perplexity")
 
-# Analyze presenters
-analyzer = PresenterAnalyzer(api_client)
-results = analyzer.analyze_all_presenters(
-    data_path=Path("data/inputs/aif_2025"),
-    output_dir=Path("outputs/profiles")
-)
+# Analyze presenters with error handling
+try:
+    analyzer = PresenterAnalyzer(api_client)
+    results = analyzer.analyze_all_presenters(
+        data_path=Path("data/inputs/aif_2025"),
+        output_dir=Path("outputs/profiles")
+    )
+except PaymentRequiredError as e:
+    print(f"Payment required: {e.message}")
+    # User needs to add credits before continuing
 ```
 
 ## Documentation
 
+- [AI Agents Overview](AGENTS.md) - Comprehensive guide to all AI agents in the system
 - [Architecture Overview](docs/architecture.md)
 - [API Guide](docs/api_guide.md)
 - [User Guide](docs/user_guide.md)
@@ -243,7 +251,8 @@ symposium/
 │   ├── generation/        # Content generation
 │   ├── io/                # Input/output operations
 │   ├── visualization/     # Visualization tools
-│   └── cli/               # Command-line interfaces
+│   ├── cli/               # Command-line interfaces
+│   └── calendar/          # Calendar export functionality
 ├── tests/                 # Test suite
 ├── data/                  # Data and templates
 │   ├── inputs/           # Input data (OpenAlex, registrations)

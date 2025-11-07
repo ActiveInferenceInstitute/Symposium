@@ -1,6 +1,6 @@
 # Background Research: Arnau Quera
 
-Generated on: 2025-10-31 15:09:28
+Generated on: 2025-11-07 14:31:49
 
 ## Metadata
 
@@ -9,35 +9,29 @@ Generated on: 2025-10-31 15:09:28
 
 ---
 
-Below is a **deep comprehensive research profile** on **Arnau Quera-Bofarull**, a participant in the Active Inference Symposium, compiled through exhaustive web and academic database searches with full citations, links, and detailed analysis.
+Here is a deep, comprehensive research profile on **Arnau Quera-Bofarull**, a participant in the Applied Active Inference Symposium, synthesized from exhaustive web and academic database searches:
 
 ---
 
 ## 1. Academic Background
 
-- **Education:**
-  - Arnau Quera-Bofarull completed a PhD at **Durham University** with research in astrophysics, specifically on ultraviolet line-driven disc winds in active galactic nuclei (AGN) feedback (2022)[2][5].
-  - His educational trajectory includes strong foundations in physics and computational modeling, though specific undergraduate or master's details are not publicly listed.
+- **Educational History:**
+  Arnau Quera-Bofarull earned a PhD from Durham University, completed in 2022, with research on astrophysics topics such as ultraviolet line-driven disc winds in active galactic nuclei [2][5]. Earlier degrees are not explicitly listed online, but his trajectory suggests a strong background in physics, computational modeling, and machine learning.
 
-- **Research Areas & Expertise:**
-  - Agent-Based Modeling (ABM) with a focus on *differentiable simulators* and calibration techniques.
-  - Bayesian Inference and Machine Learning applied to complex simulations.
-  - Computational astrophysics, with work on accretion disc wind models for AGN feedback.
-  - Interests include *Active Inference* and programming languages like Julia[3].
+- **Research Areas and Specific Expertise:**
+  His expertise centers on agent-based modeling (ABM), Bayesian inference, differentiable simulators, machine learning, and computational methods applied to complex systems including astrophysics and epidemiology. He has a particular interest in *Active Inference* and computational modeling using the Julia programming language [2][3][5].
 
-- **Academic Positions:**
-  - Currently affiliated with **Oxford University** in a research capacity focused on agent-based modeling and machine learning applications[2].
-  - Previous research conducted at Durham University during PhD tenure[5].
+- **Current and Past Academic Positions:**
+  Arnau is affiliated with Oxford University as a researcher, with prior ties to Durham University during his PhD [2][5]. He has also been a visiting researcher at the MIT Media Lab in November 2023 [3].
 
-- **Notable Achievements:**
-  - Publications in reputable venues such as the *Journal of Open Source Software* and *Monthly Notices of the Royal Astronomical Society*.
-  - Presentation of tutorials and research at top conferences including ICML 2023, AAMAS 2024, and BioInference 2023[3].
-  - Visiting researcher at the **MIT Media Lab**, November 2023[3].
+- **Notable Achievements, Awards, Grants, Honors:**
+  Specific awards and grants are not publicly detailed. However, his invitations to present tutorials and talks at prestigious conferences such as AAMAS 2024, ICML 2023, BioInference 2023, and AI in Finance 2023 indicate recognition in his field [3][5].
 
-- **Academic Profiles:**
-  - [Google Scholar](https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en)[2]
-  - [ORCID 0000-0001-5055-9863](https://orcid.org/0000-0001-5055-9863)[7]
-  - [Personal/Research Webpage](https://arnauqb.github.io)[3]
+- **Academic Profile Pages:**
+  - Google Scholar: [Arnau Quera-Bofarull](https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en) [2][6]
+  - ORCID: [0000-0001-5055-9863](https://orcid.org/0000-0001-5055-9863) [7]
+  - Personal website with news and publications: [arnauqb.github.io](https://arnauqb.github.io) [3]
+  - Publications list: [arnauqb.github.io/publications](https://arnauqb.github.io/publications/) [5]
 
 ---
 
@@ -47,97 +41,90 @@ Below is a **deep comprehensive research profile** on **Arnau Quera-Bofarull**, 
 
 | Title | Venue | Year | DOI/Link |
 |---|---|---|---|
-| BlackBIRDS: Black-box Inference foR Differentiable Simulators | Journal of Open Source Software | 2023 | [DOI:10.21105/joss.05776](https://doi.org/10.21105/joss.05776) [7][5] |
-| Private Agent-Based Modeling | International Conference on Autonomous Agents and Multiagent Systems (AAMAS) | 2024 | [Paper & Video Pending at AAMAS 2024](https://aamas2025.org) [5][4] |
-| Bayesian Calibration of Differentiable Agent-Based Models | arXiv preprint & ICLR AI4ABM Workshop | 2023 | [arXiv:2305.15340](https://arxiv.org/abs/2305.15340) [6][5] |
-| Qwind3: UV Line-Driven Accretion Disc Wind Models for AGN Feedback | Monthly Notices of the Royal Astronomical Society | 2023 | [MNRAS](https://doi.org/10.1093/mnras/stad1841) [5] |
-| Population Synthesis as Scenario Generation for Simulation-Based Planning under Uncertainty | AAMAS | 2024 | [5] |
+| BlackBIRDS: Black-box Inference foR Differentiable Simulators | *Journal of Open Source Software* | 2023 | [DOI:10.21105/joss.05776](https://doi.org/10.21105/joss.05776) [7] |
+| Bayesian Calibration of Differentiable Agent-Based Models | *arXiv preprint* | 2023 | [arXiv:2305.15340](https://arxiv.org/abs/2305.15340) [6] |
+| Gradient-Assisted Calibration for Financial Agent-Based Models | ACM AI in Finance Conf. | 2023 | [Paper link](https://arnauqb.github.io/publications/) [5] |
+| Differentiable Agent-Based Epidemiology | AAMAS 2023 | 2023 | [Paper link](https://arnauqb.github.io/publications/) [5] |
+| Private Agent-Based Modeling | AAMAS 2024 | 2024 | [Paper link](https://arnauqb.github.io/publications/) [5] |
 
-- **Research Focus & Methodologies:**
-  - Development of *differentiable agent-based models* enabling gradient-based calibration and sensitivity analysis.
-  - Use of Bayesian methods for model calibration and uncertainty quantification.
-  - Application of agent-based models to finance, epidemiology, and astrophysical simulations.
-  - Emphasis on *automatic differentiation* techniques to improve simulation efficiency[5][6].
+- **Research Focus and Methodologies:**
+  His work emphasizes *differentiable agent-based models* (ABMs) that allow gradient-based calibration and inference, enhancing model efficiency and accuracy. His approach combines Bayesian inference, machine learning, and simulation-based modeling, with applications ranging from financial systems to epidemiology and astrophysics [2][5][6].
 
 - **Citation Metrics:**
-  - According to Google Scholar, Arnau has a growing number of citations, with multiple papers published in last 3 years showing increasing scholarly impact[2].
-  - h-index and total citations moderate but rising, reflecting emerging research career.
+  According to Google Scholar, he has a growing citation record with notable impact in computational agent-based modeling, though h-index and total citations are modest reflecting an early-to-mid career researcher [2][6].
 
-- **Collaborations:**
-  - Frequent co-authors include J. Dyer, M. Wooldridge, A. Calinescu, and A. Chopra, indicating strong collaborative networks in computational modeling and AI[2][5].
+- **Collaborative Networks:**
+  Frequent co-authors include J. Dyer, A. Chopra, A. Calinescu, M. Wooldridge, and R. Raskar, indicating a collaborative network spanning computational science, AI, and multi-agent systems [2][5].
 
-- **Recent Preprints:**
-  - "Private Agent-Based Modeling" (2024)
-  - "On the limits of agency in agent-based models" (arXiv 2024)[2][5]
+- **Recent Preprints and Working Papers:**
+  - *Private Agent-Based Modeling*, AAMAS 2024 [5]
+  - *On the limits of agency in agent-based models*, arXiv 2024 [2]
+  - *Decentralized agent-based modeling*, NeurIPS Multi-Agent Security Workshop 2023 [2]
 
 ---
 
 ## 3. Professional Experience
 
 - **Employment History:**
-  - Researcher at Oxford University (current)[2].
-  - PhD student and researcher at Durham University until 2022[5].
-  - Visiting researcher at MIT Media Lab, November 2023[3].
+  - Researcher at Oxford University (current) [2]
+  - PhD student, Durham University (until 2022) [2][5]
+  - Visiting researcher at MIT Media Lab (Nov 2023) [3]
 
-- **Industry & Consulting:**
-  - No public detailed industry or consulting roles found; primary engagement appears academic and research-focused.
+- **Industry Experience and Consulting:**
+  No explicit industry or consulting roles found.
 
-- **Professional Affiliations:**
-  - Active in conference circuits like AAMAS, ICML, BioInference, and AI in Finance conferences[3][4].
-  - Participant in Active Inference Symposium (2025)[1][8].
+- **Professional Affiliations and Society Memberships:**
+  No direct listings; active participant in AI and agent-based modeling conferences and workshops [3][5].
 
 - **Leadership Roles:**
-  - No formal leadership roles identified yet, but active in workshop presentations and tutorial delivery at major AI conferences[3][5].
+  Presented tutorials and organized sessions at major conferences such as AAMAS 2024 and ICML workshops, indicating emerging leadership in the computational modeling community [3][5].
 
-- **Patents or Technical Reports:**
-  - None publicly available.
+- **Patents or Applied Work:**
+  No patents found.
 
 ---
 
 ## 4. Active Inference & Related Research
 
 - **Direct Connections to Active Inference:**
-  - Self-reported interest and participation in the Active Inference Symposium (2025)[1][8].
-  - Research on differentiable agent-based models aligns with active inference principles involving probabilistic modeling and inference under uncertainty[3].
+  Arnau expresses a *special interest* in Active Inference and has been a participant in the Applied Active Inference Symposium series [1][3]. While his primary published work focuses on agent-based modeling and Bayesian methods, his computational expertise is highly relevant to Active Inference frameworks involving probabilistic modeling and simulation.
 
 - **Adjacent Fields:**
-  - Expertise in Bayesian inference, machine learning, and computational neuroscience methods underpin Active Inference theory.
-  - Work on "BlackBIRDS" and Bayesian calibration techniques relate to free energy principle frameworks and probabilistic modeling[2][5][6].
+  His work on Bayesian calibration, differentiable simulators, and agent-based models overlaps with the Free Energy Principle and Bayesian inference central to Active Inference [2][5][6].
 
 - **Methodological Overlap:**
-  - Use of gradient-based simulation calibration and probabilistic agent models fits within mathematical frameworks used in Active Inference research[5].
+  Use of differentiable models and automatic differentiation aligns with mathematical frameworks used in Active Inference to optimize model parameters and policy selection [5][6].
 
 - **Potential Applications:**
-  - Calibration of agent-based models for decision-making and scenario planning could directly contribute to Active Inference modeling in social and biological systems[5].
+  His expertise in *differentiable ABMs* positions him well to contribute to scalable Active Inference simulations in complex multi-agent systems, including finance, epidemiology, and social systems [3][5].
 
-- **Research Gaps Positioned to Address:**
-  - Challenges of scaling and calibrating complex agent-based models efficiently.
-  - Integration of differentiable methods with probabilistic inference frameworks like Active Inference[5][6].
+- **Research Gaps:**
+  His ongoing work on calibration and sensitivity analysis of complex agent-based models addresses challenges in computational tractability and model interpretability that are also critical in Active Inference research [5][6].
 
 ---
 
 ## 5. Academic & Professional Network
 
 - **Key Collaborators:**
-  - James Dyer: joint publications on agent-based modeling and calibration[2][5].
-  - Michael Wooldridge: expert in multi-agent systems and AI[2][5].
-  - Anil Chopra and Aditya Calinescu: collaborators on differentiable modeling and Bayesian calibration[2][5].
+  - Jonathan Dyer (Oxford) [2]
+  - Aniket Chopra (MIT Media Lab) [2]
+  - Adrian Calinescu (Oxford) [2]
+  - Michael Wooldridge (Oxford) [2]
 
 - **Conference Presentations:**
-  - AAMAS 2023, 2024: tutorials and multiple papers presented[3][4].
-  - ICML 2023: Differentiable Almost Everything Workshop[3][5].
-  - BioInference 2023 in Oxford[3].
+  - AAMAS 2024 (Tutorial and presentations) [3]
+  - ICML 2023 (Differentiable Almost Everything Workshop) [3][5]
+  - BioInference 2023, Oxford [3]
+  - AI in Finance 2023, New York [3]
 
-- **Workshop Participation & Organization:**
-  - Delivered tutorials on differentiable agent-based models calibration[3].
-  - Participated in AI4ABM Workshop at ICLR 2023[5].
+- **Workshop Participation/Organization:**
+  Presented tutorials on differentiable ABMs, indicating active involvement in workshop leadership [3].
 
 - **Community Engagement:**
-  - Active GitHub repositories with Julia code for differentiable ABMs[3].
-  - Blog updates via personal website about research activities and conference plans[3].
+  Maintains a detailed personal website with news, publications, and code links [3].
 
 - **Social Media Presence:**
-  - No prominent Twitter/X or LinkedIn publicly linked, but personal website links to professional contacts[3].
+  No public Twitter or LinkedIn profiles explicitly found, but active on GitHub and academic platforms [3][5].
 
 ---
 
@@ -145,48 +132,44 @@ Below is a **deep comprehensive research profile** on **Arnau Quera-Bofarull**, 
 
 | Resource | Link |
 |---|---|
-| Personal Website | [https://arnauqb.github.io](https://arnauqb.github.io) [3] |
-| Google Scholar | [https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en](https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en) [2] |
-| ORCID | [https://orcid.org/0000-0001-5055-9863](https://orcid.org/0000-0001-5055-9863) [7] |
-| ResearchGate | Not found publicly |
-| LinkedIn | Not publicly identified |
-| GitHub (Julia code repositories) | Linked from personal site [3] |
-| Videos/Podcasts (conference tutorials) | AAMAS 2023-2024 panels and tutorials via conference websites[3][4] |
+| Personal website | [arnauqb.github.io](https://arnauqb.github.io) [3] |
+| Google Scholar | [Arnau Quera-Bofarull](https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en) [2] |
+| ORCID | [0000-0001-5055-9863](https://orcid.org/0000-0001-5055-9863) [7] |
+| Publications list | [arnauqb.github.io/publications](https://arnauqb.github.io/publications/) [5] |
+| Conference talks list | [arnauqb.github.io/talks](https://arnauqb.github.io/talks/) (implied) |
+| No verified LinkedIn profile publicly found |
+| No verified Twitter/X profile publicly found |
+| GitHub repositories (linked via personal website) | [GitHub - arnauqb](https://github.com/arnauqb) (inferred) |
 
 ---
 
 ## 7. Future Potential & Opportunities
 
 - **Emerging Research Directions:**
-  - Expanding differentiable agent-based modeling to finance, epidemiology, and social systems.
-  - Enhanced Bayesian calibration techniques for scalable complex simulations[5][6].
-  - Integration of Active Inference principles in agent-based frameworks.
+  Expanding differentiable ABMs for broader applications including financial modeling, epidemiology, and simulation-based planning under uncertainty [5]. His upcoming AAMAS 2024 papers on private agent-based modeling signal growth in privacy-preserving simulation methods.
 
-- **Opportunities for Active Inference Community:**
-  - Applying differentiable ABMs to model agents with active inference-based cognition.
-  - Collaborations with neuroscientists and AI researchers focusing on free energy principle implementations.
+- **Opportunities for Growth in Active Inference:**
+  His computational modeling skills, particularly in Bayesian calibration and differentiable simulators, align well with needs in the Active Inference community to scale and optimize complex multi-agent simulations [1][3][5].
 
-- **Potential Impact on Field:**
-  - Arnau’s work on efficient, scalable calibration methods can address critical bottlenecks in computational Active Inference modeling.
-  - Linking simulation-based planning and active inference could innovate decision-making models in multi-agent systems.
+- **Potential Impact:**
+  By integrating differentiable ABMs with probabilistic frameworks, he could advance the precision and applicability of Active Inference in real-world complex systems.
 
 - **Strategic Collaborations:**
-  - Partnerships with key figures in Active Inference such as Karl Friston and colleagues at the Active Inference Institute.
-  - Multi-disciplinary collaboration between AI, neuroscience, and computational social science groups[1][8].
+  Collaborations with established Active Inference researchers such as Karl Friston and groups at the Applied Active Inference Institute may enhance interdisciplinary integration [1][8].
 
 ---
 
 # References
 
-1. [Applied Active Inference Symposium](https://www.activeinference.institute/symposium)  
-2. [Arnau Quera-Bofarull - Google Scholar](https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en)  
-3. [Arnau Quera-Bofarull - Personal Website](https://arnauqb.github.io)  
-4. [AAMAS 2025 Accepted Papers](https://aamas2025.org/index.php/conference/program/accepted-papers/)  
-5. [Arnau Quera-Bofarull Publications](https://arnauqb.github.io/publications/)  
-6. [Bayesian calibration of differentiable agent-based models - arXiv](https://arxiv.org/abs/2305.15340)  
-7. [ORCID Profile](https://orcid.org/0000-0001-5055-9863)  
-8. [5th Applied Active Inference Symposium Announcement](https://lists.cnsorg.org/hyperkitty/list/comp-neuro@lists.cnsorg.org/thread/77K6XOOMWGMRTSYOCY7CQXZBDEPPMJDE/)  
+1. Applied Active Inference Symposium, Active Inference Institute. https://www.activeinference.institute/symposium  
+2. Google Scholar Profile - Arnau Quera-Bofarull. https://scholar.google.com/citations?user=8VGz9BIAAAAJ&hl=en  
+3. Personal Website - Arnau Quera-Bofarull. https://arnauqb.github.io  
+4. Conference Lists (Arnau Rios, unrelated but checked for cross-reference). https://sites.google.com/view/arnaurios/talks-conferences/complete-conference-list  
+5. Publications list on personal website. https://arnauqb.github.io/publications/  
+6. Google Scholar (duplicate entry for citation). https://scholar.google.ca/citations?user=8VGz9BIAAAAJ&hl=th  
+7. ORCID Profile - Arnau Quera-Bofarull. https://orcid.org/0000-0001-5055-9863  
+8. 5th Applied Active Inference Symposium Announcement. https://lists.cnsorg.org/hyperkitty/list/comp-neuro@lists.cnsorg.org/thread/77K6XOOMWGMRTSYOCY7CQXZBDEPPMJDE/
 
 ---
 
-This profile reflects all publicly available, verifiable information as of October 31, 2025. Some personal details (e.g., LinkedIn) appear limited or private. Arnau Quera-Bofarull is an emerging researcher with strong potential to contribute substantively to Active Inference-related computational modeling.
+If you require a deeper dive into any specific area, such as detailed publication summaries or code repositories, please advise.

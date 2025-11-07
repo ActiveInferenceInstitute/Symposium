@@ -35,7 +35,7 @@ These rules ensure consistent, high-quality development of the Symposium package
 
 ### Code Review
 - **Functionality**: All features work as specified
-- **Error Handling**: Graceful degradation, user-friendly messages
+- **Error Handling**: Graceful degradation, user-friendly messages, PaymentRequiredError for fatal payment errors
 - **Performance**: Efficient algorithms, memory optimization
 - **Security**: Input validation, safe file operations
 - **Documentation**: Complete and accurate
@@ -45,7 +45,8 @@ These rules ensure consistent, high-quality development of the Symposium package
 ### API Standards
 - **Providers**: Perplexity (sonar), OpenRouter (claude-3.5-sonnet)
 - **Configuration**: Environment variables with JSON file override
-- **Error Handling**: Retry logic, graceful fallbacks
+- **Error Handling**: Retry logic, graceful fallbacks, PaymentRequiredError for 402 errors
+- **Payment Errors**: PaymentRequiredError stops processing immediately with clear user guidance
 - **Rate Limiting**: Respect API limits, exponential backoff
 - **Token Management**: Accurate counting, truncation strategies
 

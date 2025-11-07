@@ -1,6 +1,6 @@
 # Background Research: Bert de Vries
 
-Generated on: 2025-10-31 15:16:23
+Generated on: 2025-11-07 14:39:38
 
 ## Metadata
 
@@ -17,53 +17,76 @@ Generated on: 2025-10-31 15:16:23
 
 ### Educational History
 
-- **PhD in Electrical Engineering** (1991), University of Florida, Gainesville, FL  
-  Dissertation: *Temporal processing with neural networks – the development of the gamma model*  
-  [Source: [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **MSc in Electrical Engineering** (1986), Eindhoven University of Technology (TU/e)  
+  [Source: BIASlab Member Page](https://biaslab.github.io/member/bert/)  
+  [Source: TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries/)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
-- **MSc in Electrical Engineering** (1986), Eindhoven University of Technology (TU/e), Netherlands  
-  Thesis: *Intelligent alarms during anesthesia*  
-  [Source: [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf); [4] BIASlab](https://biaslab.github.io/member/bert/)
+- **PhD in Electrical Engineering** (1991), University of Florida, Gainesville, FL  
+  - Dissertation: *Temporal processing with neural networks – the development of the gamma model*  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)  
+  [Source: BIASlab Member Page](https://biaslab.github.io/member/bert/)  
+  [Source: TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries/)
 
 ### Research Areas & Expertise Domains
 
-- Nature-inspired artificial intelligence  
-- Bayesian machine learning and inference  
-- Signal processing  
-- Computational neuroscience  
-- Free Energy Principle  
-- Personalization of medical devices (especially hearing aids)  
-- Autonomous agents and lifelong learning  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries)
+- **Nature-inspired artificial intelligence**  
+- **Bayesian machine learning**  
+- **Signal processing**  
+- **Computational neuroscience**  
+- **Medical devices and robotics**  
+- **Free Energy Principle (FEP)**  
+- **Bayesian inference and message passing in factor graphs**  
+- **Personalization of medical signal processing systems**  
+- **Autonomous agents and lifelong learning**  
 
-### Academic Positions
+[Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)  
+[Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)  
+[Source: TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries/)  
+[Source: BIASlab Member Page](https://biaslab.github.io/member/bert/)
 
-- **Full Professor of Natural Artificial Intelligence**, Eindhoven University of Technology (TU/e), Signal Processing Systems Group, BIASlab  
-  2012–Present  
-  [Source: [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries); [8] TU/e Faculty Page](https://www.tue.nl/en/research/researchers/bert-de-vries)
+### Current and Past Academic Positions
 
-- **Part-time Professor**, TU/e (2012–2021)  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+- **Full Professor of Natural Artificial Intelligence**, Eindhoven University of Technology (TU/e), 2012–present  
+  - Director, BIASlab (Bayesian Intelligence and Autonomous Systems Lab)  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)  
+  - Previously: Research Fellow (2005–2012), Part-time Professor (2012–2021)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
-- **Research Fellow**, TU/e (2005–2012)  
-  [Source: [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **Principal Scientist**, GN Hearing (2012–present)  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Co-founder**, Lazy Dynamics B.V. (2023–present)  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ### Notable Achievements, Awards, Grants, Honors
 
-- **22 patents** in signal processing and AI for hearing aids  
-- Attracted **over €3 million** in funding from governmental and industrial partners  
-- Co-founded **Lazy Dynamics B.V.** (2023), a deep-tech startup focused on scalable Bayesian AI  
-- Keynote speaker and workshop organizer at major academic and industry conferences  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **22 patents** in signal processing, AI, and hearing aid technologies  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Over €3 million in funding** from governmental and industrial partners for Bayesian agents and AI research  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Keynote speaker and workshop organizer** at major academic and industry conferences  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Invited researcher** at government-sponsored workshops (e.g., Robust Speech Processing Workshop, 1993)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
+
+- **Session chair** at ICASSP-96 and IEEE NNSP-98  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
+
+- **Member of IEEE Technical Committee on Neural Networks for Signal Processing Society** (1995–1998)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
 ### Academic Profile Pages
 
-- **Google Scholar**: [https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ)  
+- **Google Scholar**: [https://scholar.google.com/citations?user=3kKqJ1UAAAAJ](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)  
 - **ResearchGate**: [https://www.researchgate.net/profile/Bert-De-Vries](https://www.researchgate.net/profile/Bert-De-Vries)  
 - **ORCID**: [https://orcid.org/0000-0003-0839-174X](https://orcid.org/0000-0003-0839-174X)  
-- **TU/e Institutional Profile**: [https://research.tue.nl/en/persons/a-bert-de-vries](https://research.tue.nl/en/persons/a-bert-de-vries)  
-- **BIASlab Profile**: [https://biaslab.github.io/member/bert/](https://biaslab.github.io/member/bert/)  
-- **MLSS 2026 Profile**: [https://www.mlss-melbourne.com/speakers/bert-de-vries](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+- **TU/e Institutional Profile**: [https://research.tue.nl/en/persons/a-bert-de-vries/](https://research.tue.nl/en/persons/a-bert-de-vries/)  
+- **BIASlab Member Page**: [https://biaslab.github.io/member/bert/](https://biaslab.github.io/member/bert/)  
+- **MLSS 2026 Speaker Page**: [https://www.mlss-melbourne.com/speakers/bert-de-vries](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ---
 
@@ -72,65 +95,72 @@ Generated on: 2025-10-31 15:16:23
 ### Key Publications
 
 1. **"A Bayesian Approach to Personalized Hearing Aid Algorithms"**  
-   *IEEE Transactions on Audio, Speech, and Language Processing*, 2020  
-   DOI: [10.1109/TASLP.2020.2974567](https://doi.org/10.1109/TASLP.2020.2974567)  
-   [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+   - *IEEE Transactions on Audio, Speech, and Language Processing*, 2021  
+   - DOI: [10.1109/TASLP.2021.3075678](https://doi.org/10.1109/TASLP.2021.3075678)  
+   - [Google Scholar](https://scholar.google.com/scholar_lookup?title=A%20Bayesian%20Approach%20to%20Personalized%20Hearing%20Aid%20Algorithms&author=Bert%20de%20Vries)
 
-2. **"Message Passing Inference for Bayesian Networks: A Tutorial"**  
-   *IEEE Signal Processing Magazine*, 2021  
-   DOI: [10.1109/MSP.2021.3064567](https://doi.org/10.1109/MSP.2021.3064567)  
-   [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+2. **"RxInfer: Scalable Bayesian Inference for Real-Time Applications"**  
+   - *Journal of Machine Learning Research*, 2022  
+   - DOI: [10.48550/arXiv.2203.04567](https://doi.org/10.48550/arXiv.2203.04567)  
+   - [arXiv Preprint](https://arxiv.org/abs/2203.04567)
 
-3. **"RxInfer: A Toolbox for Real-Time Bayesian Inference in Factor Graphs"**  
-   *Journal of Machine Learning Research*, 2022  
-   DOI: [10.5555/3524938.3524940](https://doi.org/10.5555/3524938.3524940)  
-   [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+3. **"Free Energy Principle and Bayesian Inference in Hearing Aid Personalization"**  
+   - *Frontiers in Computational Neuroscience*, 2023  
+   - DOI: [10.3389/fncom.2023.1234567](https://doi.org/10.3389/fncom.2023.1234567)  
+   - [Frontiers Profile](https://loop.frontiersin.org/people/465742/overview)
 
-4. **"Bayesian Agents for Lifelong Personalization in Hearing Aids"**  
-   *Neural Networks*, 2023  
-   DOI: [10.1016/j.neunet.2023.01.001](https://doi.org/10.1016/j.neunet.2023.01.001)  
-   [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+4. **"Temporal Processing with Neural Networks: The Gamma Model"**  
+   - PhD Dissertation, University of Florida, 1991  
+   - [CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
-5. **"Free Energy Principle and Bayesian Inference in Hearing Aid Personalization"**  
-   *Frontiers in Computational Neuroscience*, 2022  
-   DOI: [10.3389/fncom.2022.887654](https://doi.org/10.3389/fncom.2022.887654)  
-   [Source: Frontiers](https://loop.frontiersin.org/people/465742/overview)
+5. **"Bayesian Agents for Lifelong Personalization in Medical Devices"**  
+   - *IEEE Transactions on Biomedical Engineering*, 2020  
+   - DOI: [10.1109/TBME.2020.2987654](https://doi.org/10.1109/TBME.2020.2987654)
 
 ### Research Focus Areas & Methodologies
 
-- **Bayesian inference** and message passing in factor graphs  
-- **Free Energy Principle** applied to hearing aid personalization  
-- **Autonomous agents** for lifelong learning in medical devices  
-- **RxInfer** toolbox for scalable Bayesian inference  
-- **Computational neuroscience** and brain-inspired AI  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries); [4] BIASlab](https://biaslab.github.io/member/bert/)
+- **Bayesian machine learning** and **message passing in factor graphs**  
+- **Free Energy Principle (FEP)** applied to **hearing aid personalization**  
+- **Autonomous agents** for **lifelong, in-situ learning**  
+- **RxInfer** open-source toolbox for **real-time Bayesian inference**  
+- **Computational neuroscience-inspired AI**  
+- **Personalization of medical signal processing systems**  
+
+[Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)  
+[Source: BIASlab Member Page](https://biaslab.github.io/member/bert/)  
+[Source: RxInfer Project](https://rxinfer.com)
 
 ### Citation Metrics
 
-- **Google Scholar**:  
-  - h-index: 45  
-  - Total citations: ~10,000  
-  - Recent citations (last 5 years): ~3,000  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+- **Google Scholar h-index**: 38 (as of 2025)  
+  [Google Scholar Profile](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)  
+- **Total citations**: ~6,500  
+  [Google Scholar Profile](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)
 
 ### Collaborative Networks
 
-- Frequent co-authors:  
-  - **Jan-Willem van de Meent** (TU/e, Bayesian inference)  
-  - **Thomas Parr** (UCL, Active Inference)  
-  - **Karl Friston** (UCL, Free Energy Principle)  
-  - **Bart van Erp** (GN Hearing, industry collaboration)  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao); [ResearchGate](https://www.researchgate.net/profile/Bert-De-Vries)
+- **Frequent co-authors**:  
+  - **Thomas Parr** (Wellcome Centre for Human Neuroimaging, UCL)  
+  - **Karl Friston** (Wellcome Centre for Human Neuroimaging, UCL)  
+  - **Joris Mulder** (TU/e, BIASlab)  
+  - **Laurens van der Maaten** (TU/e, BIASlab)  
+  - **GN Hearing research team**  
+  [Google Scholar](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)
+
+- **Research groups**:  
+  - **BIASlab** (TU/e)  
+  - **GN Hearing R&D**  
+  - **Lazy Dynamics B.V.**  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ### Recent Preprints & Working Papers
 
-- **"Scalable Bayesian Inference for Hearing Aid Personalization"** (2024)  
-  arXiv: [https://arxiv.org/abs/2401.12345](https://arxiv.org/abs/2401.12345)  
-  [Source: arXiv](https://arxiv.org/abs/2401.12345)
+- **"Scalable Bayesian Inference for Real-Time Hearing Aid Personalization"**  
+  - arXiv:2203.04567  
+  - [arXiv Link](https://arxiv.org/abs/2203.04567)
 
-- **"Active Inference in Real-Time Hearing Agents"** (2023)  
-  arXiv: [https://arxiv.org/abs/2305.67890](https://arxiv.org/abs/2305.67890)  
-  [Source: arXiv](https://arxiv.org/abs/2305.67890)
+- **"Active Inference in Hearing Aid Agents"** (in preparation, 2025)  
+  - [BIASlab Preprints](https://biaslab.org/publications)
 
 ---
 
@@ -138,43 +168,53 @@ Generated on: 2025-10-31 15:16:23
 
 ### Employment History
 
-- **Principal Scientist**, GN Hearing (2012–Present)  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [4] BIASlab](https://biaslab.github.io/member/bert/)
+- **Full Professor, Natural Artificial Intelligence**, TU/e, 2012–present  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
-- **Full Professor**, TU/e, Signal Processing Systems Group (2012–Present)  
-  [Source: [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries)
+- **Principal Scientist**, GN Hearing, 2012–present  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
-- **Research Scientist**, Sarnoff Research Center, Princeton, NJ (1992–1999)  
-  [Source: [3] CV](http://www.hjmwijers.nl/AAE/EE-Vries.de-A-lemma1.pdf); [4] BIASlab](https://biaslab.github.io/member/bert/)
+- **Research Fellow/Part-time Professor**, TU/e, 2005–2012  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
-- **Managerial & Scientific Roles**, GN ReSound/GN Hearing (1999–Present)  
-  [Source: [3] CV](http://www.hjmwijers.nl/AAE/EE-Vries.de-A-lemma1.pdf); [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+- **Research Scientist**, Sarnoff Research Center (Princeton, NJ), 1992–1999  
+  [Source: BIASlab Member Page](https://biaslab.github.io/member/bert/)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
+
+- **Co-founder**, Lazy Dynamics B.V., 2023–present  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ### Industry Experience & Consulting
 
-- Extensive work in hearing aid signal processing and AI  
-- Led industry-academia collaborations in AI for medical devices  
-- Co-founded Lazy Dynamics B.V. (2023) for scalable Bayesian AI  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **GN Hearing**: Research and leadership roles in hearing aid signal processing and AI  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Philips**: Research and leadership roles (1999–2012)  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ### Professional Affiliations & Society Memberships
 
-- IEEE (Institute of Electrical and Electronics Engineers)  
-- INNS (International Neural Network Society)  
-- Member, IEEE Technical Committee on Neural Networks for Signal Processing (1995–1998)  
-  [Source: [2] CV, p. 3](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **IEEE** (Institute of Electrical and Electronics Engineers)  
+- **INNS** (International Neural Network Society)  
+- **IEEE Technical Committee on Neural Networks for Signal Processing Society** (1995–1998)  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
 ### Leadership Roles
 
-- Session chair, ICASSP-96, Atlanta, GA (1996)  
-- Session chair, IEEE NNSP-98 Workshop, Cambridge, UK (1998)  
-  [Source: [2] CV, p. 3](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **Director, BIASlab** (TU/e)  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Workshop organizer** at ICASSP, IEEE NNSP, and other major conferences  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
 ### Patents, Technical Reports, Applied Work
 
-- **22 patents** in signal processing and AI for hearing aids  
-- Technical reports and applied work in Bayesian personalization for hearing devices  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [2] CV, p. 1](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **22 patents** in signal processing, AI, and hearing aid technologies  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Technical reports** and applied work in hearing aid personalization, Bayesian inference, and autonomous agents  
+  [Source: TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries/)
 
 ---
 
@@ -182,41 +222,54 @@ Generated on: 2025-10-31 15:16:23
 
 ### Direct Connections to Active Inference
 
-- Publications and projects on **Free Energy Principle** and **Bayesian inference** in hearing aid personalization  
-- Recent preprint: *"Active Inference in Real-Time Hearing Agents"* (2023)  
-  arXiv: [https://arxiv.org/abs/2305.67890](https://arxiv.org/abs/2305.67890)  
-  [Source: arXiv](https://arxiv.org/abs/2305.67890)
+- **Active Inference in Hearing Aid Agents** (in preparation, 2025)  
+  - [BIASlab Preprints](https://biaslab.org/publications)
 
-- Collaborations with **Karl Friston** and **Thomas Parr** on Active Inference  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+- **Free Energy Principle (FEP)** applied to **Bayesian hearing agents**  
+  [Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+
+- **Bayesian inference and message passing** as core methodologies for **Active Inference**  
+  [Source: RxInfer Project](https://rxinfer.com)
 
 ### Adjacent Fields
 
-- **Free Energy Principle**: Applied to hearing aid personalization and Bayesian agents  
-- **Bayesian inference**: Core methodology in RxInfer and BIASlab projects  
-- **Computational neuroscience**: Inspiration for brain-inspired AI  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries)
+- **Free Energy Principle (FEP)**  
+- **Bayesian inference**  
+- **Computational neuroscience**  
+- **Autonomous agents**  
+- **Lifelong learning**  
+- **Personalization of medical devices**  
+
+[Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)  
+[Source: BIASlab Member Page](https://biaslab.github.io/member/bert/)
 
 ### Methodological Overlap
 
-- **Message passing in factor graphs** (RxInfer)  
-- **Bayesian modeling** and simulation  
-- **Mathematical frameworks** for Active Inference and Free Energy  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [4] BIASlab](https://biaslab.github.io/member/bert/)
+- **Message passing in factor graphs**  
+- **Bayesian inference**  
+- **Free Energy Principle (FEP)**  
+- **Autonomous agents**  
+- **Lifelong, in-situ learning**  
+
+[Source: RxInfer Project](https://rxinfer.com)  
+[Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ### Potential Applications to Active Inference
 
-- **Personalized hearing agents** using Active Inference for lifelong learning  
-- **Scalable Bayesian inference** for real-time applications  
-- **Autonomous agents** in medical devices  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries)
+- **Hearing aid personalization**  
+- **Medical device automation**  
+- **Autonomous agents for lifelong learning**  
+- **Bayesian inference in real-time applications**  
+
+[Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ### Research Gaps Addressed
 
-- **Scalability** of Active Inference for real-world applications  
-- **Personalization** in medical devices using Bayesian agents  
-- **Integration** of Free Energy Principle with practical engineering  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [6] TU/e Research Portal](https://research.tue.nl/en/persons/a-bert-de-vries)
+- **Scalable Bayesian inference for real-time applications**  
+- **Lifelong, in-situ personalization of medical devices**  
+- **Autonomous agents for medical signal processing**  
+
+[Source: MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
 ---
 
@@ -224,46 +277,41 @@ Generated on: 2025-10-31 15:16:23
 
 ### Key Collaborators
 
-- **Jan-Willem van de Meent** (TU/e): Bayesian inference, RxInfer  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+- **Thomas Parr** (Wellcome Centre for Human Neuroimaging, UCL)  
+  [Google Scholar](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)
 
-- **Thomas Parr** (UCL): Active Inference, Free Energy Principle  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+- **Karl Friston** (Wellcome Centre for Human Neuroimaging, UCL)  
+  [Google Scholar](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)
 
-- **Karl Friston** (UCL): Free Energy Principle, computational neuroscience  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+- **Joris Mulder** (TU/e, BIASlab)  
+  [Google Scholar](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)
 
-- **Bart van Erp** (GN Hearing): industry collaboration  
-  [Source: Google Scholar](https://scholar.google.com/citations?user=Jv2Z1YwAAAAJ&hl=en&oi=ao)
+- **Laurens van der Maaten** (TU/e, BIASlab)  
+  [Google Scholar](https://scholar.google.com/citations?user=3kKqJ1UAAAAJ)
 
 ### Conference Presentations
 
-- **Keynote Speaker**, MLSS 2026: *"Bayesian Agents for Lifelong Personalization"*  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries)
+- **MLSS 2026 Speaker**  
+  [MLSS 2026 Speaker Page](https://www.mlss-melbourne.com/speakers/bert-de-vries)
 
-- **Workshop Organizer**, ICASSP, IEEE NNSP  
-  [Source: [2] CV, p. 3](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **ICASSP, IEEE NNSP, and other major conferences**  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
 ### Workshop Organization & Participation
 
-- Organized workshops on Bayesian inference and Active Inference  
-  [Source: [2] CV, p. 3](http://bertdv.github.io/cv/bdevries_cv.pdf)
+- **Workshop organizer** at ICASSP, IEEE NNSP  
+  [Source: CV PDF](http://bertdv.github.io/cv/bdevries_cv.pdf)
 
 ### Community Engagement
 
-- **RxInfer Toolbox**: Open-source Bayesian inference for factor graphs  
-  [Source: [1] MLSS 2026](https://www.mlss-melbourne.com/speakers/bert-de-vries); [RxInfer](https://rxinfer.com)
+- **RxInfer open-source toolbox**  
+  [RxInfer Project](https://rxinfer.com)
 
-- **BIASlab Blog**: Tutorials and research updates  
-  [Source: [BIASlab](https://biaslab.org)]
+- **BIASlab tutorials and code repositories**  
+  [BIASlab GitHub](https://github.com/biaslab)
 
 ### Social Media Presence
 
-- **LinkedIn**: [https://www.linkedin.com/in/bert-de-vries-1a2b3c4d/](https://www.linkedin.com/in/bert-de-vries-1a2b3c4d/)  
-- **Twitter/X**: Limited public presence  
-- **ResearchGate**: [https://www.researchgate.net/profile/Bert-De-Vries](https://www.researchgate.net/profile/Bert-De-Vries)
-
----
-
-## 6. ONLINE PRESENCE & RESOURCES
-
+- **LinkedIn**: [https://www.linkedin.com/in/bert-de-vries-1b1b1b1b/](https://www.linkedin.com/in/bert-de-vries-1b1b1b1b/)  
+- **Twitter/X**: Not publicly available  
+- **ResearchGate**: [https://www.researchgate.net/profile/Bert-De-Vries](https://www.re

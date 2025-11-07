@@ -1,6 +1,6 @@
 # Curriculum: Benjamin D. Brodie
 
-Generated on: 2025-10-31 15:33:45
+Generated on: 2025-11-07 15:00:21
 
 ## Metadata
 
@@ -12,99 +12,94 @@ Generated on: 2025-10-31 15:33:45
 Based on Benjamin's specific interest in open source factor graph examples and practical applications, I'll design a focused curriculum that emphasizes hands-on implementation while building necessary theoretical foundations.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Initial Focus: Factor graph implementations
-- Assumed baseline: Basic programming knowledge
-- Learning style: Practice-oriented, example-driven
-- Gap identification: Bridge between theory and implementation
+- Initial Focus: Factor graph implementation expertise
+- Knowledge Gap: Bridging theoretical Active Inference with practical implementation
+- Learning Style: Hands-on, example-based learning preferred
 
 2. **PERSONALIZED LEARNING PATH**
-Weeks 1-2: Foundations
-- Factor graph basics
-- Probabilistic programming fundamentals
-- Introduction to Active Inference libraries
+Module 1: Factor Graph Fundamentals (2 weeks)
+- Basic graph theory and probabilistic modeling
+- Factor graph notation and structure
+- Common factor graph patterns in Active Inference
 
-Weeks 3-4: Implementation Focus
-- Working with existing factor graph examples
-- Building simple models
-- Debugging and optimization
+Module 2: Implementation Tools (2 weeks)
+- Julia-based frameworks (Gen.jl)
+- Python implementations (PyMC3, Factor Graphs)
+- Open source Active Inference libraries
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Factor Graph Fundamentals
-- Graph structure and representation
-- Message passing algorithms
-- Belief propagation basics
-
-Module 2: Active Inference Essentials
-- Free energy principle basics
-- Generative models
-- Factor graph representation of Active Inference
+- Factor Graph Representations of Free Energy
+- Message Passing Algorithms
+- Variational Message Passing in Active Inference
+- Implementation Patterns and Best Practices
 
 4. **HANDS-ON LEARNING**
 Practical Exercises:
-- Implementation using ForneyLab.jl
-- Python-based examples using PyAI
-- Simple factor graph construction exercises
-- Debugging common issues
+- Simple factor graph implementation in Julia
+- Building Active Inference models using existing libraries
+- Converting theoretical models to factor graph representations
+- Debugging and optimization techniques
 
 5. **ADVANCED TOPICS**
-- Message passing optimizations
-- Custom factor implementations
-- Scalability considerations
-- Advanced model architectures
+- Hierarchical Factor Graphs
+- Dynamic Factor Graphs for Time Series
+- Optimization Methods for Large-Scale Graphs
+- Custom Factor Implementation
 
 6. **PRACTICAL APPLICATIONS**
-Example Projects:
-- Simple agent navigation
-- Decision-making systems
-- Perception-action loops
-- Model comparison and selection
+Projects:
+1. Basic Perception Model
+2. Simple Action Selection
+3. Hierarchical Active Inference Model
+4. Real-world Application Integration
 
 7. **COMMUNITY AND COLLABORATION**
 - Join Active Inference Institute
-- Participate in PyAI Github discussions
-- Connect with factor graph implementation groups
-- Share examples and solutions
+- Participate in Julia Computing community
+- Contribute to open source Active Inference projects
+- Share implementations on GitHub
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Basic factor graph implementation
-- Working Active Inference model
-- Custom factor creation
-- Complex system implementation
+- Complete basic factor graph implementation
+- Build working Active Inference model
+- Contribute to open source project
+- Document and share implementations
 
 9. **RESOURCES AND TOOLS**
 Software:
+- Julia Programming Environment
+- Gen.jl
 - ForneyLab.jl
-- PyAI
-- SPM implementations
-- Factor graph visualization tools
+- Python Active Inference libraries
 
-Reading Materials:
-- Factor graph tutorials
-- Active Inference implementations papers
-- Open source documentation
+Documentation:
+- Factor Graph tutorials
+- Active Inference examples repository
+- Implementation guides
+- Community documentation
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
 - Master basic factor graph implementation
-- Complete simple Active Inference models
-- Build working examples
+- Complete first Active Inference model
+- Join relevant communities
 
 Medium-term (3-6 months):
-- Develop custom factors
-- Create complex applications
 - Contribute to open source projects
+- Develop custom implementations
+- Share working examples
 
 Long-term (6-12 months):
-- Advanced system implementation
-- Library contribution
-- Community engagement
+- Create comprehensive example library
+- Contribute to core libraries
+- Mentor others in implementation
 
 Success Metrics:
 - Working implementations
 - GitHub contributions
-- Documentation creation
-- Community participation
+- Community engagement
+- Documentation quality
 
-This curriculum emphasizes practical implementation while ensuring theoretical understanding. Regular check-ins and adjustments recommended based on progress and emerging needs.
+This curriculum emphasizes practical implementation while ensuring theoretical understanding. Regular review and adjustment based on progress and feedback is recommended.

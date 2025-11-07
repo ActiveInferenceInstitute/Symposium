@@ -1,10 +1,11 @@
 """Participant profiling and analysis module."""
 
 import logging
+import sys
 from pathlib import Path
 from typing import Dict, Any, Optional
 import pandas as pd
-from symposium.core.api import BaseAPIProvider
+from symposium.core.api import BaseAPIProvider, PaymentRequiredError
 from symposium.core.data_loader import DataLoader
 
 logger = logging.getLogger(__name__)
@@ -514,7 +515,22 @@ Please provide a comprehensive profile analysis including:
 
                 results[participant_name] = participant_results
 
+            except PaymentRequiredError as e:
+                # Payment errors are fatal - stop processing immediately
+                logger.error(f"Payment required error: {e}")
+                print("\n" + "=" * 60)
+                print("❌ PAYMENT REQUIRED ERROR")
+                print("=" * 60)
+                print(f"\n{e.provider.upper()} API requires payment to continue.")
+                print(f"Error: {e.message}")
+                print("\nPlease add credits to your account:")
+                if e.provider.lower() == "openrouter":
+                    print("  https://openrouter.ai/settings/credits")
+                print("\nProcessing stopped. Partial results saved for completed participants.")
+                print("=" * 60 + "\n")
+                break
             except Exception as e:
+                # Other errors allow graceful degradation - continue with next participant
                 logger.error(f"Error processing participant {participant_name}: {e}")
                 continue
 

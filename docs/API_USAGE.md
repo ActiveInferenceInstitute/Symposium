@@ -212,13 +212,42 @@ ERROR - Request timeout after 60s
 INFO - Retrying with exponential backoff
 ```
 
+**4. Payment Required (402 Error)**
+```
+❌ PAYMENT REQUIRED ERROR
+OPENROUTER API requires payment to continue.
+Error: Insufficient credits. Add more using https://openrouter.ai/settings/credits
+
+Processing stopped. Partial results saved for completed participants.
+```
+
+### Payment Error Handling
+
+**PaymentRequiredError** is raised when an API returns a 402 payment required error:
+- **No retries**: Payment errors are detected immediately and processing stops
+- **Clear messaging**: User-friendly error messages with guidance
+- **Partial results**: Completed participant analyses are saved
+- **Provider-specific**: Includes links to add credits for the specific provider
+
+```python
+from symposium.core.api import PaymentRequiredError
+
+try:
+    response = api_client.get_response(prompt)
+except PaymentRequiredError as e:
+    print(f"{e.provider} API requires payment: {e.message}")
+    # Processing should stop - user needs to add credits
+```
+
 ### Graceful Degradation
 
-If one API fails:
+For non-payment errors:
 - Skip that feature for the participant
 - Log the error
 - Continue with remaining participants
 - Report partial results
+
+**Note**: Payment errors (402) stop processing immediately, while other errors allow graceful degradation.
 
 ## Testing APIs
 

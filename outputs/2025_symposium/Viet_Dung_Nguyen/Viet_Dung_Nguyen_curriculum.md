@@ -1,6 +1,6 @@
 # Curriculum: Viet Dung Nguyen
 
-Generated on: 2025-10-31 15:30:32
+Generated on: 2025-11-07 14:56:02
 
 ## Metadata
 
@@ -9,121 +9,119 @@ Generated on: 2025-10-31 15:30:32
 
 ---
 
-I'll design a personalized curriculum for Viet Dung Nguyen, focusing on their robotics background and interest in coding-based learning of Active Inference.
+Based on Viet Dung Nguyen's background and specific needs, here's a personalized Active Inference curriculum:
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong: Implementation experience in robotics, published research
-- Needs Development: Deep understanding of epistemic uncertainty in EFE
-- Learning Style: Hands-on coding, from-scratch implementation
-- Knowledge Gap: Theory-practice connection in exploration mechanisms
+- Strong: Implementation experience with robotics, academic publication track
+- Gaps: Theoretical connection between epistemic uncertainty and exploration
+- Learning Style: Hands-on coding, from-scratch implementation preference
 
 2. **PERSONALIZED LEARNING PATH**
-Month 1-2: Foundations & Mathematical Framework
-- Deep dive into Free Energy Principle mathematics
-- Implementation of basic Active Inference models from scratch
-- Focus on epistemic value computation
-
-Month 3-4: Advanced Implementation
-- Neural network integration with Active Inference
-- Exploration mechanisms in continuous spaces
-- Custom implementation of uncertainty estimation
-
-Month 5-6: Research & Innovation
-- Novel formulations for robotics applications
-- Integration with existing robotics frameworks
-- Publication-ready implementations
+Month 1-2: Theoretical Foundations & Implementation
+- Deep dive into epistemic uncertainty mathematics
+- From-scratch implementation of basic Active Inference models
+Month 3-4: Advanced Robotics Integration
+- Robot-specific Active Inference architectures
+- Exploration mechanisms in embodied systems
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Mathematical Foundations
-- Variational Free Energy derivation
-- Information geometry in Active Inference
-- Belief updating mechanisms
-
-Module 2: Uncertainty & Exploration
-- Different forms of uncertainty in Active Inference
-- Epistemic value computation methods
-- Exploration-exploitation trade-offs
-
-Module 3: Neural Network Integration
-- Deep Active Inference architectures
-- Gradient-based optimization in Active Inference
-- Uncertainty estimation in deep networks
+- Advanced Free Energy Principle mathematics
+- Focus areas:
+  * Epistemic value computation methods
+  * Uncertainty quantification in neural networks
+  * Information geometry in active inference
+  * Relationship between exploration and epistemic value
 
 4. **HANDS-ON LEARNING**
-Project 1: Basic Implementation
-- Create simple Active Inference agent from scratch
-- Implement various uncertainty measures
-- Compare different exploration strategies
-
-Project 2: Robotics Integration
-- Implement Active Inference for manipulation tasks
-- Build custom uncertainty estimation modules
-- Develop exploration mechanisms for continuous action spaces
+Projects:
+1. Implement basic Active Inference from scratch
+2. Build epistemic uncertainty visualization tools
+3. Create comparative analysis framework for different exploration strategies
+4. Develop custom robotics environments for testing
 
 5. **ADVANCED TOPICS**
-- Novel uncertainty estimation methods
 - Information-theoretic approaches to exploration
-- Multi-agent Active Inference
-- Hierarchical Active Inference in robotics
+- Novel formulations of Expected Free Energy
+- Hierarchical Active Inference for robotics
+- Meta-learning in Active Inference frameworks
 
 6. **PRACTICAL APPLICATIONS**
-Implementation Focus:
-- Custom Python implementations of core algorithms
-- Integration with PyTorch for deep learning components
-- Robotics-specific adaptations
-- Benchmarking and evaluation frameworks
+Focus on robotics implementation:
+- Manipulation task decomposition
+- Sensor integration and uncertainty handling
+- Real-time computation optimization
+- Benchmarking against other approaches
 
 7. **COMMUNITY AND COLLABORATION**
 - Join Active Inference Institute
 - Participate in robotics-focused Active Inference workshops
-- Share implementations on GitHub
-- Present at ICRA/CoRL workshops
+- Connect with Karl Friston's group for theoretical insights
+- Contribute to open-source Active Inference projects
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Working implementation of uncertainty estimation
-- Novel exploration mechanism
-- Integration with existing robotics system
-- Publication-ready results
+1. Complete from-scratch implementation
+2. Publish comparison of exploration strategies
+3. Develop novel epistemic uncertainty formulation
+4. Create open-source robotics framework
 
 9. **RESOURCES AND TOOLS**
 Key Papers:
 - "Active Inference: A Process Theory" (Friston et al.)
 - "Deep Active Inference" (Millidge et al.)
-- "Active Inference for Robot Control" (relevant papers)
+- "Active Inference in Robotics" (relevant papers)
 
 Tools:
-- Python/PyTorch for implementation
-- Custom testing environments
-- Robotics simulation platforms
+- Python from scratch (no frameworks)
+- Custom visualization tools
+- Robot simulation environments
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
-- Develop custom implementation of basic Active Inference
-- Create uncertainty estimation module
-- Build test environments
+- Develop mathematical framework for epistemic uncertainty
+- Create basic implementation from scratch
+- Set up robotics testing environment
 
 Medium-term (3-6 months):
-- Integrate with robotics systems
-- Develop novel exploration mechanisms
-- Begin writing new paper
+- Implement and test multiple exploration strategies
+- Compare epistemic value computation methods
+- Begin integration with existing robotics work
 
 Long-term (6-12 months):
-- Complete novel formulation
-- Submit to major conference
-- Open-source implementation
+- Develop novel formulation for epistemic uncertainty
+- Create comprehensive robotics framework
+- Publish findings on exploration-uncertainty relationship
 
-Success Metrics:
-- Working implementation
-- Novel contribution to field
-- Published paper
+Additional Recommendations:
+
+1. **Coding Projects**
+- Start with simple pendulum implementation
+- Progress to manipulation tasks
+- Focus on uncertainty visualization
+- Create modular, reusable components
+
+2. **Mathematical Deep Dives**
+- Information geometry
+- Variational methods
+- Uncertainty quantification
+- Exploration-exploitation trade-offs
+
+3. **Documentation**
+- Maintain implementation notes
+- Document theoretical insights
+- Create tutorials for others
+- Build reference implementations
+
+4. **Collaboration Opportunities**
+- Share code repositories
+- Participate in research discussions
+- Present at workshops
+- Contribute to community projects
+
+This curriculum emphasizes:
+- From-scratch implementation
+- Deep theoretical understanding
 - Practical robotics application
-
-Special Focus Areas:
-1. Epistemic uncertainty optimization
-2. From-scratch implementation
-3. Robotics integration
-4. Novel formulations
-
-This curriculum emphasizes coding-based learning while maintaining theoretical rigor, focusing specifically on the connection between epistemic uncertainty and exploration in robotic systems.
+- Novel contributions to the field
+- Community engagement and sharing

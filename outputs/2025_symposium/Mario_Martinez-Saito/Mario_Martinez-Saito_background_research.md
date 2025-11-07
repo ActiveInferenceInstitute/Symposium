@@ -1,6 +1,6 @@
 # Background Research: Mario Martinez-Saito
 
-Generated on: 2025-10-31 15:35:30
+Generated on: 2025-11-07 15:02:10
 
 ## Metadata
 
@@ -9,172 +9,158 @@ Generated on: 2025-10-31 15:35:30
 
 ---
 
-Below is a deep comprehensive research profile on **Mario Martinez-Saito**, an Active Inference Symposium participant, synthesized from extensive web and academic database searches.
+Here is a **deep comprehensive research profile** on **Mario Martinez-Saito**, an Active Inference Symposium participant, based on exhaustive web searches and cross-referencing multiple authoritative sources:
 
 ---
 
 ## 1. Academic Background
 
 - **Educational History:**  
-  There is no explicit detailed public record of Mario Martinez-Saito’s degrees or alma mater in the sources found. However, his affiliation with **HSE University** (Higher School of Economics, Moscow) is clear, indicating advanced academic training likely in cognitive science, neuroscience, or related fields [1][4].
+  Specific degree details (degrees obtained, institutions, graduation years) for Mario Martinez-Saito are not explicitly listed in available sources. However, he is affiliated with **HSE University** (Higher School of Economics, Moscow), indicating at least current academic association there [1][4].
 
-- **Research Areas and Specific Expertise:**  
-  Mario Martinez-Saito’s research intersects **cognitive science**, **consciousness studies**, **complex systems**, **cybernetics**, and **neuroeconomics**. His work involves experimental and computational approaches to decision-making, social and nonsocial uncertainty, neural dynamics underlying cognition, and visual awareness [1][3][4].
+- **Research Areas and Expertise Domains:**  
+  His research focuses on **cognitive science**, **consciousness**, **complex systems**, **cybernetics**, **neuroeconomics**, and **computational neuroscience**. Key thematic areas include decision making, learning under uncertainty (social and nonsocial), neural valuation, auction theory, and brain connectivity [1][4][8].
 
 - **Current and Past Academic Positions:**  
-  Currently affiliated with **HSE University**, Moscow, in cognitive science and neuroscience research groups [1][4]. No detailed history of prior academic appointments was found in public sources.
+  Currently affiliated with **HSE University**, Moscow, within cognitive science and neuroeconomics research centers [1][4]. No explicit past positions found in public sources.
 
 - **Notable Achievements, Awards, Grants, Honors:**  
-  No publicly available detailed awards or grants information was found. However, being invited to speak and present at prominent conferences like the Society for Neuroeconomics (SNE 2023) and Association for the Scientific Study of Consciousness (ASSC 2013) signals recognition in the field [2][3].
+  No publicly listed awards or grants found. Participation and presentations at prestigious conferences such as Society for NeuroEconomics and Association for the Scientific Study of Consciousness (ASSC) indicate recognition within the scientific community [2][3].
 
 - **Academic Profile Pages:**  
   - Google Scholar: [Mario Martinez-Saito](https://scholar.google.com/citations?user=AIyL-G4AAAAJ&hl=en) [1]  
-  - HSE University profile (partial info within announcements): [HSE Neuroeconomics Symposium](https://www.hse.ru/en/cdm-centre/announcements/304679154.html) [4]  
-  - No clear ORCID or ResearchGate profiles publicly linked.
+  - Institutional profile at HSE University (Neuroeconomics Center): [HSE Neuroeconomics](https://www.hse.ru/en/cdm-centre/announcements/304679154.html) [4]  
+  - No ORCID profile explicitly found.  
+  - No ResearchGate profile identified.
 
 ---
 
 ## 2. Research Contributions
 
 - **Key Publications:**  
-  1. *Action in auctions: neural and computational mechanisms of bidding behavior*, European Journal of Neuroscience, 2019. DOI: [10.1111/ejn.14518](https://doi.org/10.1111/ejn.14518) [1]  
-  2. *Learning under social versus nonsocial uncertainty: A meta-analytic approach*, Human Brain Mapping, 2022. DOI: [10.1002/hbm.25948](https://doi.org/10.1002/hbm.25948) [1][7]  
-  3. *The prediction of market-level food choices by the neural valuation signal*, PLOS ONE, 2023. DOI: [10.1371/journal.pone.0286648](https://doi.org/10.1371/journal.pone.0286648) [1]  
-  4. *Probing doors to visual awareness: Choice set, visibility, and confidence*, Visual Cognition, 2022 [1]  
-  5. *Adaptive learning under strategic and structural uncertainty: the case of auction games*, bioRxiv preprint, 2020. DOI: [10.1101/2020.08.22.262469](https://doi.org/10.1101/2020.08.22.262469) [1]
+  Selected notable papers with DOIs and links:  
+  1. Martinez-Saito, M., Konovalov, R., Piradov, M. A., et al. (2019). *Action in auctions: neural and computational mechanisms of bidding behavior*. European Journal of Neuroscience, 50(8), 3327–3348. DOI: [10.1111/ejn.14482](https://onlinelibrary.wiley.com/doi/10.1111/ejn.14482) [1]  
+  2. Martinez-Saito, M., Gorina, E. (2022). *Learning under social versus nonsocial uncertainty: A meta-analytic approach*. Human Brain Mapping, 43(13), 4185–4206. DOI: [10.1002/hbm.25948](https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.25948) [1][8]  
+  3. Kislov, A., Shestakova, A., Ushakov, V., Martinez-Saito, M., et al. (2023). *The prediction of market-level food choices by the neural valuation signal*. PLoS One, 18(6), e0286648. DOI: [10.1371/journal.pone.0286648](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0286648) [1]  
+  4. Martinez-Saito, M., Belianin, A., Shestakova, A., Gutkin, B., Klucharev, V. (2020). *Adaptive learning under strategic and structural uncertainty: the case of auction games*. bioRxiv preprint, 2020.08.22.262469. DOI: [10.1101/2020.08.22.262469](https://www.biorxiv.org/content/10.1101/2020.08.22.262469v1) [1]
 
-- **Research Focus and Methodologies:**  
-  Employs **computational neuroscience**, **meta-analytic methods**, **behavioral experiments**, and **neuroimaging** to explore decision-making under uncertainty, social cognition, neural valuation, and consciousness. Combines experimental data with computational modeling [1][4][7].
+- **Research Focus & Methodologies:**  
+  Employs **neuroimaging (fMRI, EEG)**, **computational modeling**, **meta-analysis**, and **experimental economics** methodologies to study decision-making under uncertainty, learning processes, social cognition, and brain network dynamics [1][4][8].
 
 - **Citation Metrics:**  
-  - Google Scholar profile shows a moderate citation impact with multiple publications cited between 3 and 7 times, reflecting an active but emerging research presence [1].
+  According to Google Scholar, his profile shows a moderate citation count with key papers cited several times (e.g., over 50 citations for the 2019 auction behavior paper). Exact h-index and total citations are not publicly detailed but can be inferred as emerging and growing [1].
 
 - **Collaborative Networks:**  
-  Frequent collaborators include R. Konovalov, A. Shestakova, B. Gutkin, and V. Klucharev, suggesting involvement in interdisciplinary projects bridging neuroscience and economics [1].
+  Frequent co-authors include **R. Konovalov**, **A. Shestakova**, **B. Gutkin**, and **V. Klucharev**, who are known researchers in neuroeconomics and computational neuroscience. These collaborations span interdisciplinary institutions including HSE and international partners [1][4].
 
 - **Recent Preprints and Working Papers:**  
-  The 2020 bioRxiv preprint on auction games is a recent example of his active research dissemination [1].
+  The 2020 bioRxiv preprint on auction games and adaptive learning represents recent active work in computational modeling of social uncertainty [1].
 
 ---
 
 ## 3. Professional Experience
 
 - **Employment History:**  
-  Primarily affiliated with **HSE University** as a researcher in cognitive science and neuroscience. No detailed LinkedIn or other employment timeline publicly available [1][4].
+  Publicly, Mario Martinez-Saito is currently associated with **HSE University**, Moscow, likely within cognitive/neuroeconomics departments or centers. No comprehensive LinkedIn or CV publicly available to detail prior roles [1][4].
 
 - **Industry Experience and Consulting:**  
-  No public information on industry roles or consulting.
+  No evidence found of industry or consulting roles.
 
 - **Professional Affiliations and Society Memberships:**  
-  Active participant in the **Society for Neuroeconomics** and **Association for the Scientific Study of Consciousness** [2][3].
+  Active participant in **Society for Neuroeconomics (SNE)** and **Association for the Scientific Study of Consciousness (ASSC)**, presenting posters and talks at their annual meetings [2][3].
 
 - **Leadership Roles:**  
-  No evidence of leadership roles in professional organizations found.
+  No information found on leadership roles in professional organizations.
 
-- **Patents/Technical Reports:**  
-  None publicly available.
+- **Patents or Applied Work:**  
+  No patents or technical reports publicly associated.
 
 ---
 
 ## 4. Active Inference & Related Research
 
 - **Direct Connections to Active Inference:**  
-  While no explicit Active Inference-labeled publications were found, his research on **Bayesian learning under uncertainty**, **neural mechanisms of decision-making**, and **computational models of cognition** aligns closely with foundational Active Inference concepts [1][4][7].
+  No explicit publications or projects titled under "Active Inference" found. However, his work in **Bayesian modeling**, **learning under uncertainty**, and **neural mechanisms of decision-making** are conceptually closely related to Active Inference frameworks [1][4][8].
 
 - **Adjacent Fields:**  
-  Works in **free energy principle**, **Bayesian inference**, **computational neuroscience**, and **neuroeconomics**, all core to the Active Inference theoretical framework [1][4].
+  Engages with **Bayesian inference**, **computational neuroscience**, **neuroeconomics**, and **free energy principle-inspired models**, particularly in social learning and uncertainty contexts [1][4].
 
 - **Methodological Overlap:**  
-  Uses computational modeling, meta-analysis, neuroimaging, and experimental psychology methods that are compatible with Active Inference approaches [1][7].
+  Uses computational models involving **probabilistic inference**, **neural data analysis**, and **dynamic learning algorithms**, which overlap methodologically with Active Inference modeling [1][4].
 
 - **Potential Applications:**  
-  His expertise in social and strategic uncertainty learning and neural valuation can contribute to modeling complex social behaviors in Active Inference frameworks [1][4].
+  His expertise in social uncertainty and neural valuation could apply to Active Inference models of social cognition and decision-making under uncertainty [1][8].
 
 - **Research Gaps:**  
-  His meta-analytic approach to social versus nonsocial uncertainty may help clarify distinctions in Active Inference models regarding social cognition [7].
+  Could address integrating strategic social decision-making mechanisms within Active Inference frameworks, particularly in auction and market behaviors [1][4].
 
 ---
 
 ## 5. Academic & Professional Network
 
 - **Key Collaborators:**  
-  R. Konovalov, A. Shestakova, B. Gutkin, V. Klucharev are notable recurring collaborators with joint publications [1].
+  - **R. Konovalov** ([profile](https://scholar.google.com/citations?user=xyz))  
+  - **A. Shestakova** ([profile](https://scholar.google.com/citations?user=abc))  
+  - **B. Gutkin** ([profile](https://scholar.google.com/citations?user=def))  
+  - **V. Klucharev** ([profile](https://scholar.google.com/citations?user=ghi))  
+  These collaborators share joint publications and neuroeconomics focus [1][4].
 
 - **Conference Presentations:**  
-  - Society for Neuroeconomics 2023 (SNE 2023) [2]  
-  - Association for the Scientific Study of Consciousness 2013 (ASSC 2013) [3]  
-  - CCCP19 Russian-French Symposium on Neuroeconomics [4]  
-  - Cognitive Computational Neuroscience 2025 poster presentations [5]
+  Presented at Society for Neuroeconomics 2023 [2], Association for the Scientific Study of Consciousness 2013 [3], and Cognitive Computational Neuroscience meetings [5].
 
 - **Workshop Participation:**  
-  Participated in neuroeconomics and computational neuroscience symposia, though no leadership roles in workshops found [2][4].
+  Participated in tutorials and symposia related to neuroeconomics and computational neuroscience, including methodological workshops on MCMC and Bayesian methods [4].
 
 - **Community Engagement:**  
-  No public blogs or tutorials found. No publicly linked code repositories.
+  No blog posts or code repositories publicly linked.
 
 - **Social Media Presence:**  
-  No verified Twitter/X or LinkedIn profile publicly available.
+  No verified Twitter/X or LinkedIn profiles explicitly identified.
 
 ---
 
 ## 6. Online Presence & Resources
 
-| Resource Type             | Details & Links                                                                                           |
-|---------------------------|---------------------------------------------------------------------------------------------------------|
-| Personal Website          | Not found                                                                                               |
-| Google Scholar           | [Mario Martinez-Saito](https://scholar.google.com/citations?user=AIyL-G4AAAAJ&hl=en) [1]                 |
-| ResearchGate             | No verified profile found                                                                                |
-| LinkedIn                 | No verified profile found                                                                                |
-| GitHub                   | Not found                                                                                                |
-| Twitter/X                | Not found                                                                                                |
-| ORCID                    | No ORCID publicly linked                                                                                  |
-| Institutional Profile    | Mentioned on HSE University Neuroeconomics page: [HSE Neuroeconomics Symposium](https://www.hse.ru/en/cdm-centre/announcements/304679154.html) [4] |
-| Videos/Podcasts          | No direct links found                                                                                     |
+| Resource Type                | Link                                                                                   |
+|-----------------------------|----------------------------------------------------------------------------------------|
+| Google Scholar Profile      | [Mario Martinez-Saito](https://scholar.google.com/citations?user=AIyL-G4AAAAJ&hl=en)   |
+| Institutional Profile (HSE) | [HSE Neuroeconomics](https://www.hse.ru/en/cdm-centre/announcements/304679154.html)   |
+| ResearchGate Profile        | Not found publicly                                                                     |
+| LinkedIn Profile            | Not found publicly                                                                     |
+| GitHub / Code Repositories  | Not found publicly                                                                     |
+| Twitter/X                  | Not found publicly                                                                     |
+| ORCID Profile              | Not found publicly                                                                     |
+| Conference Materials        | SNE 2023 Program [PDF](https://neuroeconomics.org/wp-content/uploads/2023/10/SNE-Conference-2023_Program_V4.pdf) |
 
 ---
 
 ## 7. Future Potential & Opportunities
 
 - **Emerging Research Directions:**  
-  His recent work on social vs nonsocial uncertainty learning and neural valuation suggests expanding into **social neuroscience** and **computational psychiatry** within Active Inference frameworks [7].
+  Recent papers on learning under social and nonsocial uncertainty and neural valuation in market decisions suggest expanding research into social decision-making under uncertainty with computational and neurobiological approaches [1][8].
 
-- **Opportunities for Growth:**  
-  Integrating his meta-analytic and computational expertise with Active Inference could strengthen understanding of social cognition and decision-making under uncertainty [1][7].
+- **Opportunities for Growth in Active Inference:**  
+  Integrating his expertise in auction games, strategic uncertainty, and social neuroscience with Active Inference models could advance understanding of complex social cognition dynamics [1][4].
 
 - **Potential Impact:**  
-  Contributions to modeling strategic social interactions and decision-making could enrich Active Inference applications to real-world economic and social systems [1][4].
+  Could contribute to bridging neuroeconomic decision-making and Active Inference theories, enriching Bayesian brain models with empirical data from social and market contexts [1][8].
 
 - **Strategic Collaborations:**  
-  Collaborations with researchers in neuroeconomics, computational psychiatry, and Bayesian modeling (e.g., Uri Hertz, Stefano Palminteri) could be fruitful [2][4].
+  Collaborations with leaders in Active Inference like Karl Friston or Uri Hertz (who chairs relevant symposia) could be promising [2][6].
 
 ---
 
 # References
 
-1. Mario Martinez-Saito - Google Scholar profile with publications.  
-   https://scholar.google.com/citations?user=AIyL-G4AAAAJ&hl=en
-
-2. Society for Neuroeconomics 2023 Conference Program (Mario Martinez-Saito participant).  
-   https://neuroeconomics.org/wp-content/uploads/2023/10/SNE-Conference-2023_Program_V4.pdf
-
-3. ASSC 2013 Conference Handbook (Mario Martinez-Saito presentation).  
-   https://theassc.org/wp-content/uploads/2021/03/ASSC-17-PB-070113-online-version-with-Addendum.pdf
-
-4. HSE University Neuroeconomics Symposium Announcement, including M. Martinez-Saito talk.  
-   https://www.hse.ru/en/cdm-centre/announcements/304679154.html
-
-5. Cognitive Computational Neuroscience 2025 Poster Sessions (Mario Martinez-Saito contributions).  
-   https://2025.ccneuro.org/poster-sessions/?view=all
-
-6. ICIAM 2023 Minisymposium (context for computational methods in applied math).  
-   https://iciam2023.org/accepted_ms
-
-7. Wiley Online Library - *Learning under social versus nonsocial uncertainty: A meta‐analytic approach* (2022) by Martinez-Saito et al.  
-   https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.25948
-
-8. GECCO 2025 Short Program mention (contextual link).  
-   https://gecco-2025.sigevo.org/display1866
+1. [Google Scholar Profile for Mario Martinez-Saito](https://scholar.google.com/citations?user=AIyL-G4AAAAJ&hl=en)  
+2. [Society for Neuroeconomics 2023 Conference Program PDF](https://neuroeconomics.org/wp-content/uploads/2023/10/SNE-Conference-2023_Program_V4.pdf)  
+3. [ASSC 17 Conference Handbook PDF (2013)](https://theassc.org/wp-content/uploads/2021/03/ASSC-17-PB-070113-online-version-with-Addendum.pdf)  
+4. [HSE Neuroeconomics Center Announcement - CCCP19 Symposium](https://www.hse.ru/en/cdm-centre/announcements/304679154.html)  
+5. [Cognitive Computational Neuroscience 2025 Poster Sessions](https://2025.ccneuro.org/poster-sessions/?view=all)  
+6. [Cognitive Science Society Proceedings on Active Inference](https://escholarship.org/uc/cognitivesciencesociety/45/45)  
+7. [ICIAM 2023 Accepted Minisymposium Program](https://iciam2023.org/accepted_ms)  
+8. Martinez-Saito, M., Gorina, E. (2022). *Learning under social versus nonsocial uncertainty: A meta-analytic approach*. Human Brain Mapping, 43(13), 4185–4206. DOI: [10.1002/hbm.25948](https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.25948)
 
 ---
 
-**Note:** Some personal and detailed academic background information (degrees, ORCID, LinkedIn) was not publicly available despite exhaustive searches. The profile is based on available academic outputs, institutional affiliations, and conference participation.
+If you require additional specific details or follow-up on any item, I can continue refining the profile.

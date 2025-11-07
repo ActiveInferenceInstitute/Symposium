@@ -1,6 +1,6 @@
 # Curriculum: Wanjun Lin
 
-Generated on: 2025-10-31 15:40:54
+Generated on: 2025-11-07 15:08:18
 
 ## Metadata
 
@@ -9,39 +9,44 @@ Generated on: 2025-10-31 15:40:54
 
 ---
 
-I notice that several key fields about Wanjun Lin's background, current Active Inference application, learning needs, challenges, and value sought are empty. To create a truly personalized and effective curriculum, I would need this important information.
+I notice that several key fields about Wanjun Lin's background and needs are currently empty. To create a truly personalized and effective curriculum, I'll need more information about:
 
-However, I can help structure a preliminary framework that we can refine once we have these details:
+1. **Background:**
+- Academic/professional background
+- Current knowledge level of related fields (e.g., mathematics, programming, cognitive science)
+- Prior experience with related concepts
 
-1. **INITIAL ASSESSMENT APPROACH**
-- Schedule an initial consultation to understand:
-  * Academic/professional background
-  * Current knowledge of Active Inference
-  * Specific domain of application
-  * Learning style preferences
-  * Time availability and commitment level
+2. **Current Active Inference Application:**
+- Their intended use case or domain of application
+- Current projects or research interests
+- Specific problems they're trying to solve
 
-2. **FLEXIBLE LEARNING PATH OPTIONS**
-- Multiple entry points based on:
-  * Mathematical background (basic/intermediate/advanced)
-  * Programming experience
-  * Domain expertise
-  * Learning goals
+3. **Learning Needs:**
+- Specific aspects of Active Inference they want to master
+- Desired level of mathematical/technical depth
+- Preferred learning formats
 
-Would you be able to provide more information about Wanjun Lin's:
-1. Educational/professional background
-2. Current work or research context
-3. Specific learning objectives
-4. Primary challenges they're trying to address
-5. Practical outcomes they're seeking
-6. Knowledge-building goals
+4. **Challenges:**
+- Current obstacles in understanding or applying Active Inference
+- Time constraints or resource limitations
+- Specific conceptual difficulties
 
-With these details, I can:
-- Customize the difficulty level
-- Select relevant examples and applications
-- Choose appropriate tools and resources
-- Design targeted practical exercises
-- Set realistic timelines and milestones
-- Identify most valuable community connections
+5. **Pragmatic Value Sought:**
+- Practical outcomes they hope to achieve
+- Specific applications they want to implement
+- Performance metrics they need to meet
 
-Would you like to provide any of this additional information so I can create a more targeted and effective curriculum?
+6. **Epistemic Value Sought:**
+- Theoretical understanding they wish to develop
+- Research questions they want to explore
+- Academic or professional goals
+
+Could you please provide these details so I can design a curriculum that:
+- Matches their current knowledge level
+- Addresses their specific challenges
+- Focuses on their intended applications
+- Aligns with their learning style and goals
+- Provides relevant resources and tools
+- Sets appropriate timelines and milestones
+
+This information will help me create a truly personalized and effective learning path for Wanjun Lin.

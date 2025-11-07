@@ -1,6 +1,6 @@
 # Curriculum: Binglin LYU
 
-Generated on: 2025-10-31 15:37:20
+Generated on: 2025-11-07 15:03:57
 
 ## Metadata
 
@@ -9,40 +9,39 @@ Generated on: 2025-10-31 15:37:20
 
 ---
 
-I notice that several key fields about Binglin LYU's background, current Active Inference application, learning needs, challenges, and value sought are empty. To create a truly personalized and effective curriculum, I'll need more information about:
+I notice that several key fields about Binglin LYU's background, current Active Inference application, learning needs, challenges, and desired values are empty. To create a truly personalized and effective curriculum, I'll need more information about:
 
 1. **Background:**
 - Academic/professional background
-- Current field of work/study
-- Level of mathematical/programming expertise
-- Prior exposure to related concepts (e.g., Bayesian inference, information theory)
+- Current knowledge level in mathematics, programming, and cognitive science
+- Prior exposure to related fields (e.g., Bayesian inference, machine learning)
 
 2. **Current Active Inference Application:**
-- Specific domain of interest
-- Current projects or research
-- Tools/frameworks already in use
+- Their intended use case
+- Current projects or research interests
+- Domain of application (e.g., neuroscience, robotics, AI)
 
 3. **Learning Needs:**
-- Specific aspects of Active Inference they want to master
-- Immediate learning priorities
-- Long-term learning goals
+- Specific skills they want to develop
+- Time availability for learning
+- Preferred learning methods
 
 4. **Challenges:**
 - Current obstacles in understanding/applying Active Inference
-- Time constraints
-- Resource limitations
-- Technical barriers
+- Technical or conceptual difficulties
+- Resource or time constraints
 
-5. **Pragmatic & Epistemic Value Sought:**
-- Practical outcomes desired
-- Theoretical understanding needed
-- How they plan to apply this knowledge
+5. **Pragmatic/Epistemic Values:**
+- Practical outcomes they hope to achieve
+- Theoretical understanding they seek to develop
+- Long-term goals in the field
 
-Could you please provide these details so I can design a curriculum that is:
-- Properly leveled to their current understanding
-- Focused on relevant applications
-- Structured to overcome specific challenges
-- Aligned with their learning style and goals
-- Optimized for their available time and resources
+Could you please provide these details so I can design a curriculum that:
+- Matches their current knowledge level
+- Addresses their specific challenges
+- Aligns with their learning style
+- Supports their practical goals
+- Fits their time constraints
+- Focuses on relevant applications
 
-Once you provide this information, I can create a detailed, personalized curriculum that maximizes learning effectiveness and practical application for Binglin LYU.
+This information will help me create a truly personalized learning path rather than a generic curriculum.

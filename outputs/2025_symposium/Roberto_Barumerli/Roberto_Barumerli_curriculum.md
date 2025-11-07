@@ -1,6 +1,6 @@
 # Curriculum: Roberto Barumerli
 
-Generated on: 2025-10-31 15:13:07
+Generated on: 2025-11-07 14:35:56
 
 ## Metadata
 
@@ -9,109 +9,103 @@ Generated on: 2025-10-31 15:13:07
 
 ---
 
-Based on Roberto's background in Bayesian inference and spatial hearing, and his interest in seeing practical applications of Active Inference, I'll design a personalized curriculum that leverages his existing knowledge while focusing on practical implementations.
+Based on Roberto's background in Bayesian inference and spatial hearing, and his interest in practical applications, I'll design a personalized Active Inference curriculum that leverages his existing knowledge while focusing on practical implementation.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong: Bayesian inference foundations, statistical modeling
-- Gaps: Active Inference specific concepts, Free Energy Principle
-- Learning style: Likely analytical with preference for mathematical/computational approaches
+- Strong foundation in Bayesian inference (advantage)
+- Experience with spatial hearing (domain expertise)
+- No prior Active Inference knowledge
+- Likely comfortable with mathematical formulations
+- Need to bridge from Bayesian to variational approaches
 
 2. **PERSONALIZED LEARNING PATH**
-Months 1-2: Foundations
-- Bridge from Bayesian inference to Active Inference
-- Core mathematical framework
-- Basic implementations
+Weeks 1-2: Foundations
+- Connection between Bayesian inference and Active Inference
+- Free energy principle basics
+- Variational inference fundamentals
 
-Months 3-4: Applications
-- Spatial hearing models using Active Inference
-- Practical implementations
-- Tool mastery
+Weeks 3-4: Core Framework
+- Markov Decision Processes
+- Belief updating
+- Action selection
 
-Months 5-6: Advanced Integration
-- Research applications
-- Complex modeling
-- Independent project development
+Weeks 5-8: Implementation
+- Practical coding exercises
+- Tool familiarization
+- Simple model building
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Bridging Concepts
-- From Bayes to Active Inference
-- Free Energy Principle basics
-- Markov Decision Processes
-
-Module 2: Essential Mathematics
-- Variational inference
+Module 1: Bridging Bayesian to Active Inference
+- Variational Bayes
+- Free Energy Principle
 - Generative models
-- Message passing algorithms
+
+Module 2: Active Inference Fundamentals
+- Perception-action loops
+- Expected free energy
+- Policy selection
 
 4. **HANDS-ON LEARNING**
-Computational Exercises:
-- Start with SPM12 tutorials
-- Progress to PyAI implementation
-- Develop simple spatial hearing models
-
-Projects:
-1. Simple perception model
-2. Basic action-perception loop
-3. Complex spatial hearing model
+Practical Exercises:
+- Implementation using SPM12
+- Python tutorials with PyAI
+- Simple spatial hearing models
+- Gradient exercises
 
 5. **ADVANCED TOPICS**
-- Hierarchical generative models
-- Precision weighting in spatial hearing
-- Multi-modal integration
-- Deep Active Inference
+- Hierarchical models
+- Continuous state-space models
+- Applications in auditory processing
+- Multi-agent systems
 
 6. **PRACTICAL APPLICATIONS**
 Focus Areas:
-- Auditory processing models
-- Spatial localization
-- Sensor fusion applications
-- Real-time processing implementations
+- Spatial hearing models using Active Inference
+- Sensorimotor integration
+- Auditory scene analysis
+- Practical implementation strategies
 
 7. **COMMUNITY AND COLLABORATION**
-- Join VERSE community
+- Join the VERSES Active Inference Community
 - Participate in Active Inference Institute workshops
 - Connect with spatial hearing researchers using Active Inference
 - Attend relevant conferences
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
-- Basic model implementation (Month 2)
-- First spatial hearing application (Month 4)
-- Independent project completion (Month 6)
+- Basic model implementation
+- Simple spatial hearing model
+- Complex hierarchical model
+- Integration with existing work
 
 9. **RESOURCES AND TOOLS**
-Essential Reading:
-- "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
-- Key papers by Karl Friston on Active Inference
-- Spatial hearing literature incorporating Active Inference
-
-Tools:
-- SPM12
-- PyAI
-- Julia-based implementations
-- Custom modeling tools
+Essential Resources:
+- "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior" by Thomas Parr
+- SPM12 tutorials
+- PyAI documentation
+- Active Inference Lab exercises
 
 10. **IMPLEMENTATION ROADMAP**
-
 Short-term (1-3 months):
-- Master core concepts
-- Complete basic implementations
-- Develop first simple model
+- Master basic concepts
+- Implement simple models
+- Connect with community
 
 Medium-term (3-6 months):
-- Apply to spatial hearing
-- Develop custom tools
-- Complete independent project
+- Develop spatial hearing applications
+- Create working models
+- Begin integration with current work
 
 Long-term (6-12 months):
-- Research integration
-- Advanced applications
-- Potential publications
+- Advanced implementation
+- Original research
+- Community contribution
 
-Special Recommendations:
-1. Focus initially on bridging Bayesian knowledge to Active Inference
-2. Emphasize computational implementations
-3. Build towards spatial hearing applications
-4. Develop practical tools for research application
+Specific Recommendations:
+1. Start with the mathematical bridge from Bayesian to variational methods
+2. Focus on computational implementation early
+3. Leverage spatial hearing expertise in model development
+4. Connect with researchers combining Active Inference and auditory processing
+5. Build progressively complex models
 
-This curriculum emphasizes practical implementation while building on Roberto's existing knowledge of Bayesian inference. The focus on spatial hearing applications provides immediate relevance to his field while ensuring deep understanding of Active Inference principles.
+This curriculum emphasizes practical implementation while building on Roberto's existing knowledge base. The focus on tools and resources aligns with his stated learning needs, and the structure allows for immediate application while building deeper theoretical understanding.

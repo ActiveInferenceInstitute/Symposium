@@ -182,8 +182,14 @@ if DataLoader.estimate_token_count(prompt) > max_tokens:
 ### API Errors
 
 ```python
+from symposium.core.api import PaymentRequiredError
+
 try:
     response = api_client.get_response(prompt)
+except PaymentRequiredError as e:
+    # Payment required (402) - stop processing
+    print(f"{e.provider} API requires payment: {e.message}")
+    # User needs to add credits before continuing
 except ValueError as e:
     # Empty or invalid response
     logger.error(f"Invalid response: {e}")
@@ -198,6 +204,8 @@ OpenRouter provider automatically retries on:
 - Rate limit errors (429)
 - Timeout errors
 - Temporary network issues
+
+**Payment errors (402) are NOT retried** - they are detected immediately and raise `PaymentRequiredError` to stop processing.
 
 Perplexity provider requires manual retry:
 

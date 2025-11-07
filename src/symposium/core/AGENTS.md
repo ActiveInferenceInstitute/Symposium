@@ -1,6 +1,6 @@
 # Core Agents
 
-Infrastructure and API agents that power the Symposium package ecosystem.
+Infrastructure and API agents that power the Active Inference Institute Symposium package ecosystem.
 
 ## API Gateway Agent
 
@@ -38,6 +38,13 @@ Max Tokens: 2000 (configurable)
 - Error recovery
 - Rate limit handling
 - Retry mechanisms
+- Payment error detection (402 errors)
+
+**Error Handling**:
+- **PaymentRequiredError**: Detects 402 payment required errors immediately
+- No retries on payment errors - processing stops with clear user guidance
+- Graceful degradation for other errors (rate limits, timeouts)
+- Provider-specific error messages with credit addition links
 
 ## Configuration Manager Agent
 
@@ -144,6 +151,14 @@ Max Tokens: 2000 (configurable)
 - Fallback mechanism activation
 - User-friendly error reporting
 - System stability maintenance
+- Payment error detection and handling
+
+**Payment Error Handling**:
+- Detects 402 payment required errors immediately
+- Raises PaymentRequiredError with provider and message
+- Stops processing with clear user guidance
+- Preserves partial results for completed work
+- Provides provider-specific credit addition links
 
 ### Path Resolution Agent
 **Role**: Cross-platform path management and validation.

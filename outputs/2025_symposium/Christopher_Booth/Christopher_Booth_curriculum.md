@@ -1,6 +1,6 @@
 # Curriculum: Christopher Booth
 
-Generated on: 2025-10-31 15:20:58
+Generated on: 2025-11-07 14:45:20
 
 ## Metadata
 
@@ -9,127 +9,116 @@ Generated on: 2025-10-31 15:20:58
 
 ---
 
-I'll create a personalized curriculum for Christopher, considering his unique background in NLP, engineering, and current work with Neo4j.
+Based on Christopher's background and needs, here's a tailored Active Inference curriculum:
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong technical foundation from avionics engineering
-- Practical experience with NLP and graph databases
-- Mid-stage understanding of Active Inference basics
-- Gaps in formal mathematical theory and academic research methodology
-- Hands-on, applied learning style preferred
+   - Strong technical background (avionics, NLP, engineering)
+   - Good practical implementation skills
+   - Knowledge gaps in formal mathematical foundations
+   - Hands-on, applied learning style
+   - Needs structured theoretical framework to complement practical experience
 
 2. **PERSONALIZED LEARNING PATH**
-Months 1-2: Mathematical Foundations
-- Probability theory and Bayesian inference
-- Markov Decision Processes
-- Information theory basics
-- Focus on practical applications over pure theory
-
-Months 3-4: Core Active Inference
-- Free Energy Principle fundamentals
-- Belief updating and inference
-- Action selection and planning
-- Integration with knowledge graphs
-
-Months 5-6: Advanced Implementation
-- Research paper development
-- Prototype refinement
-- Community engagement
+   Months 1-2:
+   - Mathematical Foundations
+   - Bayesian Statistics Fundamentals
+   - POMDP Basics
+   Months 3-4:
+   - Active Inference Core Theory
+   - Knowledge Graph Integration
+   - Prototype Development
+   Months 5-6:
+   - Research Paper Development
+   - Advanced Applications
+   - Community Engagement
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Mathematical Prerequisites
-- Bayesian statistics refresher
-- POMDP fundamentals
-- Information geometry basics
-
-Module 2: Active Inference Foundations
-- Free Energy Principle
-- Variational inference
-- Belief propagation in DBNs
-
-Module 3: Knowledge Graph Integration
-- Graph embeddings
-- Semantic representation
-- Latent space mapping
+   - Probability Theory and Bayesian Statistics
+   - Markov Decision Processes
+   - Free Energy Principle fundamentals
+   - Dynamic Bayesian Networks
+   - Knowledge Graph Theory
+   - Latent Space Representations
+   - Information Theory for Active Inference
 
 4. **HANDS-ON LEARNING**
-Weekly Projects:
-- Implement basic belief updating in Python
-- Build DBN prototypes using Neo4j
-- Create curiosity-driven agents
-- Develop knowledge graph embeddings
-- Integrate Active Inference with graph structures
+   - Python implementation of basic Active Inference models
+   - Neo4j knowledge graph development
+   - Integration of Active Inference with existing NLP systems
+   - Prototype development workshops
+   - Code reviews and optimization sessions
 
 5. **ADVANCED TOPICS**
-- Information geometry in Active Inference
-- Advanced POMDP applications
-- Meta-learning and curiosity
-- Graph-based inference methods
-- Latest research in semantic latent spaces
+   - Advanced POMDP Theory
+   - Variational Inference Methods
+   - Information Geometry
+   - Curiosity-driven Learning
+   - Meta-learning in Active Inference
+   - Graph Neural Networks
+   - Semantic Knowledge Representation
 
 6. **PRACTICAL APPLICATIONS**
-Focus Areas:
-- Knowledge graph-enhanced Active Inference
-- Curiosity-driven exploration in graph spaces
-- Semantic reasoning with Active Inference
-- Performance optimization through information-seeking behavior
+   Focus on NLP and Knowledge Graphs:
+   - Implementing curiosity-driven agents
+   - Knowledge graph-based inference systems
+   - Semantic representation learning
+   - Prototype development case studies
+   - Performance metrics and evaluation
 
 7. **COMMUNITY AND COLLABORATION**
-Engagement Strategy:
-- Join Active Inference Institute
-- Participate in monthly research seminars
-- Connect with graph-based AI researchers
-- Present prototype at workshops
-- Bi-monthly mentorship sessions
+   - Bi-weekly mentorship sessions
+   - Active Inference Lab community engagement
+   - Research paper writing group
+   - Conference participation planning
+   - Online forum participation (Reddit r/activeInference, GitHub discussions)
 
 8. **ASSESSMENT AND PROGRESSION**
-Milestones:
-- Complete mathematical foundations (Month 2)
-- Working prototype enhancement (Month 4)
-- Research paper draft (Month 5)
-- Final paper submission (Month 6)
+   Milestones:
+   - Mathematical foundations completion
+   - First working prototype
+   - Research paper draft
+   - Community presentation
+   - Final paper submission
 
 9. **RESOURCES AND TOOLS**
-Essential Reading:
-- "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
-- Key papers by Karl Friston
-- Selected papers on graph-based inference
-- Neo4j documentation for advanced graph applications
-
-Tools:
-- Python with PyTorch
-- Neo4j Graph Database
-- Active Inference frameworks
-- Jupyter notebooks for experiments
+   Essential Reading:
+   - "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
+   - Karl Friston's key papers
+   - Selected papers on Knowledge Graphs and NLP
+   Tools:
+   - Python (PyTorch, TensorFlow)
+   - Neo4j
+   - Active Inference libraries
+   - Jupyter Notebooks
 
 10. **IMPLEMENTATION ROADMAP**
-
-Short-term (1-3 months):
-- Master mathematical foundations
-- Enhance current prototype
-- Begin research paper outline
-
-Medium-term (3-6 months):
-- Complete advanced implementation
-- Finalize research paper
-- Present findings at workshop
-
-Long-term (6-12 months):
-- Publish research
-- Develop advanced applications
-- Contribute to open-source projects
-
-Success Metrics:
-- Working prototype demonstrating curiosity-driven learning
-- Completed research paper
-- Active community participation
-- Practical implementation in current work
+    Months 1-3:
+    - Complete mathematical foundations
+    - Develop initial prototype
+    - Join research community
+    
+    Months 3-6:
+    - Enhance prototype with knowledge graph integration
+    - Begin paper writing
+    - Present initial findings
+    
+    Months 6-12:
+    - Finalize research
+    - Submit paper
+    - Present at conferences
 
 Specific Recommendations:
-1. Focus on bridging graph theory with Active Inference
-2. Leverage existing NLP expertise
-3. Build on engineering background for practical implementation
-4. Regular bi-monthly check-ins with mentor
-5. Document progress for research paper
+1. Focus on bridging theoretical knowledge with practical implementation
+2. Leverage existing NLP and Neo4j expertise
+3. Regular bi-weekly check-ins with mentors
+4. Build portfolio through documented implementations
+5. Participate in Active Inference community events
 
-This curriculum emphasizes practical application while ensuring theoretical understanding, perfectly aligned with Christopher's background and goals.
+Success Metrics:
+- Working prototype implementation
+- Research paper submission
+- Community engagement level
+- Knowledge graph integration success
+- Theoretical understanding assessment
+
+This curriculum emphasizes practical implementation while building theoretical foundations, particularly focused on the intersection of Active Inference with knowledge graphs and NLP.

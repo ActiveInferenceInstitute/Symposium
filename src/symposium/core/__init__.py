@@ -3,7 +3,13 @@
 from pathlib import Path
 from typing import Dict, Any
 
-from symposium.core.api import APIClient, BaseAPIProvider, PerplexityProvider, OpenRouterProvider
+from symposium.core.api import (
+    APIClient,
+    BaseAPIProvider,
+    PerplexityProvider,
+    OpenRouterProvider,
+    PaymentRequiredError,
+)
 from symposium.core.config import Config
 from symposium.core.logging_utils import setup_logging
 from symposium.core.data_loader import DataLoader
@@ -13,6 +19,7 @@ __all__ = [
     "BaseAPIProvider",
     "PerplexityProvider",
     "OpenRouterProvider",
+    "PaymentRequiredError",
     "Config",
     "setup_logging",
     "DataLoader",

@@ -1,6 +1,6 @@
 # Curriculum: Matthew Brown
 
-Generated on: 2025-10-31 15:25:08
+Generated on: 2025-11-07 14:49:44
 
 ## Metadata
 
@@ -9,43 +9,34 @@ Generated on: 2025-10-31 15:25:08
 
 ---
 
-I notice that the participant information fields are empty. To create a truly personalized and effective curriculum for Matthew Brown, I'll need specific information about:
+I notice the background, current Active Inference application, learning needs, challenges, and pragmatic/epistemic values are blank in the prompt. To create a truly personalized curriculum, I'll need these details about Matthew Brown. Could you provide:
 
-**Background:**
-- Academic/professional background
-- Current knowledge level of mathematics, programming, and cognitive science
-- Prior exposure to related concepts (e.g., Bayesian inference, machine learning)
+1. **Background**: 
+- Educational/professional background
+- Current field/domain
+- Prior experience with related concepts (e.g., Bayesian inference, machine learning)
 
-**Current Active Inference Application:**
-- Current work or research context
+2. **Current Active Inference Application**:
+- How they currently use or plan to use Active Inference
 - Specific problems they're trying to solve
-- Tools or methods they're currently using
 
-**Learning Needs:**
-- Specific aspects of Active Inference they want to master
-- Desired level of mathematical/technical depth
-- Preferred learning style (theoretical/practical balance)
+3. **Learning Needs**:
+- Specific skills they want to develop
+- Knowledge areas they want to strengthen
 
-**Challenges:**
-- Current obstacles in understanding or applying Active Inference
+4. **Challenges**:
+- Current obstacles in understanding/applying Active Inference
 - Time constraints or resource limitations
-- Specific technical or conceptual difficulties
 
-**Pragmatic Value Sought:**
-- Concrete outcomes they want to achieve
-- Practical applications they want to implement
-- Problems they want to solve
+5. **Value Sought**:
+- Pragmatic: Practical outcomes they hope to achieve
+- Epistemic: Theoretical understanding they wish to develop
 
-**Epistemic Value Sought:**
-- Depth of theoretical understanding desired
-- Research or innovation goals
-- Areas of Active Inference they want to explore
+With these details, I can design a curriculum that:
+- Builds on their existing knowledge
+- Addresses specific gaps
+- Aligns with their goals
+- Accounts for their constraints
+- Delivers their desired practical and theoretical outcomes
 
-Could you please provide these details about Matthew? This will allow me to design a curriculum that is:
-1. Appropriately leveled
-2. Relevant to his specific needs
-3. Structured around his learning style
-4. Focused on his desired outcomes
-5. Mindful of his constraints
-
-Once you provide this information, I can create a detailed, personalized curriculum following the structure you've outlined.
+Would you please provide these details about Matthew Brown?

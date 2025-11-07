@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 import pandas as pd
 from symposium.analysis.participants import ParticipantAnalyzer
+from symposium.core.api import PaymentRequiredError
 
 
 class TestParticipantAnalyzer:
@@ -115,4 +116,55 @@ class TestParticipantAnalyzer:
 
         # Should continue processing despite errors
         assert len(results) == 0
+
+    def test_analyze_all_participants_payment_error_stops(self, analyzer, temp_dir):
+        """Test that PaymentRequiredError stops processing immediately."""
+        # Create a CSV with two participants
+        csv_path = temp_dir / "participants.csv"
+        df = pd.DataFrame({
+            'Can we share this information publicly?': ['Yes', 'Yes'],
+            'What is your name?': ['Test Participant 1', 'Test Participant 2'],
+            'What is your email?': ['test1@example.com', 'test2@example.com'],
+            'What are your affiliations?': ['University A', 'University B'],
+            'What is your ORCID?': ['0000-0000-0000-0001', '0000-0000-0000-0002'],
+            'What is your background & prior works? Feel free to provide as much information & links as you like.': ['PhD in Computer Science', 'MSc in Mathematics'],
+            'What would be useful for you in the Symposium (pragmatic value)?': ['Networking', 'Learning'],
+            'What would be interesting or informative for you to learn from the Symposium (epistemic value)?': ['Theory', 'Applications'],
+            'How are you applying Active Inference? What domain, stage?': ['Research', 'Teaching'],
+            'What are the biggest hurdles or challenges facing Active Inference research and application?': ['Theory', 'Practice'],
+            'What would help you learn and apply Active Inference? E.g. resource, tool, or community development.': ['Advanced topics', 'Practical applications'],
+            'How did you hear about the Symposium?': ['Website', 'Email'],
+            'How could Active Inference applications make impact in 2026? (Think big!)': ['Healthcare', 'Education'],
+            'Any other comments or questions?': ['None', 'None']
+        })
+        df.to_csv(csv_path, index=False)
+        
+        output_dir = temp_dir / "outputs"
+        output_dir.mkdir()
+        
+        # First call succeeds, second call raises PaymentRequiredError
+        payment_error = PaymentRequiredError(
+            "Insufficient credits. Add more using https://openrouter.ai/settings/credits",
+            provider="openrouter"
+        )
+        
+        call_count = 0
+        def mock_get_response(*args, **kwargs):
+            nonlocal call_count
+            call_count += 1
+            if call_count == 1:
+                return "Analysis for participant 1"
+            else:
+                raise payment_error
+        
+        with patch.object(analyzer.api_client, 'get_response', side_effect=mock_get_response):
+            with patch('symposium.io.writers.ReportWriter.save_participant_report'):
+                results = analyzer.analyze_all_participants(
+                    csv_path,
+                    output_dir
+                )
+        
+        # Should only process first participant before stopping
+        assert len(results) == 1
+        assert "Test Participant 1" in results
 

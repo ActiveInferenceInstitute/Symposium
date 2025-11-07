@@ -1,6 +1,6 @@
 # Background Research: Anastassiya Yegarmina
 
-Generated on: 2025-10-31 15:39:19
+Generated on: 2025-11-07 15:06:29
 
 ## Metadata
 
@@ -9,166 +9,136 @@ Generated on: 2025-10-31 15:39:19
 
 ---
 
-After an exhaustive multi-source web search across academic databases, professional profiles, publication repositories, conference proceedings, and social media platforms, **there is limited publicly available information specifically on Anastassiya Yegarmina** as an individual researcher or professional in computational neuroscience or data science shifting from industry to academia. Below is a detailed account of findings and the investigative results structured according to your requested categories, along with limitations and inferred conclusions.
+## Academic Background
 
----
+**Degrees, Institutions, and Graduation Years**  
+No direct evidence of Anastassiya Yegarmina's academic degrees, institutions, or graduation years was found in the available search results or via supplementary searches of major academic databases, institutional websites, Google Scholar, ResearchGate, LinkedIn, or ORCID. The user-provided information notes a preparation for a PhD in computational neuroscience, but no independent verification or details (such as MSc, BSc, or enrollment dates) are available in open sources.
 
-### 1. Academic Background
+**Research Areas and Expertise**  
+According to the user-provided background, Anastassiya Yegarmina’s expertise spans data science and computational neuroscience, with a transition from industry to academia. However, no peer-reviewed publications, preprints, or conference proceedings directly attributed to her under this name were found in the search results or in supplementary searches of Google Scholar, ResearchGate, arXiv, or institutional repositories. Her name appears only once in the academic literature as a co-author on a working paper, but without further details about her role or contributions[1].
 
-- **Educational History:**  
-  No verifiable records or public mentions of Anastassiya Yegarmina’s degrees, institutions, or graduation years were found in academic databases such as Google Scholar, ResearchGate, ORCID, institutional websites, or LinkedIn profiles.
+**Current and Past Academic Positions**  
+No evidence of current or past academic positions (e.g., postdoctoral researcher, lecturer, research assistant) at any institution was found. There are no institutional profile pages or faculty listings that mention her.
 
-- **Research Areas and Expertise:**  
-  Based on a co-authored work appearing in a 2017 publication in the domain of technology foresight and innovation systems, Anastassiya Yegarmina appears associated with topics related to **science and technology foresight, innovation forecasting, and technology trends analysis** rather than core computational neuroscience or data science per se[1].
+**Notable Achievements, Awards, Grants, Honors**  
+No announcements of awards, grants, honors, or notable achievements were found in the available sources.
 
-- **Academic Positions:**  
-  No current or past academic institutional profiles or positions were located.
+**Academic Profile Pages**  
+No Google Scholar, ResearchGate, ORCID, or institutional profile pages were found under the name Anastassiya Yegarmina. Searches on these platforms returned no results matching her name and research interests.
 
-- **Notable Achievements, Awards, Grants:**  
-  None publicly documented.
+## Research Contributions
 
-- **Academic Profile Pages:**  
-  No Google Scholar, ResearchGate, ORCID, or institutional profile pages could be found under this name.
+**Key Publications**  
+Anastassiya Yegarmina is listed as a co-author on the working paper:  
+**“Regional Foresight for Bridging National Science, Technology and Innovation with Company Innovation: Experiences from Russia”**, HSE Working Papers, WP BRP 29/STI/2014, National Research University Higher School of Economics, 2017, with Sergey Kortov, Dmitry Shulgin, Dmitrii Tolmachev, and Anastassiya Yegarmina[1].  
+However, no full text, abstract, or DOI for this paper is available in the search results or via open-access repositories. There are no other publications, preprints, or technical reports attributed to her in major databases.
 
-### Source:
-- A 2017 working paper includes Anastassiya Yegarmina as a co-author on regional foresight and innovation systems topics[1].
+**Research Focus Areas and Methodologies**  
+Given the single co-authorship on a foresight and innovation policy paper, her direct involvement in computational neuroscience or data science research cannot be confirmed from available sources. The working paper’s focus is on regional innovation systems and technology foresight, not computational neuroscience or data science[1].
 
----
+**Citation Metrics**  
+No citation metrics (h-index, total citations) are available, as no Google Scholar or ResearchGate profile exists.
 
-### 2. Research Contributions
+**Collaborative Networks**  
+Her only identifiable co-authors are Sergey Kortov, Dmitry Shulgin, and Dmitrii Tolmachev, based on the 2017 working paper[1]. No evidence of ongoing collaborations, research groups, or joint projects in computational neuroscience or data science was found.
 
-- **Key Publications:**  
-  The only identifiable publication linked to Anastassiya Yegarmina is:
+**Recent Preprints and Working Papers**  
+No recent preprints (e.g., on arXiv, bioRxiv) or working papers were found.
 
-  - Kortov, S., Shulgin, D., Tolmachev, D., **Yegarmina, A.** (2017). *Regional Foresight for Bridging National Science, Technology and Innovation with Company Innovation: Experiences from Russia*, HSE Working papers WP BRP 29/STI/2014[1].
+## Professional Experience
 
-- **Research Focus and Methodologies:**  
-  This paper discusses **technology foresight, innovation systems, and long-term forecasting** methodologies, likely involving data analysis and possibly computational modeling related to national innovation systems.
+**Employment History**  
+No verifiable employment history, industry roles, or consulting work was found in the available sources or on professional networks such as LinkedIn.
 
-- **Citation Metrics:**  
-  No citation metrics or impact data found for Yegarmina.
+**Professional Affiliations and Society Memberships**  
+No memberships in professional societies (e.g., Society for Neuroscience, IEEE, INCF) were found.
 
-- **Collaborative Networks:**  
-  Co-authors include Sergey Kortov, Dmitry Shulgin, and Dmitrii Tolmachev, affiliated with Russian academic or research institutions focused on science and technology policy[1].
+**Leadership Roles**  
+No evidence of leadership roles in professional organizations.
 
-- **Recent Preprints/Working Papers:**  
-  No other preprints or recent papers found.
+**Patents, Technical Reports, or Applied Work**  
+No patents, technical reports, or applied industry work were found.
 
----
+## Active Inference & Related Research
 
-### 3. Professional Experience
+**Direct Connections to Active Inference**  
+No publications, presentations, or projects directly related to Active Inference, the free energy principle, or Bayesian inference in neuroscience were found.
 
-- **Employment History:**  
-  No LinkedIn profile or professional biographies available to detail work history.
+**Adjacent Fields and Methodological Overlap**  
+No evidence of work in computational neuroscience, Bayesian modeling, or related methodologies was found beyond the user-provided background.
 
-- **Industry Experience:**  
-  The mention of preparation for a PhD in computational neuroscience implies a transition from industry to academia, but no specifics or company affiliations were found.
+**Potential Applications and Research Gaps**  
+Based on the available information, there is no evidence that Anastassiya Yegarmina has published or presented work that directly applies to Active Inference. Any potential to address research gaps in this field is speculative and not supported by current public records.
 
-- **Professional Affiliations:**  
-  No memberships or society affiliations located.
+## Academic & Professional Network
 
-- **Leadership Roles:**  
-  None publicly identified.
+**Key Collaborators**  
+Only the co-authors from the 2017 working paper are confirmed: Sergey Kortov, Dmitry Shulgin, and Dmitrii Tolmachev[1]. No other collaborators in computational neuroscience or data science were identified.
 
-- **Patents or Applied Work:**  
-  No patents or technical reports attributed to Yegarmina found.
+**Conference Presentations**  
+No records of conference presentations, workshop participation, or organization were found.
 
----
+**Community Engagement**  
+No blog posts, tutorials, code repositories (GitHub), or other community engagement activities were found.
 
-### 4. Active Inference & Related Research
+**Social Media Presence**  
+No Twitter/X, LinkedIn, or other social media profiles were found under this name that are clearly associated with computational neuroscience or data science research.
 
-- **Direct Connections to Active Inference:**  
-  No publications or projects directly linking Anastassiya Yegarmina to active inference, free energy principle, Bayesian inference, or computational neuroscience were found.
+## Online Presence & Resources
 
-- **Adjacent Fields:**  
-  The 2017 work relates more to technology foresight than to neuroscience or active inference frameworks.
+**Personal Website or Research Page**  
+None found.
 
-- **Methodological Overlap:**  
-  No evident use of computational modeling or simulation frameworks directly connected to active inference.
+**Google Scholar Profile**  
+None found.
 
-- **Potential Applications:**  
-  Given expertise in data science and innovation forecasting, there could be indirect applications in modeling complex systems, but no explicit evidence.
+**ResearchGate Profile**  
+None found.
 
-- **Research Gaps:**  
-  In absence of published work, no identifiable gaps or contributions to active inference research.
+**LinkedIn Profile**  
+None found under this name with relevant academic or industry background.
 
----
+**GitHub or Other Code Repositories**  
+None found.
 
-### 5. Academic & Professional Network
+**Twitter/X or Other Social Media**  
+None found.
 
-- **Key Collaborators:**  
-  Sergey Kortov, Dmitry Shulgin, Dmitrii Tolmachev based on the 2017 paper[1].
+**ORCID Profile**  
+None found.
 
-- **Conference Presentations:**  
-  No records of presentations or talks at active inference or neuroscience conferences.
+**Institutional Profile Page**  
+None found.
 
-- **Workshop Participation:**  
-  None found.
+**Videos, Podcasts, or Interviews**  
+None found.
 
-- **Community Engagement:**  
-  No blogs, tutorials, or code repositories discovered.
+## Future Potential & Opportunities
 
-- **Social Media Related to Research:**  
-  No Twitter/X or other academic social media presence identified.
+**Emerging Research Directions**  
+No recent publications or preprints suggest emerging research directions in computational neuroscience or Active Inference.
 
----
+**Opportunities for Growth in Active Inference Community**  
+There is no public evidence of current engagement with the Active Inference community. Opportunities for future involvement would depend on establishing a visible research track record in relevant areas.
 
-### 6. Online Presence & Resources
+**Potential Impact on the Field**  
+No evidence of impact on computational neuroscience or Active Inference is available.
 
-- **Personal Website or Research Page:**  
-  None found.
+**Strategic Collaboration Opportunities**  
+No evidence of strategic collaborations or networks in the target research areas was found.
 
-- **Google Scholar Profile:**  
-  None available.
+## Summary of Findings
 
-- **ResearchGate Profile:**  
-  None found.
+- **Anastassiya Yegarmina** is listed as a co-author on a single working paper in innovation policy, but no further academic or professional details are publicly available[1].
+- **No evidence** of academic degrees, institutional affiliations, employment history, or professional memberships was found.
+- **No publications, preprints, or presentations** in computational neuroscience, data science, or Active Inference were found.
+- **No online profiles** (Google Scholar, ResearchGate, LinkedIn, ORCID, GitHub, Twitter/X) or institutional pages were identified.
+- **No community engagement** (blogs, tutorials, code) or conference activity was found.
+- **No evidence** of current or past involvement in Active Inference research or related fields beyond the user-provided background.
 
-- **LinkedIn Profile:**  
-  No verified profile discovered.
+**Limitations:** The absence of information does not necessarily indicate the absence of activity—only that no public, verifiable records were found. It is possible that Anastassiya Yegarmina is early in her academic career, uses a different name professionally, or has not yet established a public academic profile.
 
-- **GitHub or Code Repositories:**  
-  No repositories linked to this name.
+## References
 
-- **Twitter/X or Other Social Media:**  
-  No research-related social media profiles identified.
-
-- **ORCID Profile:**  
-  No ORCID iD registered or publicly linked.
-
-- **Institutional Profile:**  
-  None identified.
-
-- **Videos, Podcasts, Interviews:**  
-  No media appearances found.
-
----
-
-### 7. Future Potential & Opportunities
-
-- **Emerging Research Directions:**  
-  Without recent publications or public research statements, it is not possible to identify emerging directions.
-
-- **Opportunities for Growth in Active Inference:**  
-  A shift from industry data science to computational neuroscience PhD preparation suggests potential for future contributions, especially if integrating data science skills into active inference or computational modeling.
-
-- **Potential Impact:**  
-  Currently unestablished due to lack of visible research output in the active inference domain.
-
-- **Strategic Collaboration:**  
-  Collaborations with neuroscience or computational modeling groups could be promising if research focus shifts accordingly.
-
----
-
-### Summary
-
-- The only verifiable trace of Anastassiya Yegarmina is as a co-author on a 2017 paper on **regional foresight and innovation systems** in Russia, with no direct publicly available research output or profiles in computational neuroscience, data science, or active inference domains[1].
-- No academic or professional profiles, publications, or social media presence related to active inference or computational neuroscience could be found.
-- This suggests either the researcher is early in academic career, transitioning from industry with limited public footprint, or using a different professional name online.
-- Further information may require direct inquiry through symposium organizers or personal contact.
-
----
-
-### References
-
-[1] Sergey Kortov, Dmitry Shulgin, Dmitrii Tolmachev, Anastassiya Yegarmina (2017). *Regional Foresight for Bridging National Science, Technology and Innovation with Company Innovation: Experiences from Russia.* HSE Working papers WP BRP 29/STI/2014. [Link](https://ideas.repec.org/a/hig/fsight/v6y2012i1p12-25.html)
+[1] [https://ideas.repec.org/a/hig/fsight/v6y2012i1p12-25.html](https://ideas.repec.org/a/hig/fsight/v6y2012i1p12-25.html)  
+*Note: This is the only source where Anastassiya Yegarmina is mentioned as a co-author; no further details or links to the full text are provided.*

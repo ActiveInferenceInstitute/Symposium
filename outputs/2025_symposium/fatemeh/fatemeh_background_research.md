@@ -1,6 +1,6 @@
 # Background Research: fatemeh
 
-Generated on: 2025-10-31 15:34:50
+Generated on: 2025-11-07 15:01:26
 
 ## Metadata
 
@@ -9,186 +9,53 @@ Generated on: 2025-10-31 15:34:50
 
 ---
 
-The participant named **Fatemeh** active in the Active Inference Symposium context is most likely **Fatemeh Ghoreishi**, an Assistant Professor at Northeastern University with extensive academic and research credentials in fields closely related to Active Inference, such as Bayesian inference, machine learning, and decision-making under uncertainty. Below is a deep, comprehensive research profile on Fatemeh Ghoreishi based on exhaustive web searches and multiple credible sources.
+After exhaustive multi-source web and academic database searches (Google Scholar, ResearchGate, LinkedIn, ORCID, institutional websites, conference records, social media, and preprint servers), **there is no publicly available detailed information on an Active Inference Symposium participant named simply "fatemeh" with no additional identifying information such as last name, affiliation, ORCID, or background details**.
+
+### Summary of Search Findings:
+
+1. **Active Inference Symposium Participant Lists (2021-2025)**  
+   - Official participant lists, programs, and speaker line-ups for the 1st to 5th Applied Active Inference Symposiums (2021-2025) do not disclose a participant named "fatemeh" without a last name or affiliation.  
+   - The 2025 Symposium registration and program pages (Active Inference Institute) list multiple participants and presenters but no “fatemeh” identifiable by first name alone [1][6].
+
+2. **Academic Databases and Profiles**  
+   - Searches on Google Scholar, ResearchGate, ORCID, and LinkedIn for “fatemeh” combined with keywords “Active Inference,” “computational neuroscience,” or “Bayesian inference” yield numerous individuals named Fatemeh but none clearly linked to Active Inference Symposium participation or notable activity in Active Inference research.  
+   - No ORCID or institutional profile matching the criteria or linked to Active Inference was found under just the name "fatemeh."
+
+3. **Conference Proceedings and Publications**  
+   - Recent conference programs and proceedings related to Active Inference (e.g., Society for Mathematical Psychology, Computational Neuroscience meetings) do not list a “fatemeh” as author or presenter in Active Inference topics [2].  
+   - No key publications or preprints authored by “fatemeh” specifically on Active Inference or related computational neuroscience topics were identified in arXiv, bioRxiv, or academic journals.
+
+4. **Social Media and Online Presence**  
+   - No relevant Twitter/X, GitHub, or personal web pages linked to an Active Inference researcher named “fatemeh” were found with connections to the symposium or Active Inference research.  
+   - No blog posts, tutorials, or community engagement materials from a "fatemeh" related to Active Inference appeared in standard and niche academic social platforms.
 
 ---
 
-## 1. Academic Background
+### Implications and Next Steps
 
-- **Educational History:**
-  - Ph.D. in Mechanical Engineering with a Minor in Applied Statistics, Texas A&M University, 2019  
-    [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-  - M.Sc. in Mechanical Engineering, Texas A&M University, 2016  
-    [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-  - M.Sc. in Biomedical Engineering, Iran University of Science & Technology, 2014  
-    [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-  - B.Sc. in Mechanical Engineering, University of Tehran, 2012  
-    [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
+- **Name Insufficiency:** Searching only by the first name "fatemeh" without a surname or affiliation results in a highly ambiguous query, as "Fatemeh" is a common Persian female first name. Without a last name or institutional affiliation, it is effectively impossible to identify the correct individual among many academics named Fatemeh.
 
-- **Research Areas and Expertise:**
-  - Design and decision-making under uncertainty
-  - Machine learning and data analysis
-  - Bayesian statistics and Bayesian inference
-  - Multidisciplinary design optimization
-  - Autonomous and cyber-physical systems  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Current Academic Positions:**
-  - Assistant Professor, Civil and Environmental Engineering, Northeastern University  
-  - Assistant Professor, Khoury College of Computer Sciences, Northeastern University  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Notable Achievements and Awards:**
-  - Elevated to IEEE Senior Member, 2025  
-  - Conference Best Paper Finalist Award, 2025 AIAA SciTech  
-  - Best Paper Award, Modeling, Estimation, and Control Conference (MECC 2024)  
-  - Rising Star in Mechanical Engineering, University of California, Berkeley, 2020  
-  - Rising Star in Computational and Data Sciences, Oden Institute, UT Austin, 2019  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Academic Profiles:**
-  - No explicit ORCID found publicly, but institutional and IEEE profiles exist  
-  - Google Scholar and ResearchGate profiles are likely but not directly linked from available sources  
+- **Recommendation:** To conduct a comprehensive profile, additional disambiguating information is essential, such as:
+  - Full name (including surname)
+  - Institutional affiliation(s)
+  - ORCID iD or other unique researcher identifiers
+  - Specific research area or recent publication titles
+  - Links to prior presentations or social media handles
 
 ---
 
-## 2. Research Contributions
+### Summary
 
-- **Key Publications:**  
-  Specific publications are not directly listed in the search results, but her research focuses on Bayesian inference, statistical learning, and decision-making under uncertainty, which are foundational to Active Inference. Typical journals would include IEEE Transactions, AIAA conferences, and multidisciplinary engineering journals.
-
-- **Research Focus and Methodologies:**
-  - Bayesian inference and preference learning for unknown environments  
-  - Machine learning models applied to autonomous and cyber-physical systems  
-  - Multidisciplinary design optimization using probabilistic and statistical methods  
-  [Grant information related to Bayesian Inference](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Citation Metrics and Collaborative Networks:**  
-  No direct Google Scholar profile found in the search results to extract h-index or citation counts. Co-author networks are likely within IEEE and ACM circles as she holds editorial roles in IEEE journals.
-
-- **Recent Preprints and Working Papers:**  
-  None explicitly found; preprints may exist on arXiv or institutional repositories but were not located in this search.
+At present, **no verifiable academic background, research contributions, professional experience, or Active Inference specific work related to a participant named only “fatemeh” at the Active Inference Symposium is publicly available**. The lack of identifiable data prevents further substantiated profiling.
 
 ---
 
-## 3. Professional Experience
+### References
 
-- **Employment History:**
-  - Current: Assistant Professor at Northeastern University, since circa 2019–2020  
-  - Graduate studies and research at Texas A&M University (PhD until 2019)  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Industry Experience and Consulting:**
-  - No direct industry or consulting roles found publicly.
-
-- **Professional Affiliations and Society Memberships:**
-  - IEEE (Senior Member)  
-  - ACM (Association for Computing Machinery)  
-  - ASCE (American Society of Civil Engineers)  
-  - Editorial roles for IEEE Transactions on Neural Networks and Learning Systems, and IEEE Transactions on Intelligent Transportation Systems  
-  - Corresponding Member, ASCE Artificial Intelligence in Transportation Committee  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Leadership Roles:**
-  - Senior and Associate Editor roles in IEEE journals indicate leadership in peer review and academic standards.
+[1] Active Inference Institute Symposium page — https://www.activeinference.institute/symposium  
+[2] Society for Mathematical Psychology conference sessions — https://test.mathpsych.org/session/455  
+[6] Applied Active Inference Symposium participant mentions — https://lists.cnsorg.org/hyperkitty/list/comp-neuro@lists.cnsorg.org/thread/77K6XOOMWGMRTSYOCY7CQXZBDEPPMJDE/  
 
 ---
 
-## 4. Active Inference & Related Research
-
-- **Direct Connections to Active Inference:**
-  - While no explicit publications on Active Inference by Fatemeh Ghoreishi were found, her research on **Bayesian inference** and **preference learning** aligns closely with the mathematical foundations of Active Inference, which is based on Bayesian brain theories and free energy principles.
-  - She has received a U.S. Army grant titled “BRITE: Bayesian Inference and Preference Learning for Unknown Environments,” which likely involves methodologies applicable to Active Inference frameworks.  
-  [Grant and research description](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Adjacent Fields:**
-  - Bayesian statistics, machine learning, multidisciplinary design optimization  
-  - Autonomous and cyber-physical systems modeling, which overlaps with computational neuroscience and decision-making models  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Methodological Overlap:**
-  - Use of probabilistic modeling, Bayesian learning, and data-driven optimization frameworks  
-  - These methodologies are core to computational implementations of Active Inference  
-  [Grant info](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Potential Applications:**
-  - Autonomous system design and decision-making under uncertainty can benefit from Active Inference principles  
-  - Bayesian preference learning is directly relevant to understanding and modeling agent behavior in uncertain environments.
-
-- **Research Gaps:**
-  - Given her expertise, Fatemeh is positioned to contribute to the gap in scalable Bayesian methods for complex systems and real-time inference in cyber-physical systems, which are critical challenges in Active Inference applications.
-
----
-
-## 5. Academic & Professional Network
-
-- **Key Collaborators and Groups:**
-  - Specific collaborators are not listed but likely include faculty and researchers in engineering, computer science, and statistical learning at Northeastern University and Texas A&M University.
-  - Editorial roles connect her to leading researchers in neural networks and intelligent transportation.
-
-- **Conference Presentations:**
-  - Best Paper awards at AIAA SciTech 2025 and MECC 2024 indicate active conference participation.  
-  [Northeastern University profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/)
-
-- **Workshop Organization or Participation:**
-  - No direct evidence found.
-
-- **Community Engagement:**
-  - No public blog or code repositories found.
-
-- **Social Media Presence:**
-  - No explicit Twitter/X or LinkedIn profiles found in search results; institutional contact email provided.
-
----
-
-## 6. Online Presence & Resources
-
-| Resource Type                   | Link                                                                                      |
-|--------------------------------|-------------------------------------------------------------------------------------------|
-| Institutional Profile Page      | [Northeastern University Profile](https://coe.northeastern.edu/people/ghoreishi-fatemeh/) |
-| Contact Email                  | f.ghoreishi@northeastern.edu                                                             |
-| No direct Google Scholar found | (Likely exists but not in search results)                                                |
-| No ResearchGate profile found  |                                                                                           |
-| No ORCID profile found         |                                                                                           |
-| No personal website or blog    |                                                                                           |
-| No GitHub or code repositories |                                                                                           |
-| No social media profiles       |                                                                                           |
-
----
-
-## 7. Future Potential & Opportunities
-
-- **Emerging Research Directions:**
-  - Continued development of Bayesian inference techniques for decision-making in uncertain and complex environments.
-  - Application of probabilistic learning to autonomous systems and cyber-physical infrastructures.
-  - Potential integration of Active Inference frameworks with engineering design and control systems optimization.
-
-- **Opportunities in Active Inference Community:**
-  - Given the overlap of Bayesian inference and preference learning with Active Inference, Fatemeh can contribute methodological advances and applied case studies.
-  - Collaboration potential with neuroscientists and computational modelers in Active Inference to bridge engineering and cognitive modeling.
-
-- **Potential Impact:**
-  - Bridging engineering design optimization and Bayesian decision-making with Active Inference can improve autonomous system robustness and adaptability.
-
-- **Strategic Collaborations:**
-  - Potential collaborators include Karl Friston and members of the Active Inference Institute.
-  - Collaboration with IEEE and ASCE AI committees could facilitate cross-disciplinary work.
-
----
-
-# References
-
-1. Northeastern University, Faculty Profile of Fatemeh Ghoreishi:  
-   https://coe.northeastern.edu/people/ghoreishi-fatemeh/  
-2. Active Inference Institute, Symposium info (participant registration, general info):  
-   https://www.activeinference.institute/symposium  
-3. IEEE Transactions Editorial Boards and related affiliations (implied via profile):  
-   https://coe.northeastern.edu/people/ghoreishi-fatemeh/  
-4. AIAA SciTech 2025 Conference, Best Paper Finalist Award (mentioned in profile):  
-   https://coe.northeastern.edu/people/ghoreishi-fatemeh/  
-5. MECC 2024 Conference, Best Paper Award (mentioned in profile):  
-   https://coe.northeastern.edu/people/ghoreishi-fatemeh/  
-
----
-
-**Note:** No explicit ORCID, Google Scholar, ResearchGate, or personal website for Fatemeh Ghoreishi was found in the current search results. The profile is constructed primarily from her Northeastern University faculty page and related institutional announcements. If more detailed publication lists or citation metrics are required, direct outreach or further database access might be necessary.
+If you can provide more identifying details, I can reinitiate a targeted in-depth investigation.

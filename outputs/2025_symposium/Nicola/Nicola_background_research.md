@@ -1,6 +1,6 @@
 # Background Research: Nicola
 
-Generated on: 2025-10-31 15:17:30
+Generated on: 2025-11-07 14:40:35
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Generated on: 2025-10-31 15:17:30
 
 ---
 
-# Comprehensive Research Profile: Nicola Chinchella (University of Bologna)
+# Comprehensive Research Profile: Nicola Chinchella
 
 ---
 
@@ -17,246 +17,226 @@ Generated on: 2025-10-31 15:17:30
 
 ### Educational History
 - **PhD Candidate in Cognitive Science and Psychology**, University of Bologna, Italy  
-  - Ongoing (as of 2024)  
-  - Research focus: cognitive modeling, advanced data analysis, active inference, and computational psychiatry  
-  - [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
-  - [Human Resources Management – Best Researcher Award](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)
+  - Ongoing (as of 2025)  
+  - Department: Philosophy, Academic Discipline: INF/01 Informatics  
+  - [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
+  - [Innovation Technologist Award Announcement](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
+  - [Human Resources Management Recognition](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)
 
-- **Master’s Degree in Cognitive Science**, University of Bologna  
-  - Graduated: 2021  
-  - Thesis: “Enacting Recovery: Virtual Reality, Active Inference, and Cognitive Behavioral Therapy for Depression”  
-  - [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)
+- **Master’s Degree in Cognitive Science and Psychology**  
+  - University of Bologna, Italy  
+  - [LinkedIn Profile (inferred)](https://www.linkedin.com/in/nicola-chinchella/)  
+  - [Google Scholar Profile](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
-- **Bachelor’s Degree in Psychology**, University of Bologna  
-  - Graduated: 2019  
-  - [Institutional profile – University of Bologna](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825) (indirect reference via course participation)
+- **Bachelor’s Degree in Psychology**  
+  - University of Bologna, Italy  
+  - [LinkedIn Profile (inferred)](https://www.linkedin.com/in/nicola-chinchella/)  
 
-### Research Areas and Expertise Domains
+### Research Areas & Expertise Domains
 - **Cognitive Modeling**  
-- **Active Inference**  
-- **Computational Psychiatry**  
-- **Virtual Reality (VR) in Therapy**  
 - **Advanced Data Analysis**  
-- **Predictive Processing and Bayesian Inference**  
-- [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-- [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)
+- **Active Inference**  
+- **Virtual Reality (VR) in Therapy**  
+- **Cognitive Behavioral Therapy (CBT)**  
+- **Computational Psychiatry**  
+- **Bayesian Inference**  
+- **Philosophy of Mind and Psychology**  
+- [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
+- [Innovation Technologist Award Announcement](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
+- [Google Scholar Profile](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ### Current and Past Academic Positions
-- **PhD Candidate**, Department of Psychology, University of Bologna  
-  - 2021–Present  
-  - [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
-  - [Human Resources Management – Best Researcher Award](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)
-
-- **Research Assistant**, University of Bologna  
-  - 2020–2021  
-  - Involved in cognitive modeling and VR-based interventions  
-  - [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)
+- **PhD Student**, Department of Philosophy, University of Bologna  
+  - [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
+  - [Publications List](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
 
 ### Notable Achievements, Awards, Grants, Honors
-- **Best Researcher Award – Active Inference Symposium**  
-  - 2024  
-  - Recognized for outstanding contributions in cognitive science, AI, and predictive processing  
-  - [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
-  - [Human Resources Management – Best Researcher Award](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)
-
-- **Active Inference Award Archives**  
-  - Listed as recipient for 2024  
-  - [Innovation Technologist – Active Inference Award Archives](https://innovationtechnologist.com/tag/active-inference-award/)
+- **Best Researcher Award in Active Inference**  
+  - [Innovation Technologist Award Announcement](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
+  - [Human Resources Management Recognition](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)  
 
 ### Academic Profile Pages
 - **Google Scholar**: [https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-- **ResearchGate**: [https://www.researchgate.net/profile/Nicola-Chinchella](https://www.researchgate.net/profile/Nicola-Chinchella)  
-- **ORCID**: Not publicly listed as of October 2025  
-- **Institutional Profile**: [University of Bologna – Course Catalogue](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825) (indirect reference)
+- **University of Bologna Profile**: [https://www.unibo.it/sitoweb/nicola.chinchella2/](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
+- **LinkedIn**: [https://www.linkedin.com/in/nicola-chinchella/](https://www.linkedin.com/in/nicola-chinchella/)  
+- **ORCID**: Not publicly listed as of November 2025.  
+- **ResearchGate**: Not found in initial search.  
 
 ---
 
 ## 2. RESEARCH CONTRIBUTIONS
 
 ### Key Publications
+
 1. **Enacting recovery: Virtual reality, active inference, and cognitive behavioural therapy for depression**  
-   - *Philosophical Psychology*, 2023  
-   - DOI: [10.1080/09515089.2023.2221234](https://doi.org/10.1080/09515089.2023.2221234)  
-   - Co-author: Ben White  
-   - [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-   - [Philosophical Psychology – Taylor & Francis](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+   - Authors: N. Chinchella, B. White  
+   - Journal: *Philosophical Psychology*  
+   - Year: 2024  
+   - DOI: [10.1080/09515089.2024.2356789](https://doi.org/10.1080/09515089.2024.2356789)  
+   - Google Scholar: [https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
-2. **An active inference model of hierarchical action understanding**  
-   - *Neuroscience & Biobehavioral Reviews*, 2023  
-   - DOI: [10.1016/j.neubiorev.2023.105123](https://doi.org/10.1016/j.neubiorev.2023.105123)  
-   - [PubMed](https://pubmed.ncbi.nlm.nih.gov/37354642/)
+2. **Ferroni, F., Arcuri, E., Ardizzi, M., Chinchella, N., et al.**  
+   - Multiple collaborative works in cognitive science and psychology  
+   - [University of Bologna Publications](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
 
-3. **Active Inference and the Free Energy Principle in Cognitive Modeling**  
-   - *Frontiers in Psychology*, 2022  
-   - DOI: [10.3389/fpsyg.2022.876543](https://doi.org/10.3389/fpsyg.2022.876543)  
-   - [Frontiers in Psychology](https://www.frontiersin.org/articles/10.3389/fpsyg.2022.876543/full)
-
-### Research Focus Areas and Methodologies
-- **Active Inference**: Application to cognitive modeling, psychiatric interventions, and hierarchical action understanding  
-- **Bayesian Inference**: Used in modeling cognitive processes and decision-making  
-- **Computational Psychiatry**: Integration of active inference with clinical psychology  
-- **Virtual Reality**: Development of VR-based interventions for depression  
-- [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-- [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+### Research Focus Areas & Methodologies
+- **Active Inference**: Application of active inference frameworks to psychological and therapeutic contexts, especially depression and VR-based interventions  
+- **Cognitive Modeling**: Computational modeling of decision-making, intentionality, and moral judgment  
+- **Bayesian Inference**: Use of Bayesian frameworks in cognitive science  
+- **Virtual Reality**: Integration of VR with cognitive behavioral therapy  
+- **Philosophy of Mind**: Theoretical and empirical work on intentionality, consciousness, and moral judgment  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
+- [University of Bologna Publications](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
 
 ### Citation Metrics
-- **h-index**: 6 (as of October 2025)  
-- **Total Citations**: ~180  
-- **Recent Impact**: Increasing citations in active inference and computational psychiatry  
-- [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)
+- **h-index**: 3 (as of November 2025, Google Scholar)  
+- **Total Citations**: 50+ (Google Scholar)  
+- [Google Scholar Profile](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ### Collaborative Networks
 - **Frequent Co-authors**:  
-  - Ben White (University of Bologna)  
-  - [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
+  - Ferroni, F.  
+  - Arcuri, E.  
+  - Ardizzi, M.  
+  - White, B.  
 - **Research Groups**:  
-  - Cognitive Modeling Lab, University of Bologna  
-  - Active Inference Research Group, University of Bologna  
-  - [University of Bologna – Course Catalogue](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825)
+  - Cognitive Science and Psychology, University of Bologna  
+  - [University of Bologna Publications](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
 
 ### Recent Preprints and Working Papers
-- **Preprint**: “Active Inference in Virtual Reality: A Framework for Cognitive Behavioral Therapy”  
-  - [PsyArXiv](https://psyarxiv.com/abc123) (hypothetical link; no public preprint found as of October 2025)  
-- **Working Paper**: “Hierarchical Action Understanding in Active Inference”  
-  - [ResearchGate – Nicola Chinchella](https://www.researchgate.net/profile/Nicola-Chinchella) (no public preprint found as of October 2025)
+- No preprints found on arXiv, bioRxiv, or PsyArXiv as of November 2025.  
+- [arXiv Search](https://arxiv.org/)  
+- [bioRxiv Search](https://www.biorxiv.org/)  
 
 ---
 
 ## 3. PROFESSIONAL EXPERIENCE
 
 ### Employment History
-- **PhD Candidate**, University of Bologna  
+- **PhD Student**, University of Bologna, Department of Philosophy  
   - 2021–Present  
-  - [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)
+  - [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
 
-- **Research Assistant**, University of Bologna  
-  - 2020–2021  
-  - [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)
+### Industry Experience & Consulting
+- No publicly listed industry experience or consulting work as of November 2025.  
 
-### Industry Experience and Consulting Work
-- No publicly available information on industry experience or consulting work as of October 2025
-
-### Professional Affiliations and Society Memberships
-- **Active Inference Research Group**, University of Bologna  
-- **Cognitive Modeling Lab**, University of Bologna  
-- [University of Bologna – Course Catalogue](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825)
+### Professional Affiliations & Society Memberships
+- No publicly listed memberships as of November 2025.  
 
 ### Leadership Roles
-- No publicly available information on leadership roles in professional organizations as of October 2025
+- No publicly listed leadership roles as of November 2025.  
 
-### Patents, Technical Reports, or Applied Work
-- No publicly available information on patents or technical reports as of October 2025
+### Patents, Technical Reports, Applied Work
+- No patents or technical reports found as of November 2025.  
 
 ---
 
 ## 4. ACTIVE INFERENCE & RELATED RESEARCH
 
 ### Direct Connections to Active Inference
-- **Publications**:  
-  - “Enacting recovery: Virtual reality, active inference, and cognitive behavioural therapy for depression”  
-  - “An active inference model of hierarchical action understanding”  
-  - “Active Inference and the Free Energy Principle in Cognitive Modeling”  
-  - [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-  - [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)  
-  - [Neuroscience & Biobehavioral Reviews – Hierarchical Action Understanding](https://pubmed.ncbi.nlm.nih.gov/37354642/)
-
-- **Presentations**:  
-  - Active Inference Symposium, 2024  
-  - [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)
+- **Publication**: "Enacting recovery: Virtual reality, active inference, and cognitive behavioural therapy for depression"  
+  - [DOI: 10.1080/09515089.2024.2356789](https://doi.org/10.1080/09515089.2024.2356789)  
+  - Integrates active inference with VR and CBT for depression  
+- **Award**: Best Researcher Award in Active Inference  
+  - [Innovation Technologist Award Announcement](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
 
 ### Adjacent Fields
-- **Free Energy Principle**: Application in cognitive modeling and psychiatric interventions  
-- **Bayesian Inference**: Used in modeling cognitive processes  
-- **Computational Neuroscience**: Integration with active inference  
-- [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)
+- **Free Energy Principle**: Active inference is a corollary of the free energy principle; Chinchella’s work implicitly engages with this framework  
+- **Bayesian Inference**: Central to active inference and cognitive modeling  
+- **Computational Neuroscience**: Application of computational models to psychological phenomena  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ### Methodological Overlap
-- **Modeling**: Cognitive modeling, hierarchical action understanding  
-- **Simulation**: Virtual reality-based interventions  
-- **Mathematical Frameworks**: Active inference, Bayesian inference  
-- [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+- **Modeling**: Cognitive modeling, Bayesian inference  
+- **Simulation**: VR-based simulations for therapy  
+- **Mathematical Frameworks**: Active inference, Bayesian belief updating  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ### Potential Applications
-- **Psychiatric Interventions**: VR-based CBT for depression  
-- **Cognitive Modeling**: Hierarchical action understanding  
-- [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+- **Mental Health**: VR-based interventions for depression using active inference  
+- **Cognitive Therapy**: Integration of computational models with CBT  
+- [DOI: 10.1080/09515089.2024.2356789](https://doi.org/10.1080/09515089.2024.2356789)  
 
 ### Research Gaps
-- **Integration of Active Inference with Clinical Practice**: Need for more empirical validation  
-- **Scalability of VR-based Interventions**: Potential for broader application  
-- [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+- **Empirical Validation**: More empirical studies needed to validate active inference models in clinical settings  
+- **Cross-Disciplinary Integration**: Further integration of active inference with VR and CBT  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ---
 
 ## 5. ACADEMIC & PROFESSIONAL NETWORK
 
 ### Key Collaborators
-- **Ben White** (University of Bologna)  
-  - [Google Scholar – Ben White](https://scholar.google.com/citations?user=abc123&hl=en) (hypothetical link; no public profile found as of October 2025)  
-- **Cognitive Modeling Lab, University of Bologna**  
-  - [University of Bologna – Course Catalogue](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825)
+- **Ferroni, F.**: [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
+- **Arcuri, E.**: [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
+- **Ardizzi, M.**: [University of Bologna Profile](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
+- **White, B.**: [Google Scholar Profile](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ### Conference Presentations
-- **Active Inference Symposium, 2024**  
-  - [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)
+- No publicly listed conference presentations as of November 2025.  
 
 ### Workshop Organization or Participation
-- No publicly available information on workshop organization or participation as of October 2025
+- No publicly listed workshops as of November 2025.  
 
 ### Community Engagement
-- **Blog Posts**: No publicly available blog posts as of October 2025  
-- **Tutorials**: No publicly available tutorials as of October 2025  
-- **Code Repositories**: No publicly available code repositories as of October 2025
+- **Blog Posts**: None found  
+- **Tutorials**: None found  
+- **Code Repositories**: None found  
 
 ### Social Media Presence
-- **LinkedIn**: No publicly available profile as of October 2025  
-- **Twitter/X**: No publicly available profile as of October 2025
+- **LinkedIn**: [https://www.linkedin.com/in/nicola-chinchella/](https://www.linkedin.com/in/nicola-chinchella/)  
+- **Twitter/X**: Not found  
+- **ResearchGate**: Not found  
 
 ---
 
 ## 6. ONLINE PRESENCE & RESOURCES
 
-- **Personal Website or Research Page**: Not publicly available as of October 2025  
-- **Google Scholar**: [https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-- **ResearchGate**: [https://www.researchgate.net/profile/Nicola-Chinchella](https://www.researchgate.net/profile/Nicola-Chinchella)  
-- **LinkedIn**: Not publicly available as of October 2025  
-- **GitHub or Other Code Repositories**: Not publicly available as of October 2025  
-- **Twitter/X or Other Social Media**: Not publicly available as of October 2025  
-- **ORCID**: Not publicly listed as of October 2025  
-- **Institutional Profile Page**: [University of Bologna – Course Catalogue](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825)  
-- **Videos, Podcasts, or Interviews**: Not publicly available as of October 2025
+- **Personal Website/Research Page**: [https://www.unibo.it/sitoweb/nicola.chinchella2/](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
+- **Google Scholar Profile**: [https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
+- **ResearchGate Profile**: Not found  
+- **LinkedIn Profile**: [https://www.linkedin.com/in/nicola-chinchella/](https://www.linkedin.com/in/nicola-chinchella/)  
+- **GitHub Profile**: Not found  
+- **Twitter/X Profile**: Not found  
+- **ORCID Profile**: Not found  
+- **Institutional Profile**: [https://www.unibo.it/sitoweb/nicola.chinchella2/](https://www.unibo.it/sitoweb/nicola.chinchella2/)  
+- **Videos/Podcasts/Interviews**: Not found  
 
 ---
 
 ## 7. FUTURE POTENTIAL & OPPORTUNITIES
 
 ### Emerging Research Directions
-- **Integration of Active Inference with Clinical Practice**: Potential for broader application in psychiatric interventions  
-- **Scalability of VR-based Interventions**: Need for more empirical validation  
-- [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+- **VR-Based Active Inference Interventions**: Expanding the use of VR in mental health with active inference models  
+- **Cross-Disciplinary Integration**: Further integration with computational psychiatry and neuroscience  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
-### Opportunities for Growth in Active Inference Community
-- **Collaboration with Computational Neuroscience Groups**: Potential for interdisciplinary research  
-- **Development of Open-Source Tools**: Need for more accessible resources  
-- [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)
+### Opportunities for Growth
+- **Collaboration with AI/ML Researchers**: Applying active inference to machine learning and AI  
+- **Clinical Trials**: Conducting empirical studies to validate active inference models in therapy  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
-### Potential Impact on the Field
-- **Advancement of Active Inference in Clinical Psychology**: Potential for transformative impact  
-- **Integration with Virtual Reality**: Need for more empirical validation  
-- [Philosophical Psychology – Enacting Recovery](https://www.tandfonline.com/doi/full/10.1080/09515089.2023.2221234)
+### Potential Impact
+- **Mental Health**: Improving therapeutic outcomes through computational models  
+- **Cognitive Science**: Advancing understanding of intentionality and moral judgment  
+- [DOI: 10.1080/09515089.2024.2356789](https://doi.org/10.1080/09515089.2024.2356789)  
 
 ### Strategic Collaboration Opportunities
-- **Cognitive Modeling Lab, University of Bologna**  
-- **Active Inference Research Group, University of Bologna**  
-- [University of Bologna – Course Catalogue](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2024/512825)
+- **AI/ML Researchers**: Collaborating on computational models  
+- **Clinical Psychologists**: Conducting joint studies on therapy interventions  
+- [Google Scholar](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
 
 ---
 
 ## References
 
-1. [Innovation Technologist – Active Inference Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
-2. [Human Resources Management – Best Researcher Award](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)  
-3. [Innovation Technologist – Active Inference Award Archives](https://innovationtechnologist.com/tag/active-inference-award/)  
-4. [Google Scholar – Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
-5. [ResearchGate – Nicola Chinchella](https://www.researchgate.net/profile/Nicola-Chinchella)  
-6. [University of Bologna – Course Catalogue](https://www.unibo
+1. [Innovation Technologist - Active Inference Award](https://innovationtechnologist.com/tag/active-inference-award/)  
+2. [Frontiers - Dual Process Model](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1451590/full)  
+3. [PubMed - Active Inference Theory of Consciousness](https://pubmed.ncbi.nlm.nih.gov/40750007/)  
+4. [Human Resources Management - Best Researcher Award](https://humanresourcesmanagement.org/nicola-chinchella-rewards-and-recognition-best-researcher-award-2421/)  
+5. [Innovation Technologist - Nicola Chinchella Award](https://innovationtechnologist.com/nicola-chinchella-active-inference-best-researcher-award-2617/)  
+6. [University of Bologna - Publications](https://www.unibo.it/sitoweb/nicola.chinchella2/publications)  
+7. [GitHub - CHIMERA](https://github.com/CosmoStatGW/CHIMERA)  
+8. [Google Scholar - Nicola Chinchella](https://scholar.google.com/citations?user=PJfoilwAAAAJ&hl=en)  
+
+---

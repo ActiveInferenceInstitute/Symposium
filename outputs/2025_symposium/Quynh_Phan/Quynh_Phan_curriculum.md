@@ -1,6 +1,6 @@
 # Curriculum: Quynh, Phan
 
-Generated on: 2025-10-31 15:41:25
+Generated on: 2025-11-07 15:08:56
 
 ## Metadata
 
@@ -9,38 +9,39 @@ Generated on: 2025-10-31 15:41:25
 
 ---
 
-I notice that the participant information sections are currently empty. To create a truly personalized and effective curriculum for Quynh Phan, I'll need some key information about their:
+I notice that key background information about Quynh Phan is missing from the prompt. To create a truly personalized curriculum, I'll need details about:
 
-1. **Background:**
-- Academic/professional background
-- Current role/field
-- Prior experience with related concepts (e.g., Bayesian inference, machine learning, cognitive science)
+1. Their academic/professional background
+2. Current understanding and application of Active Inference
+3. Specific learning needs and goals
+4. Challenges they're facing
+5. What practical and theoretical value they're seeking
 
-2. **Current Active Inference Application:**
-- How they're currently using or planning to use Active Inference
-- Specific domain of application
-
-3. **Learning Needs:**
-- Specific aspects of Active Inference they want to master
-- Particular skills they want to develop
-
-4. **Challenges:**
-- Current obstacles in understanding or applying Active Inference
-- Time constraints or resource limitations
-
-5. **Pragmatic Value Sought:**
-- Practical outcomes they hope to achieve
-- Specific problems they want to solve
-
-6. **Epistemic Value Sought:**
-- Theoretical understanding they wish to develop
-- Research or academic goals
-
-Could you provide these details about Quynh Phan? This information will allow me to design a curriculum that:
+Would you be able to provide these details? This would help me design a curriculum that:
 - Builds on their existing knowledge
 - Addresses their specific challenges
 - Aligns with their learning style
 - Meets their practical needs
 - Achieves their desired outcomes
 
-Once you share these details, I can create a highly personalized curriculum following the structured format you've outlined.
+For now, I can outline a flexible framework that we can customize once we have more information:
+
+**Initial Assessment Strategy:**
+- Survey of mathematical background
+- Evaluation of programming skills
+- Assessment of domain knowledge
+- Understanding of current AI/ML concepts
+
+**Base Structure:**
+1. Foundations Module
+2. Technical Skills Development
+3. Domain-Specific Applications
+4. Practical Implementation
+5. Advanced Topics
+
+Would you like to provide the additional information about Quynh so I can create a fully personalized curriculum? This would allow me to:
+- Target specific knowledge gaps
+- Choose appropriate examples
+- Set realistic timelines
+- Select relevant tools and resources
+- Design suitable projects

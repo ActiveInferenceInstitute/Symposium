@@ -58,9 +58,25 @@ Analysis results are saved as both Markdown and JSON files:
 - Collaboration recommendations
 - Development roadmaps
 
+## Error Handling
+
+### Payment Errors
+When a `PaymentRequiredError` is raised (402 payment required):
+- Processing stops immediately
+- Clear error message displayed with provider information
+- Partial results saved for completed participants
+- User guidance provided for adding credits
+
+### Other Errors
+For non-payment errors:
+- Individual participant errors are logged
+- Processing continues with remaining participants
+- Partial results are reported
+- Graceful degradation maintains system stability
+
 ## Integration
 
 This module integrates with:
-- `symposium.core` - API clients and configuration
+- `symposium.core` - API clients and configuration (including PaymentRequiredError)
 - `symposium.io` - File reading and writing
 - `symposium.generation` - Profile and project generation

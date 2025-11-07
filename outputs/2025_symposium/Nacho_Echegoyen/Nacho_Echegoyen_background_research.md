@@ -1,6 +1,6 @@
 # Background Research: Nacho Echegoyen
 
-Generated on: 2025-10-31 15:32:45
+Generated on: 2025-11-07 14:59:28
 
 ## Metadata
 
@@ -9,175 +9,203 @@ Generated on: 2025-10-31 15:32:45
 
 ---
 
-Below is a **deep, comprehensive research profile** on **Nacho Echegoyen**, an Active Inference Symposium participant, based on exhaustive web and academic database searches.
+## Academic Background
 
----
+**Degrees and Institutions**
+- **Bachelor’s in Psychology**, Universidad Pontificia Comillas, graduated 2015[1].
+- **Master’s in Methodologies of Behavioral and Health Sciences**, jointly offered by Universidad Autónoma de Madrid, Universidad Complutense de Madrid, and UNED, 2016–2017[1].
+- **PhD in Biomedical Engineering** (with international mention and *Cum Laude*), Universidad Politécnica de Madrid, 2021; specialized in medical imaging and electrophysiological data analysis, with a focus on clinical network neuroscience applied to Alzheimer’s disease[1].
+- **Research stays**: No explicit information found on international research stays or additional degrees.
 
-### 1. ACADEMIC BACKGROUND
+**Research Areas and Expertise**
+- **Primary expertise**: Clinical neuroscience, complex systems, network neuroscience, time series analysis, frequency decomposition, imaging techniques, and statistical methods for brain data[1][2].
+- **Specific domains**: Study of brain networks in Alzheimer’s disease, schizophrenia, and adolescent development; mathematical properties of time series in healthy and clinical populations[1][2].
+- **Methodological focus**: Multilayer, frequency-based functional network analysis; nonlinear dynamics; machine learning applications in neuroscience; statistical physics approaches to brain dynamics[2].
+- **Teaching**: Memory, Attention and Perception, Thinking and Language, Human Learning and Conditioning, Research Practices; Coordinator of the Psychology Laboratory at Universidad Pontificia Comillas[1].
 
-- **Full Name:** Ignacio (Nacho) Echegoyen Blanco  
-- **Education:**  
-  - **Undergraduate:** Psychology degree from Universidad Pontificia Comillas (Comillas Pontifical University), Madrid, Spain.  
-  - **PhD:** Enrolled in the PhD program in Biomedical Engineering at Technical University of Madrid (UPM), supported by a Fundación Tatiana Pérez neuroscience fellowship and a Spanish Government FPU grant. His PhD research was conducted in collaboration with King Juan Carlos University under Prof. Javier Buldú at the Laboratory of Biological Networks, Center for Biomedical Technology.  
-  - **Self-description:** Psychologist by training, with interdisciplinary training in statistics, time series analysis, frequency decomposition, and biomedical imaging methods to analyze brain activity from a complex systems perspective [4].
+**Current and Past Academic Positions**
+- **Assistant Collaborator**, Faculty of Human and Social Sciences, Department of Psychology, Universidad Pontificia Comillas (since 2020)[1].
+- **Coordinator**, Psychology Laboratory, Universidad Pontificia Comillas[1].
+- **PhD student**, Biomedical Engineering, Universidad Politécnica de Madrid (until 2021)[1][2].
+- **Research training**: Laboratory of Biological Networks, Center for Biomedical Technology, under Prof. Javier Buldú[2].
 
-- **Research Areas and Expertise:**  
-  - Complex systems applied to brain function  
-  - Functional brain networks analysis, multilayer networks  
-  - Nonlinear dynamics and time series analysis of neural data  
-  - Neuromorphic computing and whole brain dynamics simulations  
-  - Applications to neurodegenerative diseases (Alzheimer’s), schizophrenia, adolescent brain development  
-  - Statistical physics, machine learning, and visual perception in neuroscience contexts [4].
+**Notable Achievements, Awards, Grants**
+- **FPU Grant**, Spanish Government (competitive PhD funding)[2].
+- **Fundación Tatiana Pérez Neuroscience Fellowship**[2].
+- **PhD with international mention and *Cum Laude***[1].
+- No evidence found of additional major awards, prizes, or named professorships.
 
-- **Current Academic Position:**  
-  - Affiliated with Universidad Pontificia Comillas and the Grupo Interdisciplinar de Sistemas Complejos (GISC), an interdisciplinary group focused on complex systems research.  
-  - PhD candidate or early career researcher in biomedical engineering/neuroscience (based on timeline and grant info) [4].
+**Academic Profile Pages**
+- **ORCID**: [0000-0001-8016-7836](https://orcid.org/0000-0001-8016-7836)[5].
+- **Google Scholar**: [Ignacio Echegoyen](https://scholar.google.es/citations?user=bRqPBZgAAAAJ&hl=es) (421 citations, h-index 7 as of November 2025)[3].
+- **Institutional Profile**: [Universidad Pontificia Comillas Faculty Page](https://web.comillas.edu/profesor/iechegoyen)[1].
+- **Personal Website**: [nachoenblanco.github.io](https://nachoenblanco.github.io)[2].
+- **ResearchGate**: Not found (no active profile under this name).
+- **LinkedIn**: Not found (no public profile under “Nacho Echegoyen” or “Ignacio Echegoyen Blanco” with matching credentials).
+- **GitHub**: Not found (no public repository under this name).
+- **Twitter/X**: Not found (no public account under this name).
+- **Other Social Media**: Not found.
 
-- **Notable Awards and Grants:**  
-  - Spanish Government FPU (Formación de Profesorado Universitario) grant  
-  - Fundación Tatiana Pérez neuroscience fellowship  
-  - These awards supported his PhD studies and research activities [4].
+## Research Contributions
 
-- **Academic Profile Pages:**  
-  - Personal academic website: https://nachoenblanco.github.io [4]  
-  - ORCID: https://orcid.org/0000-0001-8016-7836 (linked to his research outputs and affiliations)  
-  - No widely visible Google Scholar or ResearchGate profile publicly linked, but personal webpage suggests active publication and research presence.
+**Key Publications** (selected; see Google Scholar for full list[3])
+- **From single layer to multilayer networks in mild cognitive impairment and Alzheimer’s disease**  
+  I Echegoyen, D López-Sanz, F Maestú, JM Buldú  
+  *Journal of Physics: Complexity* 2(4), 045020 (2021)  
+  DOI: [10.1088/2632-072X/ac3e82](https://doi.org/10.1088/2632-072X/ac3e82)[3].
+- **Altered Modularity and Disproportional Integration in Functional Networks are Markers of Abnormal Brain Organization in Schizophrenia**  
+  M Cinelli, I Echegoyen, M Oliveira, S Orellana, T Gili  
+  *arXiv preprint arXiv:1805.04329* (2018)  
+  [arXiv:1805.04329](https://arxiv.org/abs/1805.04329)[3].
+- **Asymmetries in football: The pass—goal paradox**  
+  DR Antequera, D Garrido, I Echegoyen, R López del Campo, ...  
+  *Symmetry* 12(6), 1052 (2020)  
+  DOI: [10.3390/sym12061052](https://doi.org/10.3390/sym12061052)[3].
+- **Self-forgiveness, self-acceptance or intrapersonal restoration? Open issues in the psychology of forgiveness**  
+  M Prieto Ursúa, I Echegoyen  
+  (2015, no journal or DOI found)[3].
 
----
+**Research Focus and Methodologies**
+- **Core focus**: Network neuroscience, complex systems, clinical applications (Alzheimer’s, schizophrenia), mathematical modeling of brain dynamics[1][2][3].
+- **Methodologies**: Multilayer network analysis, time-frequency decomposition, machine learning, statistical physics, nonlinear dynamics, signal processing[1][2].
+- **Applications**: Identification of network biomarkers for neurological and psychiatric disorders; mathematical characterization of brain signal complexity[1][2][3].
 
-### 2. RESEARCH CONTRIBUTIONS
+**Citation Metrics**
+- **Google Scholar**: 421 citations, h-index 7 (as of November 2025)[3].
+- **Recent impact**: Steady publication rate in Q1/Q2 journals and arXiv preprints; citations growing in network neuroscience and clinical applications[3].
 
-- **Key Publications:**  
-  Specific journal articles by Nacho Echegoyen are not fully detailed in the search results, but his research focuses on applying complex systems methods to brain network analysis and neuro-imaging data. His thesis works with frequency-based multilayer functional networks, analyzing experimental conditions such as Alzheimer’s and schizophrenia [4].
+**Collaborative Networks**
+- **Frequent co-authors**: David López-Sanz, Fernando Maestú, Javier M. Buldú, Manuel Prieto Ursúa, María Belén Marina Gras[3][5].
+- **Research groups**: GISC (Grupo Interdisciplinar de Sistemas Complejos), Laboratory of Biological Networks (Center for Biomedical Technology), Universidad Pontificia Comillas Psychology Department[1][2].
+- **International collaboration**: Evidence of conference participation in Slovenia, Mexico, Austria; no evidence of long-term international co-authorship[2].
 
-- **Research Focus and Methodologies:**  
-  - Use of multilayer network models for brain functional connectivity  
-  - Time series analysis and frequency decomposition of neural signals  
-  - Modeling nonlinear, complex interactions in brain systems  
-  - Application of statistical physics and machine learning to brain data  
-  - Simulation of whole-brain dynamics and neuromorphic computing [4].
+**Recent Preprints and Working Papers**
+- **arXiv**: One preprint on schizophrenia (2018)[3].
+- **No recent preprints** (2023–2025) found on arXiv, bioRxiv, or OSF under this name.
 
-- **Citation Metrics:**  
-  - No direct Google Scholar profile found in search results to provide h-index or citation count. His work appears to be emerging and focused within specialized complex systems and neuroscience communities.
+## Professional Experience
 
-- **Collaborative Networks:**  
-  - Close collaboration with Prof. Javier Buldú (King Juan Carlos University) and the Laboratory of Biological Networks  
-  - Affiliated with GISC, which includes interdisciplinary researchers in complex systems from multiple institutions [4].
+**Complete Employment History**
+- **Assistant Collaborator/Professor**, Universidad Pontificia Comillas, Department of Psychology (since 2020)[1].
+- **Coordinator**, Psychology Laboratory, Universidad Pontificia Comillas (current)[1].
+- **PhD Researcher**, Universidad Politécnica de Madrid (until 2021)[1][2].
+- **Industry/Consulting**: No evidence found of industry positions, consulting work, or applied projects outside academia.
 
-- **Recent Preprints or Working Papers:**  
-  - No arXiv or bioRxiv preprints explicitly linked to Nacho Echegoyen in search results. His work might be published or under review in specialized complex systems or neuroscience venues.
+**Professional Affiliations and Society Memberships**
+- **GISC (Grupo Interdisciplinar de Sistemas Complejos)**: Implied by affiliation, but no explicit membership page found.
+- **No evidence** of membership in major international societies (e.g., OHBM, SfN, CNS).
 
----
+**Leadership Roles**
+- **Laboratory Coordinator**, Universidad Pontificia Comillas[1].
+- **No evidence** of leadership in national or international professional organizations.
 
-### 3. PROFESSIONAL EXPERIENCE
+**Patents, Technical Reports, Applied Work**
+- **No patents**, technical reports, or applied industry work found.
 
-- **Employment History:**  
-  - Current: Researcher at Universidad Pontificia Comillas and GISC  
-  - PhD student/researcher at Technical University of Madrid (Biomedical Engineering program)  
-  - Collaborator at King Juan Carlos University’s Laboratory of Biological Networks  
-  - No detailed LinkedIn profile found in search results to confirm exact dates or prior positions [4].
+## Active Inference & Related Research
 
-- **Industry or Consulting:**  
-  - No evidence found for industry experience or consulting roles.
+**Direct Connections to Active Inference**
+- **No publications**, preprints, or conference presentations explicitly on Active Inference, Free Energy Principle, or Bayesian brain theories found in available databases[3].
+- **No evidence** of participation in Active Inference workshops, symposia, or related communities.
 
-- **Professional Affiliations:**  
-  - Member of GISC (Grupo Interdisciplinar de Sistemas Complejos)  
-  - Participates in workshops and conferences related to complex networks and neuroscience [4].
+**Adjacent Fields and Methodological Overlap**
+- **Strong overlap** in network neuroscience, complex systems, time series analysis, and computational modeling—core methodologies in Active Inference research[1][2][3].
+- **Expertise in Bayesian statistics and machine learning** (implied by methodological training), but no explicit application to Active Inference frameworks found[2].
+- **Potential methodological contributions**: Experience in modeling brain dynamics, network inference, and statistical characterization of neural data could be directly applicable to Active Inference[1][2][3].
 
-- **Leadership Roles:**  
-  - No direct evidence of leadership roles in professional organizations.
+**Potential Applications and Research Gaps**
+- **Network neuroscience approaches** could enrich Active Inference models, particularly in understanding hierarchical brain organization and pathology[1][2][3].
+- **Gaps to address**: Integration of multilayer network analysis with Active Inference; application to clinical populations (Alzheimer’s, schizophrenia); development of novel biomarkers using complexity metrics[1][2][3].
+- **No evidence** of current work in these directions, but the skill set is highly relevant.
 
-- **Patents or Applied Work:**  
-  - No patents or technical reports found related to his name.
+## Academic & Professional Network
 
----
+**Key Collaborators**
+- **Javier M. Buldú** (King Juan Carlos University, Laboratory of Biological Networks)[2].
+- **Fernando Maestú** (Center for Biomedical Technology)[3].
+- **David López-Sanz** (Center for Biomedical Technology)[3].
+- **Manuel Prieto Ursúa**, **María Belén Marina Gras** (Universidad Pontificia Comillas)[3][5].
 
-### 4. ACTIVE INFERENCE & RELATED RESEARCH
+**Conference Presentations**
+- **Poster presentation and lightning talk**, Conference on Complex Networks (Puebla, Mexico)[2].
+- **Poster contribution**, Conferences on mind processes modeling, machine learning, statistical physics, visual perception (Obergurgl, Austria)[2].
+- **Workshop participation**, Whole brain dynamics simulation techniques, neuromorphic computing, bioethics (Ljubljana, Slovenia)[2].
+- **No recent (2023–2025) conference presentations** found in major databases.
 
-- **Direct Links to Active Inference:**  
-  - No explicit publication or project directly mentioning "Active Inference" by Nacho Echegoyen was found.  
-  - However, his research on complex brain networks, multilayer functional networks, and brain dynamics aligns closely with frameworks used in Active Inference, which involves Bayesian inference, free energy principle, and modeling of brain function [4].
+**Workshop Organization**
+- **No evidence** of organizing workshops or symposia.
 
-- **Adjacent Fields:**  
-  - His work involves complex systems modeling, nonlinear dynamics, Bayesian approaches to brain data, and computational neuroscience models—fields foundational to Active Inference theory [4].
+**Community Engagement**
+- **Personal website** with research interests and bio, but no blog, tutorials, or open code repositories found[2].
+- **No GitHub**, no public code related to research.
+- **No social media presence** related to research.
 
-- **Methodological Overlap:**  
-  - Time series analysis, frequency decomposition, multilayer network modeling, and neuromorphic computing are methodological approaches compatible with Active Inference modeling frameworks [4].
+## Online Presence & Resources
 
-- **Potential Applications:**  
-  - His expertise in brain networks and complex systems could contribute to Active Inference application in modeling psychiatric and neurological disorders (Alzheimer’s, schizophrenia) [4].
+**Direct Links to All Profiles and Resources**
+- **ORCID**: [0000-0001-8016-7836](https://orcid.org/0000-0001-8016-7836)[5].
+- **Google Scholar**: [Ignacio Echegoyen](https://scholar.google.es/citations?user=bRqPBZgAAAAJ&hl=es)[3].
+- **Institutional Profile**: [Universidad Pontificia Comillas](https://web.comillas.edu/profesor/iechegoyen)[1].
+- **Personal Website**: [nachoenblanco.github.io](https://nachoenblanco.github.io)[2].
+- **ResearchGate**: Not found.
+- **LinkedIn**: Not found.
+- **GitHub**: Not found.
+- **Twitter/X**: Not found.
+- **Videos/Podcasts/Interviews**: Not found.
 
-- **Research Gaps:**  
-  - Applying multilayer complex network models to Active Inference computational frameworks could be an emerging area he is positioned to address, particularly given his interdisciplinary training.
+## Future Potential & Opportunities
 
----
+**Emerging Research Directions**
+- **Integration of network neuroscience with Active Inference**: Potential to apply multilayer network and complexity analyses to hierarchical Bayesian models of brain function[1][2][3].
+- **Clinical applications**: Development of network-based biomarkers for neurological and psychiatric disorders using Active Inference frameworks[1][2][3].
+- **Methodological innovation**: Combining time-frequency analysis, machine learning, and network theory to advance computational neuroscience[1][2][3].
 
-### 5. ACADEMIC & PROFESSIONAL NETWORK
+**Opportunities for Growth in Active Inference**
+- **Skill set is highly relevant**, but no current engagement with the Active Inference community[1][2][3].
+- **Strategic collaborations** with leading Active Inference groups (e.g., Karl Friston’s team, University College London; Cambridge, UK) could bridge this gap.
+- **Potential to lead** cross-disciplinary projects at the intersection of network neuroscience, complex systems, and Active Inference.
 
-- **Key Collaborators:**  
-  - Prof. Javier Buldú (King Juan Carlos University) [4]  
-  - Grupo Interdisciplinar de Sistemas Complejos (GISC) members, an interdisciplinary complex systems research group [4].
+**Potential Impact on the Field**
+- **Could contribute** novel biomarkers, clinical applications, and methodological advances to Active Inference research[1][2][3].
+- **Positioned to address** key challenges in understanding brain organization and dysfunction using advanced network and complexity metrics[1][2][3].
 
-- **Conference Presentations:**  
-  - Presented posters and lightning talks at conferences on complex networks, brain dynamics, machine learning, statistical physics, and visual perception in locations including Ljubljana (Slovenia), Puebla (Mexico), and Obergurgl (Austria) [4].
+**Strategic Collaboration Opportunities**
+- **With computational neuroscientists** working on Active Inference and Bayesian brain theories.
+- **With clinical researchers** in Alzheimer’s, schizophrenia, and neurodevelopment.
+- **With complex systems and network science groups** (e.g., GISC, Center for Biomedical Technology)[1][2][3].
 
-- **Workshops:**  
-  - Participated in workshops on whole brain dynamics simulation, neuromorphic computing, bioethics, and career development [4].
+## Critical Gaps and Limitations
 
-- **Community Engagement:**  
-  - Maintains a personal academic website with research description and conference participation. No public blog or widespread social media presence detected related to research.
-
-- **Social Media:**  
-  - No Twitter/X or LinkedIn profile strongly associated with his academic work found in public search.
-
----
-
-### 6. ONLINE PRESENCE & RESOURCES
-
-| Resource                   | Link                                              |
-|----------------------------|---------------------------------------------------|
-| Personal Website            | [nachoenblanco.github.io](https://nachoenblanco.github.io) [4] |
-| ORCID Profile              | [0000-0001-8016-7836](https://orcid.org/0000-0001-8016-7836) [4] |
-| Institutional Profile      | Affiliated with Universidad Pontificia Comillas; no direct personal profile link found. [4] |
-| Google Scholar             | Not publicly found or linked |
-| ResearchGate               | Not publicly found or linked |
-| LinkedIn                   | Not publicly found or linked |
-| GitHub or Code Repositories| Not publicly found or linked |
-| Twitter/X                  | Not publicly found or linked |
-| Conference Videos/Podcasts | No public videos or interviews found |
-
----
-
-### 7. FUTURE POTENTIAL & OPPORTUNITIES
-
-- **Emerging Directions:**  
-  - Integration of complex brain network analysis with computational models related to Active Inference and free energy principles.  
-  - Exploring multilayer network models for understanding psychiatric and neurodegenerative disease mechanisms.  
-  - Neuromorphic computing and whole brain simulations may provide new platforms for Active Inference model testing [4].
-
-- **Growth Opportunities in Active Inference:**  
-  - His interdisciplinary background positions him well to contribute to the Active Inference community, especially in bridging empirical brain data and theoretical models.  
-  - Collaborations with established Active Inference researchers (e.g., Karl Friston’s group) could accelerate his impact.
-
-- **Potential Impact:**  
-  - Applying complex systems and multilayer network approaches to Active Inference models could advance understanding of brain dynamics in health and disease.
-
-- **Strategic Collaborations:**  
-  - Collaborating with computational neuroscientists specializing in Active Inference and Bayesian brain theories.  
-  - Engaging with international complex systems and neuroscience networks such as GISC, IFISC, and others.
-
----
+- **No direct engagement** with Active Inference literature or community found[3].
+- **Limited recent (2023–2025) publications**; most cited work is from 2018–2021[3].
+- **No evidence** of open science practices (code, data sharing) or strong online presence beyond institutional profiles[2].
+- **Industry/applied experience**: None found.
+- **International visibility**: Limited to a few conference participations; no evidence of sustained international collaboration[2].
 
 ## References
 
-1. Frontiers in Complex Systems — https://www.frontiersin.org/journals/complex-systems  
-2. Complex Systems Journal — https://www.complex-systems.com/current/  
-3. PMC Article on Complex Systems Modeling — https://pmc.ncbi.nlm.nih.gov/articles/PMC6445364/  
-4. Ignacio Echegoyen personal website — https://nachoenblanco.github.io  
-5. Pure John Hopkins University publication (unrelated direct to subject) — https://pure.johnshopkins.edu/en/publications/applications-of-complex-systems-models-to-improve-retail-food-env/  
-6. PLOS Complex Systems — https://journals.plos.org/complexsystems/  
-7. Complex-Systems Research in Psychology (SFI Press) — https://www.sfipress.org/books/complex-systems-research-in-psychology  
+1. **Universidad Pontificia Comillas Faculty Page**: [https://web.comillas.edu/profesor/iechegoyen](https://web.comillas.edu/profesor/iechegoyen)
+2. **Personal Website**: [https://nachoenblanco.github.io](https://nachoenblanco.github.io)
+3. **Google Scholar Profile**: [https://scholar.google.es/citations?user=bRqPBZgAAAAJ&hl=es](https://scholar.google.es/citations?user=bRqPBZgAAAAJ&hl=es)
+4. **Revista Aragonesa de Musicología**: [https://ifc.dpz.es/recursos/publicaciones/40/92/_ebook.pdf](https://ifc.dpz.es/recursos/publicaciones/40/92/_ebook.pdf) (irrelevant to subject)
+5. **ORCID**: [https://orcid.org/0000-0001-8016-7836](https://orcid.org/0000-0001-8016-7836)
+6. **Alcaidesa Marina News**: [https://alcaidesamarina.com/noticias/prensa/](https://alcaidesamarina.com/noticias/prensa/) (irrelevant to subject)
 
----
+## Summary Table: Key Facts at a Glance
 
-If you need, I can further attempt to identify specific publications or conference proceedings from academic databases or request access to institutional repositories for Nacho Echegoyen’s work.
+| Aspect                  | Details                                                                                 | Source Link                                  |
+|-------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------|
+| Full Name               | Ignacio Echegoyen Blanco                                                                | [1]                                          |
+| Current Position        | Assistant Professor & Lab Coordinator, Universidad Pontificia Comillas                  | [1]                                          |
+| Education               | BSc Psychology (Comillas, 2015); MSc (UAM/UCM/UNED, 2016–17); PhD (UPM, 2021)           | [1]                                          |
+| Research Focus          | Network neuroscience, complex systems, clinical applications, time series analysis       | [1][2][3]                                    |
+| Key Publications        | J. Phys. Complexity (2021), Symmetry (2020), arXiv (2018)                               | [3]                                          |
+| Citations (Google Scholar) | 421 (h-index 7)                                                                      | [3]                                          |
+| ORCID                   | 0000-0001-8016-7836                                                                     | [5]                                          |
+| Personal Website        | nachoenblanco.github.io                                                                 | [2]                                          |
+| Social Media            | None found                                                                              | —                                            |
+| Active Inference Link   | No direct evidence                                                                      | [3]                                          |
+
+## Expert Assessment
+
+Nacho Echegoyen (Ignacio Echegoyen Blanco) is an early-career researcher with strong training in psychology, neuroscience, and biomedical engineering, specializing in the application of complex systems and network science to clinical brain disorders. His methodological expertise in time series analysis, network inference, and machine learning positions him well for potential contributions to Active Inference, though there is no evidence of direct engagement with this field to date. His academic trajectory, publication record, and institutional roles indicate significant potential for impactful, interdisciplinary research at the intersection of network neuroscience and computational theories of brain function. Strategic collaboration with Active Inference groups could unlock new avenues for both basic and clinical neuroscience[1][2][3].

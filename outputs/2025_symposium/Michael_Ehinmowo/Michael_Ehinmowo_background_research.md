@@ -1,6 +1,6 @@
 # Background Research: Michael Ehinmowo
 
-Generated on: 2025-10-31 15:25:46
+Generated on: 2025-11-07 14:50:10
 
 ## Metadata
 
@@ -9,153 +9,102 @@ Generated on: 2025-10-31 15:25:46
 
 ---
 
-## Academic Background
+After an exhaustive search across available academic, professional, and social media platforms, there is **no publicly available detailed information or profile on Michael Ehinmowo related to Active Inference or his stated background in psychology and neuroscience**. Below is a comprehensive summary of findings and research attempts:
 
-**Educational History**  
-No verifiable, direct evidence of Michael Ehinmowo's degrees, institutions, or graduation years was found in academic databases (Google Scholar, ResearchGate, ORCID), institutional websites, or professional social media (LinkedIn, Twitter/X). No university profile or alumni directory entry was identified.
+---
 
-**Research Areas and Expertise**  
-Based on the self-reported background, Michael Ehinmowo's expertise spans psychology and neuroscience, with specific experience in behavioural neuroscience, psychiatric genetic research, and social psychological research. However, no peer-reviewed publications, preprints, or technical reports under this name were identified in major databases (Google Scholar, PubMed, ResearchGate, arXiv, bioRxiv).
+### 1. Academic Background
 
-**Academic Positions**  
-No current or past academic positions, faculty listings, or institutional affiliations were found on university websites, department pages, or professional networks.
+- No **educational history**, degrees, institutions, or graduation years linked to Michael Ehinmowo were found in academic databases (Google Scholar, ORCID, ResearchGate) or institutional websites.
+- No institutional profile pages listing Michael Ehinmowo's academic positions or affiliations were located.
+- The only self-reported background information provided is that he has experience in **behavioral neuroscience, psychiatric genetic research, and social psychological research** (from your input), but no external verification or citation for this was found.
 
-**Notable Achievements, Awards, Grants, Honors**  
-No public records of awards, grants, honors, or notable achievements were found.
+---
 
-**Academic Profile Pages**  
-- **Google Scholar:** No profile found.
-- **ResearchGate:** No profile found.
-- **ORCID:** No profile found.
-- **Institutional Page:** Not identified.
+### 2. Research Contributions
 
-## Research Contributions
+- No **publications or authored papers** by Michael Ehinmowo were found in major academic repositories (Google Scholar, PubMed, ResearchGate, arXiv).
+- No evidence of key publications, citation metrics, or collaborative research networks related to him was located.
+- No recent preprints or working papers linked to Michael Ehinmowo were identified.
 
-**Key Publications**  
-No peer-reviewed publications, conference papers, or preprints authored by Michael Ehinmowo were found in Google Scholar, PubMed, ResearchGate, arXiv, bioRxiv, or conference proceedings databases.
+---
 
-**Research Focus Areas and Methodologies**  
-Based solely on the self-reported background, research interests likely include behavioural neuroscience, psychiatric genetics, and social psychology. No methodological details or specific projects are publicly documented.
+### 3. Professional Experience
 
-**Citation Metrics**  
-No publications found; thus, no h-index, citation count, or impact metrics are available.
+- No LinkedIn profile or professional biography was found.
+- No confirmed employment history, consulting work, or professional affiliations could be located.
+- No leadership roles or patents linked to his name were discovered.
 
-**Collaborative Networks**  
-No evidence of co-authorship, research groups, or collaborative projects was found.
+---
 
-**Recent Preprints and Working Papers**  
-No preprints or working papers were identified on arXiv, bioRxiv, PsyArXiv, or similar platforms.
+### 4. Active Inference & Related Research
 
-## Professional Experience
+- Michael Ehinmowo is **not listed as a speaker or participant** in publicly available materials from recent Applied Active Inference Symposiums (2021 to 2024) or workshops on Active Inference.
+- Conference programs and videos from the Active Inference Institute and related events (such as the 3rd and 4th Applied Active Inference Symposiums) do not mention him as a presenter or collaborator [1][3][4][5].
+- No direct publications or projects connecting him to active inference, free energy principle, or computational neuroscience were found.
+- Adjacent fields such as Bayesian inference, computational neuroscience, or modeling frameworks do not show his involvement.
 
-**Employment History**  
-No employment history, industry positions, or consulting roles were found on LinkedIn, institutional websites, or professional directories.
+---
 
-**Industry Experience and Consulting Work**  
-No evidence found.
+### 5. Academic & Professional Network
 
-**Professional Affiliations and Society Memberships**  
-No membership in professional societies (e.g., Society for Neuroscience, APA) or affiliations were identified.
+- No identifiable key collaborators, co-authors, or research groups associated with Michael Ehinmowo were found.
+- No evidence of conference presentations, workshop participation, or community engagement such as blog posts, tutorials, or code repositories.
+- No social media presence related to research activities was found on Twitter/X, LinkedIn, or ResearchGate.
 
-**Leadership Roles in Professional Organizations**  
-No evidence found.
+---
 
-**Patents, Technical Reports, or Applied Work**  
-No patents, technical reports, or applied projects were found in USPTO, Espacenet, or institutional repositories.
+### 6. Online Presence & Resources
 
-## Active Inference & Related Research
+- No personal website or research page was found.
+- No Google Scholar, ResearchGate, ORCID, LinkedIn, GitHub, or Twitter/X profiles matching Michael Ehinmowo related to his research background.
+- No institutional profile pages or video/podcast interviews were identified.
 
-**Direct Connections to Active Inference**  
-No publications, presentations, or projects directly related to Active Inference, the free energy principle, or Bayesian inference were found under this name.
+---
 
-**Adjacent Fields and Methodological Overlap**  
-The self-reported background in behavioural neuroscience and computational approaches suggests potential methodological overlap with Active Inference, but no explicit work in computational neuroscience, modeling, or simulation was found.
+### 7. Future Potential & Opportunities
 
-**Potential Applications of Expertise**  
-Given expertise in behavioural neuroscience and psychiatric genetics, Michael Ehinmowo could theoretically contribute to Active Inference research in areas such as psychopathology, decision-making, or interoception, but no concrete evidence of such applications exists.
+- Due to the lack of publicly available information, it is not possible to assess emerging research directions or opportunities in active inference or related fields for Michael Ehinmowo.
+- No evidence to suggest current or potential impact on the field or strategic collaboration opportunities.
 
-**Research Gaps**  
-No specific research gaps addressed by Michael Ehinmowo were identified in the public record.
+---
 
-## Academic & Professional Network
+### Summary
 
-**Key Collaborators**  
-No collaborators, joint publications, or research groups were identified.
+- The absence of publicly available information on Michael Ehinmowo in academic and professional databases suggests:
+  - He may be an early-career researcher without a public digital footprint.
+  - He may use a different name in publications or professional contexts.
+  - Or his participation in the Active Inference Symposium or related events is not publicly documented yet.
+- Further information could be requested directly from the Active Inference Institute or from symposium organizers if needed.
 
-**Conference Presentations**  
-No records of conference presentations, workshops, or symposium participation (beyond the general mention of the Applied Active Inference Symposium) were found in conference proceedings or institutional archives.
+---
 
-**Workshop Organization or Participation**  
-No evidence of organizing or participating in workshops beyond the general symposium context.
+### References
 
-**Community Engagement**  
-No blog posts, tutorials, code repositories (GitHub, GitLab), or other community resources were found.
+[1] 3rd Applied Active Inference Symposium - YouTube (Program and participant list)  
+https://www.youtube.com/watch?v=rIemcswLfGg
 
-**Social Media Presence**  
-No identifiable Twitter/X, LinkedIn, or ResearchGate profiles were found.
+[2] 6th International Workshop on Active Inference (general workshop info)  
+https://iwaiworkshop.github.io
 
-## Online Presence & Resources
+[3] Applied Active Inference Symposium - The Active Inference Institute  
+https://www.activeinference.institute/symposium
 
-**Personal Website or Research Page**  
-Not found.
+[4] 3rd Applied Active Inference Symposium Program (Aug 2023)  
+https://coda.io/@active-inference-institute/3rd-applied-active-inference-symposium/program-4
 
-**Google Scholar Profile**  
-Not found.
+[5] 4th Applied Active Inference Symposium (Nov 2024) - YouTube  
+https://www.youtube.com/watch?v=nCZZBuk_wmU
 
-**ResearchGate Profile**  
-Not found.
+[6] Active Inference Insights - YouTube  
+https://www.youtube.com/watch?v=v6ddfMkuSpo
 
-**LinkedIn Profile**  
-Not found.
+[7] 5th Applied Active Inference Symposium Announcement  
+https://lists.cnsorg.org/hyperkitty/list/comp-neuro@lists.cnsorg.org/thread/77K6XOOMWGMRTSYOCY7CQXZBDEPPMJDE/
 
-**GitHub or Other Code Repositories**  
-Not found.
+[8] 4th Applied Active Inference Symposium Playlist  
+https://www.youtube.com/playlist?list=PLNm0u2n1IwdpENtnBVYd3qpDyVuV9ePfw
 
-**Twitter/X or Other Social Media**  
-Not found.
+---
 
-**ORCID Profile**  
-Not found.
-
-**Institutional Profile Page**  
-Not found.
-
-**Videos, Podcasts, or Interviews**  
-Not found.
-
-## Future Potential & Opportunities
-
-**Emerging Research Directions**  
-No recent work or public statements indicate specific emerging directions. Theoretical potential exists in applying psychiatric genetics and behavioural neuroscience to Active Inference, but this is speculative without evidence.
-
-**Opportunities for Growth in Active Inference Community**  
-Given the interdisciplinary nature of Active Inference, someone with a background in psychology and neuroscience could contribute to modeling psychopathology, decision-making, or interoception within the Active Inference framework, but no evidence of current engagement exists.
-
-**Potential Impact on the Field**  
-No evidence of current impact; potential future impact is contingent on demonstrated engagement with Active Inference methodologies and publication record.
-
-**Strategic Collaboration Opportunities**  
-No specific collaborators or groups were identified; opportunities would depend on establishing a public research profile.
-
-## Summary of Findings
-
-**No verifiable academic, professional, or research footprint for Michael Ehinmowo was found across major databases, institutional websites, professional networks, or publication repositories.** The only available information is a self-reported background in psychology and neuroscience, with experience in behavioural neuroscience, psychiatric genetic research, and social psychological research. There is no evidence of publications, conference presentations, professional positions, or online profiles under this name.
-
-**All statements above are based on exhaustive searches of Google Scholar, ResearchGate, ORCID, LinkedIn, Twitter/X, institutional websites, arXiv, bioRxiv, and conference proceedings.** Where information is absent, this is explicitly noted.
-
-## References
-
-No specific references are available for Michael Ehinmowo, as no publications, profiles, or institutional listings were found in the course of this investigation. All searches were conducted across the following platforms without result:
-
-- **Google Scholar:** scholar.google.com
-- **ResearchGate:** researchgate.net
-- **ORCID:** orcid.org
-- **LinkedIn:** linkedin.com
-- **Twitter/X:** twitter.com
-- **GitHub:** github.com
-- **PubMed:** pubmed.ncbi.nlm.nih.gov
-- **arXiv:** arxiv.org
-- **bioRxiv:** biorxiv.org
-- **Institutional websites:** Searches of major universities and research institutions
-
-If additional, specific information becomes available, this profile can be updated accordingly.
+If you can provide additional identifiers such as institutional affiliation, ORCID, or publication titles, a more targeted search may be possible.

@@ -1,6 +1,6 @@
 # Curriculum: Anushka Sarkar
 
-Generated on: 2025-10-31 15:36:50
+Generated on: 2025-11-07 15:03:26
 
 ## Metadata
 
@@ -9,159 +9,146 @@ Generated on: 2025-10-31 15:36:50
 
 ---
 
-I'll create a personalized curriculum for Anushka based on her background and goals. Here's a comprehensive learning path:
+Here's a personalized Active Inference curriculum for Anushka Sarkar:
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong theoretical foundation in predictive coding and free energy principles
-- Experiential learning through simulations and prototypes
-- Knowledge gaps in advanced mathematical implementations
-- Learning style: Hands-on, collaborative, practical application-focused
-- Needs bridge between theory and implementation
+- Strengths:
+  * Strong foundation in predictive coding and free energy principles
+  * Experience with basic simulations
+  * Understanding of cognitive modeling
+  * Clear grasp of theoretical implications
+- Areas for Development:
+  * Mathematical formalism implementation
+  * Scaling to high-dimensional problems
+  * Practical deployment experience
+  * Tool development expertise
 
 2. **PERSONALIZED LEARNING PATH**
+Month 1-2: Mathematical Foundations & Basic Implementation
+- Focus on bridging theoretical understanding with practical coding
+- Start with small-scale HCI prototypes
+- Build intuition through worked examples
 
-Initial Phase (Months 1-2):
-- Mathematical formalization of active inference
-- Computational implementation basics
-- Connection to cognitive modeling frameworks
+Month 3-4: Scaling & Application Development
+- Progress to more complex cognitive models
+- Implement AI assistant use cases
+- Develop evaluation frameworks
 
-Intermediate Phase (Months 3-4):
-- Advanced implementation techniques
-- Integration with HCI principles
-- Scaling solutions for complex systems
-
-Advanced Phase (Months 5-6):
-- Novel applications in mental health
-- Research contribution development
-- Community engagement and leadership
+Month 5-6: Advanced Applications & Research
+- Mental health intervention modeling
+- Complex system implementation
+- Original research contribution
 
 3. **CORE CONCEPTS MODULES**
-
 Module 1: Mathematical Foundations
 - Variational inference refresher
-- Markov Decision Processes in active inference
-- Information geometry essentials
-
-Module 2: Implementation Framework
 - Message passing algorithms
-- Variational message passing
-- Belief propagation techniques
+- Information geometry basics
 
-Module 3: Application Architecture
-- System design for AI assistants
-- Cognitive modeling integration
-- Scalability considerations
+Module 2: Implementation Frameworks
+- PyTorch implementation patterns
+- Active Inference templates
+- Scalable architectures
+
+Module 3: Applied Active Inference
+- HCI-specific implementations
+- Cognitive modeling patterns
+- Mental health applications
 
 4. **HANDS-ON LEARNING**
-
 Project Track 1: AI Assistant Development
-- Building a simple active inference agent
-- Implementing user need prediction
-- Testing and evaluation methods
+- User need prediction modeling
+- Adaptive interaction patterns
+- Evaluation metrics implementation
 
 Project Track 2: Cognitive Modeling
-- Creating behavioral models
-- Implementing inference patterns
-- Validation techniques
-
-Software Development:
-- Python implementation using PyAI
-- Julia for high-performance computing
+- Simple behavioral models
+- Scaling to complex behaviors
 - Integration with existing frameworks
 
+Workshop Series:
+- Monthly hands-on coding sessions
+- Debugging clinics
+- Implementation reviews
+
 5. **ADVANCED TOPICS**
-
-Theoretical Extensions:
-- Deep active inference
-- Hierarchical models
+- High-dimensional Active Inference
 - Multi-agent systems
-
-Application Domains:
-- Mental health intervention design
-- Human-AI interaction patterns
-- Cognitive architecture development
-
-Research Methods:
-- Experimental design
-- Model validation
-- Performance metrics
+- Hierarchical models
+- Novel optimization approaches
+- Integration with deep learning
 
 6. **PRACTICAL APPLICATIONS**
+Focus Area: HCI & AI Assistants
+- User behavior modeling
+- Adaptive interface design
+- Uncertainty handling
+- Real-time implementation
 
-Implementation Projects:
-- AI assistant prototype
-- Mental health intervention tool
-- Cognitive model validation
-
-Case Studies:
-- Successful active inference applications
-- Failed implementations and lessons
-- Scaling challenges and solutions
+Focus Area: Mental Health
+- Maladaptive pattern modeling
+- Intervention design
+- Evaluation frameworks
 
 7. **COMMUNITY AND COLLABORATION**
-
-Engagement Strategy:
-- Join Active Inference Lab community
-- Participate in monthly implementation workshops
+- Join Active Inference Institute
+- Participate in monthly implementation meetings
 - Contribute to open-source projects
-
-Networking:
-- Connect with cognitive modeling researchers
-- Engage with HCI practitioners
-- Build relationships with mental health professionals
+- Attend workshops and conferences
+- Network with mental health researchers
 
 8. **ASSESSMENT AND PROGRESSION**
-
 Milestones:
-- Working AI assistant prototype (Month 2)
-- Published case study (Month 4)
-- Community contribution (Month 6)
+- Basic implementation portfolio
+- Working AI assistant prototype
+- Published case study
+- Community contribution
 
-Portfolio Development:
-- Implementation code repository
-- Technical documentation
-- Research findings and insights
+Checkpoints:
+- Monthly code reviews
+- Quarterly progress assessment
+- Project presentations
 
 9. **RESOURCES AND TOOLS**
-
 Essential Reading:
 - "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior"
-- Selected papers from Karl Friston
-- HCI design principles
+- Selected papers on HCI applications
+- Implementation tutorials
 
 Tools:
-- PyAI framework
-- Julia Active Inference toolbox
-- Computational modeling environments
+- PyAI (Active Inference toolkit)
+- Simulation frameworks
+- Visualization tools
+- Debugging utilities
 
 10. **IMPLEMENTATION ROADMAP**
 
 Short-term (1-3 months):
-- Master core mathematical concepts
-- Develop basic implementation skills
-- Build simple prototype
+- Complete mathematical foundations
+- Develop first working prototype
+- Join community forums
 
 Medium-term (3-6 months):
 - Scale implementations
-- Contribute to community projects
-- Publish findings
+- Contribute to open source
+- Present initial results
 
 Long-term (6-12 months):
 - Novel application development
-- Research contribution
-- Community leadership
+- Research publication
+- Community leadership role
 
 Success Metrics:
 - Working implementations
-- Published contributions
-- Community impact
-- Professional growth
+- Community contributions
+- Published results
+- Practical applications deployed
 
 This curriculum emphasizes:
 - Bridging theory and practice
-- Hands-on implementation
+- Focus on HCI and mental health applications
 - Community engagement
-- Real-world applications
 - Progressive skill development
+- Practical implementation experience
 
-Regular reviews and adjustments will ensure the curriculum remains aligned with Anushka's evolving needs and goals.
+Regular reviews and adjustments will ensure the curriculum remains aligned with Anushka's evolving needs and interests.

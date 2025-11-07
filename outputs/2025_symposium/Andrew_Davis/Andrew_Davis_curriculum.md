@@ -1,6 +1,6 @@
 # Curriculum: Andrew Davis
 
-Generated on: 2025-10-31 15:29:29
+Generated on: 2025-11-07 14:54:20
 
 ## Metadata
 
@@ -9,109 +9,85 @@ Generated on: 2025-10-31 15:29:29
 
 ---
 
-Based on Andrew Davis's background in optimization algorithms and non-linear imaging trajectories, along with his interest in practical applications, I'll design a specialized curriculum that bridges theoretical understanding with applied implementation.
+Based on Andrew Davis's background in optimization algorithms and non-linear imaging trajectories, along with his focus on practical applications, I'll design a personalized Active Inference curriculum.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong: Mathematical optimization, feedback systems, practical implementation
-- Moderate: Active inference foundations, real-world applications
-- Needs Development: Community engagement, collaborative research
-- Learning Style: Application-oriented, hands-on, theory-to-practice translator
+   - Strong: Mathematical optimization, feedback systems, practical implementation
+   - Development Areas: Community engagement, theoretical foundations connection
+   - Learning Style: Applied, hands-on, implementation-focused
+   - Bridge needed between theoretical understanding and practical applications
 
 2. **PERSONALIZED LEARNING PATH**
-- Phase 1: Advanced Theory Integration (1 month)
-  * Mapping optimization concepts to active inference
-  * Feedback loop analysis through FEP lens
-  * Non-linear dynamics in active inference
-- Phase 2: Implementation & Tools (2 months)
-  * Computational frameworks
-  * Integration with existing systems
-  * Custom tool development
-- Phase 3: Community Building & Contribution (3 months)
-  * Project sharing
-  * Collaborative research
-  * Knowledge dissemination
+   - Month 1-2: Formalize theoretical foundations
+   - Month 3-4: Advanced implementation techniques
+   - Month 5-6: Community integration and contribution
+   - Focus on building bridges between optimization background and Active Inference
 
 3. **CORE CONCEPTS MODULES**
-- Advanced Mathematical Foundations
-  * Free Energy Principle in optimization terms
-  * Variational methods in imaging contexts
-  * Markov blankets in feedback systems
-- Implementation Frameworks
-  * PyAI and related tools
-  * Custom implementation strategies
-  * Integration with existing systems
+   - Optimization-to-Active-Inference bridge concepts
+   - Free Energy Principle fundamentals through optimization lens
+   - Variational methods in Active Inference
+   - Advanced trajectory optimization in biological and artificial systems
 
 4. **HANDS-ON LEARNING**
-- Project: Optimization-Based Active Inference System
-  * Design phase
-  * Implementation
-  * Testing and validation
-- Tool Development
-  * Custom active inference libraries
-  * Integration with imaging systems
-  * Performance optimization
+   - Implementation of Active Inference models using PyAI
+   - Development of custom optimization algorithms for Active Inference
+   - Integration projects combining imaging trajectories with Active Inference
+   - Practical workshops on real-world feedback system optimization
 
 5. **ADVANCED TOPICS**
-- Non-linear Active Inference
-  * Complex systems analysis
-  * Dynamic causal modeling
-  * Advanced optimization techniques
-- Research Integration
-  * Novel applications in imaging
-  * Hybrid systems development
-  * Performance metrics
+   - Non-linear dynamical systems in Active Inference
+   - Advanced variational methods
+   - Multi-scale Active Inference models
+   - Integration with existing optimization frameworks
 
 6. **PRACTICAL APPLICATIONS**
-- Case Studies
-  * Imaging system optimization
-  * Feedback loop enhancement
-  * System performance analysis
-- Implementation Strategies
-  * Integration with existing workflows
-  * Performance benchmarking
-  * Validation methods
+   - Case Studies: Feedback system optimization
+   - Implementation in imaging systems
+   - Real-time Active Inference deployment
+   - Performance optimization techniques
 
 7. **COMMUNITY AND COLLABORATION**
-- Active Participation
-  * GitHub project contributions
-  * Research paper collaborations
-  * Conference presentations
-- Knowledge Sharing
-  * Blog posts/tutorials
-  * Code documentation
-  * Workshop development
+   - Join Active Inference Institute working groups
+   - Contribute to open-source Active Inference projects
+   - Present at Active Inference workshops
+   - Connect with researchers in similar application areas
 
 8. **ASSESSMENT AND PROGRESSION**
-- Milestones:
-  * Theoretical framework integration
-  * Tool development completion
-  * Community contribution initiation
-- Deliverables:
-  * Custom implementation library
-  * Documentation and tutorials
-  * Research contributions
+   - Monthly implementation projects
+   - Documentation of practical applications
+   - Community contribution metrics
+   - Portfolio of optimization-based Active Inference solutions
 
 9. **RESOURCES AND TOOLS**
-- Technical Resources:
-  * Advanced papers on optimization in active inference
-  * GitHub repositories of relevant projects
-  * Mathematical modeling tools
-- Community Resources:
-  * Active Inference Institute
-  * Research groups
-  * Online forums
+   - Papers: Focus on optimization and control theory perspectives
+   - Software: PyAI, SPM, custom optimization frameworks
+   - Communities: Active Inference Institute, GitHub repositories
+   - Conferences: IWAI, NeurIPS workshops
 
 10. **IMPLEMENTATION ROADMAP**
-- Short-term (1-3 months):
-  * Develop custom implementation framework
-  * Initialize community engagement
-- Medium-term (3-6 months):
-  * Complete major project implementation
-  * Begin contributing to open-source projects
-- Long-term (6-12 months):
-  * Establish active community presence
-  * Lead collaborative research projects
+    - Short-term (1-3 months):
+      * Develop Active Inference optimization framework
+      * Start community engagement
+    
+    - Medium-term (3-6 months):
+      * Implement real-world applications
+      * Contribute to open-source projects
+    
+    - Long-term (6-12 months):
+      * Lead community projects
+      * Develop novel optimization methods for Active Inference
 
-The curriculum emphasizes practical implementation while leveraging Andrew's strong mathematical background. Focus is placed on bridging theoretical understanding with real-world applications, particularly in optimization and imaging contexts. Community engagement is structured to build gradually while maintaining focus on technical development.
+**Special Focus Areas:**
+- Bridging optimization algorithms with Active Inference
+- Practical implementation techniques
+- Community development and contribution
+- Integration with existing systems
 
-How would you like to proceed with this curriculum? We can start with any specific area that interests you most.
+**Success Metrics:**
+1. Number of implemented applications
+2. Community contributions
+3. Development of novel optimization methods
+4. Integration of Active Inference in existing systems
+
+This curriculum emphasizes practical implementation while building theoretical understanding, focusing on Andrew's strengths in optimization and desire for community engagement.

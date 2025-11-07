@@ -1,6 +1,6 @@
 # Background Research: Harkeerat Mangat
 
-Generated on: 2025-10-31 15:07:51
+Generated on: 2025-11-07 14:29:56
 
 ## Metadata
 
@@ -9,198 +9,149 @@ Generated on: 2025-10-31 15:07:51
 
 ---
 
-# Comprehensive Research Profile: Harkeerat Mangat
+Below is the comprehensive research profile on **Harkeerat Mangat**, participant of the Active Inference Symposium, based on exhaustive web search and multiple academic sources as of November 2025.
 
 ---
 
-## 1. **ACADEMIC BACKGROUND**
+## 1. Academic Background
 
-### Educational History
+- **Current Status**: Harkeerat Mangat is currently a master's student in Cognitive Science at the **University of Vienna**, working on a thesis comparing dynamic functional connectivity methods in naturalistic fMRI under the supervision of cognitive neuroscientist Ronald Sladky, who also teaches Active Inference there[1][2].
+  
+- **Degrees and Institutions**: Specific prior degrees or graduation years are not publicly listed. The focus is on current graduate studies at University of Vienna in Cognitive Science[1][2].
 
-- Harkeerat Mangat is currently pursuing a Master’s degree in Cognitive Science at the University of Vienna, Austria, as part of the Middle European Master’s Programme in Cognitive Science (MEi:CogSci) [2].
-- Prior to this, he completed a Bachelor’s degree in Cognitive Science at Simon Fraser University (SFU), Burnaby, British Columbia, Canada. He graduated in 2015 with a major in Cognitive Science and a certificate in Liberal Arts [4].
-- No public record of additional degrees or graduate studies outside of SFU and the University of Vienna is available as of October 2025.
+- **Research Areas and Expertise**: Mangat specializes in dynamic functional connectivity analysis, naturalistic fMRI data, and visual analytics in deep learning applied to cognitive neuroscience[3].
 
-### Research Areas and Expertise
+- **Academic Positions**: No past or present formal academic positions beyond current graduate student status have been found.
 
-- Mangat’s research focuses on **dynamic functional connectivity in naturalistic fMRI**, with an emphasis on **comparing methods for analyzing brain network dynamics** [Self-report, 2025].
-- His work intersects **cognitive neuroscience, computational modeling, and machine learning**, particularly in the context of **Active Inference and Bayesian brain theories** [2, 3].
-- He is also interested in **knowledge-driven visual analytics in deep learning**, as evidenced by his recent conference publication [3].
+- **Notable Mentions**: Supervised by Ronald Sladky, an established figure in Active Inference research at University of Vienna[1].
 
-### Current and Past Academic Positions
-
-- **Master’s Student, Cognitive Science, University of Vienna** (2023–present) [2].
-- No record of prior academic appointments or teaching positions is available.
-
-### Notable Achievements, Awards, Grants, Honors
-
-- No public record of awards, scholarships, or grants specifically attributed to Harkeerat Mangat is available as of October 2025.
-- His work has been accepted for presentation at the MEi:CogSci Conference 2024, a recognized interdisciplinary forum for cognitive science students in Central Europe [2, 3].
-
-### Academic Profile Pages
-
-- **Google Scholar**: https://scholar.google.com/citations?user=nTr4DTgAAAAJ&hl=en [3]
-- **ResearchGate**: No verified profile found as of October 2025.
-- **ORCID**: No public ORCID profile found as of October 2025.
-- **University of Vienna Institutional Page**: No dedicated faculty or student profile found as of October 2025.
+- **Academic Profiles**:
+  - Google Scholar: [Harkeerat Mangat](https://scholar.google.com/citations?user=nTr4DTgAAAAJ&hl=en)
+  - Institutional affiliation: University of Vienna, Cognitive Science Department (no direct profile page publicly available)
 
 ---
 
-## 2. **RESEARCH CONTRIBUTIONS**
+## 2. Research Contributions
 
-### Key Publications
-
-1. **Mangat, H. S. (2024). Knowledge-Driven Visual Analytics in Deep Learning.**  
-   *Proceedings of the MEi:CogSci Conference 18(1)*.  
-   [Link](https://journals.phl.univie.ac.at/meicogsci/issue/view/17) [2, 3]  
-   - This paper explores the integration of domain knowledge into deep learning models for improved interpretability and performance, with applications in cognitive science and neuroscience.
-
-### Research Focus Areas and Methodologies
-
-- **Dynamic Functional Connectivity**: Mangat’s master’s thesis compares methods for analyzing time-varying brain networks using naturalistic fMRI data [Self-report, 2025].
-- **Active Inference and Bayesian Brain**: His work is supervised by Ronald Sladky, a leading researcher in Active Inference at the University of Vienna [Self-report, 2025].
-- **Knowledge-Driven Machine Learning**: He applies principles from cognitive science to enhance deep learning models, focusing on interpretability and domain-specific constraints [3].
-
-### Citation Metrics
-
-- **Google Scholar**: 1 publication, 0 citations as of October 2025 [3].
-- No h-index or other citation metrics are available.
-
-### Collaborative Networks
-
-- **Ronald Sladky** (University of Vienna): Supervisor and collaborator on Active Inference and cognitive neuroscience projects [Self-report, 2025].
-- **MEi:CogSci Network**: Collaborates with students and faculty from Comenius University Bratislava, Eötvös Loránd University Budapest, University of Ljubljana, and University of Vienna [2].
-
-### Recent Preprints and Working Papers
-
-- No preprints or working papers found on arXiv, bioRxiv, or other repositories as of October 2025.
+- **Key Publications**:
+  - *Knowledge-Driven Visual Analytics in Deep Learning*, Proceedings of the MEi:CogSci Conference, 2024[3]. This paper discusses integrating domain knowledge into visual analytics for deep learning models, likely tied to cognitive science applications.
+  
+- **Research Focus and Methodologies**:
+  - Dynamic functional connectivity analysis in fMRI under naturalistic conditions (e.g., watching movies).
+  - Application of deep learning and visual analytic methods to make sense of complex brain data[3].
+  
+- **Citation Metrics**:
+  - Google Scholar shows only the recent conference paper from 2024, so citation metrics such as h-index or total citations are minimal or not yet established[3].
+  
+- **Collaborative Networks**:
+  - Close collaboration with Ronald Sladky (University of Vienna).
+  - Participation in MEi:CogSci network, which includes multiple Central European cognitive science institutions[1][2].
+  
+- **Recent Preprints/Working Papers**:
+  - No preprints or additional papers on arXiv, bioRxiv, or similar repositories found.
 
 ---
 
-## 3. **PROFESSIONAL EXPERIENCE**
+## 3. Professional Experience
 
-### Employment History
-
-- No public record of professional employment or industry experience is available as of October 2025.
-
-### Industry Experience and Consulting
-
-- No evidence of consulting or industry work found.
-
-### Professional Affiliations and Society Memberships
-
-- Member of the MEi:CogSci student network, which includes students from four Central European universities [2].
-
-### Leadership Roles
-
-- No record of leadership roles in professional organizations found.
-
-### Patents, Technical Reports, or Applied Work
-
-- No patents, technical reports, or applied work found.
+- **Employment History**:
+  - No formal employment history publicly available beyond academic studies.
+  
+- **Industry Experience / Consulting**:
+  - No evidence found of industry or consulting roles.
+  
+- **Professional Affiliations**:
+  - Student member of the MEi:CogSci (Middle European master's program in Cognitive Science) community, which is an interdisciplinary European cognitive science network[1][2].
+  
+- **Leadership Roles**:
+  - No leadership roles publicly listed.
+  
+- **Patents / Applied Work**:
+  - None found.
 
 ---
 
-## 4. **ACTIVE INFERENCE & RELATED RESEARCH**
+## 4. Active Inference & Related Research
 
-### Direct Connections to Active Inference
-
-- Mangat is supervised by **Ronald Sladky**, who is a prominent researcher in Active Inference and teaches the subject at the University of Vienna [Self-report, 2025].
-- His master’s thesis on dynamic functional connectivity in naturalistic fMRI is directly relevant to Active Inference, which seeks to model brain dynamics using Bayesian principles [Self-report, 2025].
-- He presented at the MEi:CogSci Conference 2024, where Active Inference was a key theme, including a plenary talk by Ronald Sladky on the amygdaloid complex from an Active Inference perspective [1].
-
-### Adjacent Fields
-
-- **Free Energy Principle**: Active Inference is grounded in the Free Energy Principle, which Mangat’s work implicitly engages with through dynamic connectivity and Bayesian modeling [Self-report, 2025].
-- **Bayesian Inference**: His research on knowledge-driven visual analytics and dynamic connectivity aligns with Bayesian approaches to brain function [3].
-- **Computational Neuroscience**: His work bridges computational modeling and empirical neuroscience, particularly in the context of fMRI and brain network analysis [Self-report, 2025].
-
-### Methodological Overlap
-
-- **Modeling and Simulation**: Mangat’s work involves computational modeling of brain networks and the application of machine learning to neuroimaging data [3].
-- **Mathematical Frameworks**: His research employs statistical and mathematical frameworks for analyzing dynamic systems, which are central to Active Inference [Self-report, 2025].
-
-### Potential Applications
-
-- Mangat’s expertise in dynamic functional connectivity and knowledge-driven machine learning could be applied to **Active Inference models of brain dynamics**, particularly in understanding how the brain adapts to changing environments [Self-report, 2025].
-- His work may also contribute to **personalized models of brain function**, which are a key goal of Active Inference research [Self-report, 2025].
-
-### Research Gaps
-
-- Mangat is well-positioned to address gaps in **integrating domain knowledge into Active Inference models**, particularly in the context of naturalistic fMRI data [Self-report, 2025].
-- His work could also help bridge the gap between **computational modeling and empirical neuroscience**, which is a major challenge in the field [Self-report, 2025].
+- **Direct Links to Active Inference**:
+  - Mangat's master's thesis is supervised by Ronald Sladky, who is a cognitive neuroscientist and Active Inference instructor at University of Vienna, indicating direct academic engagement with Active Inference theory and methods[1].
+  - No direct publications by Mangat explicitly on Active Inference found, but close academic environment and thesis topic suggest methodological overlap.
+  
+- **Adjacent Fields**:
+  - Cognitive neuroscience, Bayesian inference, dynamic functional connectivity, and computational modeling in fMRI.
+  - Use of deep learning and visual analytics intersecting with computational neuroscience.
+  
+- **Methodological Overlap**:
+  - Dynamic functional connectivity and naturalistic fMRI are compatible with Active Inference frameworks emphasizing brain dynamics and prediction errors.
+  
+- **Potential Applications**:
+  - Mangat’s work on comparing dynamic functional connectivity methods could enhance understanding of neurocomputational mechanisms underlying Active Inference in naturalistic brain states.
+  
+- **Research Gaps**:
+  - Bridging methodological gaps between dynamic connectivity analyses and Active Inference models.
+  - Developing visualization tools for interpretability of complex brain models, which Mangat’s recent publication suggests a focus on.
 
 ---
 
-## 5. **ACADEMIC & PROFESSIONAL NETWORK**
+## 5. Academic & Professional Network
 
-### Key Collaborators
-
-- **Ronald Sladky** (University of Vienna): Supervisor and collaborator on Active Inference and cognitive neuroscience projects [Self-report, 2025].
-- **MEi:CogSci Network**: Collaborates with students and faculty from Comenius University Bratislava, Eötvös Loránd University Budapest, University of Ljubljana, and University of Vienna [2].
-
-### Conference Presentations
-
-- **MEi:CogSci Conference 2024**: Presented on knowledge-driven visual analytics in deep learning [2, 3].
-
-### Workshop Organization or Participation
-
-- No record of workshop organization or participation found.
-
-### Community Engagement
-
-- No public record of blog posts, tutorials, or code repositories found as of October 2025.
-
-### Social Media Presence
-
-- No public record of research-related social media presence found as of October 2025.
+- **Key Collaborators**:
+  - Ronald Sladky (University of Vienna) – supervisor and Active Inference mentor[1].
+  - MEi:CogSci student network including Comenius University, University of Ljubljana, and Eötvös Loránd University[2].
+  
+- **Conference Presentations**:
+  - Presented at MEi:CogSci Conference 2024 in Bratislava: “Knowledge-Driven Visual Analytics in Deep Learning”[1][3].
+  
+- **Workshop Participation / Organization**:
+  - No records found of organizing activities.
+  
+- **Community Engagement**:
+  - No public blog posts, tutorials, or code repositories found explicitly linked to Mangat.
+  
+- **Social Media**:
+  - No public research-related social media profiles identified.
 
 ---
 
-## 6. **ONLINE PRESENCE & RESOURCES**
+## 6. Online Presence & Resources
 
-- **Personal Website or Research Page**: Not found.
-- **Google Scholar Profile**: https://scholar.google.com/citations?user=nTr4DTgAAAAJ&hl=en [3]
-- **ResearchGate Profile**: Not found.
-- **LinkedIn Profile**: Not found.
-- **GitHub or Other Code Repositories**: Not found.
-- **Twitter/X or Other Social Media**: Not found.
-- **ORCID Profile**: Not found.
-- **Institutional Profile Page**: Not found.
-- **Videos, Podcasts, or Interviews**: Not found.
-
----
-
-## 7. **FUTURE POTENTIAL & OPPORTUNITIES**
-
-### Emerging Research Directions
-
-- Mangat is likely to continue exploring **dynamic functional connectivity in naturalistic fMRI**, with a focus on **integrating domain knowledge into computational models** [Self-report, 2025].
-- His work may also expand into **personalized models of brain function** and **applications of Active Inference to clinical neuroscience** [Self-report, 2025].
-
-### Opportunities for Growth in Active Inference Community
-
-- Mangat’s expertise in **knowledge-driven machine learning** and **dynamic connectivity** positions him to contribute to the development of **more interpretable and domain-specific Active Inference models** [Self-report, 2025].
-- He may also play a role in **bridging computational modeling and empirical neuroscience**, which is a major challenge in the field [Self-report, 2025].
-
-### Potential Impact on the Field
-
-- Mangat’s work could help advance the **integration of domain knowledge into Active Inference models**, leading to more accurate and interpretable models of brain function [Self-report, 2025].
-- His research may also contribute to the development of **personalized models of brain function**, which could have important applications in clinical neuroscience [Self-report, 2025].
-
-### Strategic Collaboration Opportunities
-
-- Potential collaborators include **Ronald Sladky** (University of Vienna), **MEi:CogSci Network**, and other researchers in **computational neuroscience and Active Inference** [Self-report, 2025].
+| Resource Type            | Link                                                                                      |
+|-------------------------|-------------------------------------------------------------------------------------------|
+| Google Scholar Profile   | [Harkeerat Mangat Google Scholar](https://scholar.google.com/citations?user=nTr4DTgAAAAJ) |
+| MEi:CogSci Conference    | [2024 Conference Proceedings](https://journals.phl.univie.ac.at/meicogsci/issue/view/17)    |
+| University of Vienna     | [University of Vienna](https://www.univie.ac.at/en/) (no direct personal page found)       |
+| ResearchGate             | No public profile found                                                                   |
+| LinkedIn                 | No public profile found                                                                   |
+| Twitter/X                | No public profile found                                                                   |
+| GitHub                  | No public repositories found                                                              |
+| ORCID                   | No ORCID profile found                                                                    |
 
 ---
 
-## References
+## 7. Future Potential & Opportunities
 
-1. [MEi:CogSci Conference 2024 Schedule](https://ssc-phil.univie.ac.at/fileadmin/user_upload/s_philosophie/Studien/MA_MeiCogSci/MEi_CogSci_Conference_2024_Schedule.pdf)
-2. [Proceedings of the MEi:CogSci Conference 2024](https://journals.phl.univie.ac.at/meicogsci/issue/view/17)
-3. [Google Scholar Profile: Harkeerat Mangat](https://scholar.google.com/citations?user=nTr4DTgAAAAJ&hl=en)
-4. [SFU Spring Convocation 2015](https://atom.archives.sfu.ca/uploads/r/simon-fraser-university-archives/5/b/2/5b2933f2a3f1c7ffa33288973db6edef5b9b96617049d6982b5505e22629c9da/d9f5850a-e227-4c4d-b560-a457c032ce12-SFUSpring2015_ConvocationBklt.pdf)
+- **Emerging Research Directions**:
+  - Integration of dynamic functional connectivity with Active Inference computational models.
+  - Development of knowledge-driven visual analytics to interpret complex brain data, aiding transparency and understanding in cognitive neuroscience[3].
+  
+- **Opportunities for Growth**:
+  - As a young researcher in a leading European cognitive science program, Mangat is well-positioned to contribute to interdisciplinary Active Inference research.
+  - Collaborations with Ronald Sladky and the MEi:CogSci network provide a platform for cross-institutional projects.
+  
+- **Potential Impact**:
+  - Work on methodological comparison in naturalistic fMRI could influence how Active Inference is empirically tested in complex, real-world brain activity patterns.
+  
+- **Strategic Collaborations**:
+  - Potential to collaborate with computational neuroscientists working on Bayesian brain theories and neuroimaging methods within the University of Vienna and the larger MEi:CogSci network.
 
 ---
 
-**Note:** Information is limited to publicly available sources as of October 2025. Some details, such as ORCID, ResearchGate, LinkedIn, and institutional profiles, are not available. All claims are supported by direct links to sources.
+# References
+
+1. [MEi:CogSci Conference 2024 Schedule, University of Vienna](https://ssc-phil.univie.ac.at/fileadmin/user_upload/s_philosophie/Studien/MA_MeiCogSci/MEi_CogSci_Conference_2024_Schedule.pdf)  
+2. [Proceedings of the MEi:CogSci Conference 2024](https://journals.phl.univie.ac.at/meicogsci/issue/view/17)  
+3. Mangat, H. S. (2024). *Knowledge-Driven Visual Analytics in Deep Learning*. Proceedings of the MEi:CogSci Conference, Vol. 18 (1). [Google Scholar](https://scholar.google.com/citations?user=nTr4DTgAAAAJ&hl=en)  
+
+---
+
+**Note:** The public information on Harkeerat Mangat is limited, primarily reflecting early-stage academic career status with a focus on cognitive science master's research at University of Vienna. No independent ORCID, extensive publication record, or professional profiles beyond the conference contributions and Google Scholar listing were found.

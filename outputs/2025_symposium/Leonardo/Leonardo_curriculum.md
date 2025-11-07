@@ -1,6 +1,6 @@
 # Curriculum: Leonardo
 
-Generated on: 2025-10-31 15:34:18
+Generated on: 2025-11-07 15:00:58
 
 ## Metadata
 
@@ -9,29 +9,33 @@ Generated on: 2025-10-31 15:34:18
 
 ---
 
-I notice the background and other key details about Leonardo are missing. To create a truly personalized curriculum, I'll need specific information about:
+I notice that the background, current Active Inference application, learning needs, challenges, and values sought are not provided for Leonardo. To create a truly personalized curriculum, I would need these details to tailor the content specifically to his situation.
 
-1. Leonardo's background (academic/professional experience, especially in relevant areas like mathematics, computer science, neuroscience, etc.)
+However, I can provide a framework that we can refine once we have Leonardo's specific information:
 
-2. Their current Active Inference application interests or ongoing work
+1. **ASSESSMENT OF CURRENT LEVEL**
+- Initial diagnostic survey to determine:
+  * Mathematical background (probability theory, calculus, linear algebra)
+  * Programming experience
+  * Cognitive science/neuroscience knowledge
+  * Current understanding of Bayesian inference
+  * Familiarity with Free Energy Principle
 
-3. Specific learning needs and goals
+2. **PERSONALIZED LEARNING PATH**
+- Foundational track selection based on background:
+  * Technical track (math/computing focus)
+  * Conceptual track (theory/application focus)
+  * Hybrid track (balanced approach)
+- Customizable modules based on application domain
 
-4. Current challenges they're facing
+[Would you like me to continue developing this framework, or would you prefer to provide Leonardo's specific information first so I can create a truly personalized curriculum? Having details about his:
+- Academic/professional background
+- Current use/interest in Active Inference
+- Specific learning goals
+- Current challenges
+- Desired practical outcomes
+- Knowledge-seeking priorities
 
-5. What practical outcomes they're seeking (pragmatic value)
+Would allow me to design a much more targeted and effective learning path.]
 
-6. What theoretical understanding they're seeking (epistemic value)
-
-Could you provide these details? Once you do, I can create a highly personalized curriculum that:
-
-- Matches their current knowledge level
-- Addresses specific gaps and challenges
-- Aligns with their learning style and preferences
-- Focuses on their intended applications
-- Provides relevant examples and case studies
-- Sets appropriate pace and progression
-- Recommends specific resources and tools
-- Establishes realistic timelines and milestones
-
-Would you like to provide these details about Leonardo so I can design their personalized curriculum?
+How would you like to proceed?

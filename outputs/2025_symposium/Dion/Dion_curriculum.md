@@ -1,6 +1,6 @@
 # Curriculum: Dion
 
-Generated on: 2025-10-31 15:10:07
+Generated on: 2025-11-07 14:32:44
 
 ## Metadata
 
@@ -9,52 +9,42 @@ Generated on: 2025-10-31 15:10:07
 
 ---
 
-I notice that key information about Dion's background, current Active Inference application, learning needs, challenges, and desired pragmatic/epistemic values are missing. To create a truly personalized and effective curriculum, I'll need these details to:
+I notice that key information about Dion's background, current Active Inference application, learning needs, challenges, and desired pragmatic/epistemic values are missing. To create a truly personalized and effective curriculum, I'll need these details. However, I can help you gather this information by suggesting key questions to ask Dion:
 
-1. Align the content with their existing knowledge
-2. Address specific challenges and goals
-3. Match their learning style and preferences
-4. Target relevant applications
-5. Set appropriate depth and pace
+**Background Assessment Questions:**
+1. What is your educational/professional background?
+2. What is your current level of mathematical/programming expertise?
+3. What field(s) are you working in?
+4. What prior exposure do you have to Active Inference or related concepts?
 
-Could you please provide:
+**Current Application Questions:**
+1. How are you currently using or planning to use Active Inference?
+2. What specific problems are you trying to solve?
+3. What tools/frameworks are you currently using?
 
-1. **Background:** 
-- Educational/professional background
-- Current field of work/study
-- Mathematical/programming proficiency
-- Prior exposure to related concepts
+**Learning Needs Questions:**
+1. What specific aspects of Active Inference interest you most?
+2. What are your immediate learning priorities?
+3. What is your preferred learning style (theoretical, practical, mixed)?
 
-2. **Current Active Inference Application:**
-- How they currently use or plan to use Active Inference
-- Specific domain or problem space
-- Tools/frameworks they're familiar with
+**Challenges Questions:**
+1. What specific difficulties are you encountering with Active Inference?
+2. What resources have you tried that weren't helpful?
+3. What time constraints do you have?
 
-3. **Learning Needs:**
-- Specific skills they want to develop
-- Knowledge gaps they want to address
-- Desired outcomes
+**Value Questions:**
+1. What practical outcomes are you hoping to achieve?
+2. What theoretical understanding do you want to develop?
+3. How do you plan to apply this knowledge?
 
-4. **Challenges:**
-- Current obstacles in learning/applying Active Inference
-- Time constraints
-- Resource limitations
-- Technical barriers
+Once you have this information, I can create a highly personalized curriculum that:
+- Matches Dion's current knowledge level
+- Addresses specific gaps and challenges
+- Aligns with their learning style and preferences
+- Focuses on their practical applications
+- Builds toward their desired outcomes
 
-5. **Pragmatic Value Sought:**
-- Practical applications they want to achieve
-- Concrete outcomes they're seeking
-
-6. **Epistemic Value Sought:**
-- Theoretical understanding they want to develop
-- Research interests
-- Conceptual frameworks they want to master
-
-With this information, I can create a highly personalized curriculum that:
-- Starts from their current knowledge level
-- Addresses their specific needs and challenges
-- Focuses on relevant applications
-- Provides appropriate resources and support
-- Sets realistic timelines and milestones
-
-Would you please provide these details so I can design a targeted learning path for Dion?
+Would you like me to:
+1. Help refine these assessment questions?
+2. Create a general Active Inference curriculum that we can customize once we have Dion's information?
+3. Focus on specific aspects of the curriculum structure?

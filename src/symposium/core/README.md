@@ -12,8 +12,10 @@ This module provides the fundamental building blocks for the entire Symposium ec
 Unified API client for multiple LLM providers:
 - **PerplexityProvider**: Perplexity AI API integration
 - **OpenRouterProvider**: OpenRouter API integration with retry logic
+- **PaymentRequiredError**: Exception for 402 payment required errors
 - Automatic provider switching and fallback
 - Token management and rate limiting
+- Payment error detection and handling
 
 ### Config
 Hierarchical configuration management:
@@ -39,7 +41,7 @@ Standardized logging setup:
 ## Usage
 
 ```python
-from symposium.core import APIClient, Config, DataLoader, setup_logging
+from symposium.core import APIClient, Config, DataLoader, setup_logging, PaymentRequiredError
 
 # Configuration
 config = Config()
@@ -89,10 +91,18 @@ setup_logging(level="INFO")
 - Context preservation
 
 ### Error Handling
-- Graceful degradation
+- **PaymentRequiredError**: Detects and raises 402 payment errors immediately (no retries)
+- Graceful degradation for other errors
 - Comprehensive logging
 - User-friendly error messages
 - Recovery mechanisms
+
+#### Payment Error Handling
+When an API returns a 402 payment required error:
+- Processing stops immediately
+- Clear error message displayed to user
+- Partial results saved for completed participants
+- User guidance provided for adding credits
 
 ## Integration
 

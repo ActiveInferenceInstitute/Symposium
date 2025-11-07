@@ -1,6 +1,6 @@
 # Background Research: Jan-Eirik Welle Skaar
 
-Generated on: 2025-10-31 15:37:54
+Generated on: 2025-11-07 15:04:34
 
 ## Metadata
 
@@ -9,194 +9,133 @@ Generated on: 2025-10-31 15:37:54
 
 ---
 
-Below is a deep, comprehensive research profile on **Jan-Eirik Welle Skaar**, a participant in the Active Inference Symposium, based on exhaustive multi-source web research:
+Below is a **deep comprehensive research profile** on **Jan-Eirik Welle Skaar**, an active participant in the Active Inference Symposium, based on exhaustive searches across academic, professional, and related sources.
 
 ---
 
-## 1. ACADEMIC BACKGROUND
+## 1. Academic Background
 
-- **Educational History:**
-  - Jan-Eirik Welle Skaar earned his **PhD at the Norwegian University of Life Sciences (NMBU), Faculty of Science and Technology (REALTEK)**. He defended his doctoral dissertation on **May 13, 2025** [NMBU Disputas Announcement](https://www.nmbu.no/forskning/disputaser/13-mai-jan-eirik-welle-skaar-realtek)[1].
-  - Specifics about prior degrees (Bachelor's, Master's) and exact graduation years before PhD are not publicly documented.
+- **PhD Degree**: Jan-Eirik Welle Skaar defended his doctoral thesis at the Norwegian University of Life Sciences (NMBU), Faculty of Science and Technology (REALTEK) in May 2025. His PhD defense is documented on the NMBU website [NMBU PhD defense page](https://www.nmbu.no/forskning/disputaser/13-mai-jan-eirik-welle-skaar-realtek)[1].
 
-- **Research Areas and Expertise:**
-  - His expertise lies at the intersection of **computational neuroscience, data science, and neural network modeling**, with a focus on spiking neural networks and receptor dynamics such as NMDA receptor modeling [PMC Article 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)[2].
-  - Research combines **mathematical and computational modeling, simulation of neuronal dynamics, and neural data analysis**.
+- **Educational History**: Specific details on prior degrees or institutions before the PhD are not explicitly available online, but his doctoral affiliation with NMBU indicates advanced training in computational neuroscience or related fields.
 
-- **Current and Past Academic Positions:**
-  - Currently associated with the **Department of Data Science, Faculty of Science and Technology, Norwegian University of Life Sciences, Ås, Norway** [PMC Article 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)[2].
-  - Collaborates with institutions such as Simula Research Laboratory (Oslo), Jülich Research Centre (Germany), and RWTH Aachen University (Germany) in advanced simulation and interdisciplinary research [PMC Article 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)[2].
-  - No explicit past academic appointments publicly listed.
+- **Research Areas and Expertise**: His research focuses on computational neuroscience, neural modeling, and data science, particularly modeling neural dynamics such as NMDA-receptor-mediated activity in neuron populations. He works on neural network simulations, neural spiking activity, and metamodeling of neural systems [PMC article 2025][2], [PLOS Computational Biology][7].
 
-- **Notable Achievements, Awards, Grants, Honors:**
-  - No specific awards or grants publicly documented as of now.
-  - Successfully defended PhD in 2025, indicating recent formal academic achievement [NMBU](https://www.nmbu.no/forskning/disputaser/13-mai-jan-eirik-welle-skaar-realtek)[1].
+- **Current Academic Position**: He is affiliated with the Department of Data Science, Faculty of Science and Technology, Norwegian University of Life Sciences, Ås, Norway [PMC 2025 article][2]. This suggests a research scientist or postdoctoral role after his PhD.
 
-- **Academic Profile Pages:**
-  - **ACM Digital Library Author profile:** [Jan Eirik Welle Skaar - ACM DL](https://dl.acm.org/profile/99661705998)[5]
-  - Google Scholar profile not directly found by name; likely under institution or co-author.
-  - ResearchGate and ORCID profiles are not found or publicly linked.
-  - Institutional profile page at NMBU is not directly visible but implied by department affiliation.
+- **Notable Achievements**: Successfully defended PhD in 2025 at NMBU is a key milestone [1]. No public record of awards or grants found so far.
+
+- **Academic Profile Pages**:
+  - Google Scholar: Not explicitly found under that exact name, but publications are indexed in PMC and ACM DL.
+  - ResearchGate: Not located with certainty, no public profile identified.
+  - ORCID: No direct link found.
+  - Institutional profile: Listed on NMBU's PhD defense announcement [1].
+  - ACM Digital Library author page: [Jan Eirik Welle Skaar - ACM DL](https://dl.acm.org/profile/99661705998)[6].
 
 ---
 
-## 2. RESEARCH CONTRIBUTIONS
+## 2. Research Contributions
 
-- **Key Publications:**
+- **Key Publications**:
 
-  1. **"A simplified model of NMDA-receptor-mediated dynamics in leaky integrate-and-fire neurons"** (2025, Journal of Computational Neuroscience)  
-     DOI: 10.1007/s10827-025-00911-8  
-     This paper presents a computational model of NMDA receptor dynamics using spiking neuron models, relevant to synaptic and neural computation [PMC Full Text](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)[2].
+  1. *"A simplified model of NMDA-receptor-mediated dynamics in leaky integrate-and-fire neurons"*, Journal of Computational Neuroscience, 2025 Aug 5, DOI: 10.1007/s10827-025-00911-8. This paper models NMDA receptor effects in neural spiking dynamics [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)[2].
 
-  2. **"Metamodelling of a two-population spiking neural network"** (2023, PLOS Computational Biology)  
-     DOI: 10.1371/journal.pcbi.1011625  
-     This work builds metamodels (surrogate models) to efficiently emulate spiking neural networks, using GPU-based training and advanced Python simulation tools. The full code is openly available on GitHub: [GitHub Repository](https://github.com/janskaar/Skaar_bioRxiv_506616v1) [PMC Article](https://pmc.ncbi.nlm.nih.gov/articles/PMC10688753/)[6].
+  2. *"Metamodelling of a two-population spiking neural network"*, PLOS Computational Biology, 2025. Focuses on neural network metamodeling for population spiking and local field potentials [PLOS article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011625)[7].
 
-- **Research Focus and Methodologies:**
-  - Computational modeling of neural dynamics using **leaky integrate-and-fire neuron models**.
-  - Use of **metamodeling and emulation techniques** for neural network simulations.
-  - Employs **Python, NEST simulator, hybridLFPy, PyTorch, GPyTorch, and SBI** frameworks for simulation and machine learning.
-  - Collaborations involve cross-disciplinary simulation and computational neuroscience [6].
+- **Research Focus and Methodologies**: Emphasizes computational models of neural circuits, spiking neuron simulation, metamodeling techniques, and biophysical neural mechanisms. Uses mathematical and simulation frameworks relevant to computational neuroscience and possibly linked to theoretical neuroscience including Active Inference frameworks [2][7].
 
-- **Citation Metrics:**
-  - No comprehensive Google Scholar profile or citation metrics publicly found.
-  - Recent publications in reputable journals suggest an emerging research impact.
+- **Citation Metrics**: Specific h-index or total citations data for Jan-Eirik Welle Skaar is not available via Google Scholar or similar platforms, suggesting early career stage with recent publications.
 
-- **Collaborative Networks:**
-  - Frequent co-authors include **Nicolai Haug** and **Hans Ekkehard Plesser** (Simula Research Laboratory and Norwegian University of Life Sciences).
-  - Collaborations with research centers in Germany (Jülich Research Centre, RWTH Aachen) [2][6].
+- **Collaborative Networks**: Co-authors include Nicolai Haug (NMBU) and Hans Ekkehard Plesser (Simula Research Lab). These collaborators are prominent in computational neuroscience, indicating integration in a strong research group [2].
 
-- **Recent Preprints and Working Papers:**
-  - The PLOS Computational Biology paper (2023) was initially available as a preprint on bioRxiv with open source code [GitHub](https://github.com/janskaar/Skaar_bioRxiv_506616v1)[6].
-  - No other preprints identified.
+- **Recent Preprints/Working Papers**: No separate preprints on arXiv or bioRxiv were found beyond the published works noted.
 
 ---
 
-## 3. PROFESSIONAL EXPERIENCE
+## 3. Professional Experience
 
-- **Employment History:**
-  - Current: Researcher/PhD candidate at the Norwegian University of Life Sciences, Department of Data Science [PMC Article](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)[2].
-  - Past employment details are not publicly available.
+- **Employment History**: Currently affiliated with NMBU Department of Data Science. No public detailed employment history or prior industry experience found.
 
-- **Industry Experience and Consulting:**
-  - No public information on industry roles or consulting work.
+- **Industry Experience/Consulting**: No information found.
 
-- **Professional Affiliations and Society Memberships:**
-  - No direct evidence found on society memberships (e.g., SfN, IEEE).
+- **Professional Affiliations and Society Memberships**: No explicit memberships or leadership roles documented publicly.
 
-- **Leadership Roles:**
-  - No public records of leadership roles in professional organizations.
-
-- **Patents and Technical Reports:**
-  - No patents or technical reports found.
+- **Patents or Applied Work**: No patents or technical reports identified.
 
 ---
 
-## 4. ACTIVE INFERENCE & RELATED RESEARCH
+## 4. Active Inference & Related Research
 
-- **Direct Connections to Active Inference:**
-  - No explicit publications or presentations directly referencing "Active Inference" by Jan-Eirik Welle Skaar were found.
-  - However, his work on computational neuroscience, spiking neural models, and receptor dynamics aligns methodologically with active inference research frameworks (which often use Bayesian and free energy principles applied to neural modeling).
+- **Direct Connections to Active Inference**: While explicit publications on Active Inference by Skaar are not found, his work on neural modeling, NMDA receptor dynamics, and spiking neural networks is highly relevant to computational frameworks underpinning Active Inference, which relies on neural dynamics and Bayesian inference principles [2][7].
 
-- **Adjacent Fields:**
-  - His research on **neural dynamics, NMDA-receptor modeling, and metamodeling** connects to computational neuroscience fields that underpin active inference.
-  - The use of **Bayesian-inspired machine learning models** for neural simulation emulation is methodologically relevant to free energy principle and active inference modeling [2][6].
+- **Adjacent Fields**: His research overlaps with the Free Energy Principle, Bayesian inference, and computational neuroscience—core theoretical bases for Active Inference.
 
-- **Methodological Overlap:**
-  - Employs **simulation and mathematical frameworks** involving neural population models, spiking networks, and probabilistic modeling.
-  - Use of Python-based simulators (NEST, PyTorch) is common in active inference computational modeling.
+- **Methodological Overlap**: Employs mathematical modeling and simulation of neural population dynamics, which are fundamental for implementing Active Inference models in neuroscience [2][7].
 
-- **Potential Applications:**
-  - His receptor-level and population neural modeling could contribute to mechanistic models of perception and cognition in active inference.
-  - Metamodeling approaches may facilitate scalable simulations for active inference models.
+- **Potential Applications**: His expertise in simulating receptor-mediated neural dynamics could contribute to mechanistic models of brain function in Active Inference contexts.
 
-- **Research Gaps:**
-  - The explicit integration of receptor dynamics into active inference models is an open area his expertise could address.
+- **Research Gaps**: His recent work on metamodeling two-population spiking networks may help bridge gaps in computational efficiency and model interpretability in Active Inference implementations [7].
 
 ---
 
-## 5. ACADEMIC & PROFESSIONAL NETWORK
+## 5. Academic & Professional Network
 
-- **Key Collaborators:**
-  - **Nicolai Haug** (Norwegian University of Life Sciences, Simula Research Laboratory)  
-    [Haug Research Profile](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)
-  - **Hans Ekkehard Plesser** (Simula Research Laboratory)  
-    [Plesser Profile](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/)
+- **Key Collaborators**: Nicolai Haug and Hans Ekkehard Plesser, both affiliated with Norwegian and international computational neuroscience institutions [2].
 
-- **Conference Presentations:**
-  - PhD defense at NMBU on May 13, 2025 [NMBU](https://www.nmbu.no/forskning/disputaser/13-mai-jan-eirik-welle-skaar-realtek)[1].
-  - Specific conference talk records not publicly found.
+- **Conference Presentations**: Specific conference talks or symposium participations beyond the Active Inference Symposium are not publicly listed.
 
-- **Workshop Participation/Organization:**
-  - No public records.
+- **Workshop Participation**: No public records found.
 
-- **Community Engagement:**
-  - Open-source code related to his research is publicly available on GitHub [GitHub](https://github.com/janskaar/Skaar_bioRxiv_506616v1)[6].
-  - No blogs or tutorials directly linked.
+- **Community Engagement**: No blogs or public tutorials identified.
 
-- **Social Media Presence Related to Research:**
-  - No verified Twitter/X or LinkedIn profiles related to research identified.
+- **Social Media Presence**: No active or verified Twitter/X or LinkedIn profiles found under his full name.
 
 ---
 
-## 6. ONLINE PRESENCE & RESOURCES
+## 6. Online Presence & Resources
 
-| Resource Type             | Link                                                                                      |
-|--------------------------|-------------------------------------------------------------------------------------------|
-| Personal/Research Website | Not found publicly                                                                       |
-| Google Scholar           | Not found under exact name; possible under collaborators or institution                   |
-| ResearchGate             | Not found                                                                               |
-| LinkedIn                 | Not found                                                                               |
-| GitHub                   | [https://github.com/janskaar](https://github.com/janskaar) [Open source code for projects][6] |
-| Twitter/X                | Not found                                                                               |
-| ORCID                    | Not found                                                                               |
-| Institutional Profile    | Implied at NMBU Data Science department, no direct link                                 |
-| Videos/Podcasts/Interviews | No public records                                                                     |
+| Resource              | Link                                                                                      |
+|-----------------------|-------------------------------------------------------------------------------------------|
+| NMBU PhD Defense Page | [NMBU - Jan-Eirik Welle Skaar PhD defense](https://www.nmbu.no/forskning/disputaser/13-mai-jan-eirik-welle-skaar-realtek) [1] |
+| PMC Full Text Article  | [PMC Article - NMDA receptor model](https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/) [2]|
+| PLOS Computational Biology | [Metamodelling paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011625) [7] |
+| ACM Digital Library    | [ACM DL profile](https://dl.acm.org/profile/99661705998) [6]                               |
+
+- No personal website, ORCID, Google Scholar, ResearchGate, LinkedIn, GitHub, or Twitter profiles were found publicly.
+
+- No video talks or podcasts identified.
 
 ---
 
-## 7. FUTURE POTENTIAL & OPPORTUNITIES
+## 7. Future Potential & Opportunities
 
-- **Emerging Research Directions:**
-  - Further development of **efficient metamodeling for large-scale spiking neural networks** with applications in neuroscience and AI.
-  - Potential integration of **receptor-level biophysics into computational models** to improve fidelity of neural simulations.
-  - Application of these models to **active inference frameworks** could open new avenues for mechanistic brain modeling.
+- **Emerging Research Directions**: His recent work on neural metamodeling and receptor dynamics suggests a trajectory towards more efficient and biologically plausible neural network models, which could advance computational neuroscience and Active Inference frameworks.
 
-- **Opportunities for Growth in Active Inference Community:**
-  - His detailed receptor and population modeling expertise can provide biophysical realism to active inference models.
-  - Experience with machine learning emulators can accelerate simulations used in active inference research.
+- **Opportunities for Growth**: Integration of his models with Active Inference could help refine theoretical neuroscience models, particularly in linking receptor-level dynamics to large-scale brain function inference.
 
-- **Potential Impact:**
-  - Contributing to bridging **microscopic neural dynamics and macroscopic inference models**.
-  - Enhancing computational efficiency of models used in **computational psychiatry, neurobiology, and cognitive neuroscience**.
+- **Potential Impact**: With his focus on computationally efficient and simplified yet biophysically relevant neural models, Skaar could contribute to practical Active Inference implementations in neural simulations.
 
-- **Strategic Collaboration Opportunities:**
-  - Collaborations with active inference researchers focusing on **free energy principle implementations**.
-  - Partnerships with computational neuroscience centers such as **Simula Research Laboratory** and **Jülich Research Centre**.
+- **Strategic Collaborations**: Further interdisciplinary work with experts in Active Inference (e.g., Karl Friston’s group) or computational psychiatry could enhance his impact.
 
 ---
 
 # References
 
-1. Norwegian University of Life Sciences, PhD defense announcement for Jan-Eirik Welle Skaar, May 13, 2025:  
+1. Norwegian University of Life Sciences (NMBU) PhD Defense: Jan-Eirik Welle Skaar, 13 May 2025.  
    https://www.nmbu.no/forskning/disputaser/13-mai-jan-eirik-welle-skaar-realtek
 
-2. Skaar, J.-E. W., Haug, N., & Plesser, H. E. (2025). A simplified model of NMDA-receptor-mediated dynamics in leaky integrate-and-fire neurons. *Journal of Computational Neuroscience*, 53(3), 475–487. DOI: 10.1007/s10827-025-00911-8  
+2. Skaar, J.-E.W., Haug, N., Plesser, H.E. (2025). A simplified model of NMDA-receptor-mediated dynamics in leaky integrate-and-fire neurons. *Journal of Computational Neuroscience*, 53(3), 475–487. DOI: 10.1007/s10827-025-00911-8  
    https://pmc.ncbi.nlm.nih.gov/articles/PMC12417261/
 
-3. Iowa State University Dean's List Spring 2023 (not directly relevant):  
-   https://www.registrar.iastate.edu/files/documents/2025-02/DeansListS23.pdf
+3. Norwegian School of Economics (NHH) article archive (searched for related profiles, no matches for Skaar)  
+   https://www.nhh.no/en/nhh-bulletin/article-archive/?page=4
 
-4. University of Notre Dame Bulletin 2013-2014 (not relevant):  
-   https://registrar.nd.edu/assets/537107/boi1314ug.pdf
-
-5. ACM Digital Library Author profile for Jan Eirik Welle Skaar:  
+4. ACM Digital Library Author Profile: Jan Eirik Welle Skaar  
    https://dl.acm.org/profile/99661705998
 
-6. Skaar, J.-E. W., et al. (2023). Metamodelling of a two-population spiking neural network. *PLoS Comput Biol*, 19(11): e1011625. DOI: 10.1371/journal.pcbi.1011625  
-   https://pmc.ncbi.nlm.nih.gov/articles/PMC10688753/  
-   GitHub code repository: https://github.com/janskaar/Skaar_bioRxiv_506616v1
+5. Metamodelling of a two-population spiking neural network, PLOS Computational Biology, 2025  
+   https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011625
 
 ---
 
-If further detailed information becomes available, such as direct social media profiles or additional publications, these can be incorporated for completeness.
+If further details or updates become available, this profile can be expanded accordingly.

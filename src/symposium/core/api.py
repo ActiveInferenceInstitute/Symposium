@@ -7,8 +7,24 @@ from abc import ABC, abstractmethod
 from typing import Optional, Dict, Any
 import backoff
 from openai import OpenAI
+from openai import APIStatusError
 
 logger = logging.getLogger(__name__)
+
+
+class PaymentRequiredError(Exception):
+    """Exception raised when API requires payment (402 error)."""
+    
+    def __init__(self, message: str, provider: str = "unknown"):
+        """Initialize payment required error.
+        
+        Args:
+            message: Error message from API
+            provider: API provider name
+        """
+        self.provider = provider
+        self.message = message
+        super().__init__(f"{provider.upper()} API: {message}")
 
 
 class BaseAPIProvider(ABC):
@@ -152,16 +168,35 @@ class OpenRouterProvider(BaseAPIProvider):
             
         Returns:
             Response text from OpenRouter
+            
+        Raises:
+            PaymentRequiredError: If API returns 402 payment required error
+            ValueError: If API returns empty response
         """
         # Combine system prompt with user prompt for OpenRouter
         full_prompt = prompt
         if system_prompt:
             full_prompt = f"{system_prompt}\n\n{prompt}"
 
-        response = self.client.chat.completions.create(
-            model=kwargs.get("model", self.model),
-            messages=[{"role": "user", "content": full_prompt}]
-        )
+        try:
+            response = self.client.chat.completions.create(
+                model=kwargs.get("model", self.model),
+                messages=[{"role": "user", "content": full_prompt}]
+            )
+        except APIStatusError as e:
+            # Check for 402 payment required error
+            if hasattr(e, 'status_code') and e.status_code == 402:
+                error_message = str(e)
+                if hasattr(e, 'response') and e.response:
+                    try:
+                        error_data = e.response.json()
+                        if 'error' in error_data and 'message' in error_data['error']:
+                            error_message = error_data['error']['message']
+                    except (ValueError, AttributeError):
+                        pass
+                raise PaymentRequiredError(error_message, provider="openrouter") from e
+            # Re-raise other APIStatusErrors
+            raise
 
         if response and response.choices and response.choices[0].message.content:
             return response.choices[0].message.content
@@ -185,10 +220,14 @@ class OpenRouterProvider(BaseAPIProvider):
             Response text from OpenRouter
             
         Raises:
+            PaymentRequiredError: If API returns 402 payment required error (no retries)
             Exception: If all retry attempts fail
         """
         try:
             return self._get_response_with_retry(prompt, system_prompt, **kwargs)
+        except PaymentRequiredError:
+            # Don't log payment errors as generic errors, re-raise immediately
+            raise
         except Exception as e:
             logger.error(f"Error getting OpenRouter response after retries: {e}")
             raise

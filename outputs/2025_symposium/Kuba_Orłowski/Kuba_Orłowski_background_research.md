@@ -1,6 +1,6 @@
 # Background Research: Kuba Orłowski
 
-Generated on: 2025-10-31 15:38:42
+Generated on: 2025-11-07 15:05:35
 
 ## Metadata
 
@@ -9,156 +9,123 @@ Generated on: 2025-10-31 15:38:42
 
 ---
 
-Here is a **deep comprehensive research profile** on **Jakub (Kuba) Orłowski**, participant in the Active Inference Symposium, affiliated with University College Dublin (UCD), ORCID: 0000-0002-5380-3275.
+## Academic Background
 
----
+**Degrees, Institutions, Graduation Years**  
+No explicit information is available regarding Jakub (Kuba) Orłowski’s educational degrees, institutions, or graduation years from the provided sources[1][2][3]. The institutional profile at University College Dublin (UCD) lists him as a Postdoctoral Research Fellow, but does not detail his educational background[1]. No LinkedIn, ResearchGate, or personal website with a CV was found in this search.
 
-## 1. ACADEMIC BACKGROUND
+**Research Areas and Expertise**  
+Kuba Orłowski is a postdoctoral researcher in the School of Electrical and Electronic Engineering at UCD, specifically with the Neuromuscular Systems Group[1][2]. His primary research focus is on **closed-loop brain stimulation**[2][3]. This area involves real-time monitoring and modulation of neural activity, a key component in both neuromodulation therapies and basic neuroscience research.
 
-- **Name:** Jakub (Kuba) Orłowski  
-- **Current Position:** Postdoctoral Research Fellow (Level II), School of Electrical and Electronic Engineering, University College Dublin (UCD)  
-- **ORCID:** [0000-0002-5380-3275](https://orcid.org/0000-0002-5380-3275)  
-- **Educational History:**  
-  Specific degrees and graduation years are not explicitly listed in available sources. However, as a postdoctoral fellow at UCD, Kuba likely holds a PhD in a related field such as biomedical engineering, neuroscience, or electrical engineering. Further details may be available upon inquiry via UCD.  
+**Current and Past Academic Positions**  
+- **Current:** Postdoctoral Research Fellow (Level II), School of Electrical and Electronic Engineering, University College Dublin[1].
+- **Affiliation:** Neuromuscular Systems Group, UCD[2].
+No information is available about previous academic or research positions.
 
-- **Research Areas and Expertise:**  
-  Kuba Orłowski specializes in **closed-loop brain stimulation**, **neuromuscular systems**, **neural engineering**, and **brain-computer interfaces**. His work integrates electrical engineering principles with neuroscience, focusing on neural control and stimulation technologies [1][2].  
+**Notable Achievements, Awards, Grants, Honors**  
+No information on awards, grants, or honors is available from the current sources[1][2][3].
 
-- **Institutional Profile:**  
-  UCD Staff Profile: [https://people.ucd.ie/jakub.orlowski](https://people.ucd.ie/jakub.orlowski)  
-  UCD Neuromuscular Systems Group page: [https://www.ucd.ie/neuro/people/](https://www.ucd.ie/neuro/people/)  
+**Academic Profile Pages**  
+- **UCD Institutional Profile:** [https://people.ucd.ie/jakub.orlowski](https://people.ucd.ie/jakub.orlowski)[1]
+- **ORCID:** 0000-0002-5380-3275 (profile not directly linked in sources, but the ID is listed on his UCD page)[1]
+- **Google Scholar:** [https://scholar.google.com/citations?user=ggRcdNwAAAAJ](https://scholar.google.com/citations?user=ggRcdNwAAAAJ)[3]
 
-- **Notable Achievements and Honors:**  
-  No explicit awards, grants, or honors listed publicly. His postdoctoral role and involvement in interdisciplinary projects indicate recognized research competence [1][2].  
+No ResearchGate, LinkedIn, personal website, or other academic profile links were found.
 
-- **Academic Profiles:**  
-  - Google Scholar: [https://scholar.google.com/citations?user=ggRcdNwAAAAJ](https://scholar.google.com/citations?user=ggRcdNwAAAAJ)  
-  - ORCID: [https://orcid.org/0000-0002-5380-3275](https://orcid.org/0000-0002-5380-3275)  
-  - UCD Profile: [https://people.ucd.ie/jakub.orlowski](https://people.ucd.ie/jakub.orlowski)  
+## Research Contributions
 
----
+**Key Publications**  
+No specific publications are listed in the provided sources. His Google Scholar profile confirms research activity in "closed-loop brain stimulation" but does not list individual papers, titles, journals, or DOIs[3]. No publications are visible on his UCD profile[1]. No preprints on arXiv, bioRxiv, or similar platforms were found.
 
-## 2. RESEARCH CONTRIBUTIONS
+**Research Focus Areas and Methodologies**  
+Orłowski’s primary focus is **closed-loop brain stimulation**, which typically involves real-time feedback systems for modulating neural activity, often using electrophysiological recordings and computational modeling[2][3]. This area is relevant to both clinical neuromodulation (e.g., for Parkinson’s disease, epilepsy) and basic neuroscience.
 
-- **Key Publications & Research Focus:**  
-  Kuba’s research centers on **closed-loop brain stimulation**, a method of delivering electrical stimulation to the brain in response to neural signals in real-time, aiming to improve neuromodulation therapies. While exact publication titles and DOIs are not fully enumerated in open sources, his Google Scholar profile lists works related to brain stimulation and neural engineering [3][4].  
+**Citation Metrics**  
+No h-index, citation count, or recent impact metrics are available from the current sources. His Google Scholar profile does not display these statistics publicly[3].
 
-- **Methodologies:**  
-  His work employs **electrophysiological recording**, **signal processing**, **closed-loop control systems**, and **computational modeling** to optimize brain stimulation protocols. These approaches are fundamental in developing adaptive neurostimulation technologies [1][2].  
+**Collaborative Networks**  
+Orłowski is part of the Neuromuscular Systems Group at UCD, led by Professor Madeleine Lowery[2]. No information is available regarding other frequent co-authors or external collaborations.
 
-- **Citation Metrics:**  
-  According to Google Scholar, his citation metrics are modest, consistent with an early-career postdoctoral researcher. Specific h-index and total citations are not detailed in the sources but can be viewed directly on his [Google Scholar profile](https://scholar.google.com/citations?user=ggRcdNwAAAAJ).  
+**Recent Preprints and Working Papers**  
+No preprints or working papers were found on arXiv, bioRxiv, or similar platforms.
 
-- **Collaborative Networks:**  
-  He collaborates closely with Prof. Madeleine Lowery at UCD, who leads the Neuromuscular Systems group, and likely other interdisciplinary teams in neural engineering [2].  
+## Professional Experience
 
-- **Recent Preprints or Working Papers:**  
-  No preprints on arXiv or bioRxiv were found directly under his name, suggesting published work is mainly in peer-reviewed journals or conference proceedings.  
+**Employment History**  
+- **Current:** Postdoctoral Research Fellow (Level II), School of Electrical and Electronic Engineering, University College Dublin[1].
+No details about previous employment, industry experience, consulting work, or non-academic roles are available.
 
----
+**Professional Affiliations and Society Memberships**  
+No information is available regarding professional society memberships or affiliations outside UCD.
 
-## 3. PROFESSIONAL EXPERIENCE
+**Leadership Roles**  
+No information is available about leadership roles in professional organizations.
 
-- **Employment History:**  
-  - Postdoctoral Research Fellow Level II, UCD, School of Electrical and Electronic Engineering (dates not specified) [1]  
-  - Past positions are not publicly detailed.  
+**Patents, Technical Reports, or Applied Work**  
+No information is available about patents, technical reports, or applied industry work.
 
-- **Industry Experience & Consulting:**  
-  No publicly available information on industry roles or consulting activities.  
+## Active Inference & Related Research
 
-- **Professional Affiliations:**  
-  Not explicitly listed, but likely affiliated with professional societies relevant to biomedical engineering and neuroscience (e.g., IEEE Engineering in Medicine and Biology Society), though confirmation is lacking in public sources.  
+**Direct Connections to Active Inference**  
+No direct evidence was found linking Kuba Orłowski to Active Inference theory, publications, or projects. His primary focus, closed-loop brain stimulation, is methodologically adjacent to computational neuroscience and real-time Bayesian inference, but no explicit connection to Active Inference or the Free Energy Principle is documented in the available sources[2][3].
 
-- **Leadership Roles:**  
-  No explicit leadership roles found.  
+**Adjacent Fields and Methodological Overlap**  
+Closed-loop brain stimulation involves real-time data acquisition, computational modeling, and feedback control—areas that overlap with Bayesian inference and computational neuroscience[2][3]. These methodologies are foundational to Active Inference, but no direct application or publication in this domain is evident.
 
-- **Patents or Technical Reports:**  
-  No patents or technical reports indexed under his name in public patent databases.  
+**Potential Applications to Active Inference**  
+Orłowski’s expertise in real-time neural signal processing and closed-loop control could theoretically be applied to Active Inference frameworks, particularly in developing neurally plausible models of perception and action under uncertainty. However, no published work or project explicitly bridges this gap.
 
----
+**Research Gaps**  
+Given his background, Orłowski is well-positioned to contribute to the integration of closed-loop neural interfaces with Active Inference models, especially in applications requiring real-time adaptive control. However, no current work addresses this intersection, presenting a clear opportunity for future research.
 
-## 4. ACTIVE INFERENCE & RELATED RESEARCH
+## Academic & Professional Network
 
-- **Direct Connection to Active Inference:**  
-  No publications or projects explicitly mentioning *Active Inference* were found in available sources. However, his expertise in **closed-loop brain stimulation** and **computational neuroscience** links conceptually to Active Inference frameworks, which involve Bayesian and free energy principles for brain function modeling [1][2][3].  
+**Key Collaborators**  
+- **Madeleine Lowery:** Principal Investigator, Neuromuscular Systems Group, UCD[2]. No joint publications are visible in the current search.
+No other collaborators are listed in the available sources.
 
-- **Adjacent Fields:**  
-  His research overlaps with **Bayesian inference**, **computational modeling**, and **neuromodulation**, which are methodologically aligned with Active Inference principles.  
+**Conference Presentations**  
+No information is available about conference presentations, workshop participation, or organization.
 
-- **Methodological Overlap:**  
-  Use of **closed-loop control systems** and **adaptive stimulation** entails mathematical modeling and simulation, potentially employing frameworks compatible with free energy principle approaches.  
+**Community Engagement**  
+No blog posts, tutorials, code repositories (GitHub), or other community resources were found.
 
-- **Potential Applications:**  
-  Kuba's work could contribute to advancing Active Inference by applying closed-loop stimulation methods to validate computational models of brain function and disorder treatment.  
+**Social Media Presence**  
+No LinkedIn, Twitter/X, ResearchGate, or other social media profiles were found.
 
-- **Research Gaps:**  
-  Given the absence of direct Active Inference publications, he is positioned to fill gaps in experimental validation of theoretical models via neuromodulation technologies.  
+## Online Presence & Resources
 
----
+- **UCD Institutional Profile:** [https://people.ucd.ie/jakub.orlowski](https://people.ucd.ie/jakub.orlowski)[1]
+- **Google Scholar:** [https://scholar.google.com/citations?user=ggRcdNwAAAAJ](https://scholar.google.com/citations?user=ggRcdNwAAAAJ)[3]
+- **ORCID:** 0000-0002-5380-3275 (no direct link provided)[1]
+- **No ResearchGate, LinkedIn, GitHub, Twitter/X, personal website, or other profiles found.**
 
-## 5. ACADEMIC & PROFESSIONAL NETWORK
+No videos, podcasts, or interviews were found.
 
-- **Key Collaborators:**  
-  - Prof. Madeleine Lowery (UCD) – Principal Investigator in the Neuromuscular Systems Group [2]  
-  - Other collaborators are not explicitly named but likely include interdisciplinary teams in neural engineering at UCD.  
+## Future Potential & Opportunities
 
-- **Conference Presentations:**  
-  No public records of conference talks or presentations found, but involvement in the Active Inference Symposium indicates engagement with the community.  
+**Emerging Research Directions**  
+Orłowski’s expertise in closed-loop brain stimulation positions him to explore the integration of real-time neural data with Active Inference models, particularly in clinical neuromodulation and brain-computer interfaces. This could bridge the gap between theoretical neuroscience and applied neurotechnology.
 
-- **Workshop Participation:**  
-  No explicit records found.  
+**Opportunities in Active Inference Community**  
+There is significant potential for Orłowski to contribute to the Active Inference community by applying his skills in real-time signal processing and adaptive control to develop neurally grounded models of perception and action. Collaboration with theorists in Active Inference could yield novel applications in both basic and clinical neuroscience.
 
-- **Community Engagement:**  
-  No public blog posts or tutorials identified.  
+**Potential Impact**  
+By combining closed-loop neural interfaces with Active Inference frameworks, Orłowski could help advance the development of adaptive, self-organizing neurotechnologies. This would have implications for both understanding brain function and designing next-generation therapeutic devices.
 
-- **Social Media Presence:**  
-  No verified Twitter/X or LinkedIn profiles were found publicly linked to Kuba Orłowski.  
+**Strategic Collaboration Opportunities**  
+Potential collaborators include researchers in computational neuroscience, Bayesian modeling, and clinical neurotechnology. Joint projects with Active Inference theorists could explore the implementation of these models in real-world neural systems.
 
----
+## References
 
-## 6. ONLINE PRESENCE & RESOURCES
+1. **University College Dublin Institutional Profile**  
+   [https://people.ucd.ie/jakub.orlowski](https://people.ucd.ie/jakub.orlowski)
 
-| Resource                      | Link                                                          |
-|-------------------------------|---------------------------------------------------------------|
-| Personal/Research Page         | [https://people.ucd.ie/jakub.orlowski](https://people.ucd.ie/jakub.orlowski) |
-| Google Scholar Profile         | [https://scholar.google.com/citations?user=ggRcdNwAAAAJ](https://scholar.google.com/citations?user=ggRcdNwAAAAJ) |
-| ORCID                         | [https://orcid.org/0000-0002-5380-3275](https://orcid.org/0000-0002-5380-3275) |
-| UCD Neuromuscular Systems Page | [https://www.ucd.ie/neuro/people/](https://www.ucd.ie/neuro/people/) |
+2. **UCD Neuromuscular Systems Group – People**  
+   [https://www.ucd.ie/neuro/people/](https://www.ucd.ie/neuro/people/)
 
-No verified LinkedIn, GitHub, Twitter/X, or ResearchGate profiles publicly linked to his name were found.  
+3. **Google Scholar Profile**  
+   [https://scholar.google.com/citations?user=ggRcdNwAAAAJ](https://scholar.google.com/citations?user=ggRcdNwAAAAJ)
 
----
-
-## 7. FUTURE POTENTIAL & OPPORTUNITIES
-
-- **Emerging Research Directions:**  
-  The integration of closed-loop stimulation with computational models of brain function, including Active Inference frameworks, could be a promising direction for Kuba’s research, potentially contributing to precision neuromodulation therapies [1][2].  
-
-- **Opportunities in Active Inference Community:**  
-  His expertise in real-time brain stimulation and adaptive control systems aligns well with Active Inference’s computational neuroscience goals, offering opportunities for collaborative modeling and experimental validation.  
-
-- **Potential Impact:**  
-  By bridging engineering technologies with theoretical neuroscience, Kuba could help translate Active Inference models into clinical applications, such as adaptive deep brain stimulation for neurological disorders.  
-
-- **Strategic Collaborations:**  
-  Collaboration with theorists and modelers in Active Inference (e.g., Karl Friston’s group) and clinical neuroscientists could leverage his technical skills for experimental and translational research.  
-
----
-
-# References
-
-1. Jakub Orłowski | University College Dublin Profile  
-   https://people.ucd.ie/jakub.orlowski  
-
-2. Neuromuscular Systems Group | UCD  
-   https://www.ucd.ie/neuro/people/  
-
-3. Jakub Orłowski | Google Scholar  
-   https://scholar.google.com/citations?user=ggRcdNwAAAAJ  
-
-4. Jakub Orłowski | Google Scholar (alternate link)  
-   https://scholar.google.co.uk/citations?user=ggRcdNwAAAAJ&hl=id  
-
----
-
-If you require deeper access to specific publications or contact details, academic institutional access or direct inquiry to UCD may be necessary.
+**Note:**  
+No additional academic databases, preprint servers, or professional networks yielded further information about Kuba Orłowski. The absence of a detailed CV, publication list, or social media presence limits the depth of this profile. Future updates may be possible with access to restricted databases or direct contact.

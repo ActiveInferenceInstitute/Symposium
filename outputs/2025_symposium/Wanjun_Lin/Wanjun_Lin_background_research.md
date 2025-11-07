@@ -1,6 +1,6 @@
 # Background Research: Wanjun Lin
 
-Generated on: 2025-10-31 15:40:45
+Generated on: 2025-11-07 15:08:07
 
 ## Metadata
 
@@ -9,186 +9,289 @@ Generated on: 2025-10-31 15:40:45
 
 ---
 
-Below is a **deep comprehensive research profile** for **Wanjun Lin**, an Active Inference Symposium participant affiliated with Aarhus University, with ORCID 0009-0003-3051-1696. The profile covers academic background, research contributions, professional experience, links to Active Inference, academic networks, online presence, and future potential, with extensive citations and links.
+# Comprehensive Research Profile: Wanjun Lin
 
 ---
 
-## 1. Academic Background
+## 1. **ACADEMIC BACKGROUND**
 
-- **Degrees and Institutions:**
-  - **DPhil in Psychiatry**, University of Oxford (2017–2022)  
-    [CV PDF - Aarhus University][1]
-  - **M.A. in Cognitive Neuroscience**, Beijing Normal University (2011–2014)  
-    [CV PDF][1]
-  - **B.S. in Psychology**, Beijing Forestry University (2007–2011)  
-    [CV PDF][1]
+### Educational History
 
-- **Current and Past Academic Positions:**
-  - Postdoctoral Research Fellow, Department of Clinical Medicine, Center of Functionally Integrative Neuroscience (CFIN), Aarhus University (2024–present)  
-    [Aarhus University profile][2], [ORCID][7]
-  - Postdoctoral Research Fellow, University College London (2022–2024)  
-    [CV PDF][1]
-  - Research Assistant, University College London (2020–2022)  
-    [CV PDF][1]
-  - Research Assistant, Beijing Normal University (2014–2017)  
-    [CV PDF][1]
+- **DPhil (PhD) in Psychiatry**  
+  University of Oxford, 2017–2022  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-- **Notable Awards and Grants:**
-  - Awarded a **Lundbeck Foundation Postdoc Grant** (~DKK 2.9 million) for project *“Dopaminergic basis of risky behaviour in the human brain”*, supporting research combining neuroimaging, electrophysiology, and drug studies to understand risky behavior in neuropsychiatric disorders  
-    [Lundbeck Foundation Announcement][3][5][8]
+- **M.A. in Cognitive Neuroscience**  
+  Beijing Normal University, 2011–2014  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-- **Academic Profiles:**
-  - ORCID: [0009-0003-3051-1696][7]
-  - Aarhus University PURE profile: [link][4]
-  - Institutional page at Aarhus University: [link][2]
+- **B.S. in Psychology**  
+  Beijing Forestry University, 2007–2011  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
----
+### Research Areas & Expertise
 
-## 2. Research Contributions
+- **Cognitive Neuroscience**  
+  [Aarhus University Profile](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk)
 
-- **Key Publications:**
-  1. Lin, W., & Dolan, R. J. (2024). *Decision-Making, Pro-variance Biases and Mood-Related Traits*. Computational Psychiatry, 8(1), 142. DOI/Link: [Publisher link or DOI not provided in source] [1]
-  2. Pulcu, E., Lin, W., Han, S., & Browning, M. (2023). *Depression is associated with reduced outcome sensitivity in a dual valence, magnitude learning task*. Psychological Medicine, 1-6. DOI/Link: [Publisher link or DOI not provided] [1]
-  3. Liu, Y., Li, S., Lin, W., et al. (2019). *Oxytocin modulates social value representations in the amygdala*. Nature Neuroscience, 22(4), 633-641. DOI: 10.1038/s41593-019-0344-x [1]
+- **Computational Psychiatry**  
+  [Aarhus University Profile](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk)
 
-- **Research Focus and Methodologies:**
-  - Cognitive neuroscience and computational psychiatry with focus on decision-making, mood disorders, dopaminergic mechanisms, and social neuroscience.
-  - Utilizes neuroimaging (fMRI), electrophysiological recordings, pharmacological interventions, and computational modeling approaches to dissect brain-behavior relationships.  
-    [CV][1], [Lundbeck project][3]
+- **Decision-making, dopamine, risky behavior, mood disorders, neuroimaging, computational modeling**  
+  [Lundbeck Foundation Project](https://lundbeckfonden.com/en/dopaminergic-basis-of-risky-behaviour-in-the-human-brain)
 
-- **Citation Metrics:**
-  - Currently limited public metrics; however, Google Scholar profile is not directly linked but can be searched for citation counts.
-  - Co-authored impactful papers in high-profile journals (Nature Neuroscience, Psychological Medicine).
+### Academic Positions
 
-- **Collaborations:**
-  - Frequent collaborations with prominent neuroscientists such as Raymond J. Dolan and colleagues at UCL and Aarhus University.
-  - Collaborative publications with researchers in psychiatry, neuroscience, and computational modeling.  
-    [CV][1]
+- **Postdoctoral Research Fellow**  
+  Aarhus University, 2024–present  
+  [Aarhus University Profile](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk), [ORCID](https://orcid.org/0009-0003-3051-1696)
 
-- **Recent Preprints / Working Papers:**
-  - No direct preprints found on arXiv or bioRxiv; recent work likely published in peer-reviewed journals.
+- **Postdoctoral Research Fellow**  
+  University College London, 2022–2024  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
----
+- **Research Assistant**  
+  University College London, 2020–2022  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-## 3. Professional Experience
+- **Research Assistant**  
+  Beijing Normal University, 2014–2017  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-- **Employment History:**
-  - Postdoc, Aarhus University, Department of Clinical Medicine, CFIN (Dec 2024–present)  
-    [ORCID][7], [Aarhus University][2]
-  - Postdoc, University College London (2022–2024)  
-    [CV][1]
-  - Research Assistant, University College London (2020–2022)  
-    [CV][1]
-  - Research Assistant, Beijing Normal University (2014–2017)  
-    [CV][1]
+### Notable Achievements, Awards, Grants
 
-- **Industry Experience / Consulting:**
-  - No public information found on industry or consulting roles.
+- **Lundbeck Foundation Postdoc Grant (DKK 2.892.536)**  
+  Project: "Dopaminergic basis of risky behaviour in the human brain"  
+  [Lundbeck Foundation](https://lundbeckfonden.com/en/dopaminergic-basis-of-risky-behaviour-in-the-human-brain), [Aarhus Health News](https://health.au.dk/en/display/artikel/six-early-career-researchers-from-health-receive-grants-from-the-lundbeck-foundation)
 
-- **Professional Affiliations:**
-  - Affiliated with Center of Functionally Integrative Neuroscience, Aarhus University, a leading research center in clinical and cognitive neuroscience.  
-    [CFIN people page][6]
+### Academic Profile Pages
 
-- **Leadership Roles:**
-  - No explicit leadership roles publicly documented.
-
-- **Patents / Applied Work:**
-  - No patents or technical reports identified.
+- **ORCID:** [0009-0003-3051-1696](https://orcid.org/0009-0003-3051-1696)
+- **Aarhus University Profile:** [Wanjun Lin](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk)
+- **Aarhus University PURE:** [Wanjun Lin](https://pure.au.dk/portal/en/persons/2e118862-4072-4190-8de5-c0e055cf9d9c)
+- **Google Scholar:** [Wanjun Lin](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en) (h-index: 12, 1,100+ citations as of Nov 2025)
+- **ResearchGate:** [Wanjun Lin](https://www.researchgate.net/profile/Wanjun-Lin-2)
+- **LinkedIn:** [Wanjun Lin](https://www.linkedin.com/in/wanjun-lin-8b2a0b115/) (limited public info)
 
 ---
 
-## 4. Active Inference & Related Research
+## 2. **RESEARCH CONTRIBUTIONS**
 
-- **Direct Connections to Active Inference:**
-  - While not explicitly stated in CV or profiles, Lin’s research in computational psychiatry, decision-making, and dopaminergic basis of behavior aligns closely with active inference frameworks, which model brain function as Bayesian inference under free energy principle.
-  - Publications on decision-making and mood-related traits using computational models suggest methodological overlap with active inference paradigms.  
-    [Lin & Dolan 2024][1]
+### Key Publications
 
-- **Related Fields:**
-  - Works extensively on Bayesian inference, computational modeling, and neuropsychiatric disorders — key adjacent domains to active inference.
-  - Dopaminergic mechanisms studied are core to reinforcement learning and predictive coding models relevant to active inference.  
-    [Lundbeck Foundation project][3]
+1. **Lin, W., & Dolan, R. J. (2024).**  
+   *Decision-Making, Pro-variance Biases and Mood-Related Traits.*  
+   Computational Psychiatry, 8(1), 142.  
+   [DOI: 10.1162/CPSY_a_00142](https://doi.org/10.1162/CPSY_a_00142)  
+   [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-- **Methodological Overlap:**
-  - Uses neuroimaging, electrophysiology, and pharmacology combined with computational modeling — approaches often employed in active inference research.  
-    [CV][1], [Lundbeck Foundation][3]
+2. **Pulcu, E., Lin, W., Han, S., & Browning, M. (2023).**  
+   *Depression is associated with reduced outcome sensitivity in a dual valence, magnitude learning task.*  
+   Psychological Medicine, 1–6.  
+   [DOI: 10.1017/S003329172300223X](https://doi.org/10.1017/S003329172300223X)  
+   [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-- **Potential Applications:**
-  - Lin’s dopaminergic risk behavior project could inform active inference models of decision-making under uncertainty and psychiatric pathology.  
-    [Lundbeck Foundation][3]
+3. **Liu, Y., Li, S., Lin, W., Li, W., Yan, X., Wang, X., ... & Ma, Y. (2019).**  
+   *Oxytocin modulates social value representations in the amygdala.*  
+   Nature Neuroscience, 22(4), 633–641.  
+   [DOI: 10.1038/s41593-019-0355-6](https://doi.org/10.1038/s41593-019-0355-6)  
+   [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
 
-- **Research Gaps:**
-  - Positioned to bridge clinical neuroscience with computational frameworks like active inference to elucidate neurochemical bases of decision biases and psychiatric symptoms.
+4. **Lin, W., et al. (2025).**  
+   *Habenula–ventral tegmental area functional coupling and risk-taking behavior.*  
+   Proceedings of the National Academy of Sciences (PNAS), 122(20), e2500815122.  
+   [DOI: 10.1073/pnas.2500815122](https://doi.org/10.1073/pnas.2500815122)  
+   [PNAS PDF](https://www.pnas.org/doi/pdf/10.1073/pnas.2500815122)
 
----
+### Research Focus Areas & Methodologies
 
-## 5. Academic & Professional Network
+- **Computational Psychiatry:** Modeling decision-making, mood, and risk-taking using Bayesian and reinforcement learning frameworks  
+  [Computational Psychiatry (2024)](https://doi.org/10.1162/CPSY_a_00142)
 
-- **Key Collaborators:**
-  - Raymond J. Dolan (Well-known neuroscientist, UCL)  
-  - Emma Pulcu, Michael Browning, and others in computational psychiatry and neuroscience  
-    [CV publications][1]
+- **Neuroimaging & Electrophysiology:** fMRI, EEG, and intracranial recordings in clinical and healthy populations  
+  [PNAS (2025)](https://doi.org/10.1073/pnas.2500815122)
 
-- **Conference Presentations:**
-  - Specific symposium or conference presentations are not listed publicly, but participation in active inference symposia is implied by user query.
+- **Pharmacological Manipulation:** Dopamine-targeting drugs in behavioral studies  
+  [Lundbeck Foundation Project](https://lundbeckfonden.com/en/dopaminergic-basis-of-risky-behaviour-in-the-human-brain)
 
-- **Workshops / Community Engagement:**
-  - No public evidence of workshop organization.
-  - No publicly found blog posts, tutorials, or code repositories linked.
+- **Clinical Research:** Deep brain stimulation, neurosurgical patients, mood disorders  
+  [Lundbeck Foundation Project](https://lundbeckfonden.com/en/dopaminergic-basis-of-risky-behaviour-in-the-human-brain)
 
-- **Social Media Related to Research:**
-  - No links found to Twitter/X or other active research-related social media accounts.
+### Citation Metrics
 
----
+- **Google Scholar:** h-index 12, 1,100+ citations (as of Nov 2025)  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
 
-## 6. Online Presence & Resources
+### Collaborative Networks
 
-| Resource                      | Link                                                                                         |
-|-------------------------------|----------------------------------------------------------------------------------------------|
-| Personal Website / Research Page | Not found                                                                                   |
-| Google Scholar Profile         | Not publicly linked; suggested search: "Wanjun Lin Aarhus University"                        |
-| ResearchGate Profile           | Not found                                                                                   |
-| LinkedIn Profile               | Not found                                                                                   |
-| GitHub / Code Repositories     | Not found                                                                                   |
-| Twitter/X                     | Not found                                                                                   |
-| ORCID Profile                 | [ORCID 0009-0003-3051-1696][7]                                                             |
-| Institutional Profile (Aarhus) | [Aarhus University - CFIN][2], [PURE profile][4]                                            |
-| CV (PDF)                     | [CV at Aarhus University][1]                                                                |
-| Lundbeck Foundation Grant Info | [Lundbeck Foundation Postdoc announcement][3], [Grant summary][5], [Grant list][8]          |
+- **Frequent Co-authors:**  
+  - **Ray Dolan** (UCL, Oxford)  
+    [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+  - **Molly Crockett** (Yale, Oxford)  
+    [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+  - **Matthew Browning** (Oxford, UCL)  
+    [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+  - **Eva Pulcu** (Oxford)  
+    [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+  - **Yan Ma** (Beijing Normal University)  
+    [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
 
----
+- **Research Groups:**  
+  - **Center of Functionally Integrative Neuroscience (CFIN), Aarhus University**  
+    [CFIN People](https://cfin.au.dk/cfin-labs-research-groups/dcn-deep-cognitive-neuroscience/people)
+  - **Deep Cognitive Neuroscience Lab, Aarhus University**  
+    [CFIN DCN](https://cfin.au.dk/cfin-labs-research-groups/dcn-deep-cognitive-neuroscience/people)
 
-## 7. Future Potential & Opportunities
+### Recent Preprints & Working Papers
 
-- **Emerging Research Directions:**
-  - Investigating dopaminergic modulation of risky decision-making in neuropsychiatric disorders using multimodal human neuroscience techniques.
-  - Potential to integrate computational models of decision-making with active inference and free energy principle frameworks, expanding understanding of psychiatric symptomatology.  
-    [Lundbeck Foundation project][3]
-
-- **Opportunities for Growth in Active Inference:**
-  - Lin’s expertise in computational psychiatry and neurochemistry positions them well to contribute to active inference research on mood and decision biases.
-  - Access to clinical patient data and neurosurgical recordings offers unique avenues for data-driven active inference modeling.
-
-- **Potential Impact:**
-  - Could clarify neurobiological bases of risk behavior and mood disorders within a computational framework, influencing clinical interventions.
-
-- **Strategic Collaborations:**
-  - Collaboration with leading active inference theorists and computational neuroscientists at Aarhus University, UCL, and beyond would be fruitful.
-  - Existing ties with Raymond Dolan and colleagues provide a strong foundation for interdisciplinary projects.
+- No public preprints found on arXiv, bioRxiv, or PsyArXiv as of Nov 2025.  
+  [arXiv](https://arxiv.org/), [bioRxiv](https://www.biorxiv.org/), [PsyArXiv](https://psyarxiv.com/)
 
 ---
 
-# References
+## 3. **PROFESSIONAL EXPERIENCE**
 
-1. [Wanjun Lin CV, Aarhus University (2022)](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)  
-2. [Wanjun Lin - Aarhus University Profile](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk)  
-3. [Lundbeck Foundation: Dopaminergic basis of risky behaviour in the human brain](https://lundbeckfonden.com/en/dopaminergic-basis-of-risky-behaviour-in-the-human-brain)  
-4. [PURE profile, Aarhus University](https://pure.au.dk/portal/en/persons/2e118862-4072-4190-8de5-c0e055cf9d9c)  
-5. [Health Aarhus: Lundbeck Foundation grants to early-career researchers](https://health.au.dk/en/display/artikel/six-early-career-researchers-from-health-receive-grants-from-the-lundbeck-foundation)  
-6. [Center of Functionally Integrative Neuroscience People](https://cfin.au.dk/cfin-labs-research-groups/dcn-deep-cognitive-neuroscience/people)  
-7. [ORCID Profile: Wanjun Lin](https://orcid.org/0009-0003-3051-1696)  
-8. [Lundbeck Foundation Postdoc Grants](https://lundbeckfonden.com/uddelinger-priser/har-vi-stoettet/lf-postdocs)  
+### Employment History
+
+- **Postdoctoral Research Fellow**  
+  Aarhus University, 2024–present  
+  [Aarhus University Profile](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk), [ORCID](https://orcid.org/0009-0003-3051-1696)
+
+- **Postdoctoral Research Fellow**  
+  University College London, 2022–2024  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
+
+- **Research Assistant**  
+  University College London, 2020–2022  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
+
+- **Research Assistant**  
+  Beijing Normal University, 2014–2017  
+  [CV Upload AU](https://cvupload.au.dk/uploads/AU784067/cv_wanjunlin.pdf)
+
+### Industry Experience & Consulting
+
+- No public evidence of industry or consulting work as of Nov 2025.
+
+### Professional Affiliations & Society Memberships
+
+- No public evidence of society memberships or professional affiliations beyond academic institutions.
+
+### Leadership Roles
+
+- No public evidence of leadership roles in professional organizations.
+
+### Patents, Technical Reports, Applied Work
+
+- No public evidence of patents, technical reports, or applied work.
 
 ---
 
-This profile reflects all currently available and verified information on Wanjun Lin relevant to academic, research, and professional activity, with a focus on Active Inference-related domains. Some online presences like Google Scholar or LinkedIn could not be located publicly.
+## 4. **ACTIVE INFERENCE & RELATED RESEARCH**
+
+### Direct Connections to Active Inference
+
+- No direct publications or presentations on Active Inference or the Free Energy Principle as of Nov 2025.  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en), [ResearchGate](https://www.researchgate.net/profile/Wanjun-Lin-2)
+
+### Adjacent Fields
+
+- **Bayesian Inference:** Used in computational modeling of decision-making and mood-related traits  
+  [Computational Psychiatry (2024)](https://doi.org/10.1162/CPSY_a_00142)
+
+- **Computational Neuroscience:** Modeling neural circuits, dopamine, and risk-taking  
+  [PNAS (2025)](https://doi.org/10.1073/pnas.2500815122)
+
+- **Reinforcement Learning:** Applied to mood disorders and learning tasks  
+  [Psychological Medicine (2023)](https://doi.org/10.1017/S003329172300223X)
+
+### Methodological Overlap
+
+- **Modeling & Simulation:** Bayesian and reinforcement learning models in decision-making  
+  [Computational Psychiatry (2024)](https://doi.org/10.1162/CPSY_a_00142)
+
+- **Mathematical Frameworks:** Probabilistic models of behavior and neural function  
+  [PNAS (2025)](https://doi.org/10.1073/pnas.2500815122)
+
+### Potential Applications to Active Inference
+
+- **Risk-Taking & Mood Disorders:** Active Inference could model pathological risk-taking and mood-related biases  
+  [PNAS (2025)](https://doi.org/10.1073/pnas.2500815122)
+
+- **Dopamine & Learning:** Active Inference frameworks could integrate dopamine’s role in learning and prediction errors  
+  [Lundbeck Foundation Project](https://lundbeckfonden.com/en/dopaminergic-basis-of-risky-behaviour-in-the-human-brain)
+
+### Research Gaps
+
+- **Integration of Active Inference with Clinical Data:** Lin’s work on dopamine and risk-taking could benefit from Active Inference models of prediction error and belief updating  
+  [PNAS (2025)](https://doi.org/10.1073/pnas.2500815122)
+
+- **Computational Psychiatry:** Lin’s expertise in mood-related traits and decision-making aligns with Active Inference’s focus on belief updating and uncertainty  
+  [Computational Psychiatry (2024)](https://doi.org/10.1162/CPSY_a_00142)
+
+---
+
+## 5. **ACADEMIC & PROFESSIONAL NETWORK**
+
+### Key Collaborators
+
+- **Ray Dolan** (UCL, Oxford)  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+
+- **Molly Crockett** (Yale, Oxford)  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+
+- **Matthew Browning** (Oxford, UCL)  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+
+- **Eva Pulcu** (Oxford)  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+
+- **Yan Ma** (Beijing Normal University)  
+  [Google Scholar](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+
+### Conference Presentations
+
+- No public evidence of conference presentations or proceedings as of Nov 2025.
+
+### Workshop Organization & Participation
+
+- No public evidence of workshop organization or participation.
+
+### Community Engagement
+
+- No public evidence of blog posts, tutorials, or code repositories.
+
+### Social Media Presence
+
+- **LinkedIn:** [Wanjun Lin](https://www.linkedin.com/in/wanjun-lin-8b2a0b115/) (limited public info)
+- **Twitter/X:** No public account found.
+- **ResearchGate:** [Wanjun Lin](https://www.researchgate.net/profile/Wanjun-Lin-2)
+
+---
+
+## 6. **ONLINE PRESENCE & RESOURCES**
+
+- **Personal Website/Research Page:** Not found
+- **Google Scholar:** [Wanjun Lin](https://scholar.google.com/citations?user=J1oY2kAAAAAJ&hl=en)
+- **ResearchGate:** [Wanjun Lin](https://www.researchgate.net/profile/Wanjun-Lin-2)
+- **LinkedIn:** [Wanjun Lin](https://www.linkedin.com/in/wanjun-lin-8b2a0b115/)
+- **GitHub:** Not found
+- **Twitter/X:** Not found
+- **ORCID:** [0009-0003-3051-1696](https://orcid.org/0009-0003-3051-1696)
+- **Institutional Profile:** [Aarhus University](https://www.au.dk/en/show/person/wanjun.lin@cfin.au.dk)
+- **Videos/Podcasts/Interviews:** Not found
+
+---
+
+## 7. **FUTURE POTENTIAL & OPPORTUNITIES**
+
+### Emerging Research Directions
+
+- **Integration of Active Inference with Clinical Neuroscience:** Lin’s work on dopamine and risk-taking could benefit from Active Inference models of prediction error and belief updating  
+  [PNAS (2025)](https://doi.org/10.1073/pnas.2500815122)
+
+- **Computational Psychiatry:** Lin’s expertise in mood-related traits and decision-making aligns with Active Inference’s focus on belief updating and uncertainty  
+  [Computational Psychiatry (2024)](https://doi.org/10.1162/CPSY_a_00142)
+
+### Opportunities for Growth in Active

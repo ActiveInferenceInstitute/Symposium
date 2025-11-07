@@ -1,6 +1,6 @@
 # Curriculum: Anastassiya Yegarmina
 
-Generated on: 2025-10-31 15:39:43
+Generated on: 2025-11-07 15:06:48
 
 ## Metadata
 
@@ -9,121 +9,136 @@ Generated on: 2025-10-31 15:39:43
 
 ---
 
-Based on Anastassiya's background in data science and computational neuroscience, and her transition from industry to academia, I'll design a personalized Active Inference curriculum that bridges computational and theoretical aspects while focusing on research applications.
+Based on Anastassiya's background in data science and computational neuroscience, and her transition from industry to academia, I'll design a personalized Active Inference curriculum focusing on research applications and theoretical foundations.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strengths: Strong computational background, familiarity with neural computation
-- Assumed knowledge: Statistical methods, machine learning, programming
-- Initial focus: Building theoretical foundations while leveraging existing technical skills
-- Learning style: Likely analytical and implementation-oriented based on background
+- Strong computational and mathematical foundation
+- Understanding of neural systems and data analysis
+- Need to bridge industry experience with academic research
+- Likely familiar with Bayesian inference and probabilistic modeling
+- Learning style likely favors mathematical rigor with practical implementation
 
 2. **PERSONALIZED LEARNING PATH**
-Months 1-2: Foundations
+Foundations (1-2 months):
 - Free Energy Principle fundamentals
-- Bayesian brain hypothesis
+- Variational inference basics
 - Markov Decision Processes
-- Information theory basics
+- Information theory essentials
 
-Months 3-4: Core Active Inference
-- Generative models
-- Variational inference
-- Policy selection
-- Message passing algorithms
-
-Months 5-6: Advanced Applications
-- Research methods in Active Inference
-- Current frontiers and open questions
-- Specialized implementations
+Progressive Development (2-4 months):
+- Active Inference formal theory
+- Computational implementations
+- Research methodology in Active Inference
+- Applications in computational neuroscience
 
 3. **CORE CONCEPTS MODULES**
-Module 1: Mathematical Foundations
+Mathematical Foundations:
 - Variational Bayes
 - Information geometry
-- Optimal control theory
+- Dynamic programming
+- Message passing algorithms
 
-Module 2: Theoretical Framework
+Theoretical Frameworks:
 - Free Energy Principle
-- Active Inference basics
-- Prediction error minimization
-
-Module 4: Implementation
-- SPM12 framework
-- Julia/Python implementations
-- Custom model development
+- Expected Free Energy
+- Generative models
+- Precision and uncertainty
 
 4. **HANDS-ON LEARNING**
-Computational Projects:
-- Basic generative model implementation
-- Policy selection algorithms
-- Multi-agent simulations
-- Research replication projects
+Computational Exercises:
+- Python implementation using PyAI
+- MATLAB exercises with SPM
+- Custom model development
+- Simulation environments
+
+Projects:
+- Implement basic Active Inference agent
+- Reproduce key papers' results
+- Develop novel research questions
+- Create visualization tools
 
 5. **ADVANCED TOPICS**
-Research-Focused Areas:
-- Multi-scale Active Inference
+Specialized Applications:
+- Neural mass models
 - Hierarchical generative models
-- Neural implementation theories
-- Novel applications in neuroscience
+- Multi-agent systems
+- Continuous state-space models
+
+Research Focus:
+- Current open problems
+- Novel applications
+- Methodological advances
+- Integration with other frameworks
 
 6. **PRACTICAL APPLICATIONS**
 Research Applications:
 - Experimental design
 - Data analysis methods
-- Model comparison techniques
+- Model comparison
 - Parameter estimation
 
+Implementation:
+- Software development best practices
+- Scalable implementations
+- Validation methods
+- Documentation standards
+
 7. **COMMUNITY AND COLLABORATION**
-Academic Integration:
-- Key conferences (ICON, CCN)
+Academic Engagement:
+- Key conferences (IWAI, CCN)
 - Research groups to follow
-- Academic collaboration opportunities
-- Publishing opportunities
+- Online communities
+- Collaboration opportunities
+
+Networking:
+- Active Inference Institute
+- Academic labs working in the field
+- Industry partnerships
+- Research forums
 
 8. **ASSESSMENT AND PROGRESSION**
 Milestones:
 - Basic model implementation
-- Research proposal development
-- First collaborative project
-- Paper submission/presentation
+- First research project
+- Paper reproduction
+- Novel contribution
+
+Portfolio:
+- GitHub repository
+- Research blog
+- Technical reports
+- Conference presentations
 
 9. **RESOURCES AND TOOLS**
-Essential Resources:
-- Parr, Friston papers on Active Inference
-- SPM12 documentation
-- Active Inference tutorials
-- GitHub repositories for implementations
-- Key journals: Frontiers, PLOS Computational Biology
+Essential Reading:
+- "Active Inference" by Da Costa et al.
+- Key papers by Karl Friston
+- Recent review articles
+- Mathematical foundations papers
+
+Tools:
+- PyAI
+- SPM12
+- Julia implementations
+- Custom Python libraries
 
 10. **IMPLEMENTATION ROADMAP**
 Short-term (1-3 months):
-- Master foundational mathematics
-- Complete basic implementations
+- Master core mathematical foundations
+- Implement basic models
 - Join research community
+- Identify research direction
 
 Medium-term (3-6 months):
-- Develop research proposals
-- Implement advanced models
-- Begin collaborations
+- Complete first research project
+- Present at workshop/conference
+- Develop novel applications
+- Build collaboration network
 
 Long-term (6-12 months):
-- Contribute to research
-- Present at conferences
-- Publish findings
+- Publish research paper
+- Contribute to open-source tools
+- Establish research program
+- Lead collaborative projects
 
-Given Anastassiya's background, this curriculum emphasizes:
-- Research-oriented applications
-- Mathematical rigor
-- Computational implementation
-- Academic integration
-
-Recommended starting points:
-1. Review Friston's introductory papers
-2. Join the Active Inference Institute
-3. Implement basic models in preferred programming language
-4. Engage with academic Active Inference community
-
-The curriculum can be adjusted based on:
-- Specific research interests
-- Preferred programming languages
-- Time availability
-- Collaboration opportunities
+This curriculum emphasizes the intersection of theoretical understanding and practical implementation, with a strong focus on research applications. The progression allows for both depth in mathematical foundations and breadth in applications, supporting Anastassiya's transition to academia while leveraging her industry experience.

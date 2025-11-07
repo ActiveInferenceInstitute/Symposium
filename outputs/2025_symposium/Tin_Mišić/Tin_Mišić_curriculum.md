@@ -1,6 +1,6 @@
 # Curriculum: Tin Mišić
 
-Generated on: 2025-10-31 15:42:25
+Generated on: 2025-11-07 15:10:16
 
 ## Metadata
 
@@ -9,89 +9,86 @@ Generated on: 2025-10-31 15:42:25
 
 ---
 
-Based on Tin Mišić's background in robotics and visual attention modeling, I'll design a specialized curriculum that builds on their existing knowledge while advancing their understanding of Active Inference tools and applications.
+Based on Tin Mišić's background in robotics and visual attention modeling, I'll create a personalized Active Inference curriculum that builds on their existing knowledge while addressing specific learning needs.
 
 1. **ASSESSMENT OF CURRENT LEVEL**
-- Strong understanding of Active Inference implementation in visual attention systems
-- Experience with computational modeling and robotics applications
-- Advanced mathematical foundation evidenced by published work
-- Gaps may exist in newer Active Inference tools and frameworks
-- Learning style appears technically oriented with focus on practical implementation
+- Strong understanding of computational implementations
+- Experience with visual attention modeling
+- Advanced mathematical background indicated by published work
+- Gap areas: May benefit from broader toolset exposure and alternative frameworks
 
 2. **PERSONALIZED LEARNING PATH**
-- Emphasis on advanced tools and frameworks
-- Focus on robotics-specific implementations
-- Integration of attention mechanisms with broader robotics applications
-- Timeline: 6-month intensive program with modular progression
+Focus on robotics-specific implementations and advanced tools
+Months 1-2: Advanced tools and frameworks
+Months 3-4: Integration with existing research
+Months 5-6: Novel applications and extensions
 
 3. **CORE CONCEPTS MODULES**
-Advanced focus areas:
-- Message Passing algorithms in Active Inference
-- Hierarchical generative models for robotics
-- Integration of attention mechanisms with motor control
-- Scaling Active Inference for complex robotic systems
+- Advanced Free Energy Principle applications in robotics
+- Hierarchical active inference models
+- Precision-weighted belief updating in robotic systems
+- Integration with classical robotics control theory
 
 4. **HANDS-ON LEARNING**
-Targeted practical work:
 - Implementation using PyAI and SPM
-- Development of custom Active Inference tools for robotics
-- Integration projects combining attention and motor control
-- Benchmark testing against classical robotics approaches
+- Comparative analysis with existing attention models
+- Integration with ROS (Robot Operating System)
+- Development of custom active inference tools
 
 5. **ADVANCED TOPICS**
-Specialized content:
-- Multi-agent Active Inference systems
-- Real-time implementation strategies
-- Hybrid approaches combining Active Inference with deep learning
-- Uncertainty handling in robotic systems
+- Multi-agent active inference systems
+- Hierarchical deep active inference
+- Stochastic optimal control and active inference
+- Novel precision dynamics in robotics
 
 6. **PRACTICAL APPLICATIONS**
-Robotics-focused implementation:
-- Sensorimotor integration case studies
-- Real-world robotic platform implementation
-- Performance optimization techniques
-- Integration with ROS (Robot Operating System)
+- Extending visual attention models to robotic systems
+- Real-time active inference implementation
+- Scalability solutions for robotic applications
+- Integration with existing robotics frameworks
 
 7. **COMMUNITY AND COLLABORATION**
-Engagement opportunities:
-- Active Inference Institute participation
-- Robotics-focused Active Inference working groups
-- Conference presentations (ICRA, IROS)
-- Collaboration with other robotics researchers using Active Inference
+- Connection with SPM and PyAI development teams
+- Active inference robotics working groups
+- Conference participation (IWAI, CCN)
+- Research collaboration opportunities
 
 8. **ASSESSMENT AND PROGRESSION**
-Milestones:
-- Implementation of enhanced attention models
-- Development of novel tools/frameworks
-- Publication of technical results
-- Integration with existing robotics projects
+- Implementation milestones
+- Research output metrics
+- Tool development goals
+- Integration success measures
 
 9. **RESOURCES AND TOOLS**
-Recommended resources:
-- SPM12 Advanced tutorials
+Recommended Reading:
+- "Active Inference in Robotics" by Pezzulo et al.
+- SPM documentation and tutorials
 - PyAI documentation and examples
-- Active Inference papers focusing on robotics
-- Custom robotics simulation environments
+- Advanced ROS integration guides
+
+Tools:
+- PyAI
+- SPM
+- Custom robotics-specific active inference libraries
+- ROS integration tools
 
 10. **IMPLEMENTATION ROADMAP**
+
 Short-term (1-3 months):
-- Review and enhance existing attention models
-- Implement new tools for robotics applications
+- Evaluate and compare existing active inference tools
+- Implement benchmark tests in robotics context
+- Develop initial integration frameworks
 
 Medium-term (3-6 months):
-- Develop integrated attention-motor control system
-- Create custom Active Inference toolkit for robotics
+- Create custom tools for robotics applications
+- Extend visual attention model to robotic platforms
+- Begin collaborative projects
 
 Long-term (6-12 months):
-- Publish enhanced frameworks/tools
-- Contribute to open-source Active Inference projects
+- Develop novel active inference frameworks for robotics
+- Contribute to tool development
+- Publish implementation results
 
-Success metrics:
-- Technical implementation quality
-- Publication impact
-- Tool adoption by community
-- Practical robotics applications achieved
+Given your existing expertise, this curriculum focuses on advanced applications and tool development rather than foundational concepts. The emphasis is on practical implementation and extension of active inference in robotics, building on your visual attention work.
 
-This curriculum builds on your existing expertise while focusing on practical tools and advanced applications in robotics. The emphasis is on developing novel implementations and contributing to the field's technical infrastructure.
-
-Would you like me to elaborate on any particular aspect of this curriculum or adjust the focus areas based on additional preferences?
+Would you like me to elaborate on any particular aspect of this curriculum?

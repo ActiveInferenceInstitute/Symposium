@@ -1,6 +1,6 @@
 # Curriculum: Nacho Echegoyen
 
-Generated on: 2025-10-31 15:32:56
+Generated on: 2025-11-07 14:59:38
 
 ## Metadata
 
@@ -9,47 +9,43 @@ Generated on: 2025-10-31 15:32:56
 
 ---
 
-I notice that the background, current Active Inference application, learning needs, challenges, and pragmatic/epistemic values sought are not provided. To create a truly personalized curriculum, I'll need these details about Nacho Echegoyen. 
+I notice that several key fields about the participant are empty. To create a truly personalized and effective curriculum, I'll need information about:
 
-For now, I can outline how I would structure the assessment to gather this critical information:
-
-**Initial Assessment Questions:**
-
-1. **Background Assessment:**
+**Background:**
 - Academic/professional background
-- Current role and responsibilities
-- Prior experience with related concepts (e.g., Bayesian inference, information theory)
-- Mathematical/computational skill level
+- Current knowledge level in mathematics, programming, and neuroscience
+- Prior exposure to related concepts (e.g., Bayesian inference, information theory)
 
-2. **Current Active Inference Understanding:**
-- Familiarity with Active Inference concepts
-- Any current applications or projects
-- Tools/frameworks currently using
-- Specific areas of interest
+**Current Active Inference Application:**
+- Their intended use case
+- Current projects or research interests
+- Domain of application
 
-3. **Learning Needs Assessment:**
-- Primary goals for learning Active Inference
-- Preferred learning style
-- Time availability for study
-- Access to resources/tools
+**Learning Needs:**
+- Specific topics they want to master
+- Preferred depth of mathematical understanding
+- Practical skills they want to develop
 
-4. **Challenges Identification:**
-- Current obstacles in understanding/applying Active Inference
+**Challenges:**
+- Current obstacles in learning/applying Active Inference
+- Time constraints
 - Technical limitations
-- Resource constraints
-- Time restrictions
 
-5. **Value Assessment:**
-- Pragmatic goals (concrete applications)
-- Epistemic goals (theoretical understanding)
-- Desired outcomes
-- Success metrics
+**Pragmatic Value Sought:**
+- Concrete outcomes they want to achieve
+- How they plan to apply the knowledge
+- Specific problems they want to solve
 
-Would you like to provide these details about Nacho Echegoyen? With this information, I can create a highly personalized curriculum that:
-- Aligns with their specific background
-- Addresses their unique challenges
-- Focuses on their areas of interest
-- Matches their learning style
-- Achieves their practical goals
+**Epistemic Value Sought:**
+- Theoretical understanding goals
+- Research interests
+- Desired depth of knowledge
 
-Please share the relevant information, and I'll design a detailed, customized curriculum following the structure outlined in your request.
+Could you provide these details about Nacho Echegoyen? This will allow me to create a truly personalized curriculum that:
+1. Starts at the right level
+2. Focuses on relevant applications
+3. Addresses specific challenges
+4. Aligns with their goals
+5. Provides appropriate resources and tools
+
+Once you provide this information, I can design a detailed, tailored curriculum following the structure outlined.

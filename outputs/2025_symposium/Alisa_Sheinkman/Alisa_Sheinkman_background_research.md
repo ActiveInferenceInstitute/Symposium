@@ -1,6 +1,6 @@
 # Background Research: Alisa Sheinkman
 
-Generated on: 2025-10-31 15:10:37
+Generated on: 2025-11-07 14:33:29
 
 ## Metadata
 
@@ -9,38 +9,39 @@ Generated on: 2025-10-31 15:10:37
 
 ---
 
-Below is a deep, comprehensive research profile on **Alisa Sheinkman**, an Active Inference Symposium participant affiliated with the University of Edinburgh, based on exhaustive multi-source web research.
+Here is a comprehensive, deeply researched profile of **Alisa Sheinkman**, an active participant in the Active Inference Symposium and a researcher affiliated with the University of Edinburgh.
 
 ---
 
 ## 1. Academic Background
 
-- **Educational History:**
-  - PhD in Bayesian Deep Learning / Probabilistic Machine Learning, University of Edinburgh, expected 2025.  
-    - PhD thesis: *Probabilistic inference in Bayesian neural networks* supervised by Sara Wade, focusing on scalable variational inference and Bayesian model choice in overparametrized deep models [1](https://sheinkmana.github.io), [7](https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru).
-  - No explicit prior degrees publicly listed; inferred strong quantitative and statistical background consistent with advanced machine learning research.
+- **Education:**
+  - PhD candidate (recent graduate as of 2025) at the University of Edinburgh, School of Mathematics and the Maxwell Institute for Mathematical Sciences. PhD thesis titled *"Probabilistic inference in Bayesian neural networks"*, completed in 2025 under the supervision of Sara Wade [1][2][4][7].
+  - Master of Science (MS) degree from the University of Cambridge, completed in 2019 [2].
+  - Undergraduate degree (institution not explicitly stated, likely before 2019) [2].
 
-- **Research Areas & Expertise:**
-  - Bayesian deep learning and probabilistic machine learning, particularly:
-    - Scalable variational inference algorithms (stochastic, black box variational inference)
-    - Bayesian neural network architecture specification
-    - Model combination and model choice under big data and overparametrization
-  - Applied AI in noisy data contexts (e.g., noise annoyance detection) [1](https://sheinkmana.github.io).
+- **Research Areas and Expertise:**
+  - Probabilistic machine learning, Bayesian deep learning, scalable variational inference algorithms.
+  - Focus on Bayesian neural networks, Bayesian model choice, model combination.
+  - Expertise in stochastic and black box variational inference.
+  - Research interests include artificial intelligence in big data and overparameterized deep models [1][3].
 
-- **Current Academic Position:**
-  - Recent doctoral graduate, University of Edinburgh, associated with Maxwell Institute for Mathematical Sciences and School of Mathematics [3](https://maths.ed.ac.uk/people/a-z), [4](https://www.maxwell.ac.uk/person/alisa-sheinkman/).
-  - Email listed as s2067879@ed.ac.uk confirms active affiliation [3](https://maths.ed.ac.uk/people/a-z).
+- **Academic Positions:**
+  - Recent doctoral graduate affiliated with the University of Edinburgh, specifically within the School of Mathematics and the Maxwell Institute for Mathematical Sciences [4][6].
+  - No public record of past academic positions beyond PhD/MS student roles.
 
-- **Notable Achievements & Grants:**
-  - Accepted paper at NeurIPS 2025 on surrogate models standards in AI [1](https://sheinkmana.github.io).
-  - ECML PKDD 2025 conference publication on Bayesian neural networks [5](https://ecmlpkdd.org/2025/accepted-papers-rt/).
-  - No public records of formal awards or external grants yet, consistent with being a recent PhD graduate.
+- **Notable Achievements:**
+  - PhD dissertation accepted in 2025.
+  - Publications accepted at major machine learning conferences such as NeurIPS and ECML-PKDD in 2025 [1].
+  - Developed advances in Bayesian neural network architecture and inference.
 
 - **Academic Profiles:**
-  - Personal research page: https://sheinkmana.github.io [1]
-  - Google Scholar: https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru [7]
-  - ORCID: https://orcid.org/0009-0002-5926-1929 (verified via query)
-  - Institutional profile: https://www.maxwell.ac.uk/person/alisa-sheinkman/ [4]
+  - Personal academic website: [sheinkmana.github.io](https://sheinkmana.github.io) [1].
+  - ORCID: 0009-0002-5926-1929 [Confirmed via ORCID and OpenReview].
+  - Google Scholar: [Alisa Sheinkman - Google Scholar](https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru) [7].
+  - OpenReview profile: [OpenReview - Alisa Sheinkman](https://openreview.net/profile?id=~Alisa_Sheinkman1) [2].
+  - University of Edinburgh Maxwell Institute profile: [Maxwell Institute - Alisa Sheinkman](https://www.maxwell.ac.uk/person/alisa-sheinkman/) [4].
+  - University of Edinburgh Mathematics People Directory: [Edinburgh Maths People](https://maths.ed.ac.uk/people/a-z) (listed with contact and affiliation) [6].
 
 ---
 
@@ -48,138 +49,146 @@ Below is a deep, comprehensive research profile on **Alisa Sheinkman**, an Activ
 
 - **Key Publications:**
 
-| Title                                                                                         | Venue/Journal                          | Year | DOI / Link                                                      |
-|-----------------------------------------------------------------------------------------------|-------------------------------------|------|----------------------------------------------------------------|
-| *Probabilistic inference in Bayesian neural networks*                                        | PhD Dissertation, Univ. Edinburgh   | 2025 | https://sheinkmana.github.io (Thesis abstract) [1]             |
-| *SMRS: advocating a unified reporting standard for surrogate models in the artificial intelligence era* | NeurIPS (accepted)                   | 2025 | https://sheinkmana.github.io (NeurIPS accepted paper) [1]       |
-| *Understanding the Trade-offs in Accuracy and Uncertainty Quantification: Architecture and Inference Choices in Bayesian Neural Networks* | ECML PKDD Proceedings                | 2025 | https://ecmlpkdd.org/2025/accepted-papers-rt/ [5]              |
-| *Variational Bayesian Bow tie Neural Networks with Shrinkage*                                | arXiv preprint arXiv:2411.11132     | 2024 | https://arxiv.org/abs/2411.11132 [1]                            |
-| *Deep learning techniques for noise annoyance detection*                                    | Journal of the Acoustical Society of America | 2023 | https://asa.scitation.org/doi/10.1121/10.0019849 (abstract) [1] |
+  1. *Probabilistic inference in Bayesian neural networks*, PhD dissertation, 2025 [1][7].
+  2. *SMRS: advocating a unified reporting standard for surrogate models in the artificial intelligence era*, NeurIPS 2025 (accepted), co-authored with E. Semenova et al. [1].
+  3. *Understanding the Trade-offs in Accuracy and Uncertainty Quantification: Architecture and Inference Choices in Bayesian Neural Networks*, ECML PKDD 2025, with S. Wade [1][3].
+  4. *Variational Bayesian Bow tie Neural Networks with Shrinkage*, arXiv preprint arXiv:2411.11132, 2024 [1].
+  5. *Deep learning techniques for noise annoyance detection: results from an intensive workshop at the Alan Turing Institute*, The Journal of the Acoustical Society of America, 2023 [1].
 
-- **Research Focus & Methodologies:**
-  - Bayesian deep learning with focus on scalable inference methods suitable for large-scale neural networks.
-  - Variational inference techniques including stochastic and black box variants.
-  - Emphasis on uncertainty quantification and architecture design in Bayesian neural networks.
-  - Application of deep learning to noise annoyance detection and surrogate modeling standards in AI.
-  - Use of probabilistic modeling and variational Bayesian approaches [1][5].
+- **Research Focus and Methodologies:**
+  - Advanced Bayesian deep learning methods, with emphasis on variational inference.
+  - Development of scalable inference algorithms suitable for large models and big data.
+  - Methodological contributions include stochastic variational inference, black box methods, and Bayesian model architecture specification.
+  - Application of probabilistic modeling to real-world problems such as noise annoyance detection [1][3].
 
 - **Citation Metrics:**
-  - Google Scholar shows limited citations due to recent publications and dissertation status, with h-index currently low (typical for early-career researchers) [7].
+  - Google Scholar lists the dissertation and recent works with limited citations as of late 2025, consistent with recent PhD completion [7].
+  - h-index and total citations data are minimal but expected to grow as research disseminates.
 
 - **Collaborative Networks:**
-  - Frequent co-author: Sara Wade (supervisor and collaborator) [1][5].
-  - Collaborations with researchers involved in surrogate modeling and AI standards (e.g., E. Semenova, T. J. Hitge) [1].
+  - Frequent collaboration with Sara Wade (PhD supervisor).
+  - Co-authors include E. Semenova, T. J. Hitge, S.M. Hall, and others involved in surrogate modeling and AI standards [1].
+  - Collaboration with interdisciplinary groups at the Alan Turing Institute [1].
 
-- **Recent Preprints:**
-  - "Variational Bayesian Bow tie Neural Networks with Shrinkage" (2024) on arXiv [1].
+- **Recent Preprints and Working Papers:**
+  - arXiv preprint *Variational Bayesian Bow tie Neural Networks with Shrinkage* (2024) [arXiv:2411.11132] [1].
 
 ---
 
 ## 3. Professional Experience
 
 - **Employment History:**
-  - Primarily academic PhD researcher at University of Edinburgh until 2025 [1][3][4].
-  - No publicly listed industry experience or consulting roles found.
+  - Predominantly academic roles during PhD and MS studies.
+  - No publicly listed industry employment or consulting roles found.
+  - No explicit professional affiliations or society memberships beyond academic research groups noted.
 
 - **Professional Affiliations:**
-  - Member of Maxwell Institute for Mathematical Sciences, University of Edinburgh [4].
-  - Active in AI and machine learning research groups at Edinburgh.
+  - Affiliated with University of Edinburgh and Maxwell Institute.
+  - Collaborator in AI workshops at the Alan Turing Institute [1].
 
 - **Leadership Roles:**
-  - No public records of formal leadership roles or society memberships beyond research groups.
+  - No public record of leadership roles in professional organizations.
 
-- **Patents / Technical Reports:**
-  - No patents or technical reports publicly available.
+- **Patents or Applied Work:**
+  - No patents or technical reports publicly listed.
 
 ---
 
 ## 4. Active Inference & Related Research
 
 - **Direct Connections to Active Inference:**
-  - No explicit publications or projects directly labeled as "Active Inference."
-  - Research on Bayesian neural networks and probabilistic inference is conceptually adjacent and methodologically relevant to Active Inference frameworks [1].
+  - No explicit publications or projects directly mentioning active inference found.
+  - Primary research is in Bayesian neural networks and probabilistic machine learning, which form methodological foundations relevant to active inference.
 
 - **Adjacent Fields:**
-  - Expertise in Bayesian inference, variational inference, probabilistic modeling, and uncertainty quantification aligns with core methodologies in Active Inference and free energy principle research [1][5].
+  - Strong overlap with Bayesian inference, probabilistic modeling, and computational Bayesian methods.
+  - Methodological expertise in variational inference and uncertainty quantification aligns with core computational neuroscience and active inference frameworks.
 
 - **Methodological Overlap:**
-  - Use of variational Bayesian methods and scalable inference algorithms is compatible with computational neuroscience and Active Inference modeling approaches [1].
+  - Focus on scalable variational inference algorithms, stochastic methods, and model uncertainty is methodologically relevant to active inference modeling frameworks [1][3].
 
 - **Potential Applications:**
-  - Her work on Bayesian neural network compression and uncertainty quantification could enhance computational models in Active Inference.
-  - Surrogate modeling standards advocated in her NeurIPS paper may improve reproducibility in Active Inference simulations [1].
+  - Techniques developed for Bayesian neural networks and uncertainty quantification could be applied to active inference models requiring efficient approximate inference.
+  - Contributions to surrogate modeling and AI standards (SMRS paper) may assist in formalizing reporting in active inference computational experiments [1].
 
-- **Research Gaps Addressed:**
-  - Efficient scalable inference in complex Bayesian models, which is a key challenge in computational neuroscience and Active Inference modeling [1].
+- **Research Gaps Positioned to Address:**
+  - Scalability and architectural specification challenges in Bayesian deep models.
+  - Unified reporting standards for surrogate models in AI, which can impact reproducibility in active inference computational modeling.
 
 ---
 
 ## 5. Academic & Professional Network
 
 - **Key Collaborators:**
-  - Sara Wade (PhD supervisor), University of Edinburgh [1][5].
-  - Collaborators include E. Semenova, T. J. Hitge, S.M. Hall, and others in AI and machine learning communities [1].
+  - Sara Wade (PhD supervisor and co-author) [1][3].
+  - E. Semenova, T. J. Hitge, S.M. Hall, and others in AI modeling and surrogate model reporting initiatives [1].
+  - Collaborations with researchers at the Alan Turing Institute [1].
 
 - **Conference Presentations:**
-  - ECML PKDD 2025 (Bayesian neural networks paper) [5].
-  - NeurIPS 2025 accepted paper on surrogate modeling standards [1].
+  - Papers accepted at NeurIPS 2025 and ECML PKDD 2025 [1].
+  - Participation in workshops at the Alan Turing Institute (noise annoyance workshop, 2023) [1].
 
-- **Workshop Participation:**
-  - Co-author in workshop on deep learning for noise annoyance detection at Alan Turing Institute, 2023 [1].
+- **Workshop Organization/Participation:**
+  - Contributor to intensive workshops at the Alan Turing Institute [1].
 
 - **Community Engagement:**
-  - Code repositories linked to publications (e.g., Bayesian neural networks) available on personal website GitHub links [1].
+  - Code repositories linked from personal website for published works [1].
+  - No public blogs or tutorials found.
 
-- **Social Media:**
-  - No publicly found Twitter/X or other social media accounts tied to research.
+- **Social Media Presence:**
+  - No public Twitter/X or LinkedIn profiles explicitly identified.
+  - Contact email listed on institutional pages [6].
 
 ---
 
 ## 6. Online Presence & Resources
 
-| Resource                  | Link                                                                                   |
-|---------------------------|----------------------------------------------------------------------------------------|
-| Personal Website          | [https://sheinkmana.github.io](https://sheinkmana.github.io)                           |
-| Google Scholar Profile    | [https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru](https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru) |
-| ResearchGate Profile      | Not found publicly                                                                       |
-| LinkedIn Profile          | Not publicly available or not found                                                   |
-| GitHub / Code Repos      | Linked from personal website for publications (e.g., Bayesian NN code) [1]             |
-| Twitter/X Profile         | Not found                                                                              |
-| ORCID Profile            | [https://orcid.org/0009-0002-5926-1929](https://orcid.org/0009-0002-5926-1929)         |
-| Institutional Profile    | [https://www.maxwell.ac.uk/person/alisa-sheinkman/](https://www.maxwell.ac.uk/person/alisa-sheinkman/) |
+| Resource Type               | Link                                                                                  |
+|-----------------------------|---------------------------------------------------------------------------------------|
+| Personal website             | [https://sheinkmana.github.io](https://sheinkmana.github.io)                         |
+| Google Scholar              | [https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru](https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru) |
+| ResearchGate                | No verified profile found publicly                                                  |
+| LinkedIn                    | No verified profile found publicly                                                  |
+| GitHub / Code Repositories  | Code linked via personal website, e.g., for ECML PKDD paper [1]                      |
+| Twitter/X                   | No verified account found                                                           |
+| ORCID                      | [https://orcid.org/0009-0002-5926-1929](https://orcid.org/0009-0002-5926-1929)       |
+| Institutional Profile       | [https://www.maxwell.ac.uk/person/alisa-sheinkman/](https://www.maxwell.ac.uk/person/alisa-sheinkman/) |
+| University Directory        | [https://maths.ed.ac.uk/people/a-z](https://maths.ed.ac.uk/people/a-z) (search for Sheinkman) |
+
+- Videos, podcasts, or interviews: None publicly available.
 
 ---
 
 ## 7. Future Potential & Opportunities
 
 - **Emerging Research Directions:**
-  - Continued development in scalable Bayesian neural networks and uncertainty quantification.
-  - Potential expansion into surrogate modeling standards, improving AI reproducibility [1].
-  - Possible convergence with Active Inference research due to shared probabilistic frameworks.
+  - Expanding scalable Bayesian deep learning models.
+  - Refining uncertainty quantification techniques in probabilistic neural networks.
+  - Developing unified standards for surrogate modeling reporting in AI [1].
 
-- **Opportunities for Growth:**
-  - Bridging scalable Bayesian deep learning with computational neuroscience and Active Inference models.
-  - Collaboration opportunities with leaders in Bayesian AI and theoretical neuroscience (e.g., Sara Wade’s group).
+- **Opportunities in Active Inference Community:**
+  - Methodological innovations in variational Bayesian inference can strengthen computational frameworks in active inference.
+  - Potential to contribute to scalability and architecture design challenges in modeling active inference processes.
 
 - **Potential Impact:**
-  - Advancing efficient inference in Bayesian models can accelerate AI models underpinning Active Inference frameworks.
-  - Contribution to AI reproducibility standards aligns with growing community needs in neuroscience and AI research.
+  - Bridging AI probabilistic modeling advances with neuroscience-inspired frameworks like active inference.
+  - Enhancing reproducibility and reporting standards in AI surrogate modeling could benefit the broader computational neuroscience community.
 
-- **Strategic Collaboration:**
-  - Potential collaborators include Sara Wade (supervisor), researchers at the Maxwell Institute, and Active Inference symposium participants with Bayesian modeling expertise.
+- **Strategic Collaborations:**
+  - Collaborations with active inference theorists and computational neuroscientists.
+  - Engagement with AI and Bayesian inference experts such as Sara Wade, and institutions like the Alan Turing Institute.
 
 ---
 
 # References
 
-1. Alisa Sheinkman personal website and publications: https://sheinkmana.github.io  
-2. Active Inference Symposium participants list (limited info on Sheinkman): https://static1.squarespace.com/static/674f3d64ac0f39221c7d3253/t/67bde78e9534ca167bad9331/1740498831484/Delegates+Pack+final+(1)-compressed.pdf  
-3. University of Edinburgh School of Mathematics staff directory: https://maths.ed.ac.uk/people/a-z  
-4. Maxwell Institute profile for Alisa Sheinkman: https://www.maxwell.ac.uk/person/alisa-sheinkman/  
-5. ECML PKDD 2025 accepted papers including Sheinkman’s: https://ecmlpkdd.org/2025/accepted-papers-rt/  
-6. Maxwell Institute research themes: https://www.maxwell.ac.uk/research/structure-and-symmetry/  
-7. Google Scholar profile: https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru  
+1. Alisa Sheinkman personal website and publications, 2023-2025: [https://sheinkmana.github.io](https://sheinkmana.github.io)  
+2. OpenReview profile, University of Edinburgh & Cambridge education info: [https://openreview.net/profile?id=~Alisa_Sheinkman1](https://openreview.net/profile?id=~Alisa_Sheinkman1)  
+3. ACM Digital Library publication, ECML PKDD 2025 paper: [https://dl.acm.org/doi/10.1007/978-3-032-06109-6_8](https://dl.acm.org/doi/10.1007/978-3-032-06109-6_8)  
+4. Maxwell Institute profile, University of Edinburgh: [https://www.maxwell.ac.uk/person/alisa-sheinkman/](https://www.maxwell.ac.uk/person/alisa-sheinkman/)  
+5. University of Edinburgh Mathematics People directory: [https://maths.ed.ac.uk/people/a-z](https://maths.ed.ac.uk/people/a-z)  
+6. Google Scholar profile: [https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru](https://scholar.google.com/citations?user=C-jUAAcAAAAJ&hl=ru)  
 
 ---
 
-This profile consolidates all verifiable data up to October 2025, highlighting Alisa Sheinkman’s emerging prominence in Bayesian deep learning with relevant intersections to Active Inference research.
+This profile represents the most complete publicly available information on Alisa Sheinkman as of November 2025, based on exhaustive searches of academic, institutional, and web sources.
