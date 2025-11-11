@@ -2,6 +2,7 @@
 
 import logging
 import sys
+import time
 from pathlib import Path
 from typing import Dict, Any, Optional
 import pandas as pd
@@ -454,16 +455,24 @@ Please provide a comprehensive profile analysis including:
         # Load participant data
         participants = self.load_participant_data(csv_path)
         results = {}
+        total_participants = len(participants)
+        start_time = time.time()
+        
+        logger.info(f"Starting analysis for {total_participants} participants")
+        logger.debug(f"Output directory: {output_dir}")
 
-        for participant_name, participant_data in participants.items():
+        for idx, (participant_name, participant_data) in enumerate(participants.items(), 1):
             try:
-                logger.info(f"Processing participant: {participant_name}")
+                participant_start = time.time()
+                logger.info(f"[{idx}/{total_participants}] Processing participant: {participant_name}")
                 participant_results = {}
 
                 # Generate profile analysis
+                analysis_start = time.time()
                 profile_analysis = self.analyze_participant(participant_data)
+                analysis_time = time.time() - analysis_start
                 participant_results['profile_analysis'] = profile_analysis
-                logger.info(f"✅ Profile analysis completed for {participant_name}")
+                logger.info(f"✅ Profile analysis completed for {participant_name} ({analysis_time:.1f}s)")
 
                 # Save profile analysis
                 ReportWriter.save_participant_report(
@@ -475,8 +484,9 @@ Please provide a comprehensive profile analysis including:
 
                 # Generate background research if requested (ALWAYS use Perplexity)
                 if include_background_research:
+                    research_start = time.time()
                     if perplexity_client:
-                        logger.info(f"🔍 Using Perplexity Sonar for background research: {participant_name}")
+                        logger.debug(f"🔍 Using Perplexity Sonar for background research: {participant_name}")
                         # Temporarily use Perplexity client for this operation
                         original_client = self.api_client
                         self.api_client = perplexity_client
@@ -486,11 +496,14 @@ Please provide a comprehensive profile analysis including:
                         
                         # Restore original client
                         self.api_client = original_client
-                        logger.info(f"✅ Background research completed for {participant_name}")
+                        research_time = time.time() - research_start
+                        logger.info(f"✅ Background research completed for {participant_name} ({research_time:.1f}s)")
                     else:
                         logger.warning(f"Perplexity client not provided for background research: {participant_name}")
                         background = self.research_participant_background(participant_data)
                         participant_results['background_research'] = background
+                        research_time = time.time() - research_start
+                        logger.info(f"✅ Background research completed for {participant_name} ({research_time:.1f}s)")
 
                     ReportWriter.save_participant_report(
                         participant_name,
@@ -501,10 +514,12 @@ Please provide a comprehensive profile analysis including:
 
                 # Generate curriculum if requested (uses primary OpenRouter client)
                 if include_curriculum:
-                    logger.info(f"🤖 Using OpenRouter Claude for curriculum: {participant_name}")
+                    curriculum_start = time.time()
+                    logger.debug(f"🤖 Using OpenRouter Claude for curriculum: {participant_name}")
                     curriculum = self.generate_personalized_curriculum(participant_data)
+                    curriculum_time = time.time() - curriculum_start
                     participant_results['curriculum'] = curriculum
-                    logger.info(f"✅ Curriculum completed for {participant_name}")
+                    logger.info(f"✅ Curriculum completed for {participant_name} ({curriculum_time:.1f}s)")
 
                     ReportWriter.save_participant_report(
                         participant_name,
@@ -514,6 +529,8 @@ Please provide a comprehensive profile analysis including:
                     )
 
                 results[participant_name] = participant_results
+                participant_time = time.time() - participant_start
+                logger.info(f"✅ Completed {participant_name} in {participant_time:.1f}s")
 
             except PaymentRequiredError as e:
                 # Payment errors are fatal - stop processing immediately
@@ -531,10 +548,13 @@ Please provide a comprehensive profile analysis including:
                 break
             except Exception as e:
                 # Other errors allow graceful degradation - continue with next participant
-                logger.error(f"Error processing participant {participant_name}: {e}")
+                logger.error(f"Error processing participant {participant_name}: {e}", exc_info=True)
+                results[participant_name] = {'error': str(e)}
                 continue
 
-        logger.info(f"Completed processing for {len(results)} participants")
+        total_time = time.time() - start_time
+        successful = len([r for r in results.values() if 'error' not in r])
+        logger.info(f"Completed processing: {successful}/{total_participants} successful in {total_time:.1f}s (avg: {total_time/total_participants:.1f}s per participant)")
         return results
 
     def generate_column_summaries(

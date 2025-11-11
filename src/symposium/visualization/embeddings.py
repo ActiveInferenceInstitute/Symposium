@@ -53,19 +53,41 @@ class DimensionReducer:
             Tuple of (reduced_matrix, vectorizer, reducer)
         """
         try:
+            # Adjust TF-IDF parameters based on dataset size
+            n_docs = len(documents)
+            # For small datasets, use min_df=1 to allow more features
+            min_doc_freq = 1 if n_docs < 10 else 2
+            
             # TF-IDF vectorization with improved parameters
             vectorizer = TfidfVectorizer(
                 max_features=10000,  # Increased for better representation
                 stop_words='english',
-                min_df=2,  # Minimum document frequency
+                min_df=min_doc_freq,  # Adaptive minimum document frequency
                 max_df=0.90,  # Maximum document frequency
                 ngram_range=(1, 2),  # Include bigrams
                 sublinear_tf=True  # Apply sublinear scaling
             )
             tfidf_matrix = vectorizer.fit_transform(documents)
+            
+            # Calculate maximum possible components based on data dimensions
+            n_samples, n_features = tfidf_matrix.shape
+            max_components = min(n_samples, n_features)
+            
+            # Adjust n_components if it exceeds maximum possible
+            if n_components > max_components:
+                logger.warning(
+                    f"Requested {n_components} components but only {max_components} available "
+                    f"(n_samples={n_samples}, n_features={n_features}). Using {max_components} components."
+                )
+                n_components = max_components
 
             if method.lower() == "pca":
                 # Enhanced PCA with whitening
+                # Ensure we have at least 1 component
+                if n_components < 1:
+                    logger.error(f"Cannot perform PCA: need at least 1 component, but max is {max_components}")
+                    return None, None, None
+                    
                 reducer = PCA(
                     n_components=n_components,
                     random_state=self.random_state,

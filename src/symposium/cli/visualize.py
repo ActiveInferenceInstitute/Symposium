@@ -239,8 +239,11 @@ def visualize_all(args):
                 visualizer = TextVisualizer()
                 reducer = DimensionReducer()
 
-                # Ensure we have enough components for comprehensive PCA analysis
-                n_comp_analysis = max(args.n_components, 50) if args.method == 'pca' else args.n_components
+                # Calculate appropriate number of components
+                # For PCA, we need n_components <= min(n_samples, n_features)
+                # We'll use a reasonable default but cap it appropriately
+                max_possible_components = min(len(documents), 1000)  # Reasonable upper bound
+                n_comp_analysis = min(max(args.n_components, 50) if args.method == 'pca' else args.n_components, max_possible_components)
                 
                 reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
                     documents,
@@ -295,6 +298,109 @@ def visualize_all(args):
         except Exception as e:
             logger.error(f"Embedding visualization failed: {e}")
             print(f"⚠️  Embedding visualization failed: {e}")
+
+        # Create participant-specific PCA embeddings
+        print("👥 Creating participant PCA embeddings...")
+        try:
+            from sklearn.feature_extraction.text import TfidfVectorizer
+            from sklearn.decomposition import PCA
+            from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
+            from symposium.visualization.pca_analysis import PCAAnalyzer
+
+            # Load participant documents specifically
+            participant_documents, participant_filenames, participant_labels = [], [], []
+            input_path = Path(args.input_dir)
+            people_dir = input_path / "people"
+
+            if people_dir.exists():
+                for participant_dir in people_dir.iterdir():
+                    if participant_dir.is_dir():
+                        participant_name = participant_dir.name
+                        # Load all markdown files for this participant
+                        for file_path in participant_dir.glob("*.md"):
+                            try:
+                                content = ReportReader.read_markdown(file_path)
+                                participant_documents.append(content)
+                                participant_filenames.append(file_path.name)
+                                participant_labels.append(participant_name)
+                            except Exception as e:
+                                logger.warning(f"Could not read participant file {file_path}: {e}")
+
+                if participant_documents:
+                    logger.info(f"Loaded {len(participant_documents)} documents from {len(set(participant_labels))} participants")
+                    
+                    # Create participant-specific PCA embeddings
+                    visualizer = TextVisualizer()
+                    reducer = DimensionReducer()
+
+                    # Calculate appropriate number of components for participants
+                    # For PCA, we need n_components <= min(n_samples, n_features)
+                    max_possible_participant_components = min(len(participant_documents), 1000)
+                    # Use at least 3 components for comprehensive analysis (enables 3D visualization)
+                    # For comprehensive PCA analysis, use more components to capture variance
+                    n_comp_participants_analysis = min(max(50, len(participant_documents) // 5), max_possible_participant_components)
+                    # For 2D/3D visualization, use at least 3 components
+                    n_comp_participants_viz = min(max(args.n_components, 3), max_possible_participant_components)
+                    
+                    # First, create comprehensive PCA with many components for full analysis
+                    participant_reduced_full, participant_vectorizer, participant_pca_full = reducer.perform_tfidf_and_reduction(
+                        participant_documents,
+                        n_components=n_comp_participants_analysis,
+                        method='pca'  # Always use PCA for participant embeddings
+                    )
+
+                    if participant_reduced_full is not None and participant_pca_full is not None and participant_vectorizer is not None:
+                        output_dir = Path(args.output_dir)
+                        output_dir.mkdir(parents=True, exist_ok=True)
+
+                        # Create reduced version for 2D/3D visualization (first 3 components)
+                        n_viz_components = min(3, participant_reduced_full.shape[1])
+                        participant_reduced_viz = participant_reduced_full[:, :n_viz_components]
+                        
+                        # Participant 2D/3D visualization
+                        participant_plot_path = output_dir / f"participants_embedding_pca_{n_viz_components}d.png"
+                        # Create a temporary PCA object with only the first n_viz_components for visualization
+                        from sklearn.decomposition import PCA
+                        pca_viz = PCA(n_components=n_viz_components, random_state=42)
+                        # We'll use the full PCA but only plot the first components
+                        visualizer.plot_dimension_reduction(
+                            participant_reduced_viz, participant_labels, participant_filenames,
+                            f"Participant PCA Embeddings ({n_viz_components}D)",
+                            participant_plot_path, participant_vectorizer, participant_pca_full
+                        )
+
+                        # Comprehensive participant PCA analysis (using full component set)
+                        print("   📊 Creating comprehensive participant PCA analysis...")
+                        pca_analyzer = PCAAnalyzer()
+                        participant_pca_results = pca_analyzer.create_comprehensive_pca_report(
+                            participant_pca_full,
+                            participant_reduced_full,
+                            participant_vectorizer,
+                            participant_labels,
+                            output_dir,
+                            prefix="participants_pca_analysis"
+                        )
+                        
+                        successful_participant_pca = sum(participant_pca_results.values())
+                        total_participant_pca = len(participant_pca_results)
+                        print(f"   └─ Participant PCA analysis: {successful_participant_pca}/{total_participant_pca} visualizations created")
+                        logger.info(f"Participant PCA analysis: {successful_participant_pca}/{total_participant_pca} visualizations created")
+                        
+                        print("✅ Participant PCA embeddings completed")
+                        logger.info("Participant PCA embeddings completed")
+                    else:
+                        print("⚠️  Participant PCA embedding failed")
+                        logger.warning("Participant PCA embedding failed")
+                else:
+                    print("⚠️  No participant documents found in people/ directory")
+                    logger.warning(f"No participant documents found in {people_dir}")
+            else:
+                print(f"⚠️  People directory not found: {people_dir}")
+                logger.warning(f"People directory not found: {people_dir}")
+
+        except Exception as e:
+            logger.error(f"Participant PCA embedding failed: {e}")
+            print(f"⚠️  Participant PCA embedding failed: {e}")
 
         # Create networks
         print("🌐 Creating network visualizations...")

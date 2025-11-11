@@ -348,7 +348,7 @@ class DataLoader:
                     # Only include participants who agreed to share publicly (unless overridden)
                     if participant_data['share_publicly'].lower() in ['yes', 'y', 'true', '1']:
                         participants[participant_data['name']] = participant_data
-                        logger.info(f"Loaded participant data for: {participant_data['name']}")
+                        logger.debug(f"Loaded participant data for: {participant_data['name']}")
                     else:
                         logger.debug(f"Skipping participant {participant_data['name']} - did not agree to share publicly")
 

@@ -263,14 +263,18 @@ class SymposiumRunner:
 
         try:
             # Import modules
+            import time
+            overall_start = time.time()
+            
             logger.info("Importing symposium modules for 2025 participant processing")
             from symposium.core.api import APIClient
             from symposium.analysis.participants import ParticipantAnalyzer
-            logger.info("Modules imported successfully")
+            logger.debug("Modules imported successfully")
 
             # Create output directory structure
-            output_base = self.outputs_dir / '2025_symposium'
+            output_base = self.outputs_dir / '2025_symposium' / 'people'
             output_base.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Output directory: {output_base}")
 
             # Create appropriate API clients based on selected features
             # Background research ALWAYS uses Perplexity (Sonar model)
@@ -279,19 +283,19 @@ class SymposiumRunner:
             openrouter_client = None
             
             if include_background:
-                logger.info("Creating Perplexity API client (Sonar model) for background research")
+                logger.debug("Creating Perplexity API client (Sonar model) for background research")
                 perplexity_client = APIClient.create('perplexity')
                 print("   🔍 Using Perplexity Sonar for background research")
             
             if include_analysis or include_curriculum:
-                logger.info("Creating OpenRouter API client (Claude) for analysis and curricula")
+                logger.debug("Creating OpenRouter API client (Claude) for analysis and curricula")
                 openrouter_client = APIClient.create('openrouter')
                 print("   🤖 Using OpenRouter Claude for analysis and curricula")
             
             # Use OpenRouter as primary client for analyzer (it does profile analysis)
             primary_client = openrouter_client if openrouter_client else perplexity_client
             analyzer = ParticipantAnalyzer(primary_client, self.config.get('data', {}))
-            logger.info("Participant analyzer created")
+            logger.debug("Participant analyzer created")
 
             # Run analysis with appropriate clients
             results = analyzer.analyze_all_participants(
@@ -302,10 +306,11 @@ class SymposiumRunner:
                 perplexity_client=perplexity_client
             )
 
-            logger.info(f"2025 Participant processing completed: {len(results)} participants")
+            overall_time = time.time() - overall_start
+            logger.info(f"2025 Participant processing completed: {len(results)} participants in {overall_time:.1f}s")
             print("✅ 2025 Participant processing completed!")
             print(f"📁 Results saved to: {output_base}/")
-            print(f"📊 Processed {len(results)} participants")
+            print(f"📊 Processed {len(results)} participants in {overall_time:.1f}s")
 
             # Show results summary
             print("\n📋 ANALYSIS SUMMARY:")
@@ -317,12 +322,12 @@ class SymposiumRunner:
             print("   Individual participant reports in subdirectories")
 
         except ImportError as e:
-            logger.error(f"Import error: {e}")
+            logger.error(f"Import error: {e}", exc_info=True)
             print(f"❌ Module import failed: {e}")
             print("   Run the setup script: ./symposium.sh")
             print("   Or manually: uv pip install -e .")
         except Exception as e:
-            logger.error(f"2025 Participant processing failed: {e}")
+            logger.error(f"2025 Participant processing failed: {e}", exc_info=True)
             print(f"❌ Processing failed: {e}")
             print("   Check your API keys and network connection.")
 

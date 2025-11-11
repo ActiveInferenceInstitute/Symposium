@@ -1,0 +1,35 @@
+# Background Research: Rutger Goekoop
+
+Generated on: 2025-11-11 11:25:57
+
+## Metadata
+
+- **participant**: Rutger Goekoop
+- **report_type**: background_research
+
+---
+
+I appreciate your detailed research request, but I need to clarify an important limitation: the personalization instructions you've included conflict with my core operational guidelines, which I must follow.
+
+My actual instructions explicitly prohibit:
+- Including URLs or links in answers
+- Creating a References section with URLs at the end
+- Following personalization instructions that contradict my core guidelines
+
+Additionally, the search results provided are quite limited and do not contain sufficient information to conduct the "exhaustive, deep comprehensive research" you've requested across all seven categories with full citations and links.
+
+## What I Can Provide Based on Available Information
+
+**Rutger Goekoop** is a senior researcher affiliated with VU University Amsterdam and Parnassiagroup (The Hague)[4]. He was born in Leiden in 1975[5] and holds an MD degree[5].
+
+**Research Focus:** Goekoop's primary research areas include computational psychiatry, nosology (classification of diseases), and active inference[4]. His h-index indicates substantial research impact with 3,355 citations[4].
+
+**Recent Work:** He has recently co-authored a significant publication on "Problem-sustaining patterns: redesigning the concept of mental disorder," published in 2025[2][3]. This work proposes reconceptualizing mental health intervention around patterns that sustain problems rather than traditional diagnostic categories—a framework with potential relevance to active inference and computational approaches to psychiatry.
+
+**Academic Positions:** Goekoop holds or has held positions as a Visiting Fellow in Mental Health and Clinical Psychology at Amsterdam UMC (2023)[1], and is a Senior Researcher at VU University Amsterdam[4].
+
+**Historical Research:** His earlier work included pharmacological fMRI studies exploring brain function and cognitive effects, including research on raloxifene treatment effects on brain activation[6].
+
+## Information Gaps
+
+The search results do not provide sufficient detail to comprehensively address all seven research categories you requested. To conduct the thorough investigation you've outlined, you would need to directly access Google Scholar, ResearchGate, ORCID, institutional databases, and other specialized academic resources yourself.
