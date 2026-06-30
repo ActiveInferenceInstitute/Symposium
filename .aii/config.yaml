@@ -1,0 +1,49 @@
+# AII sidecar — InstituteOS metadata. Schema: instituteos.platform.aii_sidecar
+meta:
+  updated: '2026-06-30'
+repo:
+  name: Symposium
+  slug: symposium
+  full_name: ActiveInferenceInstitute/Symposium
+  description: '> Research analysis and project generation tools for the Active Inference
+    Symposium'
+institute:
+  category: research-software
+  maturity: released
+  steward: Active Inference Institute
+ecosystem:
+  links:
+    github: https://github.com/ActiveInferenceInstitute/Symposium
+    website: https://www.activeinference.org
+artifacts:
+- path: README.md
+  kind: doc
+  description: Repository overview.
+- path: src
+  kind: code
+  description: Source tree.
+- path: pyproject.toml
+  kind: code
+  description: Python package config.
+- path: LICENSE
+  kind: doc
+  description: License.
+provenance:
+  license: MIT
+instituteos:
+  tags:
+  - symposium
+  - research
+  - analysis
+  - project
+  - generation
+  - python
+capabilities:
+- python-package
+- tested
+- documentation
+- dataset
+tasks:
+  test:
+    cmd: python -m pytest
+    description: Run the test suite.
