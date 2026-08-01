@@ -26,6 +26,8 @@ class NetworkAnalyzer:
             config: Optional configuration dictionary
         """
         self.config = config or {}
+        # Fixed seed so network layouts are reproducible across runs.
+        self.random_state = self.config.get('random_state', 42)
 
     def create_similarity_network(
         self,
@@ -125,13 +127,13 @@ class NetworkAnalyzer:
 
             # Choose layout
             if layout == "spring":
-                pos = nx.spring_layout(graph, k=2, iterations=50)
+                pos = nx.spring_layout(graph, k=2, iterations=50, seed=self.random_state)
             elif layout == "circular":
                 pos = nx.circular_layout(graph)
             elif layout == "kamada_kawai":
                 pos = nx.kamada_kawai_layout(graph)
             else:
-                pos = nx.random_layout(graph)
+                pos = nx.random_layout(graph, seed=self.random_state)
 
             # Node properties
             node_types = nx.get_node_attributes(graph, 'type')
@@ -260,12 +262,12 @@ class NetworkAnalyzer:
 
             # Create community plot
             communities = list(nx.community.greedy_modularity_communities(graph))
-            pos = nx.spring_layout(graph, k=2, iterations=50)
+            pos = nx.spring_layout(graph, k=2, iterations=50, seed=self.random_state)
 
             # Color nodes by community
             node_colors = {}
             for i, community in enumerate(communities):
-                color = plt.cm.get_cmap('tab20')(i / len(communities))
+                color = matplotlib.colormaps['tab20'](i / len(communities))
                 for node in community:
                     node_colors[node] = color
 

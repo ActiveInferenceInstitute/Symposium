@@ -3,6 +3,7 @@
 import pytest
 from unittest.mock import Mock, patch, MagicMock
 import os
+import httpx
 from symposium.core.api import (
     APIClient,
     BaseAPIProvider,
@@ -33,8 +34,11 @@ class TestAPIClient:
         with pytest.raises(ValueError, match="Unsupported provider"):
             APIClient.create("invalid", api_key="test_key")
 
-    def test_create_without_api_key(self):
+    def test_create_without_api_key(self, monkeypatch):
         """Test creating provider without API key raises error."""
+        # Ensure no key leaks in from the environment (includes .env picked up by Config)
+        monkeypatch.delenv("PERPLEXITY_API_KEY", raising=False)
+        monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
         with pytest.raises(ValueError, match="API key .* not provided"):
             APIClient.create("perplexity")
 
@@ -231,32 +235,22 @@ class TestOpenRouterPaymentError:
         """Test OpenRouter provider raises PaymentRequiredError on 402 error."""
         # Setup mock to raise APIStatusError with 402
         mock_client = Mock()
-        mock_response = Mock()
-        mock_response.json.return_value = {
-            'error': {
-                'message': 'Insufficient credits. Add more using https://openrouter.ai/settings/credits',
-                'code': 402
-            }
-        }
-        mock_response.status_code = 402
-        
-        api_error = APIStatusError(
-            message="Insufficient credits",
-            response=mock_response,
-            body=None,
-            request=None
+        request = httpx.Request("POST", "https://api.openrouter.ai/api/v1/chat/completions")
+        response = httpx.Response(
+            status_code=402,
+            request=request,
+            json={'error': {'message': 'Insufficient credits. Add more using https://openrouter.ai/settings/credits', 'code': 402}}
         )
-        api_error.status_code = 402
-        api_error.response = mock_response
-        
+        api_error = APIStatusError(message="Insufficient credits", response=response, body=None)
+
         mock_client.chat.completions.create.side_effect = api_error
         mock_openai.return_value = mock_client
 
         provider = OpenRouterProvider("test_key")
-        
+
         with pytest.raises(PaymentRequiredError) as exc_info:
             provider.get_response("test prompt")
-        
+
         assert exc_info.value.provider == "openrouter"
         assert "Insufficient credits" in exc_info.value.message
 
@@ -264,22 +258,19 @@ class TestOpenRouterPaymentError:
     def test_openrouter_402_error_without_response_body(self, mock_openai):
         """Test OpenRouter handles 402 error without response body."""
         mock_client = Mock()
-        api_error = APIStatusError(
-            message="Payment required",
-            response=None,
-            body=None,
-            request=None
-        )
-        api_error.status_code = 402
-        
+        request = httpx.Request("POST", "https://api.openrouter.ai/api/v1/chat/completions")
+        # No JSON body: response.json() raises, so the provider must fall back to str(e)
+        response = httpx.Response(status_code=402, request=request)
+        api_error = APIStatusError(message="Payment required", response=response, body=None)
+
         mock_client.chat.completions.create.side_effect = api_error
         mock_openai.return_value = mock_client
 
         provider = OpenRouterProvider("test_key")
-        
+
         with pytest.raises(PaymentRequiredError) as exc_info:
             provider.get_response("test prompt")
-        
+
         assert exc_info.value.provider == "openrouter"
         assert "Payment required" in exc_info.value.message
 
@@ -287,19 +278,15 @@ class TestOpenRouterPaymentError:
     def test_openrouter_non_402_error_passes_through(self, mock_openai):
         """Test OpenRouter passes through non-402 APIStatusErrors."""
         mock_client = Mock()
-        api_error = APIStatusError(
-            message="Rate limit exceeded",
-            response=None,
-            body=None,
-            request=None
-        )
-        api_error.status_code = 429
-        
+        request = httpx.Request("POST", "https://api.openrouter.ai/api/v1/chat/completions")
+        response = httpx.Response(status_code=429, request=request)
+        api_error = APIStatusError(message="Rate limit exceeded", response=response, body=None)
+
         mock_client.chat.completions.create.side_effect = api_error
         mock_openai.return_value = mock_client
 
         provider = OpenRouterProvider("test_key")
-        
+
         # Should raise the original APIStatusError, not PaymentRequiredError
         with pytest.raises(APIStatusError):
             provider.get_response("test prompt")
@@ -308,33 +295,23 @@ class TestOpenRouterPaymentError:
     def test_payment_error_no_retry(self, mock_openai):
         """Test that payment errors don't trigger retry logic."""
         mock_client = Mock()
-        mock_response = Mock()
-        mock_response.json.return_value = {
-            'error': {
-                'message': 'Insufficient credits',
-                'code': 402
-            }
-        }
-        mock_response.status_code = 402
-        
-        api_error = APIStatusError(
-            message="Insufficient credits",
-            response=mock_response,
-            body=None,
-            request=None
+        request = httpx.Request("POST", "https://api.openrouter.ai/api/v1/chat/completions")
+        response = httpx.Response(
+            status_code=402,
+            request=request,
+            json={'error': {'message': 'Insufficient credits', 'code': 402}}
         )
-        api_error.status_code = 402
-        api_error.response = mock_response
-        
+        api_error = APIStatusError(message="Insufficient credits", response=response, body=None)
+
         mock_client.chat.completions.create.side_effect = api_error
         mock_openai.return_value = mock_client
 
         provider = OpenRouterProvider("test_key")
-        
+
         # Should raise PaymentRequiredError immediately (no retries)
         with pytest.raises(PaymentRequiredError):
             provider.get_response("test prompt")
-        
+
         # Verify it was only called once (no retries)
         assert mock_client.chat.completions.create.call_count == 1
 

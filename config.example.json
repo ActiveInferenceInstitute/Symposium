@@ -7,7 +7,7 @@
       "max_tokens": 2000
     },
     "openrouter": {
-      "model": "tngtech/deepseek-r1t2-chimera:free",
+      "model": "anthropic/claude-3.5-sonnet",
       "temperature": 0.7,
       "max_tokens": 2000,
       "max_retries": 5

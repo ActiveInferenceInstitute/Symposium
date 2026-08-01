@@ -1,9 +1,7 @@
 """CLI for visualization commands."""
 
-import argparse
 import logging
 from pathlib import Path
-from symposium.core.logging_utils import setup_logging
 from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
 from symposium.visualization.networks import NetworkAnalyzer
 from symposium.visualization.distributions import DistributionPlotter
@@ -107,14 +105,24 @@ def visualize_networks(args):
         documents, filenames, labels = [], [], []
         input_path = Path(args.input_dir)
 
-        for file_path in input_path.rglob("*.md"):
+        if input_path.is_file():
+            # Single file support, consistent with visualize_embeddings
             try:
-                content = ReportReader.read_markdown(file_path)
-                documents.append(content)
-                filenames.append(str(file_path.relative_to(input_path)))
-                labels.append(file_path.parent.name)
+                content = ReportReader.read_markdown(input_path)
+                documents = [content]
+                filenames = [input_path.name]
+                labels = [input_path.parent.name or "document"]
             except Exception as e:
-                logger.warning(f"Could not read {file_path}: {e}")
+                logger.warning(f"Could not read {input_path}: {e}")
+        else:
+            for file_path in input_path.rglob("*.md"):
+                try:
+                    content = ReportReader.read_markdown(file_path)
+                    documents.append(content)
+                    filenames.append(str(file_path.relative_to(input_path)))
+                    labels.append(file_path.parent.name)
+                except Exception as e:
+                    logger.warning(f"Could not read {file_path}: {e}")
 
         if not documents:
             logger.error("No documents found for network analysis")
@@ -174,13 +182,22 @@ def visualize_distributions(args):
         documents, labels = [], []
         input_path = Path(args.input_dir)
 
-        for file_path in input_path.rglob("*.md"):
+        if input_path.is_file():
+            # Single file support, consistent with visualize_embeddings
             try:
-                content = ReportReader.read_markdown(file_path)
-                documents.append(content)
-                labels.append(file_path.parent.name)
+                content = ReportReader.read_markdown(input_path)
+                documents = [content]
+                labels = [input_path.parent.name or "document"]
             except Exception as e:
-                logger.warning(f"Could not read {file_path}: {e}")
+                logger.warning(f"Could not read {input_path}: {e}")
+        else:
+            for file_path in input_path.rglob("*.md"):
+                try:
+                    content = ReportReader.read_markdown(file_path)
+                    documents.append(content)
+                    labels.append(file_path.parent.name)
+                except Exception as e:
+                    logger.warning(f"Could not read {file_path}: {e}")
 
         if not documents:
             logger.error("No documents found for distribution analysis")
@@ -255,8 +272,11 @@ def visualize_all(args):
                     output_dir = Path(args.output_dir)
                     output_dir.mkdir(parents=True, exist_ok=True)
 
-                    # 2D/3D visualization
-                    plot_path = output_dir / f"embedding_{args.method}_{args.n_components}d.png"
+                    # 2D/3D visualization. Name the file by the dimensions actually
+                    # rendered (plot_dimension_reduction shows 2D when shape==2,
+                    # else 3D), not the possibly-clamped requested component count.
+                    plotted_dims = 3 if reduced_matrix.shape[1] >= 3 else reduced_matrix.shape[1]
+                    plot_path = output_dir / f"embedding_{args.method}_{plotted_dims}d.png"
                     visualizer.plot_dimension_reduction(
                         reduced_matrix, labels, filenames,
                         f"{args.method.upper()} Visualization ({args.n_components}D)",
@@ -510,195 +530,3 @@ def visualize_all(args):
         logger.error(f"❌ Error in visualize_all: {e}")
         print(f"❌ Error: {e}")
         raise
-
-
-def main():
-    """Main CLI entry point for visualization commands."""
-    import sys
-
-    # Check if called with subcommand (e.g., symposium visualize embeddings)
-    if len(sys.argv) >= 2 and sys.argv[1] in ['embeddings', 'networks', 'distributions']:
-        # Handle subcommand format: symposium visualize embeddings --args
-        subcommand = sys.argv[1]
-
-        # Create parser for the specific subcommand
-        if subcommand == 'embeddings':
-            parser = argparse.ArgumentParser(
-                description='Create embedding and dimension reduction plots',
-                formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-                prog='symposium visualize embeddings'
-            )
-            parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-            parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-            parser.add_argument('--method', choices=['pca', 'lsa', 'tsne'], default='pca', help='Dimension reduction method')
-            parser.add_argument('--n-components', type=int, default=2, help='Number of components')
-            parser.add_argument('--max-features', type=int, default=5000, help='Max TF-IDF features')
-            parser.add_argument('--label', help='Label for single file input')
-            parser.add_argument('--log-level', default='INFO', help='Logging level')
-
-            args = parser.parse_args()
-            setup_logging(level=args.log_level)
-            visualize_embeddings(args)
-
-        elif subcommand == 'networks':
-            parser = argparse.ArgumentParser(
-                description='Create similarity network visualizations',
-                formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-                prog='symposium visualize networks'
-            )
-            parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-            parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-            parser.add_argument('--threshold', type=float, default=0.3, help='Similarity threshold')
-            parser.add_argument('--max-terms', type=int, default=50, help='Maximum terms in network')
-            parser.add_argument('--layout', choices=['spring', 'circular', 'kamada_kawai'], default='spring', help='Network layout')
-            parser.add_argument('--log-level', default='INFO', help='Logging level')
-
-            args = parser.parse_args()
-            setup_logging(level=args.log_level)
-            visualize_networks(args)
-
-        elif subcommand == 'distributions':
-            parser = argparse.ArgumentParser(
-                description='Create statistical distribution plots',
-                formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-                prog='symposium visualize distributions'
-            )
-            parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-            parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-            parser.add_argument('--log-level', default='INFO', help='Logging level')
-
-            args = parser.parse_args()
-            setup_logging(level=args.log_level)
-            visualize_distributions(args)
-
-    else:
-        # Handle direct call or help
-        parser = argparse.ArgumentParser(
-            description='Visualize research data and analysis results',
-            formatter_class=argparse.ArgumentDefaultsHelpFormatter
-        )
-
-        subparsers = parser.add_subparsers(dest='subcommand', help='Visualization type')
-
-        # Embeddings visualization
-        embed_parser = subparsers.add_parser('embeddings', help='Create embedding and dimension reduction plots')
-        embed_parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-        embed_parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-        embed_parser.add_argument('--method', choices=['pca', 'lsa', 'tsne'], default='pca', help='Dimension reduction method')
-        embed_parser.add_argument('--n-components', type=int, default=2, help='Number of components')
-        embed_parser.add_argument('--max-features', type=int, default=5000, help='Max TF-IDF features')
-        embed_parser.add_argument('--label', help='Label for single file input')
-        embed_parser.add_argument('--log-level', default='INFO', help='Logging level')
-        embed_parser.set_defaults(func=visualize_embeddings)
-
-        # Network visualization
-        network_parser = subparsers.add_parser('networks', help='Create similarity network visualizations')
-        network_parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-        network_parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-        network_parser.add_argument('--threshold', type=float, default=0.3, help='Similarity threshold')
-        network_parser.add_argument('--max-terms', type=int, default=50, help='Maximum terms in network')
-        network_parser.add_argument('--layout', choices=['spring', 'circular', 'kamada_kawai'], default='spring', help='Network layout')
-        network_parser.add_argument('--log-level', default='INFO', help='Logging level')
-        network_parser.set_defaults(func=visualize_networks)
-
-        # Distribution visualization
-        dist_parser = subparsers.add_parser('distributions', help='Create statistical distribution plots')
-        dist_parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-        dist_parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-        dist_parser.add_argument('--log-level', default='INFO', help='Logging level')
-        dist_parser.set_defaults(func=visualize_distributions)
-
-        # Parse arguments - let argparse handle the help
-        args = parser.parse_args()
-
-        # Setup logging
-        setup_logging(level=args.log_level)
-
-        # Run command
-        args.func(args)
-
-    # Handle 'all' visualization type
-    if len(sys.argv) >= 2 and sys.argv[1] == 'all':
-        # Create parser for all visualizations
-        parser = argparse.ArgumentParser(
-            description='Generate all visualization types',
-            formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-            prog='symposium visualize all'
-        )
-        parser.add_argument('--input-dir', required=True, help='Directory containing markdown files')
-        parser.add_argument('--output-dir', required=True, help='Output directory for plots')
-        parser.add_argument('--method', choices=['pca', 'lsa', 'tsne'], default='pca', help='Dimension reduction method for embeddings')
-        parser.add_argument('--n-components', type=int, default=2, help='Number of components for embeddings')
-        parser.add_argument('--threshold', type=float, default=0.3, help='Similarity threshold for networks')
-        parser.add_argument('--layout', choices=['spring', 'circular', 'kamada_kawai'], default='spring', help='Network layout')
-        parser.add_argument('--log-level', default='INFO', help='Logging level')
-
-        args = parser.parse_args()
-        setup_logging(level=args.log_level)
-        visualize_all(args)
-
-    # Handle direct calls from run.py
-    elif len(sys.argv) >= 3 and sys.argv[1] in ['embeddings', 'networks', 'distributions', 'all']:
-        # This handles calls from the run.py interactive interface
-        subcommand = sys.argv[1]
-
-        if subcommand == 'all':
-            # Parse arguments for 'all' command
-            parser = argparse.ArgumentParser(
-                description='Generate all visualization types',
-                formatter_class=argparse.ArgumentDefaultsHelpFormatter
-            )
-            parser.add_argument('--input-dir', required=True)
-            parser.add_argument('--output-dir', required=True)
-            parser.add_argument('--method', choices=['pca', 'lsa', 'tsne'], default='pca')
-            parser.add_argument('--n-components', type=int, default=2)
-            parser.add_argument('--threshold', type=float, default=0.3)
-            parser.add_argument('--layout', choices=['spring', 'circular', 'kamada_kawai'], default='spring')
-            parser.add_argument('--log-level', default='INFO')
-
-            args = parser.parse_args(sys.argv[2:])
-            setup_logging(level=args.log_level)
-            visualize_all(args)
-        else:
-            # Handle individual visualization types
-            if subcommand == 'embeddings':
-                parser = argparse.ArgumentParser(description='Create embedding plots')
-                parser.add_argument('--input-dir', required=True)
-                parser.add_argument('--output-dir', required=True)
-                parser.add_argument('--method', choices=['pca', 'lsa', 'tsne'], default='pca')
-                parser.add_argument('--n-components', type=int, default=2)
-                parser.add_argument('--max-features', type=int, default=5000)
-                parser.add_argument('--label')
-                parser.add_argument('--log-level', default='INFO')
-
-                args = parser.parse_args(sys.argv[2:])
-                setup_logging(level=args.log_level)
-                visualize_embeddings(args)
-
-            elif subcommand == 'networks':
-                parser = argparse.ArgumentParser(description='Create network visualizations')
-                parser.add_argument('--input-dir', required=True)
-                parser.add_argument('--output-dir', required=True)
-                parser.add_argument('--threshold', type=float, default=0.3)
-                parser.add_argument('--max-terms', type=int, default=50)
-                parser.add_argument('--layout', choices=['spring', 'circular', 'kamada_kawai'], default='spring')
-                parser.add_argument('--log-level', default='INFO')
-
-                args = parser.parse_args(sys.argv[2:])
-                setup_logging(level=args.log_level)
-                visualize_networks(args)
-
-            elif subcommand == 'distributions':
-                parser = argparse.ArgumentParser(description='Create distribution plots')
-                parser.add_argument('--input-dir', required=True)
-                parser.add_argument('--output-dir', required=True)
-                parser.add_argument('--log-level', default='INFO')
-
-                args = parser.parse_args(sys.argv[2:])
-                setup_logging(level=args.log_level)
-                visualize_distributions(args)
-
-
-if __name__ == "__main__":
-    main()
-

@@ -300,7 +300,7 @@ class TestColumnSummaries:
         assert summary['column'] == 'comments'
         assert summary['total_participants'] == 3
         assert summary['responses_count'] == 1  # Only John has comments
-        assert 0.3 < summary['response_rate'] < 0.4
+        assert summary['response_rate'] == pytest.approx(1 / 3)
 
     def test_get_column_summary_statistics(self, sample_participant_csv):
         """Test column summary statistics."""
@@ -560,15 +560,16 @@ class TestErrorHandling:
             DataLoader.load_csv(Path("/nonexistent/file.csv"))
 
     def test_analyze_with_api_error(self, sample_participant_data, tmp_path):
-        """Test handling of API errors."""
-        # Create mock that raises exception
+        """Test that API provider errors propagate to the caller."""
+        # Create mock that raises a specific error type
         mock_client = Mock()
-        mock_client.get_response.side_effect = Exception("API Error")
-        
+        mock_client.get_response.side_effect = RuntimeError("API Error")
+
         analyzer = ParticipantAnalyzer(mock_client)
-        
-        # Should raise exception
-        with pytest.raises(Exception):
+
+        # The analyzer must not swallow the provider error; assert the exact type
+        # propagates so an unrelated internal bug can't silently pass.
+        with pytest.raises(RuntimeError, match="API Error"):
             analyzer.research_participant_background(sample_participant_data)
 
     def test_empty_csv_file(self, tmp_path):

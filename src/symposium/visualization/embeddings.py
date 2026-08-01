@@ -57,13 +57,16 @@ class DimensionReducer:
             n_docs = len(documents)
             # For small datasets, use min_df=1 to allow more features
             min_doc_freq = 1 if n_docs < 10 else 2
-            
+            # max_df must not drop below min_df on tiny corpora, or sklearn raises
+            # "max_df corresponds to < documents than min_df" (e.g. 1-doc inputs).
+            max_doc_freq = 0.90 if n_docs >= 3 else 1.0
+
             # TF-IDF vectorization with improved parameters
             vectorizer = TfidfVectorizer(
                 max_features=10000,  # Increased for better representation
                 stop_words='english',
                 min_df=min_doc_freq,  # Adaptive minimum document frequency
-                max_df=0.90,  # Maximum document frequency
+                max_df=max_doc_freq,  # Maximum document frequency
                 ngram_range=(1, 2),  # Include bigrams
                 sublinear_tf=True  # Apply sublinear scaling
             )
@@ -106,8 +109,11 @@ class DimensionReducer:
 
             elif method.lower() == "tsne":
                 # Enhanced t-SNE with better parameters
-                # First reduce with PCA to avoid memory issues
-                pca_temp = PCA(n_components=min(100, tfidf_matrix.shape[1] - 1), random_state=self.random_state)
+                # First reduce with PCA to avoid memory issues.
+                # Cap the temp projection by BOTH n_features and n_samples (max_components),
+                # otherwise PCA raises for small datasets where n_samples < n_features.
+                pca_n = max(1, min(100, max_components))
+                pca_temp = PCA(n_components=pca_n, random_state=self.random_state)
                 tfidf_reduced = pca_temp.fit_transform(tfidf_matrix.toarray())
 
                 from sklearn.manifold import TSNE
@@ -360,9 +366,8 @@ class TextVisualizer:
                         column_texts.append(str(text))
 
                 if column_texts:
-                    # Clean column key for filename
-                    safe_column_key = column_key.replace('_', '_')
-                    column_path = output_dir / f"word_cloud_{safe_column_key}.png"
+                    # Column keys are already safe (lowercase, underscores only)
+                    column_path = output_dir / f"word_cloud_{column_key}.png"
 
                     # Create column-specific word cloud
                     self.create_word_cloud(
@@ -439,7 +444,7 @@ class TextVisualizer:
 
             # Create color map for unique labels
             unique_labels = list(set(labels))
-            colors = plt.cm.get_cmap('tab20')(np.linspace(0, 1, len(unique_labels)))
+            colors = matplotlib.colormaps['tab20'](np.linspace(0, 1, len(unique_labels)))
             color_dict = dict(zip(unique_labels, colors))
 
             # Plot points
@@ -535,7 +540,7 @@ class TextVisualizer:
 
             # Color mapping
             unique_labels = list(set(labels))
-            colors = plt.cm.get_cmap('tab20')(np.linspace(0, 1, len(unique_labels)))
+            colors = matplotlib.colormaps['tab20'](np.linspace(0, 1, len(unique_labels)))
             color_dict = dict(zip(unique_labels, colors))
 
             # Plot points

@@ -144,23 +144,29 @@ class DistributionPlotter:
             top_terms = [feature_names[i] for i in top_indices]
             top_scores = tfidf_sum[top_indices]
 
-            # Calculate confidence intervals
+            # Calculate confidence intervals (requires at least 2 documents;
+            # with a single document the t-distribution df is 0 and scipy
+            # returns NaN, so fall back to no error bars instead of zeroing them).
+            n_docs = tfidf_matrix.shape[0]
             tfidf_data = tfidf_matrix[:, top_indices].toarray()
             means = np.mean(tfidf_data, axis=0)
             stds = np.std(tfidf_data, axis=0)
 
-            # Handle potential division by zero
-            with np.errstate(divide='ignore', invalid='ignore'):
-                cis = stats.t.interval(0.95, tfidf_matrix.shape[0]-1,
-                                     loc=means, scale=stds/np.sqrt(tfidf_matrix.shape[0]))
-                cis = np.nan_to_num(cis, nan=0.0, posinf=0.0, neginf=0.0)
+            if n_docs >= 2:
+                cis = stats.t.interval(0.95, n_docs - 1,
+                                       loc=means, scale=stds/np.sqrt(n_docs))
+                # Asymmetric error bars: (lower, upper) limbs
+                yerr = (means - cis[0], cis[1] - means)
+            else:
+                logger.warning("Fewer than 2 documents; plotting mean TF-IDF scores without 95% CI error bars")
+                yerr = None
 
             # Plot
             plt.figure(figsize=(15, 10))
 
             # Bar plot with error bars
             plt.subplot(2, 1, 1)
-            plt.errorbar(range(len(top_terms)), means, yerr=cis[1]-means,
+            plt.errorbar(range(len(top_terms)), means, yerr=yerr,
                         fmt='o', capsize=5, color='skyblue', alpha=0.7)
             plt.xticks(range(len(top_terms)), top_terms, rotation=45, ha='right')
             plt.xlabel('Terms')
@@ -257,7 +263,7 @@ class DistributionPlotter:
             # Box plot of lengths
             lengths_by_category = [np.array([len(doc.split()) for doc, l in zip(documents, labels) if l == label])
                                  for label in unique_labels]
-            axes[1, 0].boxplot(lengths_by_category, labels=unique_labels)
+            axes[1, 0].boxplot(lengths_by_category, tick_labels=unique_labels)
             axes[1, 0].set_title('Document Length Distribution by Category', fontweight='bold')
             axes[1, 0].set_ylabel('Word Count')
             axes[1, 0].tick_params(axis='x', rotation=45)

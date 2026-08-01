@@ -21,7 +21,11 @@ class Config:
             load_env: Whether to load .env file (default: True)
         """
         if load_env:
-            load_dotenv()
+            # Load ONLY the project-local .env file. The default load_dotenv() walks up
+            # parent directories and can silently pull in an unrelated .env from anywhere
+            # above the repository (a source of non-determinism and secret leakage).
+            # Config paths already assume cwd-relative locations, so use cwd/.env here too.
+            load_dotenv(Path.cwd() / ".env")
 
         self._config: Dict[str, Any] = {}
         self._load_defaults()

@@ -7,7 +7,6 @@ Quick launcher for the Symposium interactive interface.
 
 import os
 import sys
-import subprocess
 import logging
 from pathlib import Path
 
@@ -54,23 +53,18 @@ def main():
     # Activate virtual environment if needed
     activate_virtual_environment()
 
-    # Run setup first
+    # Validate the installed package in-process. The legacy `setup.py` runner is
+    # deprecated (install/validation is driven by uv + pyproject.toml), so do not
+    # shell out to it.
     logger.info("Running setup validation")
     print("🔧 Running setup validation...")
     try:
-        result = subprocess.run([sys.executable, 'setup.py'], capture_output=True, text=True, timeout=30)
-        if result.returncode == 0:
-            logger.info("Setup validation passed")
-            print("✅ Setup validation passed")
-        else:
-            logger.warning(f"Setup validation had issues: {result.stderr}")
-            print("⚠️  Setup validation had issues, but continuing...")
-    except subprocess.TimeoutExpired:
-        logger.warning("Setup validation timed out")
-        print("⚠️  Setup validation timed out, continuing...")
-    except Exception as e:
-        logger.error(f"Setup validation failed: {e}")
-        print(f"⚠️  Setup validation failed: {e}, continuing...")
+        import symposium  # noqa: F401
+        logger.info("Setup validation passed")
+        print("✅ Setup validation passed")
+    except ImportError as e:
+        logger.warning(f"Setup validation could not import the package: {e}")
+        print("⚠️  symposium package not importable — run `uv pip install -e \".[dev]\"` first. Continuing...")
 
     print()
     print("🎯 Starting Symposium Interactive Interface...")

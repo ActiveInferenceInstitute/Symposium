@@ -1,6 +1,6 @@
 [project]
 name = "symposium"
-version = "2.0.0"
+version = "2.1.0"
 description = "Research analysis and project generation for Active Inference Symposium"
 authors = [{name = "Active Inference Institute"}]
 requires-python = ">=3.10"
@@ -48,11 +48,13 @@ packages = ["src/symposium"]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
-addopts = "--cov=src/symposium --cov-report=html --cov-report=term"
+addopts = "--cov=src/symposium --cov-report=html --cov-report=term --cov-fail-under=80"
 
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+
+[tool.ruff.lint]
 select = ["E", "F", "I", "N", "W"]
 ignore = ["E501"]
 

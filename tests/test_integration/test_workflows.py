@@ -199,10 +199,10 @@ class TestRealAPIWorkflows:
 
     def test_real_api_presenter_analysis(self):
         """Test complete presenter analysis with real API."""
-        # Skip if no API key available
-        api_key = os.getenv("PERPLEXITY_API_KEY")
+        # This workflow creates an OpenRouter client, so gate on that key.
+        api_key = os.getenv("OPENROUTER_API_KEY")
         if not api_key:
-            pytest.skip("No Perplexity API key available")
+            pytest.skip("No OpenRouter API key available")
 
         # Create temporary directory for test
         import tempfile
@@ -257,10 +257,10 @@ class TestRealAPIWorkflows:
 
     def test_real_api_profile_generation(self):
         """Test profile generation with real API."""
-        # Skip if no API key available
-        api_key = os.getenv("PERPLEXITY_API_KEY")
+        # This workflow creates an OpenRouter client, so gate on that key.
+        api_key = os.getenv("OPENROUTER_API_KEY")
         if not api_key:
-            pytest.skip("No Perplexity API key available")
+            pytest.skip("No OpenRouter API key available")
 
         # Create temporary directory for test
         import tempfile

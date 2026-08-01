@@ -19,7 +19,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler('symposium.log', mode='a')
+        logging.FileHandler(Path(__file__).parent / 'symposium.log', mode='a')
     ]
 )
 logger = logging.getLogger(__name__)
@@ -27,7 +27,9 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load ONLY the project-local .env (default load_dotenv walks up parent
+    # directories and can silently load an unrelated .env from above the repo).
+    load_dotenv(Path(__file__).parent / ".env")
     logger.info("Environment variables loaded successfully")
 except ImportError:
     logger.warning("python-dotenv not available, using system environment variables")
@@ -157,7 +159,7 @@ class SymposiumRunner:
                 # Count public sharing
                 share_column = 'Can we share this information publicly?'
                 if share_column in df.columns:
-                    public_count = df[share_column].str.lower().str.contains('yes|true|y').sum()
+                    public_count = df[share_column].fillna('').str.lower().str.contains(r'^(yes|true|y)$', regex=True).sum()
                     print(f"   ✅ Public sharing: {public_count} participants")
                     print(f"   📊 Rich data: {len(df.columns)} fields")
                     print(f"   📋 Fields include:")
@@ -203,7 +205,7 @@ class SymposiumRunner:
             # Count participants who agreed to share publicly
             share_column = 'Can we share this information publicly?'
             if share_column in df.columns:
-                public_count = df[share_column].str.lower().str.contains('yes|true|y').sum()
+                public_count = df[share_column].fillna('').str.lower().str.contains(r'^(yes|true|y)$', regex=True).sum()
                 print(f"👥 Participants agreeing to share publicly: {public_count}")
             else:
                 public_count = total_participants
@@ -427,7 +429,14 @@ class SymposiumRunner:
                 print("\n📋 Multiple matches found:")
                 for i, name in enumerate(matches, 1):
                     print(f"   {i}. {name}")
-                choice = int(input("Choose participant (number): ").strip()) - 1
+                try:
+                    choice = int(input("Choose participant (number): ").strip()) - 1
+                except ValueError:
+                    print("❌ Invalid number entered.")
+                    return
+                if not 0 <= choice < len(matches):
+                    print("❌ Selection out of range.")
+                    return
                 participant_name = matches[choice]
             else:
                 participant_name = matches[0]
@@ -459,7 +468,7 @@ class SymposiumRunner:
             print(f"✅ Background research completed!")
             print(f"📁 Results saved to: {output_base}/{participant_name}/")
             print(f"\n📄 Preview (first 300 chars):")
-            print(f"   {background[:300]}...")
+            print(f"   {(background or '')[:300]}...")
 
         except Exception as e:
             logger.error(f"Background research failed: {e}")
@@ -513,7 +522,14 @@ class SymposiumRunner:
                 print("\n📋 Multiple matches found:")
                 for i, name in enumerate(matches, 1):
                     print(f"   {i}. {name}")
-                choice = int(input("Choose participant (number): ").strip()) - 1
+                try:
+                    choice = int(input("Choose participant (number): ").strip()) - 1
+                except ValueError:
+                    print("❌ Invalid number entered.")
+                    return
+                if not 0 <= choice < len(matches):
+                    print("❌ Selection out of range.")
+                    return
                 participant_name = matches[choice]
             else:
                 participant_name = matches[0]
@@ -545,7 +561,7 @@ class SymposiumRunner:
             print(f"✅ Curriculum generation completed!")
             print(f"📁 Results saved to: {output_base}/{participant_name}/")
             print(f"\n📄 Preview (first 300 chars):")
-            print(f"   {curriculum[:300]}...")
+            print(f"   {(curriculum or '')[:300]}...")
 
         except Exception as e:
             logger.error(f"Curriculum generation failed: {e}")
@@ -590,41 +606,47 @@ class SymposiumRunner:
         print("\n🔄 Creating visualizations...")
         logger.info(f"Creating {viz_type} visualizations")
 
-        # Use the installed symposium command
-        import subprocess
+        # Call the visualization package functions in-process rather than shelling
+        # out to the `symposium` console script (no dependency on it being on PATH,
+        # and no subprocess overhead / capture issues).
+        import argparse
+        from symposium.cli.visualize import (
+            visualize_embeddings,
+            visualize_networks,
+            visualize_distributions,
+            visualize_all,
+        )
 
-        # Build command arguments
-        cmd_args = [
-            'symposium', 'visualize', viz_type,
-            f'--input-dir={data_dir}',
-            f'--output-dir={self.outputs_dir}/visualizations',
-            '--log-level=INFO'
-        ]
-
-        if viz_type == 'embeddings':
-            method = input("Reduction method (pca/lsa/tsne, default: pca): ").strip() or 'pca'
-            cmd_args.extend(['--method', method])
-        elif viz_type == 'networks':
-            layout = input("Network layout (spring/circular/kamada_kawai, default: spring): ").strip() or 'spring'
-            cmd_args.extend(['--layout', layout])
-        elif viz_type == 'all':
-            method = input("Embedding method (pca/lsa/tsne, default: pca): ").strip() or 'pca'
-            layout = input("Network layout (spring/circular/kamada_kawai, default: spring): ").strip() or 'spring'
-            cmd_args.extend(['--method', method, '--layout', layout])
+        base = dict(
+            input_dir=str(data_dir),
+            output_dir=str(self.outputs_dir / "visualizations"),
+            method="pca",
+            n_components=2,
+            threshold=0.3,
+            max_terms=50,
+            max_features=5000,
+            label=None,
+            layout="spring",
+            log_level="INFO",
+        )
 
         try:
-            logger.info(f"Running command: {' '.join(cmd_args)}")
-            result = subprocess.run(cmd_args, capture_output=True, text=True, timeout=300)
-            if result.returncode == 0:
-                logger.info("Visualization completed successfully")
-                print("✅ Visualization completed!")
-                print(f"📁 Results saved to: {self.outputs_dir}/visualizations/")
-            else:
-                logger.error(f"Visualization failed: {result.stderr}")
-                print(f"❌ Visualization failed: {result.stderr}")
-        except subprocess.TimeoutExpired:
-            logger.error("Visualization timed out")
-            print("❌ Visualization timed out (took longer than 5 minutes)")
+            if viz_type == "embeddings":
+                method = input("Reduction method (pca/lsa/tsne, default: pca): ").strip() or "pca"
+                visualize_embeddings(argparse.Namespace(**{**base, "method": method}))
+            elif viz_type == "networks":
+                layout = input("Network layout (spring/circular/kamada_kawai, default: spring): ").strip() or "spring"
+                visualize_networks(argparse.Namespace(**{**base, "layout": layout}))
+            elif viz_type == "distributions":
+                visualize_distributions(argparse.Namespace(**base))
+            else:  # all
+                method = input("Embedding method (pca/lsa/tsne, default: pca): ").strip() or "pca"
+                layout = input("Network layout (spring/circular/kamada_kawai, default: spring): ").strip() or "spring"
+                visualize_all(argparse.Namespace(**{**base, "method": method, "layout": layout}))
+
+            logger.info("Visualization completed successfully")
+            print("✅ Visualization completed!")
+            print(f"📁 Results saved to: {self.outputs_dir}/visualizations/")
         except Exception as e:
             logger.error(f"Visualization failed: {e}")
             print(f"❌ Visualization failed: {e}")

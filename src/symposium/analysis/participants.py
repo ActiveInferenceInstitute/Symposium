@@ -487,15 +487,16 @@ Please provide a comprehensive profile analysis including:
                     research_start = time.time()
                     if perplexity_client:
                         logger.debug(f"🔍 Using Perplexity Sonar for background research: {participant_name}")
-                        # Temporarily use Perplexity client for this operation
+                        # Temporarily use Perplexity client for this operation, and
+                        # ALWAYS restore the original client even if research fails,
+                        # so a later exception can't leak the swapped client downstream.
                         original_client = self.api_client
                         self.api_client = perplexity_client
-                        
-                        background = self.research_participant_background(participant_data)
-                        participant_results['background_research'] = background
-                        
-                        # Restore original client
-                        self.api_client = original_client
+                        try:
+                            background = self.research_participant_background(participant_data)
+                            participant_results['background_research'] = background
+                        finally:
+                            self.api_client = original_client
                         research_time = time.time() - research_start
                         logger.info(f"✅ Background research completed for {participant_name} ({research_time:.1f}s)")
                     else:
@@ -554,7 +555,8 @@ Please provide a comprehensive profile analysis including:
 
         total_time = time.time() - start_time
         successful = len([r for r in results.values() if 'error' not in r])
-        logger.info(f"Completed processing: {successful}/{total_participants} successful in {total_time:.1f}s (avg: {total_time/total_participants:.1f}s per participant)")
+        avg_time = (total_time / total_participants) if total_participants > 0 else 0.0
+        logger.info(f"Completed processing: {successful}/{total_participants} successful in {total_time:.1f}s (avg: {avg_time:.1f}s per participant)")
         return results
 
     def generate_column_summaries(

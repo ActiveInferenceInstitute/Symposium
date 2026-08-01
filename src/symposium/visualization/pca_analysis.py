@@ -92,17 +92,20 @@ class PCAAnalyzer:
             ax2.grid(True, alpha=0.3)
             ax2.set_ylim([0, 1.05])
             
-            # Add text annotations
-            var_80_idx = np.argmax(cumulative_variance >= 0.80) + 1
-            var_90_idx = np.argmax(cumulative_variance >= 0.90) + 1
-            
-            ax2.annotate(f'{var_80_idx} components\nfor 80% variance',
-                        xy=(var_80_idx, 0.80),
-                        xytext=(var_80_idx + 5, 0.70),
-                        arrowprops=dict(arrowstyle='->', color='red', lw=2),
-                        fontsize=11, fontweight='bold',
-                        bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow', alpha=0.7))
-            
+            # Add text annotations. Only annotate when the threshold is actually
+            # attained; np.argmax of an all-False array returns 0, which would
+            # falsely claim "1 component for 80% variance".
+            var_80_idx = np.argmax(cumulative_variance >= 0.80) + 1 if cumulative_variance[-1] >= 0.80 else None
+            var_90_idx = np.argmax(cumulative_variance >= 0.90) + 1 if cumulative_variance[-1] >= 0.90 else None
+
+            if var_80_idx is not None:
+                ax2.annotate(f'{var_80_idx} components\nfor 80% variance',
+                            xy=(var_80_idx, 0.80),
+                            xytext=(min(var_80_idx + 5, len(components)), 0.70),
+                            arrowprops=dict(arrowstyle='->', color='red', lw=2),
+                            fontsize=11, fontweight='bold',
+                            bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow', alpha=0.7))
+
             plt.suptitle(title, fontsize=18, fontweight='bold', y=1.02)
             plt.tight_layout()
             
@@ -240,7 +243,7 @@ class PCAAnalyzer:
             
             # Plot scores (samples)
             unique_labels = list(set(labels))
-            colors = plt.cm.get_cmap('tab20')(np.linspace(0, 1, len(unique_labels)))
+            colors = matplotlib.colormaps['tab20'](np.linspace(0, 1, len(unique_labels)))
             color_dict = dict(zip(unique_labels, colors))
             
             for label in unique_labels:
@@ -562,7 +565,7 @@ class PCAAnalyzer:
             
             # Color mapping
             unique_labels = list(set(labels))
-            colors = plt.cm.get_cmap('tab20')(np.linspace(0, 1, len(unique_labels)))
+            colors = matplotlib.colormaps['tab20'](np.linspace(0, 1, len(unique_labels)))
             color_dict = dict(zip(unique_labels, colors))
             
             # Plot points

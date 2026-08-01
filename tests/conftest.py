@@ -16,6 +16,14 @@ def temp_dir():
     shutil.rmtree(tmp_dir)
 
 
+# test_participant_pipeline.py is a standalone demo script (run via
+# `python tests/test_participant_pipeline.py`), not a pytest module. Its
+# functions take a `participants` argument that pytest misreads as a fixture,
+# producing collection errors. tests/.pytestignore is non-functional for pytest,
+# so exclude it here explicitly.
+collect_ignore = ["test_participant_pipeline.py"]
+
+
 @pytest.fixture
 def mock_api_client():
     """Create a mock API client."""

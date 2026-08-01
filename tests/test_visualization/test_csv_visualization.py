@@ -10,6 +10,7 @@ Tests the complete pipeline from CSV participant data to visualizations includin
 """
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
@@ -34,8 +35,9 @@ Yes,Bob Smith,bob@research.org,Research Institute,0000-0002-8765-4321,"Active In
 Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learning engineer, 3 years AI experience","Getting started with Active Inference","Practical implementation","AI applications, beginner","Learning curve","Introductory resources and tutorials","Online courses","Revolutionize machine learning","Great opportunity"
 """
 
-        # Create temporary CSV file
-        self.test_csv_path = Path(__file__).parent / 'test_participants.csv'
+        # Create temporary CSV file in a temp dir (hermetic — never in the source tree)
+        self._tmp_dir = tempfile.TemporaryDirectory()
+        self.test_csv_path = Path(self._tmp_dir.name) / 'test_participants.csv'
         with open(self.test_csv_path, 'w') as f:
             f.write(self.test_csv_content)
 
@@ -93,8 +95,7 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
 
     def tearDown(self):
         """Clean up test files."""
-        if self.test_csv_path.exists():
-            self.test_csv_path.unlink()
+        self._tmp_dir.cleanup()
 
     def test_data_loading(self):
         """Test CSV data loading functionality."""
@@ -260,7 +261,8 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
 
         self.assertIsNotNone(graph)
         self.assertTrue(len(graph.nodes()) > 0)
-        self.assertTrue(len(graph.edges()) >= 0)  # May be 0 if no similarities above threshold
+        # The three short documents share terms, so a low threshold must produce edges.
+        self.assertTrue(len(graph.edges()) > 0)
 
     def test_distribution_analysis_setup(self):
         """Test distribution analysis setup."""
@@ -273,24 +275,14 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         ]
         labels = ["short", "long", "medium"]
 
-        # Test document length distribution
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.hist'), \
-             patch('matplotlib.pyplot.xlabel'), \
-             patch('matplotlib.pyplot.ylabel'), \
-             patch('matplotlib.pyplot.title'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.close'):
-
-            try:
-                result = plotter.plot_document_length_distribution(
-                    documents, labels, "Test Distribution", Path('/tmp/test_dist.png')
-                )
-                self.assertTrue(result)
-            except Exception as e:
-                # If there's an issue with distribution plotting, log it but don't fail
-                # This can happen with small datasets
-                self.skipTest(f"Distribution plotting issue (acceptable for small test data): {e}")
+        with tempfile.TemporaryDirectory() as td:
+            output_path = Path(td) / "test_dist.png"
+            result = plotter.plot_document_length_distribution(
+                documents, labels, "Test Distribution", output_path
+            )
+            # A real assertion: the plot must succeed and produce a file.
+            self.assertTrue(result)
+            self.assertTrue(output_path.exists())
 
     def test_csv_visualization_pipeline(self):
         """Test complete CSV to visualization pipeline."""
@@ -566,28 +558,19 @@ class TestCLIEnhancedVisualizations(unittest.TestCase):
 Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in cognitive neuroscience with expertise in active inference and predictive processing","Understanding practical applications","Deep theoretical insights into cognitive mechanisms","Neuroscience research, mid-stage","Technical implementation challenges and lack of standardized tools","Advanced tutorials and mentorship opportunities","Academic conference","Revolutionary impact on AI and cognitive science","Looking forward to collaboration opportunities"
 """
 
-        # Create temporary CSV file
-        self.test_csv_path = Path(__file__).parent / 'test_enhanced_cli.csv'
+        # Create temporary CSV file and output dir in a temp dir (hermetic)
+        self._tmp_dir = tempfile.TemporaryDirectory()
+        self.test_csv_path = Path(self._tmp_dir.name) / 'test_enhanced_cli.csv'
         with open(self.test_csv_path, 'w') as f:
             f.write(self.test_csv_content)
 
         # Create test output directory
-        self.test_output_dir = Path(__file__).parent / 'test_enhanced_output'
+        self.test_output_dir = Path(self._tmp_dir.name) / 'test_enhanced_output'
         self.test_output_dir.mkdir(exist_ok=True)
 
     def tearDown(self):
         """Clean up test files."""
-        if self.test_csv_path.exists():
-            self.test_csv_path.unlink()
-        if self.test_output_dir.exists():
-            import shutil
-            shutil.rmtree(self.test_output_dir)
-
-    def test_wordclouds_command(self):
-        """Test wordclouds CLI command."""
-        # visualize_wordclouds function doesn't exist - skip this test
-        # Word clouds are handled through visualize_all or visualize_embeddings
-        self.skipTest("visualize_wordclouds function not implemented - use visualize_embeddings or visualize_all instead")
+        self._tmp_dir.cleanup()
 
     def test_advanced_embedding_methods(self):
         """Test CLI with advanced embedding methods."""
@@ -642,9 +625,11 @@ Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in
                 args.method = 'nmf'
                 try:
                     visualize_embeddings(args)
-                    success = True
                 except Exception as e:
                     self.fail(f"NMF embedding failed: {e}")
+
+                # Both methods must have completed without raising.
+                self.assertTrue(success)
 
 
 if __name__ == '__main__':

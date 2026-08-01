@@ -7,7 +7,6 @@ Initializes the Symposium environment, checks dependencies, and validates config
 
 import os
 import sys
-import subprocess
 import logging
 from pathlib import Path
 from typing import List, Tuple
@@ -31,20 +30,6 @@ if str(current_dir) not in sys.path:
 
 # Ensure we're in the right directory
 os.chdir(current_dir)
-
-def run_command(command: str, description: str = "") -> bool:
-    """Run a shell command and return success status."""
-    try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
-        if result.returncode == 0:
-            print(f"✅ {description}")
-            return True
-        else:
-            print(f"❌ {description} - Error: {result.stderr.strip()}")
-            return False
-    except Exception as e:
-        print(f"❌ {description} - Exception: {e}")
-        return False
 
 def check_python_version() -> bool:
     """Check if Python version is compatible."""

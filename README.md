@@ -92,19 +92,20 @@ symposium visualize distributions --input-dir <dir> --output-dir <dir>
 symposium visualize all --input-dir <dir> --output-dir <dir> --method pca --layout spring
 ```
 
-**From CSV Participant Data:**
+**Note on input:** the `visualize` subcommands read **Markdown** documents from a directory (`--input-dir`); they do **not** accept a CSV file. Participant CSV data (e.g. `data/inputs/aif_2025/Public_Participant_Information.csv`) feeds the `analyze`/`generate` flows, which produce the Markdown reports you then visualize. Point `--input-dir` at a directory tree of `.md` files — for per-participant labelling, group the reports under `people/<participant>/` subdirectories:
+
 ```bash
-# Create embedding visualizations from participant CSV
-symposium visualize embeddings --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations --method pca
+# Create embedding visualizations (PCA, LSA, t-SNE) from a directory of Markdown reports
+symposium visualize embeddings --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --method pca
 
-# Create network visualizations from participant CSV
-symposium visualize networks --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations --layout spring
+# Create network visualizations (similarity networks, community analysis)
+symposium visualize networks --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --layout spring
 
-# Create distribution plots from participant CSV
-symposium visualize distributions --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations
+# Create distribution plots (document length, TF-IDF distributions)
+symposium visualize distributions --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations
 
-# Create all visualizations from participant CSV
-symposium visualize all --input-csv data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/visualizations --method pca --layout spring
+# Create all visualizations at once
+symposium visualize all --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --method pca --layout spring
 ```
 
 **Generated Visualizations:**

@@ -2,7 +2,9 @@
 
 import pytest
 import json
+import os
 from pathlib import Path
+from unittest.mock import patch
 from symposium.core.config import Config
 
 
@@ -44,37 +46,30 @@ class TestConfig:
         config.set("api.perplexity.api_key", "test_key")
         assert config.get_api_key("perplexity") == "test_key"
 
+    @patch.dict(os.environ, {"PERPLEXITY_API_KEY": "env_perplexity_key"}, clear=False)
     def test_get_api_key_from_environment(self):
         """Test getting API key from environment variables."""
         config = Config(load_env=True)
-        # Should load from environment if available
-        perplexity_key = config.get_api_key("perplexity")
-        openrouter_key = config.get_api_key("openrouter")
-
-        # These may be None if no keys in environment, but shouldn't raise errors
-        if perplexity_key:
-            assert isinstance(perplexity_key, str)
-        if openrouter_key:
-            assert isinstance(openrouter_key, str)
+        # Must read the exact key we injected, proving env vars are actually consumed.
+        assert config.get_api_key("perplexity") == "env_perplexity_key"
 
     def test_load_real_configuration(self):
-        """Test loading real configuration from environment."""
-        config = Config(load_env=True)
+        """Test loading default configuration without external side effects."""
+        config = Config(load_env=False)
 
         # Test that configuration loads without errors
         provider = config.get("api.provider")
         assert provider in ["perplexity", "openrouter"]
 
-        # Test path configuration
+        # Test path configuration resolves to real Path objects.
+        # Do NOT mkdir here — unit tests must not mutate the project tree.
         data_dir = config.get_path("data_dir")
-        assert data_dir.exists()
+        assert isinstance(data_dir, Path)
 
         inputs_dir = config.get_path("inputs_dir")
         outputs_dir = config.get_path("outputs_dir")
-
-        # Ensure directories exist
-        inputs_dir.mkdir(parents=True, exist_ok=True)
-        outputs_dir.mkdir(parents=True, exist_ok=True)
+        assert isinstance(inputs_dir, Path)
+        assert isinstance(outputs_dir, Path)
 
     def test_get_path(self):
         """Test getting paths."""
@@ -82,7 +77,7 @@ class TestConfig:
         data_dir = config.get_path("data_dir")
         assert isinstance(data_dir, Path)
 
-    def test_load_from_file(self, tmp_path):
+    def test_load_from_file(self, tmp_path, monkeypatch):
         """Test loading configuration from JSON file."""
         config_file = tmp_path / "config.json"
         config_data = {
@@ -93,8 +88,9 @@ class TestConfig:
         with open(config_file, 'w') as f:
             json.dump(config_data, f)
 
-        # Note: Environment variables always take priority over file config
-        # So if .env has API_PROVIDER=perplexity, it will override the file setting
+        # Environment variables always take priority over file config.
+        # Set it explicitly so the test is deterministic regardless of ambient env.
+        monkeypatch.setenv("API_PROVIDER", "perplexity")
         config = Config(config_file=config_file, load_env=True)
         # The environment variable should take priority
         assert config.get("api.provider") == "perplexity"

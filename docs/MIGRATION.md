@@ -54,20 +54,20 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 uv pip install -e ".[dev]"
 ```
 
-### 3. Run Migration Scripts
+### 3. Migrate Data & Configuration
 
-The package includes automatic migration scripts:
+The package does **not** ship automated `scripts/` migration utilities (the `scripts/`
+directory does not exist in this release). Upgrade existing data and configuration by
+pointing the new tooling at the standard locations:
 
 ```bash
-# Migrate data to new structure
-python scripts/migrate_data.py
-
-# Convert old configuration files
-python scripts/convert_configs.py
-
-# Setup backwards compatibility (optional)
-python scripts/backwards_compat.py
+# Input data stays under data/inputs/<year>/<name>/ (OpenAlex CSV pairs: openalex-group-by-*, works-*)
+# Copy the environment template and set your API keys
+cp .env.example .env
 ```
+
+Then re-run analysis/generation through the CLI (`symposium analyze …`,
+`symposium generate …`, `symposium visualize …`) to regenerate reports in the new layout.
 
 ### 4. Update Configuration
 
@@ -249,17 +249,15 @@ response = client.get_response(prompt, system_prompt)
 
 ### Automatic Compatibility
 
-The migration scripts create backwards compatibility:
-
-- **Wrapper scripts**: Old script names still work (internally call new CLI)
-- **Data structure**: Old paths automatically redirected
-- **Configuration**: Old format converted to new format
+The current release does not provide backward-compatibility wrapper scripts. The legacy
+`scripts/` migration utilities referenced by earlier documentation do **not** exist here;
+migrate configuration and data manually using the steps in section 3 above.
 
 ### Manual Compatibility
 
 If you need to maintain old workflows:
 
-1. **Use wrapper scripts**: Old script names still work
+1. **Use the new CLI entry points**: `symposium analyze|generate|visualize …`
 2. **Gradual migration**: Update scripts one at a time
 3. **Test thoroughly**: Verify outputs match old system
 
