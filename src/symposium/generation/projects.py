@@ -2,7 +2,8 @@
 
 import logging
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
+
 from symposium.core.api import BaseAPIProvider
 from symposium.core.data_loader import DataLoader
 from symposium.io.readers import ReportReader
@@ -15,7 +16,7 @@ class ProjectGenerator:
 
     def __init__(self, api_client: BaseAPIProvider, config: Optional[Dict[str, Any]] = None):
         """Initialize project generator.
-        
+
         Args:
             api_client: API client for generating content
             config: Optional configuration dictionary
@@ -26,19 +27,19 @@ class ProjectGenerator:
 
     def load_catechism_template(self, catechism_type: str, catechisms_dir: Path) -> str:
         """Load catechism template.
-        
+
         Args:
             catechism_type: Type of catechism (e.g., 'KarmaGAP', 'EUGrants')
             catechisms_dir: Directory containing catechism templates
-            
+
         Returns:
             Catechism template text
         """
         # Map catechism types to filenames
         catechism_files = {
-            'karmagap': 'KarmaGAPGrants.md',
-            'eugrants': 'EUGrants.md',
-            'synthetic': 'Synthetic_Catechism.md'
+            "karmagap": "KarmaGAPGrants.md",
+            "eugrants": "EUGrants.md",
+            "synthetic": "Synthetic_Catechism.md",
         }
 
         filename = catechism_files.get(catechism_type.lower())
@@ -50,10 +51,10 @@ class ProjectGenerator:
 
     def load_collaborators_list(self, collaborators_file: Path) -> str:
         """Load list of potential collaborators.
-        
+
         Args:
             collaborators_file: Path to collaborators file
-            
+
         Returns:
             Collaborators text
         """
@@ -65,17 +66,17 @@ class ProjectGenerator:
         participant_profile: str,
         domain_context: str,
         catechism_template: str,
-        collaborators: Optional[str] = None
+        collaborators: Optional[str] = None,
     ) -> str:
         """Generate project proposal prompt.
-        
+
         Args:
             participant_name: Name of participant
             participant_profile: Participant's research profile
             domain_context: Domain/field description
             catechism_template: Catechism template to follow
             collaborators: Optional list of potential collaborators
-            
+
         Returns:
             Generated prompt string
         """
@@ -122,10 +123,10 @@ Before finalizing, analyze multiple potential project directions and select the 
         catechism_type: str = "KarmaGAP",
         catechisms_dir: Optional[Path] = None,
         collaborators: Optional[str] = None,
-        system_prompt: Optional[str] = None
+        system_prompt: Optional[str] = None,
     ) -> str:
         """Generate a project proposal for a participant.
-        
+
         Args:
             participant_name: Name of participant
             participant_profile: Participant's research profile
@@ -134,7 +135,7 @@ Before finalizing, analyze multiple potential project directions and select the 
             catechisms_dir: Directory containing catechism templates
             collaborators: Optional list of potential collaborators
             system_prompt: Optional system prompt override
-            
+
         Returns:
             Generated project proposal
         """
@@ -148,27 +149,23 @@ Before finalizing, analyze multiple potential project directions and select the 
         # Load catechism template
         if catechisms_dir is None:
             catechisms_dir = Path.cwd() / "data" / "catechisms"
-        
+
         catechism_template = self.load_catechism_template(catechism_type, catechisms_dir)
 
         # Generate prompt
         prompt = self.generate_project_prompt(
-            participant_name,
-            participant_profile,
-            domain_context,
-            catechism_template,
-            collaborators
+            participant_name, participant_profile, domain_context, catechism_template, collaborators
         )
 
         # Token limit check
-        max_tokens = self.config.get('max_prompt_tokens', 12000)
+        max_tokens = self.config.get("max_prompt_tokens", 12000)
         if self.data_loader.estimate_token_count(prompt) > max_tokens:
             logger.warning(f"Prompt exceeds token limit, truncating for {participant_name}")
             prompt = self.data_loader.truncate_to_tokens(prompt, max_tokens)
 
         response = self.api_client.get_response(prompt, system_prompt)
         logger.info(f"Generated project proposal for {participant_name}")
-        
+
         return response
 
     def generate_all_projects(
@@ -178,10 +175,10 @@ Before finalizing, analyze multiple potential project directions and select the 
         domain_context_file: Path,
         catechism_type: str = "KarmaGAP",
         catechisms_dir: Optional[Path] = None,
-        collaborators_file: Optional[Path] = None
+        collaborators_file: Optional[Path] = None,
     ) -> Dict[str, str]:
         """Generate project proposals for all participants.
-        
+
         Args:
             profiles_dir: Directory containing participant profiles
             output_dir: Output directory for proposals
@@ -189,7 +186,7 @@ Before finalizing, analyze multiple potential project directions and select the 
             catechism_type: Type of catechism to use
             catechisms_dir: Directory containing catechism templates
             collaborators_file: Optional file with collaborators list
-            
+
         Returns:
             Dictionary mapping participant names to proposals
         """
@@ -213,21 +210,18 @@ Before finalizing, analyze multiple potential project directions and select the 
 
                 proposal = self.generate_project_proposal(
                     participant_name,
-                    participant_data['profile'],
+                    participant_data["profile"],
                     domain_context,
                     catechism_type,
                     catechisms_dir,
-                    collaborators
+                    collaborators,
                 )
 
                 results[participant_name] = proposal
 
                 # Save proposal
                 ReportWriter.save_project_proposal(
-                    participant_name,
-                    proposal,
-                    output_dir,
-                    catechism_type
+                    participant_name, proposal, output_dir, catechism_type
                 )
 
             except Exception as e:
@@ -236,4 +230,3 @@ Before finalizing, analyze multiple potential project directions and select the 
 
         logger.info(f"Completed project generation for {len(results)} participants")
         return results
-

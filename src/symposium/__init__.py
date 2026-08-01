@@ -6,9 +6,8 @@ project proposals, and visualizing research networks for the Active Inference Sy
 
 __version__ = "2.0.0"
 
+from symposium.calendar.exporter import ScheduleExporter
 from symposium.core.api import APIClient
 from symposium.core.config import Config
-from symposium.calendar.exporter import ScheduleExporter
 
 __all__ = ["APIClient", "Config", "ScheduleExporter", "__version__"]
-

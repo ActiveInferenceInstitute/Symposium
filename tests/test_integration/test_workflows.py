@@ -1,13 +1,15 @@
 """Integration tests for complete workflows."""
 
-import pytest
-from pathlib import Path
-from unittest.mock import Mock, patch
-import pandas as pd
 import os
+from pathlib import Path
+from unittest.mock import Mock
+
+import pandas as pd
+import pytest
+
+from symposium.analysis.presenters import PresenterAnalyzer
 from symposium.core.api import APIClient
 from symposium.core.config import Config
-from symposium.analysis.presenters import PresenterAnalyzer
 from symposium.generation.profiles import ProfileGenerator
 
 
@@ -18,18 +20,11 @@ class TestWorkflows:
     def workflow_config(self):
         """Create configuration for workflow tests."""
         return {
-            'api': {
-                'provider': 'perplexity',
-                'perplexity': {
-                    'model': 'test-model',
-                    'temperature': 0.7,
-                    'max_tokens': 1000
-                }
+            "api": {
+                "provider": "perplexity",
+                "perplexity": {"model": "test-model", "temperature": 0.7, "max_tokens": 1000},
             },
-            'data': {
-                'max_rows_per_file': 5,
-                'max_prompt_tokens': 5000
-            }
+            "data": {"max_rows_per_file": 5, "max_prompt_tokens": 5000},
         }
 
     def test_complete_presenter_analysis_workflow(self, temp_dir, workflow_config):
@@ -39,17 +34,25 @@ class TestWorkflows:
         presenter_dir.mkdir()
 
         # Create realistic test data
-        topics_df = pd.DataFrame({
-            'topic': ['Active Inference', 'Free Energy Principle', 'Bayesian Inference'],
-            'count': [15, 12, 8]
-        })
+        topics_df = pd.DataFrame(
+            {
+                "topic": ["Active Inference", "Free Energy Principle", "Bayesian Inference"],
+                "count": [15, 12, 8],
+            }
+        )
         topics_df.to_csv(presenter_dir / "openalex-group-by-test.csv", index=False)
 
-        works_df = pd.DataFrame({
-            'title': ['Understanding Active Inference', 'Free Energy in Practice', 'Bayesian Methods'],
-            'publication_year': [2023, 2022, 2021],
-            'cited_by_count': [45, 32, 28]
-        })
+        works_df = pd.DataFrame(
+            {
+                "title": [
+                    "Understanding Active Inference",
+                    "Free Energy in Practice",
+                    "Bayesian Methods",
+                ],
+                "publication_year": [2023, 2022, 2021],
+                "cited_by_count": [45, 32, 28],
+            }
+        )
         works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
         # Mock API client
@@ -57,12 +60,8 @@ class TestWorkflows:
         mock_client.get_response.return_value = "Complete research analysis for the presenter"
 
         # Run workflow
-        analyzer = PresenterAnalyzer(mock_client, workflow_config.get('data', {}))
-        results = analyzer.analyze_all_presenters(
-            temp_dir,
-            temp_dir / "outputs",
-            max_rows=3
-        )
+        analyzer = PresenterAnalyzer(mock_client, workflow_config.get("data", {}))
+        results = analyzer.analyze_all_presenters(temp_dir, temp_dir / "outputs", max_rows=3)
 
         # Verify results
         assert "Test_Presenter" in results
@@ -77,9 +76,9 @@ class TestWorkflows:
         presenter_dir = temp_dir / "Test_Researcher"
         presenter_dir.mkdir()
 
-        topics_df = pd.DataFrame({'topic': ['Machine Learning'], 'count': [10]})
+        topics_df = pd.DataFrame({"topic": ["Machine Learning"], "count": [10]})
         topics_df.to_csv(presenter_dir / "openalex-group-by-test.csv", index=False)
-        works_df = pd.DataFrame({'title': ['ML Paper'], 'publication_year': [2023]})
+        works_df = pd.DataFrame({"title": ["ML Paper"], "publication_year": [2023]})
         works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
         # Mock API responses
@@ -87,11 +86,9 @@ class TestWorkflows:
         mock_client.get_response.side_effect = ["Research profile", "Methods analysis"]
 
         # Run workflow
-        generator = ProfileGenerator(mock_client, workflow_config.get('data', {}))
+        generator = ProfileGenerator(mock_client, workflow_config.get("data", {}))
         results = generator.generate_all_profiles(
-            temp_dir,
-            temp_dir / "outputs",
-            include_methods=True
+            temp_dir, temp_dir / "outputs", include_methods=True
         )
 
         # Verify results
@@ -113,7 +110,7 @@ class TestWorkflows:
         mock_client.get_response.side_effect = Exception("API Error")
 
         # Run workflow - should handle errors gracefully
-        analyzer = PresenterAnalyzer(mock_client, workflow_config.get('data', {}))
+        analyzer = PresenterAnalyzer(mock_client, workflow_config.get("data", {}))
         results = analyzer.analyze_all_presenters(temp_dir, temp_dir / "outputs")
 
         # Should complete without crashing, but no results
@@ -130,17 +127,18 @@ class TestWorkflows:
             presenters.append(presenter_name)
 
             # Create data files
-            topics_df = pd.DataFrame({
-                'topic': [f'Topic_{j}' for j in range(5)],
-                'count': [10 - j for j in range(5)]
-            })
+            topics_df = pd.DataFrame(
+                {"topic": [f"Topic_{j}" for j in range(5)], "count": [10 - j for j in range(5)]}
+            )
             topics_df.to_csv(presenter_dir / "openalex-group-by-test.csv", index=False)
 
-            works_df = pd.DataFrame({
-                'title': [f'Paper_{j}' for j in range(5)],
-                'publication_year': [2023 - j for j in range(5)],
-                'cited_by_count': [50 - j*10 for j in range(5)]
-            })
+            works_df = pd.DataFrame(
+                {
+                    "title": [f"Paper_{j}" for j in range(5)],
+                    "publication_year": [2023 - j for j in range(5)],
+                    "cited_by_count": [50 - j * 10 for j in range(5)],
+                }
+            )
             works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
         # Mock API responses
@@ -148,12 +146,8 @@ class TestWorkflows:
         mock_client.get_response.return_value = "Analysis result"
 
         # Run workflow
-        analyzer = PresenterAnalyzer(mock_client, workflow_config.get('data', {}))
-        results = analyzer.analyze_all_presenters(
-            temp_dir,
-            temp_dir / "outputs",
-            max_rows=3
-        )
+        analyzer = PresenterAnalyzer(mock_client, workflow_config.get("data", {}))
+        results = analyzer.analyze_all_presenters(temp_dir, temp_dir / "outputs", max_rows=3)
 
         # Verify all presenters processed
         for presenter in presenters:
@@ -168,9 +162,9 @@ class TestWorkflows:
         presenter_dir = temp_dir / "Test_Presenter"
         presenter_dir.mkdir()
 
-        topics_df = pd.DataFrame({'topic': ['AI'], 'count': [5]})
+        topics_df = pd.DataFrame({"topic": ["AI"], "count": [5]})
         topics_df.to_csv(presenter_dir / "openalex-group-by-test.csv", index=False)
-        works_df = pd.DataFrame({'title': ['Paper 1'], 'publication_year': [2023]})
+        works_df = pd.DataFrame({"title": ["Paper 1"], "publication_year": [2023]})
         works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
         # Domain context
@@ -180,11 +174,9 @@ class TestWorkflows:
         mock_client.get_response.return_value = "Domain-specific analysis"
 
         # Run workflow
-        analyzer = PresenterAnalyzer(mock_client, workflow_config.get('data', {}))
+        analyzer = PresenterAnalyzer(mock_client, workflow_config.get("data", {}))
         results = analyzer.analyze_all_presenters(
-            temp_dir,
-            temp_dir / "outputs",
-            domain_context=domain_context
+            temp_dir, temp_dir / "outputs", domain_context=domain_context
         )
 
         # Verify domain context was used
@@ -194,6 +186,7 @@ class TestWorkflows:
         assert "Test_Presenter" in results
 
 
+@pytest.mark.real_api
 class TestRealAPIWorkflows:
     """Integration tests using real API calls."""
 
@@ -206,41 +199,52 @@ class TestRealAPIWorkflows:
 
         # Create temporary directory for test
         import tempfile
+
         with tempfile.TemporaryDirectory() as temp_dir:
             # Create test data directory
             presenter_dir = Path(temp_dir) / "validation_test"
             presenter_dir.mkdir()
 
             # Create realistic OpenAlex-style CSV data
-            topics_df = pd.DataFrame({
-                'topic': ['Active Inference', 'Free Energy Principle', 'Predictive Coding', 'Bayesian Brain', 'Dynamic Causal Modeling'],
-                'count': [25, 22, 18, 15, 12]
-            })
+            topics_df = pd.DataFrame(
+                {
+                    "topic": [
+                        "Active Inference",
+                        "Free Energy Principle",
+                        "Predictive Coding",
+                        "Bayesian Brain",
+                        "Dynamic Causal Modeling",
+                    ],
+                    "count": [25, 22, 18, 15, 12],
+                }
+            )
             topics_df.to_csv(presenter_dir / "openalex-group-by-20241103.csv", index=False)
 
-            works_df = pd.DataFrame({
-                'title': [
-                    'The free-energy principle: a unified brain theory?',
-                    'Active inference: a process theory',
-                    'Predictive coding in the brain',
-                    'Dynamic causal modelling',
-                    'The Bayesian brain: probabilistic approaches to neural coding'
-                ],
-                'publication_year': [2009, 2017, 2010, 2003, 2006],
-                'cited_by_count': [1200, 850, 950, 1100, 800]
-            })
+            works_df = pd.DataFrame(
+                {
+                    "title": [
+                        "The free-energy principle: a unified brain theory?",
+                        "Active inference: a process theory",
+                        "Predictive coding in the brain",
+                        "Dynamic causal modelling",
+                        "The Bayesian brain: probabilistic approaches to neural coding",
+                    ],
+                    "publication_year": [2009, 2017, 2010, 2003, 2006],
+                    "cited_by_count": [1200, 850, 950, 1100, 800],
+                }
+            )
             works_df.to_csv(presenter_dir / "works-20241103.csv", index=False)
 
             # Test with real API
             config = Config()
             api_client = APIClient.create("openrouter")  # Use OpenRouter since it works reliably
 
-            analyzer = PresenterAnalyzer(api_client, config.to_dict().get('data', {}))
+            analyzer = PresenterAnalyzer(api_client, config.to_dict().get("data", {}))
             results = analyzer.analyze_all_presenters(
                 Path(temp_dir),
                 Path(temp_dir) / "real_outputs",
                 domain_context="Active Inference research in cognitive neuroscience",
-                max_rows=3
+                max_rows=3,
             )
 
             # Verify real API response
@@ -264,34 +268,43 @@ class TestRealAPIWorkflows:
 
         # Create temporary directory for test
         import tempfile
+
         with tempfile.TemporaryDirectory() as temp_dir:
             # Create test researcher data
             researcher_dir = Path(temp_dir) / "Test_Researcher"
             researcher_dir.mkdir()
 
-            topics_df = pd.DataFrame({
-                'topic': ['Machine Learning', 'Neural Networks', 'Deep Learning'],
-                'count': [15, 12, 10]
-            })
+            topics_df = pd.DataFrame(
+                {
+                    "topic": ["Machine Learning", "Neural Networks", "Deep Learning"],
+                    "count": [15, 12, 10],
+                }
+            )
             topics_df.to_csv(researcher_dir / "openalex-group-by-20241103.csv", index=False)
 
-            works_df = pd.DataFrame({
-                'title': ['Deep Learning Methods', 'Neural Network Architectures', 'ML Applications'],
-                'publication_year': [2022, 2021, 2023],
-                'cited_by_count': [200, 150, 180]
-            })
+            works_df = pd.DataFrame(
+                {
+                    "title": [
+                        "Deep Learning Methods",
+                        "Neural Network Architectures",
+                        "ML Applications",
+                    ],
+                    "publication_year": [2022, 2021, 2023],
+                    "cited_by_count": [200, 150, 180],
+                }
+            )
             works_df.to_csv(researcher_dir / "works-20241103.csv", index=False)
 
             # Test with real API
             config = Config()
             api_client = APIClient.create("openrouter")
 
-            generator = ProfileGenerator(api_client, config.to_dict().get('data', {}))
+            generator = ProfileGenerator(api_client, config.to_dict().get("data", {}))
             results = generator.generate_all_profiles(
                 Path(temp_dir),
                 Path(temp_dir) / "real_profiles",
                 domain_context="Artificial Intelligence and Machine Learning research",
-                include_methods=True
+                include_methods=True,
             )
 
             # Verify real API responses
@@ -310,7 +323,7 @@ class TestRealAPIWorkflows:
 
     def test_cross_provider_analysis(self):
         """Test analysis with both Perplexity and OpenRouter."""
-        from symposium.core.api import PerplexityProvider, OpenRouterProvider
+        from symposium.core.api import OpenRouterProvider, PerplexityProvider
 
         perplexity_key = os.getenv("PERPLEXITY_API_KEY")
         openrouter_key = os.getenv("OPENROUTER_API_KEY")
@@ -320,37 +333,37 @@ class TestRealAPIWorkflows:
 
         # Create temporary directory for test
         import tempfile
+
         with tempfile.TemporaryDirectory() as temp_dir:
             # Create test data
             presenter_dir = Path(temp_dir) / "Cross_Provider_Test"
             presenter_dir.mkdir()
 
-            topics_df = pd.DataFrame({
-                'topic': ['Cognitive Science', 'Computational Neuroscience'],
-                'count': [10, 8]
-            })
+            topics_df = pd.DataFrame(
+                {"topic": ["Cognitive Science", "Computational Neuroscience"], "count": [10, 8]}
+            )
             topics_df.to_csv(presenter_dir / "openalex-group-by-20241103.csv", index=False)
 
-            works_df = pd.DataFrame({
-                'title': ['Cognitive Computation Paper'],
-                'publication_year': [2023],
-                'cited_by_count': [50]
-            })
+            works_df = pd.DataFrame(
+                {
+                    "title": ["Cognitive Computation Paper"],
+                    "publication_year": [2023],
+                    "cited_by_count": [50],
+                }
+            )
             works_df.to_csv(presenter_dir / "works-20241103.csv", index=False)
 
             # Test both providers
             providers = {
                 "perplexity": PerplexityProvider(perplexity_key),
-                "openrouter": OpenRouterProvider(openrouter_key)
+                "openrouter": OpenRouterProvider(openrouter_key),
             }
 
             results = {}
             for provider_name, provider in providers.items():
                 analyzer = PresenterAnalyzer(provider, {})
                 workflow_results = analyzer.analyze_all_presenters(
-                    Path(temp_dir),
-                    Path(temp_dir) / f"outputs_{provider_name}",
-                    max_rows=2
+                    Path(temp_dir), Path(temp_dir) / f"outputs_{provider_name}", max_rows=2
                 )
                 results[provider_name] = workflow_results
 
@@ -366,4 +379,3 @@ class TestRealAPIWorkflows:
                 domain_terms = ["cognitive", "neuroscience", "research"]
                 has_domain_content = any(term in analysis.lower() for term in domain_terms)
                 assert has_domain_content
-

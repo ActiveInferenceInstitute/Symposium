@@ -1,15 +1,13 @@
 """Calendar export functionality for symposium schedules."""
 
 import logging
-from pathlib import Path
-from typing import Dict, List, Optional, Any
-from datetime import datetime, timedelta
 import uuid
-import icalendar
-from icalendar import Calendar, Event, Todo
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
 import pytz
-from symposium.core.config import Config
-from symposium.io.readers import ReportReader
+from icalendar import Calendar, Event
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +22,7 @@ class ScheduleExporter:
             config: Optional configuration dictionary
         """
         self.config = config or {}
-        self.timezone = pytz.timezone(self.config.get('timezone', 'UTC'))
+        self.timezone = pytz.timezone(self.config.get("timezone", "UTC"))
 
     def parse_schedule_data(self, schedule_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Parse schedule data into structured event format.
@@ -39,10 +37,10 @@ class ScheduleExporter:
 
         # Handle different input formats
         if isinstance(schedule_data, dict):
-            if 'events' in schedule_data:
-                events = schedule_data['events']
-            elif 'sessions' in schedule_data:
-                events = schedule_data['sessions']
+            if "events" in schedule_data:
+                events = schedule_data["events"]
+            elif "sessions" in schedule_data:
+                events = schedule_data["sessions"]
             else:
                 # Single event
                 events = [schedule_data]
@@ -71,43 +69,43 @@ class ScheduleExporter:
         """
         try:
             # Required fields validation
-            if not event.get('title'):
+            if not event.get("title"):
                 logger.warning(f"Event missing title: {event}")
                 return None
 
-            if not event.get('start_time'):
+            if not event.get("start_time"):
                 logger.warning(f"Event missing start_time: {event}")
                 return None
 
             # Check if already structured (datetime objects)
-            start_time = event['start_time']
-            if hasattr(start_time, 'strftime'):  # Already a datetime object
+            start_time = event["start_time"]
+            if hasattr(start_time, "strftime"):  # Already a datetime object
                 start_dt = start_time
             else:  # Need to parse string
                 start_dt = self._parse_datetime(str(start_time))
 
-            end_time = event.get('end_time')
-            if hasattr(end_time, 'strftime'):  # Already a datetime object
+            end_time = event.get("end_time")
+            if hasattr(end_time, "strftime"):  # Already a datetime object
                 end_dt = end_time
             else:  # Need to parse string or calculate from duration
                 if end_time:
                     end_dt = self._parse_datetime(str(end_time))
                 else:
-                    end_dt = start_dt + timedelta(hours=event.get('duration_hours', 1))
+                    end_dt = start_dt + timedelta(hours=event.get("duration_hours", 1))
 
             # Structure the event
             structured = {
-                'uid': event.get('uid', str(uuid.uuid4())),
-                'title': event['title'],
-                'description': event.get('description', ''),
-                'start_time': start_dt,
-                'end_time': end_dt,
-                'location': event.get('location', ''),
-                'organizer': event.get('organizer', ''),
-                'speakers': event.get('speakers', []),
-                'category': event.get('category', 'General'),
-                'url': event.get('url', ''),
-                'tags': event.get('tags', [])
+                "uid": event.get("uid", str(uuid.uuid4())),
+                "title": event["title"],
+                "description": event.get("description", ""),
+                "start_time": start_dt,
+                "end_time": end_dt,
+                "location": event.get("location", ""),
+                "organizer": event.get("organizer", ""),
+                "speakers": event.get("speakers", []),
+                "category": event.get("category", "General"),
+                "url": event.get("url", ""),
+                "tags": event.get("tags", []),
             }
 
             return structured
@@ -127,11 +125,11 @@ class ScheduleExporter:
         """
         # Try different datetime formats
         formats = [
-            '%Y-%m-%d %H:%M:%S',
-            '%Y-%m-%dT%H:%M:%S',
-            '%Y-%m-%d %H:%M',
-            '%Y-%m-%dT%H:%M',
-            '%Y-%m-%d'
+            "%Y-%m-%d %H:%M:%S",
+            "%Y-%m-%dT%H:%M:%S",
+            "%Y-%m-%d %H:%M",
+            "%Y-%m-%dT%H:%M",
+            "%Y-%m-%d",
         ]
 
         for fmt in formats:
@@ -149,7 +147,7 @@ class ScheduleExporter:
         self,
         events: List[Dict[str, Any]],
         calendar_name: str = "Symposium Schedule",
-        description: str = "Active Inference Symposium Schedule"
+        description: str = "Active Inference Symposium Schedule",
     ) -> Calendar:
         """Create ICS calendar from structured events.
 
@@ -162,12 +160,12 @@ class ScheduleExporter:
             ICS Calendar object
         """
         cal = Calendar()
-        cal.add('prodid', f'-//Symposium Calendar//{calendar_name}//EN')
-        cal.add('version', '2.0')
-        cal.add('calscale', 'GREGORIAN')
-        cal.add('method', 'PUBLISH')
-        cal.add('x-wr-calname', calendar_name)
-        cal.add('x-wr-timezone', str(self.timezone))
+        cal.add("prodid", f"-//Symposium Calendar//{calendar_name}//EN")
+        cal.add("version", "2.0")
+        cal.add("calscale", "GREGORIAN")
+        cal.add("method", "PUBLISH")
+        cal.add("x-wr-calname", calendar_name)
+        cal.add("x-wr-timezone", str(self.timezone))
 
         # Add events to calendar
         for event_data in events:
@@ -189,39 +187,39 @@ class ScheduleExporter:
         event = Event()
 
         # Basic event properties
-        event.add('uid', event_data['uid'])
-        event.add('summary', event_data['title'])
-        event.add('dtstart', event_data['start_time'])
-        event.add('dtend', event_data['end_time'])
-        event.add('dtstamp', datetime.now(self.timezone))
-        event.add('created', datetime.now(self.timezone))
-        event.add('last-modified', datetime.now(self.timezone))
+        event.add("uid", event_data["uid"])
+        event.add("summary", event_data["title"])
+        event.add("dtstart", event_data["start_time"])
+        event.add("dtend", event_data["end_time"])
+        event.add("dtstamp", datetime.now(self.timezone))
+        event.add("created", datetime.now(self.timezone))
+        event.add("last-modified", datetime.now(self.timezone))
 
         # Optional properties
-        if event_data['description']:
-            event.add('description', event_data['description'])
+        if event_data["description"]:
+            event.add("description", event_data["description"])
 
-        if event_data['location']:
-            event.add('location', event_data['location'])
+        if event_data["location"]:
+            event.add("location", event_data["location"])
 
-        if event_data['organizer']:
-            event.add('organizer', event_data['organizer'])
+        if event_data["organizer"]:
+            event.add("organizer", event_data["organizer"])
 
-        if event_data['url']:
-            event.add('url', event_data['url'])
+        if event_data["url"]:
+            event.add("url", event_data["url"])
 
         # Categories
-        if event_data['category']:
-            event.add('categories', event_data['category'])
+        if event_data["category"]:
+            event.add("categories", event_data["category"])
 
         # Custom properties for symposium
-        if event_data['speakers']:
-            speakers_str = ', '.join(event_data['speakers'])
-            event.add('x-symposium-speakers', speakers_str)
+        if event_data["speakers"]:
+            speakers_str = ", ".join(event_data["speakers"])
+            event.add("x-symposium-speakers", speakers_str)
 
-        if event_data['tags']:
-            tags_str = ', '.join(event_data['tags'])
-            event.add('x-symposium-tags', tags_str)
+        if event_data["tags"]:
+            tags_str = ", ".join(event_data["tags"])
+            event.add("x-symposium-tags", tags_str)
 
         return event
 
@@ -230,7 +228,7 @@ class ScheduleExporter:
         events: List[Dict[str, Any]],
         output_path: Path,
         calendar_name: str = "Symposium Schedule",
-        description: str = "Active Inference Symposium Schedule"
+        description: str = "Active Inference Symposium Schedule",
     ) -> bool:
         """Export events to ICS file.
 
@@ -254,7 +252,7 @@ class ScheduleExporter:
             ics_content = cal.to_ical()
 
             # Write to file
-            with open(output_path, 'wb') as f:
+            with open(output_path, "wb") as f:
                 f.write(ics_content)
 
             logger.info(f"ICS calendar exported to {output_path}")
@@ -272,7 +270,7 @@ class ScheduleExporter:
         schedule_data: Dict[str, Any],
         output_path: Path,
         calendar_name: str = "Active Inference Symposium",
-        description: str = "Active Inference Symposium Schedule"
+        description: str = "Active Inference Symposium Schedule",
     ) -> bool:
         """Export complete symposium schedule to ICS format.
 
@@ -306,11 +304,7 @@ class ScheduleExporter:
             return False
 
     def export_from_csv(
-        self,
-        csv_path: Path,
-        output_path: Path,
-        calendar_name: str = "Symposium Schedule",
-        **kwargs
+        self, csv_path: Path, output_path: Path, calendar_name: str = "Symposium Schedule", **kwargs
     ) -> bool:
         """Export schedule from CSV file to ICS format.
 
@@ -326,19 +320,22 @@ class ScheduleExporter:
         try:
             # Load CSV data
             import pandas as pd
+
             df = pd.read_csv(csv_path)
 
             # Convert to schedule format and structure events
             events = []
             for _, row in df.iterrows():
                 event = {
-                    'title': row.get('title', row.get('session', 'Untitled')),
-                    'start_time': row.get('start_time', row.get('datetime', '')),
-                    'description': row.get('description', row.get('abstract', '')),
-                    'location': row.get('location', row.get('venue', '')),
-                    'speakers': [s.strip() for s in str(row.get('speakers', '')).split(',') if s.strip()],
-                    'category': row.get('category', row.get('type', 'General')),
-                    'duration_hours': row.get('duration_hours', 1)
+                    "title": row.get("title", row.get("session", "Untitled")),
+                    "start_time": row.get("start_time", row.get("datetime", "")),
+                    "description": row.get("description", row.get("abstract", "")),
+                    "location": row.get("location", row.get("venue", "")),
+                    "speakers": [
+                        s.strip() for s in str(row.get("speakers", "")).split(",") if s.strip()
+                    ],
+                    "category": row.get("category", row.get("type", "General")),
+                    "duration_hours": row.get("duration_hours", 1),
                 }
                 events.append(event)
 
@@ -370,45 +367,49 @@ class ScheduleExporter:
             Validation report dictionary
         """
         report = {
-            'total_events': len(events),
-            'valid_events': 0,
-            'warnings': [],
-            'errors': [],
-            'conflicts': []
+            "total_events": len(events),
+            "valid_events": 0,
+            "warnings": [],
+            "errors": [],
+            "conflicts": [],
         }
 
         event_times = []
 
         for event in events:
             # Check required fields
-            if not event.get('title'):
-                report['errors'].append(f"Event missing title: {event}")
+            if not event.get("title"):
+                report["errors"].append(f"Event missing title: {event}")
                 continue
 
-            if not event.get('start_time'):
-                report['errors'].append(f"Event missing start_time: {event['title']}")
+            if not event.get("start_time"):
+                report["errors"].append(f"Event missing start_time: {event['title']}")
                 continue
 
             # Structure event to get datetime objects
             structured_event = self._structure_event(event)
             if not structured_event:
-                report['errors'].append(f"Event could not be structured: {event['title']}")
+                report["errors"].append(f"Event could not be structured: {event['title']}")
                 continue
 
             # Check for conflicts
-            event_start = structured_event['start_time']
-            event_end = structured_event['end_time']
+            event_start = structured_event["start_time"]
+            event_end = structured_event["end_time"]
 
             for existing_start, existing_end in event_times:
-                if (event_start < existing_end and event_end > existing_start):
-                    report['conflicts'].append({
-                        'event1': f"{existing_start} - {existing_end}",
-                        'event2': f"{event['title']} ({event_start} - {event_end})"
-                    })
+                if event_start < existing_end and event_end > existing_start:
+                    report["conflicts"].append(
+                        {
+                            "event1": f"{existing_start} - {existing_end}",
+                            "event2": f"{event['title']} ({event_start} - {event_end})",
+                        }
+                    )
                     break
 
             event_times.append((event_start, event_end))
-            report['valid_events'] += 1
+            report["valid_events"] += 1
 
-        logger.info(f"Schedule validation: {report['valid_events']}/{report['total_events']} valid events")
+        logger.info(
+            f"Schedule validation: {report['valid_events']}/{report['total_events']} valid events"
+        )
         return report

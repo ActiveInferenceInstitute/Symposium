@@ -1,10 +1,12 @@
 """Tests for configuration management."""
 
-import pytest
 import json
 import os
 from pathlib import Path
 from unittest.mock import patch
+
+import pytest
+
 from symposium.core.config import Config
 
 
@@ -80,12 +82,8 @@ class TestConfig:
     def test_load_from_file(self, tmp_path, monkeypatch):
         """Test loading configuration from JSON file."""
         config_file = tmp_path / "config.json"
-        config_data = {
-            "api": {
-                "provider": "openrouter"
-            }
-        }
-        with open(config_file, 'w') as f:
+        config_data = {"api": {"provider": "openrouter"}}
+        with open(config_file, "w") as f:
             json.dump(config_data, f)
 
         # Environment variables always take priority over file config.
@@ -99,15 +97,15 @@ class TestConfig:
         """Test saving configuration."""
         config = Config(load_env=False)
         config.set("api.provider", "openrouter")
-        
+
         config_file = tmp_path / "config.json"
         config.save(config_file)
-        
+
         assert config_file.exists()
-        
-        with open(config_file, 'r') as f:
+
+        with open(config_file, "r") as f:
             saved_data = json.load(f)
-        
+
         assert saved_data["api"]["provider"] == "openrouter"
 
     def test_to_dict(self):
@@ -118,3 +116,32 @@ class TestConfig:
         assert "api" in config_dict
         assert "paths" in config_dict
 
+    def test_set_creates_nested_keys(self):
+        """set() with dot notation must create intermediate dicts."""
+        config = Config(load_env=False)
+        config.set("custom.section.value", 42)
+        assert config.get("custom.section.value") == 42
+
+    def test_get_path_missing_raises(self):
+        """get_path raises ValueError for unconfigured path keys."""
+        config = Config(load_env=False)
+        with pytest.raises(ValueError):
+            config.get_path("does_not_exist")
+
+    def test_ensure_paths_creates_outputs(self, monkeypatch, tmp_path):
+        """ensure_paths creates the configured output/data directories."""
+        monkeypatch.setenv("SYMPOSIUM_OUTPUTS_DIR", str(tmp_path / "outputs"))
+        monkeypatch.setenv("SYMPOSIUM_DATA_DIR", str(tmp_path / "data"))
+        config = Config(load_env=True)
+        config.ensure_paths()
+        assert (tmp_path / "outputs").exists()
+        assert (tmp_path / "data" / "inputs").exists()
+
+    def test_save_redacts_api_key(self, tmp_path):
+        """Saving config must redact API keys."""
+        config = Config(load_env=False)
+        config.set("api.perplexity.api_key", "super_secret_value")
+        out = tmp_path / "config.json"
+        config.save(out)
+        saved = json.loads(out.read_text())
+        assert saved["api"]["perplexity"]["api_key"] == "***REDACTED***"

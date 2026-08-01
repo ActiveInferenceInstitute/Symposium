@@ -189,7 +189,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Setup
 analyzer = PCAAnalyzer()
-vectorizer = TfidfVectorizer(max_features=5000, stop_words='english')
+vectorizer = TfidfVectorizer(max_features=5000, stop_words="english")
 tfidf_matrix = vectorizer.fit_transform(documents)
 
 # Fit PCA
@@ -203,7 +203,7 @@ results = analyzer.create_comprehensive_pca_report(
     vectorizer=vectorizer,
     labels=document_labels,
     output_dir="outputs/pca_analysis",
-    prefix="analysis"
+    prefix="analysis",
 )
 
 # Individual visualizations

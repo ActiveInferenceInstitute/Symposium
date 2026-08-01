@@ -45,8 +45,8 @@ def _presenter_dir(tmp_path, name="Test_Presenter"):
 def _participant_csv(tmp_path):
     p = tmp_path / "participants.csv"
     p.write_text(
-        "Can we share this information publicly?,What is your name?,What is your email?,What are your affiliations?,What is your ORCID?,\"What is your background & prior works? Feel free to provide as much information & links as you like.\",What would be useful for you in the Symposium (pragmatic value)?,What would be interesting or informative for you to learn from the Symposium (epistemic value)?,\"How are you applying Active Inference? What domain, stage?\",\"What are the biggest hurdles or challenges facing Active Inference research and application?\",\"What would help you learn and apply Active Inference? E.g. resource, tool, or community development.\",How did you hear about the Symposium?,How could Active Inference applications make impact in 2026? (Think big!),Any other comments or questions?\n"
-        "Yes,Alice,alice@x.edu,Uni,0000-0001-0000-0001,\"PhD in neuroscience\",\"practical\",\"theory\",\"Research, mid\",\"implementation\",\"mentorship\",\"conference\",\"impact\",\"none\"\n"
+        'Can we share this information publicly?,What is your name?,What is your email?,What are your affiliations?,What is your ORCID?,"What is your background & prior works? Feel free to provide as much information & links as you like.",What would be useful for you in the Symposium (pragmatic value)?,What would be interesting or informative for you to learn from the Symposium (epistemic value)?,"How are you applying Active Inference? What domain, stage?","What are the biggest hurdles or challenges facing Active Inference research and application?","What would help you learn and apply Active Inference? E.g. resource, tool, or community development.",How did you hear about the Symposium?,How could Active Inference applications make impact in 2026? (Think big!),Any other comments or questions?\n'
+        'Yes,Alice,alice@x.edu,Uni,0000-0001-0000-0001,"PhD in neuroscience","practical","theory","Research, mid","implementation","mentorship","conference","impact","none"\n'
     )
     return p
 
@@ -55,10 +55,14 @@ def _profile_json(profile_dir):
     """Create a participant research profile JSON for the projects flow."""
     profile_dir.mkdir(parents=True, exist_ok=True)
     f = profile_dir / "alice_research_profile.json"
-    f.write_text(json.dumps({
-        "metadata": {"presenter": "Alice"},
-        "content": "Alice researches active inference and machine learning.",
-    }))
+    f.write_text(
+        json.dumps(
+            {
+                "metadata": {"presenter": "Alice"},
+                "content": "Alice researches active inference and machine learning.",
+            }
+        )
+    )
     return f
 
 
@@ -67,7 +71,8 @@ def test_analyze_presenters_handler_writes_reports(tmp_path, monkeypatch):
 
     _presenter_dir(tmp_path)  # creates <tmp>/Test_Presenter
     monkeypatch.setattr(
-        analyze.APIClient, "create",
+        analyze.APIClient,
+        "create",
         lambda *a, **k: Mock(get_response=lambda *a, **k: "analysis text"),
     )
     out = tmp_path / "out"
@@ -83,13 +88,12 @@ def test_analyze_participants_handler_writes_reports(tmp_path, monkeypatch):
 
     csv_path = _participant_csv(tmp_path)
     monkeypatch.setattr(
-        analyze.APIClient, "create",
+        analyze.APIClient,
+        "create",
         lambda *a, **k: Mock(get_response=lambda *a, **k: "profile analysis"),
     )
     out = tmp_path / "out"
-    analyze.analyze_participants(
-        _args(csv_file=str(csv_path), output_dir=str(out))
-    )
+    analyze.analyze_participants(_args(csv_file=str(csv_path), output_dir=str(out)))
 
     report = out / "Alice" / "Alice_profile_analysis.md"
     assert report.exists()
@@ -100,7 +104,8 @@ def test_generate_profiles_handler_writes_reports(tmp_path, monkeypatch):
 
     _presenter_dir(tmp_path, "Test_Researcher")  # creates <tmp>/Test_Researcher
     monkeypatch.setattr(
-        generate.APIClient, "create",
+        generate.APIClient,
+        "create",
         lambda *a, **k: Mock(get_response=lambda *a, **k: "profile"),
     )
     out = tmp_path / "out"
@@ -120,7 +125,8 @@ def test_generate_projects_handler_writes_reports(tmp_path, monkeypatch):
     domain_file = tmp_path / "domain.md"
     domain_file.write_text("Active inference and cognitive science domain.")
     monkeypatch.setattr(
-        generate.APIClient, "create",
+        generate.APIClient,
+        "create",
         lambda *a, **k: Mock(get_response=lambda *a, **k: "proposal text"),
     )
     out = tmp_path / "out"
@@ -134,3 +140,35 @@ def test_generate_projects_handler_writes_reports(tmp_path, monkeypatch):
 
     # Proposal files are keyed by the participant name from the directory.
     assert (out / "Alice" / "Alice_project_proposal_KarmaGAP.md").exists()
+
+
+def test_analyze_participant_backgrounds_handler(tmp_path, monkeypatch):
+    from symposium.cli import analyze
+
+    csv_path = _participant_csv(tmp_path)
+    monkeypatch.setattr(
+        analyze.APIClient,
+        "create",
+        lambda *a, **k: Mock(get_response=lambda *a, **k: "background research"),
+    )
+    out = tmp_path / "out"
+    analyze.analyze_participant_backgrounds(_args(csv_file=str(csv_path), output_dir=str(out)))
+
+    assert (out / "Alice" / "Alice_profile_analysis.md").exists()
+    assert (out / "Alice" / "Alice_background_research.md").exists()
+
+
+def test_generate_participant_curricula_handler(tmp_path, monkeypatch):
+    from symposium.cli import analyze
+
+    csv_path = _participant_csv(tmp_path)
+    monkeypatch.setattr(
+        analyze.APIClient,
+        "create",
+        lambda *a, **k: Mock(get_response=lambda *a, **k: "curriculum"),
+    )
+    out = tmp_path / "out"
+    analyze.generate_participant_curricula(_args(csv_file=str(csv_path), output_dir=str(out)))
+
+    assert (out / "Alice" / "Alice_profile_analysis.md").exists()
+    assert (out / "Alice" / "Alice_curriculum.md").exists()

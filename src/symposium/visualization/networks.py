@@ -1,13 +1,13 @@
 """Network analysis and visualization tools."""
 
-import os
 import logging
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Tuple
-import numpy as np
-import pandas as pd
+from typing import Any, Dict, List, Optional
+
 import matplotlib
-matplotlib.use('Agg')
+import numpy as np
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import networkx as nx
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -27,7 +27,7 @@ class NetworkAnalyzer:
         """
         self.config = config or {}
         # Fixed seed so network layouts are reproducible across runs.
-        self.random_state = self.config.get('random_state', 42)
+        self.random_state = self.config.get("random_state", 42)
 
     def create_similarity_network(
         self,
@@ -35,7 +35,7 @@ class NetworkAnalyzer:
         vectorizer: TfidfVectorizer,
         filenames: List[str],
         threshold: float = 0.3,
-        max_terms: int = 50
+        max_terms: int = 50,
     ) -> Optional[nx.Graph]:
         """Create similarity network from TF-IDF matrix.
 
@@ -61,21 +61,21 @@ class NetworkAnalyzer:
             similarity_matrix = cosine_similarity(term_matrix.T)
 
             # Create graph
-            G = nx.Graph()
+            g = nx.Graph()
 
             # Add nodes
             for term in top_terms:
-                G.add_node(term, type='term')
+                g.add_node(term, type="term")
 
             for filename in filenames:
-                G.add_node(filename, type='document')
+                g.add_node(filename, type="document")
 
             # Add edges between terms based on correlation
             for i, term1 in enumerate(top_terms):
-                for j, term2 in enumerate(top_terms[i+1:], start=i+1):
+                for j, term2 in enumerate(top_terms[i + 1 :], start=i + 1):
                     correlation = similarity_matrix[i, j]
                     if correlation > threshold:
-                        G.add_edge(term1, term2, weight=correlation, type='term_similarity')
+                        g.add_edge(term1, term2, weight=correlation, type="term_similarity")
 
             # Add edges between documents and terms based on TF-IDF
             for doc_idx, filename in enumerate(filenames):
@@ -83,14 +83,16 @@ class NetworkAnalyzer:
                 for term_idx, term in enumerate(top_terms):
                     tfidf_score = doc_vector[term_idx]
                     if tfidf_score > 0:
-                        G.add_edge(filename, term, weight=tfidf_score, type='document_term')
+                        g.add_edge(filename, term, weight=tfidf_score, type="document_term")
 
-            if len(G.nodes()) == 0:
+            if len(g.nodes()) == 0:
                 logger.warning("No nodes created in similarity network")
                 return None
 
-            logger.info(f"Created similarity network with {len(G.nodes())} nodes and {len(G.edges())} edges")
-            return G
+            logger.info(
+                f"Created similarity network with {len(g.nodes())} nodes and {len(g.edges())} edges"
+            )
+            return g
 
         except Exception as e:
             logger.error(f"Error creating similarity network: {e}")
@@ -103,7 +105,7 @@ class NetworkAnalyzer:
         output_path: Path,
         layout: str = "spring",
         node_size_factor: float = 1000,
-        edge_width_factor: float = 2
+        edge_width_factor: float = 2,
     ) -> bool:
         """Plot network visualization.
 
@@ -136,57 +138,53 @@ class NetworkAnalyzer:
                 pos = nx.random_layout(graph, seed=self.random_state)
 
             # Node properties
-            node_types = nx.get_node_attributes(graph, 'type')
+            node_types = nx.get_node_attributes(graph, "type")
             node_sizes = []
             node_colors = []
 
             for node in graph.nodes():
-                if node_types.get(node) == 'document':
+                if node_types.get(node) == "document":
                     # Documents are larger and blue
                     node_sizes.append(800)
-                    node_colors.append('lightblue')
+                    node_colors.append("lightblue")
                 else:
                     # Terms are smaller and green
                     node_sizes.append(400)
-                    node_colors.append('lightgreen')
+                    node_colors.append("lightgreen")
 
             # Edge properties
-            edge_weights = [graph[u][v].get('weight', 0.5) * edge_width_factor for u, v in graph.edges()]
+            edge_weights = [
+                graph[u][v].get("weight", 0.5) * edge_width_factor for u, v in graph.edges()
+            ]
             edge_colors = []
             for u, v in graph.edges():
-                if graph[u][v].get('type') == 'document_term':
-                    edge_colors.append('gray')
+                if graph[u][v].get("type") == "document_term":
+                    edge_colors.append("gray")
                 else:
-                    edge_colors.append('red')
+                    edge_colors.append("red")
 
             # Draw network
             nx.draw_networkx_nodes(
-                graph, pos,
+                graph,
+                pos,
                 node_size=node_sizes,
                 node_color=node_colors,
                 alpha=0.8,
-                edgecolors='black'
+                edgecolors="black",
             )
 
-            nx.draw_networkx_labels(
-                graph, pos,
-                font_size=8,
-                font_weight='bold'
-            )
+            nx.draw_networkx_labels(graph, pos, font_size=8, font_weight="bold")
 
             nx.draw_networkx_edges(
-                graph, pos,
-                width=edge_weights,
-                edge_color=edge_colors,
-                alpha=0.6
+                graph, pos, width=edge_weights, edge_color=edge_colors, alpha=0.6
             )
 
-            plt.title(title, fontsize=20, fontweight='bold')
-            plt.axis('off')
+            plt.title(title, fontsize=20, fontweight="bold")
+            plt.axis("off")
             plt.tight_layout()
 
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            plt.savefig(output_path, dpi=300, bbox_inches="tight")
             plt.close()
 
             logger.info(f"Network plot saved to {output_path}")
@@ -211,9 +209,9 @@ class NetworkAnalyzer:
 
             # Calculate community metrics
             analysis = {
-                'n_communities': len(communities),
-                'communities': [],
-                'modularity': nx.community.modularity(graph, communities)
+                "n_communities": len(communities),
+                "communities": [],
+                "modularity": nx.community.modularity(graph, communities),
             }
 
             for i, community in enumerate(communities):
@@ -221,27 +219,24 @@ class NetworkAnalyzer:
                 community_subgraph = graph.subgraph(community_nodes)
 
                 community_info = {
-                    'id': i,
-                    'size': len(community_nodes),
-                    'nodes': community_nodes,
-                    'density': nx.density(community_subgraph),
-                    'avg_clustering': nx.average_clustering(community_subgraph)
+                    "id": i,
+                    "size": len(community_nodes),
+                    "nodes": community_nodes,
+                    "density": nx.density(community_subgraph),
+                    "avg_clustering": nx.average_clustering(community_subgraph),
                 }
-                analysis['communities'].append(community_info)
+                analysis["communities"].append(community_info)
 
-            logger.info(f"Found {len(communities)} communities with modularity {analysis['modularity']:.3f}")
+            logger.info(
+                f"Found {len(communities)} communities with modularity {analysis['modularity']:.3f}"
+            )
             return analysis
 
         except Exception as e:
             logger.error(f"Error analyzing communities: {e}")
-            return {'error': str(e)}
+            return {"error": str(e)}
 
-    def plot_community_analysis(
-        self,
-        graph: nx.Graph,
-        title: str,
-        output_path: Path
-    ) -> bool:
+    def plot_community_analysis(self, graph: nx.Graph, title: str, output_path: Path) -> bool:
         """Plot community analysis results.
 
         Args:
@@ -256,7 +251,7 @@ class NetworkAnalyzer:
             # Analyze communities
             analysis = self.analyze_communities(graph)
 
-            if 'error' in analysis:
+            if "error" in analysis:
                 logger.error(f"Community analysis failed: {analysis['error']}")
                 return False
 
@@ -267,7 +262,7 @@ class NetworkAnalyzer:
             # Color nodes by community
             node_colors = {}
             for i, community in enumerate(communities):
-                color = matplotlib.colormaps['tab20'](i / len(communities))
+                color = matplotlib.colormaps["tab20"](i / len(communities))
                 for node in community:
                     node_colors[node] = color
 
@@ -276,22 +271,26 @@ class NetworkAnalyzer:
 
             # Draw nodes colored by community
             nx.draw_networkx_nodes(
-                graph, pos,
-                node_color=[node_colors.get(node, 'gray') for node in graph.nodes()],
+                graph,
+                pos,
+                node_color=[node_colors.get(node, "gray") for node in graph.nodes()],
                 node_size=300,
-                alpha=0.8
+                alpha=0.8,
             )
 
             nx.draw_networkx_edges(graph, pos, alpha=0.3)
-            nx.draw_networkx_labels(graph, pos, font_size=6, font_weight='bold')
+            nx.draw_networkx_labels(graph, pos, font_size=6, font_weight="bold")
 
-            plt.title(f"{title}\n{len(communities)} communities, modularity: {analysis['modularity']:.3f}",
-                     fontsize=16, fontweight='bold')
-            plt.axis('off')
+            plt.title(
+                f"{title}\n{len(communities)} communities, modularity: {analysis['modularity']:.3f}",
+                fontsize=16,
+                fontweight="bold",
+            )
+            plt.axis("off")
             plt.tight_layout()
 
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            plt.savefig(output_path, dpi=300, bbox_inches="tight")
             plt.close()
 
             logger.info(f"Community analysis plot saved to {output_path}")
@@ -300,4 +299,3 @@ class NetworkAnalyzer:
         except Exception as e:
             logger.error(f"Error creating community analysis plot: {e}")
             return False
-

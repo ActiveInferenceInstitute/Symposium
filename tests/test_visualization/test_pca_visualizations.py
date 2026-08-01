@@ -33,10 +33,20 @@ def create_sample_documents():
         "Consciousness and awareness remain fundamental questions in cognitive science research",
     ]
     labels = [
-        "Active Inference", "Active Inference", "Active Inference", "Active Inference", "Active Inference",
-        "Neuroscience", "Neuroscience", "Neuroscience",
-        "Machine Learning", "Machine Learning", "Machine Learning",
-        "Cognitive Science", "Cognitive Science", "Cognitive Science",
+        "Active Inference",
+        "Active Inference",
+        "Active Inference",
+        "Active Inference",
+        "Active Inference",
+        "Neuroscience",
+        "Neuroscience",
+        "Neuroscience",
+        "Machine Learning",
+        "Machine Learning",
+        "Machine Learning",
+        "Cognitive Science",
+        "Cognitive Science",
+        "Cognitive Science",
     ]
     return documents, labels
 
@@ -46,7 +56,7 @@ def pca_data():
     """Build a vectorizer + fitted PCA from sample documents."""
     documents, labels = create_sample_documents()
     vectorizer = TfidfVectorizer(
-        max_features=100, stop_words='english', min_df=1, ngram_range=(1, 2)
+        max_features=100, stop_words="english", min_df=1, ngram_range=(1, 2)
     )
     tfidf_matrix = vectorizer.fit_transform(documents)
     n_components = min(10, len(documents) - 1)
@@ -65,49 +75,56 @@ def _assert_produced(analyzer_method, output_dir, filename, *args, **kwargs):
 
 def test_scree_plot(pca_data, tmp_path):
     pca, _, _, _ = pca_data
-    _assert_produced(PCAAnalyzer().create_scree_plot, tmp_path,
-                     "scree.png", pca, title="Scree")
+    _assert_produced(PCAAnalyzer().create_scree_plot, tmp_path, "scree.png", pca, title="Scree")
 
 
 def test_loadings_plot(pca_data, tmp_path):
     pca, _, vectorizer, _ = pca_data
-    _assert_produced(PCAAnalyzer().create_loadings_plot, tmp_path,
-                     "loadings.png", pca, vectorizer, n_features=5)
+    _assert_produced(
+        PCAAnalyzer().create_loadings_plot, tmp_path, "loadings.png", pca, vectorizer, n_features=5
+    )
 
 
 def test_biplot(pca_data, tmp_path):
     pca, reduced, vectorizer, labels = pca_data
-    _assert_produced(PCAAnalyzer().create_biplot, tmp_path,
-                     "biplot.png", pca, reduced, vectorizer, labels)
+    _assert_produced(
+        PCAAnalyzer().create_biplot, tmp_path, "biplot.png", pca, reduced, vectorizer, labels
+    )
 
 
 def test_loadings_heatmap(pca_data, tmp_path):
     pca, _, vectorizer, _ = pca_data
-    _assert_produced(PCAAnalyzer().create_loadings_heatmap, tmp_path,
-                     "heatmap.png", pca, vectorizer, n_features=10)
+    _assert_produced(
+        PCAAnalyzer().create_loadings_heatmap,
+        tmp_path,
+        "heatmap.png",
+        pca,
+        vectorizer,
+        n_features=10,
+    )
 
 
 def test_component_correlation(pca_data, tmp_path):
     pca, reduced, _, _ = pca_data
-    _assert_produced(PCAAnalyzer().create_component_correlation_plot, tmp_path,
-                     "corr.png", reduced, pca)
+    _assert_produced(
+        PCAAnalyzer().create_component_correlation_plot, tmp_path, "corr.png", reduced, pca
+    )
 
 
 def test_3d_component_plot(pca_data, tmp_path):
     pca, reduced, _, labels = pca_data
     if reduced.shape[1] < 3:
         pytest.skip("Need >=3 components for 3D plot")
-    _assert_produced(PCAAnalyzer().create_3d_component_plot, tmp_path,
-                     "3d.png", reduced, pca, labels)
+    _assert_produced(
+        PCAAnalyzer().create_3d_component_plot, tmp_path, "3d.png", reduced, pca, labels
+    )
 
 
 def test_3d_component_plot_too_few_dims(tmp_path):
     """3D plot must refuse when fewer than 3 components are available."""
     analyzer = PCAAnalyzer()
     reduced = np.zeros((5, 2))
-    assert analyzer.create_3d_component_plot(
-        reduced, None, ["a"] * 5, tmp_path / "x.png"
-    ) is False
+    assert analyzer.create_3d_component_plot(reduced, None, ["a"] * 5, tmp_path / "x.png") is False
 
 
 def test_save_loadings_table(pca_data, tmp_path):

@@ -34,8 +34,7 @@ results = generator.generate_all_profiles(data_path, output_dir, include_methods
 # Generate project proposals
 generator = ProjectGenerator(api_client, config)
 results = generator.generate_all_projects(
-    profiles_dir, output_dir, domain_file,
-    catechism_type="KarmaGAP"
+    profiles_dir, output_dir, domain_file, catechism_type="KarmaGAP"
 )
 ```
 

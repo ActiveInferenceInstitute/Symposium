@@ -1,11 +1,12 @@
 """Configuration management for symposium package."""
 
-import os
 import json
-from pathlib import Path
-from typing import Optional, Dict, Any
-from dotenv import load_dotenv
 import logging
+import os
+from pathlib import Path
+from typing import Any, Dict, Optional
+
+from dotenv import load_dotenv
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +16,7 @@ class Config:
 
     def __init__(self, config_file: Optional[Path] = None, load_env: bool = True):
         """Initialize configuration.
-        
+
         Args:
             config_file: Path to optional JSON config file
             load_env: Whether to load .env file (default: True)
@@ -79,12 +80,12 @@ class Config:
 
     def _load_from_file(self, config_file: Path):
         """Load configuration from JSON file.
-        
+
         Args:
             config_file: Path to JSON configuration file
         """
         try:
-            with open(config_file, 'r') as f:
+            with open(config_file, "r") as f:
                 file_config = json.load(f)
             self._deep_update(self._config, file_config)
             logger.info(f"Loaded configuration from {config_file}")
@@ -96,7 +97,7 @@ class Config:
         # API Keys
         if os.getenv("PERPLEXITY_API_KEY"):
             self._config["api"]["perplexity"]["api_key"] = os.getenv("PERPLEXITY_API_KEY")
-        
+
         if os.getenv("OPENROUTER_API_KEY"):
             self._config["api"]["openrouter"]["api_key"] = os.getenv("OPENROUTER_API_KEY")
 
@@ -122,7 +123,7 @@ class Config:
 
     def _deep_update(self, base: Dict, update: Dict):
         """Deep update dictionary (nested merge).
-        
+
         Args:
             base: Base dictionary to update
             update: Update dictionary with new values
@@ -135,96 +136,96 @@ class Config:
 
     def get(self, key: str, default: Any = None) -> Any:
         """Get configuration value using dot notation.
-        
+
         Args:
             key: Configuration key (e.g., 'api.provider')
             default: Default value if key not found
-            
+
         Returns:
             Configuration value
         """
-        keys = key.split('.')
+        keys = key.split(".")
         value = self._config
-        
+
         for k in keys:
             if isinstance(value, dict) and k in value:
                 value = value[k]
             else:
                 return default
-        
+
         return value
 
     def set(self, key: str, value: Any):
         """Set configuration value using dot notation.
-        
+
         Args:
             key: Configuration key (e.g., 'api.provider')
             value: Value to set
         """
-        keys = key.split('.')
+        keys = key.split(".")
         config = self._config
-        
+
         for k in keys[:-1]:
             if k not in config:
                 config[k] = {}
             config = config[k]
-        
+
         config[keys[-1]] = value
 
     def get_api_config(self, provider: Optional[str] = None) -> Dict[str, Any]:
         """Get API configuration for a provider.
-        
+
         Args:
             provider: Provider name (if None, uses default provider)
-            
+
         Returns:
             API configuration dictionary
         """
         if provider is None:
             provider = self.get("api.provider")
-        
+
         return self.get(f"api.{provider}", {})
 
     def get_api_key(self, provider: Optional[str] = None) -> Optional[str]:
         """Get API key for a provider.
-        
+
         Args:
             provider: Provider name (if None, uses default provider)
-            
+
         Returns:
             API key or None if not found
         """
         if provider is None:
             provider = self.get("api.provider")
-        
+
         # Try config first, then environment, then legacy key file
         api_key = self.get(f"api.{provider}.api_key")
-        
+
         if api_key:
             return api_key
-        
+
         # Try environment variable
         if provider == "perplexity":
             return os.getenv("PERPLEXITY_API_KEY")
         elif provider == "openrouter":
             return os.getenv("OPENROUTER_API_KEY")
-        
+
         # Try legacy llm_keys.key file
         return self._load_legacy_api_key(provider)
 
     def _load_legacy_api_key(self, provider: str) -> Optional[str]:
         """Load API key from legacy llm_keys.key file.
-        
+
         Args:
             provider: Provider name
-            
+
         Returns:
             API key or None if not found
         """
         key_file = Path("llm_keys.key")
         if key_file.exists():
             try:
-                with open(key_file, 'r') as f:
+                with open(key_file, "r") as f:
                     keys = json.load(f)
                 return keys.get(provider)
             except Exception as e:
@@ -233,10 +234,10 @@ class Config:
 
     def get_path(self, path_key: str) -> Path:
         """Get configured path.
-        
+
         Args:
             path_key: Path key (e.g., 'data_dir', 'outputs_dir')
-            
+
         Returns:
             Path object
         """
@@ -253,7 +254,7 @@ class Config:
 
     def to_dict(self) -> Dict[str, Any]:
         """Export configuration as dictionary.
-        
+
         Returns:
             Configuration dictionary
         """
@@ -261,7 +262,7 @@ class Config:
 
     def save(self, filepath: Path):
         """Save configuration to JSON file.
-        
+
         Args:
             filepath: Path to save configuration
         """
@@ -269,11 +270,13 @@ class Config:
         config_to_save = self.to_dict()
         if "api" in config_to_save:
             for provider in ["perplexity", "openrouter"]:
-                if provider in config_to_save["api"] and "api_key" in config_to_save["api"][provider]:
+                if (
+                    provider in config_to_save["api"]
+                    and "api_key" in config_to_save["api"][provider]
+                ):
                     config_to_save["api"][provider]["api_key"] = "***REDACTED***"
 
-        with open(filepath, 'w') as f:
+        with open(filepath, "w") as f:
             json.dump(config_to_save, f, indent=2, default=str)
 
         logger.info(f"Saved configuration to {filepath}")
-

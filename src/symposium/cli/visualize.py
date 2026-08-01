@@ -2,10 +2,11 @@
 
 import logging
 from pathlib import Path
-from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
-from symposium.visualization.networks import NetworkAnalyzer
-from symposium.visualization.distributions import DistributionPlotter
+
 from symposium.io.readers import ReportReader
+from symposium.visualization.distributions import DistributionPlotter
+from symposium.visualization.embeddings import DimensionReducer, TextVisualizer
+from symposium.visualization.networks import NetworkAnalyzer
 
 
 def visualize_embeddings(args):
@@ -15,9 +16,9 @@ def visualize_embeddings(args):
     try:
         # Setup
         config = {
-            'max_features': args.max_features,
-            'n_components': args.n_components,
-            'reduction_method': args.method
+            "max_features": args.max_features,
+            "n_components": args.n_components,
+            "reduction_method": args.method,
         }
 
         # Load documents
@@ -53,9 +54,7 @@ def visualize_embeddings(args):
 
         # Dimension reduction
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            documents,
-            n_components=config['n_components'],
-            method=config['reduction_method']
+            documents, n_components=config["n_components"], method=config["reduction_method"]
         )
 
         if reduced_matrix is None:
@@ -67,11 +66,17 @@ def visualize_embeddings(args):
         output_dir.mkdir(parents=True, exist_ok=True)
 
         # 2D/3D visualization
-        plot_path = output_dir / f"embedding_{config['reduction_method']}_{config['n_components']}d.png"
+        plot_path = (
+            output_dir / f"embedding_{config['reduction_method']}_{config['n_components']}d.png"
+        )
         visualizer.plot_dimension_reduction(
-            reduced_matrix, labels, filenames,
+            reduced_matrix,
+            labels,
+            filenames,
             f"{config['reduction_method'].upper()} Visualization ({config['n_components']}D)",
-            plot_path, vectorizer, reduction_model
+            plot_path,
+            vectorizer,
+            reduction_model,
         )
 
         # Word cloud
@@ -96,9 +101,9 @@ def visualize_networks(args):
     try:
         # Setup
         config = {
-            'similarity_threshold': args.threshold,
-            'max_terms': args.max_terms,
-            'layout': args.layout
+            "similarity_threshold": args.threshold,
+            "max_terms": args.max_terms,
+            "layout": args.layout,
         }
 
         # Load documents (similar to embeddings)
@@ -130,15 +135,18 @@ def visualize_networks(args):
 
         # Perform TF-IDF
         from sklearn.feature_extraction.text import TfidfVectorizer
-        vectorizer = TfidfVectorizer(max_features=config['max_terms'], stop_words='english')
+
+        vectorizer = TfidfVectorizer(max_features=config["max_terms"], stop_words="english")
         tfidf_matrix = vectorizer.fit_transform(documents)
 
         # Create network
         analyzer = NetworkAnalyzer(config)
         graph = analyzer.create_similarity_network(
-            tfidf_matrix, vectorizer, filenames,
-            threshold=config['similarity_threshold'],
-            max_terms=config['max_terms']
+            tfidf_matrix,
+            vectorizer,
+            filenames,
+            threshold=config["similarity_threshold"],
+            max_terms=config["max_terms"],
         )
 
         if graph is None or len(graph.nodes()) == 0:
@@ -155,16 +163,12 @@ def visualize_networks(args):
             graph,
             f"Research Similarity Network (threshold: {config['similarity_threshold']})",
             network_path,
-            layout=config['layout']
+            layout=config["layout"],
         )
 
         # Community analysis
         community_path = output_dir / "community_analysis.png"
-        analyzer.plot_community_analysis(
-            graph,
-            "Research Community Analysis",
-            community_path
-        )
+        analyzer.plot_community_analysis(graph, "Research Community Analysis", community_path)
 
         logger.info(f"✅ Network visualizations saved to {args.output_dir}")
 
@@ -234,8 +238,8 @@ def visualize_all(args):
         try:
             # Import and run embeddings visualization
             from sklearn.feature_extraction.text import TfidfVectorizer
-            from sklearn.decomposition import PCA
-            from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
+
+            from symposium.visualization.embeddings import DimensionReducer, TextVisualizer
             from symposium.visualization.pca_analysis import PCAAnalyzer
 
             # Load documents
@@ -260,12 +264,13 @@ def visualize_all(args):
                 # For PCA, we need n_components <= min(n_samples, n_features)
                 # We'll use a reasonable default but cap it appropriately
                 max_possible_components = min(len(documents), 1000)  # Reasonable upper bound
-                n_comp_analysis = min(max(args.n_components, 50) if args.method == 'pca' else args.n_components, max_possible_components)
-                
+                n_comp_analysis = min(
+                    max(args.n_components, 50) if args.method == "pca" else args.n_components,
+                    max_possible_components,
+                )
+
                 reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-                    documents,
-                    n_components=n_comp_analysis,
-                    method=args.method
+                    documents, n_components=n_comp_analysis, method=args.method
                 )
 
                 if reduced_matrix is not None:
@@ -278,9 +283,13 @@ def visualize_all(args):
                     plotted_dims = 3 if reduced_matrix.shape[1] >= 3 else reduced_matrix.shape[1]
                     plot_path = output_dir / f"embedding_{args.method}_{plotted_dims}d.png"
                     visualizer.plot_dimension_reduction(
-                        reduced_matrix, labels, filenames,
+                        reduced_matrix,
+                        labels,
+                        filenames,
                         f"{args.method.upper()} Visualization ({args.n_components}D)",
-                        plot_path, vectorizer, reduction_model
+                        plot_path,
+                        vectorizer,
+                        reduction_model,
                     )
 
                     # Word cloud
@@ -289,10 +298,16 @@ def visualize_all(args):
 
                     # Term frequency
                     freq_path = output_dir / "term_frequency.png"
-                    visualizer.plot_term_frequency(documents, "Term Frequency Distribution", freq_path)
+                    visualizer.plot_term_frequency(
+                        documents, "Term Frequency Distribution", freq_path
+                    )
 
                     # Comprehensive PCA analysis if using PCA method
-                    if args.method == 'pca' and reduction_model is not None and vectorizer is not None:
+                    if (
+                        args.method == "pca"
+                        and reduction_model is not None
+                        and vectorizer is not None
+                    ):
                         print("📊 Creating comprehensive PCA analysis visualizations...")
                         pca_analyzer = PCAAnalyzer()
                         pca_results = pca_analyzer.create_comprehensive_pca_report(
@@ -301,14 +316,18 @@ def visualize_all(args):
                             vectorizer,
                             labels,
                             output_dir,
-                            prefix="pca_analysis"
+                            prefix="pca_analysis",
                         )
-                        
+
                         successful_pca = sum(pca_results.values())
                         total_pca = len(pca_results)
-                        print(f"   └─ PCA analysis: {successful_pca}/{total_pca} visualizations created")
-                        logger.info(f"PCA analysis: {successful_pca}/{total_pca} visualizations created")
-                    
+                        print(
+                            f"   └─ PCA analysis: {successful_pca}/{total_pca} visualizations created"
+                        )
+                        logger.info(
+                            f"PCA analysis: {successful_pca}/{total_pca} visualizations created"
+                        )
+
                     print("✅ Embedding visualizations completed")
                     logger.info("Embedding visualizations completed")
                 else:
@@ -323,8 +342,8 @@ def visualize_all(args):
         print("👥 Creating participant PCA embeddings...")
         try:
             from sklearn.feature_extraction.text import TfidfVectorizer
-            from sklearn.decomposition import PCA
-            from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
+
+            from symposium.visualization.embeddings import DimensionReducer, TextVisualizer
             from symposium.visualization.pca_analysis import PCAAnalyzer
 
             # Load participant documents specifically
@@ -347,8 +366,10 @@ def visualize_all(args):
                                 logger.warning(f"Could not read participant file {file_path}: {e}")
 
                 if participant_documents:
-                    logger.info(f"Loaded {len(participant_documents)} documents from {len(set(participant_labels))} participants")
-                    
+                    logger.info(
+                        f"Loaded {len(participant_documents)} documents from {len(set(participant_labels))} participants"
+                    )
+
                     # Create participant-specific PCA embeddings
                     visualizer = TextVisualizer()
                     reducer = DimensionReducer()
@@ -358,35 +379,46 @@ def visualize_all(args):
                     max_possible_participant_components = min(len(participant_documents), 1000)
                     # Use at least 3 components for comprehensive analysis (enables 3D visualization)
                     # For comprehensive PCA analysis, use more components to capture variance
-                    n_comp_participants_analysis = min(max(50, len(participant_documents) // 5), max_possible_participant_components)
-                    # For 2D/3D visualization, use at least 3 components
-                    n_comp_participants_viz = min(max(args.n_components, 3), max_possible_participant_components)
-                    
-                    # First, create comprehensive PCA with many components for full analysis
-                    participant_reduced_full, participant_vectorizer, participant_pca_full = reducer.perform_tfidf_and_reduction(
-                        participant_documents,
-                        n_components=n_comp_participants_analysis,
-                        method='pca'  # Always use PCA for participant embeddings
+                    n_comp_participants_analysis = min(
+                        max(50, len(participant_documents) // 5),
+                        max_possible_participant_components,
                     )
 
-                    if participant_reduced_full is not None and participant_pca_full is not None and participant_vectorizer is not None:
+                    # First, create comprehensive PCA with many components for full analysis
+                    participant_reduced_full, participant_vectorizer, participant_pca_full = (
+                        reducer.perform_tfidf_and_reduction(
+                            participant_documents,
+                            n_components=n_comp_participants_analysis,
+                            method="pca",  # Always use PCA for participant embeddings
+                        )
+                    )
+
+                    if (
+                        participant_reduced_full is not None
+                        and participant_pca_full is not None
+                        and participant_vectorizer is not None
+                    ):
                         output_dir = Path(args.output_dir)
                         output_dir.mkdir(parents=True, exist_ok=True)
 
                         # Create reduced version for 2D/3D visualization (first 3 components)
                         n_viz_components = min(3, participant_reduced_full.shape[1])
                         participant_reduced_viz = participant_reduced_full[:, :n_viz_components]
-                        
+
                         # Participant 2D/3D visualization
-                        participant_plot_path = output_dir / f"participants_embedding_pca_{n_viz_components}d.png"
-                        # Create a temporary PCA object with only the first n_viz_components for visualization
-                        from sklearn.decomposition import PCA
-                        pca_viz = PCA(n_components=n_viz_components, random_state=42)
-                        # We'll use the full PCA but only plot the first components
+                        participant_plot_path = (
+                            output_dir / f"participants_embedding_pca_{n_viz_components}d.png"
+                        )
+                        # The full PCA is used for the comprehensive report; the 2D/3D
+                        # plot simply uses the first n_viz_components columns.
                         visualizer.plot_dimension_reduction(
-                            participant_reduced_viz, participant_labels, participant_filenames,
+                            participant_reduced_viz,
+                            participant_labels,
+                            participant_filenames,
                             f"Participant PCA Embeddings ({n_viz_components}D)",
-                            participant_plot_path, participant_vectorizer, participant_pca_full
+                            participant_plot_path,
+                            participant_vectorizer,
+                            participant_pca_full,
                         )
 
                         # Comprehensive participant PCA analysis (using full component set)
@@ -398,14 +430,18 @@ def visualize_all(args):
                             participant_vectorizer,
                             participant_labels,
                             output_dir,
-                            prefix="participants_pca_analysis"
+                            prefix="participants_pca_analysis",
                         )
-                        
+
                         successful_participant_pca = sum(participant_pca_results.values())
                         total_participant_pca = len(participant_pca_results)
-                        print(f"   └─ Participant PCA analysis: {successful_participant_pca}/{total_participant_pca} visualizations created")
-                        logger.info(f"Participant PCA analysis: {successful_participant_pca}/{total_participant_pca} visualizations created")
-                        
+                        print(
+                            f"   └─ Participant PCA analysis: {successful_participant_pca}/{total_participant_pca} visualizations created"
+                        )
+                        logger.info(
+                            f"Participant PCA analysis: {successful_participant_pca}/{total_participant_pca} visualizations created"
+                        )
+
                         print("✅ Participant PCA embeddings completed")
                         logger.info("Participant PCA embeddings completed")
                     else:
@@ -426,6 +462,7 @@ def visualize_all(args):
         print("🌐 Creating network visualizations...")
         try:
             from sklearn.feature_extraction.text import TfidfVectorizer
+
             from symposium.visualization.networks import NetworkAnalyzer
 
             # Load documents (similar to embeddings)
@@ -443,15 +480,13 @@ def visualize_all(args):
 
             if documents:
                 # Perform TF-IDF
-                vectorizer = TfidfVectorizer(max_features=50, stop_words='english')
+                vectorizer = TfidfVectorizer(max_features=50, stop_words="english")
                 tfidf_matrix = vectorizer.fit_transform(documents)
 
                 # Create network
                 analyzer = NetworkAnalyzer()
                 graph = analyzer.create_similarity_network(
-                    tfidf_matrix, vectorizer, filenames,
-                    threshold=args.threshold,
-                    max_terms=50
+                    tfidf_matrix, vectorizer, filenames, threshold=args.threshold, max_terms=50
                 )
 
                 if graph is not None and len(graph.nodes()) > 0:
@@ -464,15 +499,13 @@ def visualize_all(args):
                         graph,
                         f"Research Similarity Network (threshold: {args.threshold})",
                         network_path,
-                        layout=args.layout
+                        layout=args.layout,
                     )
 
                     # Community analysis
                     community_path = output_dir / "community_analysis.png"
                     analyzer.plot_community_analysis(
-                        graph,
-                        "Research Community Analysis",
-                        community_path
+                        graph, "Research Community Analysis", community_path
                     )
 
                     print("✅ Network visualizations completed")

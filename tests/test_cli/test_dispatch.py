@@ -15,58 +15,78 @@ DISPATCH_CASES = [
     (
         "analyze presenters",
         ["analyze", "presenters", "--data-dir", "d", "--output-dir", "o"],
-        "symposium.cli.analyze", "analyze_presenters",
+        "symposium.cli.analyze",
+        "analyze_presenters",
     ),
     (
         "analyze participants",
         ["analyze", "participants", "--csv-file", "c.csv", "--output-dir", "o"],
-        "symposium.cli.analyze", "analyze_participants",
+        "symposium.cli.analyze",
+        "analyze_participants",
     ),
     (
         "analyze backgrounds",
         ["analyze", "backgrounds", "--csv-file", "c.csv", "--output-dir", "o"],
-        "symposium.cli.analyze", "analyze_participant_backgrounds",
+        "symposium.cli.analyze",
+        "analyze_participant_backgrounds",
     ),
     (
         "analyze curricula",
         ["analyze", "curricula", "--csv-file", "c.csv", "--output-dir", "o"],
-        "symposium.cli.analyze", "generate_participant_curricula",
+        "symposium.cli.analyze",
+        "generate_participant_curricula",
     ),
     (
         "generate profiles",
         ["generate", "profiles", "--data-dir", "d", "--output-dir", "o"],
-        "symposium.cli.generate", "generate_profiles",
+        "symposium.cli.generate",
+        "generate_profiles",
     ),
     (
         "generate projects",
-        ["generate", "projects", "--profiles-dir", "p", "--output-dir", "o", "--domain-file", "df.md"],
-        "symposium.cli.generate", "generate_projects",
+        [
+            "generate",
+            "projects",
+            "--profiles-dir",
+            "p",
+            "--output-dir",
+            "o",
+            "--domain-file",
+            "df.md",
+        ],
+        "symposium.cli.generate",
+        "generate_projects",
     ),
     (
         "visualize embeddings",
         ["visualize", "embeddings", "--input-dir", "i", "--output-dir", "o"],
-        "symposium.cli.visualize", "visualize_embeddings",
+        "symposium.cli.visualize",
+        "visualize_embeddings",
     ),
     (
         "visualize networks",
         ["visualize", "networks", "--input-dir", "i", "--output-dir", "o"],
-        "symposium.cli.visualize", "visualize_networks",
+        "symposium.cli.visualize",
+        "visualize_networks",
     ),
     (
         "visualize distributions",
         ["visualize", "distributions", "--input-dir", "i", "--output-dir", "o"],
-        "symposium.cli.visualize", "visualize_distributions",
+        "symposium.cli.visualize",
+        "visualize_distributions",
     ),
     (
         "visualize all",
         ["visualize", "all", "--input-dir", "i", "--output-dir", "o"],
-        "symposium.cli.visualize", "visualize_all",
+        "symposium.cli.visualize",
+        "visualize_all",
     ),
 ]
 
 
 @pytest.mark.parametrize(
-    "name,argv,module_path,handler", DISPATCH_CASES,
+    "name,argv,module_path,handler",
+    DISPATCH_CASES,
     ids=[c[0] for c in DISPATCH_CASES],
 )
 def test_main_routes_subcommand(monkeypatch, name, argv, module_path, handler):

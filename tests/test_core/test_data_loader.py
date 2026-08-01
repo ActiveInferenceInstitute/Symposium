@@ -1,8 +1,8 @@
 """Tests for data loader module."""
 
-import pytest
 import pandas as pd
-from pathlib import Path
+import pytest
+
 from symposium.core.data_loader import DataLoader
 
 
@@ -24,7 +24,7 @@ class TestDataLoader:
         """Test loading JSON file."""
         data = DataLoader.load_json(sample_json_file)
         assert isinstance(data, dict)
-        assert data['key'] == 'value'
+        assert data["key"] == "value"
 
     def test_load_json_not_found(self, temp_dir):
         """Test loading non-existent JSON raises error."""
@@ -39,7 +39,7 @@ class TestDataLoader:
 
     def test_truncate_dataframe(self):
         """Test truncating DataFrame."""
-        df = pd.DataFrame({'col': range(100)})
+        df = pd.DataFrame({"col": range(100)})
         truncated = DataLoader.truncate_dataframe(df, 10)
         assert len(truncated) == 10
 
@@ -62,22 +62,19 @@ class TestDataLoader:
         # Create presenter directory structure
         presenter_dir = temp_dir / "Test_Presenter"
         presenter_dir.mkdir()
-        
+
         # Create mock CSV files
-        topics_df = pd.DataFrame({'topic': ['topic1'], 'count': [5]})
+        topics_df = pd.DataFrame({"topic": ["topic1"], "count": [5]})
         topics_df.to_csv(presenter_dir / "openalex-group-by-20240101.csv", index=False)
-        
-        works_df = pd.DataFrame({
-            'title': ['Work 1'],
-            'publication_year': [2023],
-            'cited_by_count': [10]
-        })
+
+        works_df = pd.DataFrame(
+            {"title": ["Work 1"], "publication_year": [2023], "cited_by_count": [10]}
+        )
         works_df.to_csv(presenter_dir / "works-20240101.csv", index=False)
-        
+
         # Load data
         presenters = DataLoader.load_presenter_data(temp_dir)
-        
-        assert "Test_Presenter" in presenters
-        assert 'topics' in presenters["Test_Presenter"]
-        assert 'works' in presenters["Test_Presenter"]
 
+        assert "Test_Presenter" in presenters
+        assert "topics" in presenters["Test_Presenter"]
+        assert "works" in presenters["Test_Presenter"]

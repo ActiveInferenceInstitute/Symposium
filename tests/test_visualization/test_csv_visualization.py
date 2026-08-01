@@ -13,15 +13,15 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 
 # Add parent directory to path for direct execution
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'src'))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
 from symposium.core.data_loader import DataLoader
-from symposium.visualization.embeddings import TextVisualizer, DimensionReducer
-from symposium.visualization.networks import NetworkAnalyzer
 from symposium.visualization.distributions import DistributionPlotter
+from symposium.visualization.embeddings import DimensionReducer, TextVisualizer
+from symposium.visualization.networks import NetworkAnalyzer
 
 
 class TestCSVVisualization(unittest.TestCase):
@@ -37,60 +37,60 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
 
         # Create temporary CSV file in a temp dir (hermetic — never in the source tree)
         self._tmp_dir = tempfile.TemporaryDirectory()
-        self.test_csv_path = Path(self._tmp_dir.name) / 'test_participants.csv'
-        with open(self.test_csv_path, 'w') as f:
+        self.test_csv_path = Path(self._tmp_dir.name) / "test_participants.csv"
+        with open(self.test_csv_path, "w") as f:
             f.write(self.test_csv_content)
 
         # Expected participant data (matching actual CSV structure)
         self.expected_participants = {
-            'Alice Johnson': {
-                'name': 'Alice Johnson',
-                'email': 'alice@university.edu',
-                'affiliations': 'University of Cognitive Science',
-                'orcid': '0000-0001-1234-5678',
-                'background': 'PhD in Neuroscience, 5 years experience in computational modeling',
-                'pragmatic_value': 'Understanding practical applications',
-                'epistemic_value': 'Advanced theoretical insights',
-                'active_inference_application': 'Neuroscience, mid-stage',
-                'challenges': 'Technical challenges in implementation',
-                'learning_needs': 'Mentorship and collaboration opportunities',
-                'heard_about': 'Conference networking',
-                'future_impact': 'Significant impact in AI research',
-                'comments': 'Looking forward to learning',
-                'share_publicly': 'Yes'
+            "Alice Johnson": {
+                "name": "Alice Johnson",
+                "email": "alice@university.edu",
+                "affiliations": "University of Cognitive Science",
+                "orcid": "0000-0001-1234-5678",
+                "background": "PhD in Neuroscience, 5 years experience in computational modeling",
+                "pragmatic_value": "Understanding practical applications",
+                "epistemic_value": "Advanced theoretical insights",
+                "active_inference_application": "Neuroscience, mid-stage",
+                "challenges": "Technical challenges in implementation",
+                "learning_needs": "Mentorship and collaboration opportunities",
+                "heard_about": "Conference networking",
+                "future_impact": "Significant impact in AI research",
+                "comments": "Looking forward to learning",
+                "share_publicly": "Yes",
             },
-            'Bob Smith': {
-                'name': 'Bob Smith',
-                'email': 'bob@research.org',
-                'affiliations': 'Research Institute',
-                'orcid': '0000-0002-8765-4321',
-                'background': 'Active Inference expert, published 20+ papers',
-                'pragmatic_value': 'Advanced theoretical insights',
-                'epistemic_value': 'Mathematical foundations',
-                'active_inference_application': 'Theoretical research, advanced',
-                'challenges': 'Lack of empirical validation',
-                'learning_needs': 'More research funding',
-                'heard_about': 'Academic collaboration',
-                'future_impact': 'Transform cognitive science',
-                'comments': 'Excited for symposium',
-                'share_publicly': 'Yes'
+            "Bob Smith": {
+                "name": "Bob Smith",
+                "email": "bob@research.org",
+                "affiliations": "Research Institute",
+                "orcid": "0000-0002-8765-4321",
+                "background": "Active Inference expert, published 20+ papers",
+                "pragmatic_value": "Advanced theoretical insights",
+                "epistemic_value": "Mathematical foundations",
+                "active_inference_application": "Theoretical research, advanced",
+                "challenges": "Lack of empirical validation",
+                "learning_needs": "More research funding",
+                "heard_about": "Academic collaboration",
+                "future_impact": "Transform cognitive science",
+                "comments": "Excited for symposium",
+                "share_publicly": "Yes",
             },
-            'Carol Davis': {
-                'name': 'Carol Davis',
-                'email': 'carol@tech.com',
-                'affiliations': 'Tech Company',
-                'orcid': '0000-0003-4567-8901',
-                'background': 'Machine learning engineer, 3 years AI experience',
-                'pragmatic_value': 'Getting started with Active Inference',
-                'epistemic_value': 'Practical implementation',
-                'active_inference_application': 'AI applications, beginner',
-                'challenges': 'Learning curve',
-                'learning_needs': 'Introductory resources and tutorials',
-                'heard_about': 'Online courses',
-                'future_impact': 'Revolutionize machine learning',
-                'comments': 'Great opportunity',
-                'share_publicly': 'Yes'
-            }
+            "Carol Davis": {
+                "name": "Carol Davis",
+                "email": "carol@tech.com",
+                "affiliations": "Tech Company",
+                "orcid": "0000-0003-4567-8901",
+                "background": "Machine learning engineer, 3 years AI experience",
+                "pragmatic_value": "Getting started with Active Inference",
+                "epistemic_value": "Practical implementation",
+                "active_inference_application": "AI applications, beginner",
+                "challenges": "Learning curve",
+                "learning_needs": "Introductory resources and tutorials",
+                "heard_about": "Online courses",
+                "future_impact": "Revolutionize machine learning",
+                "comments": "Great opportunity",
+                "share_publicly": "Yes",
+            },
         }
 
     def tearDown(self):
@@ -102,43 +102,46 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         participants = DataLoader.load_participant_data(self.test_csv_path)
 
         self.assertEqual(len(participants), 3)
-        self.assertIn('Alice Johnson', participants)
-        self.assertIn('Bob Smith', participants)
-        self.assertIn('Carol Davis', participants)
+        self.assertIn("Alice Johnson", participants)
+        self.assertIn("Bob Smith", participants)
+        self.assertIn("Carol Davis", participants)
 
         # Verify data structure
-        alice_data = participants['Alice Johnson']
-        self.assertEqual(alice_data['affiliations'], 'University of Cognitive Science')
-        self.assertEqual(alice_data['background'], 'PhD in Neuroscience, 5 years experience in computational modeling')
-        self.assertEqual(alice_data['share_publicly'], 'Yes')
+        alice_data = participants["Alice Johnson"]
+        self.assertEqual(alice_data["affiliations"], "University of Cognitive Science")
+        self.assertEqual(
+            alice_data["background"],
+            "PhD in Neuroscience, 5 years experience in computational modeling",
+        )
+        self.assertEqual(alice_data["share_publicly"], "Yes")
 
     def test_text_conversion_for_visualization(self):
         """Test conversion of participant data to text format for visualization."""
         participants = DataLoader.load_participant_data(self.test_csv_path)
 
         # Test text generation for Alice Johnson
-        alice_data = participants['Alice Johnson']
+        alice_data = participants["Alice Johnson"]
         text_parts = []
 
-        if alice_data.get('affiliations'):
+        if alice_data.get("affiliations"):
             text_parts.append(f"Affiliation: {alice_data['affiliations']}")
-        if alice_data.get('background'):
+        if alice_data.get("background"):
             text_parts.append(f"Background: {alice_data['background']}")
-        if alice_data.get('active_inference_application'):
+        if alice_data.get("active_inference_application"):
             text_parts.append(f"Active Inference: {alice_data['active_inference_application']}")
-        if alice_data.get('learning_needs'):
+        if alice_data.get("learning_needs"):
             text_parts.append(f"Learning Needs: {alice_data['learning_needs']}")
-        if alice_data.get('pragmatic_value'):
+        if alice_data.get("pragmatic_value"):
             text_parts.append(f"Pragmatic Value: {alice_data['pragmatic_value']}")
 
-        expected_text = ' '.join(text_parts)
+        expected_text = " ".join(text_parts)
 
         # Verify the text contains expected components
-        self.assertIn('Affiliation: University of Cognitive Science', expected_text)
-        self.assertIn('Background: PhD in Neuroscience', expected_text)
-        self.assertIn('Active Inference: Neuroscience', expected_text)
-        self.assertIn('Learning Needs: Mentorship', expected_text)
-        self.assertIn('Pragmatic Value: Understanding practical applications', expected_text)
+        self.assertIn("Affiliation: University of Cognitive Science", expected_text)
+        self.assertIn("Background: PhD in Neuroscience", expected_text)
+        self.assertIn("Active Inference: Neuroscience", expected_text)
+        self.assertIn("Learning Needs: Mentorship", expected_text)
+        self.assertIn("Pragmatic Value: Understanding practical applications", expected_text)
 
     def test_dimension_reduction_setup(self):
         """Test dimension reduction setup and configuration."""
@@ -148,20 +151,18 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         documents = [
             "Neuroscience PhD computational modeling active inference applications research",
             "Active Inference expert published papers theoretical framework free energy principle",
-            "Machine learning engineer AI experience getting started tutorials deep learning neural networks"
+            "Machine learning engineer AI experience getting started tutorials deep learning neural networks",
         ]
 
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            documents,
-            n_components=2,
-            method='pca'
+            documents, n_components=2, method="pca"
         )
 
         # May return None if not enough terms after pruning
         if reduced_matrix is not None:
             self.assertEqual(reduced_matrix.shape[1], 2)  # 2D reduction
             self.assertEqual(reduced_matrix.shape[0], 3)  # 3 documents
-            
+
             # Test vectorizer
             self.assertIsNotNone(vectorizer)
             feature_names = vectorizer.get_feature_names_out()
@@ -178,23 +179,22 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         documents = [
             "Neuroscience PhD computational modeling active inference applications",
             "Active Inference expert published theoretical research papers",
-            "Machine learning engineer AI experience getting started tutorials"
+            "Machine learning engineer AI experience getting started tutorials",
         ]
 
         # Mock matplotlib to avoid GUI issues in tests
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.imshow'), \
-             patch('matplotlib.pyplot.axis'), \
-             patch('matplotlib.pyplot.title'), \
-             patch('matplotlib.pyplot.tight_layout'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.close'):
-
+        with (
+            patch("matplotlib.pyplot.figure"),
+            patch("matplotlib.pyplot.imshow"),
+            patch("matplotlib.pyplot.axis"),
+            patch("matplotlib.pyplot.title"),
+            patch("matplotlib.pyplot.tight_layout"),
+            patch("matplotlib.pyplot.savefig"),
+            patch("matplotlib.pyplot.close"),
+        ):
             # Test word cloud creation (without actually saving)
             result = visualizer.create_word_cloud(
-                documents,
-                "Test Word Cloud",
-                Path('/tmp/test_wordcloud.png')
+                documents, "Test Word Cloud", Path("/tmp/test_wordcloud.png")
             )
 
             # Should return True if no exceptions occurred
@@ -209,19 +209,19 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
 
         for name, data in participants.items():
             text_parts = []
-            if data.get('affiliations'):
+            if data.get("affiliations"):
                 text_parts.append(f"Affiliation: {data['affiliations']}")
-            if data.get('background'):
+            if data.get("background"):
                 text_parts.append(f"Background: {data['background']}")
-            if data.get('active_inference_application'):
+            if data.get("active_inference_application"):
                 text_parts.append(f"Active Inference: {data['active_inference_application']}")
-            if data.get('learning_needs'):
+            if data.get("learning_needs"):
                 text_parts.append(f"Learning Needs: {data['learning_needs']}")
-            if data.get('pragmatic_value'):
+            if data.get("pragmatic_value"):
                 text_parts.append(f"Pragmatic Value: {data['pragmatic_value']}")
 
             if text_parts:
-                documents.append(' '.join(text_parts))
+                documents.append(" ".join(text_parts))
                 filenames.append(f"{name}.txt")
                 labels.append("participant")
 
@@ -231,12 +231,12 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         self.assertEqual(len(labels), 3)
 
         # Test that documents contain expected keywords
-        all_text = ' '.join(documents).lower()
-        self.assertIn('neuroscience', all_text)
-        self.assertIn('active inference', all_text)
-        self.assertIn('machine learning', all_text)
-        self.assertIn('university', all_text)
-        self.assertIn('research', all_text)
+        all_text = " ".join(documents).lower()
+        self.assertIn("neuroscience", all_text)
+        self.assertIn("active inference", all_text)
+        self.assertIn("machine learning", all_text)
+        self.assertIn("university", all_text)
+        self.assertIn("research", all_text)
 
     def test_network_analysis_setup(self):
         """Test network analysis setup from participant data."""
@@ -246,17 +246,17 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         documents = [
             "Neuroscience PhD computational modeling",
             "Active Inference expert research papers",
-            "Machine learning AI applications"
+            "Machine learning AI applications",
         ]
 
         from sklearn.feature_extraction.text import TfidfVectorizer
-        vectorizer = TfidfVectorizer(max_features=20, stop_words='english')
+
+        vectorizer = TfidfVectorizer(max_features=20, stop_words="english")
         tfidf_matrix = vectorizer.fit_transform(documents)
 
         # Test network creation
         graph = analyzer.create_similarity_network(
-            tfidf_matrix, vectorizer, ['doc1', 'doc2', 'doc3'],
-            threshold=0.1, max_terms=20
+            tfidf_matrix, vectorizer, ["doc1", "doc2", "doc3"], threshold=0.1, max_terms=20
         )
 
         self.assertIsNotNone(graph)
@@ -271,7 +271,7 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         documents = [
             "This is a short document",
             "This is a much longer document with more words and detailed content",
-            "Medium length document"
+            "Medium length document",
         ]
         labels = ["short", "long", "medium"]
 
@@ -294,13 +294,18 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         documents = []
         for name, data in participants.items():
             text_parts = []
-            for field in ['affiliations', 'background', 'active_inference_application',
-                         'learning_needs', 'pragmatic_value']:
+            for field in [
+                "affiliations",
+                "background",
+                "active_inference_application",
+                "learning_needs",
+                "pragmatic_value",
+            ]:
                 if data.get(field):
                     text_parts.append(f"{field.replace('_', ' ').title()}: {data[field]}")
 
             if text_parts:
-                documents.append(' '.join(text_parts))
+                documents.append(" ".join(text_parts))
 
         # Test that we have documents to visualize
         self.assertEqual(len(documents), 3)
@@ -308,7 +313,7 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
         # Test dimension reduction
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            documents, n_components=2, method='pca'
+            documents, n_components=2, method="pca"
         )
 
         self.assertIsNotNone(reduced_matrix)
@@ -316,13 +321,14 @@ Yes,Carol Davis,carol@tech.com,Tech Company,0000-0003-4567-8901,"Machine learnin
 
         # Test word cloud generation
         visualizer = TextVisualizer()
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.imshow'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.close'):
-
+        with (
+            patch("matplotlib.pyplot.figure"),
+            patch("matplotlib.pyplot.imshow"),
+            patch("matplotlib.pyplot.savefig"),
+            patch("matplotlib.pyplot.close"),
+        ):
             cloud_result = visualizer.create_word_cloud(
-                documents, "Participant Word Cloud", Path('/tmp/test_cloud.png')
+                documents, "Participant Word Cloud", Path("/tmp/test_cloud.png")
             )
             self.assertTrue(cloud_result)
 
@@ -333,30 +339,30 @@ class TestEnhancedWordClouds(unittest.TestCase):
     def setUp(self):
         """Set up test data for enhanced word clouds."""
         self.participants = {
-            'Alice Johnson': {
-                'name': 'Alice Johnson',
-                'affiliations': 'University of Cognitive Science',
-                'background': 'PhD in Neuroscience with 5 years experience in computational modeling and active inference research',
-                'active_inference_application': 'Neuroscience applications in cognitive modeling',
-                'challenges': 'Technical implementation difficulties and lack of standardized tools',
-                'learning_needs': 'Advanced tutorials and mentorship opportunities',
-                'pragmatic_value': 'Understanding practical applications in real-world scenarios',
-                'epistemic_value': 'Deep theoretical insights into cognitive processes',
-                'future_impact': 'Revolutionary impact on AI and cognitive science research',
-                'comments': 'Looking forward to collaborating with other researchers'
+            "Alice Johnson": {
+                "name": "Alice Johnson",
+                "affiliations": "University of Cognitive Science",
+                "background": "PhD in Neuroscience with 5 years experience in computational modeling and active inference research",
+                "active_inference_application": "Neuroscience applications in cognitive modeling",
+                "challenges": "Technical implementation difficulties and lack of standardized tools",
+                "learning_needs": "Advanced tutorials and mentorship opportunities",
+                "pragmatic_value": "Understanding practical applications in real-world scenarios",
+                "epistemic_value": "Deep theoretical insights into cognitive processes",
+                "future_impact": "Revolutionary impact on AI and cognitive science research",
+                "comments": "Looking forward to collaborating with other researchers",
             },
-            'Bob Smith': {
-                'name': 'Bob Smith',
-                'affiliations': 'Research Institute for Advanced Studies',
-                'background': 'Active Inference expert with 20+ published papers in theoretical neuroscience',
-                'active_inference_application': 'Theoretical research in predictive processing',
-                'challenges': 'Lack of empirical validation and funding constraints',
-                'learning_needs': 'More research funding and computational resources',
-                'pragmatic_value': 'Advanced theoretical insights for complex systems',
-                'epistemic_value': 'Mathematical foundations of cognitive processes',
-                'future_impact': 'Transform cognitive science and AI development',
-                'comments': 'Excited about the symposium and networking opportunities'
-            }
+            "Bob Smith": {
+                "name": "Bob Smith",
+                "affiliations": "Research Institute for Advanced Studies",
+                "background": "Active Inference expert with 20+ published papers in theoretical neuroscience",
+                "active_inference_application": "Theoretical research in predictive processing",
+                "challenges": "Lack of empirical validation and funding constraints",
+                "learning_needs": "More research funding and computational resources",
+                "pragmatic_value": "Advanced theoretical insights for complex systems",
+                "epistemic_value": "Mathematical foundations of cognitive processes",
+                "future_impact": "Transform cognitive science and AI development",
+                "comments": "Excited about the symposium and networking opportunities",
+            },
         }
 
     def test_custom_stopwords(self):
@@ -364,57 +370,56 @@ class TestEnhancedWordClouds(unittest.TestCase):
         from symposium.visualization.embeddings import TextVisualizer
 
         visualizer = TextVisualizer()
-        self.assertIn('and', visualizer.custom_stopwords)
-        self.assertIn('the', visualizer.custom_stopwords)
-        self.assertIn('of', visualizer.custom_stopwords)
-        self.assertIn('to', visualizer.custom_stopwords)
+        self.assertIn("and", visualizer.custom_stopwords)
+        self.assertIn("the", visualizer.custom_stopwords)
+        self.assertIn("of", visualizer.custom_stopwords)
+        self.assertIn("to", visualizer.custom_stopwords)
 
-        # Test that common words are filtered out
-        test_text = "The quick brown fox jumps over the lazy dog and runs to the park"
-        documents = [test_text]
-
-        # Should only contain meaningful words
-        meaningful_words = {'quick', 'brown', 'fox', 'jumps', 'lazy', 'dog', 'runs', 'park'}
+        # Meaningful words must not be treated as stop words
+        meaningful_words = {"quick", "brown", "fox", "jumps", "lazy", "dog", "runs", "park"}
         for word in meaningful_words:
             # This is a basic test - in practice we'd check the actual word cloud generation
             self.assertNotIn(word, visualizer.custom_stopwords)
 
     def test_per_column_word_clouds(self):
         """Test per-column word cloud generation."""
-        from symposium.visualization.embeddings import TextVisualizer
         from pathlib import Path
+
+        from symposium.visualization.embeddings import TextVisualizer
 
         visualizer = TextVisualizer()
 
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.imshow'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.close'):
-
+        with (
+            patch("matplotlib.pyplot.figure"),
+            patch("matplotlib.pyplot.imshow"),
+            patch("matplotlib.pyplot.savefig"),
+            patch("matplotlib.pyplot.close"),
+        ):
             result = visualizer.create_column_word_clouds(
-                self.participants,
-                Path('/tmp/test_wordclouds')
+                self.participants, Path("/tmp/test_wordclouds")
             )
 
             self.assertTrue(result)
 
     def test_enhanced_word_cloud_parameters(self):
         """Test enhanced word cloud parameters."""
-        from symposium.visualization.embeddings import TextVisualizer
         from pathlib import Path
 
+        from symposium.visualization.embeddings import TextVisualizer
+
         visualizer = TextVisualizer()
-        documents = ["This is a test document with many words for testing the word cloud generation"]
+        documents = [
+            "This is a test document with many words for testing the word cloud generation"
+        ]
 
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.imshow'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.close'):
-
+        with (
+            patch("matplotlib.pyplot.figure"),
+            patch("matplotlib.pyplot.imshow"),
+            patch("matplotlib.pyplot.savefig"),
+            patch("matplotlib.pyplot.close"),
+        ):
             result = visualizer.create_word_cloud(
-                documents,
-                "Test Enhanced Word Cloud",
-                Path('/tmp/test_enhanced.png')
+                documents, "Test Enhanced Word Cloud", Path("/tmp/test_enhanced.png")
             )
 
             self.assertTrue(result)
@@ -430,7 +435,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
             "Machine learning artificial intelligence neural networks deep learning",
             "Predictive processing theoretical neuroscience brain dynamics",
             "Bayesian inference probabilistic modeling statistical methods",
-            "Cognitive science psychology behavioral experiments"
+            "Cognitive science psychology behavioral experiments",
         ]
 
     def test_enhanced_pca(self):
@@ -439,7 +444,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=2, method='pca'
+            self.documents, n_components=2, method="pca"
         )
 
         self.assertIsNotNone(reduced_matrix)
@@ -454,7 +459,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=3, method='lsa'
+            self.documents, n_components=3, method="lsa"
         )
 
         self.assertIsNotNone(reduced_matrix)
@@ -469,7 +474,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=2, method='tsne'
+            self.documents, n_components=2, method="tsne"
         )
 
         self.assertIsNotNone(reduced_matrix)
@@ -485,7 +490,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=2, method='umap'
+            self.documents, n_components=2, method="umap"
         )
 
         # UMAP may fall back to PCA if not available
@@ -499,7 +504,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=3, method='nmf'
+            self.documents, n_components=3, method="nmf"
         )
 
         self.assertIsNotNone(reduced_matrix)
@@ -514,7 +519,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=2, method='lda'
+            self.documents, n_components=2, method="lda"
         )
 
         self.assertIsNotNone(reduced_matrix)
@@ -529,7 +534,7 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
 
         reducer = DimensionReducer()
         reduced_matrix, vectorizer, reduction_model = reducer.perform_tfidf_and_reduction(
-            self.documents, n_components=2, method='pca'
+            self.documents, n_components=2, method="pca"
         )
 
         if vectorizer and reduction_model:
@@ -544,7 +549,14 @@ class TestAdvancedDimensionReduction(unittest.TestCase):
                 all_features.extend(component_features)
 
             # Should contain words from our test documents
-            expected_words = {'active', 'inference', 'neuroscience', 'cognitive', 'machine', 'learning'}
+            expected_words = {
+                "active",
+                "inference",
+                "neuroscience",
+                "cognitive",
+                "machine",
+                "learning",
+            }
             found_words = set(word.lower() for word in all_features)
             self.assertTrue(any(word in found_words for word in expected_words))
 
@@ -560,12 +572,12 @@ Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in
 
         # Create temporary CSV file and output dir in a temp dir (hermetic)
         self._tmp_dir = tempfile.TemporaryDirectory()
-        self.test_csv_path = Path(self._tmp_dir.name) / 'test_enhanced_cli.csv'
-        with open(self.test_csv_path, 'w') as f:
+        self.test_csv_path = Path(self._tmp_dir.name) / "test_enhanced_cli.csv"
+        with open(self.test_csv_path, "w") as f:
             f.write(self.test_csv_content)
 
         # Create test output directory
-        self.test_output_dir = Path(self._tmp_dir.name) / 'test_enhanced_output'
+        self.test_output_dir = Path(self._tmp_dir.name) / "test_enhanced_output"
         self.test_output_dir.mkdir(exist_ok=True)
 
     def tearDown(self):
@@ -574,34 +586,36 @@ Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in
 
     def test_advanced_embedding_methods(self):
         """Test CLI with advanced embedding methods."""
-        with patch('matplotlib.pyplot.figure'), \
-             patch('matplotlib.pyplot.scatter'), \
-             patch('matplotlib.pyplot.text'), \
-             patch('matplotlib.pyplot.xlabel'), \
-             patch('matplotlib.pyplot.ylabel'), \
-             patch('matplotlib.pyplot.title'), \
-             patch('matplotlib.pyplot.grid'), \
-             patch('matplotlib.pyplot.legend'), \
-             patch('matplotlib.pyplot.tight_layout'), \
-             patch('matplotlib.pyplot.savefig'), \
-             patch('matplotlib.pyplot.close'):
-
-            from symposium.cli.visualize import visualize_embeddings
-            from unittest.mock import Mock
-            from pathlib import Path
-
+        with (
+            patch("matplotlib.pyplot.figure"),
+            patch("matplotlib.pyplot.scatter"),
+            patch("matplotlib.pyplot.text"),
+            patch("matplotlib.pyplot.xlabel"),
+            patch("matplotlib.pyplot.ylabel"),
+            patch("matplotlib.pyplot.title"),
+            patch("matplotlib.pyplot.grid"),
+            patch("matplotlib.pyplot.legend"),
+            patch("matplotlib.pyplot.tight_layout"),
+            patch("matplotlib.pyplot.savefig"),
+            patch("matplotlib.pyplot.close"),
+        ):
             # Create temporary directory with markdown files since visualize_embeddings expects markdown
             import tempfile
+            from pathlib import Path
+            from unittest.mock import Mock
+
+            from symposium.cli.visualize import visualize_embeddings
+
             with tempfile.TemporaryDirectory() as temp_dir:
                 temp_path = Path(temp_dir)
-                
+
                 # Create test markdown files
                 test_files = [
                     ("test1.md", "Neuroscience computational modeling active inference"),
                     ("test2.md", "Machine learning deep neural networks artificial intelligence"),
-                    ("test3.md", "Cognitive science free energy principle Bayesian inference")
+                    ("test3.md", "Cognitive science free energy principle Bayesian inference"),
                 ]
-                
+
                 for filename, content in test_files:
                     (temp_path / filename).write_text(content)
 
@@ -609,11 +623,11 @@ Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in
                 args = Mock()
                 args.input_dir = str(temp_path)
                 args.output_dir = str(self.test_output_dir)
-                args.method = 'umap'
+                args.method = "umap"
                 args.n_components = 2
                 args.max_features = 1000
                 args.label = None
-                args.log_level = 'INFO'
+                args.log_level = "INFO"
 
                 try:
                     visualize_embeddings(args)
@@ -622,7 +636,7 @@ Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in
                     self.fail(f"UMAP embedding failed: {e}")
 
                 # Test with NMF
-                args.method = 'nmf'
+                args.method = "nmf"
                 try:
                     visualize_embeddings(args)
                 except Exception as e:
@@ -632,5 +646,5 @@ Yes,Test Researcher,test@example.com,Test University,0000-0001-1234-5678,"PhD in
                 self.assertTrue(success)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

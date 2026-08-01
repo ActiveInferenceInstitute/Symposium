@@ -33,12 +33,8 @@ data = ReportReader.read_json("config/analysis.json")
 df = ReportReader.read_csv("data/participants.csv")
 
 # Writing reports
-ReportWriter.save_markdown_report(
-    content, output_path, title, metadata
-)
-ReportWriter.save_presenter_report(
-    presenter_name, analysis, output_dir, report_type
-)
+ReportWriter.save_markdown_report(content, output_path, title, metadata)
+ReportWriter.save_presenter_report(presenter_name, analysis, output_dir, report_type)
 ```
 
 ## File Formats

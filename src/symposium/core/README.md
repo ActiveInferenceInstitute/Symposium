@@ -48,10 +48,7 @@ config = Config()
 config.ensure_paths()
 
 # API Client
-client = APIClient.create(
-    provider=config.get("api.provider"),
-    api_key=config.get_api_key()
-)
+client = APIClient.create(provider=config.get("api.provider"), api_key=config.get_api_key())
 
 # Data Loading
 loader = DataLoader()

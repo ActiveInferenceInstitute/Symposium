@@ -1,17 +1,18 @@
 """Tests for API client module."""
 
-import pytest
-from unittest.mock import Mock, patch, MagicMock
 import os
+from unittest.mock import Mock, patch
+
 import httpx
+import pytest
+from openai import APIStatusError
+
 from symposium.core.api import (
     APIClient,
-    BaseAPIProvider,
-    PerplexityProvider,
     OpenRouterProvider,
     PaymentRequiredError,
+    PerplexityProvider,
 )
-from openai import APIStatusError
 
 
 class TestAPIClient:
@@ -42,7 +43,7 @@ class TestAPIClient:
         with pytest.raises(ValueError, match="API key .* not provided"):
             APIClient.create("perplexity")
 
-    @patch.dict('os.environ', {'PERPLEXITY_API_KEY': 'env_key'})
+    @patch.dict("os.environ", {"PERPLEXITY_API_KEY": "env_key"})
     def test_create_with_env_api_key(self):
         """Test creating provider with API key from environment."""
         provider = APIClient.create("perplexity")
@@ -53,7 +54,7 @@ class TestAPIClient:
 class TestPerplexityProvider:
     """Tests for PerplexityProvider."""
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_init(self, mock_openai):
         """Test Perplexity provider initialization."""
         provider = PerplexityProvider("test_key")
@@ -61,7 +62,7 @@ class TestPerplexityProvider:
         assert provider.model == "sonar"
         mock_openai.assert_called_once()
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_get_response(self, mock_openai):
         """Test getting response from Perplexity."""
         # Setup mock
@@ -77,7 +78,7 @@ class TestPerplexityProvider:
         assert response == "Test response"
         mock_client.chat.completions.create.assert_called_once()
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_get_response_empty(self, mock_openai):
         """Test getting empty response raises error."""
         mock_client = Mock()
@@ -85,7 +86,7 @@ class TestPerplexityProvider:
         mock_openai.return_value = mock_client
 
         provider = PerplexityProvider("test_key")
-        
+
         with pytest.raises(ValueError, match="Empty response"):
             provider.get_response("test prompt")
 
@@ -93,7 +94,7 @@ class TestPerplexityProvider:
 class TestOpenRouterProvider:
     """Tests for OpenRouterProvider."""
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_init(self, mock_openai):
         """Test OpenRouter provider initialization."""
         provider = OpenRouterProvider("test_key")
@@ -101,7 +102,7 @@ class TestOpenRouterProvider:
         assert provider.model == "anthropic/claude-3.5-sonnet"
         mock_openai.assert_called_once()
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_get_response(self, mock_openai):
         """Test getting response from OpenRouter."""
         # Setup mock
@@ -117,6 +118,7 @@ class TestOpenRouterProvider:
         assert response == "Test response"
 
 
+@pytest.mark.real_api
 class TestRealAPIIntegration:
     """Integration tests using real API calls."""
 
@@ -131,8 +133,7 @@ class TestRealAPIIntegration:
 
         # Test simple prompt
         response = provider.get_response(
-            "What is Active Inference in one sentence?",
-            "You are a helpful AI assistant."
+            "What is Active Inference in one sentence?", "You are a helpful AI assistant."
         )
 
         assert isinstance(response, str)
@@ -150,8 +151,7 @@ class TestRealAPIIntegration:
 
         # Test simple prompt
         response = provider.get_response(
-            "Explain Active Inference briefly.",
-            "You are a helpful AI assistant."
+            "Explain Active Inference briefly.", "You are a helpful AI assistant."
         )
 
         assert isinstance(response, str)
@@ -213,7 +213,7 @@ class TestPaymentRequiredError:
     def test_payment_required_error_creation(self):
         """Test PaymentRequiredError creation and attributes."""
         error = PaymentRequiredError("Insufficient credits", provider="openrouter")
-        
+
         assert error.provider == "openrouter"
         assert error.message == "Insufficient credits"
         assert "OPENROUTER API: Insufficient credits" in str(error)
@@ -221,7 +221,7 @@ class TestPaymentRequiredError:
     def test_payment_required_error_default_provider(self):
         """Test PaymentRequiredError with default provider."""
         error = PaymentRequiredError("Payment required")
-        
+
         assert error.provider == "unknown"
         assert error.message == "Payment required"
         assert "UNKNOWN API: Payment required" in str(error)
@@ -230,7 +230,7 @@ class TestPaymentRequiredError:
 class TestOpenRouterPaymentError:
     """Tests for OpenRouter payment error handling."""
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_openrouter_402_error_raises_payment_required(self, mock_openai):
         """Test OpenRouter provider raises PaymentRequiredError on 402 error."""
         # Setup mock to raise APIStatusError with 402
@@ -239,7 +239,12 @@ class TestOpenRouterPaymentError:
         response = httpx.Response(
             status_code=402,
             request=request,
-            json={'error': {'message': 'Insufficient credits. Add more using https://openrouter.ai/settings/credits', 'code': 402}}
+            json={
+                "error": {
+                    "message": "Insufficient credits. Add more using https://openrouter.ai/settings/credits",
+                    "code": 402,
+                }
+            },
         )
         api_error = APIStatusError(message="Insufficient credits", response=response, body=None)
 
@@ -254,7 +259,7 @@ class TestOpenRouterPaymentError:
         assert exc_info.value.provider == "openrouter"
         assert "Insufficient credits" in exc_info.value.message
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_openrouter_402_error_without_response_body(self, mock_openai):
         """Test OpenRouter handles 402 error without response body."""
         mock_client = Mock()
@@ -274,7 +279,7 @@ class TestOpenRouterPaymentError:
         assert exc_info.value.provider == "openrouter"
         assert "Payment required" in exc_info.value.message
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_openrouter_non_402_error_passes_through(self, mock_openai):
         """Test OpenRouter passes through non-402 APIStatusErrors."""
         mock_client = Mock()
@@ -291,7 +296,7 @@ class TestOpenRouterPaymentError:
         with pytest.raises(APIStatusError):
             provider.get_response("test prompt")
 
-    @patch('symposium.core.api.OpenAI')
+    @patch("symposium.core.api.OpenAI")
     def test_payment_error_no_retry(self, mock_openai):
         """Test that payment errors don't trigger retry logic."""
         mock_client = Mock()
@@ -299,7 +304,7 @@ class TestOpenRouterPaymentError:
         response = httpx.Response(
             status_code=402,
             request=request,
-            json={'error': {'message': 'Insufficient credits', 'code': 402}}
+            json={"error": {"message": "Insufficient credits", "code": 402}},
         )
         api_error = APIStatusError(message="Insufficient credits", response=response, body=None)
 
@@ -314,4 +319,3 @@ class TestOpenRouterPaymentError:
 
         # Verify it was only called once (no retries)
         assert mock_client.chat.completions.create.call_count == 1
-

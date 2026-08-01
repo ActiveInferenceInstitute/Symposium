@@ -25,9 +25,7 @@ exporter = ScheduleExporter(config)
 
 # Export symposium schedule to ICS
 exporter.export_symposium_schedule(
-    schedule_data,
-    output_path,
-    calendar_name="Active Inference Symposium 2025"
+    schedule_data, output_path, calendar_name="Active Inference Symposium 2025"
 )
 ```
 

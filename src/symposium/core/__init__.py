@@ -1,18 +1,18 @@
 """Core functionality for the symposium package."""
 
 from pathlib import Path
-from typing import Dict, Any
+from typing import Any, Dict
 
 from symposium.core.api import (
     APIClient,
     BaseAPIProvider,
-    PerplexityProvider,
     OpenRouterProvider,
     PaymentRequiredError,
+    PerplexityProvider,
 )
 from symposium.core.config import Config
-from symposium.core.logging_utils import setup_logging
 from symposium.core.data_loader import DataLoader
+from symposium.core.logging_utils import setup_logging
 
 __all__ = [
     "APIClient",
@@ -26,6 +26,7 @@ __all__ = [
     "load_participant_data",
 ]
 
+
 # Convenience function for loading participant data
 def load_participant_data(csv_path: str | Path) -> Dict[str, Dict[str, Any]]:
     """Load participant data from Public_Participant_Information.csv format.
@@ -37,4 +38,3 @@ def load_participant_data(csv_path: str | Path) -> Dict[str, Dict[str, Any]]:
         Dictionary mapping participant names to their complete data
     """
     return DataLoader.load_participant_data(csv_path)
-

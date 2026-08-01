@@ -49,10 +49,10 @@ Comprehensive PCA analysis and visualization:
 
 ```python
 from symposium.visualization import (
-    TextVisualizer, 
-    NetworkAnalyzer, 
+    TextVisualizer,
+    NetworkAnalyzer,
     DistributionPlotter,
-    PCAAnalyzer
+    PCAAnalyzer,
 )
 
 # Text visualization
@@ -76,7 +76,7 @@ results = pca_analyzer.create_comprehensive_pca_report(
     reduced_matrix=transformed_data,
     vectorizer=tfidf_vectorizer,
     labels=document_labels,
-    output_dir="outputs/pca_analysis"
+    output_dir="outputs/pca_analysis",
 )
 # Returns dict with success status of each visualization type
 ```

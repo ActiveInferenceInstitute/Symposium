@@ -138,6 +138,14 @@ Docs:
 - [x] **Docs/release:** added `CHANGELOG.md`, bumped version to 2.1.0, final README accuracy
   pass.
 
+### Improvement / refactoring pass (post-2.1.0)
+- [x] **Ruff-only tooling + lint cleanup:** removed `black` (dev dep + `[tool.black]`) in favor
+  of `ruff format`; whole `src/` + `tests/` reformatted and `ruff check` clean (0 errors).
+  Removed further dead code/unused imports and renamed ambiguous `l`/`G` names.
+- [x] **R3 — real-API opt-in marker** (see Major section; implemented).
+- [x] **Coverage ~86%:** added tests for `io/readers`, `cli/analyze` (backgrounds/curricula),
+  `cli/generate`, and `core/config` (set/save/ensure_paths/get_path).
+
 ---
 
 ## Major — Scoped (deferred)
@@ -146,12 +154,12 @@ The three originally-deferred Majors (M1 coverage, M2 run.py orchestration, M3 l
 were substantially addressed in the 2026-08-01 completion pass (see Completed/Closed below).
 What remains below are the residual / aspirational follow-ups not fully closed.
 
-### R1 — Push coverage from ~84% to the documented >90% target
-- **Status:** overall coverage rose from ~48% → ~84% this pass; a `--cov-fail-under=80`
-  regression gate is now in place. The remaining gap to the documented >90% target is mostly
-  `cli/analyze.py` (18%) / `cli/generate.py` (25%) bodies and `io/readers.py` (48%).
-- **Suggested fix:** continue adding API-boundary-mocked handler tests and reader edge cases
-  to climb above 90%; then raise `--cov-fail-under` to match.
+### R1 — Push coverage from ~86% to the documented >90% target
+- **Status:** overall coverage ~86% (up from ~48% in the first pass) with a `--cov-fail-under=80`
+  regression gate. Low-coverage modules now: `cli/analyze.py` (~74%), `cli/generate.py` (~81%),
+  `io/readers.py` (~84%).
+- **Suggested fix:** add remaining edge-case tests (error paths, empty inputs) to climb above
+  90%; then raise `--cov-fail-under` to match.
 
 ### R2 — Full consolidation of the `run.py` interactive menu into the package
 - **Status:** the subprocess shell-out to the console script was removed (calls package
@@ -160,11 +168,10 @@ What remains below are the residual / aspirational follow-ups not fully closed.
 - **Suggested fix:** extract the remaining duplicated config/client/path wiring into the
   `symposium.cli` / `symposium.*` public surface and have the menu methods delegate to it.
 
-### R3 — Real-API tests opt-in marker
-- **Status:** real-API tests skip cleanly when keys are absent; they still run (and cost LLM
-  calls) when keys are present.
-- **Suggested fix:** gate `TestRealAPIWorkflows` / `TestRealAPIIntegration` behind an explicit
-  marker (e.g. `-m real_api`) so routine runs never spend unexpectedly.
+### R3 — Real-API tests opt-in marker — DONE
+- **Status:** live-LLM tests are now gated behind the `real_api` pytest marker (registered in
+  `pyproject.toml`), so routine runs never spend unexpectedly; run them via `-m real_api`
+  (still requiring API keys). Moved to Completed.
 
 ---
 

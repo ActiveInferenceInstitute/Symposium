@@ -10,21 +10,21 @@ def setup_logging(
     name: Optional[str] = None,
     level: str = "INFO",
     log_file: Optional[Path] = None,
-    format_string: Optional[str] = None
+    format_string: Optional[str] = None,
 ) -> logging.Logger:
     """Set up logging configuration.
-    
+
     Args:
         name: Logger name (if None, returns root logger)
         level: Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
         log_file: Optional file path to write logs
         format_string: Custom format string for log messages
-        
+
     Returns:
         Configured logger instance
     """
     if format_string is None:
-        format_string = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        format_string = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
     # Create logger
     logger = logging.getLogger(name)
@@ -55,12 +55,11 @@ def setup_logging(
 
 def get_logger(name: str) -> logging.Logger:
     """Get a logger instance by name.
-    
+
     Args:
         name: Logger name
-        
+
     Returns:
         Logger instance
     """
     return logging.getLogger(name)
-

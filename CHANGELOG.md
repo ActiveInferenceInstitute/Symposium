@@ -2,6 +2,27 @@
 
 All notable changes to the Symposium package.
 
+## [Unreleased]
+
+### Tooling & code quality
+- **Ruff-only tooling cleanup:** removed `black` (dev dependency + `[tool.black]`) in favor of
+  `ruff format` per project convention. Whole `src/` and `tests/` reformatted and lint-clean
+  (0 `ruff check` errors).
+- **Dead code removed:** unused `n_comp_participants_viz` / `pca_viz` and stale
+  `sklearn.decomposition.PCA` imports in `cli/visualize.py`; unused `top_scores` and dead
+  `text` assignment in `distributions.py` / `pca_analysis.py`; renamed ambiguous loop vars
+  `l` → `lab` and local graph `G` → `g` (E741/N806/W/F841 lint).
+- Repaired a duplicated `label=` expression in `embeddings.py` `_plot_2d` (kept legend-dedup
+  behaviour).
+
+### Tests & coverage (~84% → ~86%)
+- **Real-API opt-in marker:** live-LLM tests (`TestRealAPIIntegration`, `TestRealAPIWorkflows`,
+  `TestAPIIntegration`) are now gated behind the `real_api` pytest marker (registered in
+  `pyproject.toml`) — opt in via `-m real_api`; they still require API keys.
+- Added tests for `io/readers` (JSON/CSV/markdown/template/prompt + directory listing),
+  `cli/analyze` (backgrounds & curricula handlers), and `core/config` (nested `set`, `save`
+  API-key redaction, `ensure_paths`, `get_path` errors).
+
 ## [2.1.0] — 2026-08-01
 
 Comprehensive hostile red-team review, correctness/robustness fixes, and a test

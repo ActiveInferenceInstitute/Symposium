@@ -1,9 +1,9 @@
 """Tests for project generation module."""
 
+from unittest.mock import patch
+
 import pytest
-from pathlib import Path
-from unittest.mock import Mock, patch
-import pandas as pd
+
 from symposium.generation.projects import ProjectGenerator
 
 
@@ -51,10 +51,7 @@ class TestProjectGenerator:
         catechism_template = "# Template\n\n1. Question 1?"
 
         prompt = generator.generate_project_prompt(
-            participant_name,
-            participant_profile,
-            domain_context,
-            catechism_template
+            participant_name, participant_profile, domain_context, catechism_template
         )
 
         assert participant_name in prompt
@@ -66,11 +63,7 @@ class TestProjectGenerator:
         """Test project prompt generation with collaborators."""
         collaborators = "Researcher A, Researcher B"
         prompt = generator.generate_project_prompt(
-            "Test Participant",
-            "AI researcher",
-            "AI domain",
-            "# Template",
-            collaborators
+            "Test Participant", "AI researcher", "AI domain", "# Template", collaborators
         )
 
         assert "Researcher A" in prompt
@@ -86,13 +79,13 @@ class TestProjectGenerator:
 
         expected_response = "Generated project proposal"
 
-        with patch.object(generator.api_client, 'get_response', return_value=expected_response):
+        with patch.object(generator.api_client, "get_response", return_value=expected_response):
             result = generator.generate_project_proposal(
                 "Test Participant",
                 "AI researcher profile",
                 "Active Inference domain",
                 catechism_type="KarmaGAP",
-                catechisms_dir=catechism_dir
+                catechisms_dir=catechism_dir,
             )
 
         assert result == expected_response
@@ -107,7 +100,9 @@ class TestProjectGenerator:
         profile_dir = profiles_dir / "Test_Participant"
         profile_dir.mkdir()
         profile_json = profile_dir / "Test_Participant_research_profile.json"
-        profile_json.write_text('{"content": "Test profile content", "metadata": {"presenter": "Test Participant"}}')
+        profile_json.write_text(
+            '{"content": "Test profile content", "metadata": {"presenter": "Test Participant"}}'
+        )
 
         # Setup catechism
         catechism_dir = temp_dir / "catechisms"
@@ -120,17 +115,16 @@ class TestProjectGenerator:
 
         expected_response = "Project proposal for test participant"
 
-        with patch.object(generator.api_client, 'get_response', return_value=expected_response):
-            with patch('symposium.io.writers.ReportWriter.save_project_proposal') as mock_save:
+        with patch.object(generator.api_client, "get_response", return_value=expected_response):
+            with patch("symposium.io.writers.ReportWriter.save_project_proposal") as mock_save:
                 results = generator.generate_all_projects(
                     profiles_dir,
                     temp_dir / "outputs",
                     domain_file,
                     catechism_type="KarmaGAP",
-                    catechisms_dir=catechism_dir
+                    catechisms_dir=catechism_dir,
                 )
 
         assert "Test_Participant" in results
         assert results["Test_Participant"] == expected_response
         mock_save.assert_called_once()
-

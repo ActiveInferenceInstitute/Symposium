@@ -1,11 +1,10 @@
 """Participant profiling and analysis module."""
 
 import logging
-import sys
 import time
 from pathlib import Path
-from typing import Dict, Any, Optional
-import pandas as pd
+from typing import Any, Dict, Optional
+
 from symposium.core.api import BaseAPIProvider, PaymentRequiredError
 from symposium.core.data_loader import DataLoader
 
@@ -46,12 +45,12 @@ class ParticipantAnalyzer:
         Returns:
             Generated prompt string
         """
-        name = participant_data.get('name', 'Unknown')
-        affiliations = participant_data.get('affiliations', '')
-        background = participant_data.get('background', '')
-        orcid = participant_data.get('orcid', '')
+        name = participant_data.get("name", "Unknown")
+        affiliations = participant_data.get("affiliations", "")
+        background = participant_data.get("background", "")
+        orcid = participant_data.get("orcid", "")
 
-        prompt = f"""Conduct DEEP COMPREHENSIVE WEB RESEARCH on the following Active Inference Symposium participant. 
+        prompt = f"""Conduct DEEP COMPREHENSIVE WEB RESEARCH on the following Active Inference Symposium participant.
 
 **RESEARCH SUBJECT:**
 - **Name:** {name}
@@ -142,13 +141,13 @@ GOAL: Create the most comprehensive, well-sourced research profile possible usin
         Returns:
             Generated prompt string
         """
-        name = participant_data.get('name', 'Unknown')
-        background = participant_data.get('background', '')
-        learning_needs = participant_data.get('learning_needs', '')
-        active_inference_application = participant_data.get('active_inference_application', '')
-        challenges = participant_data.get('challenges', '')
-        pragmatic_value = participant_data.get('pragmatic_value', '')
-        epistemic_value = participant_data.get('epistemic_value', '')
+        name = participant_data.get("name", "Unknown")
+        background = participant_data.get("background", "")
+        learning_needs = participant_data.get("learning_needs", "")
+        active_inference_application = participant_data.get("active_inference_application", "")
+        challenges = participant_data.get("challenges", "")
+        pragmatic_value = participant_data.get("pragmatic_value", "")
+        epistemic_value = participant_data.get("epistemic_value", "")
 
         prompt = f"""Create a personalized learning curriculum for Active Inference for the following participant:
 
@@ -238,9 +237,7 @@ Tailor this curriculum specifically to their background, interests, and stated l
         return prompt
 
     def research_participant_background(
-        self,
-        participant_data: Dict[str, Any],
-        system_prompt: Optional[str] = None
+        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
     ) -> str:
         """Research a participant's background using internet search.
 
@@ -272,22 +269,20 @@ Tailor this curriculum specifically to their background, interests, and stated l
             )
 
         prompt = self.generate_background_research_prompt(participant_data)
-        
+
         # Use Perplexity's web search capabilities to maximum extent
         # Increase max_tokens to allow for comprehensive research with citations
         response = self.api_client.get_response(
-            prompt, 
+            prompt,
             system_prompt,
-            max_tokens=4000  # Allow longer responses for comprehensive research with links
+            max_tokens=4000,  # Allow longer responses for comprehensive research with links
         )
         logger.info(f"Generated background research for {participant_data.get('name', 'Unknown')}")
 
         return response
 
     def generate_personalized_curriculum(
-        self,
-        participant_data: Dict[str, Any],
-        system_prompt: Optional[str] = None
+        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
     ) -> str:
         """Generate a personalized Active Inference curriculum.
 
@@ -312,9 +307,7 @@ Tailor this curriculum specifically to their background, interests, and stated l
         return response
 
     def analyze_participant_profile(
-        self,
-        participant_data: Dict[str, Any],
-        system_prompt: Optional[str] = None
+        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
     ) -> str:
         """Analyze a participant's profile for symposium participation.
 
@@ -332,14 +325,14 @@ Tailor this curriculum specifically to their background, interests, and stated l
                 "their current position and develop actionable learning plans."
             )
 
-        name = participant_data.get('name', 'Unknown')
-        background = participant_data.get('background', '')
-        pragmatic_value = participant_data.get('pragmatic_value', '')
-        epistemic_value = participant_data.get('epistemic_value', '')
-        active_inference_application = participant_data.get('active_inference_application', '')
-        learning_needs = participant_data.get('learning_needs', '')
-        challenges = participant_data.get('challenges', '')
-        future_impact = participant_data.get('future_impact', '')
+        name = participant_data.get("name", "Unknown")
+        background = participant_data.get("background", "")
+        pragmatic_value = participant_data.get("pragmatic_value", "")
+        epistemic_value = participant_data.get("epistemic_value", "")
+        active_inference_application = participant_data.get("active_inference_application", "")
+        learning_needs = participant_data.get("learning_needs", "")
+        challenges = participant_data.get("challenges", "")
+        future_impact = participant_data.get("future_impact", "")
 
         prompt = f"""Please analyze the profile for symposium participant: {name}
 
@@ -411,9 +404,7 @@ Please provide a comprehensive profile analysis including:
         return prompt
 
     def analyze_participant(
-        self,
-        participant_data: Dict[str, Any],
-        system_prompt: Optional[str] = None
+        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
     ) -> str:
         """Analyze a participant's profile.
 
@@ -426,7 +417,9 @@ Please provide a comprehensive profile analysis including:
         """
         prompt = self.analyze_participant_profile(participant_data, system_prompt)
         response = self.api_client.get_response(prompt, system_prompt)
-        logger.info(f"Generated analysis for participant: {participant_data.get('name', 'Unknown')}")
+        logger.info(
+            f"Generated analysis for participant: {participant_data.get('name', 'Unknown')}"
+        )
 
         return response
 
@@ -436,7 +429,7 @@ Please provide a comprehensive profile analysis including:
         output_dir: Path,
         include_background_research: bool = False,
         include_curriculum: bool = False,
-        perplexity_client: Optional[BaseAPIProvider] = None
+        perplexity_client: Optional[BaseAPIProvider] = None,
     ) -> Dict[str, Dict[str, str]]:
         """Analyze all participants from CSV data.
 
@@ -457,36 +450,39 @@ Please provide a comprehensive profile analysis including:
         results = {}
         total_participants = len(participants)
         start_time = time.time()
-        
+
         logger.info(f"Starting analysis for {total_participants} participants")
         logger.debug(f"Output directory: {output_dir}")
 
         for idx, (participant_name, participant_data) in enumerate(participants.items(), 1):
             try:
                 participant_start = time.time()
-                logger.info(f"[{idx}/{total_participants}] Processing participant: {participant_name}")
+                logger.info(
+                    f"[{idx}/{total_participants}] Processing participant: {participant_name}"
+                )
                 participant_results = {}
 
                 # Generate profile analysis
                 analysis_start = time.time()
                 profile_analysis = self.analyze_participant(participant_data)
                 analysis_time = time.time() - analysis_start
-                participant_results['profile_analysis'] = profile_analysis
-                logger.info(f"✅ Profile analysis completed for {participant_name} ({analysis_time:.1f}s)")
+                participant_results["profile_analysis"] = profile_analysis
+                logger.info(
+                    f"✅ Profile analysis completed for {participant_name} ({analysis_time:.1f}s)"
+                )
 
                 # Save profile analysis
                 ReportWriter.save_participant_report(
-                    participant_name,
-                    profile_analysis,
-                    output_dir,
-                    "profile_analysis"
+                    participant_name, profile_analysis, output_dir, "profile_analysis"
                 )
 
                 # Generate background research if requested (ALWAYS use Perplexity)
                 if include_background_research:
                     research_start = time.time()
                     if perplexity_client:
-                        logger.debug(f"🔍 Using Perplexity Sonar for background research: {participant_name}")
+                        logger.debug(
+                            f"🔍 Using Perplexity Sonar for background research: {participant_name}"
+                        )
                         # Temporarily use Perplexity client for this operation, and
                         # ALWAYS restore the original client even if research fails,
                         # so a later exception can't leak the swapped client downstream.
@@ -494,23 +490,26 @@ Please provide a comprehensive profile analysis including:
                         self.api_client = perplexity_client
                         try:
                             background = self.research_participant_background(participant_data)
-                            participant_results['background_research'] = background
+                            participant_results["background_research"] = background
                         finally:
                             self.api_client = original_client
                         research_time = time.time() - research_start
-                        logger.info(f"✅ Background research completed for {participant_name} ({research_time:.1f}s)")
+                        logger.info(
+                            f"✅ Background research completed for {participant_name} ({research_time:.1f}s)"
+                        )
                     else:
-                        logger.warning(f"Perplexity client not provided for background research: {participant_name}")
+                        logger.warning(
+                            f"Perplexity client not provided for background research: {participant_name}"
+                        )
                         background = self.research_participant_background(participant_data)
-                        participant_results['background_research'] = background
+                        participant_results["background_research"] = background
                         research_time = time.time() - research_start
-                        logger.info(f"✅ Background research completed for {participant_name} ({research_time:.1f}s)")
+                        logger.info(
+                            f"✅ Background research completed for {participant_name} ({research_time:.1f}s)"
+                        )
 
                     ReportWriter.save_participant_report(
-                        participant_name,
-                        background,
-                        output_dir,
-                        "background_research"
+                        participant_name, background, output_dir, "background_research"
                     )
 
                 # Generate curriculum if requested (uses primary OpenRouter client)
@@ -519,14 +518,13 @@ Please provide a comprehensive profile analysis including:
                     logger.debug(f"🤖 Using OpenRouter Claude for curriculum: {participant_name}")
                     curriculum = self.generate_personalized_curriculum(participant_data)
                     curriculum_time = time.time() - curriculum_start
-                    participant_results['curriculum'] = curriculum
-                    logger.info(f"✅ Curriculum completed for {participant_name} ({curriculum_time:.1f}s)")
+                    participant_results["curriculum"] = curriculum
+                    logger.info(
+                        f"✅ Curriculum completed for {participant_name} ({curriculum_time:.1f}s)"
+                    )
 
                     ReportWriter.save_participant_report(
-                        participant_name,
-                        curriculum,
-                        output_dir,
-                        "curriculum"
+                        participant_name, curriculum, output_dir, "curriculum"
                     )
 
                 results[participant_name] = participant_results
@@ -550,19 +548,19 @@ Please provide a comprehensive profile analysis including:
             except Exception as e:
                 # Other errors allow graceful degradation - continue with next participant
                 logger.error(f"Error processing participant {participant_name}: {e}", exc_info=True)
-                results[participant_name] = {'error': str(e)}
+                results[participant_name] = {"error": str(e)}
                 continue
 
         total_time = time.time() - start_time
-        successful = len([r for r in results.values() if 'error' not in r])
+        successful = len([r for r in results.values() if "error" not in r])
         avg_time = (total_time / total_participants) if total_participants > 0 else 0.0
-        logger.info(f"Completed processing: {successful}/{total_participants} successful in {total_time:.1f}s (avg: {avg_time:.1f}s per participant)")
+        logger.info(
+            f"Completed processing: {successful}/{total_participants} successful in {total_time:.1f}s (avg: {avg_time:.1f}s per participant)"
+        )
         return results
 
     def generate_column_summaries(
-        self,
-        csv_path: Path,
-        output_dir: Path
+        self, csv_path: Path, output_dir: Path
     ) -> Dict[str, Dict[str, Any]]:
         """Generate word clouds and summaries for each CSV column.
 
@@ -581,9 +579,14 @@ Please provide a comprehensive profile analysis including:
 
         # Define columns to analyze (excluding personal info)
         analysis_columns = [
-            'background', 'pragmatic_value', 'epistemic_value',
-            'active_inference_application', 'challenges', 'learning_needs',
-            'future_impact', 'comments'
+            "background",
+            "pragmatic_value",
+            "epistemic_value",
+            "active_inference_application",
+            "challenges",
+            "learning_needs",
+            "future_impact",
+            "comments",
         ]
 
         for column in analysis_columns:
@@ -595,27 +598,25 @@ Please provide a comprehensive profile analysis including:
                 column_summaries[column] = summary_stats
 
                 # Generate LLM summary if there are responses
-                if summary_stats['responses_count'] > 0:
+                if summary_stats["responses_count"] > 0:
                     system_prompt = (
                         "You are a research analyst specializing in Active Inference community analysis. "
                         "Provide comprehensive, insightful summaries of participant responses. "
                         "Identify patterns, themes, and implications for the Active Inference field."
                     )
 
-                    summary_prompt = self._generate_column_summary_prompt(
-                        column, summary_stats
-                    )
+                    summary_prompt = self._generate_column_summary_prompt(column, summary_stats)
 
                     llm_summary = self.api_client.get_response(summary_prompt, system_prompt)
 
                     # Save LLM summary
-                    summary_content = f"""# {column.replace('_', ' ').title()} Analysis
+                    summary_content = f"""# {column.replace("_", " ").title()} Analysis
 
 ## Summary Statistics
-- **Total Participants:** {summary_stats['total_participants']}
-- **Response Rate:** {summary_stats['response_rate']:.1%} ({summary_stats['responses_count']} responses)
-- **Unique Responses:** {summary_stats['unique_responses']}
-- **Average Response Length:** {summary_stats['avg_response_length']:.1f} characters
+- **Total Participants:** {summary_stats["total_participants"]}
+- **Response Rate:** {summary_stats["response_rate"]:.1%} ({summary_stats["responses_count"]} responses)
+- **Unique Responses:** {summary_stats["unique_responses"]}
+- **Average Response Length:** {summary_stats["avg_response_length"]:.1f} characters
 
 ## Key Themes and Patterns
 
@@ -625,33 +626,29 @@ Please provide a comprehensive profile analysis including:
                     ReportWriter.save_markdown_report(
                         summary_content,
                         output_dir / f"column_summary_{column}.md",
-                        f"Column Summary: {column.replace('_', ' ').title()}"
+                        f"Column Summary: {column.replace('_', ' ').title()}",
                     )
 
                     # Generate word cloud if there are enough responses
-                    if summary_stats['responses_count'] >= 3:
+                    if summary_stats["responses_count"] >= 3:
                         visualizer = TextVisualizer()
-                        values_text = ' '.join(summary_stats['values'])
+                        values_text = " ".join(summary_stats["values"])
 
                         wordcloud_path = output_dir / f"wordcloud_{column}.png"
                         visualizer.create_word_cloud(
                             [values_text],
                             f"{column.replace('_', ' ').title()} Word Cloud",
-                            wordcloud_path
+                            wordcloud_path,
                         )
 
             except Exception as e:
                 logger.error(f"Error generating summary for column '{column}': {e}")
-                column_summaries[column] = {'error': str(e)}
+                column_summaries[column] = {"error": str(e)}
 
         logger.info(f"Generated summaries for {len(column_summaries)} columns")
         return column_summaries
 
-    def _generate_column_summary_prompt(
-        self,
-        column: str,
-        summary_stats: Dict[str, Any]
-    ) -> str:
+    def _generate_column_summary_prompt(self, column: str, summary_stats: Dict[str, Any]) -> str:
         """Generate prompt for column summary analysis.
 
         Args:
@@ -661,18 +658,18 @@ Please provide a comprehensive profile analysis including:
         Returns:
             Generated prompt string
         """
-        column_display = column.replace('_', ' ').title()
-        responses = summary_stats['values'][:20]  # Limit to first 20 for prompt
+        column_display = column.replace("_", " ").title()
+        responses = summary_stats["values"][:20]  # Limit to first 20 for prompt
 
         prompt = f"""Analyze the following responses to the question about "{column_display}" from Active Inference Symposium participants:
 
 **Responses:**
-{' | '.join(responses)}
+{" | ".join(responses)}
 
 **Analysis Context:**
-- {summary_stats['responses_count']} participants provided responses
-- {summary_stats['unique_responses']} unique responses
-- Average response length: {summary_stats['avg_response_length']:.1f} characters
+- {summary_stats["responses_count"]} participants provided responses
+- {summary_stats["unique_responses"]} unique responses
+- Average response length: {summary_stats["avg_response_length"]:.1f} characters
 
 Please provide a comprehensive analysis including:
 
@@ -707,4 +704,3 @@ Please provide a comprehensive analysis including:
    - Methodological implications"""
 
         return prompt
-

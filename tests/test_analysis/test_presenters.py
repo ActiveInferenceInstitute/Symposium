@@ -1,9 +1,10 @@
 """Tests for presenter analysis module."""
 
-import pytest
-from pathlib import Path
-from unittest.mock import Mock, patch
+from unittest.mock import patch
+
 import pandas as pd
+import pytest
+
 from symposium.analysis.presenters import PresenterAnalyzer
 
 
@@ -43,7 +44,7 @@ class TestPresenterAnalyzer:
         """Test presenter analysis."""
         expected_response = "This is a mock analysis of the presenter's research."
 
-        with patch.object(analyzer.api_client, 'get_response', return_value=expected_response):
+        with patch.object(analyzer.api_client, "get_response", return_value=expected_response):
             result = analyzer.analyze_presenter(sample_presenter_data)
 
         assert result == expected_response
@@ -52,11 +53,10 @@ class TestPresenterAnalyzer:
         """Test presenter analysis with custom system prompt."""
         expected_response = "Custom system prompt analysis"
 
-        with patch.object(analyzer.api_client, 'get_response', return_value=expected_response) as mock_get_response:
-            result = analyzer.analyze_presenter(
-                sample_presenter_data,
-                system_prompt="Custom system prompt"
-            )
+        with patch.object(
+            analyzer.api_client, "get_response", return_value=expected_response
+        ) as mock_get_response:
+            analyzer.analyze_presenter(sample_presenter_data, system_prompt="Custom system prompt")
 
         # Verify system prompt was passed to API
         mock_get_response.assert_called_once()
@@ -71,25 +71,25 @@ class TestPresenterAnalyzer:
         presenter_dir.mkdir()
 
         # Create mock CSV files
-        topics_df = pd.DataFrame({'topic': ['AI', 'ML'], 'count': [10, 5]})
+        topics_df = pd.DataFrame({"topic": ["AI", "ML"], "count": [10, 5]})
         topics_df.to_csv(presenter_dir / "openalex-group-by-test.csv", index=False)
 
-        works_df = pd.DataFrame({
-            'title': ['Paper 1', 'Paper 2'],
-            'publication_year': [2023, 2022],
-            'cited_by_count': [50, 30]
-        })
+        works_df = pd.DataFrame(
+            {
+                "title": ["Paper 1", "Paper 2"],
+                "publication_year": [2023, 2022],
+                "cited_by_count": [50, 30],
+            }
+        )
         works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
         # Mock API response
         expected_response = f"Analysis for {sample_presenter_data['name']}"
 
-        with patch.object(analyzer.api_client, 'get_response', return_value=expected_response):
-            with patch('symposium.io.writers.ReportWriter.save_presenter_report') as mock_save:
+        with patch.object(analyzer.api_client, "get_response", return_value=expected_response):
+            with patch("symposium.io.writers.ReportWriter.save_presenter_report") as mock_save:
                 results = analyzer.analyze_all_presenters(
-                    temp_dir,
-                    temp_dir / "outputs",
-                    max_rows=5
+                    temp_dir, temp_dir / "outputs", max_rows=5
                 )
 
         assert "Test_Presenter" in results
@@ -106,15 +106,14 @@ class TestPresenterAnalyzer:
         presenter_dir = temp_dir / "Test_Presenter"
         presenter_dir.mkdir()
 
-        topics_df = pd.DataFrame({'topic': ['AI'], 'count': [5]})
+        topics_df = pd.DataFrame({"topic": ["AI"], "count": [5]})
         topics_df.to_csv(presenter_dir / "openalex-group-by-test.csv", index=False)
-        works_df = pd.DataFrame({'title': ['Paper 1'], 'publication_year': [2023]})
+        works_df = pd.DataFrame({"title": ["Paper 1"], "publication_year": [2023]})
         works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
         # Mock API to raise exception
-        with patch.object(analyzer.api_client, 'get_response', side_effect=Exception("API Error")):
+        with patch.object(analyzer.api_client, "get_response", side_effect=Exception("API Error")):
             results = analyzer.analyze_all_presenters(temp_dir, temp_dir / "outputs")
 
         # Should continue processing despite errors
         assert results == {}
-
