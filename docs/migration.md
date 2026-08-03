@@ -94,7 +94,7 @@ For advanced configuration, create `config.json`:
   "api": {
     "provider": "perplexity",
     "perplexity": {
-      "model": "llama-3.1-sonar-large-128k-online",
+      "model": "sonar",
       "temperature": 0.7,
       "max_tokens": 2000
     }
@@ -115,7 +115,7 @@ Your data will be automatically reorganized:
 | `inputs/AIF/` | `data/inputs/aif_2024/` | ✅ Automatic |
 | `Catechism/` | `data/catechisms/` | ✅ Automatic |
 | `prompts/` | `data/prompts/` | ✅ Automatic |
-| `ISM_Stream/Domain/` | `data/domains/` | ✅ Automatic |
+| `ISM_Stream/Domain/` | `data/domains/` | Manual — the directory is user-provided; copy your domain files there |
 
 ### 6. Update Scripts and Workflows
 

@@ -128,16 +128,16 @@ if include_background:
     perplexity_client = APIClient.create('perplexity')
     print("   🔍 Using Perplexity Sonar for background research")
 
-# In participants.py
+# In participants.py (analyze_all_participants)
 if include_background_research and perplexity_client:
     logger.info(f"🔍 Using Perplexity Sonar for background research: {name}")
     original_client = self.api_client
     self.api_client = perplexity_client
-    
-    background = self.research_participant_background(participant_data)
-    participant_results['background_research'] = background
-    
-    self.api_client = original_client
+    try:
+        background = self.research_participant_background(participant_data)
+        participant_results['background_research'] = background
+    finally:
+        self.api_client = original_client  # restore even on failure
 ```
 
 ### API Client Separation
@@ -186,35 +186,42 @@ Tests verify:
 ### Test Example
 
 ```python
+from unittest.mock import Mock
+
+from symposium.analysis.participants import ParticipantAnalyzer
+
+
 def test_analyze_all_participants_with_perplexity(
-    mock_save, mock_api_client, sample_participant_csv, tmp_path
+    mock_api_client, sample_participant_csv_file, temp_dir
 ):
+    analyzer = ParticipantAnalyzer(mock_api_client)
+
     # Create mock Perplexity with enhanced research
     mock_perplexity = Mock()
     mock_perplexity.get_response.return_value = """
     ## Academic Background
     - PhD from Test University [link](https://test.edu/profile)
     - Google Scholar: [link](https://scholar.google.com/test)
-    
+
     ## References
     [1] https://test.edu/profile
     [2] https://scholar.google.com/test
     """
-    
+
     results = analyzer.analyze_all_participants(
-        sample_participant_csv,
-        output_dir,
+        csv_path=sample_participant_csv_file,
+        output_dir=temp_dir,
         include_background_research=True,
-        perplexity_client=mock_perplexity
+        perplexity_client=mock_perplexity,
     )
-    
+
     # Verify links are present
     for name, result in results.items():
-        assert 'link' in result['background_research'] or 'http' in result['background_research']
-    
-    # Verify max_tokens parameter
+        assert "link" in result["background_research"] or "http" in result["background_research"]
+
+    # Verify max_tokens parameter (background research uses max_tokens=4000)
     for call in mock_perplexity.get_response.call_args_list:
-        assert call[1]['max_tokens'] >= 4000
+        assert call[1]["max_tokens"] >= 4000
 ```
 
 ## Usage Examples

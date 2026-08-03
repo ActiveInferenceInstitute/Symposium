@@ -30,7 +30,7 @@ The Symposium package uses **two separate LLM providers** optimized for differen
 | **Internet Access** | ✅ Yes | ❌ No |
 | **Search Quality** | ⭐⭐⭐⭐⭐ | N/A |
 | **Reasoning** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Context Window** | ~28K tokens | ~200K tokens |
+| **Context Window** | ~128K tokens | ~200K tokens |
 | **Best For** | Background research | Analysis & synthesis |
 | **Speed** | Fast (web-enhanced) | Moderate |
 | **Cost** | $5-10 per 1M tokens | $3-15 per 1M tokens |
@@ -52,7 +52,9 @@ OPENROUTER_MODEL=anthropic/claude-3.5-sonnet
 ### API Settings
 
 ```python
-# Default configuration in pyproject.toml
+# Default configuration in src/symposium/core/config.py (defaults; override via
+# config.json or environment variables)
+
 "api": {
     "perplexity": {
         "model": "sonar",
@@ -63,7 +65,8 @@ OPENROUTER_MODEL=anthropic/claude-3.5-sonnet
         "model": "anthropic/claude-3.5-sonnet",
         "temperature": 0.7,
         "max_tokens": 2000,
-        "max_retries": 5
+        "max_retries": 5,
+        "retry_delay": 10
     }
 }
 ```
@@ -116,7 +119,7 @@ client = APIClient.create('openrouter')
 ```
 User selects: Complete Analysis (Option 2, Choice 4)
 ↓
-Load 47 participants from CSV
+Load 93 participants from CSV
 ↓
 For each participant:
   ├─ [OpenRouter] Generate profile analysis
@@ -147,32 +150,38 @@ INFO - ✅ Curriculum completed for Alexander Sabine
 | Profile Analysis | OpenRouter | 10-15s | 1500-2000 |
 | Curriculum | OpenRouter | 15-20s | 2000-3000 |
 
-### Cost Estimates (47 participants)
+### Cost Estimates (93 participants — illustrative)
+
+Token counts per participant are estimates; provider pricing varies by plan and
+changes over time. Treat these as rough planning figures:
 
 **Complete Analysis:**
-- Perplexity: ~47 × 1000 tokens = 47K tokens = ~$0.25
-- OpenRouter: ~47 × 4000 tokens = 188K tokens = ~$0.60
-- **Total: ~$0.85** per complete run
+- Perplexity: ~93 × 1000 tokens = 93K tokens ≈ $0.09–0.95
+- OpenRouter: ~93 × 4000 tokens = 372K tokens ≈ $1.10–5.60
+- **Total: ~$1.20–6.50** per complete run
 
 **Profile Only:**
-- OpenRouter: ~47 × 1500 tokens = 70.5K tokens = ~$0.25
+- OpenRouter: ~93 × 1500 tokens = 140K tokens
 
 **Background Only:**
-- Perplexity: ~47 × 1000 tokens = 47K tokens = ~$0.25
+- Perplexity: ~93 × 1000 tokens = 93K tokens
+
+Pricing assumptions above follow the per-1M-token ranges in the comparison table;
+check current provider pricing before large runs.
 
 ## Rate Limiting & Retry Logic
 
 ### Perplexity
-- **Rate Limit**: 60 requests/minute (free), 600/minute (paid)
-- **Retry Logic**: Exponential backoff with max 5 retries
-- **Timeout**: 60 seconds per request
+- **Retry Logic**: No automatic retry in the provider — wrap calls yourself (see the
+  [API Guide](api_guide.md) for a `backoff`-based example)
+- **Rate Limit / Timeout**: Varies by plan; see Perplexity's API docs
 
 ### OpenRouter
-- **Rate Limit**: Varies by model (Claude: 60 req/min)
-- **Retry Logic**: Exponential backoff with max 5 retries
-- **Timeout**: 120 seconds per request
+- **Retry Logic**: Built-in exponential backoff (`max_tries=5`, `max_time=300s`,
+  `retry_delay=10` default) that retries rate-limit and timeout errors
+- **Rate Limit / Timeout**: Varies by model; see OpenRouter's API docs
 
-### Implementation
+### Implementation (OpenRouter, in `src/symposium/core/api.py`)
 
 ```python
 @backoff.on_exception(
@@ -327,7 +336,7 @@ except Exception as e:
 
 ### 4. Batch Processing
 
-For 47 participants:
+For 93 participants:
 - Process in serial (one at a time)
 - Save after each participant
 - Resume on failure

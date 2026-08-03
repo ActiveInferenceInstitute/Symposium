@@ -24,8 +24,10 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 # Install development dependencies
 uv pip install -e ".[dev]"
 
-# Setup pre-commit hooks (optional)
-pre-commit install
+# Run the project's lint/format/test checks (also enforced by CI)
+ruff check src/ tests/
+ruff format --check src/ tests/
+pytest
 ```
 
 ## Code Standards
@@ -42,7 +44,7 @@ pre-commit install
 
 ```bash
 # Format code
-black src/ tests/
+ruff format src/ tests/
 
 # Check linting
 ruff check src/ tests/
@@ -50,6 +52,13 @@ ruff check src/ tests/
 # Type checking
 mypy src/
 ```
+
+### CI Checks
+
+The repository's GitHub Actions workflow (`.github/workflows/ci.yml`) runs
+`ruff check`, `ruff format --check`, and the pytest suite (with the coverage gate) on
+every push to `main` and on pull requests. Ensure all three pass locally before
+submitting a PR.
 
 ### Documentation
 
@@ -77,8 +86,10 @@ pytest --cov=src/symposium --cov-report=html
 
 - **Unit Tests**: All functions have corresponding tests
 - **Integration Tests**: End-to-end workflow validation
-- **Coverage**: > 90% overall, > 95% critical paths
-- **Real API Tests**: Optional, skip if API keys not available
+- **Coverage**: Regression gate at 80% (`--cov-fail-under=80`); the project goal is
+  > 90% overall, > 95% critical paths
+- **Real API Tests**: Optional and opt-in (`pytest -m real_api`); skip if API keys
+  not available
 
 ### Writing Tests
 
