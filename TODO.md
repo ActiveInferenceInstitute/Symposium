@@ -2,7 +2,7 @@
 
 **Status:** Ongoing
 **Owner:** Active Inference Institute
-**Last reviewed:** 2026-08-01
+**Last reviewed:** 2026-08-02
 
 This is the authoritative project backlog for the Symposium package. It is updated by
 hostile red-team review passes: every validated Minor/Medium finding is implemented in a
@@ -172,6 +172,105 @@ What remains below are the residual / aspirational follow-ups not fully closed.
 - **Status:** live-LLM tests are now gated behind the `real_api` pytest marker (registered in
   `pyproject.toml`), so routine runs never spend unexpectedly; run them via `-m real_api`
   (still requiring API keys). Moved to Completed.
+
+---
+
+## Docs-deep pass — 2026-08-02
+
+Documentation-focused review pass. Severity definitions: **Minor** = typo, broken link,
+stale tooling reference, formatting; **Medium** = stale section rewrite, doc restructure,
+added missing guide; **Major** = large doc-system overhaul / cross-cutting refactors.
+Findings were verified against the code before editing (see `REVIEW_LOG_2026-08-02.md`).
+All items below were implemented in this pass (commits `669643f`, `98ae63d`, `a6d171e`,
+`82ea73a`).
+
+### Minor
+- [x] **M-01 `black` references in docs** — README.md (tooling bullet + Development
+  section), docs/installation.md, docs/development.md, docs/contributing.md still
+  documented `black`; black was removed in the ruff-only tooling pass. Replaced with
+  `ruff format` / `ruff format --check`. ✓ `a6d171e`
+- [x] **M-02 README "outputs/ (gitignored)" claim** — `outputs/` is tracked in git
+  (532 files incl. `outputs/2025_symposium/people/` reports). Structure block now says
+  "example outputs tracked". ✓ `98ae63d`
+- [x] **M-03 README project-structure block** — now lists `data/catechisms/`,
+  `data/templates/`, marks `data/domains/` as user-provided, and shows `run.py` /
+  `launch.py` / `setup.py` / `symposium.sh`. ✓ `98ae63d`
+- [x] **M-04 README coverage claim** — ">80%" → ~86% with the `--cov-fail-under=80`
+  gate; `real_api` opt-in marker documented in Development/Running Tests. ✓ `98ae63d`
+- [x] **M-05 README "auto-install" claim** — corrected: `symposium.sh` performs the uv
+  install; `python run.py` runs the interface directly. ✓ `98ae63d`
+- [x] **M-06 README citation year** — bibtex `year = 2024` → 2025 (matches LICENSE
+  copyright and the 2025-symposium edition); added `CITATION.cff`. ✓ `98ae63d`
+- [x] **M-07 data/README.md stale bits** — `data/participants_2024.csv` (nonexistent)
+  example fixed, stale `llama-3.1-sonar-large-128k-online` → `sonar`, `templates/`
+  added to structure, `domains/` marked user-provided. ✓ `a6d171e`
+- [x] **M-08 API_USAGE.md participant count** — "Load 47 participants" → 93 (current
+  CSV has 93 shareable rows; verified); cost estimates recomputed and labelled
+  illustrative. ✓ `a6d171e`
+- [x] **M-09 API_USAGE.md config source** — corrected "in pyproject.toml" →
+  `src/symposium/core/config.py`; added `retry_delay` default. ✓ `a6d171e`
+- [x] **M-10 PERPLEXITY_RESEARCH.md fixture names** — snippet now uses real conftest
+  fixtures (`mock_api_client`, `sample_participant_csv_file`, `temp_dir`) and is a
+  self-contained example. ✓ `a6d171e`
+- [x] **M-11 AGENTS.md header** — "Last Updated: 2026-08-02 / Version 2.1"; coverage
+  goals annotated with the actual gate. ✓ `98ae63d`
+- [x] **M-12 README Tests badge** — was pointing at a nonexistent workflow; CI added
+  (G-03), badge now matches `.github/workflows/ci.yml` (workflow `Tests`). ✓ `82ea73a`
+
+### Medium
+- [x] **D-01 Stale model names across docs** — `llama-3.1-sonar-large-128k-online` /
+  `google/gemini-pro-1.5-exp` replaced with `sonar` / `anthropic/claude-3.5-sonnet`
+  (core/api.py defaults) in api_guide.md, user_guide.md, migration.md, data/README.md,
+  and the tests/conftest.py sample-config fixture. ✓ `a6d171e`
+- [x] **D-02 user_guide.md `--registration-file`** — nonexistent flag replaced with
+  `--csv-file`; examples point at the real participant CSV; `--domain-file` removed
+  from `analyze participants` examples (not a flag on that subcommand). ✓ `a6d171e`
+- [x] **D-03 csv_visualization_guide.md rewrite** — removed the nonexistent CLI
+  (`visualize wordclouds --input-csv`, `--input-csv` on embeddings/all) and the
+  fictitious "Choose input type: CSV" prompt. Rewritten against real behavior:
+  per-column word clouds via `run.py` option 3 (`wordcloud_<column>.png` +
+  `column_summary_*.md`), plots via `symposium visualize … --input-dir` (Markdown) /
+  `run.py` option 6; every command and output filename verified against the code. ✓ `82ea73a`
+- [x] **D-04 docs/ naming convention split** — 4 UPPERCASE filenames renamed to
+  lowercase (`git mv`), all links updated. ✓ `669643f`
+- [x] **D-05 Missing docs index + cross-links** — added `docs/README.md`; README
+  "Documentation" section now lists all guides (installation, user guide, API guide,
+  API usage, CSV visualization, Perplexity research, architecture, development,
+  migration, UV setup, agents). ✓ `669643f` + `98ae63d`
+- [x] **D-06 CI claims vs reality** — added `.github/workflows/ci.yml`; development.md
+  CI section rewritten to describe the actual workflow; contributing.md CI-checks
+  section added; UV_SETUP.md CI example synced. ✓ `82ea73a` + `a6d171e`
+- [x] **D-07 api_guide.md `tenacity` example** — replaced with a `backoff`-based retry
+  snippet (backoff is the package's actual retry dependency). ✓ `a6d171e`
+- [x] **D-08 api_guide.md custom-provider wording** — "Register in APIClient.create()"
+  corrected to the actual extension path (instantiate the subclass directly).
+  ✓ `a6d171e`
+- [x] **D-09 Add `data/domains/README.md`** — documents that domain files are
+  user-provided, how `--domain-file` consumes them, and how to create one;
+  `config.example.json` gained `domains_dir`. ✓ `a6d171e`
+
+### Major
+- [x] **G-01 Docs-corpus accuracy overhaul** — aggregated Minor/Medium fixes applied
+  across all docs/ files + README + data/README.md + module READMEs (cli/README
+  `--csv-file`, PCA_GUIDE.md links) + CHANGELOG; every claim re-verified against code;
+  automated relative-link check now passes with 0 broken links. ✓ all four commits
+- [x] **G-02 CSV-visualization guide restructure** — the largest single-doc rewrite
+  (D-03): CLI examples, output inventory, and interactive flow all corrected and
+  verified. ✓ `82ea73a`
+- [x] **G-03 Add GitHub Actions CI** — `.github/workflows/ci.yml` (setup-uv, install
+  `.[dev]`, `ruff check`, `ruff format --check`, `uv run python -m pytest` with the
+  coverage gate). Local baseline verified first: 188 passed, 8 skipped (real_api
+  opt-ins), 86.26% coverage. mypy is intentionally **not** in CI — it is not green in
+  the local env (missing seaborn/sklearn stubs + numpy stub syntax on Python 3.14).
+  ✓ `82ea73a`
+
+### Open / deferred
+- None from this pass. (Pre-existing R1/R2 residuals in the Major section above
+  remain open; R3 is done.)
+- Mypy cleanliness is a pre-existing environment-dependent issue (stub availability);
+  a follow-up could add `mypy src/symposium` to CI once it passes.
+- Heavy suites (Julia/LaTeX) do not apply — this is a Python repo; the full pytest
+  suite was run locally (188 passed / 8 skipped / 86.26%, gate 80%).
 
 ---
 
