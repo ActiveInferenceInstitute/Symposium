@@ -167,10 +167,10 @@ pytest
 
 # Run linting
 ruff check src/ tests/
-black --check src/ tests/
+ruff format --check src/ tests/
 
 # Format code
-black src/ tests/
+ruff format src/ tests/
 
 # Run type checking
 mypy src/symposium --ignore-missing-imports

@@ -184,7 +184,7 @@ pytest --cov=src/symposium --cov-report=term
 ruff check src/ tests/
 
 # Format code
-black src/ tests/
+ruff format src/ tests/
 
 # Type checking
 mypy src/symposium --ignore-missing-imports
@@ -563,15 +563,20 @@ For public APIs, ensure:
 
 ### GitHub Actions
 
-The package uses GitHub Actions for:
+The repository ships a minimal GitHub Actions workflow (`.github/workflows/ci.yml`,
+workflow name `Tests`) that runs on every push to `main` and on pull requests:
 
-- **Tests**: Multi-OS, multi-Python testing with coverage
-- **Linting**: Code quality checks (ruff, black, mypy)
-- **Documentation**: Build and validate docs
+- **Lint**: `ruff check src/ tests/`
+- **Format check**: `ruff format --check src/ tests/`
+- **Tests**: `uv run python -m pytest` (with the `--cov-fail-under=80` gate)
+
+Live-LLM tests are not run in CI — they are opt-in via the `real_api` marker and
+require API keys (see [Running Tests](#running-tests)).
 
 ### Pre-commit Hooks
 
-Install pre-commit for automatic checks:
+The repo does not ship a `.pre-commit-config.yaml`; hooks are optional. If you want
+local checks, install pre-commit and define your own config:
 
 ```bash
 pip install pre-commit
@@ -602,17 +607,17 @@ python -c "import sys; print(sys.path)"
 
 ```bash
 # Run specific failing test
-pytest tests/test_core/test_api.py::TestAPIClient::test_create_provider -v
+pytest tests/test_core/test_api.py::TestAPIClient::test_create_perplexity_provider -v
 
 # Debug with pdb
-pytest --pdb tests/test_core/test_api.py::TestAPIClient::test_create_provider
+pytest --pdb tests/test_core/test_api.py::TestAPIClient::test_create_perplexity_provider
 ```
 
 #### Linting Issues
 
 ```bash
 # Fix formatting
-black src/ tests/
+ruff format src/ tests/
 
 # Fix linting issues
 ruff check src/ tests/ --fix

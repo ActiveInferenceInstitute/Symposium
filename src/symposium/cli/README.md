@@ -84,7 +84,7 @@ symposium analyze participants [OPTIONS]
 
 **Options**:
 - `--data-dir`: Directory containing researcher data
-- `--registration-file`: CSV file with participant data
+- `--csv-file`: CSV file with participant data
 - `--output-dir`: Output directory for reports
 - `--domain-file`: Domain context file
 - `--max-rows`: Maximum rows per CSV file

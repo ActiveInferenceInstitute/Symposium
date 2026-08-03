@@ -69,7 +69,7 @@ def sample_config():
         "api": {
             "provider": "perplexity",
             "perplexity": {
-                "model": "llama-3.1-sonar-large-128k-online",
+                "model": "sonar",
                 "temperature": 0.7,
                 "max_tokens": 2000,
             },

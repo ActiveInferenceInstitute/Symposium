@@ -21,6 +21,7 @@
     "data_dir": "data",
     "inputs_dir": "data/inputs",
     "outputs_dir": "outputs",
-    "catechisms_dir": "data/catechisms"
+    "catechisms_dir": "data/catechisms",
+    "domains_dir": "data/domains"
   }
 }

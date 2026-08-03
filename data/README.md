@@ -10,8 +10,9 @@ data/
 │   ├── aif_2024/    # Historical AIF symposium data
 │   └── aif_2025/    # Current AIF symposium data
 ├── catechisms/      # Catechism templates for proposals
-├── domains/         # Domain knowledge bases
-└── prompts/         # System prompts
+├── domains/         # Domain knowledge bases (user-provided)
+├── prompts/         # System prompts
+└── templates/       # Data structure templates
 ```
 
 ## Configuration
@@ -31,7 +32,7 @@ The package uses a hierarchical configuration system:
      "api": {
        "provider": "perplexity",
        "perplexity": {
-         "model": "llama-3.1-sonar-large-128k-online",
+         "model": "sonar",
          "temperature": 0.7
        }
      }
@@ -52,10 +53,11 @@ mkdir -p data/inputs/aif_2025/PresenterName/
 # Add CSV files: openalex-group-by-*.csv and works-*.csv
 
 # Create participant registration
-cp data/participants_2024.csv data/participants_2025.csv
+cp data/inputs/aif_2025/Public_Participant_Information.csv data/inputs/aif_2026/participants.csv
 # Edit the new CSV file with current participant information
 
-# Add domain context
+# Add domain context (the data/domains/ directory is user-provided)
+mkdir -p data/domains
 echo "# Active Inference 2025 Context" > data/domains/aif_2025.md
 # Add relevant domain knowledge and context
 ```

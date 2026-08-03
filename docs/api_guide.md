@@ -4,7 +4,7 @@
 
 ### Perplexity
 
-**Model**: `llama-3.1-sonar-large-128k-online`
+**Model**: `sonar`
 
 **Features**:
 - Online search capabilities
@@ -18,7 +18,7 @@ from symposium.core.api import APIClient
 client = APIClient.create(
     provider="perplexity",
     api_key="your_key",
-    model="llama-3.1-sonar-large-128k-online",
+    model="sonar",
     temperature=0.7,
     max_tokens=2000
 )
@@ -31,7 +31,7 @@ export PERPLEXITY_API_KEY=your_key_here
 
 ### OpenRouter
 
-**Model**: `google/gemini-pro-1.5-exp`
+**Model**: `anthropic/claude-3.5-sonnet`
 
 **Features**:
 - Access to multiple models
@@ -43,7 +43,7 @@ export PERPLEXITY_API_KEY=your_key_here
 client = APIClient.create(
     provider="openrouter",
     api_key="your_key",
-    model="google/gemini-pro-1.5-exp",
+    model="anthropic/claude-3.5-sonnet",
     temperature=0.7,
     max_tokens=2000,
     max_retries=5,
@@ -67,12 +67,12 @@ Create `config.json`:
   "api": {
     "provider": "perplexity",
     "perplexity": {
-      "model": "llama-3.1-sonar-large-128k-online",
+      "model": "sonar",
       "temperature": 0.7,
       "max_tokens": 2000
     },
     "openrouter": {
-      "model": "google/gemini-pro-1.5-exp",
+      "model": "anthropic/claude-3.5-sonnet",
       "temperature": 0.7,
       "max_tokens": 2000,
       "max_retries": 5
@@ -207,14 +207,18 @@ OpenRouter provider automatically retries on:
 
 **Payment errors (402) are NOT retried** - they are detected immediately and raise `PaymentRequiredError` to stop processing.
 
-Perplexity provider requires manual retry:
+Perplexity provider retries manually — wrap calls with `backoff` (the library the
+package itself uses) or your own loop:
 
 ```python
-from tenacity import retry, stop_after_attempt, wait_exponential
+import backoff
 
-@retry(
-    stop=stop_after_attempt(3),
-    wait=wait_exponential(multiplier=1, min=4, max=10)
+
+@backoff.on_exception(
+    backoff.expo,
+    Exception,
+    max_tries=3,
+    giveup=lambda e: not ("rate" in str(e).lower() or "timeout" in str(e).lower()),
 )
 def get_response_with_retry(client, prompt):
     return client.get_response(prompt)
@@ -362,7 +366,10 @@ class CustomProvider(BaseAPIProvider):
         response = self.custom_api_call(prompt)
         return response
 
-# Register in APIClient.create()
+# Use it directly — APIClient.create() is a factory for the built-in
+# providers (perplexity / openrouter); custom providers are instantiated
+# on their own and passed wherever a provider is expected.
+client = CustomProvider(api_key="your_key")
 ```
 
 ### Streaming Responses

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide provides comprehensive instructions for using the Symposium v2.0 package for research analysis and project generation at the Active Inference Symposium.
+This guide provides comprehensive instructions for using the Symposium v2.x package for research analysis and project generation at the Active Inference Symposium.
 
 ## Installation
 
@@ -55,7 +55,7 @@ Optional `config.json` for advanced settings:
   "api": {
     "provider": "perplexity",
     "perplexity": {
-      "model": "llama-3.1-sonar-large-128k-online",
+      "model": "sonar",
       "temperature": 0.7,
       "max_tokens": 2000
     }
@@ -79,9 +79,12 @@ data/
 │   ├── aif_2024/    # Historical symposium data
 │   └── aif_2025/    # Current symposium data (create this)
 ├── catechisms/      # Proposal templates
-├── domains/         # Domain knowledge files
+├── domains/         # Domain knowledge files (user-provided, see below)
 └── prompts/         # System prompts
 ```
+
+> **Note:** `data/domains/` is not shipped with the repo — create it and add your own
+> domain context files (see [Custom Domain Knowledge](#custom-domain-knowledge)).
 
 ### Input Data Format
 
@@ -145,9 +148,8 @@ symposium analyze presenters \
 
 ```bash
 symposium analyze participants \
-  --registration-file data/participants.csv \
-  --output-dir outputs/profiles/ \
-  --domain-file data/domains/active_inference.md
+  --csv-file data/inputs/aif_2025/Public_Participant_Information.csv \
+  --output-dir outputs/profiles/
 ```
 
 #### Generate Research Profiles
@@ -325,9 +327,8 @@ symposium analyze presenters \
 
 # 2. Analyze all participants
 symposium analyze participants \
-  --registration-file data/participants.csv \
-  --output-dir outputs/participants/ \
-  --domain-file data/domains/active_inference.md
+  --csv-file data/inputs/aif_2025/Public_Participant_Information.csv \
+  --output-dir outputs/participants/
 
 # 3. Generate detailed profiles
 symposium generate profiles \
@@ -416,8 +417,8 @@ echo '{"data": {"max_prompt_tokens": 15000}}' > config.json
 
 1. **Batch Processing**: Process large datasets in chunks
 2. **Token Management**: Use `--max-rows` to limit input size
-3. **Caching**: Results are cached in output directories
-4. **Parallel Processing**: API calls are rate-limited automatically
+3. **Incremental Runs**: Re-analyze only the subset that changed (see Incremental Updates)
+4. **Rate Limits**: OpenRouter retries automatically; leave spacing between manual calls (see below)
 
 ### Rate Limiting
 
@@ -570,7 +571,7 @@ EOF
 
 # 3. Run complete analysis
 symposium analyze presenters --data-dir data/inputs/aif_2025/speakers/ --output-dir outputs/
-symposium analyze participants --registration-file data/participants.csv --output-dir outputs/
+symposium analyze participants --csv-file data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/
 symposium generate profiles --data-dir data/inputs/aif_2025/ --output-dir outputs/ --include-methods
 symposium generate projects --profiles-dir outputs/profiles/ --output-dir outputs/ --domain-file data/domains/active_inference.md --catechism KarmaGAP
 ```
