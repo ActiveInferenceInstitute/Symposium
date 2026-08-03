@@ -10,7 +10,7 @@
 Symposium is a comprehensive Python package designed to facilitate research analysis, participant profiling, and project proposal generation for the [Active Inference Symposium](https://symposium.activeinference.institute/). The package provides modular tools for:
 
 - **Research Analysis**: Automated analysis of presenter publications and research profiles
-- **Participant Profiling**: Comprehensive participant profiling based on registration data  
+- **Participant Profiling**: Comprehensive participant profiling based on registration data
 - **Profile Generation**: Research profile and methods documentation
 - **Project Proposals**: Structured proposal generation using catechism templates
 - **Collaboration Matching**: Identifying synergies and collaboration opportunities
@@ -21,8 +21,8 @@ Symposium is a comprehensive Python package designed to facilitate research anal
 - 📊 **Data Processing**: OpenAlex publication data analysis with token-aware handling
 - 📝 **Structured Outputs**: Dual format reports (Markdown + JSON)
 - 🎯 **Flexible Configuration**: Environment-based and file-based configuration
-- 🧪 **Well-Tested**: Comprehensive test suite with >80% coverage
-- 🚀 **Modern Tooling**: Built with uv, pytest, ruff, and black
+- 🧪 **Well-Tested**: Test suite at ~86% coverage (regression gate `--cov-fail-under=80`); live-LLM tests are opt-in via the `real_api` marker
+- 🚀 **Modern Tooling**: Built with uv, pytest, and ruff
 
 ## Quick Start
 
@@ -43,10 +43,17 @@ uv pip install -e ".[dev]"
 
 ### Interactive Interface
 
-The easiest way to use Symposium is through the interactive interface:
+The easiest way to use Symposium is through the interactive interface. The
+[`symposium.sh`](symposium.sh) launcher checks for uv, creates a virtual environment,
+installs the package, and starts the interface:
 
 ```bash
-# The system will automatically install the package if needed
+./symposium.sh
+```
+
+To run the interface directly (requires the package to be installed):
+
+```bash
 python run.py
 ```
 
@@ -56,16 +63,15 @@ The interactive interface provides numbered options for:
 3. **📊 Generate Column Summaries & Word Clouds** - Statistical analysis of participant responses
 4. **🔍 Background Research (Single Participant)** - Use Perplexity for individual researcher analysis
 5. **📚 Personalized Curriculum (Single Participant)** - Generate learning curriculum for one participant
-6. **🌐 Create Visualizations** - Generate network, embedding, and distribution plots from CSV or markdown data
+6. **🌐 Create Visualizations** - Generate network, embedding, and distribution plots from Markdown reports
 7. **🔧 Configuration Management** - Setup API keys and settings
 8. **🧪 Test System Components** - Validate system functionality
 9. **🚪 Exit** - Close the interface
 
-#### Advanced Features (CLI)
+#### Advanced Features
 - **🎯 Batch Generation**: CLI commands for complete pipelines (profiles → proposals → visualizations)
-- **🌐 All Visualizations**: CLI command to create embeddings, networks, and distributions in one command from CSV or markdown
-- **📊 CSV Visualizations**: Direct visualization support for participant CSV data with word clouds and PCA embeddings
-- **☁️ Per-Column Word Clouds**: Separate word clouds for each question/column with custom stop words
+- **🌐 All Visualizations**: `symposium visualize all` creates embeddings, networks, and distributions in one command from a directory of Markdown reports
+- **📊 CSV Word Clouds & Summaries**: Column summaries and per-question word clouds from the participant CSV via `run.py` option 3
 - **🧮 Advanced Methods**: 7 dimension reduction methods (PCA, LSA, t-SNE, UMAP, Isomap, NMF, LDA)
 - **🔧 Smart Configuration**: Automatic virtual environment detection and activation
 - **📝 Comprehensive Logging**: Real-time progress tracking with file persistence
@@ -149,6 +155,9 @@ This will check:
 - Package installation
 - API connectivity
 
+> **Note:** `setup.py` is the legacy validation script; `launch.py` and `symposium.sh`
+> perform their own in-process validation and no longer call it.
+
 ### Interactive Launcher
 
 For the easiest experience, use the launcher script:
@@ -160,7 +169,7 @@ python launch.py
 This provides:
 - **Automatic virtual environment activation**
 - **Comprehensive logging** to both console and file
-- **Setup validation** with dependency checking
+- **Setup validation** (package import check)
 - **Interactive text interface** with 9 numbered options
 - **Guided workflow** for all symposium operations
 - **Error handling** and user guidance
@@ -210,6 +219,19 @@ symposium generate projects \
   --collaborators-file data/collaborators.md
 ```
 
+**Note on inputs:** `--domain-file` and `--collaborators-file` point at files **you
+provide** — the package does not ship domain or collaborator content. Create the
+directory and file, e.g.:
+
+```bash
+mkdir -p data/domains
+# data/domains/active_inference.md: domain context passed to the LLM prompts
+# data/collaborators.md: optional list of potential collaborators
+```
+
+See [Creating Domain Context](docs/user_guide.md#custom-domain-knowledge) for the
+expected format.
+
 ### Python API
 
 ```python
@@ -236,11 +258,18 @@ except PaymentRequiredError as e:
 
 ## Documentation
 
-- [AI Agents Overview](AGENTS.md) - Comprehensive guide to all AI agents in the system
-- [Architecture Overview](docs/architecture.md)
-- [API Guide](docs/api_guide.md)
-- [User Guide](docs/user_guide.md)
-- [Development Guide](docs/development.md)
+- [Documentation Index](docs/README.md) — overview of every guide in `docs/`
+- [Installation Guide](docs/installation.md) — environment setup with uv
+- [User Guide](docs/user_guide.md) — end-to-end usage (analysis, generation, visualization)
+- [API Guide](docs/api_guide.md) — LLM providers, configuration, error handling
+- [API Usage](docs/api_usage.md) — provider roles (Perplexity vs OpenRouter) in the 2025 workflow
+- [CSV Visualization Guide](docs/csv_visualization_guide.md) — word clouds, embeddings, networks, distributions
+- [Perplexity Research](docs/perplexity_research.md) — web-research integration for participant backgrounds
+- [Architecture Overview](docs/architecture.md) — system design and module dependencies
+- [Development Guide](docs/development.md) — contributing, testing, and code standards
+- [Migration Guide](docs/migration.md) — upgrading from v1.x
+- [UV Setup](UV_SETUP.md) — uv-based setup and commands
+- [AI Agents Overview](AGENTS.md) — all AI agents in the system
 
 ## Project Structure
 
@@ -257,11 +286,16 @@ symposium/
 ├── tests/                 # Test suite
 ├── data/                  # Data and templates
 │   ├── inputs/           # Input data (OpenAlex, registrations)
-│   ├── catechisms/       # Proposal templates
-│   ├── domains/          # Domain knowledge bases
-│   └── prompts/          # System prompts
-├── docs/                  # Documentation
-└── outputs/              # Generated outputs (gitignored)
+│   ├── catechisms/       # Proposal templates (KarmaGAP, EUGrants, Synthetic)
+│   ├── domains/          # Domain knowledge files (user-provided)
+│   ├── prompts/          # System prompts
+│   └── templates/        # Data structure templates
+├── docs/                  # Documentation (see docs/README.md)
+├── outputs/              # Generated reports and visualizations (example outputs tracked)
+├── run.py                # Interactive interface
+├── launch.py             # Launcher (venv check + interface)
+├── setup.py              # Legacy environment validation script
+└── symposium.sh          # uv-based install-and-run script
 ```
 
 ## Development
@@ -280,10 +314,9 @@ pytest --cov=src/symposium --cov-report=html
 
 # Run linting
 ruff check src/ tests/
-black --check src/ tests/
 
 # Format code
-black src/ tests/
+ruff format src/ tests/
 ```
 
 ### Running Tests
@@ -297,11 +330,14 @@ pytest tests/test_core/test_api.py
 
 # With coverage
 pytest --cov=src/symposium --cov-report=term --cov-report=html
+
+# Live-LLM tests are opt-in (require API keys):
+pytest -m real_api
 ```
 
 ## Migration from v1.x
 
-The 2.0 release represents a comprehensive refactor. See [MIGRATION.md](docs/MIGRATION.md) for detailed migration instructions.
+The 2.0 release represents a comprehensive refactor. See [migration.md](docs/migration.md) for detailed migration instructions.
 
 Key changes:
 - Unified API client interface
@@ -312,7 +348,7 @@ Key changes:
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [contributing.md](docs/contributing.md) for guidelines.
 
 ## License
 
@@ -323,10 +359,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use this software in your research, please cite:
 
 ```bibtex
-@software{symposium2024,
+@software{symposium2025,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  year = {2024},
+  year = {2025},
   url = {https://github.com/ActiveInferenceInstitute/symposium}
 }
 ```

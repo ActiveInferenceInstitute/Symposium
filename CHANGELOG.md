@@ -4,6 +4,24 @@ All notable changes to the Symposium package.
 
 ## [Unreleased]
 
+### Docs (docs-deep pass, 2026-08-02)
+- Added `docs/README.md` documentation index and `CITATION.cff`.
+- Normalized `docs/` filenames to lowercase (`API_USAGE.md` → `api_usage.md`,
+  `CONTRIBUTING.md` → `contributing.md`, `MIGRATION.md` → `migration.md`,
+  `PERPLEXITY_RESEARCH.md` → `perplexity_research.md`) and updated all links.
+- Added GitHub Actions CI (`.github/workflows/ci.yml`, workflow `Tests`): ruff check,
+  ruff format check, pytest with the coverage gate.
+- Fixed stale docs: removed `black` references (ruff-only tooling), corrected model
+  names (`sonar`, `anthropic/claude-3.5-sonnet`), nonexistent CLI flags
+  (`--registration-file`, `--input-csv`, `visualize wordclouds`), README
+  structure/coverage/outputs-tracking/citation claims, and the API retry examples
+  (`tenacity` → `backoff`).
+- Rewrote `docs/csv_visualization_guide.md` against real CLI/run.py behavior
+  (word clouds via `run.py` option 3; Markdown-only `visualize` CLI).
+- Documented `data/domains/` as user-provided (`data/domains/README.md`,
+  `config.example.json` `domains_dir`), updated `data/README.md` and
+  `docs/api_usage.md` (participant count, config source, rate-limit facts).
+
 ### Tooling & code quality
 - **Ruff-only tooling cleanup:** removed `black` (dev dependency + `[tool.black]`) in favor of
   `ruff format` per project convention. Whole `src/` and `tests/` reformatted and lint-clean

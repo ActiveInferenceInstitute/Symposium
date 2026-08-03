@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as follows."
+title: "Symposium: Research Analysis Tools for Active Inference Symposium"
+abstract: "Research analysis and project generation tools for the Active Inference Symposium: presenter/participant analysis, research profile and project-proposal generation, and data visualization."
+authors:
+  - name: "Active Inference Institute"
+    website: "https://activeinference.institute/"
+date-released: "2025-01-01"
+version: "2.1.0"
+license: "MIT"
+url: "https://github.com/ActiveInferenceInstitute/symposium"
+keywords:
+  - active inference
+  - research analysis
+  - project generation
+  - visualization

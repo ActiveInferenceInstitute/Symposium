@@ -548,7 +548,7 @@ Code coverage analysis and reporting specialist.
 - Function coverage reporting
 - Coverage gap identification
 
-**Coverage Goals**: > 90% overall, > 95% critical paths
+**Coverage Goals**: > 90% overall, > 95% critical paths (current gate: ~86% via `--cov-fail-under=80`)
 
 ### Performance Testing Agent
 System performance monitoring and benchmarking specialist.
@@ -692,7 +692,7 @@ Error condition testing and robustness validation specialist.
 - **API Response Success Rate**: > 99%
 - **Data Processing Integrity**: 100%
 - **Error Recovery Success**: 95%
-- **Test Coverage**: > 90% overall, > 95% critical paths
+- **Test Coverage**: > 90% overall, > 95% critical paths (goal; regression gate is `--cov-fail-under=80`)
 
 ### Agent-Specific Metrics
 - **Analysis Depth**: Comprehensive and accurate
@@ -761,7 +761,7 @@ All agents are designed with Active Inference principles in mind:
 
 ---
 
-**Last Updated**: 2025-11-07  
-**Version**: 2.0  
+**Last Updated**: 2026-08-02  
+**Version**: 2.1  
 **Maintained by**: Active Inference Institute
 
