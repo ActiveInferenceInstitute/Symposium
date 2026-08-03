@@ -215,20 +215,34 @@ python run.py
 
 ## CI/CD with UV
 
-Example GitHub Actions workflow:
+The repository's CI workflow (`.github/workflows/ci.yml`, workflow name `Tests`) runs
+on every push to `main` and on pull requests:
 
 ```yaml
 name: Tests
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v1
-      - run: uv venv
-      - run: uv pip install -e ".[dev]"
-      - run: uv run pytest
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          uv venv
+          uv pip install -e ".[dev]"
+      - name: Lint (ruff check)
+        run: uv run ruff check src/ tests/
+      - name: Format (ruff format --check)
+        run: uv run ruff format --check src/ tests/
+      - name: Test (pytest + coverage gate)
+        run: uv run python -m pytest --no-header
 ```
 
 ## Comparison: UV vs Traditional Methods
