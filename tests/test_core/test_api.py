@@ -60,7 +60,11 @@ class TestPerplexityProvider:
         provider = PerplexityProvider("test_key")
         assert provider.api_key == "test_key"
         assert provider.model == "sonar"
-        mock_openai.assert_called_once()
+        mock_openai.assert_called_once_with(
+            api_key="test_key",
+            base_url="https://api.perplexity.ai",
+            default_headers={"X-Pplx-Integration": "symposium"},
+        )
 
     @patch("symposium.core.api.OpenAI")
     def test_get_response(self, mock_openai):
@@ -101,6 +105,7 @@ class TestOpenRouterProvider:
         assert provider.api_key == "test_key"
         assert provider.model == "anthropic/claude-3.5-sonnet"
         mock_openai.assert_called_once()
+        assert "default_headers" not in mock_openai.call_args.kwargs
 
     @patch("symposium.core.api.OpenAI")
     def test_get_response(self, mock_openai):
