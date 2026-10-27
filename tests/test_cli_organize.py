@@ -407,6 +407,15 @@ async def call_tool(token, name, args):
         text=True,
         check=False,
     )
+    # Hosted CI has no mounted GitVault. It must prove the real CLI refuses
+    # that unsupported runtime; full pull/apply is exercised on the SSD host.
+    if not any(parent.name == "GitVault" and parent.is_mount() for parent in root.parents):
+        assert pull.returncode == 1
+        assert "InstituteOS root or external interpreter is unavailable" in pull.stderr
+        assert "synthetic-cli-secret" not in pull.stdout + pull.stderr
+        assert not (private / "pulled").exists()
+        assert (root / "page.md").read_text() == "Baseline"
+        return
     assert pull.returncode == 0, pull.stdout + pull.stderr
     snapshots = list((private / "pulled").glob("snapshot-*.json"))
     assert len(snapshots) == 1

@@ -270,6 +270,7 @@ def test_transport_real_subprocess_synthetic_adapter(tmp_path):
     env = os.environ.copy()
     env["SUPERHUMAN_DOCS_MCP_TOKEN"] = "synthetic-secret-never-echo"
     env["PYTHONPATH"] = str(Path.cwd() / "src")
+    on_vault = any(parent.name == "GitVault" and parent.is_mount() for parent in root.parents)
     for mode, expected in (("ok", 0), ("fail", 1)):
         run = subprocess.run(
             [sys.executable, "-B", "-c", script, str(root), mode],
@@ -278,7 +279,13 @@ def test_transport_real_subprocess_synthetic_adapter(tmp_path):
             env=env,
             check=False,
         )
-        assert run.returncode == expected, run.stdout + run.stderr
+        # The real external-storage guard precedes SDK authentication. On
+        # hosted runners it must reject both operations without leaking secrets.
+        if not on_vault:
+            assert run.returncode == 1
+            assert "root or external interpreter is unavailable" in run.stdout
+        else:
+            assert run.returncode == expected, run.stdout + run.stderr
         assert "synthetic-secret-never-echo" not in run.stdout + run.stderr
     env.pop("SUPERHUMAN_DOCS_MCP_TOKEN")
     run = subprocess.run(
@@ -288,7 +295,10 @@ def test_transport_real_subprocess_synthetic_adapter(tmp_path):
         env=env,
         check=False,
     )
-    assert run.returncode == 1 and "is required" in run.stdout
+    assert run.returncode == 1
+    assert (
+        "is required" if on_vault else "root or external interpreter is unavailable"
+    ) in run.stdout
 
 
 class BrokenPage(FilePage):
