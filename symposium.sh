@@ -20,7 +20,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║         🎯 SYMPOSIUM 2025 - ACTIVE INFERENCE 🎯                ║${NC}"
+echo -e "${BLUE}║         🎯 SYMPOSIUM      - ACTIVE INFERENCE 🎯                ║${NC}"
 echo -e "${BLUE}║             UV-Managed Environment Setup                       ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════════╝${NC}"
 echo ""
@@ -38,24 +38,12 @@ fi
 
 echo -e "${GREEN}✅ uv is installed: $(uv --version)${NC}"
 
-# Check if virtual environment exists
-if [ ! -d ".venv" ]; then
-    echo -e "${YELLOW}📦 Creating virtual environment...${NC}"
-    uv venv
-    echo -e "${GREEN}✅ Virtual environment created${NC}"
-else
-    echo -e "${GREEN}✅ Virtual environment exists${NC}"
-fi
+# Bind uv to this project's environment, including when launched by another uv app.
+export UV_PROJECT_ENVIRONMENT="$SCRIPT_DIR/.venv"
+unset VIRTUAL_ENV
 
-# Install/update dependencies
-echo -e "${YELLOW}📦 Installing dependencies...${NC}"
-uv pip install -e . > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Dependencies installed${NC}"
-else
-    echo -e "${RED}❌ Failed to install dependencies${NC}"
-    exit 1
-fi
+echo -e "${YELLOW}📦 Installing locked dependencies...${NC}"
+uv sync --locked
 
 # Check for .env file
 if [ ! -f ".env" ]; then
@@ -78,7 +66,7 @@ echo -e "${BLUE}🚀 Starting Symposium...${NC}"
 echo ""
 
 # Use uv to run Python with the virtual environment
-uv run python run.py "$@"
+uv run --locked python run.py "$@"
 
 
 

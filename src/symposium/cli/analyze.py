@@ -7,7 +7,28 @@ from symposium.analysis.participants import ParticipantAnalyzer
 from symposium.analysis.presenters import PresenterAnalyzer
 from symposium.core.api import APIClient
 from symposium.core.config import Config
+from symposium.core.data_loader import DataLoader
 from symposium.io.readers import ReportReader
+
+
+def _participant_count(csv_file: str) -> int:
+    """Reject invalid or empty registrations before creating a paid-work client."""
+    count = len(DataLoader.load_participant_data(Path(csv_file)))
+    if not count:
+        raise ValueError(
+            "No eligible public participants; populate and validate the selected edition"
+        )
+    return count
+
+
+def _require_complete(results: dict[str, dict[str, str]], expected: int) -> None:
+    """Do not report success when the batch failed or stopped early."""
+    failed = sum("error" in value for value in results.values())
+    if len(results) != expected or failed:
+        raise RuntimeError(
+            f"Participant processing incomplete: {len(results) - failed}/{expected} succeeded; "
+            "completed reports were preserved"
+        )
 
 
 def analyze_presenters(args):
@@ -16,10 +37,13 @@ def analyze_presenters(args):
 
     try:
         # Setup configuration and API
-        config = Config()
+        config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
         api_client = APIClient.create(
             provider=args.api_provider or config.get("api.provider"),
-            api_key=config.get_api_key(args.api_provider),
+            **{
+                **config.get_api_config(args.api_provider),
+                "api_key": config.get_api_key(args.api_provider),
+            },
         )
 
         # Load domain context if provided
@@ -46,11 +70,15 @@ def analyze_participants(args):
     logger = logging.getLogger(__name__)
 
     try:
+        expected = _participant_count(args.csv_file)
         # Setup configuration and API
-        config = Config()
+        config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
         api_client = APIClient.create(
             provider=args.api_provider or config.get("api.provider"),
-            api_key=config.get_api_key(args.api_provider),
+            **{
+                **config.get_api_config(args.api_provider),
+                "api_key": config.get_api_key(args.api_provider),
+            },
         )
 
         # Analyze participants
@@ -61,6 +89,8 @@ def analyze_participants(args):
             include_background_research=args.include_background_research,
             include_curriculum=args.include_curriculum,
         )
+
+        _require_complete(results, expected)
 
         logger.info(f"✅ Successfully analyzed {len(results)} participants")
         logger.info(f"📁 Reports saved to {args.output_dir}")
@@ -83,11 +113,12 @@ def analyze_participant_backgrounds(args):
     logger = logging.getLogger(__name__)
 
     try:
+        expected = _participant_count(args.csv_file)
         # Setup configuration and API
-        config = Config()
+        config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
         api_client = APIClient.create(
             provider="perplexity",  # Force Perplexity for background research
-            api_key=config.get_api_key("perplexity"),
+            **{**config.get_api_config("perplexity"), "api_key": config.get_api_key("perplexity")},
         )
 
         # Analyze participants with background research only
@@ -97,7 +128,10 @@ def analyze_participant_backgrounds(args):
             Path(args.output_dir),
             include_background_research=True,
             include_curriculum=False,
+            include_profile=False,
         )
+
+        _require_complete(results, expected)
 
         logger.info(
             f"✅ Successfully generated background research for {len(results)} participants"
@@ -114,11 +148,15 @@ def generate_participant_curricula(args):
     logger = logging.getLogger(__name__)
 
     try:
+        expected = _participant_count(args.csv_file)
         # Setup configuration and API
-        config = Config()
+        config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
         api_client = APIClient.create(
             provider=args.api_provider or config.get("api.provider"),
-            api_key=config.get_api_key(args.api_provider),
+            **{
+                **config.get_api_config(args.api_provider),
+                "api_key": config.get_api_key(args.api_provider),
+            },
         )
 
         # Analyze participants with curricula only
@@ -128,7 +166,10 @@ def generate_participant_curricula(args):
             Path(args.output_dir),
             include_background_research=False,
             include_curriculum=True,
+            include_profile=False,
         )
+
+        _require_complete(results, expected)
 
         logger.info(f"✅ Successfully generated curricula for {len(results)} participants")
         logger.info(f"📁 Curriculum reports saved to {args.output_dir}")

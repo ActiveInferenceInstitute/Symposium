@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+from copy import deepcopy
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -31,14 +32,15 @@ class Config:
         self._config: Dict[str, Any] = {}
         self._load_defaults()
 
-        if config_file and config_file.exists():
-            self._load_from_file(config_file)
+        if config_file is not None:
+            self._load_from_file(Path(config_file))
 
         self._load_from_environment()
 
     def _load_defaults(self):
         """Load default configuration values."""
         self._config = {
+            "edition": {"year": 2026},
             # API Configuration
             "api": {
                 "provider": "perplexity",  # or "openrouter"
@@ -84,16 +86,27 @@ class Config:
         Args:
             config_file: Path to JSON configuration file
         """
-        try:
-            with open(config_file, "r") as f:
-                file_config = json.load(f)
-            self._deep_update(self._config, file_config)
-            logger.info(f"Loaded configuration from {config_file}")
-        except Exception as e:
-            logger.warning(f"Could not load config file {config_file}: {e}")
+        with config_file.open(encoding="utf-8") as stream:
+            try:
+                file_config = json.load(stream)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"Invalid JSON configuration in {config_file}") from exc
+        if not isinstance(file_config, dict):
+            raise ValueError("Configuration must be a JSON object")
+        self._deep_update(self._config, file_config)
+        logger.info(f"Loaded configuration from {config_file}")
 
     def _load_from_environment(self):
         """Load configuration from environment variables."""
+        if os.getenv("SYMPOSIUM_YEAR"):
+            from symposium.core.edition import Edition
+
+            try:
+                year = int(os.environ["SYMPOSIUM_YEAR"])
+            except ValueError as exc:
+                raise ValueError("SYMPOSIUM_YEAR must be an integer year") from exc
+            self._config["edition"]["year"] = Edition(year=year).year
+
         # API Keys
         if os.getenv("PERPLEXITY_API_KEY"):
             self._config["api"]["perplexity"]["api_key"] = os.getenv("PERPLEXITY_API_KEY")
@@ -258,7 +271,7 @@ class Config:
         Returns:
             Configuration dictionary
         """
-        return self._config.copy()
+        return deepcopy(self._config)
 
     def save(self, filepath: Path):
         """Save configuration to JSON file.
@@ -266,17 +279,18 @@ class Config:
         Args:
             filepath: Path to save configuration
         """
-        # Remove sensitive data before saving
-        config_to_save = self.to_dict()
-        if "api" in config_to_save:
-            for provider in ["perplexity", "openrouter"]:
-                if (
-                    provider in config_to_save["api"]
-                    and "api_key" in config_to_save["api"][provider]
-                ):
-                    config_to_save["api"][provider]["api_key"] = "***REDACTED***"
+        config_to_save = self.redacted_dict()
 
         with open(filepath, "w") as f:
             json.dump(config_to_save, f, indent=2, default=str)
 
         logger.info(f"Saved configuration to {filepath}")
+
+    def redacted_dict(self) -> Dict[str, Any]:
+        """Return a detached configuration safe for display or persistence."""
+        config = self.to_dict()
+        for provider in ("perplexity", "openrouter"):
+            settings = config.get("api", {}).get(provider, {})
+            if "api_key" in settings:
+                settings["api_key"] = "***REDACTED***"
+        return config

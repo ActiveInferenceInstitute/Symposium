@@ -421,7 +421,7 @@ class TextVisualizer:
                 "active_inference_application": "Active Inference Applications",
                 "challenges": "Challenges in Active Inference",
                 "learning_needs": "Learning Needs & Resource Development",
-                "future_impact": "Future Impact Vision (2026)",
+                "future_impact": "Future Impact Vision",
                 "comments": "Additional Comments & Questions",
             }
 

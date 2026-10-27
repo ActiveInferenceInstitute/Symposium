@@ -1,6 +1,6 @@
 [project]
 name = "symposium"
-version = "2.1.0"
+version = "2.2.0"
 description = "Research analysis and project generation for Active Inference Symposium"
 authors = [{name = "Active Inference Institute"}]
 requires-python = ">=3.10"
@@ -31,6 +31,7 @@ dev = [
     "pytest-mock>=3.11.0",
     "ruff>=0.1.0",
     "mypy>=1.5.0",
+    "httpx>=0.27,<1",
 ]
 
 [project.scripts]
@@ -42,6 +43,17 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/symposium"]
+
+# Keep historical datasets, rendered outputs, and local evidence in the Git repository,
+# rather than bundling them into every source installation.
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/archive",
+    "/outputs",
+    "/data/inputs/aif_2024",
+    "/data/inputs/aif_2025",
+    "/.omo",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

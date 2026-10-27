@@ -148,13 +148,16 @@ class TestParticipantAnalyzer:
         assert len(results) > 0
         mock_save.assert_called()
 
-    def test_analyze_all_participants_api_error(self, analyzer, sample_csv_file):
-        """Test handling API errors during batch analysis."""
-        with patch.object(analyzer.api_client, "get_response", side_effect=Exception("API Error")):
-            results = analyzer.analyze_all_participants(sample_csv_file, Path("outputs"))
-
-        # Should continue processing despite errors
-        assert len(results) == 0
+    def test_analyze_all_participants_api_error(self, analyzer, tmp_path):
+        """A valid registration reaches the API and retains its real failure."""
+        csv_path = tmp_path / "participants.csv"
+        csv_path.write_text("name,share_publicly\nTest Participant,yes\n")
+        with patch.object(
+            analyzer.api_client, "get_response", side_effect=RuntimeError("API Error")
+        ) as response:
+            results = analyzer.analyze_all_participants(csv_path, tmp_path / "outputs")
+        response.assert_called_once()
+        assert results == {"Test Participant": {"error": "API Error"}}
 
     def test_analyze_all_participants_payment_error_stops(self, analyzer, temp_dir):
         """Test that PaymentRequiredError stops processing immediately."""

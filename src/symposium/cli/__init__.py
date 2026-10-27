@@ -12,11 +12,19 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
+    from symposium import __version__
+    from symposium.cli.edition import add_edition_parser
+
+    parser.add_argument("--version", action="version", version=f"symposium {__version__}")
+    parser.add_argument("--config", help="JSON configuration file")
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
+    add_edition_parser(subparsers)
 
     # Analyze command
     analyze_parser = subparsers.add_parser("analyze", help="Analyze presenters or participants")
-    analyze_subparsers = analyze_parser.add_subparsers(dest="subcommand", help="Analysis type")
+    analyze_subparsers = analyze_parser.add_subparsers(
+        dest="subcommand", help="Analysis type", required=True
+    )
 
     # Analyze presenters
     analyze_presenter_parser = analyze_subparsers.add_parser(
@@ -92,7 +100,9 @@ def main():
 
     # Generate command
     generate_parser = subparsers.add_parser("generate", help="Generate profiles or projects")
-    generate_subparsers = generate_parser.add_subparsers(dest="subcommand", help="Generation type")
+    generate_subparsers = generate_parser.add_subparsers(
+        dest="subcommand", help="Generation type", required=True
+    )
 
     # Generate profiles
     generate_profile_parser = generate_subparsers.add_parser(
@@ -143,7 +153,7 @@ def main():
     # Visualize command
     visualize_parser = subparsers.add_parser("visualize", help="Create visualizations")
     visualize_subparsers = visualize_parser.add_subparsers(
-        dest="subcommand", help="Visualization type"
+        dest="subcommand", help="Visualization type", required=True
     )
 
     # Visualize embeddings
@@ -246,6 +256,11 @@ def main():
     if not args.command:
         parser.print_help()
         sys.exit(1)
+
+    if args.command == "edition":
+        from symposium.cli.edition import run_edition
+
+        sys.exit(run_edition(args))
 
     # Route to appropriate handler function
     from symposium.core.logging_utils import setup_logging

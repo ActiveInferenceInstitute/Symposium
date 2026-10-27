@@ -103,6 +103,10 @@ class PerplexityProvider(BaseAPIProvider):
 
             return response.choices[0].message.content
 
+        except APIStatusError as exc:
+            if exc.status_code == 402:
+                raise PaymentRequiredError(str(exc), provider="perplexity") from exc
+            raise
         except Exception as e:
             logger.error(f"Error getting Perplexity response: {e}")
             raise
@@ -163,6 +167,8 @@ class OpenRouterProvider(BaseAPIProvider):
         try:
             response = self.client.chat.completions.create(
                 model=kwargs.get("model", self.model),
+                temperature=kwargs.get("temperature", self.temperature),
+                max_tokens=kwargs.get("max_tokens", self.max_tokens),
                 messages=[{"role": "user", "content": full_prompt}],
             )
         except APIStatusError as e:

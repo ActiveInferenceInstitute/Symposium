@@ -16,10 +16,13 @@ def generate_profiles(args):
 
     try:
         # Setup configuration and API
-        config = Config()
+        config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
         api_client = APIClient.create(
             provider=args.api_provider or config.get("api.provider"),
-            api_key=config.get_api_key(args.api_provider),
+            **{
+                **config.get_api_config(args.api_provider),
+                "api_key": config.get_api_key(args.api_provider),
+            },
         )
 
         # Load domain context if provided
@@ -50,10 +53,13 @@ def generate_projects(args):
 
     try:
         # Setup configuration and API
-        config = Config()
+        config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
         api_client = APIClient.create(
             provider=args.api_provider or config.get("api.provider"),
-            api_key=config.get_api_key(args.api_provider),
+            **{
+                **config.get_api_config(args.api_provider),
+                "api_key": config.get_api_key(args.api_provider),
+            },
         )
 
         # Generate projects

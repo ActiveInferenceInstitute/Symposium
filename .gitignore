@@ -29,7 +29,6 @@ env/
 
 # uv
 .uv/
-uv.lock
 
 # Testing
 .pytest_cache/
@@ -66,3 +65,10 @@ dmypy.json
 
 # Logs
 *.log
+
+# Local organizer configuration and generated 2026 reports
+config.json
+outputs/*_symposium/
+
+# Local agent verification records
+.omo/

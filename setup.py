@@ -133,7 +133,8 @@ def check_data_structure() -> bool:
     """Check data directory structure."""
     required_dirs = [
         'data/inputs/aif_2024',
-        'data/inputs/aif_2025',
+        'data/inputs/aif_2026',
+        'data/inputs/aif_2026/presenters',
         'data/catechisms',
         'data/domains',
         'data/prompts',

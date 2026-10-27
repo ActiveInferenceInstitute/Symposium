@@ -154,7 +154,7 @@ def test_analyze_participant_backgrounds_handler(tmp_path, monkeypatch):
     out = tmp_path / "out"
     analyze.analyze_participant_backgrounds(_args(csv_file=str(csv_path), output_dir=str(out)))
 
-    assert (out / "Alice" / "Alice_profile_analysis.md").exists()
+    assert not (out / "Alice" / "Alice_profile_analysis.md").exists()
     assert (out / "Alice" / "Alice_background_research.md").exists()
 
 
@@ -170,5 +170,5 @@ def test_generate_participant_curricula_handler(tmp_path, monkeypatch):
     out = tmp_path / "out"
     analyze.generate_participant_curricula(_args(csv_file=str(csv_path), output_dir=str(out)))
 
-    assert (out / "Alice" / "Alice_profile_analysis.md").exists()
+    assert not (out / "Alice" / "Alice_profile_analysis.md").exists()
     assert (out / "Alice" / "Alice_curriculum.md").exists()

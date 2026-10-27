@@ -1,4 +1,7 @@
 {
+  "edition": {
+    "year": 2026
+  },
   "api": {
     "provider": "perplexity",
     "perplexity": {

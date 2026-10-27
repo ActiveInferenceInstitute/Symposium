@@ -430,6 +430,7 @@ Please provide a comprehensive profile analysis including:
         include_background_research: bool = False,
         include_curriculum: bool = False,
         perplexity_client: Optional[BaseAPIProvider] = None,
+        include_profile: bool = True,
     ) -> Dict[str, Dict[str, str]]:
         """Analyze all participants from CSV data.
 
@@ -438,6 +439,7 @@ Please provide a comprehensive profile analysis including:
             output_dir: Output directory for reports
             include_background_research: Whether to generate background research
             include_curriculum: Whether to generate personalized curricula
+            include_profile: Generate a profile (disable for background/curriculum-only runs)
             perplexity_client: Optional Perplexity client for background research
 
         Returns:
@@ -462,19 +464,20 @@ Please provide a comprehensive profile analysis including:
                 )
                 participant_results = {}
 
-                # Generate profile analysis
-                analysis_start = time.time()
-                profile_analysis = self.analyze_participant(participant_data)
-                analysis_time = time.time() - analysis_start
-                participant_results["profile_analysis"] = profile_analysis
-                logger.info(
-                    f"✅ Profile analysis completed for {participant_name} ({analysis_time:.1f}s)"
-                )
+                if include_profile:
+                    # Generate profile analysis
+                    analysis_start = time.time()
+                    profile_analysis = self.analyze_participant(participant_data)
+                    analysis_time = time.time() - analysis_start
+                    participant_results["profile_analysis"] = profile_analysis
+                    logger.info(
+                        f"✅ Profile analysis completed for {participant_name} ({analysis_time:.1f}s)"
+                    )
 
-                # Save profile analysis
-                ReportWriter.save_participant_report(
-                    participant_name, profile_analysis, output_dir, "profile_analysis"
-                )
+                    # Save profile analysis
+                    ReportWriter.save_participant_report(
+                        participant_name, profile_analysis, output_dir, "profile_analysis"
+                    )
 
                 # Generate background research if requested (ALWAYS use Perplexity)
                 if include_background_research:
@@ -641,6 +644,8 @@ Please provide a comprehensive profile analysis including:
                             wordcloud_path,
                         )
 
+            except PaymentRequiredError:
+                raise
             except Exception as e:
                 logger.error(f"Error generating summary for column '{column}': {e}")
                 column_summaries[column] = {"error": str(e)}
