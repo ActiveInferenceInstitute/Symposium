@@ -21,6 +21,7 @@ from symposium.organizing.bridge import (
     prepare_receipt,
     pull_snapshot,
 )
+from symposium.organizing.ecosystem import capability_report, catalog_markdown, load_catalog
 from symposium.organizing.models import (
     MAX_BUNDLE_BYTES,
     PublicationError,
@@ -44,6 +45,18 @@ def add_organize_parser(subparsers: argparse._SubParsersAction) -> None:
         "organize", help="Private organizing and approved public exports"
     )
     commands = parser.add_subparsers(dest="subcommand", required=True)
+    methods = commands.add_parser(
+        "methods", help="Offline integration catalog with pinned public evidence"
+    )
+    methods.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    capabilities = commands.add_parser(
+        "capabilities", help="Offline credential metadata; no authentication checks"
+    )
+    capabilities.add_argument(
+        "--check-env",
+        action="store_true",
+        help="Report process-environment presence only; never values; no .env loading",
+    )
     specifications = {
         "pull": ("mapping", "instituteos-root", "workspace", "public-root"),
         "project": ("snapshot", "event", "resources", "workspace", "public-root"),
@@ -160,6 +173,18 @@ def run_organize(args: argparse.Namespace) -> int:
 
 def _run(args: argparse.Namespace) -> None:
     command = args.subcommand
+    if command == "methods":
+        catalog = load_catalog()
+        print(
+            catalog_markdown(catalog)
+            if args.format == "markdown"
+            else canonical_bytes(catalog).decode(),
+            end="",
+        )
+        return
+    if command == "capabilities":
+        print(canonical_bytes(capability_report(args.check_env)).decode(), end="")
+        return
     if command == "readiness":
         report = readiness(args.public_dir)
         print(canonical_bytes(report).decode(), end="")

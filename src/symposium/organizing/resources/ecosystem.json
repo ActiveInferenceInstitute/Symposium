@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-27",
+  "repositories": [
+    {
+      "id": "start",
+      "name": "Start \u2014 personalized learning",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/Start",
+      "role": "manual-handoff",
+      "summary": "AI-assisted learning and curriculum preparation.",
+      "use_for": "Prepare a reading plan and identify learning needs before a contribution.",
+      "handoff": "Browsing is independent of Symposium. Generating curricula in Start has its own configuration, authorization and optional provider costs.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Start/blob/7797ff5a34bf8584aef99b23d697b6363f4b7eff/README.md",
+      "commit": "7797ff5a34bf8584aef99b23d697b6363f4b7eff",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "courses",
+      "name": "Institute courses",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/courses",
+      "role": "resource",
+      "summary": "Course materials and their publishing infrastructure.",
+      "use_for": "Find teaching materials and educational context for a presentation or workshop.",
+      "handoff": "Reference materials only; Symposium does not import course records or run the course build pipeline.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/courses/blob/d42e4294c3e799696ad84837cf8671ce50d1419a/README.md",
+      "commit": "d42e4294c3e799696ad84837cf8671ce50d1419a",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "fundamentals",
+      "name": "Fundamentals textbook companion",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/fundamentals",
+      "role": "resource",
+      "summary": "Python examples and figure-generation code accompanying Active Inference learning materials.",
+      "use_for": "Study concrete algorithms and reproduce an example before describing its results.",
+      "handoff": "The companion code is distinct from access to the textbook. Running an example does not establish scientific validity.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/fundamentals/blob/fc3383c27af6b8bd7b93ed3daf90deae24d454e7/README.md",
+      "commit": "fc3383c27af6b8bd7b93ed3daf90deae24d454e7",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "gnn",
+      "name": "Generalized Notation Notation",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation",
+      "role": "manual-handoff",
+      "summary": "Notation and tooling for specifying, validating and rendering generative models.",
+      "use_for": "Make model assumptions explicit and prepare model artifacts alongside a contribution.",
+      "handoff": "Use the separate GNN pipeline and its model/backend admission evidence. No automatic Symposium model adapter is installed.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation/blob/f0dfb68368280f3a43ff91ac28db058c968002d8/.github/README.md",
+      "commit": "f0dfb68368280f3a43ff91ac28db058c968002d8",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "pymdp",
+      "name": "pymdp (Institute fork)",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/pymdp",
+      "role": "manual-handoff",
+      "summary": "Discrete-state Active Inference agent modeling code.",
+      "use_for": "Develop and reproduce computational demonstrations for a contribution.",
+      "handoff": "This is the Institute fork; its README identifies infer-actively/pymdp as upstream. Model execution and dependency selection remain a separate workflow.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/pymdp/blob/411a8e36fbd273d4fc4c897561e80aa5be59dc8e/README.md",
+      "commit": "411a8e36fbd273d4fc4c897561e80aa5be59dc8e",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "ontology",
+      "name": "Active Inference Ontology",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology",
+      "role": "resource",
+      "summary": "Structured terminology, identifiers, relations and vocabulary exports.",
+      "use_for": "Clarify terms and document mappings when communicating research methods.",
+      "handoff": "Vocabulary alignment needs human review and does not establish formal or scientific equivalence. Symposium does not perform automatic ontology mapping.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology/blob/02661575f9ac5213eed6d392c37ca6642660c191/README.md",
+      "commit": "02661575f9ac5213eed6d392c37ca6642660c191",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "working-groups",
+      "name": "Working Groups",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/Working_Groups",
+      "role": "manual-handoff",
+      "summary": "Draft charters and operating procedures for collaborative work.",
+      "use_for": "Prepare a group discussion and plan continued work after the Symposium.",
+      "handoff": "Draft documents carry no authority until adopted and ratified. This link does not create membership or change organizer decisions.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Working_Groups/blob/b366662015d03dc29798dedbf1d472ecef036ce2/README.md",
+      "commit": "b366662015d03dc29798dedbf1d472ecef036ce2",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "journal",
+      "name": "Active Inference Journal",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/ActiveInferenceJournal",
+      "role": "resource",
+      "summary": "Public recordings, transcripts, captions and associated metadata.",
+      "use_for": "Find prior discussions and recordings to contextualize a contribution.",
+      "handoff": "This is a content archive, not an automatic Symposium submission, acceptance or proceedings-publication service.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/ActiveInferenceJournal/blob/5678957afcb0f7f2a03af509b9c1b1023f3c5024/README.md",
+      "commit": "5678957afcb0f7f2a03af509b9c1b1023f3c5024",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "journal-utilities",
+      "name": "Journal Utilities",
+      "repository_url": "https://github.com/ActiveInferenceInstitute/Journal_Utilities",
+      "role": "manual-handoff",
+      "summary": "Tools for transcription, transcript browsing and export.",
+      "use_for": "Prepare accessible recording and transcript artifacts after permission to process and share them.",
+      "handoff": "Separate hardware, services and configuration may be required. Symposium does not automatically send recordings to these tools.",
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Journal_Utilities/blob/b690625cfe02c007b12fd18085868cdefbe10688/README.md",
+      "commit": "b690625cfe02c007b12fd18085868cdefbe10688",
+      "checked_on": "2026-10-27"
+    },
+    {
+      "id": "template",
+      "name": "docxology/template",
+      "repository_url": "https://github.com/docxology/template",
+      "role": "code-integration",
+      "summary": "Reproducible research and document rendering pipeline used by the native abstract-book workflow.",
+      "use_for": "Render the approved abstract-book project to PDF and editable Word.",
+      "handoff": "Existing optional integration requires an explicitly selected Template checkout, compatible separate Python 3.14 environment and --render. Inspect final pages; rendering does not authorize publication.",
+      "evidence_url": "https://github.com/docxology/template/blob/83dd01d219ca1bfe663f655128c206b3e4e29ca2/.github/README.md",
+      "commit": "83dd01d219ca1bfe663f655128c206b3e4e29ca2",
+      "checked_on": "2026-10-27"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "prepare-inputs",
+      "title": "Prepare research inputs",
+      "summary": "Use learning resources to prepare research materials; validate the separate research-input scaffold. These inputs are independent of the approved public program.",
+      "commands": [
+        "symposium edition validate --year 2026"
+      ],
+      "repository_ids": [
+        "start",
+        "courses",
+        "fundamentals"
+      ],
+      "credential_ids": [],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/2026_setup.md"
+    },
+    {
+      "id": "express-models",
+      "title": "Express and reproduce models",
+      "summary": "Choose notation, vocabulary and computational tools for a contribution. These are manual handoffs to separate repositories, not automatic model execution inside Symposium.",
+      "commands": [],
+      "repository_ids": [
+        "gnn",
+        "pymdp",
+        "ontology"
+      ],
+      "credential_ids": [],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md"
+    },
+    {
+      "id": "check-program",
+      "title": "Check the public program",
+      "summary": "Verify the approved publication tree and inspect pending text offline. Structural integrity and content readiness do not establish source freshness.",
+      "commands": [
+        "symposium organize check-public --public-dir data/public/2026",
+        "symposium organize readiness --public-dir data/public/2026"
+      ],
+      "repository_ids": [],
+      "credential_ids": [],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md"
+    },
+    {
+      "id": "private-intake",
+      "title": "Capture a private organizing snapshot",
+      "summary": "Use the optional InstituteOS bridge only with separately configured SDK access and a reviewed mapping. Raw source records stay outside the public checkout. Start by inspecting the pull interface.",
+      "commands": [
+        "symposium organize pull --help"
+      ],
+      "repository_ids": [],
+      "credential_ids": [
+        "instituteos-docs"
+      ],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md"
+    },
+    {
+      "id": "review-intake",
+      "title": "Review a candidate intake",
+      "summary": "Compare two verified public trees before an organizer decides whether to integrate changes. The private report does not publish, infer renamed people or infer why a participant was removed.",
+      "commands": [
+        "symposium organize review-update --previous-public-dir data/public/2026 --candidate-public-dir \"$CANDIDATE_PUBLIC_DIR\" --output \"$SYMPOSIUM_PRIVATE_DIR/update-review.json\" --public-root ."
+      ],
+      "repository_ids": [
+        "working-groups"
+      ],
+      "credential_ids": [],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md"
+    },
+    {
+      "id": "render-book",
+      "title": "Assemble and render the abstract book",
+      "summary": "Use source-grounded dossiers, participant briefs and the optional native Template renderer. Run the documented private staging process and inspect final PDF/Word pages before publishing.",
+      "commands": [
+        "symposium organize dossiers --help",
+        "symposium organize participant-briefs --help",
+        "symposium organize book --help"
+      ],
+      "repository_ids": [
+        "template"
+      ],
+      "credential_ids": [],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md"
+    },
+    {
+      "id": "openrouter-drafts",
+      "title": "Optional OpenRouter research drafts",
+      "summary": "Generate private research drafts only after separately authorizing provider transmission and charges. Public-sharing consent alone does not authorize every external processing purpose.",
+      "commands": [
+        "symposium analyze participants --csv-file \"$SYMPOSIUM_PRIVATE_DIR/registrations.csv\" --output-dir \"$SYMPOSIUM_PRIVATE_DIR/drafts\" --api-provider openrouter"
+      ],
+      "repository_ids": [
+        "start"
+      ],
+      "credential_ids": [
+        "openrouter"
+      ],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/api_usage.md"
+    },
+    {
+      "id": "perplexity-research",
+      "title": "Optional Perplexity research drafts",
+      "summary": "Use the existing Perplexity analysis workflow only with authorized source inputs and paid-provider access. Verify generated claims, citations and identity matches against primary sources.",
+      "commands": [
+        "symposium analyze presenters --data-dir \"$SYMPOSIUM_PRIVATE_DIR/presenters\" --output-dir \"$SYMPOSIUM_PRIVATE_DIR/drafts\" --api-provider perplexity"
+      ],
+      "repository_ids": [
+        "start"
+      ],
+      "credential_ids": [
+        "perplexity"
+      ],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/perplexity_research.md"
+    },
+    {
+      "id": "continue-collaboration",
+      "title": "Continue after the event",
+      "summary": "Use public archives for context and draft group procedures for follow-through. Recording processing and sharing still require their own permissions and service configuration.",
+      "commands": [],
+      "repository_ids": [
+        "working-groups",
+        "journal",
+        "journal-utilities"
+      ],
+      "credential_ids": [],
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md"
+    }
+  ]
+}
