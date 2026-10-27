@@ -1,637 +1,169 @@
-# User Guide
+# Symposium user guide
 
-## Overview
+Symposium 2.2.0 supports the 2026 edition and explicit historical workflows. Start
+with the [2026 organizer guide](2026_setup.md) for full registration fields, consent,
+readiness checks, and presenter onboarding.
 
-This guide provides comprehensive instructions for using the Symposium v2.x package for research analysis and project generation at the Active Inference Symposium.
-
-## Installation
-
-### Prerequisites
-
-- Python 3.10 or higher
-- [uv](https://docs.astral.sh/uv/) package manager (recommended)
-
-### Quick Installation
+## Installation and configuration
 
 ```bash
-# Clone repository
-git clone https://github.com/ActiveInferenceInstitute/symposium.git
-cd symposium
-
-# Setup virtual environment
-uv venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-
-# Install package
-uv pip install -e ".[dev]"
-
-# Configure API keys
-cp .env.example .env
-# Edit .env with your API keys
+uv sync --locked --extra dev
+uv run symposium --version
+uv run symposium --help
 ```
 
-### Configuration
+The runner uses optional project-local `config.json`. The CLI loads JSON when selected
+with `--config path.json` before the command. An explicitly selected missing or invalid
+configuration is an error. Environment values override JSON; explicit edition CLI flags
+and the runner's `--year` override configured edition values.
 
-#### Environment Variables
+Store credentials in `.env`, using `.env.example` as a guide. Customize models and
+provider parameters in `config.json`, based on `config.example.json`. Setup, preflight,
+and the default test suite run without paid API calls.
 
-Create `.env` file with your API keys:
+## Data preparation
 
 ```bash
-# Required: Choose one or both
-PERPLEXITY_API_KEY=your_perplexity_key_here
-OPENROUTER_API_KEY=your_openrouter_key_here
-
-# Optional
-API_PROVIDER=perplexity  # or "openrouter"
-LOG_LEVEL=INFO
+uv run symposium edition init --year 2026
+uv run symposium edition validate --year 2026
 ```
 
-#### Configuration File
-
-Optional `config.json` for advanced settings:
-
-```json
-{
-  "api": {
-    "provider": "perplexity",
-    "perplexity": {
-      "model": "sonar",
-      "temperature": 0.7,
-      "max_tokens": 2000
-    }
-  },
-  "data": {
-    "max_rows_per_file": 10,
-    "max_prompt_tokens": 12000
-  }
-}
+```text
+data/inputs/aif_2026/
+├── Public_Participant_Information.csv
+├── presenters/
+│   └── Presenter_Name/
+│       ├── openalex-group-by-YYYYMMDD.csv
+│       └── works-YYYY-MM-DD.csv
+├── templates/
+└── schedule.json
 ```
 
-## Data Preparation
+The shipped participant CSV and presenter templates have headers only. Only organizers
+can supply the current roster and confirmed schedule. Historical 2024 and 2025 data
+remain in their original folders.
 
-### Directory Structure
-
-Organize your data in the `data/` directory:
-
-```
-data/
-├── inputs/
-│   ├── aif_2024/    # Historical symposium data
-│   └── aif_2025/    # Current symposium data (create this)
-├── catechisms/      # Proposal templates
-├── domains/         # Domain knowledge files (user-provided, see below)
-└── prompts/         # System prompts
-```
-
-> **Note:** `data/domains/` is not shipped with the repo — create it and add your own
-> domain context files (see [Custom Domain Knowledge](#custom-domain-knowledge)).
-
-### Input Data Format
-
-#### Presenter Data (OpenAlex CSV)
-
-Each presenter should have a folder with two CSV files:
-
-```
-data/inputs/aif_2025/
-├── Researcher_Name/
-│   ├── openalex-group-by-*.csv  # Research topics and frequencies
-│   └── works-*.csv              # Publications with citations
-```
-
-**Example CSV Structure:**
-```csv
-# openalex-group-by-*.csv
-topic,count
-Active Inference,15
-Free Energy Principle,12
-Bayesian Inference,8
-
-# works-*.csv
-title,publication_year,cited_by_count
-Understanding Active Inference,2023,45
-Free Energy in Practice,2022,32
-```
-
-#### Participant Registration
-
-CSV file with participant information:
+An illustrative registration using canonical headers:
 
 ```csv
-name,background,interests,experience
-John Doe,PhD Computer Science,Active Inference,Intermediate
-Jane Smith,Postdoc Neuroscience,Bayesian Methods,Expert
+name,share_publicly,background,active_inference_application,learning_needs
+Example Participant,yes,Computer Science,Computational modeling,Mathematical foundations
 ```
 
-## CLI Usage
+Required columns are `name` and `share_publicly`. Full 2025 survey questions and
+current-year impact questions are supported. Only explicit affirmative sharing consent
+permits processing. Duplicate headers/names and report-filename collisions are errors;
+optional survey null markers are normalized to empty strings. See the organizer guide
+for the complete field list.
 
-### Basic Commands
-
-#### Analyze Presenters
+Before running a populated edition:
 
 ```bash
-symposium analyze presenters \
-  --data-dir data/inputs/aif_2025/ \
-  --output-dir outputs/profiles/ \
-  --domain-file data/domains/active_inference.md \
-  --max-rows 10
+uv run symposium edition validate --year 2026 --require-data
 ```
 
-**Options:**
-- `--data-dir`: Directory containing presenter folders
-- `--output-dir`: Where to save analysis results
-- `--domain-file`: Optional domain context file
-- `--max-rows`: Max CSV rows per presenter (token management)
-- `--api-provider`: Choose API (perplexity/openrouter)
+This checks both participants and presenters. Default preflight accepts a structurally
+valid empty scaffold with warnings; `--require-data` returns nonzero until both inputs
+have data. Existing initialization never overwrites organizer files. Initialization
+currently requires macOS or Linux; existing analysis and generation commands retain
+their normal platform support.
 
-#### Analyze Participants
+## Analyze participants
 
 ```bash
-symposium analyze participants \
-  --csv-file data/inputs/aif_2025/Public_Participant_Information.csv \
-  --output-dir outputs/profiles/
+uv run symposium --config config.json analyze participants \
+  --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
+  --output-dir outputs/2026_symposium/people --api-provider openrouter
 ```
 
-#### Generate Research Profiles
+Add `--include-background-research`, `--include-curriculum`, or
+`--include-column-summaries` for combined workflows. Background-only and curriculum-only
+commands avoid generating an extra profile:
 
 ```bash
-symposium generate profiles \
-  --data-dir data/inputs/aif_2025/ \
-  --output-dir outputs/profiles/ \
-  --include-methods \
-  --domain-file data/domains/active_inference.md
+uv run symposium analyze backgrounds \
+  --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
+  --output-dir outputs/2026_symposium/people
+uv run symposium analyze curricula \
+  --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
+  --output-dir outputs/2026_symposium/people --api-provider openrouter
 ```
 
-**Options:**
-- `--include-methods`: Generate research methods documentation
+The participant CLI rejects empty inputs before creating a provider client and returns
+nonzero if a batch contains errors or stops before completion. Completed reports are
+preserved. Review all generated content before distribution.
 
-#### Generate Project Proposals
+## Presenter profiles and methods
+
+The input path must be the directory immediately containing each presenter's folder:
 
 ```bash
-symposium generate projects \
-  --profiles-dir outputs/profiles/ \
-  --output-dir outputs/projects/ \
-  --domain-file data/domains/active_inference.md \
-  --catechism KarmaGAP \
-  --collaborators-file data/collaborators.md
+uv run symposium analyze presenters \
+  --data-dir data/inputs/aif_2026/presenters \
+  --output-dir outputs/2026_symposium/presenters --max-rows 10
+uv run symposium generate profiles \
+  --data-dir data/inputs/aif_2026/presenters \
+  --output-dir outputs/2026_symposium/presenters --include-methods
 ```
 
-**Options:**
-- `--catechism`: Template type (KarmaGAP, EUGrants, Synthetic)
-- `--collaborators-file`: Optional collaborators list
+Both commands accept an optional `--domain-file` containing organizer-provided Markdown
+context. Add `--api-provider perplexity` or `--api-provider openrouter` to select a
+provider explicitly.
 
-#### Create Visualizations
+## Custom domain knowledge
+
+Create your own domain Markdown document with relevant background, goals, constraints,
+and reviewed references. It is context for generated drafts, not an independent source
+of validated claims. Pass its path through `--domain-file`.
+
+## Project proposals
 
 ```bash
-# Embeddings and dimension reduction
-symposium visualize embeddings \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/ \
-  --method pca \
-  --n-components 2
-
-# Similarity networks
-symposium visualize networks \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/ \
-  --threshold 0.3
-
-# Statistical distributions
-symposium visualize distributions \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/
+uv run symposium generate projects \
+  --profiles-dir outputs/2026_symposium/people \
+  --output-dir outputs/2026_symposium/proposals \
+  --domain-file data/domains/active_inference.md --catechism KarmaGAP
 ```
 
-## Python API
+Supply the domain file yourself. Optional flags are `--catechisms-dir` and
+`--collaborators-file`. Proposal templates include KarmaGAP, EUGrants, and Synthetic.
 
-### Basic Usage
+## Visualizations
 
-```python
-from symposium.core.api import APIClient
-from symposium.core.config import Config
-from symposium.analysis.presenters import PresenterAnalyzer
-from pathlib import Path
-
-# Initialize configuration and API
-config = Config()
-api_client = APIClient.create(
-    provider=config.get("api.provider"),
-    api_key=config.get_api_key()
-)
-
-# Analyze presenters
-analyzer = PresenterAnalyzer(api_client)
-results = analyzer.analyze_all_presenters(
-    data_path=Path("data/inputs/aif_2025"),
-    output_dir=Path("outputs/profiles"),
-    domain_context="Active Inference research context"
-)
-```
-
-### Advanced Configuration
-
-```python
-from symposium.core.config import Config
-
-# Load custom configuration
-config = Config(config_file=Path("custom_config.json"))
-
-# Override specific settings
-config.set("api.perplexity.temperature", 0.5)
-config.set("data.max_rows_per_file", 20)
-
-# Ensure all paths exist
-config.ensure_paths()
-```
-
-### Custom Analysis
-
-```python
-from symposium.analysis.presenters import PresenterAnalyzer
-from symposium.generation.projects import ProjectGenerator
-
-# Custom presenter analysis
-analyzer = PresenterAnalyzer(api_client, custom_config)
-custom_prompt = "Analyze focusing on novel methodologies..."
-analysis = analyzer.analyze_presenter(presenter_data, system_prompt=custom_prompt)
-
-# Custom project generation
-generator = ProjectGenerator(api_client, custom_config)
-proposal = generator.generate_project_proposal(
-    participant_name,
-    profile,
-    domain_context,
-    catechism_type="EUGrants"
-)
-```
-
-## Output Formats
-
-### Reports Structure
-
-The package generates dual-format reports:
-
-```
-outputs/
-├── profiles/
-│   └── Researcher_Name/
-│       ├── Researcher_Name_research_profile.md
-│       └── Researcher_Name_research_profile.json
-└── projects/
-    └── Participant_Name/
-        ├── Participant_Name_project_proposal_KarmaGAP.md
-        └── Participant_Name_project_proposal_KarmaGAP.json
-```
-
-### JSON Format
-
-```json
-{
-  "timestamp": "2025-01-01T12:00:00",
-  "metadata": {
-    "presenter": "Researcher Name",
-    "report_type": "research_profile"
-  },
-  "content": "Full analysis text..."
-}
-```
-
-### Markdown Format
-
-```markdown
-# Research Profile: Researcher Name
-
-Generated on: 2025-01-01 12:00:00
-
----
-
-## Research Focus
-
-Detailed analysis...
-
-## Future Directions
-
-Potential research trajectories...
-```
-
-## Workflows
-
-### Complete Symposium Preparation
+Visualization commands read Markdown reports rather than registration CSVs:
 
 ```bash
-# 1. Analyze all presenters
-symposium analyze presenters \
-  --data-dir data/inputs/aif_2025/speakers/ \
-  --output-dir outputs/presenters/ \
-  --domain-file data/domains/active_inference.md
-
-# 2. Analyze all participants
-symposium analyze participants \
-  --csv-file data/inputs/aif_2025/Public_Participant_Information.csv \
-  --output-dir outputs/participants/
-
-# 3. Generate detailed profiles
-symposium generate profiles \
-  --data-dir data/inputs/aif_2025/ \
-  --output-dir outputs/profiles/ \
-  --include-methods
-
-# 4. Generate project proposals
-symposium generate projects \
-  --profiles-dir outputs/profiles/ \
-  --output-dir outputs/projects/ \
-  --domain-file data/domains/active_inference.md \
-  --catechism KarmaGAP \
-  --collaborators-file data/collaborators.md
-
-# 5. Create visualizations
-symposium visualize embeddings \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/ \
-  --method pca
+uv run symposium visualize all \
+  --input-dir outputs/2026_symposium/people \
+  --output-dir outputs/2026_symposium/visualizations --method pca --layout spring
 ```
 
-### Incremental Updates
+Individual commands are `visualize embeddings`, `visualize networks`, and
+`visualize distributions`. See the [visualization guide](csv_visualization_guide.md)
+for supported methods, layouts, word clouds, and diagnostic plots.
+
+## Interactive interface and calendars
 
 ```bash
-# Analyze new presenters only
-symposium analyze presenters \
-  --data-dir data/inputs/aif_2025/new_presenters/ \
-  --output-dir outputs/profiles/
-
-# Update specific participant profiles
-symposium generate profiles \
-  --data-dir data/inputs/aif_2025/specific_researchers/ \
-  --output-dir outputs/profiles/
+uv run python run.py --year 2026
+uv run python run.py --year 2025
 ```
 
-## Troubleshooting
+The menu offers the same selected-edition participant and visualization workflows.
+`launch.py` and `symposium.sh` forward the same year/config arguments.
 
-### Common Issues
+Calendar export remains a Python API through `symposium.ScheduleExporter`, using
+organizer-supplied events. See [calendar documentation](../src/symposium/calendar/README.md).
+An empty schedule template is not a confirmed event schedule.
 
-#### "Module 'symposium' not found"
-
-**Solution:**
-```bash
-# Ensure you're in virtual environment
-source .venv/bin/activate
-
-# Reinstall package
-uv pip install -e .
-```
-
-#### "API key not found"
-
-**Solution:**
-```bash
-# Check .env file exists and has correct keys
-cat .env
-
-# Test API connection
-python -c "from symposium.core.api import APIClient; print('API setup OK')"
-```
-
-#### "No data found"
-
-**Solution:**
-```bash
-# Check data directory structure
-ls -la data/inputs/aif_2025/
-
-# Verify CSV files exist and are readable
-head data/inputs/aif_2025/*/works-*.csv
-```
-
-#### Token limit exceeded
-
-**Solution:**
-```bash
-# Reduce rows per file
-symposium analyze presenters --max-rows 5 --data-dir data/inputs/aif_2025/
-
-# Or increase token limit in config
-echo '{"data": {"max_prompt_tokens": 15000}}' > config.json
-```
-
-### Performance Tips
-
-1. **Batch Processing**: Process large datasets in chunks
-2. **Token Management**: Use `--max-rows` to limit input size
-3. **Incremental Runs**: Re-analyze only the subset that changed (see Incremental Updates)
-4. **Rate Limits**: OpenRouter retries automatically; leave spacing between manual calls (see below)
-
-### Rate Limiting
-
-The package handles API rate limits automatically:
-- **Perplexity**: Manual retry with exponential backoff
-- **OpenRouter**: Automatic retry with backoff (built-in)
-
-If you hit rate limits frequently:
-```bash
-# Add delays between requests
-import time
-time.sleep(2)  # 2-second delay
-
-# Or use smaller batches
-symposium analyze presenters --max-rows 3
-```
-
-## Best Practices
-
-### Data Organization
-
-1. **Consistent Naming**: Use clear, consistent folder names
-2. **Data Validation**: Check CSV structure before processing
-3. **Backup**: Keep backups of original data
-4. **Version Control**: Track data changes in git (use .gitignore for outputs)
-
-### Configuration
-
-1. **Environment Variables**: Keep API keys in .env, not config files
-2. **Path Validation**: Use absolute paths for reliability
-3. **Testing**: Test configuration with small datasets first
-
-### Analysis Quality
-
-1. **Domain Context**: Provide relevant domain knowledge files
-2. **Iterative Refinement**: Review and refine generated content
-3. **Validation**: Cross-check generated analyses with original data
-
-## Support
-
-### Getting Help
-
-1. **Check Documentation**: Read the relevant guide section
-2. **Test Commands**: Use `--help` to see available options
-3. **Error Messages**: Read error logs carefully
-4. **Community**: Check GitHub issues and discussions
-
-### Reporting Issues
+## Verification
 
 ```bash
-# Include this information in bug reports:
-python --version
-uv --version
-symposium --help
-cat .env  # (without API keys)
-ls -la data/inputs/aif_2025/
+uv run ruff check src/ tests/ run.py launch.py
+uv run ruff format --check src/ tests/ run.py launch.py
+uv run python -m pytest
+uv build
 ```
 
-## Advanced Features
-
-### Custom Catechisms
-
-Add new proposal templates in `data/catechisms/`:
-
-```markdown
-# Custom Catechism Template
-
-## Section 1: Problem Definition
-1. What is the core problem?
-2. Why is it important?
-
-## Section 2: Solution Approach
-1. What is your proposed solution?
-2. How does it address the problem?
-```
-
-Then use:
-```bash
-symposium generate projects --catechism Custom
-```
-
-### Custom Domain Knowledge
-
-Create domain-specific context files in `data/domains/`:
-
-```markdown
-# Active Inference Domain Context
-
-## Core Principles
-- Free Energy Principle
-- Active Inference
-- Predictive Processing
-
-## Current Challenges
-- Scalability issues
-- Biological plausibility
-- Real-world applications
-
-## Research Opportunities
-- Novel applications in AI
-- Integration with neuroscience
-- Clinical applications
-```
-
-### Integration with Other Tools
-
-```python
-# Export results for further analysis
-import json
-from pathlib import Path
-
-# Load generated profiles
-profile_dir = Path("outputs/profiles")
-for participant_dir in profile_dir.iterdir():
-    if participant_dir.is_dir():
-        json_file = participant_dir / f"{participant_dir.name}_research_profile.json"
-        if json_file.exists():
-            with open(json_file) as f:
-                data = json.load(f)
-                # Process data as needed
-```
-
-## Examples
-
-### Example 1: Quick Presenter Analysis
-
-```bash
-# Analyze a single presenter
-mkdir -p data/inputs/aif_2025/test_presenter
-# Add CSV files to test_presenter directory
-
-symposium analyze presenters \
-  --data-dir data/inputs/aif_2025/test_presenter/ \
-  --output-dir outputs/test/
-```
-
-### Example 2: Full Symposium Setup
-
-```bash
-# 1. Setup data directories
-mkdir -p data/inputs/aif_2025/{speakers,participants}
-mkdir -p data/{catechisms,domains}
-
-# 2. Add domain context
-cat > data/domains/active_inference.md << 'EOF'
-# Active Inference Research Domain
-
-Core concepts, challenges, and opportunities...
-EOF
-
-# 3. Run complete analysis
-symposium analyze presenters --data-dir data/inputs/aif_2025/speakers/ --output-dir outputs/
-symposium analyze participants --csv-file data/inputs/aif_2025/Public_Participant_Information.csv --output-dir outputs/
-symposium generate profiles --data-dir data/inputs/aif_2025/ --output-dir outputs/ --include-methods
-symposium generate projects --profiles-dir outputs/profiles/ --output-dir outputs/ --domain-file data/domains/active_inference.md --catechism KarmaGAP
-```
-
-### Example 3: Visualization Pipeline
-
-```bash
-# Generate visualizations from analysis results
-symposium visualize embeddings \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/ \
-  --method pca \
-  --n-components 2
-
-symposium visualize networks \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/ \
-  --threshold 0.3
-
-symposium visualize distributions \
-  --input-dir outputs/profiles/ \
-  --output-dir outputs/visualizations/
-```
-
-## API Reference
-
-For detailed API documentation, see [API Guide](api_guide.md).
-
-### Quick API Reference
-
-```python
-# Core classes
-from symposium.core.api import APIClient
-from symposium.core.config import Config
-from symposium.analysis.presenters import PresenterAnalyzer
-from symposium.generation.projects import ProjectGenerator
-
-# Configuration
-config = Config()
-config.get("api.provider")  # Get setting
-config.set("data.max_rows", 20)  # Set setting
-
-# API client
-client = APIClient.create("perplexity", api_key="your_key")
-response = client.get_response("Analyze this research...")
-
-# Analysis
-analyzer = PresenterAnalyzer(client)
-results = analyzer.analyze_all_presenters(data_path, output_dir)
-
-# Generation
-generator = ProjectGenerator(client)
-proposal = generator.generate_project_proposal(name, profile, domain, catechism)
-```
-
----
-
-**Next Steps:**
-- Review [API Guide](api_guide.md) for detailed API usage
-- Check [Architecture](architecture.md) for system design
-- See [Installation](installation.md) for setup details
-- Visit [Development Guide](development.md) for contributing
-
+Live-provider tests require explicit opt-in with `-m real_api`. Refer to the
+[release record](release_2_2_0.md) for the exact software checks and their limits.

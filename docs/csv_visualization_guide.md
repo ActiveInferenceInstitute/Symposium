@@ -34,12 +34,12 @@ There are two visualization pipelines:
 # 3. 📊 Generate Column Summaries & Word Clouds
 ```
 
-This reads `data/inputs/aif_2025/Public_Participant_Information.csv`, generates an
+This reads `data/inputs/aif_2026/Public_Participant_Information.csv`, generates an
 LLM summary per question column, and writes one word cloud per column.
 
 ### Outputs
 
-Everything is written to `outputs/2025_symposium/column_summaries/`:
+Everything is written to `outputs/2026_symposium/column_summaries/`:
 
 ```
 column_summaries/
@@ -76,10 +76,10 @@ per-participant labelling, group reports under `people/<participant>/`
 subdirectories (the layout produced by the analysis/generation flows):
 
 ```bash
-symposium visualize embeddings   --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --method pca
-symposium visualize networks     --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --layout spring
-symposium visualize distributions --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations
-symposium visualize all          --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --method pca --layout spring
+symposium visualize embeddings   --input-dir outputs/2026_symposium/people --output-dir outputs/visualizations --method pca
+symposium visualize networks     --input-dir outputs/2026_symposium/people --output-dir outputs/visualizations --layout spring
+symposium visualize distributions --input-dir outputs/2026_symposium/people --output-dir outputs/visualizations
+symposium visualize all          --input-dir outputs/2026_symposium/people --output-dir outputs/visualizations --method pca --layout spring
 ```
 
 ### Command options
@@ -133,7 +133,7 @@ A single Markdown file may be passed as `--input-dir` for any of the subcommands
 ## 3. Interactive Visualization (run.py option 6)
 
 The interactive interface visualizes the Markdown reports under
-`outputs/2025_symposium/` (it does not ask for a CSV):
+`outputs/2026_symposium/people/` (it does not ask for a CSV):
 
 ```bash
 python run.py
@@ -142,13 +142,13 @@ python run.py
 ```
 
 It runs the same in-process code as the CLI and saves plots to
-`outputs/visualizations/`.
+`outputs/2026_symposium/visualizations/`.
 
 ## Data Format Requirements
 
 The participant CSV (used by `run.py` option 3 and the `analyze`/`generate` flows)
 must contain the standard question columns. Example headers from
-`data/inputs/aif_2025/Public_Participant_Information.csv`:
+`data/inputs/aif_2026/Public_Participant_Information.csv`:
 
 - `Can we share this information publicly?`
 - `What is your name?`

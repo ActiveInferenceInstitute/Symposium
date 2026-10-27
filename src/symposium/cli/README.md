@@ -39,10 +39,10 @@ Data visualization and plotting commands:
 symposium --help
 
 # Analyze presenters
-symposium analyze presenters --data-dir data/inputs/aif_2024/ --output-dir outputs/presenters/
+symposium analyze presenters --data-dir data/inputs/aif_2026/presenters/ --output-dir outputs/presenters/
 
 # Generate profiles
-symposium generate profiles --data-dir data/inputs/aif_2024/ --output-dir outputs/profiles/
+symposium generate profiles --data-dir data/inputs/aif_2026/presenters/ --output-dir outputs/profiles/
 
 # Create visualizations
 symposium visualize networks --input-dir outputs/profiles/ --output-dir outputs/visualizations/
@@ -52,7 +52,7 @@ symposium visualize networks --input-dir outputs/profiles/ --output-dir outputs/
 ```bash
 # Analyze with domain context
 symposium analyze presenters \
-  --data-dir data/inputs/aif_2024/ \
+  --data-dir data/inputs/aif_2026/presenters/ \
   --output-dir outputs/presenters/ \
   --domain-file data/domains/active_inference.md \
   --max-rows 10 \

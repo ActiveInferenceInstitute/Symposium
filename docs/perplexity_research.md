@@ -251,8 +251,8 @@ analyzer = ParticipantAnalyzer(openrouter_client)
 
 # Run analysis with Perplexity for background research
 results = analyzer.analyze_all_participants(
-    csv_path=Path("data/inputs/aif_2025/Public_Participant_Information.csv"),
-    output_dir=Path("outputs/2025_symposium"),
+    csv_path=Path("data/inputs/aif_2026/Public_Participant_Information.csv"),
+    output_dir=Path("outputs/2026_symposium"),
     include_background_research=True,
     include_curriculum=True,
     perplexity_client=perplexity_client

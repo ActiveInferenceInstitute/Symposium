@@ -1,80 +1,26 @@
-# Data Directory Structure
+# Symposium data
 
-This directory contains the organized data for the Symposium package.
-
-## Structure
-
-```
-data/
-├── inputs/           # Input data for analysis
-│   ├── aif_2024/    # Historical AIF symposium data
-│   └── aif_2025/    # Current AIF symposium data
-├── catechisms/      # Catechism templates for proposals
-├── domains/         # Domain knowledge bases (user-provided)
-├── prompts/         # System prompts
-└── templates/       # Data structure templates
-```
-
-## Configuration
-
-The package uses a hierarchical configuration system:
-
-1. **Environment Variables** (highest priority)
-   ```bash
-   PERPLEXITY_API_KEY=your_key
-   OPENROUTER_API_KEY=your_key
-   API_PROVIDER=perplexity
-   ```
-
-2. **Configuration File** (`config.json`)
-   ```json
-   {
-     "api": {
-       "provider": "perplexity",
-       "perplexity": {
-         "model": "sonar",
-         "temperature": 0.7
-       }
-     }
-   }
-   ```
-
-3. **Default Values** (lowest priority)
-
-## Data Management
-
-### Adding New Data
-
-To add data for a new symposium year:
+`inputs/aif_2024/` contains historical presenter exports and registrations.
+`inputs/aif_2025/` contains historical participant registrations.
+`inputs/aif_2026/` is the empty current-edition workspace, based on the 2025 survey
+schema. Historical inputs are retained unchanged.
 
 ```bash
-# Create presenter data structure
-mkdir -p data/inputs/aif_2025/PresenterName/
-# Add CSV files: openalex-group-by-*.csv and works-*.csv
-
-# Create participant registration
-cp data/inputs/aif_2025/Public_Participant_Information.csv data/inputs/aif_2026/participants.csv
-# Edit the new CSV file with current participant information
-
-# Add domain context (the data/domains/ directory is user-provided)
-mkdir -p data/domains
-echo "# Active Inference 2025 Context" > data/domains/aif_2025.md
-# Add relevant domain knowledge and context
+uv run symposium edition init --year 2026
+uv run symposium edition validate --year 2026
+# Before analysis, require actual eligible registrations and presenter exports:
+uv run symposium edition validate --year 2026 --require-data
 ```
 
-### Data Validation
+Populate current authorized registrations in
+`inputs/aif_2026/Public_Participant_Information.csv`. Add one current topic CSV and
+one works CSV per presenter under `inputs/aif_2026/presenters/<Presenter_Name>/`.
+Do not copy historical registrations into the new year. See the
+[2026 organizer guide](../docs/2026_setup.md) for all 14 registration fields,
+consent rules, presenter layout, validation behavior, and processing examples.
 
-All data should follow these standards:
-
-- **CSV Files**: UTF-8 encoding, proper headers, no missing values
-- **Markdown Files**: Clean formatting, consistent structure
-- **JSON Files**: Valid JSON syntax, consistent schema
-- **Directory Structure**: Consistent naming, organized hierarchy
-
-## Setup
-
-1. Copy `.env.example` to `.env`
-2. Add your API keys to `.env`
-3. Optionally create `config.json` for custom settings
-4. Run `symposium analyze --help` to test
-
+Other directories contain proposal catechisms, system prompts, templates, and
+user-provided domain context. Keep API credentials in the ignored `.env` file and
+organizer configuration in the ignored `config.json`. Reports go to
+`outputs/<year>_symposium/`, which is ignored by Git. Review registration data before
+committing anything to this public repository.

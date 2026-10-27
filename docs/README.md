@@ -15,6 +15,7 @@ the code on `main`; if something looks wrong, please open an issue.
 
 | Guide | Purpose |
 |-------|---------|
+| [2026 Organizer Setup](2026_setup.md) | Current edition, participant schema, presenter imports, preflight |
 | [User Guide](user_guide.md) | End-to-end usage: data prep, CLI commands, Python API, workflows |
 | [API Guide](api_guide.md) | LLM providers, configuration, token management, error handling |
 | [API Usage](api_usage.md) | Provider roles (Perplexity vs OpenRouter) in the 2025 participant workflow |
@@ -37,7 +38,7 @@ the code on `main`; if something looks wrong, please open an issue.
 
 - Module READMEs: `src/symposium/*/README.md`, `data/README.md`, `tests/README.md`
 - [License](../LICENSE) — MIT
-- [Citation](../CITATION.cff) — cite the package as `symposium2025` (see README)
+- [Citation](../CITATION.cff) — cite the package as `symposium2026` (see README)
 
 ## Conventions
 

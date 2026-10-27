@@ -1,392 +1,188 @@
 # Symposium: Active Inference Symposium Research Tools
 
-[![Tests](https://github.com/ActiveInferenceInstitute/symposium/workflows/Tests/badge.svg)](https://github.com/ActiveInferenceInstitute/symposium/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://github.com/ActiveInferenceInstitute/Symposium/actions/workflows/ci.yml/badge.svg)](https://github.com/ActiveInferenceInstitute/Symposium/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Research analysis and project generation tools for the Active Inference Symposium
+Python tools for presenter research profiles, participant learning plans, project
+proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-## Overview
+**Version 2.2.0 prepares the 2026 edition.** The repository includes an empty 2026
+registration template and presenter workspace based on the previous edition's
+schema. Confirmed 2026 presenters, participants, and dates must be supplied by the
+organizers. Historical 2024 and 2025 inputs remain in their original directories.
 
-Symposium is a comprehensive Python package designed to facilitate research analysis, participant profiling, and project proposal generation for the [Active Inference Symposium](https://symposium.activeinference.institute/). The package provides modular tools for:
+## Quick start for 2026
 
-- **Research Analysis**: Automated analysis of presenter publications and research profiles
-- **Participant Profiling**: Comprehensive participant profiling based on registration data
-- **Profile Generation**: Research profile and methods documentation
-- **Project Proposals**: Structured proposal generation using catechism templates
-- **Collaboration Matching**: Identifying synergies and collaboration opportunities
-
-## Features
-
-- 🔬 **Multi-Provider LLM Support**: Unified interface for Perplexity and OpenRouter APIs
-- 📊 **Data Processing**: OpenAlex publication data analysis with token-aware handling
-- 📝 **Structured Outputs**: Dual format reports (Markdown + JSON)
-- 🎯 **Flexible Configuration**: Environment-based and file-based configuration
-- 🧪 **Well-Tested**: Test suite at ~86% coverage (regression gate `--cov-fail-under=80`); live-LLM tests are opt-in via the `real_api` marker
-- 🚀 **Modern Tooling**: Built with uv, pytest, and ruff
-
-## Quick Start
-
-### Installation
-
-Install using [uv](https://docs.astral.sh/uv/) (recommended):
+Requires Python 3.10 or newer and [uv](https://docs.astral.sh/uv/). The development
+runtime is pinned to Python 3.12; installations use the committed dependency lock.
 
 ```bash
-# Clone repository
-git clone https://github.com/ActiveInferenceInstitute/symposium.git
-cd symposium
+git clone https://github.com/ActiveInferenceInstitute/Symposium.git
+cd Symposium
+uv sync --locked --extra dev
+uv run symposium --version
 
-# Install with uv
-uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-uv pip install -e ".[dev]"
+# The supplied 2026 scaffold is safe to initialize again.
+uv run symposium edition init --year 2026
+uv run symposium edition validate --year 2026
 ```
 
-### Interactive Interface
-
-The easiest way to use Symposium is through the interactive interface. The
-[`symposium.sh`](symposium.sh) launcher checks for uv, creates a virtual environment,
-installs the package, and starts the interface:
+Initialization and validation run offline without API credentials. Edition initialization
+currently supports macOS and Linux. Default validation
+checks structure and reports empty inputs as warnings. Before processing real data:
 
 ```bash
-./symposium.sh
+uv run symposium edition validate --year 2026 --require-data
 ```
 
-To run the interface directly (requires the package to be installed):
+The last command deliberately exits nonzero until both eligible participants and
+valid presenter exports are present. Follow the [2026 organizer guide](docs/2026_setup.md)
+to populate the workspace, validate it, and run analysis.
+
+```text
+data/inputs/aif_2026/
+├── Public_Participant_Information.csv  # Header only until organizers add data
+├── presenters/                       # One folder per new presenter
+└── ...                               # Onboarding instructions and templates
+
+outputs/2026_symposium/               # Generated locally when processing runs
+├── people/
+├── presenters/
+├── proposals/
+└── visualizations/
+```
+
+## Interactive interface
 
 ```bash
-python run.py
+uv run python run.py                   # Default: 2026
+uv run python run.py --year 2025        # Explicit historical edition
+uv run python launch.py --year 2026
+./symposium.sh --year 2026
 ```
 
-The interactive interface provides numbered options for:
-1. **📊 List Available Data** - Explore research datasets
-2. **🎯 Analyze 2025 Participants (Complete Analysis)** - Full participant analysis with background research and curricula
-3. **📊 Generate Column Summaries & Word Clouds** - Statistical analysis of participant responses
-4. **🔍 Background Research (Single Participant)** - Use Perplexity for individual researcher analysis
-5. **📚 Personalized Curriculum (Single Participant)** - Generate learning curriculum for one participant
-6. **🌐 Create Visualizations** - Generate network, embedding, and distribution plots from Markdown reports
-7. **🔧 Configuration Management** - Setup API keys and settings
-8. **🧪 Test System Components** - Validate system functionality
-9. **🚪 Exit** - Close the interface
+The menu offers data inspection, participant analysis, column summaries and word
+clouds, single-person background research and curricula, visualizations, and
+configuration checks. All edition-specific inputs and reports use the selected
+year. Importing the runner does not change the working directory or create files.
 
-#### Advanced Features
-- **🎯 Batch Generation**: CLI commands for complete pipelines (profiles → proposals → visualizations)
-- **🌐 All Visualizations**: `symposium visualize all` creates embeddings, networks, and distributions in one command from a directory of Markdown reports
-- **📊 CSV Word Clouds & Summaries**: Column summaries and per-question word clouds from the participant CSV via `run.py` option 3
-- **🧮 Advanced Methods**: 7 dimension reduction methods (PCA, LSA, t-SNE, UMAP, Isomap, NMF, LDA)
-- **🔧 Smart Configuration**: Automatic virtual environment detection and activation
-- **📝 Comprehensive Logging**: Real-time progress tracking with file persistence
-- **🛡️ Error Recovery**: Robust error handling with clear user guidance, including PaymentRequiredError detection for API payment issues
+## Configure paid analysis
 
-### Command Line Interface
-
-Alternatively, use the CLI directly:
-
-#### Visualization Commands
-
-**From Markdown Files:**
-```bash
-# Create embedding visualizations (PCA, LSA, t-SNE)
-symposium visualize embeddings --input-dir <dir> --output-dir <dir> --method pca
-
-# Create network visualizations (similarity networks, community analysis)
-symposium visualize networks --input-dir <dir> --output-dir <dir> --layout spring
-
-# Create distribution plots (document length, TF-IDF distributions)
-symposium visualize distributions --input-dir <dir> --output-dir <dir>
-
-# Create all visualizations at once
-symposium visualize all --input-dir <dir> --output-dir <dir> --method pca --layout spring
-```
-
-**Note on input:** the `visualize` subcommands read **Markdown** documents from a directory (`--input-dir`); they do **not** accept a CSV file. Participant CSV data (e.g. `data/inputs/aif_2025/Public_Participant_Information.csv`) feeds the `analyze`/`generate` flows, which produce the Markdown reports you then visualize. Point `--input-dir` at a directory tree of `.md` files — for per-participant labelling, group the reports under `people/<participant>/` subdirectories:
+Copy `.env.example` to `.env` and set the credentials needed for your chosen workflow.
+Copy `config.example.json` to the ignored `config.json` to customize models and paths.
 
 ```bash
-# Create embedding visualizations (PCA, LSA, t-SNE) from a directory of Markdown reports
-symposium visualize embeddings --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --method pca
-
-# Create network visualizations (similarity networks, community analysis)
-symposium visualize networks --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --layout spring
-
-# Create distribution plots (document length, TF-IDF distributions)
-symposium visualize distributions --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations
-
-# Create all visualizations at once
-symposium visualize all --input-dir outputs/2025_symposium/people --output-dir outputs/visualizations --method pca --layout spring
+cp .env.example .env
+cp config.example.json config.json
 ```
 
-**Generated Visualizations:**
-- **📊 PCA/LSA/t-SNE Embeddings**: 2D and 3D dimension reduction plots
-- **☁️ Word Clouds**: Term frequency visualization
-- **📈 Term Frequency**: Distribution of terms across documents
-- **🌐 Similarity Networks**: Document similarity networks with community detection
-- **📋 Community Analysis**: Network community structure visualization
-- **📊 Document Length Distributions**: Statistical analysis of text lengths
+Configuration precedence is defaults → explicitly loaded JSON → environment.
+The runner loads project-local `config.json`; the CLI accepts `--config config.json`
+before the command. Explicit CLI paths select the input and output for that command.
+`SYMPOSIUM_YEAR` selects the runner edition; its `--year` option overrides that value.
+`SYMPOSIUM_DATA_DIR` and `SYMPOSIUM_OUTPUTS_DIR` change the base storage paths.
 
-### Configuration
+Perplexity is used for web-assisted background research; OpenRouter supports
+profile analysis and curricula. Existing model defaults remain configurable; verify
+provider availability before a paid run. Setup and tests make no paid API calls.
+AI-generated research profiles and proposals require organizer review before sharing.
 
-Create a `.env` file with your API keys:
+## Command-line workflows
+
+All existing explicit-path commands remain available. These examples process the
+new edition once authorized data has been added:
 
 ```bash
-PERPLEXITY_API_KEY=your_perplexity_key_here
-OPENROUTER_API_KEY=your_openrouter_key_here
+# Profile analysis (choose the provider explicitly).
+uv run symposium --config config.json analyze participants \
+  --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
+  --output-dir outputs/2026_symposium/people --api-provider openrouter
+
+# Background-only research and curriculum-only generation.
+uv run symposium analyze backgrounds \
+  --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
+  --output-dir outputs/2026_symposium/people
+uv run symposium analyze curricula \
+  --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
+  --output-dir outputs/2026_symposium/people --api-provider openrouter
+
+# Presenter publications: OpenAlex topic and works CSVs, one folder per person.
+uv run symposium analyze presenters \
+  --data-dir data/inputs/aif_2026/presenters \
+  --output-dir outputs/2026_symposium/presenters
+uv run symposium generate profiles \
+  --data-dir data/inputs/aif_2026/presenters \
+  --output-dir outputs/2026_symposium/presenters --include-methods
+
+# Visualizations read Markdown reports, rather than registration CSVs.
+uv run symposium visualize all \
+  --input-dir outputs/2026_symposium/people \
+  --output-dir outputs/2026_symposium/visualizations --method pca --layout spring
 ```
 
-**API Models:**
-- **Perplexity**: `sonar` (search-enhanced responses)
-- **OpenRouter**: `anthropic/claude-3.5-sonnet` (advanced reasoning)
+`generate projects` accepts `--profiles-dir`, `--output-dir`, a user-supplied
+`--domain-file`, and a catechism such as `KarmaGAP`, `EUGrants`, or `Synthetic`.
+See `uv run symposium generate projects --help` for options.
 
-**Error Handling:**
-- Payment errors (402) are detected immediately and processing stops with clear guidance
-- Other errors allow graceful degradation and continue processing
-- See [API Guide](docs/api_guide.md) for detailed error handling documentation
+Participant imports accept the 2025 survey questions, corresponding short labels,
+and canonical field names. The future-impact question supports subsequent years.
+Optional survey null markers are normalized to empty strings. Missing name/consent
+headers, duplicate fields, malformed CSV rows, duplicate eligible
+names, and colliding report filenames are rejected. Only explicit affirmative public
+sharing consent (`yes`, `y`, `true`, `1`, ignoring case) permits inclusion.
 
-### Setup Validation
+## Features and package API
 
-Run the setup script to validate your environment:
-
-```bash
-python setup.py
-```
-
-This will check:
-- Python version and dependencies
-- API key configuration
-- Data directory structure
-- Package installation
-- API connectivity
-
-> **Note:** `setup.py` is the legacy validation script; `launch.py` and `symposium.sh`
-> perform their own in-process validation and no longer call it.
-
-### Interactive Launcher
-
-For the easiest experience, use the launcher script:
-
-```bash
-python launch.py
-```
-
-This provides:
-- **Automatic virtual environment activation**
-- **Comprehensive logging** to both console and file
-- **Setup validation** (package import check)
-- **Interactive text interface** with 9 numbered options
-- **Guided workflow** for all symposium operations
-- **Error handling** and user guidance
-- **Real-time progress tracking**
-
-#### Logging Features
-- Console logging with timestamps and levels
-- File logging to `symposium.log` and `setup.log`
-- Detailed import and configuration tracking
-- API connectivity monitoring
-- Error tracking with stack traces
-
-#### Virtual Environment Management
-- Automatic detection and activation
-- Graceful fallback if not in virtual environment
-- Clear error messages and setup instructions
-- Cross-platform compatibility
-
-### Basic Usage
-
-#### Analyze Presenter Research Profiles
-
-```bash
-symposium analyze presenters \
-  --data-dir data/inputs/aif_2025/ \
-  --output-dir outputs/profiles/ \
-  --domain-file data/domains/active_inference.md
-```
-
-#### Generate Research Profiles and Methods
-
-```bash
-symposium generate profiles \
-  --data-dir data/inputs/aif_2025/ \
-  --output-dir outputs/profiles/ \
-  --include-methods
-```
-
-#### Generate Project Proposals
-
-```bash
-symposium generate projects \
-  --profiles-dir outputs/profiles/ \
-  --output-dir outputs/projects/ \
-  --domain-file data/domains/active_inference.md \
-  --catechism KarmaGAP \
-  --collaborators-file data/collaborators.md
-```
-
-**Note on inputs:** `--domain-file` and `--collaborators-file` point at files **you
-provide** — the package does not ship domain or collaborator content. Create the
-directory and file, e.g.:
-
-```bash
-mkdir -p data/domains
-# data/domains/active_inference.md: domain context passed to the LLM prompts
-# data/collaborators.md: optional list of potential collaborators
-```
-
-See [Creating Domain Context](docs/user_guide.md#custom-domain-knowledge) for the
-expected format.
-
-### Python API
+- Presenter analysis from OpenAlex topic and publication exports.
+- Participant profiles, background research, curricula, and column summaries.
+- Profile and methods synthesis, catechism-based project proposals.
+- Markdown and JSON reports; PNG visualizations of text embeddings, networks,
+  distributions, word clouds, and PCA diagnostics.
+- Calendar utilities through `symposium.ScheduleExporter` (ICS, JSON, CSV).
+- Generic explicit-path CLI commands and year-separated organizer workflows.
 
 ```python
-from symposium.core.api import APIClient, PaymentRequiredError
-from symposium.core.config import Config
-from symposium.analysis.presenters import PresenterAnalyzer
 from pathlib import Path
+from symposium.core.edition import Edition
+from symposium.core.data_loader import DataLoader
 
-# Initialize
-config = Config()
-api_client = APIClient.create("perplexity")
-
-# Analyze presenters with error handling
-try:
-    analyzer = PresenterAnalyzer(api_client)
-    results = analyzer.analyze_all_presenters(
-        data_path=Path("data/inputs/aif_2025"),
-        output_dir=Path("outputs/profiles")
-    )
-except PaymentRequiredError as e:
-    print(f"Payment required: {e.message}")
-    # User needs to add credits before continuing
+edition = Edition(year=2026)
+participants = DataLoader.load_participant_data(edition.participants_csv)
+print(f"{len(participants)} eligible registrations")
 ```
+
+## Development and verification
+
+```bash
+uv sync --locked --extra dev
+uv run ruff check src/ tests/ run.py launch.py
+uv run ruff format --check src/ tests/ run.py launch.py
+uv run python -m pytest
+uv build
+```
+
+The coverage regression gate is 80%. Tests cover historical workflows, real temporary
+CSV files, offline onboarding, failure cases, and generated reports. Tests requiring
+live providers are opt-in (`uv run python -m pytest -m real_api`) and require credentials.
 
 ## Documentation
 
-- [Documentation Index](docs/README.md) — overview of every guide in `docs/`
-- [Installation Guide](docs/installation.md) — environment setup with uv
-- [User Guide](docs/user_guide.md) — end-to-end usage (analysis, generation, visualization)
-- [API Guide](docs/api_guide.md) — LLM providers, configuration, error handling
-- [API Usage](docs/api_usage.md) — provider roles (Perplexity vs OpenRouter) in the 2025 workflow
-- [CSV Visualization Guide](docs/csv_visualization_guide.md) — word clouds, embeddings, networks, distributions
-- [Perplexity Research](docs/perplexity_research.md) — web-research integration for participant backgrounds
-- [Architecture Overview](docs/architecture.md) — system design and module dependencies
-- [Development Guide](docs/development.md) — contributing, testing, and code standards
-- [Migration Guide](docs/migration.md) — upgrading from v1.x
-- [UV Setup](UV_SETUP.md) — uv-based setup and commands
-- [AI Agents Overview](AGENTS.md) — all AI agents in the system
-
-## Project Structure
-
-```
-symposium/
-├── src/symposium/          # Main package
-│   ├── core/              # Core functionality (API, config, logging)
-│   ├── analysis/          # Analysis modules
-│   ├── generation/        # Content generation
-│   ├── io/                # Input/output operations
-│   ├── visualization/     # Visualization tools
-│   ├── cli/               # Command-line interfaces
-│   └── calendar/          # Calendar export functionality
-├── tests/                 # Test suite
-├── data/                  # Data and templates
-│   ├── inputs/           # Input data (OpenAlex, registrations)
-│   ├── catechisms/       # Proposal templates (KarmaGAP, EUGrants, Synthetic)
-│   ├── domains/          # Domain knowledge files (user-provided)
-│   ├── prompts/          # System prompts
-│   └── templates/        # Data structure templates
-├── docs/                  # Documentation (see docs/README.md)
-├── outputs/              # Generated reports and visualizations (example outputs tracked)
-├── run.py                # Interactive interface
-├── launch.py             # Launcher (venv check + interface)
-├── setup.py              # Legacy environment validation script
-└── symposium.sh          # uv-based install-and-run script
-```
-
-## Development
-
-### Setup Development Environment
-
-```bash
-# Install development dependencies
-uv pip install -e ".[dev]"
-
-# Run tests
-pytest
-
-# Run tests with coverage
-pytest --cov=src/symposium --cov-report=html
-
-# Run linting
-ruff check src/ tests/
-
-# Format code
-ruff format src/ tests/
-```
-
-### Running Tests
-
-```bash
-# All tests
-pytest
-
-# Specific test file
-pytest tests/test_core/test_api.py
-
-# With coverage
-pytest --cov=src/symposium --cov-report=term --cov-report=html
-
-# Live-LLM tests are opt-in (require API keys):
-pytest -m real_api
-```
-
-## Migration from v1.x
-
-The 2.0 release represents a comprehensive refactor. See [migration.md](docs/migration.md) for detailed migration instructions.
-
-Key changes:
-- Unified API client interface
-- Modular package structure
-- Configuration management
-- CLI commands replace numbered scripts
-- Data reorganization
-
-## Contributing
-
-We welcome contributions! Please see [contributing.md](docs/contributing.md) for guidelines.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- [2026 organizer guide](docs/2026_setup.md): inputs, schema, readiness, analysis, review.
+- [Documentation index](docs/README.md): user, API, architecture, and development guides.
+- [Data guide](data/README.md): historical and current data organization.
+- [Changelog](CHANGELOG.md), [citation](CITATION.cff), [license](LICENSE).
+- [Contributing](docs/contributing.md), [issues](https://github.com/ActiveInferenceInstitute/Symposium/issues).
 
 ## Citation
 
-If you use this software in your research, please cite:
-
 ```bibtex
-@software{symposium2025,
+@software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  year = {2025},
-  url = {https://github.com/ActiveInferenceInstitute/symposium}
+  version = {2.2.0},
+  year = {2026},
+  url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }
 ```
 
-## Acknowledgments
-
-- [Active Inference Institute](https://activeinference.institute/)
-- [OpenAlex](https://openalex.org/) for publication data
-- [Perplexity AI](https://www.perplexity.ai/) and [OpenRouter](https://openrouter.ai/) for LLM access
-
-## Support
-
-- [Submit Issues](https://github.com/ActiveInferenceInstitute/symposium/issues)
-- [Discussions](https://github.com/ActiveInferenceInstitute/symposium/discussions)
-- Email: [contact@activeinference.institute](mailto:contact@activeinference.institute)
-
-## Roadmap
-
-- [ ] Real-time analysis updates
-- [ ] Interactive visualization dashboard
-- [ ] Multi-symposium support
-- [ ] Enhanced collaboration matching
-- [ ] Impact tracking and analytics
-
----
-
-**Prepared for the 2025 Active Inference Symposium**
+Maintained by the [Active Inference Institute](https://activeinference.institute/).

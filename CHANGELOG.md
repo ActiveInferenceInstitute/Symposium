@@ -2,7 +2,29 @@
 
 All notable changes to the Symposium package.
 
-## [Unreleased]
+## [2.2.0] — 2026-10-26
+
+### 2026 preparation
+- Add reusable edition paths and offline `edition init` / `edition validate` commands,
+  including `--require-data` to distinguish empty templates from populated inputs.
+- Ship a header-only 2026 registration template and presenter onboarding workspace;
+  preserve historical 2024/2025 inputs without copying people or dates into 2026.
+- Make the interactive runner, launchers, reports, and visualizations edition-aware;
+  support explicit year selection and shared configuration/model settings.
+- Normalize historical, canonical, and year-dependent survey headers. Reject malformed
+  rows, ambiguous columns, duplicate eligible names, and report-path collisions.
+- Background-only and curriculum-only commands now generate only the selected report.
+- Reject missing/malformed explicitly selected configurations, apply configured generation
+  parameters, and return nonzero from incomplete participant CLI batches.
+- Preserve live credentials when displaying or saving redacted configuration; propagate
+  Perplexity payment errors and payment errors from column summaries rather than continuing after a payment failure.
+- Reconcile runtime/package/citation version, commit `uv.lock`, declare `httpx` as a
+  test dependency, pin the development Python, and test/build locked installs in CI.
+- Exclude historical datasets, archived projects, rendered outputs, and local evidence
+  from source distributions while preserving all repository originals.
+- Add real-file/subprocess regressions and a 2026 organizer guide.
+
+### Included documentation and tooling improvements
 
 ### Docs (docs-deep pass, 2026-08-02)
 - Added `docs/README.md` documentation index and `CITATION.cff`.
