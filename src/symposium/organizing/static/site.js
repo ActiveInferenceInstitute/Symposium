@@ -5,10 +5,10 @@ document.querySelectorAll("[data-filter-group]").forEach(group => {
   const rows = [...group.querySelectorAll("[data-record]")];
   const corpus = rows.map(row => row.textContent.toLocaleLowerCase());
   const update = () => {
-    const query = search.value.trim().toLocaleLowerCase();
+    const terms = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
     let visible = 0;
     rows.forEach((row, index) => {
-      const matches = corpus[index].includes(query) && (!category || !category.value || category.value === row.dataset.category);
+      const matches = terms.every(term => corpus[index].includes(term)) && (!category || !category.value || category.value === row.dataset.category);
       row.hidden = !matches;
       visible += Number(matches);
     });
@@ -53,6 +53,8 @@ function revealAnchor() {
       }
     }
     target.open = true;
+    target.querySelector("summary")?.focus({preventScroll: true});
+    target.scrollIntoView({block: "start"});
   }
 }
 window.addEventListener("hashchange", revealAnchor);

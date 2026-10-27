@@ -1,9 +1,12 @@
 """Public site safety and source-readable export scenarios; fixtures are synthetic."""
 
 import hashlib
+import json
 from html.parser import HTMLParser
+from pathlib import Path
 
 import pytest
+from PIL import Image
 
 from symposium.organizing.models import (
     PublicParticipant,
@@ -153,8 +156,8 @@ def add_picture(bundle, tmp_path):
     assets = tmp_path / "input"
     picture = assets / "assets/portraits/portrait.png"
     picture.parent.mkdir(parents=True)
-    content = bytes.fromhex("89504e470d0a1a0a")
-    picture.write_bytes(content)
+    Image.new("RGB", (2, 2), "white").save(picture)
+    content = picture.read_bytes()
     bundle["presentations"][0]["pictures"] = [
         {
             "path": "assets/portraits/portrait.png",
@@ -229,3 +232,104 @@ def test_program_json_rejects_unapproved_fields(bundle, tmp_path):
         build_site(bundle, tmp_path / "site")
     assert not (tmp_path / "site/program.json").exists()
     assert not (tmp_path / "site").exists()
+
+
+@pytest.mark.parametrize(
+    "year,start,end", [(2026, "2026-04-03", "2026-04-04"), (2027, "2027-09-21", "2027-09-23")]
+)
+def test_event_dates_are_source_driven(bundle, tmp_path, year, start, end):
+    bundle["event"].update(year=year, start_date=start, end_date=end)
+    bundle["sessions"] = []
+    source = build_site(bundle, tmp_path / "site").read_text()
+    assert start in source and end in source
+    assert "November 12" not in source
+    assert "Online and free" not in source
+
+
+@pytest.mark.parametrize("payload", [b"not an image", bytes.fromhex("89504e470d0a1a0a")])
+def test_hash_matching_malformed_image_rejected_before_output(bundle, tmp_path, payload):
+    assets, picture = add_picture(bundle, tmp_path)
+    picture.write_bytes(payload)
+    bundle["presentations"][0]["pictures"][0]["sha256"] = hashlib.sha256(
+        picture.read_bytes()
+    ).hexdigest()
+    with pytest.raises(ValueError, match="image"):
+        build_site(bundle, tmp_path / "site", assets_dir=assets)
+    assert not (tmp_path / "site").exists()
+
+
+def test_pending_content_is_visible_without_opening_records(bundle, tmp_path):
+    bundle["presentations"][0].update(abstract="", abstract_sha256=text_hash(""))
+    bundle["sessions"][0]["title"] = ""
+    source = build_site(bundle, tmp_path / "site").read_text()
+    summary = source.split("<summary>", 1)[1].split("</summary>", 1)[0]
+    assert "Abstract pending" in summary
+    assert "1 abstract pending" in source
+    assert "1 session title pending" in source
+    assert "Session title pending" in source
+
+
+def test_public_methods_and_download_guidance(bundle, tmp_path):
+    source = build_site(bundle, tmp_path / "site").read_text()
+    assert "About this public program" in source
+    assert "no automatic live synchronization" in source
+    assert "public-sharing consent" in source
+    assert "not independent verification" in source
+    assert 'id="downloads"' in source
+    assert 'id="working-book"' in source
+    assert 'href="#working-book"' in source
+
+
+def test_image_extension_must_match_decoded_format(bundle, tmp_path):
+    assets, picture = add_picture(bundle, tmp_path)
+    Image.new("RGB", (2, 2), "white").save(picture, format="JPEG")
+    bundle["presentations"][0]["pictures"][0]["sha256"] = hashlib.sha256(
+        picture.read_bytes()
+    ).hexdigest()
+    with pytest.raises(ValueError, match="image"):
+        build_site(bundle, tmp_path / "site", assets_dir=assets)
+    assert not (tmp_path / "site").exists()
+
+
+def test_no_javascript_keeps_records_and_hides_nonfunctional_controls(bundle, tmp_path):
+    source = build_site(bundle, tmp_path / "site").read_text()
+    tags = Tags(source).tags
+    records = [attrs for tag, attrs in tags if tag == "details"]
+    assert len(records) == 2
+    assert all("hidden" not in attrs for attrs in records)
+    enhancements = [attrs for _, attrs in tags if "data-enhancement" in attrs]
+    assert enhancements and all("hidden" in attrs for attrs in enhancements)
+    assert "First paragraph." in source and "Learn models" in source
+
+
+def test_public_bundle_build_preserves_source_bytes(tmp_path):
+    root = Path(__file__).resolve().parents[1] / "data/public/2026"
+    before = {p.relative_to(root): p.read_bytes() for p in root.rglob("*") if p.is_file()}
+    bundle = json.loads(before[Path("program.json")])
+    index = build_site(bundle, tmp_path / "site", assets_dir=root, artifacts_dir=root)
+    assert {p.relative_to(root): p.read_bytes() for p in root.rglob("*") if p.is_file()} == before
+    tags = Tags(index.read_text()).tags
+    assert len(
+        [attrs for _, attrs in tags if attrs.get("id", "").startswith("presentation-")]
+    ) == len(bundle["presentations"])
+    assert "2 abstracts pending; 1 session title pending" in index.read_text()
+    assert (index.parent / "program.json").read_bytes() == canonical_bytes(validate_bundle(bundle))
+
+
+def test_form_identifiers_and_intrinsic_image_dimensions(bundle, tmp_path):
+    assets, _ = add_picture(bundle, tmp_path)
+    source = build_site(bundle, tmp_path / "site", assets_dir=assets).read_text()
+    tags = Tags(source).tags
+    fields = [attrs for tag, attrs in tags if tag in {"input", "select"}]
+    assert fields and all(attrs.get("id") or attrs.get("name") for attrs in fields)
+    images = [attrs for tag, attrs in tags if tag == "img"]
+    assert images and all(
+        attrs.get("width") == "2" and attrs.get("height") == "2" for attrs in images
+    )
+
+
+def test_whitespace_abstract_has_readable_pending_body(bundle, tmp_path):
+    bundle["presentations"][0]["abstract"] = " \n "
+    bundle["presentations"][0]["abstract_sha256"] = text_hash(" \n ")
+    source = build_site(bundle, tmp_path / "site").read_text()
+    assert "No program abstract has been published for this presentation yet." in source

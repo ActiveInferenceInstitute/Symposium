@@ -36,6 +36,7 @@ from symposium.organizing.publication import (
     write_calendar,
     write_participant_briefs,
 )
+from symposium.organizing.review import readiness, review_update
 
 
 def add_organize_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -54,6 +55,8 @@ def add_organize_parser(subparsers: argparse._SubParsersAction) -> None:
         "stage-public": ("bundle", "snapshot", "ledger", "output-dir", "public-root"),
         "site": ("public-dir", "output-dir"),
         "check-public": ("public-dir",),
+        "readiness": ("public-dir",),
+        "review-update": ("previous-public-dir", "candidate-public-dir", "output", "public-root"),
         "receipt-prepare": ("request", "output", "public-root"),
         "receipt-apply": ("plan", "instituteos-root", "output", "public-root"),
     }
@@ -63,6 +66,16 @@ def add_organize_parser(subparsers: argparse._SubParsersAction) -> None:
         children[name] = child
         for option in options:
             child.add_argument("--" + option, required=True, type=Path)
+    children["readiness"].add_argument(
+        "--require-complete",
+        action="store_true",
+        help="Fail when presentations are absent or abstracts/session titles are pending; source freshness is not checked",
+    )
+    children[
+        "review-update"
+    ].description = (
+        "Compare two verified public trees; save an exclusive private report without publishing."
+    )
     children["project"].add_argument(
         "--portraits",
         action="store_true",
@@ -147,6 +160,25 @@ def run_organize(args: argparse.Namespace) -> int:
 
 def _run(args: argparse.Namespace) -> None:
     command = args.subcommand
+    if command == "readiness":
+        report = readiness(args.public_dir)
+        print(canonical_bytes(report).decode(), end="")
+        if args.require_complete and not report["content_complete"]:
+            raise PublicationError(
+                "Public content remains incomplete; inspect pending items in the report"
+            )
+        return
+    if command == "review-update":
+        output = _private(args.output, args.public_root)
+        if any(
+            output.is_relative_to(root.resolve())
+            for root in (args.previous_public_dir, args.candidate_public_dir)
+        ):
+            raise PublicationError("Review output must be outside both public trees")
+        _fresh(output)
+        _write_private(output, review_update(args.previous_public_dir, args.candidate_public_dir))
+        print("Private review report saved; no publication performed.")
+        return
     if command in {"check-public", "site"}:
         bundle = verify_public_tree(args.public_dir)
         if command == "site":
