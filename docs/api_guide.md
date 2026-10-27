@@ -7,6 +7,11 @@ use `APIClient.create(provider, api_key=None, **kwargs)` from
 `get_response(prompt, system_prompt=None, **kwargs)`. Calling that method can incur
 charges and sends its supplied content to the provider.
 
+For a workflow-specific key checklist and offline capability inspection, see
+[credentials](credentials.md). The static methods and publication surfaces require no
+provider account. `organize capabilities --check-env` checks process-environment presence
+only; it does not load dotenv files, authenticate, check permissions or spend credits.
+
 ## Configuration contract
 
 `Config` in [`core.config`](../src/symposium/core/config.py) loads defaults, an

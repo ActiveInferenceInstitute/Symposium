@@ -8,6 +8,9 @@ remain evidence of their own releases, not current test or deployment results.
 | [Installation](installation.md) | Python 3.12+, locked uv setup and offline checks |
 | [uv setup](../UV_SETUP.md) | Environment selection and troubleshooting |
 | [Organizer publication](organizing_publication.md) | Private intake, consent, artifacts, review and Pages |
+| [Integration catalog](integrations.md) | Reviewed repository evidence and task-specific handoffs |
+| [Discovery and indexing](discovery.md) | Canonical pages, sitemap, machine indexes and crawler limits |
+| [Credentials](credentials.md) | Optional provider/bridge access and keyless operation |
 | [Methods](methods.md) | Source provenance, next-intake review and interpretation limits |
 | [2026 research inputs](2026_setup.md) | CSV schema, presenter exports and preflight |
 | [User guide](user_guide.md) | Optional research command examples |

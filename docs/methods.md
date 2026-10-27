@@ -1,5 +1,18 @@
 # Methods and evidence boundaries
 
+## Choose a workflow
+
+Browse the [methods hub](https://activeinferenceinstitute.github.io/Symposium/methods.html)
+or the [reviewed integration catalog](integrations.md). `uv run symposium organize methods`
+prints the same catalog locally; `--format json` supplies machine-readable records.
+Each handoff states its purpose and limits and pins public repository evidence to a
+reviewed commit. Only the native Template adapter is an installed cross-repository
+render integration. Other links direct separate workflows, without automatic data
+transfer, compatibility claims or scientific validation.
+
+Use [credentials](credentials.md) to select optional services and [discovery](discovery.md)
+to understand what is indexed. Catalog changes follow the refresh procedure there.
+
 ## Approved public content
 
 Public dossiers and participant briefs are deterministic derivatives of an approved

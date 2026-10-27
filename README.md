@@ -6,11 +6,30 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 3.0 prepares the next intake with Python 3.12+, verified candidate comparisons, and clearer program readiness.**
+**Version 3.1 connects Symposium methods to relevant public Institute repositories, with searchable workflows and machine-readable discovery.**
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
 and the working abstract book. Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
+
+## Find a method or repository
+
+Start with the [searchable methods hub](https://activeinferenceinstitute.github.io/Symposium/methods.html),
+[workflow catalog](docs/integrations.md), or [methods and evidence boundaries](docs/methods.md).
+Nine workflows link ten reviewed public repositories, with pinned source evidence
+and explicit handoff limits. The native Template renderer is an existing integration;
+other cards guide separate learning, modeling, transcription or collaboration work.
+
+```bash
+uv run symposium organize methods
+uv run symposium organize methods --format json
+uv run symposium organize capabilities
+```
+
+These commands run offline without API keys. The website publishes a page sitemap,
+canonical/structured metadata, public discovery index and source guidance. Participant
+self-reports are excluded from the additional discovery index. See
+[indexing](docs/discovery.md) and [optional credentials](docs/credentials.md).
 
 ## Quick start for 2026
 
@@ -76,8 +95,8 @@ Copy `.env.example` to `.env` and set the credentials needed for your chosen wor
 Copy `config.example.json` to the ignored `config.json` to customize models and paths.
 
 ```bash
-cp .env.example .env
-cp config.example.json config.json
+if [ ! -e .env ] && [ ! -L .env ]; then cp .env.example .env; fi
+if [ ! -e config.json ] && [ ! -L config.json ]; then cp config.example.json config.json; fi
 ```
 
 Configuration precedence is defaults → explicitly loaded JSON → environment.
@@ -157,7 +176,7 @@ print(f"{len(participants)} eligible registrations")
 
 ## Review the next intake before publication
 
-Python 3.10/3.11 support ends with this major release. Upgrade to Python 3.12+
+Python 3.10/3.11 support ended in version 3.0. Upgrade to Python 3.12+
 and recreate the environment with `uv sync --locked --extra dev`; the development
 pin remains 3.12. CI verifies 3.12, 3.13, and 3.14. The separate native Template
 renderer continues to use its own Python 3.14 environment.
@@ -209,6 +228,7 @@ mapping, approval checks, native abstract-book production, and deployment bounda
 
 ## Documentation
 
+- [Method catalog](docs/integrations.md), [indexing](docs/discovery.md), [credentials](docs/credentials.md).
 - [2026 organizer guide](docs/2026_setup.md): inputs, schema, readiness, analysis, review.
 - [Documentation index](docs/README.md): user, API, architecture, and development guides.
 - [Data guide](data/README.md): historical and current data organization.
@@ -221,7 +241,7 @@ mapping, approval checks, native abstract-book production, and deployment bounda
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  version = {3.0.0},
+  version = {3.1.0},
   year = {2026},
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }
