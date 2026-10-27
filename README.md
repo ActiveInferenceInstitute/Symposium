@@ -6,7 +6,7 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 2.2.0 prepares the 2026 edition.** The repository includes an empty 2026
+**Version 2.2.1 prepares the 2026 edition.** The repository includes an empty 2026
 registration template and presenter workspace based on the previous edition's
 schema. Confirmed 2026 presenters, participants, and dates must be supplied by the
 organizers. Historical 2024 and 2025 inputs remain in their original directories.
@@ -179,7 +179,7 @@ live providers are opt-in (`uv run python -m pytest -m real_api`) and require cr
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  version = {2.2.0},
+  version = {2.2.1},
   year = {2026},
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }

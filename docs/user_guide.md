@@ -1,6 +1,6 @@
 # Symposium user guide
 
-Symposium 2.2.0 supports the 2026 edition and explicit historical workflows. Start
+Symposium 2.2.1 supports the 2026 edition and explicit historical workflows. Start
 with the [2026 organizer guide](2026_setup.md) for full registration fields, consent,
 readiness checks, and presenter onboarding.
 
@@ -166,4 +166,4 @@ uv build
 ```
 
 Live-provider tests require explicit opt-in with `-m real_api`. Refer to the
-[release record](release_2_2_0.md) for the exact software checks and their limits.
+[release record](release_2_2_1.md) for the exact software checks and their limits.

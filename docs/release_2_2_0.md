@@ -72,3 +72,12 @@ are retained in the local agent evidence directory.
   Generated profiles, recommendations, and proposals are drafts requiring review.
 
 See the [2026 organizer guide](2026_setup.md) for the next operational steps.
+
+## Post-publication CI finding
+
+GitHub runs 40431540026 (main) and 40431540021 (tag) failed at lint because
+`setup-uv@v1` installed a uv version without the `uv run --no-sync` option.
+This does not invalidate the local Python/runtime checks above, but it blocks a
+claim of successful remote CI for v2.2.0. The immutable tag, failed runs, and
+local failure logs remain retained. [Version 2.2.1](release_2_2_1.md) corrects
+the CI toolchain and requires a successful remote matrix before publication.

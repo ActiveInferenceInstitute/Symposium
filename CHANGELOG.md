@@ -2,6 +2,16 @@
 
 All notable changes to the Symposium package.
 
+## [2.2.1] — 2026-10-26
+
+- Fix the published CI toolchain mismatch: `setup-uv@v1` installed a uv version
+  that rejected `uv run --no-sync`. The original failed GitHub runs and v2.2.0
+  tag remain preserved.
+- Pin setup-uv to the upstream-documented v10.3.2 commit and install uv 0.13.5,
+  matching the locally tested toolchain. Declare the minimum uv version and
+  let both Python matrix jobs finish independently.
+- No participant, presenter, analysis, or visualization behavior changes from 2.2.0.
+
 ## [2.2.0] — 2026-10-26
 
 ### 2026 preparation

@@ -1,6 +1,6 @@
 # Preparing the 2026 Symposium
 
-Version 2.2.0 retains last year's registration structure and existing presenter
+Version 2.2.1 retains last year's registration structure and existing presenter
 publication workflows. It adds reusable edition paths, offline setup, and explicit
 input validation. The shipped 2026 files are empty templates; they do not establish
 an actual roster or schedule.
@@ -144,5 +144,5 @@ uv run python -m pytest
 uv build
 ```
 
-See [the release verification record](release_2_2_0.md) for the tested software scope
+See [the release verification record](release_2_2_1.md) for the tested software scope
 and remaining organizer-supplied data requirements.

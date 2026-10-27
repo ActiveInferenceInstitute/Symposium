@@ -1,6 +1,6 @@
 [project]
 name = "symposium"
-version = "2.2.0"
+version = "2.2.1"
 description = "Research analysis and project generation for Active Inference Symposium"
 authors = [{name = "Active Inference Institute"}]
 requires-python = ">=3.10"
@@ -78,3 +78,6 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
 
+
+[tool.uv]
+required-version = ">=0.13.5"
