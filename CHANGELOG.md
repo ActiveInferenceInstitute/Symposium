@@ -2,6 +2,31 @@
 
 All notable changes to the Symposium package.
 
+## [3.0.0] — 2026-10-27
+
+### Runtime compatibility
+
+- Require Python 3.12 or newer; remove Python 3.10/3.11 compatibility and align the
+  development, lint, type-check and setup guidance with that minimum. Python 3.10
+  reached upstream end of life on 2026-10-01. Keep the previous release intact.
+- Test Python 3.12, 3.13 and 3.14, including actual approved-public-tree verification
+  and static site generation. Keep Template's native Python 3.14 runtime separate.
+
+### Next-intake methods and website
+
+- Add read-only readiness and candidate-review commands that verify both snapshots,
+  report additions/removals/changed fields and artifact changes, and keep comparison
+  reports in private operator storage. Strict completeness is explicit and separate
+  from integrity or live-source freshness.
+- Derive website dates from approved event fields, expose pending content clearly,
+  explain publication methods and downloads, and improve multiword search and deep links.
+- Decode and validate image assets before building output; preserve the existing
+  approved roster, images, dossiers, briefs, calendar and abstract-book bytes.
+- Require explicit `--run-real-api` authorization before live-provider tests can run,
+  even when credentials are present; verify the boundary with local sentinel tests.
+- Refresh installation, development, methods and organizer documentation against
+  actual parser interfaces; retain historical release and evidence records.
+
 ## [2.3.0] — 2026-10-26
 
 - Add private InstituteOS/Superhuman Docs intake and guarded append-only synchronization

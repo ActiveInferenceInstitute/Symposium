@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.12"]
+        python-version: ["3.12", "3.13", "3.14"]
     env:
       UV_PYTHON: ${{ matrix.python-version }}
     steps:
@@ -38,3 +38,8 @@ jobs:
         run: |
           uv run --no-sync symposium --version
           uv run --no-sync symposium edition validate --year 2026
+      - name: Verify approved public program and renderer
+        run: |
+          uv run --no-sync symposium organize check-public --public-dir data/public/2026
+          uv run --no-sync symposium organize readiness --public-dir data/public/2026
+          uv run --no-sync symposium organize site --public-dir data/public/2026 --output-dir "$RUNNER_TEMP/symposium-public-site"

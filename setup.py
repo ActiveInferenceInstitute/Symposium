@@ -34,11 +34,11 @@ os.chdir(current_dir)
 def check_python_version() -> bool:
     """Check if Python version is compatible."""
     version = sys.version_info
-    if version.major == 3 and version.minor >= 10:
+    if version.major == 3 and version.minor >= 12:
         print(f"✅ Python version: {version.major}.{version.minor}.{version.micro}")
         return True
     else:
-        print(f"❌ Python version: {version.major}.{version.minor}.{version.micro} (requires 3.10+)")
+        print(f"❌ Python version: {version.major}.{version.minor}.{version.micro} (requires 3.12+)")
         return False
 
 def check_virtual_environment() -> bool:
