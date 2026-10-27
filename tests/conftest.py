@@ -9,6 +9,24 @@ import pandas as pd
 import pytest
 
 
+def pytest_addoption(parser: pytest.Parser) -> None:
+    parser.addoption(
+        "--run-real-api",
+        action="store_true",
+        default=False,
+        help="Explicitly authorize live provider tests, which can send data and incur charges",
+    )
+
+
+def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item]) -> None:
+    if config.getoption("run_real_api"):
+        return
+    disabled = pytest.mark.skip(reason="Live provider tests require --run-real-api")
+    for item in items:
+        if item.get_closest_marker("real_api") is not None:
+            item.add_marker(disabled)
+
+
 @pytest.fixture
 def temp_dir():
     """Create a temporary directory for tests."""
