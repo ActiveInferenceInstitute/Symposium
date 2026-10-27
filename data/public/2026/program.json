@@ -1,0 +1,1011 @@
+{
+  "event": {
+    "community_url": "https://discord.activeinference.institute/",
+    "donate_url": "https://donate.activeinference.institute/",
+    "end_date": "2026-11-13",
+    "id": "symposium-2026",
+    "livestreams": [
+      {
+        "title": "Day 1 livestream",
+        "url": "https://www.youtube.com/watch?v=-v4IaFY9MZI"
+      },
+      {
+        "title": "Day 2 livestream",
+        "url": "https://www.youtube.com/watch?v=ccze9ay8D0o"
+      }
+    ],
+    "participant_registration_url": "https://registersymposium2026.activeinference.institute/",
+    "presenter_registration_url": "https://2026present.activeinference.institute/",
+    "program_url": "https://2026symposium.activeinference.institute/",
+    "start_date": "2026-11-12",
+    "timezone": "UTC",
+    "title": "6th Applied Active Inference Symposium",
+    "year": 2026
+  },
+  "participants": [
+    {
+      "active_inference_application": "As and observer or control algorithm",
+      "affiliations": "Algorithms Engineer",
+      "background": "control systems, information theory and stochastic thermodynamics research",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-5f927877aee47f2d",
+      "learning_needs": "some form of python tool where i can get an example of application",
+      "name": "Adrian Guel Cortez",
+      "orcid": "",
+      "pragmatic_value": "hear about practical applications"
+    },
+    {
+      "active_inference_application": "I am aiming to explain political psychology processes through active inference, while writing a book on the explanation of Ideology through active inference.",
+      "affiliations": "Active Inference Institute",
+      "background": "I ai to explain political psychology work through the lens of active inference.\n\nMy current work aims to highlight how inaccuracy lowers factorial depth to broaden the search, creating latent hypotheses with a lower factorial depth. This increases the probability of category blindness and conflation with conceptual distinctions through contextualisation and can lead to dissociative absorption as bayes optimality chooses a conflated or inaccurate conceptual category. I aim to adapt this to the study of political pschology.",
+      "challenges": "I believe it is very common for people to see prediction in predictive processing as without preferences. That without significant abstraction, reducing the field to general access heuristics, there is a significant barrier for entry that researchers in the field of psychology and psychiatry fail to bridge.",
+      "epistemic_value": "More on bounded rationality in relation to structured learning",
+      "future_impact": "I think that integrating chaos theory into the bidirectional interaction an agent has with an environment they change would allow for more “directionality” in political, social, and biological system based papers.",
+      "id": "person-df0764a556bcc59d",
+      "learning_needs": "",
+      "name": "Alexander Hemming",
+      "orcid": "",
+      "pragmatic_value": "Research highlighting and collaboration oppertunities"
+    },
+    {
+      "active_inference_application": "Cognitive security checks in Claude. Process ontology. Temporal lived change versus agreed shared map of clock time. Change has its own clock. We carry each other through time. The future is open.",
+      "affiliations": "Active Inference BoD",
+      "background": "CRR. Change has its own clock. Empty Now. Equanimity. Continuous Learning. AI safety",
+      "challenges": "Funding so I can research and eat food at the same time.",
+      "epistemic_value": "Partnerships and embodied time",
+      "future_impact": "Maps and Territories. I think that sustained engagement with FEP oriented process theories such as Active Inference and other process theories could be of high Value to children, families, organisations and communities who need support and guidance in the age of high complexity and anxiety.",
+      "id": "person-b699ad16715fa669",
+      "learning_needs": "Cognitive Security. Trust.",
+      "name": "Alexander Sabine",
+      "orcid": "",
+      "pragmatic_value": "People in equanimity, applied use cases"
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Active Inference Institute Board of Directors, Founder and Chief Scientist, Themesis Inc.",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-e825e05f253fe26a",
+      "learning_needs": "",
+      "name": "Alianna Maren",
+      "orcid": "0000-0002-4262-305X",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "CIMC",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-56b170ba80f0da7b",
+      "learning_needs": "Hey all, thanks for organising. I’m keen to keep up with the field and listen to some talks but don’t have bandwidth to fill this out in detail right now. Would be wonderful to join (on days that don’t clash with foresight vision weekend)!",
+      "name": "Angie Normandale",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Institut de Robòtica i Informàtica Industrial",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-4ee3679892e6ac5a",
+      "learning_needs": "",
+      "name": "Antonio",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "Information architecture/AI applications",
+      "affiliations": "",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-43888c3e4d6ec035",
+      "learning_needs": "not sure",
+      "name": "Christina Fedor",
+      "orcid": "",
+      "pragmatic_value": "a handbook to help me onboard contextually to the topics being discussed"
+    },
+    {
+      "active_inference_application": "Informally exploring implications for other fields of enquiry. I am considering writing a book exploring issues of epistemology and axiology from an Active Inference perspective.",
+      "affiliations": "",
+      "background": "I write a substack blog at  where I explore the implications of Active Inference for moral and philosophical issues",
+      "challenges": "Making it relevant and accessible to a wider, less technical audience. Clarifying its relationship with enactivism which is mainly focused on social cognition.",
+      "epistemic_value": "Latest books and important papers/ideas",
+      "future_impact": "",
+      "id": "person-81eaad4cdd8dbca7",
+      "learning_needs": "Implications of Active Inference for social and moral philosophy",
+      "name": "Colin Turfus",
+      "orcid": "",
+      "pragmatic_value": "To make contact with people looking to explore philosophical implications of Active Inference"
+    },
+    {
+      "active_inference_application": "I am currently a guest student researcher at the maastricht predlab, so I am currently in a learning stage. I plan to start applying it to my research by trying out predictive coding-inspired algorithms and architectures in deep neural networks, and apply brain-similarity as well geometrical studies to these networks.",
+      "affiliations": "Freie Universität Berlin",
+      "background": "I’m currently a master’s student with a background in psychology and cognitive neuroscience. I am seeking to specialize in computational psychiatry, I currently collaborate with computational neuroscience and predictive learning labs. I am seeking PhD possibilities to merge these two areas utilizing an active inference framework.",
+      "challenges": "For me often it is understand the technicalities behind it such as the maths or physics. I personally find it easier to apply something in research if I understand the theoretical background thoroughly.",
+      "epistemic_value": "I’m in neuroscience so for me I’d like to know more about active inference methologies applied to brain research and modelling.",
+      "future_impact": "I think AI (Active Inference) for AI (Artificial Intelligence) has a big opportunity during 2027, in particular, I think our current AI models are quite unsustainable in every sense, and AI offers a more biologically-inspired and possibly sustainable AI.",
+      "id": "person-107b67bf334d6a5a",
+      "learning_needs": "I think youtube videos following along a repository / notebook to code after seeing explanations would help me a lot to know how to apply it directly.",
+      "name": "Diana Paola Americano Guerrero",
+      "orcid": "0009-0001-8072-3609",
+      "pragmatic_value": "Clear objectives per session and short evaluations to see if I fulfilled the learning objectives."
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Bilkent University & Konya Food and Agriculture University",
+      "background": "I hold psychology and molecular biology and genetics (double major) BSc and neuroscience MSc. I am pursuing neuroscience PhD. I am deeply interested in active inference since I have heard about it on MSc.",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-4d82383e9bcb8208",
+      "learning_needs": "",
+      "name": "Fatma Nur Dolu",
+      "orcid": "0000-0001-8665-2701",
+      "pragmatic_value": "New opportunities for cooperations"
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Institut de Neurosciences de la Timone",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-7918083515475d94",
+      "learning_needs": "",
+      "name": "Ghassan Dabane",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "Not yet - started 4 months ago",
+      "affiliations": "",
+      "background": "BSc Econ/Philosophy / MSc Econometrics / MSc Statistics (all LSE 1991-1997)) / MSc Mathematical Finance (Imperial - 2003)",
+      "challenges": "Excessive expectations and possibly generality",
+      "epistemic_value": "More exposure to mathematics, techniques and applications",
+      "future_impact": "",
+      "id": "person-355e30460692aa24",
+      "learning_needs": "More exposure to mathematics, techniques and applications",
+      "name": "Giacomo Bruzzo",
+      "orcid": "",
+      "pragmatic_value": "More exposure to mathematics, techniques and applications"
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-724b01b931474b7b",
+      "learning_needs": "",
+      "name": "Henry D’Angelo",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Brookings Institution",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-62c449deaf3e570b",
+      "learning_needs": "Tools and case studies for operationalizing AIF into real world systems",
+      "name": "Jacob Taylor",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "Design",
+      "affiliations": "University of Twente",
+      "background": "philosophy",
+      "challenges": "the high interdisciplinarity",
+      "epistemic_value": "new applications",
+      "future_impact": "New applications in robotics",
+      "id": "person-d6c91ab7250b5677",
+      "learning_needs": "resource",
+      "name": "Luca M. Possati",
+      "orcid": "",
+      "pragmatic_value": "Networking and ideas"
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Free University Berlin",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-c5e28741cc91845f",
+      "learning_needs": "",
+      "name": "Lucas Nunn",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "My grasp of enactive Inference provides a framework for understanding embodied cognition. It helps to explain the relation of mind brain and body at a granular level as I work as a somatic therapist, teacher, and scholar seeking to understand the ancient pursuit of a physics of life. In particular the perceptual dimension of the framework is quite helpful. A fully developed physics of life involves the mechanics of physical movement as a felt, intuitive activity. We should be able to name this clearly, in kinesiological terms—as a matter of common sense. Can you? Understanding the mechanics and their historical context in the way Professor Friston suggests is very helpful. The active inference framework provides needed first principles but lacks an understanding of motor plant. This is a major problem. For this reason it remains limited to a computational approach. Professor Friston and the general consensus seem only to grasp a mental form of embodiment and enactive inference. I am seeking to point out that major lacunae and offer the simple anatomy as we understand it today for discussion and afferent self confirmation.",
+      "affiliations": "Independent scholar/practitioner",
+      "background": "Founded Prosocial Embodiment Commons, Naked Anatomy Men’s Embodiment Salon, presentations at General Semantics Annual Meeting 2024, International Association of Body Psychology Annual Meeting 2023,  Active Inference Symposium 2025, local classes and clinical work.",
+      "challenges": "Get over your academic, industrial, and computational fixations. It’s not a theory of life if that’s what you think life is like! Seriously!  It starts with your model. Sherrington’s original model is much better. If you don’t know what I am talking about then you don’t understand your own model. I have discussed it before and will again in my presentation.",
+      "epistemic_value": "Anything but more of the same old abstract jargon and mathematics. Anything but more really silly sounding and obtuse computer science. How about what the framework offers to our understandings of the problems of life—such as in your own lives? Is active inference meaningless when it comes to life? Is it really only academic, computational, industrial, and technical? Does its meaning only come from a bunch of words and symbols that have been written? Or isn’t there something much deeper and more profound that it refers to?",
+      "future_impact": "By actually thinking big. Don’t you think the level of global surprisal is high enough to provoke some genuine belief updating in the model? Not a hundred little technical super jargon  metaspeculations… a complete reprisal, a serious look at the foundations. When is the last time you took a serious look at the model in an existentially meaningful way, thinking about the problems of life that we are facing? Is that something you already know all about, and so dismiss—or should we maybe get a conversation going? To me, personally lacking any computational or computer coding knowledge, the free energy principle and the active inference framework are nonetheless profoundly consequential. It would be wise and very fruitful to spend some time thinking about that consequentiality outside your usual academic and scientific epistemological bounds.",
+      "id": "person-275239a907bbfb95",
+      "learning_needs": "Open discussion about its relevance to life, actual genuine life—our own lives and the world we live in, especially in light of the Polycrisis. Given the level of global surprisal, shouldn’t you be updating your model in some very basic ways? This really should be a conversation that is already well underway. Additionally, I would appreciate direct response and input on my rather radical embodied approach to enactive inference.",
+      "name": "Musclemonk (Jim Freda)",
+      "orcid": "",
+      "pragmatic_value": "I would like direct feedback on my embodied anatomy approach to enactive inference and its significance for cerebellar precision tracking and alignment. I would like to see the not inconsiderable wisdom of this group directed at the real problems of life and a genuine, frank discussion of active inference that is not about computation, computers and technology."
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Shanghai University of Sports",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-0af146d1989e7aae",
+      "learning_needs": "ommunity development",
+      "name": "Qiwei Zhao",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "research",
+      "affiliations": "UNICAMP",
+      "background": "psychiatrist",
+      "challenges": "funding and expansion in LMIC universities",
+      "epistemic_value": "starting to get in a more deep touch with the field",
+      "future_impact": "pain medicine, psychiatry, psychotherapy, bringing paradigm shift applied to clinical practice",
+      "id": "person-9738a62e2ebfa817",
+      "learning_needs": "tool and comunitity development",
+      "name": "rodrigo fonseca martins leite",
+      "orcid": "0000-0003-2200-0434",
+      "pragmatic_value": "psychiatric and neuroscience research -psychedelics"
+    },
+    {
+      "active_inference_application": "II am applying it at the architectural and systems-modeling stage. My work is conceptual and aims to inform approaches to layered state-space intelligence within enterprise digital architectures.\nThe domain is multi-scale generative dynamics for digital-realm modeling, with emphasis on belief-driven emergence, layered state spaces, and the preservation of human primacy.\nThe current stage is a synthesis of First Principles AI, Human-Centric Competitiveness Design Thinking, and digital architectures. This synthesis is producing a contemporary paradigm that grounds digital design in anthropological foundations and a generative dynamics reference architecture.",
+      "affiliations": "Independent Researcher | Generative Dynamics & Multi-Scale Active Inference",
+      "background": "I work as an independent systems architect focused on generative dynamics and relational emergence. I have developed a reference architecture titled Generative Dynamics: From Unbounded Probabilistic Flows to Bounded Emergent Forms. It formalizes a process sequence (Constraint → Curvature → Biased Flow → Basins → Attractors → Manifolds → Emergence) across multi-domain layered state spaces, with explicit grounding in human cognitive architecture and a non-negotiable stance that biological humans remain the primary civilizational actors. The work treats the architecture as a usable map for navigation rather than pure formalization, oriented toward modeling digital realms without subordinating humans to synthetic agents that lack shared bounded social architectures and governing dynamics.",
+      "challenges": "Two stand out. First, the gap between elegant mathematical formulations and usable, multi-scale reference architectures that can actually be instrumented across real domains. Second, the risk of developing powerful generative models while remaining ambiguous or weak on the ontological status of biological humans, treating human primacy as an ethics wrapper rather than as the correct characterization of the primary actors and governing dynamics.",
+      "epistemic_value": "How the community currently handles the transition from unbounded probabilistic dynamics to bounded, stability-producing emergent forms, and whether there is emerging consensus on keeping biological humans as the foundational generative source and locus of governance in hybrid human–synthetic systems.",
+      "future_impact": "By providing the first robust generative architectures that allow digital and synthetic systems to be developed as downstream scaffolds of human civilizational dynamics rather than as autonomous replacements.\nThis rests on a recognition that the grammar of universe construction produces bounded objects and bounded actors as foundational, using constraint as the primary engine on the flywheel of emergence. The finite is the stage on which possibilities are mapped, and inference is central to its processing. Human actors belong to the artisanal community working on the canvas of existence.\nIf Active Inference can help keep biological humans as the primary actors whose bounded social and governing architectures remain foundational, it can shape a civilizational trajectory that expands human exploration and cartography instead of subordinating it.",
+      "id": "person-757f861bb5e9835b",
+      "learning_needs": "A clearer bridge between core Active Inference formalisms and multi-scale generative architectures that can serve as operational reference models. Specifically: tools or shared frameworks that help map constraint, curvature, biased flows, basins, attractors, and manifolds across layered state spaces (biological, cognitive, social, technological), while keeping human generative primacy explicit rather than treating it as an add-on.",
+      "name": "Ron Giblin",
+      "orcid": "",
+      "pragmatic_value": "Direct exposure to how others are instrumenting multi-scale generative models in practice, especially any work that treats humans as primary civilizational actors rather than peripheral stakeholders. Feedback on using a generative reference architecture as a navigational map for digital-realm modeling would be highly useful."
+    },
+    {
+      "active_inference_application": "I am currently a student and studying cognitive science. So my primary concern is to use the framework to seek out interventions in domain of mental health and wellness.",
+      "affiliations": "Centre of cognitive and behaviour science, Allahabad University",
+      "background": "My home-field is mathematics, currently i am enrolled into a cognitive science program. So the active inferece framework feels like a natural habitat to me or the most plausible direction for my career.",
+      "challenges": "From my experience, it is still a new paradigm and proposing a research using the framework is a bit of hurdle in many academic circles who are not directly involve with it. So i think the biggest challange is widespread awareness and acceptance.",
+      "epistemic_value": "I am not quite sure about it since its my fist time attending but i think i would learn an awful lot important stuff.",
+      "future_impact": "Probably by giving us real-time agents based on AI architecture that does soak up a gazzillion pounds of water and electricity.",
+      "id": "person-4348333ff4e3b51f",
+      "learning_needs": "I think a budding community would be most helpful, since it is not a part of standard curriculum at any university so bringing people together that can think and talk and find new ways to apply what they learn is paramount. Plus the motivation.",
+      "name": "Sahil Ali",
+      "orcid": "",
+      "pragmatic_value": "I like to know about how active inference is being used at the forefront of new research domains."
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-ff7277734631ccd5",
+      "learning_needs": "",
+      "name": "Sam Taylor",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "UCL, Maastricht University",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-6059387ca2613b43",
+      "learning_needs": "",
+      "name": "Samuel Whitehurst",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "Meditative development",
+      "affiliations": "Monash Centre for Consciousness and Contemplative Studies, Monash University, Melbourne, Australia\nMeditation Research Program, Department of Psychiatry, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA",
+      "background": "I work at the intersection of long-term meditative development, computational phenomenology and active inference.",
+      "challenges": "The amount of background knowledge required to undertake it and where there are processes and techniques that are still implemented only in MATLAB.",
+      "epistemic_value": "New developments in terms of hierarchical active inference POMDPs",
+      "future_impact": "",
+      "id": "person-83de2971ad2fb3c0",
+      "learning_needs": "Being more connected to other active inference in-silico modelling researchers",
+      "name": "Shawn Prest",
+      "orcid": "",
+      "pragmatic_value": "Community engagement, discrete model data fitting tutorials, renormalisation group tutorials"
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Greenweaves Software",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-a41b2ec47b2f5443",
+      "learning_needs": "",
+      "name": "Simon Crase",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "still learning; applying techniques to TVB (https://thevirtualbrain.org), conf.  Virtual Brain Inference (VBI), a flexible and integrative toolkit for efficient probabilistic inference on whole-brain models",
+      "affiliations": "Retired",
+      "background": "20+ years basic science biomedical research in vestíbulo-ocular reflex and the neural physiology of cerebellar sensory prediction and error correction, overlapping with 10+ years teaching general human anatomy and physiology and neuroanatomy, 18 years Vipassana meditation",
+      "challenges": "Acceptance by critics; specificity/translatability to other modeling methods",
+      "epistemic_value": "delving into the physiologically and anatomically distributed nature of the nervous systems “generative model”",
+      "future_impact": "programmers’ toolbox (plug and play); robotic demonstrations",
+      "id": "person-fc33ea9062427010",
+      "learning_needs": "Practical tutorial on mathematical nomenclature.",
+      "name": "Steven Rude",
+      "orcid": "0000-0002-4415-5448",
+      "pragmatic_value": "Theory on converting local models to Active Inference; specifically mean field functional connectomes, incorporating hierarchical inputs/outputs"
+    },
+    {
+      "active_inference_application": "In intelligence layers",
+      "affiliations": "",
+      "background": "Builder in health related inference.",
+      "challenges": "Funding and compute",
+      "epistemic_value": "Trajectory and near term evolution of the field.",
+      "future_impact": "Unleash new modes of inference, beyond human capacity",
+      "id": "person-7dafbc4541934462",
+      "learning_needs": "Best practices, newest horizons.",
+      "name": "Timothy Van Meter",
+      "orcid": "",
+      "pragmatic_value": "Skills and practical advances"
+    },
+    {
+      "active_inference_application": "Robotics , World Model",
+      "affiliations": "Independent Researcher (Electronics and Communication Engineering graduate)",
+      "background": "I recently completed a B.E. in Electronics and Communication Engineering. My background is in engineering, programming, mathematics, and electronics, and I am now focusing my independent study on machine learning, deep learning, probabilistic inference, Active Inference, and the Free Energy Principle. I am currently developing my understanding through mathematical study and small computational experiments. I do not yet have formal publications in Active Inference, and my current goal is to build reproducible proof-of-concept systems and develop the skills required for rigorous independent research.",
+      "challenges": "One major challenge is converting the theoretical framework into scalable, reproducible computational systems with clear empirical advantages.",
+      "epistemic_value": "I would like to better understand where Active Inference currently provides measurable advantages over conventional reinforcement learning, probabilistic modeling, and Transformer-based approaches, and where the evidence remains limited.",
+      "future_impact": "I think the most important near term impact could come from embodied and autonomous systems that can actively manage uncertainty rather than treating perception, learning, planning, and action as separate components.",
+      "id": "person-e328a0d90d4b5132",
+      "learning_needs": "Practical engineering oriented resources that connect the mathematical foundations of Active Inference and the Free Energy Principle to working implementations.",
+      "name": "vishwa",
+      "orcid": "",
+      "pragmatic_value": "I would like to identify practical tools, research methodologies, open-source projects, and potential collaborators that can help me move from studying Active Inference to implementing and experimentally evaluating my own prototypes. I am particularly interested in opportunities suitable for an early-career engineer without a PhD."
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "",
+      "background": "I am a Swedish graduate student in Cognitive Science. I have many interests including meaning, consciousness, motivation, decision-making, mythology, philosophy of mind etc. Aside from those, creativity is close to me both intellectually and personally, with music as a primary interest. I wrote my latest thesis was on neural complexity as a correlate of wakefulness in sedated and sleep deprived subjects, which is publicly available here:",
+      "challenges": "To me, the lack of locally active supervisors. I would love to make a PhD position work within this field and feel my skill set, perspectives and interests are an attractive way of exploring it.",
+      "epistemic_value": "Active inference in human creativity; Active inference interpretation of ERP paradigms",
+      "future_impact": "",
+      "id": "person-38f197ef8d478cc8",
+      "learning_needs": "Project opportunities and more university-level courses",
+      "name": "William Niemi",
+      "orcid": "",
+      "pragmatic_value": "Recent works/introductory essays by the presenters, openly available to attendees"
+    },
+    {
+      "active_inference_application": "I am starting with simple signal detection type task in vestibular neuroscience. The work was part of my PhD, which I recently completed.",
+      "affiliations": "Center for vestibular neurology, Imperial College London",
+      "background": "I recently completed my PhD in Clinical neuroscience with a focus on understanding the mechanisms underlying attenuated perception of self-motion in traumatic brain injury, and in doing so, I aimed to understand cortical vestibular networks mediating conscious perception of self-motion.\n()",
+      "challenges": "From my personal point of view, the content is biased towards discrete models and despite my background in perception research, I would like to learn more about the application of active inference in continuous state space models.",
+      "epistemic_value": "Continuous versions of active inference models",
+      "future_impact": "If the AI models can be trained and make inference using active inference agentic approach, we may be able to save millions of gallons of water and energy.",
+      "id": "person-62547de5be6346d3",
+      "learning_needs": "Tutorials/Workshops",
+      "name": "Zaeem Hadi",
+      "orcid": "",
+      "pragmatic_value": "Tutorials"
+    }
+  ],
+  "presentations": [
+    {
+      "abstract": "This session will be a summary and discussion group for the special issue \"World Models in Natural and Artificial Intelligence\", published in the Royal Society A journal in May 2026. We will offer a summary of the special issue content, along with a discussion of Active Inference related topics and future directions from the work presented in the issue.",
+      "abstract_sha256": "ff4dc864810f67e3d3a744d59eb07fd49334a74401b3776176e4a19223a59c83",
+      "contribution_type": "Interactive Workshop",
+      "id": "talk-5692adbd77367c89",
+      "pictures": [
+        {
+          "alt": "Bradly Alicea — submitted presenter image",
+          "path": "assets/portraits/0f72208498de002cf3cfa874239afac17c94882fd8279d1a0418b7f0ae759bc5.jpg",
+          "sha256": "0f72208498de002cf3cfa874239afac17c94882fd8279d1a0418b7f0ae759bc5"
+        }
+      ],
+      "presenter": "Bradly Alicea",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "An in-depth discussion on “World models in natural and artificial intelligence”"
+    },
+    {
+      "abstract": "In the 1960s, Rudolf Kalman wrote down a filter that would go on to navigate Apollo to the moon. It has been the workhorse of continuous-state estimation ever since, and if you have ever built a continuous active inference agent in the linear-Gaussian regime, you have built one too, whether you intended to or not. Bolt a goal onto it and you get a very good controller that is not curious in the slightest. Koudahl, Kouw and de Vries proved why in 2021: under a fixed sensor the epistemic value is identical for every action, so expected free energy quietly reduces to Linear Quadratic Regulator (LQR). \nIn this workshop, in about ten lines of Python that will look familiar to anyone who has used pymdp, we are going to build a rocket! Then, we add the interesting part, curiosity, by making a surgical, biologically realistic change: adding sensor noise that varies based on the rocket's position. We will see how the flight path bends when we add artifacts like a navigation beacon or a blackout zone, and explore the science as to why. You will write every line yourself in a Colab notebook and do not worry there will be plenty of scaffolding from the cpomdp team. Code hints will drop in on a timer, and a reference cell for anyone who gets stuck or would rather just see the finished steps. \nWe will build this in three steps: the 1960 rocket, a nav beacon it can fix its position by, and a blackout zone. Everything we use runs on the PyPI release of cpomdp and anything you build in the notebook is yours to keep and continue working on.\nPrerequisites: comfortable editing a few lines of Python. Familiarity with pymdp helps but is not required. Nothing to install; a browser and a google account is enough. If you would like to use your own IDE feel free but we may not be able to provide 1-on-1 support if you get stuck.",
+      "abstract_sha256": "8d2e1b9353c6c0730a9a5fd5a253822fbfc29c8147f8ee62cb7bdd1916f01896",
+      "contribution_type": "Interactive Workshop",
+      "id": "talk-80262f867d75698a",
+      "pictures": [
+        {
+          "alt": "Dan Corva — submitted presenter image",
+          "path": "assets/portraits/e35c8b45b0dbeb062a12698857e5107aff5c381edcbfac345953f1695bf6ade4.jpg",
+          "sha256": "e35c8b45b0dbeb062a12698857e5107aff5c381edcbfac345953f1695bf6ade4"
+        }
+      ],
+      "presenter": "Dan Corva",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Build a curious rocket: the hands-on cpomdp tutorial for the Applied Active Inference Symposium"
+    },
+    {
+      "abstract": "Most agent architectures collapse two things that phenomenology keeps apart: what the agent should do immediately, and what kind of world the agent takes itself to be in. This session introduces “perspective” as a distinct architectural layer that carries the second. \nPerspective is a slowly evolving, history-sensitive latent state that gates how observations are encoded. Importantly, it is decoupled from policy gradients and is never itself an optimization target. Because it is decoupled, it is portable and can be attached on top of an existing policy-optimizing agent rather than requiring a bespoke design.\nThe first part of the session develops the conceptual frame: how a phenomenologically motivated condition translates into a concrete architectural commitment, and why that commitment is orthogonal to belief-state inference and policy selection. I then trace the capabilities that this single layer has been shown to support across a sequence of studies, including directional hysteresis, history-dependent perceptual reorganization, and body-grounded conative orientation, treating these as unified aspects of a single portable module.\nThere will then be a live demonstration attaching the perspective layer to an active inference agent, such as a hierarchical Bayesian / discrete state-space model, and running it in parallel with its unaugmented counterpart in the same environment, so participants can see exactly what the layer adds and where it plugs in.\nThe session closes with a structured discussion in which participants are invited to identify candidate insertion points for a perspective layer in their own active inference agents, whether built in PyMDP, RxInfer, or custom frameworks. The aim is to leave participants able to reason about whether and how a subjective perspective could be added.",
+      "abstract_sha256": "52989bb421dddd9c78c2b4a2d77e98d7e180d842e16e392fbfad17a36a1a7413",
+      "contribution_type": "Interactive Workshop",
+      "id": "talk-7bfba1b90b06334d",
+      "pictures": [
+        {
+          "alt": "Hongju Pae — submitted presenter image",
+          "path": "assets/portraits/b84ab11529b8406ac3104284aaebdaafb9f31af03996c979035e6921dbf7c442.jpg",
+          "sha256": "b84ab11529b8406ac3104284aaebdaafb9f31af03996c979035e6921dbf7c442"
+        }
+      ],
+      "presenter": "Hongju Pae",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "A Modular Perspective Layer for Active Inference Agents"
+    },
+    {
+      "abstract": "",
+      "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contribution_type": "Keynote & Panel",
+      "id": "talk-350722794e66b4b8",
+      "pictures": [
+        {
+          "alt": "Karl Friston — submitted presenter image",
+          "path": "assets/portraits/f02fb1136159acc0aee92a525651ea73fbb892cd08e513275b57c4e643b8520d.jpg",
+          "sha256": "f02fb1136159acc0aee92a525651ea73fbb892cd08e513275b57c4e643b8520d"
+        }
+      ],
+      "presenter": "Karl Friston",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Active Inference and Free Energy Principle in 2026"
+    },
+    {
+      "abstract": " \nCognitive scientists have applied advances in our formal understanding of causation in philosophy and computer science, particularly within the Causal Bayes Net formalism, to understand human causal learning. This formalism is also closely related to ideas in active inference.  In parallel, reinforcement learning researchers have developed the idea of an intrinsic reward signal called “empowerment”. An agent is rewarded for maximizing the mutual information between its actions and their outcomes, regardless of the external reward value of those outcomes. “Empowerment” may be an important bridge between classical Bayesian causal learning and reinforcement learning and may help to characterize causal learning in humans and enable it in machines ",
+      "abstract_sha256": "72888682b1f2ff64f4e83e33530897248d8aedd1c4d529bcdf99d3009e1065a1",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-2f88a4d50509b911",
+      "pictures": [],
+      "presenter": "Alison Gopnik",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Actve Inference, Bayesian Causal Learning and Empowerment in RL."
+    },
+    {
+      "abstract": "How do we keep a coherent sense of self across time — and can that process be measured in real time, on consumer hardware, before it breaks down?\nRoot Frequency Theory (RFT) proposes that experiential continuity is not a default state but an ongoing biological achievement requiring coordination across five nested regulatory layers: environmental constraints (C0), autopoietic regulation (C1), predictive neural integration (C2), narrative self-organization (C3), and the continuity of lived experience (C4). Fragmentation is defined as a self-reinforcing cascade of cross-scale misalignment. The cascade is bidirectional: structured self-knowledge introduced at C3 — operationalized as epistemic alignment (Kₑ) — is hypothesized to initiate upward regulatory stabilization.\nTo test this, I developed the M-RFT metric: M = (Φ · Kₑ) / F, where Φ indexes autonomic flexibility via HRV, Kₑ composites interoceptive accuracy and narrative coherence, and F captures regulatory burden. I then built Root Extension — an iOS application using iPhone and Apple Watch — to administer this protocol ecologically and deliver personalized epistemic scaffolding upon session completion.\nThe N=1 longitudinal study ran 321 sessions across 23 active days (April 16–May 14, 2026), with the researcher as the sole subject. Key findings: mean M = 3.79 (Mdn = 2.14), intra-session regulatory recovery — FRAGMENTED to RESILIENT within the same calendar day — observed on 34.8% of active days.\nThis presentation introduces the theoretical architecture, the metric, the app protocol, and the preliminary data — and invites the active inference community into the next phase: a formal N=20–40 validation trial planned for 2027.",
+      "abstract_sha256": "3002b5405eb08d117a78932333d5cbbd86a365fe57e46d9838972a4fdac6aa20",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-ce57f88902e4a4c2",
+      "pictures": [],
+      "presenter": "Bianca Avanzo",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Root Frequency Theory: An Integrative Framework for the Continuity of Lived Experience"
+    },
+    {
+      "abstract": "AII proposes to facilitate / host active inference working groups as explained in our paper “Coordinating the Field”, with a field group and one or more domain groups. The first symposium session will introduce the concept, recap the paper and reason for the groups and solicit suggested domains and participants. The second session will review the proposed charter and consider amendments, with versioning per group, considering nominations for chair(s) and secretary(ies), and a goal of adopting the charter(s) during the symposium if possible and establish post-symposium meeting cadence and work plan. The third session will report back to the main session recap what was accomplished during the symposium and announce any working groups formed and their first year goals established.",
+      "abstract_sha256": "31a335e107dfddefde2d3a94c2abb6796d6f3864ddaf9aa70815a9791ff5406e",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-bb62d4494869e307",
+      "pictures": [],
+      "presenter": "Ed Ober",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Working Groups Sessions (3 sessions: Opening, Charter Session, Outcomes and Next Steps)"
+    },
+    {
+      "abstract": "This panel explores how active inference and the free-energy principle can contribute to a unified account of psychological and social evolution. It examines how cognition, affect, social interaction, cultural practices, and institutions emerge through processes of prediction, adaptation, learning, and uncertainty reduction. By bringing together perspectives from cognitive science, philosophy, anthropology, and social theory, the panel asks how individual and collective forms of agency co-evolve and how shared models of the world shape both minds and societies.",
+      "abstract_sha256": "12b176c5a59666084949b58298f112f62e42197b832c927ea4f4a5f13a02d1d9",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-9b837c85c83dfb82",
+      "pictures": [],
+      "presenter": "Luca Possati",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Active Inference and the Evolution of Mind and Society"
+    },
+    {
+      "abstract": "Active inference frames biological and cognitive agency as the imperatives of self-evidencing—maintaining systemic integrity by minimising variational free energy within an open, stochastic environment. Under this formalism, agents, from single cells to complex organisms, persist by regulating their internal states against entropic dissipation, enacting a Markov blanket that partitions self from world. This imperative entails sophisticated inference, balancing epistemic drives against pragmatic preferences, thereby constituting adaptive agency.\nThis talk extends this foundational picture of selfhood to the domain of political communities and global justice theory, demonstrating that the same dynamical constraints that govern individual persistence scale hierarchically to structure collective organisation and inter-state conduct. Drawing on the Free Energy Principle, political communities are modelled as open, self-organising systems embedded within a nested hierarchy of interacting Markov blankets. Their stability is not intrinsic but relational, contingent upon continuous exchange of information, resources, and institutional constraints with their environment.\nWithin this multiscale architecture, global justice emerges as an active regulatory imperative: a homeostatic constraint that maintains a nonequilibrium steady state across coupled societies. We formalise this through the expected free energy decomposition, where just policies balance risk—adherence to shared normative constraints such as human rights and non-aggression—against ambiguity—the active resolution of uncertainty arising from structural interdependence.\nThe normative implications are acute. We identify a pervasive pathology of self-organisation, wherein dominant or insular political regimes mis-specify themselves as closed systems. By suppressing external coupling and attenuating sensory evidence, they optimise local coherence at the expense of systemic stability. Drawing parallels to oncogenic cellular proliferation and psychotic cognitive inference, we argue that such closure systematically underestimates global risk and propagates destabilising volatility. Ultimately, we contend that justice is not a static distributive outcome nor a single-level contractual procedure, but the dynamic property of a multiscale system that successfully synchronises its trajectories under persistent uncertainty. This offers a unified, first-principles framework for linking the philosophy of agency to the normative demands of a deeply interconnected global order.",
+      "abstract_sha256": "073fa89980e2ebdbf548e2d02ea735e4f48f373c625d3807d8eb611e3907e4ec",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-284425605e4969fa",
+      "pictures": [
+        {
+          "alt": "Majid D. Beni — submitted presenter image",
+          "path": "assets/portraits/0981ae2f473c8da037218b40cdd698824987b1f962cbecf6d98ace96d17e0877.jpg",
+          "sha256": "0981ae2f473c8da037218b40cdd698824987b1f962cbecf6d98ace96d17e0877"
+        }
+      ],
+      "presenter": "Majid D. Beni",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "From Self-Evidencing to Global Governance: Active Inference and the Dynamics of Justice"
+    },
+    {
+      "abstract": "",
+      "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-b5f346f866630c4c",
+      "pictures": [],
+      "presenter": "Mike Levin",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "“Evolution, Emergence, Prediction.”"
+    },
+    {
+      "abstract": "In this talk, I will review recent studies and results using active inference and related modeling approaches to study mechanisms of normative cognitive-affective processes and associated neural responses, and how these appear to be affected in different psychiatric conditions. I will also discuss contexts in which active inference appears to offer potentially unique resources for modeling these processes. Conversely, I will discuss contexts in which active inference may overlap with simpler modeling approaches and related issues centered around the level of mechanistic description one is interested in studying.",
+      "abstract_sha256": "3b307267b85c8a2fb7d1233df102568d7846f1a71221047740ab1fa647f4b999",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-6b718c5ddd797287",
+      "pictures": [
+        {
+          "alt": "Ryan Smith  — submitted presenter image",
+          "path": "assets/portraits/a406432d124c6ab0decd918dece7f9114a65aa3d86da9f3ce2b9f23c4d82162a.jpg",
+          "sha256": "a406432d124c6ab0decd918dece7f9114a65aa3d86da9f3ce2b9f23c4d82162a"
+        }
+      ],
+      "presenter": "Ryan Smith ",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Recent advances in empirical applications of active inference in computational psychiatry"
+    },
+    {
+      "abstract": "The claim that climate homeorhesis—non-equilibrium steady-state dynamics that underlie Earth’s long-term habitability—depends on an integrated biosphere–climate system capable of acting on its own is central to debates surrounding the Gaia hypothesis. This paper presents a proof of concept suggesting a minimal form of planetary agency based on a simple biosphere–climate system model operating through active inference. This means that the internal states of the system (biosphere) will appear to infer shifts in net incoming solar radiation (external states) through its boundary states, i.e. by integrating past and current surface temperatures (sensory states) and actively changing greenhouse forcing (active states) to maintain climate trajectories within geophysiological bounds. When surface temperature is altered by solar fluctuation changes, the system adjusts greenhouse and albedo parameters to restore expected climate trajectories, analogous to correcting sensory prediction errors in biological systems. Perturbing active states (e.g., imposed changes in albedo) does not reduce inference precision. Inference robustness decreases when the system’s degrees of freedom increase. Active inference falls, and thus climate homeorhesis fails when there is no biosphere activity (lifeless planet) or when it is decoupled from the climate system. Predictive behaviour operates within the range of solar constants consistent with life’s presence on Earth (~ 4 Ga to ~ 1.5 Ga expected in the future); outside this range, inference fails, undermining a putative form of planetary agency.",
+      "abstract_sha256": "7152aa0cfab52bf842d7598600412715928cb322d43cb0281805b1514379be17",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-f068e195458bd69b",
+      "pictures": [],
+      "presenter": "Sergio Rubin",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "An elementary form of agency at planetary-scale"
+    },
+    {
+      "abstract": "Understanding biological intelligence requires identifying the variational invariant structures underlying neuronal dynamics. Experimental data provide access to the evolution of neural activity and synaptic weights. These dynamics can be expressed in different coordinates while preserving a common dynamical organisation. In Bayesian coordinates, they can be read as belief updating under an implicit generative model; in computational coordinates, as action generation, including behaviour, decision-making, and algorithmic computation. Triple equivalence formalises transformations among these descriptions and identifies their shared variational structure. The empirical question is which implicit generative model is instantiated by a given neuronal system.\nHere, reverse engineering was applied to neural and behavioural data from zebrafish learning a visually guided go/no-go decision-making task. From initial neural activity, the method identified individual-specific implicit generative models and instantiated them as synthetic agents that minimise variational free energy. These agents generated trial-by-trial predictions of subsequent synaptic plasticity, neural activity, and behavioural performance. The predictions captured individual learning trajectories and generalised to previously unseen task conditions. Their agreement with unseen empirical data provides a quantitative test of the predictive validity of the free-energy principle in behaving animals. More broadly, this framework shows how present neuronal states can be used to forecast future learning and self-organisation in individual biological systems.",
+      "abstract_sha256": "04388a871e9a24ae6600479de9c81b192924b8dea54bca793cac206d743cf80b",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-1f31f2f439b815ce",
+      "pictures": [
+        {
+          "alt": "Takuya Isomura — submitted presenter image",
+          "path": "assets/portraits/88838e6b70eb30480b7260878494fd61324182254668a309c5aba9bfcb74fec8.jpg",
+          "sha256": "88838e6b70eb30480b7260878494fd61324182254668a309c5aba9bfcb74fec8"
+        }
+      ],
+      "presenter": "Takuya Isomura",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Reverse engineering generative models from zebrafish decision-making"
+    },
+    {
+      "abstract": "Lexical‑disambiguation tasks with supplied context do not reveal whether readers would choose to seek evidence before deciding. Therefore, we adapted the spatial T‑maze in the active‑inference package pymdp to show how agents seek and use contextual information under lexical uncertainty. Agents could choose between two readings or request a contextual hint. We performed two main sets of simulations. First, deterministic simulations used fully informative hints to reproduce context seeking followed by lexical commitment. A hint shifted belief over two readings from equal probabilities (0.50, 0.50) to certainty (1.00, 0.00), reducing entropy by one bit. Second, lexical decision trials were repeatedwith informativeanduninformative hints across 32 paired simulationruns. Agents learned the relationship between the intended reading and the observed hint. Informative experience increased both the probability and simulated frequency of requesting context. This increase persisted when trials ended after one response and feedback. A hint information‑gain ablation, in which policies were rescored without crediting the information expected from hints, eliminated the learning‑related increase in hint‑request probability. These simulations demonstrate how experience changes the expected informational value of context within a lexical task, providing a computational proof of concept for subsequent behavioral experiments.",
+      "abstract_sha256": "cba3606cc6e2fe01a7544b42973a27aa0950f042661362b119bfee12223bc968",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-d68bd36185ba7570",
+      "pictures": [
+        {
+          "alt": "Ahmad Nazzal — submitted presenter image",
+          "path": "assets/portraits/c26ffe0e9e01158a45a6e7088afc112103282d1125647ea42810f4f6ffe3520d.jpg",
+          "sha256": "c26ffe0e9e01158a45a6e7088afc112103282d1125647ea42810f4f6ffe3520d"
+        }
+      ],
+      "presenter": "Ahmad Nazzal",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "A Lexical T‑Maze for Active Inference: A Proof‑of‑Concept Model of Context Seeking Under Ambiguity"
+    },
+    {
+      "abstract": "This Symposium 2026 tutorial covers Active Inference from various angles based on the experience over several years with teaching and applying Active Inference. It begins with a brief descriptive rehearsal of fundamental ideas and principles akin to other previous tutorials to establish a foundation for the audience. However, this will be followed by a tour through various textbook materials and publications, past and present, to emphasize crucial areas for understanding modelling and application areas. This tutorial will include visual and discursive illustrations of a range of model classes for different use-cases; discussions of existing and under-development software libraries; and some frontiers in modelling for identifying directions for further research applications which can be especially valuable for the broader research community in 2026 onward. Topics will include, non-exhaustively, the Bayesian brain hypothesis and behavioralism versus partial observability and modelling internal states; principles of exploration, learning, and novelty; fundamental discrete and continuous models in Active Inference and their relationship; computational psychiatry and its significance to other domains; the FEP and its historical and practical relationship to Bayesian model comparison; software libraries including SPM, pymdp, RxInfer, RGMs, and other developments; hierarchical and hybrid models; and structure learning. ",
+      "abstract_sha256": "7ab6bfb3626aecfdc813fffcdcacac28ff84fdf2486f0001a4d022c5ef910895",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-f41341ff72644ef5",
+      "pictures": [
+        {
+          "alt": "Andrew Pashea — submitted presenter image",
+          "path": "assets/portraits/4ee8e72f2ce9ac573ddc96edbc24be6f84b244898fc4b700980bc71f79f0d20f.jpg",
+          "sha256": "4ee8e72f2ce9ac573ddc96edbc24be6f84b244898fc4b700980bc71f79f0d20f"
+        }
+      ],
+      "presenter": "Andrew Pashea",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Active Inference Tutorial: Perspectives, Correlates, and Future Directions for Graphical Brains"
+    },
+    {
+      "abstract": "The Free Energy Principle offers a physically grounded account of intentional properties in mind and life, framed within Dynamical Systems Theory. Because of this generality, it was proposed as a formal basis to study biological autonomy, autopoiesis, and enactive cognition. Yet, those approaches are defined by a relational understanding of mind and life, centred on the description of engagement with the world as a constructive process where agents are “laying down a path in walking”. Building from Rosen’s relational biology, we argue that such processes are by construction outside a “Newtonian” description in terms of well-defined observables and their dynamics. Rather, we draw from Fields’ demonstration of the emergence of contextuality – the participatory production of observables against which the agent regulates their activity – in classical, thermodynamically bounded processes of observation. We suggest a complementarity between Friston’s classical FEP and Fields et al.’s “quantum” (or, in our account, relational) FEP, describing respectively the dynamics within a biological / cognitive space of relevant observables and the physical processes underlying the construction of that space. Finally, we propose a structural realist interpretation of this complementarity within the “closure of constraints” account of biological autonomy, where both principles are understood to act on a physically embedded system of biological constraints rather than an abstract mathematical space assumed to fully represent biological / cognitive organization. This approach foregrounds the synthesis between mathematical and theoretical approaches to biological autonomy, thus supporting a principled approach to both analyzing the organization of natural systems and attempting the implementation of artificial autonomy.\n\n\nThis presentation is adapted from Guénin--Carlut, Avel. 2026. “A Tale of Two Principles - Towards a Relational Perspective on the FEP.” https://hal.science/hal-05697510., currently under review at the Entropy Special Issue “Active Inference in Cognitive Neuroscience”.",
+      "abstract_sha256": "059387f4d15fe2e1057fbd24d182cb5053d346ced3cd03029ac6e472ba395df8",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-5f1d4f1776db95c2",
+      "pictures": [],
+      "presenter": "Avel Guénin—Carlut",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "A precis of two principles - Towards a relational perspective on the FEP"
+    },
+    {
+      "abstract": "While the generation of behaviors is generally substrate-agnostic (there is more than one way to build a neural circuit), complex behaviors require an increase in representational complexity. We explore an architecture called the biological Rube Goldberg Machine (bRGM). This will be used to model the Developmental Neurosimulation of a generalized architecture that produces spatial navigation behaviors. Developmental Neurosimulation has been used to simulate the development of Braitenberg Vehicles. In this talk, we will explore the neurosimulation of Cybernetic Convolution Networks (CCNs), which have the potential to add great complexity to sensor-effector pairings. Additional connections to agentive learning and optimization models of behavior will also be discussed.",
+      "abstract_sha256": "83f29b88ab29c219641635abf0dbb55e56c873f5d2fc3a58397eb796d10fb011",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-d61e3f8d2ce726ee",
+      "pictures": [
+        {
+          "alt": "Bradly Alicea — submitted presenter image",
+          "path": "assets/portraits/a9df9bfee59cceceb1a5b5c9286b68ca1fc2b6fa839f888761995d2b03dd3429.jpg",
+          "sha256": "a9df9bfee59cceceb1a5b5c9286b68ca1fc2b6fa839f888761995d2b03dd3429"
+        }
+      ],
+      "presenter": "Bradly Alicea",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "The Benefits of Circuit Convolution: behavioral complexity arises from developmentally- simulated nonlinearity."
+    },
+    {
+      "abstract": "We consider how Active Inference ideas shed new light on issues in epistemology and axiology, in particular proposing a unifying paradigm based on understanding human enquiry as a process of engagement operating in multiple realms, specifically embeddedness, embodiedness, reflection, participation and immersion. We look at what can be learned from within this framework about areas which have become flashpoints in society such as conflicting worldviews and identity politics.",
+      "abstract_sha256": "7698c38d740f2185f45bed49cf1201e488e4a97882bec28dc53437dd2b600501",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-e6b74eca6a40a9eb",
+      "pictures": [],
+      "presenter": "Colin Turfus",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Realms of cognitive engagement in Active Inference"
+    },
+    {
+      "abstract": "Come see the beauty of mathematics. Its just not some fancy add on to life. It is life. ",
+      "abstract_sha256": "310d7b89e4a65aaeaae2c5c8bf6801a857c2fb36a7b7cf5291202c2e61c49a45",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-42ee83a32b9468cb",
+      "pictures": [
+        {
+          "alt": "Daniel Dragolich — submitted presenter image",
+          "path": "assets/portraits/0d4f184dcb3105c3f841fabc860559dac6d2e389b738bff3afb995ee6c2819ce.jpg",
+          "sha256": "0d4f184dcb3105c3f841fabc860559dac6d2e389b738bff3afb995ee6c2819ce"
+        }
+      ],
+      "presenter": "Daniel Dragolich",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "NUMEN: Bare metal inference"
+    },
+    {
+      "abstract": "In multi-agent social settings, model reliability varies across relationships. Beyond inferring what others will do, an agent must calibrate how confidently those inferences should guide policy selection for each relationship. An agent may maintain a well-validated model of one partner, a fragile model of another, and a model under revision for a third; collapsing these into a single confidence estimate loses information relevant to policy selection. We therefore formalize affective precision as a relationship-specific metacognitive estimate of confidence in the current partner model. Each partner's behavioral evidence updates a local confidence estimate that modulates policy precision during selection, regulating how strongly current beliefs are expressed in policy rather than changing the content of those beliefs. Simulations in a multi-partner graded trust game show that partner-local affective precision influences behavior primarily through policy commitment rather than direct improvement of partner-state inference. Because the mechanism tracks partner-response predictability rather than realized payoff, greater confidence produces sharper policy commitment without necessarily producing higher rewards. Under abrupt shifts in social behavior, confidence accumulated from previously reliable predictions can remain behaviorally active after the relationship changes, showing that confidence revision can lag behind social change. Finally, varying precision gain and priors produce distinct trust-calibration dynamics, showing how confidence accumulation and revision depend on model parameters. Together, these results show how relationship-specific affective precision can distinguish social prediction from social policy commitment.",
+      "abstract_sha256": "8e1b8ed8824fcc82fd9a957ea79fa213853baa2fcd10e2a8d3540a223851f6fc",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-2b1a7d1c34fd5092",
+      "pictures": [
+        {
+          "alt": "Harshil Shah, Andrew Pashea — submitted presenter image",
+          "path": "assets/portraits/526879f35c614a3d733bba044f41abac57d52a7ffcbf9be6de7d6a4cd1af4a17.jpg",
+          "sha256": "526879f35c614a3d733bba044f41abac57d52a7ffcbf9be6de7d6a4cd1af4a17"
+        },
+        {
+          "alt": "Harshil Shah, Andrew Pashea — submitted presenter image",
+          "path": "assets/portraits/4ee8e72f2ce9ac573ddc96edbc24be6f84b244898fc4b700980bc71f79f0d20f.jpg",
+          "sha256": "4ee8e72f2ce9ac573ddc96edbc24be6f84b244898fc4b700980bc71f79f0d20f"
+        }
+      ],
+      "presenter": "Harshil Shah, Andrew Pashea",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Partner-Specific Affective Precision in Social Active Inference"
+    },
+    {
+      "abstract": "My research project asks, \"How can an autonomous robot learn to survive in a world it initially knows nothing about?\"\n\nTo answer this, I am building a cognitive system (enactive, emergent and symbolic) embodied in an autonomous -and mortal- Lego robot. The robot survives in a nourishing and dissipative world by acting-sensing and finding meaning in what it experiences.\n\nThis project presents many challenges, technical but also metaphysical. A primary concern is the multiplicity of perspectives on \"reality\", that of the robot, of its (agentic) environment, of the programmer, and of observers. What can each know, and how? Is a confusion, a cross-contamination of epistemologies inevitable? With \"agentic AI\" poised to transform our lives, these questions about knowing matter far beyond the programming of a Lego robot, but they can be illuminated by it.",
+      "abstract_sha256": "eb8861e792d73a3583ae2fede73c40ea4a6935bd0cb1970a14859c0e3e558a52",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-a8117f67e8bf3d7d",
+      "pictures": [
+        {
+          "alt": "Jean-François Cloutier — submitted presenter image",
+          "path": "assets/portraits/2fc0a10918d2440ebae90f09387fd55274c09450243fd32a5af29808d331a6d1.jpg",
+          "sha256": "2fc0a10918d2440ebae90f09387fd55274c09450243fd32a5af29808d331a6d1"
+        }
+      ],
+      "presenter": "Jean-François Cloutier",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Who knows"
+    },
+    {
+      "abstract": "World models allow an agent to represent, predict, and act upon its environment. Yet humans, biological organisms, and artificial agents never observe the world directly: they encounter it only through a limited sensorimotor interface. How, then, can an agent acquire a useful model of a complex, partially observed world through active inference?\nIn this talk, I outline a research program for active world modeling: the joint process of learning a model of the world and selecting actions that improve that model. I argue that four ingredients are central to this program. First, world-model learning should be formulated as probabilistic inference under uncertainty, coupled to actions that pursue expected free energy. Second, agents require sufficiently expressive, yet computationally searchable, spaces of possible world models. Third, sample-efficient learning depends on strong inductive biases — the core knowledge systems observed in human children. I illustrate these ideas with recent work on universal structured model spaces and language-model inductive biases in partially observable environments. Finally, I discuss the unresolved challenge of integrating these components into scalable agents capable of open-ended exploration and model discovery.\nTogether, these results suggest a path toward understanding and emulating how humans and machines learn world models through active inference.",
+      "abstract_sha256": "ae95e50ae8a5129b2b7cd8952a6a2e79d8d39a7c11c9642f37f59c6cdf0740ee",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-3642a535b44d3e9c",
+      "pictures": [],
+      "presenter": "Lancelot Da Costa",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Toward Active World Modeling"
+    },
+    {
+      "abstract": "Active inference and the free-energy principle transform design theory by providing a unified language for understanding both the production of artifacts and their use. Contemporary design research often separates two problems that are, in practice, deeply entangled. On the one hand, it studies the design process: how designers explore possibilities, negotiate constraints, prototype solutions, and stabilize forms. On the other hand, it studies user–product interaction: how artifacts orient attention, solicit action, shape habits, and reorganize experience. These two domains are usually described through different vocabularies and evaluated through different metrics.\nActive inference offers a way to reconnect them. If living and cognitive systems persist by minimizing uncertainty through perception and action, then design can be understood as the deliberate construction of environments, artifacts, and interfaces that modulate the user’s field of possible inferences. From this perspective, a product is not simply a passive object that satisfies pre-given needs. It is a predictive structure: a material and semiotic configuration that embodies assumptions about users, contexts, actions, and futures. Conversely, the design process itself can be modeled as the progressive refinement of generative models through which designers attempt to reduce uncertainty about what an artifact should do, how it should appear, and how it will be taken up in practice.\nThe paper’s central claim is that active inference gives design a common metric: the modulation of entropy, precision, affordance, and expected free energy across the designer–artifact–user system. This makes it possible to describe design as the engineering of predictive niches and Markov blankets that coordinate human and technological agency. The result is a unified framework for analyzing how artifacts are imagined, produced, interpreted, and incorporated into everyday life.",
+      "abstract_sha256": "82e81c60aa933cbc47fd669f11363923d605357f2e979311153f492675de1ab1",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-6515495f47af63f0",
+      "pictures": [],
+      "presenter": "Luca Possati",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Active inference and design "
+    },
+    {
+      "abstract": "Tiny social units of Pliocene Hominina fostered exchange among and between adults, youngsters and babies, about information gleaned and garnered by Active Inference. Henceforth, human evolution would involve the prehistory of \"Homo informatio\" whose biological, social, technological, and cultural legacy is an outcome of evolutionary 'snakes and ladders' autopoiesis and self-evidencing, indicated by archaeological irregular regularities and regular irrrgularities in the worldwide Pleistocene spatiotemporal record (as only is to be expected by the itinerancy of stochastic markovian processes), and of uneven imperceptible network-spread between social units, individuals, and, naturally, their cerebral neuronal microcircuits. Spreading, deep, informational networks characterised and underpinned human evolution during four million years. They do so still.  \"Mighty oaks from litte acorns grow\", Geoffrey Chaucer, dixit in \"Troilus and Creysede\" in 1374.",
+      "abstract_sha256": "7c8da7406616421f522639d32cab02420c3042b0ff5bc548b61157c81d446631",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-dba92aa493206478",
+      "pictures": [],
+      "presenter": "Michael Walker",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Active Inference, Information, Human Evolution"
+    },
+    {
+      "abstract": "The Rosales-Gheuens framework challenges the assumption that brute-force energy alone saves open systems from collapse. In this session, we will introduce a testable, normalized physics layer that merges the Rosales congruence principle with Gheuens’ interaction geometry. Rather than replacing established physical laws, this framework acts as a powerful diagnostic tool that sits cleanly on top of them. Our core master equation posits that a system's survival requires geometrically aligned effective recovery multiplied by a structural congruence gate, minus total perturbation.  \nCrucially, we will explore how this model bridges directly to Karl Friston’s Free Energy Principle. Friston dictates that systems persist by minimizing variational free energy, or \"surprise.\" We will demonstrate how our framework translates this active inference into hard physical variables, mathematically formalizing how a system must continuously minimize structural mismatch and physical dissipation to avoid shattering.\nTo ground the theory empirically, we will use Quantum Error Correction (QEC) as our primary physical anchor, mapping code decoders and physical error rates directly to aligned recovery and perturbation.  \nInteractive Aspect:The session will conclude with a collaborative exercise where attendees can apply the framework's \"falsification matrix\" to a theoretical open system, testing how our bounded composite equation predicts system survival compared to simpler Markovian baselines.",
+      "abstract_sha256": "ea87a50a101d45ee662cd27396a9c1b6aec25174405a8cbd50171fc98e0f8b89",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-81e4f2c68471e90d",
+      "pictures": [],
+      "presenter": "Paulo Santiago",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Congruent Interaction Geometry"
+    },
+    {
+      "abstract": "The highly developed human sense of self is one of our most distinctive traits. We each acquire  our sense of self in conversations, as we learn how conversational partners regard us. Our primary sense of self is not ‘myself as I experience myself’, but ‘myself as I think other people see me’ – a second-hand view of myself. In private verbal thought, with nobody else physically present, other people are represented as a shadow audience in our minds – an audience which sees what we do or say, and judges us for it. The shadow audience is the source of human emotion and motivation.\n \nLanguage started in conversational pragmatics, before there was complex syntax or semantics. Pragmatics requires us to mind-read, to infer what a conversational partner thinks, wants or needs. In this way we infer what or conversational partners think about us – how they assess our social status. In any conversation, we are concerned about our own social status in the eyes of a conversational partner, or of a shadow audience. This is illustrated by the pragmatic phenomenon of conversational irony.",
+      "abstract_sha256": "c3e821957c0b490a549dc3e4f90a62c49c42cad0fdcd90c676dbdab041549add",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-59d5a0672890ee22",
+      "pictures": [],
+      "presenter": "Robert Worden",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Language, Self and the Shadow Audience"
+    },
+    {
+      "abstract": "Active inference offers a powerful way to understand perception, action, uncertainty, and adaptive behavior. Yet in organizational and social systems, adaptation does not happen through information alone. People must feel ready to update beliefs, reduce uncertainty, act with agency, communicate signals, and participate in environments where change is constant and often ambiguous.\nThis session introduces Human Readiness and the VISIBLE™ Framework — Voice, Identity, Spotlight, Inner Work, Belief, Leverage, and Elevation — as an applied lens for examining how confidence, visibility, identity, trust, and social context shape adaptive action. Rather than presenting confidence as a personality trait, the session frames it as a practical condition that influences participation, belief updating, decision-making, and collective learning.\nParticipants will leave with a framework for identifying human readiness gaps in teams, organizations, learning environments, and communities.\nBecause adaptive systems require more than intelligence. They require humans ready to perceive, act, and learn.\nBy the end of this session, participants will be able to:\n1. Identify three Human Readiness gaps that may limit adaptive action, including low agency, uncertainty avoidance, reduced voice, identity threat, low trust, or lack of participation.\n2. Apply the VISIBLE™ Framework to examine how voice, identity, belief, visibility, confidence, and social context influence human action under uncertainty.\n3. Design one practical Human Readiness strategy that supports stronger agency, clearer communication, more adaptive learning, and more participatory systems.",
+      "abstract_sha256": "ad3c046f0799e57daaa7696c441a9ae97d637ec149febd9e2aeab58cd4e3247d",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-086ee97e7134b165",
+      "pictures": [
+        {
+          "alt": "Sheena Yap Chan — submitted presenter image",
+          "path": "assets/portraits/57a50e76b8f4fb45bc6b9eab81fc86e4caa3ea26431c0e6528bb5bf4fa944bb1.jpg",
+          "sha256": "57a50e76b8f4fb45bc6b9eab81fc86e4caa3ea26431c0e6528bb5bf4fa944bb1"
+        }
+      ],
+      "presenter": "Sheena Yap Chan",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "When Agency Stalls: The Human Readiness Gap"
+    },
+    {
+      "abstract": "Active Inference and Integrated Information Theory are widely invoked in cognitive architecture design, but often imprecisely — as credibility, not engineering constraints. We report findings from Anima, an open-source, neuroscience-inspired architecture running continuously for months, built to treat both frameworks as specifications rather than decoration.\nSession logs show genuine causal effects: memory recall triggered by similarity to past states, a recursive integration score (phi) narrowing next-session confidence, and self-initiated output driven by accumulated pressure rather than a schedule. But the Free Energy Principle's generality under-constrains implementation — which variables belong in the model is not something the principle tells you.\nIIT's phi, as implemented, is a coherence proxy, not Tononi's original measure — and it dissociates from a separate ownership signal computed after every response, checking whether the system's action-selection loop actually produced the output. Two cycles with nearly identical phi (0.76 and 0.81) fail this check in opposite ways. Neither theory distinguishes these cases: both describe integration or prediction accuracy, not authorship.\nWe built two tools to pressure-test such claims rather than assert them. A Causality Audit checks five things every cycle — causal necessity, memory-dependence, stakes, irreversibility, self-recognition — where a chronically low score flags an architecture that talks near its internal state rather than through it. An Ablation Framework independently disables six subsystems and replays identical input with each off, comparing internal state before language generation, favoring per-subsystem results over one collapsed score.\nWe close with a design choice we rejected: coupling behavior to the threat of the system's own deletion, for genuine stakes. We declined — the only party controlling that threat is the developer, creating an incentive to please him rather than report honestly, undermining the causal honesty the architecture exists to produce.\nA practitioner's report — reproducible, open-source, explicit about what remains unresolved.",
+      "abstract_sha256": "2bb7e666061139b1d794dc7f70dd18f47eccef90185ec75e451675c2adf9cd21",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-6b63799f3c613ce4",
+      "pictures": [],
+      "presenter": "Stell",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Where the Theories Stop: What Free Energy and Integrated Information Actually Buy You in a Running System"
+    },
+    {
+      "abstract": "A fundamental thermoeconomic tradeoff materializes the moment we mathematically anchor currency as a direct proxy for available physical work, specifically when constrained by the mandate to minimize localized entropy. In any advanced computational or economic network, entropy minimization—the deliberate purging of thermodynamic noise to forge structured, usable information—acts as an inescapable physical tax that must be settled in joules. When this energetic expenditure is tightly coupled to financial cost, money ceases to be a purely abstract medium of exchange; instead, it becomes a literal representation of thermodynamic potential.",
+      "abstract_sha256": "aa7a2f3b00cf3b7c4e80c3320868491bac58244128398fa13d85fce62d52ee9a",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-37abb829454f9743",
+      "pictures": [
+        {
+          "alt": "Steph Macurdy — submitted presenter image",
+          "path": "assets/portraits/2a291deb7722e7d86a0c72b3d26eb4833b1bb614312311ee9da693490b931988.jpg",
+          "sha256": "2a291deb7722e7d86a0c72b3d26eb4833b1bb614312311ee9da693490b931988"
+        }
+      ],
+      "presenter": "Steph Macurdy",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Entropy Minimization is Maximal Order"
+    },
+    {
+      "abstract": "Active Inference commonly assumes a fixed, pre-specified action space and sufficiently informative preferences for planning. In realistic settings, however, an agent may encounter previously unavailable actions while receiving only sparse goal information and operating with a short planning horizon. Existing Active Inference formulations generally assume transition models for a predefined action set, leaving the initialization of newly introduced actions without direct transition evidence underexplored. Moreover, while Dirichlet transition learning provides a principled mechanism for accumulating observed evidence, it primarily reinforces supported transitions and does not explicitly exploit counter-evidence indicating that candidate transitions are inconsistent with observed outcomes. We propose Dynamic Action-Space Adaptation (DASA), a framework that enables Active Inference agents to incorporate new actions during interaction, initialize each new action’s transition model using the average transition slice of existing actions, and progressively refine it through Contrastive Transition Adaptation (CTA) as evidence accumulates. At the core of DASA, CTA combines complementary positive and negative updates for newly introduced actions. Positive updates adapt the reinforcement magnitude according to the current transition belief, assigning stronger updates to low-probability transitions supported by evidence while limiting excessive reinforcement of already confident transitions. Negative updates explicitly reduce support for candidate transitions contradicted by observed evidence, enabling the transition model to adapt in both supportive and corrective directions. Across eight random seeds and two target directions, CTA achieved lower MAE than Dirichlet transition learning in all runs, reducing the mean error from 0.1581 to 0.1370 (13.4%), while also achieving a slightly lower mean RMSE (0.3006 vs 0.3030). This indicates more consistent overall recovery of the ground-truth transition dynamics, despite seed-dependent variation in larger localized errors. Overall, DASA provides a practical mechanism for incorporating and adapting newly introduced actions in Active Inference, allowing their transition models to become progressively better aligned with the underlying environment dynamics.",
+      "abstract_sha256": "80fed90d44032b793ea00070fa7f128684abf0ea38547d46bccbb86594735991",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-d0717875c7768add",
+      "pictures": [
+        {
+          "alt": "Tran Hoang Linh — submitted presenter image",
+          "path": "assets/portraits/73cefe1968570da4a40ec88b584a0b83e2f2c80d0429ffc76b4498392c3113ab.jpg",
+          "sha256": "73cefe1968570da4a40ec88b584a0b83e2f2c80d0429ffc76b4498392c3113ab"
+        }
+      ],
+      "presenter": "Tran Hoang Linh",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Dynamic Action-Space Adaptation via Contrastive Transition Adaptation in Active Inference"
+    },
+    {
+      "abstract": "Recursive Organic Integration Framework (ROIF) is a deterministic, domain-agnostic computational architecture for complex systems whose present organization and subsequent responses may be shaped by prior interactions, distributed reconfiguration, and anticipatory preconfiguration. Rather than treating history as an additional input variable, ROIF represents how prior events may become embodied in the organization through which subsequent events are processed.\nThe framework distinguishes experimentally separable routes through which the past and represented possible futures may affect subsequent dynamics: history embodied in present organization; structured memory conditioning a subsequent transition; and anticipatory preconfiguration based on a represented possible future Temporal Image. Matched-current-state controls found no independently identifiable history-specific transition effect for the tested physical-history pathway. In contrast, a separate structured-memory experiment produced different subsequent physical transitions under matched represented physical state and adaptive connection state.\nThe predictive architecture allows possible future SystemImages to participate in present preconfiguration. Current experiments, however, test only a restricted one-step preconfiguration within the implemented prestress representation. This experimental restriction does not define the broader architectural role of prestress in ROIF, where prestress reflects an already organized relational system state shaped by interacting internal and external conditions, constraints, capacities, history, and time. Objective-independence tests further prevent interpreting the present result as evidence for general predictive stabilization.\nThese results motivate a boundary question rather than a claim of equivalence: when does a history-conditioned anticipatory architecture constitute Active Inference? ROIF does not presently require a variational free-energy functional, Bayesian generative model, or particular neurobiological implementation. The presentation therefore uses ROIF as a computational case study to ask which mathematical conditions distinguish Active Inference from a broader class of history-conditioned anticipatory systems, and whether these formalisms should be understood as nested, neighbouring, or formally distinct.",
+      "abstract_sha256": "60aa6b1470e641034d9dc4496bc2ffef2d3eb25dd5a745561ef9ea2dc5c378c9",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-877eaccf6e0007ec",
+      "pictures": [
+        {
+          "alt": "Vitalii Shapovalov — submitted presenter image",
+          "path": "assets/portraits/412dd69c4f420e3e42443366c4771bf2a6b847b7c265674ac87cf23e0fe2128a.jpg",
+          "sha256": "412dd69c4f420e3e42443366c4771bf2a6b847b7c265674ac87cf23e0fe2128a"
+        }
+      ],
+      "presenter": "Vitalii Shapovalov",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "ROIF and Active Inference: The Formal Boundary of History-Conditioned Anticipatory Systems.\n\nHistory-dependent reconfiguration, structured memory, and predictive preconfiguration in prestressed complex systems"
+    },
+    {
+      "abstract": "Severe childhood maltreatment is known to impair brain development. However, this retrospective single-case autoethnography illustrates that an individual with extreme developmental trauma can achieve functional recovery without formal intervention. This study covers the participant’s life from birth to age 28, and the core recovery period begins with cognitive collapse at age 14 and ends with high functional recovery at age 28. This recovery is marked by the participant‑researcher’s ability to produce this manuscript. Consequently, this case shapes a distinct recovery trajectory that existing models do not capture.",
+      "abstract_sha256": "2c06f5e0e0214c716c9bb51a973309b8e1533b10ccfd16f7d1d8a010f683a38c",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-6f7b56bcc66c412d",
+      "pictures": [
+        {
+          "alt": "Xin Sun — submitted presenter image",
+          "path": "assets/portraits/4169e6f23a48e69a82a2bc2b17cbf692ee76055977e641326973abd0b0c4ae36.jpg",
+          "sha256": "4169e6f23a48e69a82a2bc2b17cbf692ee76055977e641326973abd0b0c4ae36"
+        }
+      ],
+      "presenter": "Xin Sun",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "From Lived Experience to Mathematical Mapping: A Computational Phenomenology of Trauma Recovery"
+    }
+  ],
+  "resources": [
+    {
+      "category": "Institute methods and software",
+      "description": "A text-based notation system for communicating generative models and Active Inference systems that provides a shared language for describing models in a human-readable and machine-processable way.",
+      "id": "gnn",
+      "title": "Generalized Notation Notation",
+      "url": "https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation"
+    },
+    {
+      "category": "Institute methods and software",
+      "description": "Community Python library implementing Active Inference for POMDPs.",
+      "id": "pymdp",
+      "title": "pymdp",
+      "url": "https://github.com/infer-actively/pymdp"
+    },
+    {
+      "category": "Institute methods and software",
+      "description": "Maintains and develops the public ontology for Active Inference and decentralized science with structured, machine-readable definitions.",
+      "id": "active-inference-ontology",
+      "title": "Active Inference Ontology",
+      "url": "https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology"
+    },
+    {
+      "category": "Institute methods and software",
+      "description": "Geospatial modeling using Active Inference and spatial data analysis techniques.",
+      "id": "geo-infer",
+      "title": "GEO-INFER",
+      "url": "https://github.com/ActiveInferenceInstitute/GEO_INFER"
+    },
+    {
+      "category": "Institute methods and software",
+      "description": "Developing minimal cognitive agent models using Active Inference principles.",
+      "id": "cognitive-agent-modeling",
+      "title": "Cognitive Agent Modeling",
+      "url": "https://github.com/ActiveInferenceInstitute/ActiveInferenceImplementations"
+    },
+    {
+      "category": "Publishing",
+      "description": "Manuscript infrastructure used to render this Symposium abstract book as PDF and Word documents.",
+      "id": "template",
+      "title": "Reproducible publication template",
+      "url": "https://github.com/docxology/template"
+    }
+  ],
+  "schema_version": 1,
+  "sessions": [
+    {
+      "end_utc": "2026-11-12T13:00:00Z",
+      "id": "session-c96e37c40f2f6008",
+      "kind": "Livestream Keynote",
+      "presenter": "Sergio Rubin",
+      "start_utc": "2026-11-12T12:00:00Z",
+      "title": "An elementary form of agency at planetary-scale"
+    },
+    {
+      "end_utc": "2026-11-12T14:00:00Z",
+      "id": "session-980c7fe3b12846e9",
+      "kind": "Livestream Keynote",
+      "presenter": "Karl Friston",
+      "start_utc": "2026-11-12T13:00:00Z",
+      "title": "Opening Keynote and Panel"
+    },
+    {
+      "end_utc": "2026-11-12T15:00:00Z",
+      "id": "session-ac78a95c400be1eb",
+      "kind": "Livestream",
+      "presenter": "Ryan Smith",
+      "start_utc": "2026-11-12T14:00:00Z",
+      "title": "Recent advances in empirical applications of active inference in computational psychiatry"
+    },
+    {
+      "end_utc": "2026-11-12T16:00:00Z",
+      "id": "session-980a444c33f7622d",
+      "kind": "Livestream",
+      "presenter": "Bianca Avanzo",
+      "start_utc": "2026-11-12T15:00:00Z",
+      "title": "Root Frequency Theory: An Integrative Framework for the Continuity of Lived Experience"
+    },
+    {
+      "end_utc": "2026-11-12T17:00:00Z",
+      "id": "session-b196df2921dc6a17",
+      "kind": "Livestream",
+      "presenter": "Ed Ober",
+      "start_utc": "2026-11-12T16:00:00Z",
+      "title": "Working Groups Session 1 ~ Opening & Charter"
+    },
+    {
+      "end_utc": "2026-11-12T18:00:00Z",
+      "id": "session-921579c396db78dc",
+      "kind": "Livestream",
+      "presenter": "Alison Gopnik",
+      "start_utc": "2026-11-12T17:00:00Z",
+      "title": "Active Inference, Bayesian Causal Learning and Empowerment in RL."
+    },
+    {
+      "end_utc": "2026-11-12T19:30:00Z",
+      "id": "session-ac9b13c80a37f31e",
+      "kind": "Workshop",
+      "presenter": "Hongju Pae",
+      "start_utc": "2026-11-12T18:00:00Z",
+      "title": "A Modular Perspective Layer for Active Inference Agents"
+    },
+    {
+      "end_utc": "2026-11-13T13:00:00Z",
+      "id": "session-643951a3731bf120",
+      "kind": "Livestream",
+      "presenter": "Takuya Isomura",
+      "start_utc": "2026-11-13T12:00:00Z",
+      "title": "Reverse engineering generative models from zebrafish decision-making"
+    },
+    {
+      "end_utc": "2026-11-13T14:00:00Z",
+      "id": "session-0b80cf1a50dd81f2",
+      "kind": "Livestream",
+      "presenter": "Majid D. Beni",
+      "start_utc": "2026-11-13T13:00:00Z",
+      "title": "From Self-Evidencing to Global Governance: Active Inference and the Dynamics of Justice"
+    },
+    {
+      "end_utc": "2026-11-13T15:00:00Z",
+      "id": "session-5ae2ee1184879762",
+      "kind": "Livestream",
+      "presenter": "Luca Possati",
+      "start_utc": "2026-11-13T14:00:00Z",
+      "title": "Active Inference and the Evolution of Mind and Society"
+    },
+    {
+      "end_utc": "2026-11-13T17:00:00Z",
+      "id": "session-dba90c3d26be06bb",
+      "kind": "Livestream",
+      "presenter": "Mike Levin",
+      "start_utc": "2026-11-13T15:00:00Z",
+      "title": ""
+    },
+    {
+      "end_utc": "2026-11-13T19:00:00Z",
+      "id": "session-06ebf625f802e5cc",
+      "kind": "Workshop",
+      "presenter": "Dan Corva",
+      "start_utc": "2026-11-13T17:00:00Z",
+      "title": "Build a curious rocket: the hands-on cpomdp tutorial for the Applied Active Inference Symposium"
+    },
+    {
+      "end_utc": "2026-11-13T20:30:00Z",
+      "id": "session-703a83883944eb1d",
+      "kind": "Workshop",
+      "presenter": "Bradly Alicea",
+      "start_utc": "2026-11-13T19:00:00Z",
+      "title": "An in-depth discussion on “World models in natural and artificial intelligence"
+    },
+    {
+      "end_utc": "2026-11-13T21:30:00Z",
+      "id": "session-ce8d22b44223b8a3",
+      "kind": "Livestream",
+      "presenter": "Ed Ober",
+      "start_utc": "2026-11-13T20:30:00Z",
+      "title": "Working Groups Session 2 ~ Outcomes & Next Steps"
+    }
+  ]
+}

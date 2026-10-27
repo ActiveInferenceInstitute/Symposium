@@ -2,6 +2,25 @@
 
 All notable changes to the Symposium package.
 
+## [2.3.0] — 2026-10-26
+
+- Add private InstituteOS/Superhuman Docs intake and guarded append-only synchronization
+  receipts with conflict detection, idempotency, and readback verification.
+- Publish an explicitly approved 2026 program: 32 contributions, 30 unambiguous consenting
+  participant profiles, 14 timed sessions, and 19 metadata-free submitted portraits.
+- Keep unpublished abstracts and schedule titles visibly pending; quarantine ambiguous
+  registrations and retain private reconciliation evidence outside the public repository.
+- Generate source-grounded presenter dossiers, participant learning briefs, and UTC ICS
+  downloads without paid API calls or inferred author identities.
+- Render the working abstract book through the native docxology/template pipeline,
+  preserving submitted prose and producing A4 PDF and editable Word artifacts.
+- Add a responsive, searchable GitHub Pages explorer using the Institute design system,
+  approved Institute method links, and consent-aware public file manifests.
+- Gate public staging on fresh source projection, explicit application, artifact hashes,
+  safe paths, image metadata checks, and rejection of unmanifested files.
+- Add real-file, subprocess, image, calendar, consent, tampering, and transport controls;
+  preserve historical editions and existing analysis/generation workflows.
+
 ## [2.2.1] — 2026-10-26
 
 - Fix the published CI toolchain mismatch: `setup-uv@v1` installed a uv version

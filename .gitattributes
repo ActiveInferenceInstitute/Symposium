@@ -1,0 +1,2 @@
+# Publication manifests bind exact calendar bytes, including RFC 5545 CRLF.
+data/public/**/*.ics -text

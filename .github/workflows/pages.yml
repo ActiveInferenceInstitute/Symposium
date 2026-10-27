@@ -1,0 +1,61 @@
+name: Publish approved Symposium Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/public/2026/**'
+      - 'src/symposium/organizing/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: symposium-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: '3.12'
+      - name: Install locked public renderer
+        run: uv sync --locked --python 3.12
+      - name: Verify approved publication and build static site
+        run: |
+          uv run --no-sync python - <<'PY'
+          from pathlib import Path
+          from symposium.organizing.publication import verify_public_tree
+          from symposium.organizing.site import build_site
+
+          public_root = Path('data/public/2026')
+          bundle = verify_public_tree(public_root)
+          build_site(bundle, Path('_site'), assets_dir=public_root, artifacts_dir=public_root)
+          PY
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy verified site
+        id: deployment
+        uses: actions/deploy-pages@v4

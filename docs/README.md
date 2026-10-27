@@ -15,6 +15,7 @@ the code on `main`; if something looks wrong, please open an issue.
 
 | Guide | Purpose |
 |-------|---------|
+| [Public Program and Organizing Bridge](organizing_publication.md) | Consent, private intake, dossiers, native book, receipts, and Pages |
 | [2026 Organizer Setup](2026_setup.md) | Current edition, participant schema, presenter imports, preflight |
 | [User Guide](user_guide.md) | End-to-end usage: data prep, CLI commands, Python API, workflows |
 | [API Guide](api_guide.md) | LLM providers, configuration, token management, error handling |

@@ -14,11 +14,13 @@ def main():
 
     from symposium import __version__
     from symposium.cli.edition import add_edition_parser
+    from symposium.cli.organize import add_organize_parser
 
     parser.add_argument("--version", action="version", version=f"symposium {__version__}")
     parser.add_argument("--config", help="JSON configuration file")
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
     add_edition_parser(subparsers)
+    add_organize_parser(subparsers)
 
     # Analyze command
     analyze_parser = subparsers.add_parser("analyze", help="Analyze presenters or participants")
@@ -256,6 +258,11 @@ def main():
     if not args.command:
         parser.print_help()
         sys.exit(1)
+
+    if args.command == "organize":
+        from symposium.cli.organize import run_organize
+
+        sys.exit(run_organize(args))
 
     if args.command == "edition":
         from symposium.cli.edition import run_edition

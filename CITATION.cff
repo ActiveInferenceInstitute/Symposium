@@ -6,7 +6,7 @@ authors:
   - name: "Active Inference Institute"
     website: "https://activeinference.institute/"
 date-released: "2026-10-26"
-version: "2.2.1"
+version: "2.3.0"
 license: "MIT"
 url: "https://github.com/ActiveInferenceInstitute/symposium"
 keywords:

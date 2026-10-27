@@ -1,6 +1,6 @@
 [project]
 name = "symposium"
-version = "2.2.1"
+version = "2.3.0"
 description = "Research analysis and project generation for Active Inference Symposium"
 authors = [{name = "Active Inference Institute"}]
 requires-python = ">=3.10"
@@ -22,6 +22,8 @@ dependencies = [
     "scipy>=1.10.0",
     "icalendar>=5.0.0",
     "pytz>=2023.0",
+    "pillow>=10.0.0",
+    "pypdf>=6.21.2,<7",
 ]
 
 [project.optional-dependencies]

@@ -6,10 +6,11 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 2.2.1 prepares the 2026 edition.** The repository includes an empty 2026
-registration template and presenter workspace based on the previous edition's
-schema. Confirmed 2026 presenters, participants, and dates must be supplied by the
-organizers. Historical 2024 and 2025 inputs remain in their original directories.
+**Version 2.3.0 connects 2026 organizing with approved public publication.**
+Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
+including abstracts, consenting participant profiles, downloadable source dossiers,
+and the working abstract book. Private organizing inputs remain outside this repository;
+2024/2025 archives and the offline 2026 intake templates are preserved.
 
 ## Quick start for 2026
 
@@ -165,6 +166,16 @@ The coverage regression gate is 80%. Tests cover historical workflows, real temp
 CSV files, offline onboarding, failure cases, and generated reports. Tests requiring
 live providers are opt-in (`uv run python -m pytest -m real_api`) and require credentials.
 
+## Public Symposium program
+
+The [Symposium Pages site](https://activeinferenceinstitute.github.io/Symposium/)
+presents approved abstracts, consenting participant profiles, available dossiers and
+abstract-book downloads, and explicitly scheduled sessions. The 2026 Symposium is
+online and free, November 12–13 (UTC). The public build uses only the verified
+`data/public/2026` snapshot; it requires no organizer credentials or paid AI service.
+See the [publication and organizer guide](docs/organizing_publication.md) for source
+mapping, approval checks, native abstract-book production, and deployment boundaries.
+
 ## Documentation
 
 - [2026 organizer guide](docs/2026_setup.md): inputs, schema, readiness, analysis, review.
@@ -179,7 +190,7 @@ live providers are opt-in (`uv run python -m pytest -m real_api`) and require cr
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  version = {2.2.1},
+  version = {2.3.0},
   year = {2026},
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }
