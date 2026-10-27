@@ -12,6 +12,7 @@ from urllib.parse import quote
 
 from PIL import Image
 
+from .discovery import SITE_URL, canonical_base, discovery_files, event_metadata
 from .models import canonical_bytes, validate_bundle
 
 
@@ -41,6 +42,7 @@ def build_site(
     *,
     artifacts_dir: Path | None = None,
     assets_dir: Path | None = None,
+    site_url: str = SITE_URL,
 ) -> Path:
     """Build into an exclusively created directory; reject existing output.
 
@@ -48,10 +50,12 @@ def build_site(
     caller must publish only after this function returns successfully.
     """
     bundle = validate_bundle(dict(bundle))
+    base = canonical_base(site_url)
     output_dir = Path(output_dir)
     if output_dir.exists() or output_dir.is_symlink():
         raise FileExistsError(output_dir)
     copies: dict[str, bytes] = {"program.json": canonical_bytes(bundle)}
+    copies.update(discovery_files(bundle, base))
     images: dict[str, list[str]] = {}
     for item in bundle.get("presentations", []):
         images[item["id"]] = []
@@ -194,13 +198,13 @@ def build_site(
         return f'<div class="filters" data-enhancement hidden><label>Search {prefix}<input id="{prefix}-search" type="search" data-search placeholder="Name or topic" aria-describedby="{prefix}-search-help"></label>{select}<button type="button" data-reset>Reset filters</button><p id="{prefix}-search-help" class="search-help">All search words must match; word order does not matter.</p><p role="status" data-count></p></div><p data-empty hidden>No matches. Try fewer words or reset the filters.</p>'
 
     document = f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore approved Symposium abstracts, participant profiles, scheduled sessions and Institute resources."><title>{_escape(event["title"])} · Active Inference Institute</title><link rel="icon" type="image/svg+xml" href="static/favicon.svg"><link rel="stylesheet" href="static/site.css"><script src="static/site.js" defer></script></head>
-<body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="#main">Active Inference Institute<span>Symposium</span></a><nav aria-label="Main navigation"><a href="#presentations">Presentations</a><a href="#participants">Participants</a><a href="#schedule">Schedule</a><a href="#resources">Resources</a><a href="#downloads">Downloads</a><a href="#about">About</a></nav></header>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore approved Symposium abstracts, participant profiles, scheduled sessions and Institute resources."><title>{_escape(event["title"])} · Active Inference Institute</title><link rel="icon" type="image/svg+xml" href="static/favicon.svg"><link rel="stylesheet" href="static/site.css"><script src="static/site.js" defer></script>{event_metadata(bundle, base)}</head>
+<body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="#main">Active Inference Institute<span>Symposium</span></a><nav aria-label="Main navigation"><a href="#presentations">Presentations</a><a href="#participants">Participants</a><a href="#schedule">Schedule</a><a href="#resources">Resources</a><a href="methods.html">Methods</a><a href="#downloads">Downloads</a><a href="#about">About</a></nav></header>
 <main id="main"><section class="intro"><p class="eyebrow">Annual Symposium</p><h1>{_escape(event["title"])}</h1><p class="dates">{_escape(event["start_date"])} — {_escape(event["end_date"])} · UTC</p><div class="cluster actions">{actions}</div><p class="downloads"><a href="#downloads">Downloads &amp; working-book guidance</a></p>{pending_summary}</section>
 <section id="presentations" data-filter-group><div class="section-heading"><p class="eyebrow">The research</p><h2>Presentations & abstracts</h2><p>Full abstracts from the approved program. Open a presentation to read and explore its sources. Missing abstracts are marked pending.</p></div>{filters("presentations", types)}{"".join(rows) or "<p>No approved presentations published yet.</p>"}</section>
 <section id="participants" data-filter-group><div class="section-heading"><p class="eyebrow">The community</p><h2>Participant directory</h2><p>Self-reported interests, applications, and learning needs shared for this public directory. Available participant briefs appear inside each profile.</p></div>{filters("participants")}{"".join(participant_rows) or "<p>No approved participant profiles published yet.</p>"}</section>
 <section id="schedule"><div class="section-heading"><p class="eyebrow">Gather together</p><h2>Schedule & live sessions</h2><p>Only explicitly scheduled sessions are shown. Abstracts do not imply a speaking time.</p></div>{'<label data-enhancement hidden>Display times in <select id="timezone"><option value="UTC">UTC</option><option value="local">Your local timezone</option></select></label>' if sessions else ""}{"".join(sessions) or "<p>Session times have not been published in this bundle. See the official program for updates.</p>"}<div class="cluster">{livestreams}</div></section>
-<section id="resources"><div class="section-heading"><p class="eyebrow">Keep exploring</p><h2>Institute methods & resources</h2></div><div class="resource-grid">{resources or "<p>No resources published in this bundle.</p>"}</div></section>
+<section id="resources"><div class="section-heading"><p class="eyebrow">Keep exploring</p><h2>Institute methods & resources</h2><p><a href="methods.html">Explore methods, workflows and public repository handoffs</a></p></div><div class="resource-grid">{resources or "<p>No resources published in this bundle.</p>"}</div></section>
 <section id="downloads"><div class="section-heading"><h2>Downloads &amp; reading aids</h2><p>Save the public snapshot for offline reading. Files are shown only when included in this build.</p></div><div class="cluster">{book_links}<a href="program.json" download>Program data · JSON</a><a href="#presentations">Presenter dossiers · inside presentations</a><a href="#participants">Participant briefs · inside profiles</a><a href="#working-book">Working-book guidance</a></div><div id="working-book" class="section-heading"><h3>Using the working abstract book</h3><p>Available PDF and Word books are drafts of this snapshot. Check the official program for revisions and session times. Individual dossiers and briefs are available within their records when included; missing files are not generated on demand.</p></div></section>
 <section id="about"><div class="section-heading"><h2>About this public program</h2><p>This site is built from a validated, approved public bundle. Participant answers are self-reported and published through the public-sharing consent and organizer review process. Presenter abstracts retain their submitted wording.</p><p>Dossiers and participant briefs are source-grounded reading aids, not independent verification of research claims, credentials, or outcomes. Scheduled sessions come from explicit program entries; an abstract alone does not establish a speaking time.</p><p>This is a static snapshot with no automatic live synchronization. Organizers review and publish updates; the official program is the authority for revisions. Registration does not automatically add a public profile or presentation.</p><div class="cluster">{_link(event.get("program_url", ""), "Check the official program")}</div></div></section></main>
 <footer><p>Active Inference Institute · Act. Infer. Serve.</p><p>Public program snapshot · {_escape(event["year"])}. Presenter abstracts and participant profiles are self-reported, approved public content. Refer to the official program for revisions.</p><a href="#main">Back to top</a></footer></body></html>"""

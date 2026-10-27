@@ -41,7 +41,7 @@ if (timezone) {
 document.querySelectorAll("[data-enhancement]").forEach(node => { node.hidden = false; });
 function revealAnchor() {
   const target = document.getElementById(location.hash.slice(1));
-  if (target?.tagName === "DETAILS") {
+  if (target?.matches("[data-record]")) {
     if (target.hidden) {
       const group = target.closest("[data-filter-group]");
       const search = group?.querySelector("[data-search]");
@@ -52,10 +52,14 @@ function revealAnchor() {
         search.dispatchEvent(new Event("input", {bubbles: true}));
       }
     }
-    target.open = true;
-    target.querySelector("summary")?.focus({preventScroll: true});
+    if (target.tagName === "DETAILS") target.open = true;
+    (target.querySelector("summary") || target).focus({preventScroll: true});
     target.scrollIntoView({block: "start"});
   }
 }
+document.addEventListener("click", event => {
+  const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
+  if (link?.hash && link.hash === location.hash) revealAnchor();
+});
 window.addEventListener("hashchange", revealAnchor);
 revealAnchor();

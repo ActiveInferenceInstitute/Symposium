@@ -124,7 +124,8 @@ def test_prose_cannot_close_script_or_inject_markup(bundle, tmp_path):
     source = build_site(bundle, tmp_path / "site").read_text()
     tags = Tags(source).tags
     assert [(tag, attrs) for tag, attrs in tags if tag == "script"] == [
-        ("script", {"src": "static/site.js", "defer": None})
+        ("script", {"src": "static/site.js", "defer": None}),
+        ("script", {"type": "application/ld+json"}),
     ]
     assert not any(tag == "img" for tag, _ in tags)
     assert "&lt;/script&gt;" in source
