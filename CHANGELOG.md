@@ -2,6 +2,19 @@
 
 All notable changes to the Symposium package.
 
+## [3.1.0] — 2026-10-27
+
+- Add a validated catalog connecting nine methods/workflows to ten public repositories,
+  with explicit native-integration/manual-handoff/resource roles and pinned README evidence.
+- Add offline `organize methods` and `organize capabilities` commands; opt-in environment
+  inspection reports presence only, never credential values or authentication claims.
+- Publish a searchable methods hub, canonical/social and safe structured metadata,
+  sitemap, catalog, discovery index and source guidance; exclude participant self-reports
+  from the additional machine discovery index.
+- Improve method/repository navigation and filtered deep links while preserving no-JavaScript
+  content, native disclosure behavior and all approved public data/book bytes.
+- Refresh method, credential, indexing and agent documentation; add package discovery URLs.
+
 ## [3.0.0] — 2026-10-27
 
 ### Runtime compatibility
