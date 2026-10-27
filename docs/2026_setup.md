@@ -1,9 +1,10 @@
 # Preparing the 2026 Symposium
 
-Version 2.2.1 retains last year's registration structure and existing presenter
-publication workflows. It adds reusable edition paths, offline setup, and explicit
-input validation. The shipped 2026 files are empty templates; they do not establish
-an actual roster or schedule.
+This guide covers the optional research-input scaffold under `data/inputs/aif_2026/`.
+It is separate from the approved organizer snapshot in `data/public/2026/`. Empty
+research templates do not imply an empty public program. For new public intake,
+start with [organizer publication](organizing_publication.md) and [methods](methods.md).
+Current package support begins at Python 3.12; use the 3.12 development pin.
 
 ## Install and select an edition
 
@@ -94,13 +95,15 @@ nonzero when either is absent. Structural errors fail either mode. This is an of
 input gate; it does not check provider credits, identities, scientific accuracy,
 event arrangements, or consent beyond the recorded affirmative field.
 
-## Configure providers and generate reports
+## Optional paid provider reports
 
 ```bash
-cp .env.example .env
-cp config.example.json config.json
+if [ ! -e .env ]; then cp .env.example .env; fi
+if [ ! -e config.json ]; then cp config.example.json config.json; fi
 ```
 
+Run the following only after authorizing provider transmission and charges. Set
+`SYMPOSIUM_PRIVATE_DIR` to an organizer-owned workspace outside the public checkout.
 Add provider credentials locally. Model/temperature/token settings belong in the
 JSON configuration, selected for CLI commands with `--config config.json` before the
 command. Environment settings override JSON. API availability and credit balances are
@@ -109,15 +112,15 @@ verified only when you deliberately make a provider request.
 ```bash
 uv run symposium --config config.json analyze participants \
   --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
-  --output-dir outputs/2026_symposium/people --api-provider openrouter
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/people" --api-provider openrouter
 
 uv run symposium --config config.json analyze presenters \
   --data-dir data/inputs/aif_2026/presenters \
-  --output-dir outputs/2026_symposium/presenters
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/presenters"
 
 uv run symposium visualize all \
-  --input-dir outputs/2026_symposium/people \
-  --output-dir outputs/2026_symposium/visualizations
+  --input-dir "$SYMPOSIUM_PRIVATE_DIR/research/people" \
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/visualizations"
 ```
 
 Background-only and curriculum-only commands generate only the selected report type.
@@ -144,5 +147,5 @@ uv run python -m pytest
 uv build
 ```
 
-See [the release verification record](release_2_2_1.md) for the tested software scope
-and remaining organizer-supplied data requirements.
+See [development](development.md) for current verification commands. The
+[2.2.1 release record](release_2_2_1.md) preserves historical evidence only.

@@ -1,49 +1,26 @@
-# Symposium Documentation
+# Symposium documentation
 
-Index of guides for the Symposium package. All guides describe the current state of
-the code on `main`; if something looks wrong, please open an issue.
-
-## Getting Started
+Current operator guides describe the source interfaces. Historical release records
+remain evidence of their own releases, not current test or deployment results.
 
 | Guide | Purpose |
-|-------|---------|
-| [Installation](installation.md) | Environment setup with uv, API key configuration, verification |
-| [Quick Start](../README.md#quick-start) | Fastest path from clone to running (in the main README) |
-| [UV Setup](../UV_SETUP.md) | uv commands, venv management, and troubleshooting |
+|---|---|
+| [Installation](installation.md) | Python 3.12+, locked uv setup and offline checks |
+| [uv setup](../UV_SETUP.md) | Environment selection and troubleshooting |
+| [Organizer publication](organizing_publication.md) | Private intake, consent, artifacts, review and Pages |
+| [Methods](methods.md) | Source provenance, next-intake review and interpretation limits |
+| [2026 research inputs](2026_setup.md) | CSV schema, presenter exports and preflight |
+| [User guide](user_guide.md) | Optional research command examples |
+| [API guide](api_guide.md) | Actual provider/configuration contract and errors |
+| [API workflows](api_usage.md) | Optional paid workflow boundaries |
+| [Background research](perplexity_research.md) | Reviewing externally generated drafts |
+| [Visualization](csv_visualization_guide.md) | Local text plots and reproducibility limits |
+| [Architecture](architecture.md) | Module responsibilities and separate data paths |
+| [Development](development.md) | Checks, evidence and release boundaries |
+| [Contributing](contributing.md) | Scoped changes and review expectations |
+| [Migration](migration.md) | Runtime transition and preserved historical inputs |
+| [Design](DESIGN.md) | Public explorer design contract |
 
-## Usage
-
-| Guide | Purpose |
-|-------|---------|
-| [Public Program and Organizing Bridge](organizing_publication.md) | Consent, private intake, dossiers, native book, receipts, and Pages |
-| [2026 Organizer Setup](2026_setup.md) | Current edition, participant schema, presenter imports, preflight |
-| [User Guide](user_guide.md) | End-to-end usage: data prep, CLI commands, Python API, workflows |
-| [API Guide](api_guide.md) | LLM providers, configuration, token management, error handling |
-| [API Usage](api_usage.md) | Provider roles (Perplexity vs OpenRouter) in the 2025 participant workflow |
-| [CSV Visualization Guide](csv_visualization_guide.md) | Word clouds, dimension reduction, networks, and distributions |
-| [Perplexity Research](perplexity_research.md) | Web-research integration for participant background analysis |
-
-## Development & Project
-
-| Guide | Purpose |
-|-------|---------|
-| [Architecture](architecture.md) | System design, module dependencies, extensibility |
-| [Development](development.md) | Dev setup, testing, code standards, adding features |
-| [Contributing](contributing.md) | Contribution guidelines and PR process |
-| [Migration](migration.md) | Upgrading from the v1.x scripts to the v2.x package |
-| [Changelog](../CHANGELOG.md) | Release history |
-| [Backlog](../TODO.md) | Authoritative project backlog / TODO |
-| [AI Agents Overview](../AGENTS.md) | All AI agents in the system (per-module: `src/symposium/*/AGENTS.md`) |
-
-## Code-adjacent documentation
-
-- Module READMEs: `src/symposium/*/README.md`, `data/README.md`, `tests/README.md`
-- [License](../LICENSE) — MIT
-- [Citation](../CITATION.cff) — cite the package as `symposium2026` (see README)
-
-## Conventions
-
-- Filenames in `docs/` are lowercase (`snake_case.md`).
-- Relative links between docs use the plain filename (e.g. `[User Guide](user_guide.md)`).
-- Guides are verified against the code during review passes; see
-  `REVIEW_LOG_2026-08-02.md` for the most recent docs audit.
+Project records: [changelog](../CHANGELOG.md), [backlog](../TODO.md),
+[citation](../CITATION.cff), [license](../LICENSE), [agent instructions](../AGENTS.md).
+Historical verification: [2.2.0](release_2_2_0.md), [2.2.1](release_2_2_1.md).

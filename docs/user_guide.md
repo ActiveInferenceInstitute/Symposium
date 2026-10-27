@@ -1,8 +1,10 @@
 # Symposium user guide
 
-Symposium 2.2.1 supports the 2026 edition and explicit historical workflows. Start
-with the [2026 organizer guide](2026_setup.md) for full registration fields, consent,
-readiness checks, and presenter onboarding.
+Use [organizer publication](organizing_publication.md) for the approved public
+program and next intake. This guide describes the separate optional research
+workflows; [2026 input setup](2026_setup.md) documents their CSV schema and preflight.
+Current package support begins at Python 3.12. Read [methods](methods.md) before
+interpreting or publishing outputs.
 
 ## Installation and configuration
 
@@ -40,7 +42,8 @@ data/inputs/aif_2026/
 ```
 
 The shipped participant CSV and presenter templates have headers only. Only organizers
-can supply the current roster and confirmed schedule. Historical 2024 and 2025 data
+can populate these research inputs. The approved public snapshot is separate in
+`data/public/2026/`; this scaffold does not describe its roster or schedule. Historical 2024 and 2025 data
 remain in their original folders.
 
 An illustrative registration using canonical headers:
@@ -68,12 +71,19 @@ have data. Existing initialization never overwrites organizer files. Initializat
 currently requires macOS or Linux; existing analysis and generation commands retain
 their normal platform support.
 
-## Analyze participants
+## Optional paid analysis
+
+The commands below can send participant content to external providers and incur
+charges. Verify authorization, configure credentials, and set `SYMPOSIUM_PRIVATE_DIR`
+to a private workspace outside the public checkout before execution. All generated
+reports are drafts requiring source review.
+
+### Analyze participants
 
 ```bash
 uv run symposium --config config.json analyze participants \
   --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
-  --output-dir outputs/2026_symposium/people --api-provider openrouter
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/people" --api-provider openrouter
 ```
 
 Add `--include-background-research`, `--include-curriculum`, or
@@ -83,10 +93,10 @@ commands avoid generating an extra profile:
 ```bash
 uv run symposium analyze backgrounds \
   --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
-  --output-dir outputs/2026_symposium/people
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/people"
 uv run symposium analyze curricula \
   --csv-file data/inputs/aif_2026/Public_Participant_Information.csv \
-  --output-dir outputs/2026_symposium/people --api-provider openrouter
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/people" --api-provider openrouter
 ```
 
 The participant CLI rejects empty inputs before creating a provider client and returns
@@ -100,10 +110,10 @@ The input path must be the directory immediately containing each presenter's fol
 ```bash
 uv run symposium analyze presenters \
   --data-dir data/inputs/aif_2026/presenters \
-  --output-dir outputs/2026_symposium/presenters --max-rows 10
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/presenters" --max-rows 10
 uv run symposium generate profiles \
   --data-dir data/inputs/aif_2026/presenters \
-  --output-dir outputs/2026_symposium/presenters --include-methods
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/presenters" --include-methods
 ```
 
 Both commands accept an optional `--domain-file` containing organizer-provided Markdown
@@ -120,8 +130,8 @@ of validated claims. Pass its path through `--domain-file`.
 
 ```bash
 uv run symposium generate projects \
-  --profiles-dir outputs/2026_symposium/people \
-  --output-dir outputs/2026_symposium/proposals \
+  --profiles-dir "$SYMPOSIUM_PRIVATE_DIR/research/people" \
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/proposals" \
   --domain-file data/domains/active_inference.md --catechism KarmaGAP
 ```
 
@@ -134,8 +144,8 @@ Visualization commands read Markdown reports rather than registration CSVs:
 
 ```bash
 uv run symposium visualize all \
-  --input-dir outputs/2026_symposium/people \
-  --output-dir outputs/2026_symposium/visualizations --method pca --layout spring
+  --input-dir "$SYMPOSIUM_PRIVATE_DIR/research/people" \
+  --output-dir "$SYMPOSIUM_PRIVATE_DIR/research/visualizations" --method pca --layout spring
 ```
 
 Individual commands are `visualize embeddings`, `visualize networks`, and
@@ -165,5 +175,6 @@ uv run python -m pytest
 uv build
 ```
 
-Live-provider tests require explicit opt-in with `-m real_api`. Refer to the
-[release record](release_2_2_1.md) for the exact software checks and their limits.
+Live-provider tests require explicit opt-in with `--run-real-api -m real_api`. Refer to the
+[development guide](development.md) for current checks. Historical release records
+do not establish current test outcomes.

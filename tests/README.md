@@ -1,169 +1,62 @@
-# Test Suite
+# Test suite
 
-Comprehensive testing infrastructure for the Symposium package.
+Use Python 3.12+ and the committed uv lock. The development pin is 3.12.
 
-## Overview
-
-This test suite provides complete coverage of all Symposium functionality, ensuring reliability, correctness, and maintainability of the entire system.
-
-## Test Structure
-
-### Core Tests (`test_core/`)
-Tests for fundamental infrastructure components:
-- **API Tests**: LLM provider integration testing
-- **Configuration Tests**: Settings and environment management
-- **Data Loading Tests**: File I/O and data processing validation
-
-### Analysis Tests (`test_analysis/`)
-Tests for research analysis functionality:
-- **Presenter Tests**: Research profile analysis validation
-- **Participant Tests**: Learning and development analysis testing
-
-### Generation Tests (`test_generation/`)
-Tests for content generation capabilities:
-- **Profile Tests**: Research profile generation validation
-- **Project Tests**: Project proposal generation testing
-
-### Integration Tests (`test_integration/`)
-End-to-end workflow testing:
-- **Workflow Tests**: Complete pipeline validation
-- **Real API Tests**: Live system integration testing
-
-### I/O Tests (`test_io/`)
-Input/output operation testing:
-- **Reader Tests**: File reading functionality
-- **Writer Tests**: Report generation validation
-
-### Visualization Tests (`test_visualization/`)
-Visualization and plotting testing:
-- **Embedding Tests**: Dimension reduction validation
-- **Network Tests**: Similarity network testing
-- **Distribution Tests**: Statistical plotting validation
-
-## Test Categories
-
-### Unit Tests
-Individual component testing:
-- Function-level validation
-- Mock-based isolation testing
-- Edge case coverage
-- Error condition testing
-
-### Integration Tests
-Component interaction testing:
-- API integration validation
-- Data flow verification
-- Configuration interaction testing
-- Cross-module functionality
-
-### Real API Tests
-Live system integration testing:
-- Actual LLM API interaction
-- Real data processing
-- Performance validation
-- Error recovery testing
-
-## Test Data
-
-### Mock Data
-- Simulated research profiles
-- Test configuration files
-- Sample participant data
-- Mock API responses
-
-### Real Data
-- Actual research datasets
-- Live API connections
-- Production configuration
-- Real-world scenarios
-
-## Running Tests
-
-### All Tests
 ```bash
-# Run complete test suite
-pytest tests/
-
-# With coverage report
-pytest tests/ --cov=src/symposium --cov-report=html
-
-# Verbose output
-pytest tests/ -v
+uv sync --locked --extra dev --python 3.12
+uv run --no-sync python -m pytest
+uv run --no-sync ruff check src/ tests/ run.py launch.py
+uv run --no-sync ruff format --check src/ tests/ run.py launch.py
 ```
 
-### Specific Test Categories
+The pytest configuration enables line coverage, terminal/HTML reports and an 80%
+regression gate. These settings do not establish complete coverage or scientific,
+visual, native-render or deployment correctness. Inspect the actual result and
+retained failures for the revision being tested.
+
+## Focused checks
+
 ```bash
-# Core functionality only
-pytest tests/test_core/ -v
-
-# Analysis module only
-pytest tests/test_analysis/ -v
-
-# Real API integration (requires API keys)
-pytest tests/test_integration/test_workflows.py::TestRealAPIWorkflows -v
+uv run --no-sync python -m pytest --no-cov tests/test_core/
+uv run --no-sync python -m pytest --no-cov tests/test_organizing_review.py tests/test_organizing_site.py
+uv run --no-sync python -m pytest --no-cov tests/test_real_api_opt_in.py
 ```
 
-### Performance Testing
-```bash
-# Quick tests only
-pytest tests/test_core/ -q
+A focused run intentionally disables the repository-wide coverage threshold; run
+the full gate before claiming repository-wide health. Tests cover core/config/data,
+analysis, generation, CLI, I/O, calendars, visualization, edition inputs and organizer
+publication. Organizer scenarios exercise real files, local subprocess/transport
+fixtures, explicit consent, missing content, path escapes, manifests, tampering and
+exclusive private outputs. Some legacy research tests use mocked providers.
 
-# Skip slow integration tests
-pytest tests/ --ignore=tests/test_integration/test_workflows.py
+`test_participant_pipeline.py` is an excluded standalone demonstration, not a pytest
+module. See `conftest.py` for fixtures and collection policy. Do not run historical
+participant data through paid providers as a test shortcut.
+
+## Live providers require explicit opt-in
+
+Default runs skip tests marked `real_api`, even when provider credentials are set.
+Marker selection alone does not enable them. Only after authorizing provider
+transmission and charges, supply credentials privately and explicitly enable:
+
+```bash
+uv run --no-sync python -m pytest --run-real-api -m real_api
 ```
 
-## Test Configuration
+Missing credentials can still cause a live test to skip. Passing mocked or local
+transport tests does not verify live authentication, credit balance, provider
+availability or scientific accuracy. Never commit credentials or private registration
+answers into fixtures or test reports.
 
-### Environment Setup
-```bash
-# Install test dependencies
-uv pip install -e ".[dev]"
+## CI and evidence
 
-# Set test environment variables
-export TEST_API_KEY="test_key"
-export TEST_PROVIDER="perplexity"
-```
+[CI](../.github/workflows/ci.yml) configures Ubuntu jobs on Python 3.12, 3.13 and
+3.14. It runs lint, formatting, the test/coverage gate, distribution building, edition
+validation and actual approved-public-tree verification/site rendering. This is not
+cross-platform CI; macOS checks require separate evidence, and Windows is not
+established by this matrix.
 
-### Test Data Management
-- Test fixtures in `conftest.py`
-- Mock data in `tests/fixtures/`
-- Temporary directories for I/O tests
-- Cleanup after test completion
-
-## Quality Metrics
-
-### Coverage Goals
-- **Overall Coverage**: > 90%
-- **Core Modules**: > 95%
-- **Critical Paths**: 100%
-- **Error Paths**: 100%
-
-### Test Reliability
-- **Pass Rate**: > 99%
-- **Flaky Tests**: < 1%
-- **False Positives**: 0%
-- **False Negatives**: < 1%
-
-## Continuous Integration
-
-### GitHub Actions
-- Automated testing on push/PR
-- Multiple Python versions (3.9, 3.10, 3.11)
-- Cross-platform testing (Linux, macOS, Windows)
-- Coverage reporting and badges
-
-### Quality Gates
-- All tests must pass
-- Minimum coverage thresholds
-- No critical security issues
-- Performance benchmarks met
-
-## Integration
-
-This test suite validates:
-- `symposium.core` - API, configuration, data loading
-- `symposium.analysis` - Research analysis functionality
-- `symposium.generation` - Content generation capabilities
-- `symposium.io` - File I/O operations
-- `symposium.cli` - Command-line interface
-- `symposium.visualization` - Data visualization tools
+For GitVault work, keep runtimes, environments, temporary files, caches and retained
+artifacts on the mounted volume and use the local lease policy. Follow
+[development](../docs/development.md) and [methods](../docs/methods.md) for command,
+privacy, rendering and interpretation boundaries.

@@ -6,7 +6,7 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 2.3.0 connects 2026 organizing with approved public publication.**
+**Version 3.0 prepares the next intake with Python 3.12+, verified candidate comparisons, and clearer program readiness.**
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
 and the working abstract book. Private organizing inputs remain outside this repository;
@@ -14,7 +14,7 @@ and the working abstract book. Private organizing inputs remain outside this rep
 
 ## Quick start for 2026
 
-Requires Python 3.10 or newer and [uv](https://docs.astral.sh/uv/). The development
+Requires Python 3.12 or newer and [uv](https://docs.astral.sh/uv/). The development
 runtime is pinned to Python 3.12; installations use the committed dependency lock.
 
 ```bash
@@ -26,6 +26,9 @@ uv run symposium --version
 # The supplied 2026 scaffold is safe to initialize again.
 uv run symposium edition init --year 2026
 uv run symposium edition validate --year 2026
+
+# Check the approved public snapshot and report pending program content.
+uv run symposium organize readiness --public-dir data/public/2026
 ```
 
 Initialization and validation run offline without API credentials. Edition initialization
@@ -152,6 +155,34 @@ participants = DataLoader.load_participant_data(edition.participants_csv)
 print(f"{len(participants)} eligible registrations")
 ```
 
+## Review the next intake before publication
+
+Python 3.10/3.11 support ends with this major release. Upgrade to Python 3.12+
+and recreate the environment with `uv sync --locked --extra dev`; the development
+pin remains 3.12. CI verifies 3.12, 3.13, and 3.14. The separate native Template
+renderer continues to use its own Python 3.14 environment.
+
+Keep raw registrations, real source mappings, consent decisions and candidate
+workspaces outside public checkouts. Build the candidate with the
+[organizing workflow](docs/organizing_publication.md), then compare its verified
+public files with the current snapshot:
+
+```bash
+uv run symposium organize review-update \
+  --previous-public-dir data/public/2026 \
+  --candidate-public-dir "$SYMPOSIUM_PRIVATE_DIR/approved-public" \
+  --output "$SYMPOSIUM_PRIVATE_DIR/intake-review.json" --public-root .
+```
+
+The report identifies additions, removals, changed public fields and artifact changes.
+Participant removals require organizer review; the report does not guess why consent
+or identity changed. Readiness reports content gaps separately from file integrity;
+`--require-complete` fails when a published abstract or session title is missing.
+Neither command certifies fresh consent or publishes changes. The current approved
+roster and book remain unchanged by these software improvements. See the
+[methods guide](docs/methods.md) for the boundaries between source-grounded public
+materials and optional AI-generated research drafts.
+
 ## Development and verification
 
 ```bash
@@ -164,7 +195,7 @@ uv build
 
 The coverage regression gate is 80%. Tests cover historical workflows, real temporary
 CSV files, offline onboarding, failure cases, and generated reports. Tests requiring
-live providers are opt-in (`uv run python -m pytest -m real_api`) and require credentials.
+live providers are opt-in (`uv run python -m pytest --run-real-api -m real_api`) and require credentials.
 
 ## Public Symposium program
 
@@ -190,7 +221,7 @@ mapping, approval checks, native abstract-book production, and deployment bounda
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  version = {2.3.0},
+  version = {3.0.0},
   year = {2026},
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }

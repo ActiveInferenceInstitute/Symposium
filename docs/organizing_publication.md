@@ -190,8 +190,10 @@ uv run symposium organize site --public-dir "$SYMPOSIUM_PRIVATE_DIR/approved-pub
 
 All destinations are fresh: existing outputs are never overwritten. Review the
 approved candidate and its diff before integrating it into `data/public/2026/`.
-A later consent withdrawal requires a refreshed projection and removal from the
-current public tree; publication history and previously downloaded copies persist.
+A confirmed consent withdrawal requires organizer review, a refreshed projection,
+and an explicit decision to remove the record from the current public tree;
+publication history and previously downloaded copies persist. Missing records do
+not independently establish consent withdrawal.
 
 For the return path, prepare a private JSON request with `page_uri`, fresh
 `baseline_content`, `receipt_markdown`, and the actual `public_manifest_hash`.
@@ -203,3 +205,30 @@ edit fails; an uncertain write outcome must be inspected before retrying. This i
 optimistic conflict detection, not a server-side atomic transaction. Receipts belong
 on a dedicated private integration page; they never update acceptance, consent,
 recording, scheduling, or email-sent fields automatically.
+
+
+## Next-intake readiness and candidate comparison
+
+The approved public snapshot and `data/inputs/aif_2026/` research scaffold are separate.
+An empty research CSV does not mean the public roster is empty. Before adding more
+people, validate a fresh candidate and compare it with the approved snapshot:
+
+```bash
+uv run symposium organize readiness --public-dir "$SYMPOSIUM_PRIVATE_DIR/approved-public"
+uv run symposium organize readiness --public-dir "$SYMPOSIUM_PRIVATE_DIR/approved-public" --require-complete
+uv run symposium organize review-update --previous-public-dir data/public/2026 \
+  --candidate-public-dir "$SYMPOSIUM_PRIVATE_DIR/approved-public" \
+  --output "$SYMPOSIUM_PRIVATE_DIR/update-review.json" --public-root .
+```
+
+Readiness emits JSON with pending abstracts and untitled sessions. Without
+`--require-complete`, pending content is reported with exit zero; strict mode returns
+nonzero while retaining the JSON report. Integrity failures return nonzero without a
+readiness report. Source freshness is explicitly not checked.
+
+Update review writes a new private report of entity additions/removals/changed fields
+and artifact differences after verifying both trees. Its destination must be outside
+the public checkout and both trees. It never integrates the candidate, deletes
+records, infers renames, or interprets absence as consent revocation. Review changes
+and resolve identity/consent questions with organizers before publication. See
+[methods and evidence boundaries](methods.md).

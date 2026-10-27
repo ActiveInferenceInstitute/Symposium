@@ -1,13 +1,18 @@
 # Symposium TODO / Backlog
 
-**Status:** Ongoing
-**Owner:** Active Inference Institute
-**Last reviewed:** 2026-08-02
+## Current intake work — 2026-10-27
 
-This is the authoritative project backlog for the Symposium package. It is updated by
-hostile red-team review passes: every validated Minor/Medium finding is implemented in a
-pass and moved to **Completed/Closed**; validated Major findings that require structural
-work are scoped under **Major — Scoped (deferred)** and deliberately left unimplemented.
+- [ ] Review each fresh organizer snapshot, consent exclusions and ambiguous identities.
+- [ ] Resolve pending abstracts and unconfirmed sessions from authoritative organizer input.
+- [ ] Generate and visually inspect candidate native artifacts before public staging.
+- [ ] Run public integrity/readiness checks and review the private update report before integration.
+- [ ] Verify the deployed site and downloads against the approved manifest after an authorized release.
+- [ ] Authorize and separately review any optional paid research workflows; never auto-publish drafts.
+
+See [operator workflow](docs/organizing_publication.md) and [methods](docs/methods.md).
+These are continuing organizer/release tasks, not claims that a new intake or
+publication has occurred. Historical completed/deferred records below are retained
+verbatim and do not establish current runtime or scientific validation.
 
 ---
 
