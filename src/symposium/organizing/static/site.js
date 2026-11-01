@@ -31,7 +31,7 @@ if (timezone) {
     const options = {dateStyle: "medium", timeStyle: "short"};
     if (timezone.value === "UTC") options.timeZone = "UTC";
     const zone = timezone.value === "UTC" ? "UTC" : Intl.DateTimeFormat().resolvedOptions().timeZone;
-    document.querySelectorAll("time[datetime]").forEach(time => {
+    document.querySelectorAll("#schedule time[datetime]").forEach(time => {
       time.textContent = `${new Intl.DateTimeFormat(undefined, options).format(new Date(time.dateTime))} ${zone}`;
     });
   };

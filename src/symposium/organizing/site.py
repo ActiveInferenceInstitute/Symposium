@@ -104,6 +104,14 @@ def build_site(
     for name in ("site.css", "site.js", "favicon.svg"):
         copies[f"static/{name}"] = (Path(__file__).parent / "static" / name).read_bytes()
     event = bundle["event"]
+    stamp = event.get("snapshot_date_utc")
+    snapshot_notice = (
+        f'<p class="snapshot-date"><time datetime="{_escape(stamp)}">Program snapshot as of {_escape(stamp)} (UTC)</time>. '
+        + _link(event["program_url"], "Live public program — revision authority")
+        + ". For the live schedule, open its Sessions page.</p>"
+        if stamp
+        else ""
+    )
     abstract_pending = sum(not p["abstract"].strip() for p in bundle["presentations"])
     title_pending = sum(not s["title"].strip() for s in bundle["sessions"])
     pending = []
@@ -200,7 +208,7 @@ def build_site(
     document = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore approved Symposium abstracts, participant profiles, scheduled sessions and Institute resources."><title>{_escape(event["title"])} · Active Inference Institute</title><link rel="icon" type="image/svg+xml" href="static/favicon.svg"><link rel="stylesheet" href="static/site.css"><script src="static/site.js" defer></script>{event_metadata(bundle, base)}</head>
 <body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="#main">Active Inference Institute<span>Symposium</span></a><nav aria-label="Main navigation"><a href="#presentations">Presentations</a><a href="#participants">Participants</a><a href="#schedule">Schedule</a><a href="#resources">Resources</a><a href="methods.html">Methods</a><a href="#downloads">Downloads</a><a href="#about">About</a></nav></header>
-<main id="main"><section class="intro"><p class="eyebrow">Annual Symposium</p><h1>{_escape(event["title"])}</h1><p class="dates">{_escape(event["start_date"])} — {_escape(event["end_date"])} · UTC</p><div class="cluster actions">{actions}</div><p class="downloads"><a href="#downloads">Downloads &amp; working-book guidance</a></p>{pending_summary}</section>
+<main id="main"><section class="intro"><p class="eyebrow">Annual Symposium</p><h1>{_escape(event["title"])}</h1><p class="dates">{_escape(event["start_date"])} — {_escape(event["end_date"])} · UTC</p>{snapshot_notice}<div class="cluster actions">{actions}</div><p class="downloads"><a href="#downloads">Downloads &amp; working-book guidance</a></p>{pending_summary}</section>
 <section id="presentations" data-filter-group><div class="section-heading"><p class="eyebrow">The research</p><h2>Presentations & abstracts</h2><p>Full abstracts from the approved program. Open a presentation to read and explore its sources. Missing abstracts are marked pending.</p></div>{filters("presentations", types)}{"".join(rows) or "<p>No approved presentations published yet.</p>"}</section>
 <section id="participants" data-filter-group><div class="section-heading"><p class="eyebrow">The community</p><h2>Participant directory</h2><p>Self-reported interests, applications, and learning needs shared for this public directory. Available participant briefs appear inside each profile.</p></div>{filters("participants")}{"".join(participant_rows) or "<p>No approved participant profiles published yet.</p>"}</section>
 <section id="schedule"><div class="section-heading"><p class="eyebrow">Gather together</p><h2>Schedule & live sessions</h2><p>Only explicitly scheduled sessions are shown. Abstracts do not imply a speaking time.</p></div>{'<label data-enhancement hidden>Display times in <select id="timezone"><option value="UTC">UTC</option><option value="local">Your local timezone</option></select></label>' if sessions else ""}{"".join(sessions) or "<p>Session times have not been published in this bundle. See the official program for updates.</p>"}<div class="cluster">{livestreams}</div></section>

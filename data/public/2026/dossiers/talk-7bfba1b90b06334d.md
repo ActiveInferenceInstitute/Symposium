@@ -8,7 +8,7 @@ Public ID: talk&#45;7bfba1b90b06334d
 
 ## Submitted abstract
 
-Most agent architectures collapse two things that phenomenology keeps apart&#58; what the agent should do immediately&#44; and what kind of world the agent takes itself to be in&#46; This session introduces &#8220;perspective&#8221; as a distinct architectural layer that carries the second&#46; 
+Most agent architectures collapse two things that phenomenology keeps apart&#58; what the agent should do immediately&#44; and what kind of world the agent takes itself to be in&#46; This session introduces &#8220;perspective&#8221; as a distinct architectural layer that carries the second&#46;
 Perspective is a slowly evolving&#44; history&#45;sensitive latent state that gates how observations are encoded&#46; Importantly&#44; it is decoupled from policy gradients and is never itself an optimization target&#46; Because it is decoupled&#44; it is portable and can be attached on top of an existing policy&#45;optimizing agent rather than requiring a bespoke design&#46;
 The first part of the session develops the conceptual frame&#58; how a phenomenologically motivated condition translates into a concrete architectural commitment&#44; and why that commitment is orthogonal to belief&#45;state inference and policy selection&#46; I then trace the capabilities that this single layer has been shown to support across a sequence of studies&#44; including directional hysteresis&#44; history&#45;dependent perceptual reorganization&#44; and body&#45;grounded conative orientation&#44; treating these as unified aspects of a single portable module&#46;
 There will then be a live demonstration attaching the perspective layer to an active inference agent&#44; such as a hierarchical Bayesian &#47; discrete state&#45;space model&#44; and running it in parallel with its unaugmented counterpart in the same environment&#44; so participants can see exactly what the layer adds and where it plugs in&#46;
@@ -16,7 +16,7 @@ The session closes with a structured discussion in which participants are invite
 
 Source: [submitted source](<https://2026symposium.activeinference.institute/>)
 
-Abstract SHA256: 52989bb421dddd9c78c2b4a2d77e98d7e180d842e16e392fbfad17a36a1a7413
+Abstract SHA256: 69a7502ac6873d79a8117eb33edb8a4cbda4e779c9dd8b1db7634094809096b3
 
 ## Organizer review checklist
 

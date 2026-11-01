@@ -7,7 +7,7 @@ import json
 import re
 from datetime import date, datetime
 from pathlib import Path, PurePosixPath
-from typing import Any, TypedDict, cast
+from typing import Any, NotRequired, TypedDict, cast
 from urllib.parse import urlsplit
 
 SCHEMA_VERSION = 1
@@ -52,6 +52,7 @@ class PublicEvent(TypedDict):
     community_url: str
     donate_url: str
     livestreams: list[PublicLink]
+    snapshot_date_utc: NotRequired[str]
 
 
 class PublicPresentation(TypedDict):
@@ -210,8 +211,17 @@ def validate_bundle(value: object) -> PublicBundle:
     bundle = _record(value, fields, "Bundle")
     if type(bundle["schema_version"]) is not int or bundle["schema_version"] != SCHEMA_VERSION:
         raise PublicationError("Unsupported public interchange schema version")
-    event_fields = set(PublicEvent.__annotations__)
+    event_fields = set(PublicEvent.__annotations__) - {"snapshot_date_utc"}
+    if isinstance(bundle["event"], dict) and "snapshot_date_utc" in bundle["event"]:
+        event_fields.add("snapshot_date_utc")
     event = _record(bundle["event"], event_fields, "Event")
+    if "snapshot_date_utc" in event:
+        stamp = _text(event["snapshot_date_utc"], "Snapshot date", required=True)
+        try:
+            if date.fromisoformat(stamp).isoformat() != stamp:
+                raise ValueError("Noncanonical calendar date")
+        except ValueError as exc:
+            raise PublicationError("Snapshot date must be an ISO calendar date") from exc
     if type(event["year"]) is not int or not 2000 <= event["year"] <= 2100:
         raise PublicationError("Event year is invalid")
     for field in event_fields - {"year", "livestreams"}:

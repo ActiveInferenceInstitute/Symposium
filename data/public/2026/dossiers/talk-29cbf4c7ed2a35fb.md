@@ -1,12 +1,10 @@
-# ROIF and Active Inference&#58; The Formal Boundary of History&#45;Conditioned Anticipatory Systems&#46;
-
-History&#45;dependent reconfiguration&#44; structured memory&#44; and predictive preconfiguration in prestressed complex systems
+# ROIF and Active Inference&#58; The Formal Boundary of History&#45;Conditioned Anticipatory Systems&#46; &#8203; History&#45;dependent reconfiguration&#44; structured memory&#44; and predictive preconfiguration in prestressed complex systems
 
 Presenter: Vitalii Shapovalov
 
 Contribution: Pre&#45;recorded Video presentation
 
-Public ID: talk&#45;877eaccf6e0007ec
+Public ID: talk&#45;29cbf4c7ed2a35fb
 
 ## Submitted abstract
 
@@ -37,4 +35,4 @@ These approved event resources are starting points; topic relevance and author i
 - pymdp: https&#58;&#47;&#47;github&#46;com&#47;infer&#45;actively&#47;pymdp
 - Reproducible publication template: https&#58;&#47;&#47;github&#46;com&#47;docxology&#47;template
 
-OpenAlex discovery-only search (not a verified identity or literature match): https&#58;&#47;&#47;openalex&#46;org&#47;works&#63;search&#61;ROIF&#37;20and&#37;20Active&#37;20Inference&#37;3A&#37;20The&#37;20Formal&#37;20Boundary&#37;20of&#37;20History&#45;Conditioned&#37;20Anticipatory&#37;20Systems&#46;&#37;0A&#37;0AHistory&#45;dependent&#37;20reconfiguration&#37;2C&#37;20structured&#37;20memory&#37;2C&#37;20and&#37;20predictive&#37;20preconfiguration&#37;20in&#37;20prestressed&#37;20complex&#37;20systems
+OpenAlex discovery-only search (not a verified identity or literature match): https&#58;&#47;&#47;openalex&#46;org&#47;works&#63;search&#61;ROIF&#37;20and&#37;20Active&#37;20Inference&#37;3A&#37;20The&#37;20Formal&#37;20Boundary&#37;20of&#37;20History&#45;Conditioned&#37;20Anticipatory&#37;20Systems&#46;&#37;20&#37;E2&#37;80&#37;8B&#37;20History&#45;dependent&#37;20reconfiguration&#37;2C&#37;20structured&#37;20memory&#37;2C&#37;20and&#37;20predictive&#37;20preconfiguration&#37;20in&#37;20prestressed&#37;20complex&#37;20systems

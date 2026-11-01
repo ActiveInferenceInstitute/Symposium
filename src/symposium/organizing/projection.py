@@ -53,6 +53,18 @@ def cell_text(value: Any, *, depth: int = 0) -> str:
     if isinstance(value, dict):
         if "value" in value:
             return cell_text(value["value"], depth=depth + 1)
+        if value.get("type") == "dt" and "epoch" in value:
+            epoch = value["epoch"]
+            if type(epoch) not in (int, float) or not -62135596800 <= epoch < 253402300800:
+                raise PublicationError("Typed datetime requires finite Unix epoch seconds")
+            try:
+                return (
+                    datetime.fromtimestamp(epoch, timezone.utc).isoformat().replace("+00:00", "Z")
+                )
+            except (OverflowError, OSError, ValueError) as exc:
+                raise PublicationError(
+                    "Typed datetime epoch is outside the supported range"
+                ) from exc
         if value.get("type") == "dt" and isinstance(value.get("input"), str):
             return value["input"]
         if isinstance(value.get("name"), str):

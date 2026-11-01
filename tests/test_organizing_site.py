@@ -313,7 +313,8 @@ def test_public_bundle_build_preserves_source_bytes(tmp_path):
     assert len(
         [attrs for _, attrs in tags if attrs.get("id", "").startswith("presentation-")]
     ) == len(bundle["presentations"])
-    assert "2 abstracts pending; 1 session title pending" in index.read_text()
+    assert "3 abstracts pending" in index.read_text()
+    assert "session title pending" not in index.read_text()
     assert (index.parent / "program.json").read_bytes() == canonical_bytes(validate_bundle(bundle))
 
 
@@ -334,3 +335,15 @@ def test_whitespace_abstract_has_readable_pending_body(bundle, tmp_path):
     bundle["presentations"][0]["abstract_sha256"] = text_hash(" \n ")
     source = build_site(bundle, tmp_path / "site").read_text()
     assert "No program abstract has been published for this presentation yet." in source
+
+
+def test_snapshot_stamp_and_live_authority(bundle, tmp_path):
+    bundle["event"]["snapshot_date_utc"] = "2026-11-01"
+    source = build_site(bundle, tmp_path / "dated-site").read_text()
+    notice = source.split('<p class="snapshot-date">', 1)[1].split("</p>", 1)[0]
+    tags = Tags(notice).tags
+    assert any(tag == "time" and attrs.get("datetime") == "2026-11-01" for tag, attrs in tags)
+    assert "Program snapshot as of 2026-11-01 (UTC)" in source
+    assert any(
+        tag == "a" and attrs.get("href") == bundle["event"]["program_url"] for tag, attrs in tags
+    )

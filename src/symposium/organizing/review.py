@@ -157,7 +157,9 @@ def review_update(previous_public_dir: Path, candidate_public_dir: Path) -> Upda
         "snapshot_integrity": "both_verified",
         "source_freshness": "not_checked",
         "event_changed_fields": sorted(
-            key for key in before["event"] if before["event"][key] != after["event"][key]
+            key
+            for key in before["event"].keys() | after["event"].keys()
+            if before["event"].get(key) != after["event"].get(key)
         ),
         "records": records,
         "artifacts": {

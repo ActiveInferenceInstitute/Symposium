@@ -158,3 +158,39 @@ def test_book_has_one_cross_format_page_break_per_contribution(tmp_path):
     assert "{=openxml}" not in source
     assert "Public ID:" not in source and "Abstract SHA256:" not in source
     assert data["presentations"][0]["abstract"] in html.unescape(source)
+
+
+def test_staged_font_preserves_source_okina_and_spacing(tmp_path):
+    from matplotlib.ft2font import FT2Font
+
+    data = bundle()
+    abstract = "Hawaiʻi uses thin\u2009space."
+    data["presentations"][0]["abstract"] = abstract
+    data["presentations"][0]["abstract_sha256"] = hashlib.sha256(abstract.encode()).hexdigest()
+    project = stage_abstract_book(data, tmp_path / "unicode")
+    manifest = json.loads((project / "abstract_manifest.json").read_text())
+    assert manifest["pdf_font_files"]
+    for name, digest in manifest["pdf_font_files"].items():
+        font = project / "fonts" / name
+        assert hashlib.sha256(font.read_bytes()).hexdigest() == digest
+        face = FT2Font(str(font))
+        assert all(face.get_char_index(ord(c)) for c in abstract if not c.isspace())
+        assert face.get_char_index(0x2009)
+
+
+@pytest.mark.parametrize("state", ["clean", "missing-glyph", "missing-log"])
+def test_native_pdf_glyph_check_requires_real_clean_log(tmp_path, state):
+    from symposium.organizing.artifacts import _check_pdf_glyphs
+
+    log = tmp_path / "compiler.log"
+    if state != "missing-log":
+        log.write_text(
+            "Output written."
+            if state == "clean"
+            else "Missing character: There is no ʻ (U+02BB) in font"
+        )
+    if state == "clean":
+        _check_pdf_glyphs(log)
+    else:
+        with pytest.raises(ArtifactError):
+            _check_pdf_glyphs(log)

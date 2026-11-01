@@ -361,6 +361,12 @@ def stage_public(
     if type(max_age_seconds) is not int or not 0 < max_age_seconds <= 86400:
         raise PublicationError("Snapshot age limit must be positive and at most one day")
     observed = _utc(snapshot.get("observed_at"))
+    if (
+        "snapshot_date_utc" in bundle["event"]
+        and bundle["event"]["snapshot_date_utc"]
+        != observed.astimezone(timezone.utc).date().isoformat()
+    ):
+        raise PublicationError("Snapshot date differs from source capture date")
     now = _utc(as_of) if as_of else datetime.now(timezone.utc)
     age = (now - observed).total_seconds()
     if age > max_age_seconds or age < -300:
