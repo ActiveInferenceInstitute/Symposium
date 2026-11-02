@@ -1,6 +1,6 @@
 # Integration methods
 
-Reviewed: 2026-10-27. Offline metadata; no live availability or authentication checks.
+Reviewed: 2026-11-01. Offline metadata; no live availability or authentication checks.
 
 ## Start — personalized learning
 
@@ -12,7 +12,7 @@ Use for: Prepare a reading plan and identify learning needs before a contributio
 
 Handoff: Browsing is independent of Symposium. Generating curricula in Start has its own configuration, authorization and optional provider costs.
 
-[Repository](https://github.com/ActiveInferenceInstitute/Start) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/Start/blob/7797ff5a34bf8584aef99b23d697b6363f4b7eff/README.md)
+[Repository](https://github.com/ActiveInferenceInstitute/Start) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/Start/blob/6e89d3875ff451171527fd95e426aca1693f41f1/README.md)
 
 ## Institute courses
 
@@ -24,7 +24,7 @@ Use for: Find teaching materials and educational context for a presentation or w
 
 Handoff: Reference materials only; Symposium does not import course records or run the course build pipeline.
 
-[Repository](https://github.com/ActiveInferenceInstitute/courses) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/courses/blob/d42e4294c3e799696ad84837cf8671ce50d1419a/README.md)
+[Repository](https://github.com/ActiveInferenceInstitute/courses) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/courses/blob/94dc021e39250b96b156a50ec96f2b7876da8675/README.md)
 
 ## Fundamentals textbook companion
 
@@ -48,7 +48,7 @@ Use for: Make model assumptions explicit and prepare model artifacts alongside a
 
 Handoff: Use the separate GNN pipeline and its model/backend admission evidence. No automatic Symposium model adapter is installed.
 
-[Repository](https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation/blob/f0dfb68368280f3a43ff91ac28db058c968002d8/.github/README.md)
+[Repository](https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation/blob/8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1/.github/README.md)
 
 ## pymdp (Institute fork)
 
@@ -60,7 +60,7 @@ Use for: Develop and reproduce computational demonstrations for a contribution.
 
 Handoff: This is the Institute fork; its README identifies infer-actively/pymdp as upstream. Model execution and dependency selection remain a separate workflow.
 
-[Repository](https://github.com/ActiveInferenceInstitute/pymdp) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/pymdp/blob/411a8e36fbd273d4fc4c897561e80aa5be59dc8e/README.md)
+[Repository](https://github.com/ActiveInferenceInstitute/pymdp) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/pymdp/blob/c752274e702ce3f23932fb35806110451386c60e/README.md)
 
 ## Active Inference Ontology
 
@@ -72,7 +72,7 @@ Use for: Clarify terms and document mappings when communicating research methods
 
 Handoff: Vocabulary alignment needs human review and does not establish formal or scientific equivalence. Symposium does not perform automatic ontology mapping.
 
-[Repository](https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology/blob/02661575f9ac5213eed6d392c37ca6642660c191/README.md)
+[Repository](https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology) · [Pinned evidence](https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology/blob/0e127a5b5ed5db33a9fdd06be65c1dfca730dcf4/README.md)
 
 ## Working Groups
 
@@ -120,7 +120,7 @@ Use for: Render the approved abstract-book project to PDF and editable Word.
 
 Handoff: Existing optional integration requires an explicitly selected Template checkout, compatible separate Python 3.14 environment and --render. Inspect final pages; rendering does not authorize publication.
 
-[Repository](https://github.com/docxology/template) · [Pinned evidence](https://github.com/docxology/template/blob/83dd01d219ca1bfe663f655128c206b3e4e29ca2/.github/README.md)
+[Repository](https://github.com/docxology/template) · [Pinned evidence](https://github.com/docxology/template/blob/75a91733f1124909d5bf639a1c74aeb7e3f712ff/.github/README.md)
 
 ## Prepare research inputs
 
