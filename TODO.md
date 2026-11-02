@@ -282,8 +282,9 @@ All items below were implemented in this pass (commits `669643f`, `98ae63d`, `a6
 ## Notes / process
 - No pre-existing TODO/TODO.md/TO-DO.md file existed in the repo before this pass; this file was
   created to serve as the authoritative backlog, following the documented header convention.
-- **Mock policy clarification:** the repo's own conventions (.cursorrules "Mocking: Realistic
-  test data…", `tests/AGENTS.md` "Mock Data Agent", `conftest.py`) explicitly endorse mocking.
+- **Mock policy clarification:** the repo's own conventions (AGENTS.md "Development rules":
+  "Mocking is expected where it keeps tests deterministic", `tests/AGENTS.md` "Mock Data
+  Agent", `conftest.py`) explicitly endorse mocking.
   A delegation reviewer flagged the `mock_api_client` fixture as violating a claimed "no-mock"
   policy; that policy is **not** part of this repo, so the mock infrastructure was intentionally
   left in place (an unmatched drive-by "fix" would have contradicted the repo).

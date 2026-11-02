@@ -31,6 +31,54 @@ A resource link does not grant access, install an adapter, transfer data, author
 publication or validate a scientific claim. Keep private InstituteOS identifiers and
 operational source content out of public catalogs and pages.
 
+## Development rules
+
+Moved here from the repository's former `.cursorrules` file; these are the
+conventions to follow when changing Symposium.
+
+### Code and layout
+
+- PEP 8, type hints on functions, Google-style docstrings for public functions,
+  and import grouping (standard library, third party, local).
+- `snake_case` for functions and variables, `PascalCase` for classes.
+- One class per module where practical; tests mirror the source layout under
+  `tests/`.
+- Explain complex logic in comments and keep TODO/FIXME items tracked.
+
+### Tests and quality gates
+
+- Unit tests for functions, integration tests for end-to-end workflows, and
+  live-provider tests only behind the opt-in `real_api` marker.
+- Coverage regression gate: `--cov-fail-under=80` in `pyproject.toml`; raising
+  it is tracked in `TODO.md`.
+- Mocking is expected where it keeps tests deterministic: realistic fixtures
+  and edge cases instead of live calls.
+- `ruff check` and `ruff format --check` are the lint and format gates; CI runs
+  Python 3.12, 3.13 and 3.14.
+
+### Providers and outputs
+
+- Providers: Perplexity (`sonar`) and OpenRouter; configuration comes from
+  environment variables with the project-local JSON override.
+- Handle provider failures with retries and graceful degradation;
+  `PaymentRequiredError` stops processing immediately with clear guidance.
+- Reports are Markdown and JSON, and both must stay valid and readable.
+
+### Data handling
+
+- CSV inputs are UTF-8 with validated headers and structure; JSON outputs keep a
+  consistent schema; Markdown stays clean and consistently structured.
+- Validate paths (no directory traversal) and sanitize user input.
+- Raw registrations, consent ledgers, credentials and drafts stay outside the
+  public checkout (see the public/private boundary above).
+
+### Research claims
+
+- Evidence-based analysis, correct method identification, and responsible AI
+  use: generated research drafts need organizer review before sharing.
+- A resource link or a generated artifact never establishes scientific
+  validity, access or authorization.
+
 ## Verification and completion
 
 Use the declared uv toolchain and external GitVault runtime/cache/temp bindings in
