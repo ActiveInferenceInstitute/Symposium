@@ -528,3 +528,57 @@ def test_invalid_source_values_excluded_with_reason(inputs):
     bundle, ledger = reproject(inputs)
     assert not bundle["participants"]
     assert any(e["kind"] == "participant" for e in ledger["excluded"])
+
+
+@pytest.mark.parametrize(
+    ("epoch", "expected"),
+    [(1793534400, "2026-11-01T12:00:00Z"), (1793534400.5, "2026-11-01T12:00:00.500000Z")],
+)
+def test_typed_datetime_uses_utc_epoch(epoch, expected):
+    assert cell_text({"type": "dt", "epoch": epoch, "input": "11/1/2026 12:00 PM"}) == expected
+
+
+@pytest.mark.parametrize(
+    "epoch",
+    [
+        True,
+        None,
+        "1793534400",
+        float("nan"),
+        float("inf"),
+        float("-inf"),
+        10**1000,
+        -62135596801,
+        253402300800,
+    ],
+)
+def test_invalid_typed_epoch_never_falls_back_to_input(epoch):
+    with pytest.raises(PublicationError):
+        cell_text({"type": "dt", "epoch": epoch, "input": "2026-11-01T12:00:00Z"})
+
+
+def test_typed_utc_session_reaches_public_schedule(inputs):
+    set_cell(
+        inputs[1],
+        "sessions",
+        "start_utc",
+        {"type": "dt", "epoch": 1793534400, "input": "11/1/2026 12:00 PM"},
+    )
+    set_cell(
+        inputs[1],
+        "sessions",
+        "end_utc",
+        {"type": "dt", "epoch": 1793538000, "input": "11/1/2026 1:00 PM"},
+    )
+    bundle, ledger = reproject(inputs)
+    assert [(s["start_utc"], s["end_utc"]) for s in bundle["sessions"]] == [
+        ("2026-11-01T12:00:00Z", "2026-11-01T13:00:00Z")
+    ]
+    assert not [r for r in ledger["excluded"] if r["kind"] == "session"]
+
+
+@pytest.mark.parametrize("stamp", ["2026-02-30", "20261101", "2026-11-01T12:00:00Z", "", None])
+def test_invalid_snapshot_date_rejected(inputs, stamp):
+    inputs[0]["event"]["snapshot_date_utc"] = stamp
+    with pytest.raises(PublicationError):
+        validate_bundle(inputs[0])

@@ -207,3 +207,15 @@ def test_empty_program_is_not_content_complete(inputs, tmp_path, capsys):
     assert report["warnings"] == ["No presentations have been published."]
     assert invoke("readiness", "--public-dir", tree, "--require-complete") == 1
     assert json.loads(capsys.readouterr().out)["content_complete"] is False
+
+
+@pytest.mark.parametrize("reverse", [False, True])
+def test_review_reports_optional_snapshot_date_added_or_removed(inputs, tmp_path, reverse):
+    old, new = tmp_path / "before", tmp_path / "after"
+    stage(inputs, old)
+    original, snapshot, _ = inputs
+    event = {**original["event"], "snapshot_date_utc": "2026-10-26"}
+    bundle, ledger = project_snapshot(snapshot, event, original["resources"])
+    stage((bundle, snapshot, ledger), new)
+    report = review_update(new, old) if reverse else review_update(old, new)
+    assert report["event_changed_fields"] == ["snapshot_date_utc"]

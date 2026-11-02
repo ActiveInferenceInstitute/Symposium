@@ -96,6 +96,17 @@ An accepted abstract is not evidence of a speaking time. Pending sessions remain
 pending, and the official program is the revision authority. A published site is a
 snapshot, not a live synchronization promise.
 
+Typed Docs datetime cells with an `epoch` use finite Unix seconds in UTC; their
+localized `input` display text does not determine a session's time. Invalid epochs
+are rejected without falling back to display text. Plain timestamp strings still
+require an explicit timezone offset.
+
+An optional event `snapshot_date_utc` supplies the visible program snapshot stamp.
+Use the source capture's UTC calendar date; staging rejects a mismatched date.
+Older approved bundles without this field remain readable and are not assigned
+a guessed capture date. The live public program, including its Sessions page,
+remains the revision authority.
+
 `publication.stage_public(..., apply=True)` rechecks the snapshot, its age, the
 projection, the private ledger, approved media and artifact bindings before creating
 a new public tree. The default snapshot freshness limit is one hour; the API permits
@@ -171,7 +182,9 @@ staging directory as `book.pdf` and `book.docx`. The renderer applies a document
 process-local Template compatibility policy to preserve literal tilde and
 middle-dot characters, fails if the expected Template contract changes, and sets
 Word page geometry to A4 with 25 mm margins. It records original/native and final
-artifact hashes. The PDF has a linked contents section; the editable Word version
+artifact hashes. The PDF uses staged, hash-recorded DejaVu Serif font files from
+the declared Matplotlib dependency; missing-glyph compiler diagnostics refuse
+render success instead of silently dropping submitted characters. The PDF has a linked contents section; the editable Word version
 uses heading styles and has no generated contents section or printed page numbers.
 
 ```bash

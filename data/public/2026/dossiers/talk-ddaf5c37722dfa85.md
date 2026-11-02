@@ -1,10 +1,10 @@
 # Recent advances in empirical applications of active inference in computational psychiatry
 
-Presenter: Ryan Smith 
+Presenter: Ryan Smith
 
 Contribution: Livestreamed panel or group session
 
-Public ID: talk&#45;6b718c5ddd797287
+Public ID: talk&#45;ddaf5c37722dfa85
 
 ## Submitted abstract
 

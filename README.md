@@ -241,7 +241,7 @@ mapping, approval checks, native abstract-book production, and deployment bounda
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  version = {3.1.0},
+  version = {3.2.0},
   year = {2026},
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }

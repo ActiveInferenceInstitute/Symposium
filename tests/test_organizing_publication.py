@@ -513,3 +513,38 @@ def test_pdf_initial_view_rejects_actions_or_nonpage_destinations(inputs, tmp_pa
     (artifacts / "book.pdf").write_bytes(pdf_fixture(catalog_extra="/OpenAction " + view))
     with pytest.raises(PublicationError):
         write_artifact_index(inputs[0], artifacts)
+
+
+def test_snapshot_stamp_bound_to_source_capture(inputs, tmp_path):
+    bundle, snapshot, _ = inputs
+    event = {**bundle["event"], "snapshot_date_utc": "2026-10-25"}
+    projected, ledger = project_snapshot(snapshot, event, bundle["resources"])
+    with pytest.raises(PublicationError, match="Snapshot date"):
+        stage((projected, snapshot, ledger), tmp_path / "rejected-date")
+    assert not (tmp_path / "rejected-date").exists()
+
+
+def test_snapshot_stamp_accepts_matching_utc_day(inputs, tmp_path):
+    bundle, snapshot, _ = inputs
+    snapshot["observed_at"] = "2026-10-26T01:30:00Z"
+    event = {**bundle["event"], "snapshot_date_utc": "2026-10-26"}
+    projected, ledger = project_snapshot(snapshot, event, bundle["resources"])
+    destination = tmp_path / "matching-date"
+    stage_public(projected, snapshot, ledger, destination, apply=True, as_of="2026-10-26T01:30:01Z")
+    assert verify_public_tree(destination)["event"]["snapshot_date_utc"] == "2026-10-26"
+
+
+def test_snapshot_capture_retains_explicit_utc_contract(inputs, tmp_path):
+    bundle, snapshot, _ = inputs
+    snapshot["observed_at"] = "2026-10-25T23:30:00-02:00"
+    event = {**bundle["event"], "snapshot_date_utc": "2026-10-26"}
+    projected, ledger = project_snapshot(snapshot, event, bundle["resources"])
+    with pytest.raises(PublicationError, match="Expected explicit UTC timestamp"):
+        stage_public(
+            projected,
+            snapshot,
+            ledger,
+            tmp_path / "non-utc-capture",
+            apply=True,
+            as_of="2026-10-26T01:30:01Z",
+        )

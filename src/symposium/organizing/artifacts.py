@@ -12,6 +12,8 @@ from pathlib import Path
 from urllib.parse import quote
 from xml.etree import ElementTree as ET
 
+from matplotlib import get_data_path
+
 from .models import PublicBundle, PublicPresentation, validate_bundle
 
 
@@ -128,8 +130,28 @@ def stage_abstract_book(bundle: PublicBundle, workspace: Path) -> Path:
         for talk in talks
     )
     _write(manuscript / "01_abstract_book.md", text)
+    # Use package-owned font bytes: Latin Modern drops source glyphs such as
+    # the Hawaiian okina. Copy all faces so the native writer needs no host font.
+    fonts = project / "fonts"
+    fonts.mkdir()
+    font_source = Path(get_data_path()) / "fonts" / "ttf"
+    font_hashes = {}
+    for suffix in ("", "-Bold", "-Italic", "-BoldItalic"):
+        name = f"DejaVuSerif{suffix}.ttf"
+        payload = (font_source / name).read_bytes()
+        (fonts / name).write_bytes(payload)
+        font_hashes[name] = hashlib.sha256(payload).hexdigest()
+    _write(
+        manuscript / "preamble.md",
+        "```latex\n"
+        + r"\setmainfont{DejaVuSerif}[Path={"
+        + fonts.as_posix()
+        + r"/},Extension=.ttf,UprightFont=*,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]"
+        + "\n```\n",
+    )
     manifest = {
         "schema_version": 1,
+        "pdf_font_files": font_hashes,
         "event_id": event["id"],
         "talk_count": len(talks),
         "talks": [{"id": talk["id"], "abstract_sha256": talk["abstract_sha256"]} for talk in talks],
@@ -177,6 +199,14 @@ def _set_docx_page_geometry(path: Path) -> None:
                     else source.read(member),
                 )
     target.replace(path)
+
+
+def _check_pdf_glyphs(log: Path) -> None:
+    """Refuse native PDF success when the compiler lost any source glyph."""
+    if not log.is_file():
+        raise ArtifactError("Native PDF glyph log is unavailable")
+    if "Missing character:" in log.read_text(encoding="utf-8", errors="replace"):
+        raise ArtifactError("Native PDF has missing glyphs; inspect the retained compiler log")
 
 
 def render_abstract_book(
@@ -276,6 +306,7 @@ raise SystemExit(execute_render_pipeline(sys.argv[1], repo_root=Path(sys.argv[2]
     for kind, path in outputs.items():
         if not path.is_file() or path.stat().st_size == 0:
             raise ArtifactError(f"Native render missing nonempty {kind}: {path}")
+    _check_pdf_glyphs(project / "output" / "pdf" / "_combined_manuscript.log")
     native_docx_sha256 = hashlib.sha256(outputs["docx"].read_bytes()).hexdigest()
     _set_docx_page_geometry(outputs["docx"])
     manifest = json.loads((project / "abstract_manifest.json").read_text(encoding="utf-8"))

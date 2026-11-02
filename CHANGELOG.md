@@ -2,6 +2,21 @@
 
 All notable changes to the Symposium package.
 
+## [3.2.0] — 2026-11-01 (release candidate)
+
+- Refresh the public program candidate to 57 presentations and 18 explicit UTC
+  sessions, with 45 participant profiles projected from current affirmative consent.
+- Regenerate dossiers, participant briefs, the UTC calendar, and draft PDF/Word
+  abstract books; retain pending abstracts and the recorded portrait omission.
+- Support typed Docs datetime epochs as UTC seconds while rejecting malformed
+  epochs and continuing to require offsets on plain timestamp strings.
+- Preserve submitted PDF glyphs with staged font bytes and reject missing-glyph
+  compiler diagnostics; keep prior failed renders as private review evidence.
+- Show the source capture's UTC date and live-program revision authority in the
+  explorer; bind the optional snapshot date to capture time at public staging.
+- Keep organizer approval of the exact candidate commit as the merge, tag, and
+  deployment gate.
+
 ## [3.1.0] — 2026-10-27
 
 - Add a validated catalog connecting nine methods/workflows to ten public repositories,
