@@ -65,7 +65,11 @@ class PerplexityProvider(BaseAPIProvider):
             **kwargs: Additional configuration (model, temperature, max_tokens, etc.)
         """
         super().__init__(api_key, **kwargs)
-        self.client = OpenAI(api_key=api_key, base_url="https://api.perplexity.ai")
+        self.client = OpenAI(
+            api_key=api_key,
+            base_url="https://api.perplexity.ai",
+            default_headers={"X-Pplx-Integration": "symposium"},
+        )
         self.model = kwargs.get("model", "sonar")
         self.temperature = kwargs.get("temperature", 0.7)
         self.max_tokens = kwargs.get("max_tokens", 2000)
