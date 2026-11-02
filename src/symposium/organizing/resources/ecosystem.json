@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-27",
+  "reviewed_on": "2026-11-01",
   "repositories": [
     {
       "id": "start",
@@ -10,9 +10,9 @@
       "summary": "AI-assisted learning and curriculum preparation.",
       "use_for": "Prepare a reading plan and identify learning needs before a contribution.",
       "handoff": "Browsing is independent of Symposium. Generating curricula in Start has its own configuration, authorization and optional provider costs.",
-      "evidence_url": "https://github.com/ActiveInferenceInstitute/Start/blob/7797ff5a34bf8584aef99b23d697b6363f4b7eff/README.md",
-      "commit": "7797ff5a34bf8584aef99b23d697b6363f4b7eff",
-      "checked_on": "2026-10-27"
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Start/blob/6e89d3875ff451171527fd95e426aca1693f41f1/README.md",
+      "commit": "6e89d3875ff451171527fd95e426aca1693f41f1",
+      "checked_on": "2026-11-01"
     },
     {
       "id": "courses",
@@ -22,9 +22,9 @@
       "summary": "Course materials and their publishing infrastructure.",
       "use_for": "Find teaching materials and educational context for a presentation or workshop.",
       "handoff": "Reference materials only; Symposium does not import course records or run the course build pipeline.",
-      "evidence_url": "https://github.com/ActiveInferenceInstitute/courses/blob/d42e4294c3e799696ad84837cf8671ce50d1419a/README.md",
-      "commit": "d42e4294c3e799696ad84837cf8671ce50d1419a",
-      "checked_on": "2026-10-27"
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/courses/blob/94dc021e39250b96b156a50ec96f2b7876da8675/README.md",
+      "commit": "94dc021e39250b96b156a50ec96f2b7876da8675",
+      "checked_on": "2026-11-01"
     },
     {
       "id": "fundamentals",
@@ -36,7 +36,7 @@
       "handoff": "The companion code is distinct from access to the textbook. Running an example does not establish scientific validity.",
       "evidence_url": "https://github.com/ActiveInferenceInstitute/fundamentals/blob/fc3383c27af6b8bd7b93ed3daf90deae24d454e7/README.md",
       "commit": "fc3383c27af6b8bd7b93ed3daf90deae24d454e7",
-      "checked_on": "2026-10-27"
+      "checked_on": "2026-11-01"
     },
     {
       "id": "gnn",
@@ -46,9 +46,9 @@
       "summary": "Notation and tooling for specifying, validating and rendering generative models.",
       "use_for": "Make model assumptions explicit and prepare model artifacts alongside a contribution.",
       "handoff": "Use the separate GNN pipeline and its model/backend admission evidence. No automatic Symposium model adapter is installed.",
-      "evidence_url": "https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation/blob/f0dfb68368280f3a43ff91ac28db058c968002d8/.github/README.md",
-      "commit": "f0dfb68368280f3a43ff91ac28db058c968002d8",
-      "checked_on": "2026-10-27"
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Generalized_Notation_Notation/blob/8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1/.github/README.md",
+      "commit": "8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1",
+      "checked_on": "2026-11-01"
     },
     {
       "id": "pymdp",
@@ -58,9 +58,9 @@
       "summary": "Discrete-state Active Inference agent modeling code.",
       "use_for": "Develop and reproduce computational demonstrations for a contribution.",
       "handoff": "This is the Institute fork; its README identifies infer-actively/pymdp as upstream. Model execution and dependency selection remain a separate workflow.",
-      "evidence_url": "https://github.com/ActiveInferenceInstitute/pymdp/blob/411a8e36fbd273d4fc4c897561e80aa5be59dc8e/README.md",
-      "commit": "411a8e36fbd273d4fc4c897561e80aa5be59dc8e",
-      "checked_on": "2026-10-27"
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/pymdp/blob/c752274e702ce3f23932fb35806110451386c60e/README.md",
+      "commit": "c752274e702ce3f23932fb35806110451386c60e",
+      "checked_on": "2026-11-01"
     },
     {
       "id": "ontology",
@@ -70,9 +70,9 @@
       "summary": "Structured terminology, identifiers, relations and vocabulary exports.",
       "use_for": "Clarify terms and document mappings when communicating research methods.",
       "handoff": "Vocabulary alignment needs human review and does not establish formal or scientific equivalence. Symposium does not perform automatic ontology mapping.",
-      "evidence_url": "https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology/blob/02661575f9ac5213eed6d392c37ca6642660c191/README.md",
-      "commit": "02661575f9ac5213eed6d392c37ca6642660c191",
-      "checked_on": "2026-10-27"
+      "evidence_url": "https://github.com/ActiveInferenceInstitute/Active_Inference_Ontology/blob/0e127a5b5ed5db33a9fdd06be65c1dfca730dcf4/README.md",
+      "commit": "0e127a5b5ed5db33a9fdd06be65c1dfca730dcf4",
+      "checked_on": "2026-11-01"
     },
     {
       "id": "working-groups",
@@ -84,7 +84,7 @@
       "handoff": "Draft documents carry no authority until adopted and ratified. This link does not create membership or change organizer decisions.",
       "evidence_url": "https://github.com/ActiveInferenceInstitute/Working_Groups/blob/b366662015d03dc29798dedbf1d472ecef036ce2/README.md",
       "commit": "b366662015d03dc29798dedbf1d472ecef036ce2",
-      "checked_on": "2026-10-27"
+      "checked_on": "2026-11-01"
     },
     {
       "id": "journal",
@@ -96,7 +96,7 @@
       "handoff": "This is a content archive, not an automatic Symposium submission, acceptance or proceedings-publication service.",
       "evidence_url": "https://github.com/ActiveInferenceInstitute/ActiveInferenceJournal/blob/5678957afcb0f7f2a03af509b9c1b1023f3c5024/README.md",
       "commit": "5678957afcb0f7f2a03af509b9c1b1023f3c5024",
-      "checked_on": "2026-10-27"
+      "checked_on": "2026-11-01"
     },
     {
       "id": "journal-utilities",
@@ -108,7 +108,7 @@
       "handoff": "Separate hardware, services and configuration may be required. Symposium does not automatically send recordings to these tools.",
       "evidence_url": "https://github.com/ActiveInferenceInstitute/Journal_Utilities/blob/b690625cfe02c007b12fd18085868cdefbe10688/README.md",
       "commit": "b690625cfe02c007b12fd18085868cdefbe10688",
-      "checked_on": "2026-10-27"
+      "checked_on": "2026-11-01"
     },
     {
       "id": "template",
@@ -118,9 +118,9 @@
       "summary": "Reproducible research and document rendering pipeline used by the native abstract-book workflow.",
       "use_for": "Render the approved abstract-book project to PDF and editable Word.",
       "handoff": "Existing optional integration requires an explicitly selected Template checkout, compatible separate Python 3.14 environment and --render. Inspect final pages; rendering does not authorize publication.",
-      "evidence_url": "https://github.com/docxology/template/blob/83dd01d219ca1bfe663f655128c206b3e4e29ca2/.github/README.md",
-      "commit": "83dd01d219ca1bfe663f655128c206b3e4e29ca2",
-      "checked_on": "2026-10-27"
+      "evidence_url": "https://github.com/docxology/template/blob/75a91733f1124909d5bf639a1c74aeb7e3f712ff/.github/README.md",
+      "commit": "75a91733f1124909d5bf639a1c74aeb7e3f712ff",
+      "checked_on": "2026-11-01"
     }
   ],
   "workflows": [
