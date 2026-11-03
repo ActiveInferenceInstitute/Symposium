@@ -15,7 +15,7 @@ classifiers = [
 dependencies = [
     "pandas>=2.0.0",
     "numpy>=1.24.0",
-    "openai>=1.0.0",
+    "openai>=3.42.0",
     "python-dotenv>=1.0.0",
     "backoff>=2.0.0",
     "matplotlib>=3.7.0",
@@ -27,18 +27,18 @@ dependencies = [
     "adjustText>=0.8",
     "scipy>=1.10.0",
     "icalendar>=5.0.0",
-    "pytz>=2023.0",
+    "pytz>=2026.6",
     "pillow>=10.0.0",
-    "pypdf>=6.21.2,<7",
+    "pypdf>=6.21.4,<7",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.4.0",
+    "pytest>=9.2.0",
     "pytest-cov>=4.1.0",
     "pytest-mock>=3.11.0",
     "ruff>=0.1.0",
-    "mypy>=1.5.0",
+    "mypy>=2.4.1",
     "httpx>=0.27,<1",
 ]
 
