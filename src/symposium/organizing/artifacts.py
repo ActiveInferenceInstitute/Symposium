@@ -8,13 +8,24 @@ import os
 import signal
 import subprocess
 import zipfile
+from dataclasses import asdict
 from pathlib import Path
 from urllib.parse import quote
 from xml.etree import ElementTree as ET
 
 from matplotlib import get_data_path
 
-from .models import PublicBundle, PublicPresentation, validate_bundle
+from .book_cover_facts import BOOK_MARGIN_MM
+from .book_design import (
+    BookDesign,
+    BookDesignError,
+    PreparedBookDesign,
+    prepare_book_design,
+    stage_book_design,
+)
+from .book_design_docx import prepend_book_design
+from .book_profiles import BookProfiles, PresenterProfile, verify_book_profiles
+from .models import PublicBundle, PublicPresentation, content_hash, validate_bundle
 
 
 class ArtifactError(RuntimeError):
@@ -43,21 +54,46 @@ def _talks(bundle: PublicBundle) -> list[PublicPresentation]:
     )
 
 
-def _source(talk: PublicPresentation, *, provenance: bool = True) -> str:
+def _presenter_details(profile: PresenterProfile | None) -> str:
+    """Format only checked source-supplied public professional details."""
+    if profile is None:
+        return ""
+    paragraphs = []
+    if profile.affiliations:
+        paragraphs.append("**Affiliations:** " + _literal(profile.affiliations))
+    if profile.orcid:
+        identifier = profile.orcid.removeprefix("https://orcid.org/")
+        paragraphs.append(
+            "**ORCID:** [" + _literal(profile.orcid) + "](https://orcid.org/" + identifier + ")"
+        )
+    if profile.background:
+        paragraphs.append("**Presenter background**\n\n" + _literal(profile.background))
+    return "\n\n".join(paragraphs) + ("\n\n" if paragraphs else "")
+
+
+def _source(
+    talk: PublicPresentation, *, provenance: bool = True, profile: PresenterProfile | None = None
+) -> str:
     abstract = (
         _literal(talk["abstract"])
         if talk["abstract"].strip()
         else "No program abstract has been published for this presentation yet."
     )
-    return (
+    heading = "Submitted abstract" if provenance else "Abstract"
+    text = (
         f"# {_literal(talk['title'])}\n\n"
         f"Presenter: {_literal(talk['presenter'])}\n\n"
         f"Contribution: {_literal(talk['contribution_type'])}\n\n"
         + (f"Public ID: {_literal(talk['id'])}\n\n" if provenance else "")
-        + f"## Submitted abstract\n\n{abstract}\n\n"
-        f"Source: [submitted source](<{quote(talk['source_url'], safe=':/?=&%#')}>)\n\n"
-        + (f"Abstract SHA256: {talk['abstract_sha256']}\n" if provenance else "")
+        + _presenter_details(profile)
+        + f"## {heading}\n\n{abstract}\n\n"
     )
+    if provenance:
+        text += (
+            f"Source: [submitted source](<{quote(talk['source_url'], safe=':/?=&%#')}>)\n\n"
+            f"Abstract SHA256: {talk['abstract_sha256']}\n"
+        )
+    return text
 
 
 def _write(path: Path, text: str) -> None:
@@ -94,9 +130,42 @@ def write_dossiers(bundle: PublicBundle, output_dir: Path) -> list[Path]:
     return paths
 
 
-def stage_abstract_book(bundle: PublicBundle, workspace: Path) -> Path:
+def stage_abstract_book(
+    bundle: PublicBundle,
+    workspace: Path,
+    *,
+    design: BookDesign | None = None,
+    presenter_profiles: BookProfiles | None = None,
+) -> Path:
     """Stage a deterministic full-abstract book; refuse an existing project."""
     public = validate_bundle(bundle)
+    profiles = verify_book_profiles(presenter_profiles, public) if presenter_profiles else ()
+    prepared = _prepare_design(public, workspace, design)
+    return _stage_prepared_book(public, workspace, prepared, presenter_profiles, profiles)
+
+
+def _prepare_design(
+    public: PublicBundle, workspace: Path, design: BookDesign | None
+) -> PreparedBookDesign | None:
+    if design is None:
+        return None
+    if any(char in str(workspace) for char in "{}%\\\r\n"):
+        raise BookDesignError("Designed workspaces cannot contain TeX delimiters")
+    return prepare_book_design(
+        _talks(public),
+        design,
+        public["event"]["title"] + " — Book of Abstracts",
+        event=public["event"],
+    )
+
+
+def _stage_prepared_book(
+    public: PublicBundle,
+    workspace: Path,
+    prepared: PreparedBookDesign | None,
+    profile_binding: BookProfiles | None,
+    profiles: tuple[PresenterProfile, ...],
+) -> Path:
     event = public["event"]
     project = workspace / "projects" / f"symposium_{event['year']}"
     project.mkdir(parents=True, exist_ok=False)
@@ -104,16 +173,21 @@ def stage_abstract_book(bundle: PublicBundle, workspace: Path) -> Path:
     manuscript.mkdir()
     config = {
         "paper": {
-            "title": f"{_literal(event['title'])} — Book of Abstracts (Working Program)",
+            "title": prepared.title
+            if prepared
+            else f"{_literal(event['title'])} — Book of Abstracts (Working Program)",
             "year": event["year"],
         },
-        "authors": [],
-        "publication": {"transmission_bookends": {"enabled": False}},
+        "authors": [{"name": label} for label in prepared.credits] if prepared else [],
+        "publication": {
+            "transmission_bookends": {"enabled": False},
+            **({"doi": prepared.doi} if prepared is not None and prepared.doi else {}),
+        },
         "render": {
             "formats": {"pdf": True, "docx": True, "html": False, "slides": False, "epub": False}
         },
         "rendering": {"include_date": False},
-        "metadata": {"language": "en", "geometry": "a4paper,margin=25mm"},
+        "metadata": {"language": "en", "geometry": f"a4paper,margin={BOOK_MARGIN_MM}mm"},
     }
     # JSON is a YAML subset and safely quotes user-supplied configuration strings.
     _write(manuscript / "config.yaml", json.dumps(config, ensure_ascii=False, indent=2) + "\n")
@@ -123,10 +197,15 @@ def stage_abstract_book(bundle: PublicBundle, workspace: Path) -> Path:
         "This working program collection contains approved public abstracts and explicitly marks entries awaiting an abstract. Inclusion does not assert "
         "that a presentation has occurred or that a recording has been received.\n\n"
     )
+    if profiles:
+        text += "Presenter details reflect public self-reports; unavailable fields are omitted.\n\n"
     talks = _talks(public)
+    by_presenter = {profile.presenter: profile for profile in profiles}
     page_break = "\n\n\\newpage\n\n"
     text += page_break + page_break.join(
-        _source(talk, provenance=False).replace("## Submitted abstract", "**Submitted abstract**")
+        _source(
+            talk, provenance=False, profile=by_presenter.get(talk["presenter"].strip())
+        ).replace("## Abstract", "**Abstract**")
         for talk in talks
     )
     _write(manuscript / "01_abstract_book.md", text)
@@ -151,11 +230,29 @@ def stage_abstract_book(bundle: PublicBundle, workspace: Path) -> Path:
     )
     manifest = {
         "schema_version": 1,
+        "bundle_sha256": content_hash(public),
+        "abstract_heading": "Abstract",
+        "submitted_source_displayed": False,
+        "pdf_layout": {"paper": "A4", "margins_mm": BOOK_MARGIN_MM},
         "pdf_font_files": font_hashes,
         "event_id": event["id"],
         "talk_count": len(talks),
-        "talks": [{"id": talk["id"], "abstract_sha256": talk["abstract_sha256"]} for talk in talks],
+        "talks": [
+            {
+                "id": talk["id"],
+                "title": talk["title"],
+                "presenter": talk["presenter"],
+                "contribution_type": talk["contribution_type"],
+                "abstract_sha256": talk["abstract_sha256"],
+                "source_url": talk["source_url"],
+            }
+            for talk in talks
+        ],
     }
+    if profile_binding is not None:
+        manifest["presenter_profiles"] = asdict(profile_binding)
+    if prepared is not None:
+        manifest["design"] = stage_book_design(project, prepared)
     _write(project / "abstract_manifest.json", json.dumps(manifest, indent=2) + "\n")
     return project
 
@@ -167,6 +264,7 @@ def _set_docx_page_geometry(path: Path) -> None:
     ET.register_namespace(
         "r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
     )
+    margin_twips = str(round(BOOK_MARGIN_MM * 1440 / 25.4))
     with zipfile.ZipFile(path) as source:
         document = ET.fromstring(source.read("word/document.xml"))
         for section in document.iter(f"{{{namespace}}}sectPr"):
@@ -175,10 +273,10 @@ def _set_docx_page_geometry(path: Path) -> None:
                 (
                     "pgMar",
                     {
-                        "top": "1417",
-                        "bottom": "1417",
-                        "left": "1417",
-                        "right": "1417",
+                        "top": margin_twips,
+                        "bottom": margin_twips,
+                        "left": margin_twips,
+                        "right": margin_twips,
                         "header": "708",
                         "footer": "708",
                         "gutter": "0",
@@ -215,6 +313,8 @@ def render_abstract_book(
     template_root: Path,
     *,
     timeout: int = 600,
+    design: BookDesign | None = None,
+    presenter_profiles: BookProfiles | None = None,
 ) -> dict[str, Path]:
     """Render a fresh project with the real template pipeline and retain run evidence."""
     public = validate_bundle(bundle)
@@ -233,7 +333,9 @@ def render_abstract_book(
     pipeline = template_root / "infrastructure" / "rendering" / "pipeline.py"
     if not python.is_file() or not pipeline.is_file():
         raise ArtifactError("Missing template interpreter or native pipeline")
-    project = stage_abstract_book(public, workspace)
+    profiles = verify_book_profiles(presenter_profiles, public) if presenter_profiles else ()
+    prepared = _prepare_design(public, workspace, design)
+    project = _stage_prepared_book(public, workspace, prepared, presenter_profiles, profiles)
     launcher = project / "render_native.py"
     _write(
         launcher,
@@ -253,6 +355,21 @@ if any(remap._LATEX_TEXT_MACRO_REPLACEMENTS.get(key) != value for key, value in 
     raise RuntimeError("Template literal-preservation contract changed; review adapter")
 remap._LATEX_TEXT_MACRO_REPLACEMENTS = {key: value for key, value in remap._LATEX_TEXT_MACRO_REPLACEMENTS.items() if key not in expected}
 remap._PROSE_GLYPH_REPLACEMENTS = {key: value for key, value in remap._PROSE_GLYPH_REPLACEMENTS.items() if key != "·"}
+if len(sys.argv) == 5:
+    import inspect
+    from infrastructure.rendering import _pdf_combined_preamble as opening
+    from infrastructure.rendering import office_native_projection as office
+    if tuple(inspect.signature(opening.generate_title_page_body).parameters) != ("manuscript_dir",):
+        raise RuntimeError("Template title-page contract changed; review design adapter")
+    if tuple(inspect.signature(office.office_pandoc_metadata).parameters) != ("settings",):
+        raise RuntimeError("Template Office metadata contract changed; review design adapter")
+    frontmatter = Path(sys.argv[4]).read_text(encoding="utf-8")
+    opening.generate_title_page_body = lambda manuscript_dir: frontmatter
+    original_metadata = office.office_pandoc_metadata
+    def designed_metadata(settings):
+        return {key: value for key, value in original_metadata(settings).items()
+                if key not in ("title", "subtitle", "author")}
+    office.office_pandoc_metadata = designed_metadata
 from infrastructure.rendering.pipeline import execute_render_pipeline
 raise SystemExit(execute_render_pipeline(sys.argv[1], repo_root=Path(sys.argv[2]), skip_manuscript_hydration=True))
 """,
@@ -272,6 +389,8 @@ raise SystemExit(execute_render_pipeline(sys.argv[1], repo_root=Path(sys.argv[2]
         env[key] = str(path)
     env["UV_LINK_MODE"] = "copy"
     command = [str(python), str(launcher), project.name, str(workspace), str(vault)]
+    if prepared is not None:
+        command.append(str(project / "frontmatter.tex"))
     _write(project / "render_command.json", json.dumps(command, indent=2) + "\n")
     with (
         (project / "render.stdout.log").open("xb") as stdout,
@@ -309,9 +428,15 @@ raise SystemExit(execute_render_pipeline(sys.argv[1], repo_root=Path(sys.argv[2]
     _check_pdf_glyphs(project / "output" / "pdf" / "_combined_manuscript.log")
     native_docx_sha256 = hashlib.sha256(outputs["docx"].read_bytes()).hexdigest()
     _set_docx_page_geometry(outputs["docx"])
+    if prepared is not None:
+        prepend_book_design(outputs["docx"], prepared, _talks(public))
     manifest = json.loads((project / "abstract_manifest.json").read_text(encoding="utf-8"))
     manifest["literal_preservation"] = {"tilde": True, "middle_dot": True}
-    manifest["docx_layout"] = {"paper": "A4", "margins_mm": 25, "native_sha256": native_docx_sha256}
+    manifest["docx_layout"] = {
+        "paper": "A4",
+        "margins_mm": BOOK_MARGIN_MM,
+        "native_sha256": native_docx_sha256,
+    }
     manifest["outputs"] = {
         kind: {"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
         for kind, path in outputs.items()
@@ -319,6 +444,10 @@ raise SystemExit(execute_render_pipeline(sys.argv[1], repo_root=Path(sys.argv[2]
     manifest["manuscript_sha256"] = hashlib.sha256(
         (project / "manuscript" / "01_abstract_book.md").read_bytes()
     ).hexdigest()
+    if prepared is not None:
+        manifest["frontmatter_sha256"] = hashlib.sha256(
+            (project / "frontmatter.tex").read_bytes()
+        ).hexdigest()
     outputs["manifest"] = project / "render_manifest.json"
     _write(outputs["manifest"], json.dumps(manifest, indent=2) + "\n")
     return outputs

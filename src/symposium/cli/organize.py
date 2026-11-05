@@ -15,6 +15,8 @@ from symposium.organizing.artifacts import (
     stage_abstract_book,
     write_dossiers,
 )
+from symposium.organizing.book_design import BookDesign
+from symposium.organizing.book_profiles import load_book_profiles
 from symposium.organizing.bridge import (
     InstituteOSTransport,
     apply_receipt,
@@ -101,6 +103,20 @@ def add_organize_parser(subparsers: argparse._SubParsersAction) -> None:
     )
     children["book"].add_argument("--template-root", type=Path)
     children["book"].add_argument("--timeout", type=int, default=600)
+    children["book"].add_argument("--cover-image", type=Path)
+    children["book"].add_argument("--frontispiece-image", type=Path)
+    children["book"].add_argument("--book-title")
+    children["book"].add_argument("--doi", help="Reserved bare DOI for the designed book cover")
+    children["book"].add_argument(
+        "--public-participants",
+        type=Path,
+        help="Current designated public 2026 participant capture for exact presenter details",
+    )
+    children["book"].add_argument(
+        "--public-team",
+        type=Path,
+        help="Optional public 2026 co-organizing-team affiliation capture",
+    )
     children["stage-public"].add_argument("--assets-dir", type=Path)
     children["stage-public"].add_argument("--artifacts-dir", type=Path)
     children["stage-public"].add_argument("--max-age-seconds", type=int, default=3600)
@@ -306,15 +322,46 @@ def _run(args: argparse.Namespace) -> None:
         )
     elif command == "book":
         workspace = _private(args.workspace, boundary)
+        if bool(args.cover_image) != bool(args.frontispiece_image):
+            raise PublicationError(
+                "--cover-image and --frontispiece-image must be supplied together"
+            )
+        if args.book_title is not None and args.cover_image is None:
+            raise PublicationError("--book-title requires the paired book artwork inputs")
+        if args.doi is not None and args.cover_image is None:
+            raise PublicationError("--doi requires the paired book artwork inputs")
+        design = (
+            BookDesign(args.cover_image, args.frontispiece_image, args.book_title, doi=args.doi)
+            if args.cover_image is not None
+            else None
+        )
+        if args.public_team is not None and args.public_participants is None:
+            raise PublicationError("--public-team requires --public-participants")
+        profiles = (
+            load_book_profiles(
+                _private(args.public_participants, boundary),
+                bundle,
+                _private(args.public_team, boundary) if args.public_team is not None else None,
+            )
+            if args.public_participants is not None
+            else None
+        )
         if args.render:
             if args.template_root is None:
                 raise PublicationError("Native book rendering requires --template-root")
-            render_abstract_book(bundle, workspace, args.template_root, timeout=args.timeout)
+            render_abstract_book(
+                bundle,
+                workspace,
+                args.template_root,
+                timeout=args.timeout,
+                design=design,
+                presenter_profiles=profiles,
+            )
             print("Native abstract book rendered; evidence retained in private workspace.")
         else:
             if args.template_root is not None:
                 raise PublicationError("--template-root requires --render")
-            stage_abstract_book(bundle, workspace)
+            stage_abstract_book(bundle, workspace, design=design, presenter_profiles=profiles)
             print("Abstract book sources staged privately; no native render performed.")
     elif command == "dossiers":
         files = write_dossiers(bundle, _private(args.output_dir, boundary))

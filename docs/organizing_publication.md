@@ -130,6 +130,74 @@ external volume. Rendering records stdout/stderr and preserves intermediate evid
 The native DOCX/PDF outputs require their own visual inspection; text equivalence
 alone does not establish layout quality. A draft book is labeled as a draft.
 
+The optional `BookDesign(cover_image, frontispiece_image, title=None, doi=None)` argument to
+`stage_abstract_book` and `render_abstract_book` adds a designed cover and a second
+physical page containing generated conceptual artwork. Its author order starts
+with **Active Inference Institute**, followed by every unique exact presenter
+display label in the deterministic contribution order. Composite presenter labels
+are retained as submitted; the adapter does not split names, merge near-matches,
+or invent affiliations. The cover includes the validated event dates, `https://symposium.activeinference.institute/`,
+and the explicitly supplied organizational contact `blanket@activeinference.institute`.
+These cover contacts do not relax participant contact-field exclusions. The cover
+uses three columns at nine points and refuses a
+credit list that exceeds its measured single-page budget instead of dropping names
+or shrinking type further.
+
+Artwork inputs must be absolute regular PNG paths without traversal or symlinks.
+They are validated before project creation, copied independently into the fresh
+private project, and hash-bound with the exact cover-credit list in its manifest.
+No image or raw input is committed automatically. Omitting `design` retains the
+standard coverless workflow. Both formats now use 18 mm margins.
+
+Designed PDF front matter uses a checked process-local Template adapter: cover on
+physical page 1, conceptual artwork on physical page 2, then linked contents with
+space reserved for two-digit contribution numbers. Template source is unchanged.
+The native DOCX body is preserved while equivalent cover/artwork/linked-contents
+XML is prepended and its creator metadata receives the same institutional-first
+credits. DOCX contents links target native heading bookmarks and omit page numbers,
+which depend on the reader's word processor. Both formats still require actual
+page-by-page visual inspection: declared page breaks and source order do not prove
+physical pagination. Generated artwork is an illustration, not scientific evidence.
+
+### Public presenter details in the book
+
+Presenter pages use the heading **Abstract** and omit the visible "submitted source"
+footer. Source URLs and abstract hashes remain in the private render manifest;
+organizer dossiers retain their provenance blocks.
+
+Optionally load `book_profiles.load_book_profiles(current_participants, bundle,
+organizer_affiliations_path=None)` and pass the resulting immutable `BookProfiles`
+as `presenter_profiles=` to staging or rendering. The participant input is the same
+2026 designated-public-view capture accepted by the visualization loader. It is
+not replaced by the older participant array in the approved program bundle.
+
+Only exact whole presenter display strings are joined. Nonblank public affiliations,
+ORCIDs and supplied backgrounds appear above the abstract; missing fields are
+omitted. Composite strings remain atomic. No aliases, inferred identity matches,
+web biographies or paid research drafts fill gaps. The optional same-document
+2026 public co-organizing-team capture contributes only its supplied Name and
+Affiliations fields, with exact contribution bindings. Conflicting source values,
+duplicate names, changed projections, incomplete captures and private/contact text
+are refused before the output workspace is created.
+
+The manifest binds the source cohort/capture/team hashes and full derived profile
+projection. It does not display raw source row IDs. Source acquisition and consent
+review remain separate from file/hash validation. The analysis cohort remains the
+complete designated public participant view; book-only organizer affiliation
+supplements do not add people to participant analyses.
+
+The CLI exposes these optional private input paths as `--public-participants` and
+`--public-team`; `--public-team` requires `--public-participants`. For example, add:
+
+```bash
+  --public-participants "$SYMPOSIUM_PRIVATE_DIR/current-public-participants-2026.json" \
+  --public-team "$SYMPOSIUM_PRIVATE_DIR/public-program-organizer-affiliations.json"
+```
+
+to the book command below. Keep both captures and the generated book outside the
+public checkout. Inspect every new physical page after adding metadata or changing
+margins; older page reviews do not prove the revised layout.
+
 Build artifacts in a private staging directory, run
 `publication.write_artifact_index(bundle, artifacts_dir)`, then pass that directory
 to `stage_public`. The artifact index binds files to the exact public bundle; it is
@@ -177,15 +245,50 @@ uv run symposium organize book --bundle "$SYMPOSIUM_PRIVATE_DIR/projection/progr
   --workspace "$SYMPOSIUM_PRIVATE_DIR/book" --template-root "$TEMPLATE_ROOT" --public-root . --render
 ```
 
+To select the optional design, supply both `--cover-image` and
+`--frontispiece-image` (paired absolute PNG paths); `--book-title` optionally
+overrides the cover title. Optional `--doi` supplies the actual version-specific
+book DOI for the cover and requires both artwork inputs. Use a bounded bare
+identifier such as `10.5281/zenodo.23986505`, without a resolver URL, surrounding
+whitespace or TeX delimiters. These options work with source staging and `--render`:
+
+```bash
+uv run symposium organize book --bundle "$SYMPOSIUM_PRIVATE_DIR/projection/program.json" \
+  --workspace "$SYMPOSIUM_PRIVATE_DIR/designed-book" --public-root . \
+  --cover-image "$SYMPOSIUM_PRIVATE_DIR/artwork/cover.png" \
+  --frontispiece-image "$SYMPOSIUM_PRIVATE_DIR/artwork/spread.png" \
+  --book-title "2026 Active Inference Symposium — Presenter Program" \
+  --doi "10.5281/zenodo.23986505" \
+  --template-root "$TEMPLATE_ROOT" --render
+```
+
+The example uses the real reserved version 3.2.0 book identifier; other books need
+their own actual reservation. The exact supplied identifier is recorded as
+`publication.doi` in the staged project configuration and as `doi`/`doi_url` in its
+design manifest. It is printed on both covers and linked through `https://doi.org/`
+in the PDF. Use the version-specific book DOI consistently in the cover, citation
+and repository/release metadata; a concept DOI or software identifier identifies
+a different object.
+
+A reservation is an unpublished draft record. Cover rendering does not reserve or
+publish a DOI, prove ownership, or certify that a DOI landing page resolves. After
+independent review of every final PDF/Word page and exact file hashes, publish the
+authorized record and versioned release. Read back the public record, download the
+actual hosted files and compare them with those reviewed hashes before changing
+documentation from reserved/pending to published. Track CI and website deployment
+outcomes separately. See the [3.2.0 release record](release_3_2_0.md) for current status.
+
 Review the native outputs and copy only the reviewed PDF/DOCX into the artifact
 staging directory as `book.pdf` and `book.docx`. The renderer applies a documented,
 process-local Template compatibility policy to preserve literal tilde and
 middle-dot characters, fails if the expected Template contract changes, and sets
-Word page geometry to A4 with 25 mm margins. It records original/native and final
+Word and PDF page geometry to A4 with 18 mm margins. It records original/native and final
 artifact hashes. The PDF uses staged, hash-recorded DejaVu Serif font files from
 the declared Matplotlib dependency; missing-glyph compiler diagnostics refuse
 render success instead of silently dropping submitted characters. The PDF has a linked contents section; the editable Word version
-uses heading styles and has no generated contents section or printed page numbers.
+uses heading styles and has no printed page numbers. The legacy editable edition
+has no generated contents; the optional design adds linked contents after its
+second physical page.
 
 ```bash
 uv run symposium organize artifact-index --bundle "$SYMPOSIUM_PRIVATE_DIR/projection/program.json" \

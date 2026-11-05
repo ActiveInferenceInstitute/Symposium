@@ -14,6 +14,7 @@ from symposium.organizing.artifacts import (
     stage_abstract_book,
     write_dossiers,
 )
+from symposium.organizing.models import content_hash
 
 
 def bundle():
@@ -71,15 +72,20 @@ def test_stage_full_abstract_order_hash_and_no_overwrite(tmp_path):
     second = copy.deepcopy(data["presentations"][0])
     second.update(id="talk-b", presenter="A Synthetic Presenter", contribution_type="Poster")
     data["presentations"].append(second)
+    first_source_sha256 = content_hash(data)
     project = stage_abstract_book(data, tmp_path / "first")
     data["presentations"].reverse()
     other = stage_abstract_book(data, tmp_path / "second")
     for relative in (
         "manuscript/config.yaml",
         "manuscript/01_abstract_book.md",
-        "abstract_manifest.json",
     ):
         assert (project / relative).read_bytes() == (other / relative).read_bytes()
+    first_manifest = json.loads((project / "abstract_manifest.json").read_text())
+    second_manifest = json.loads((other / "abstract_manifest.json").read_text())
+    assert first_manifest.pop("bundle_sha256") == first_source_sha256
+    assert second_manifest.pop("bundle_sha256") == content_hash(data)
+    assert first_manifest == second_manifest
     text = (project / "manuscript/01_abstract_book.md").read_text()
     assert text.index("A Synthetic Presenter") < text.index("Presenter: Synthetic Presenter")
     assert html.unescape(text).count(data["presentations"][0]["abstract"]) == 2
@@ -142,7 +148,7 @@ def test_native_docx_geometry_preserves_text_and_members(tmp_path):
         assert document.find(f".//{{{namespace}}}t").text == "Literal ~ and · prose"
         assert len(document.findall(f".//{{{namespace}}}pgSz")) == 1
         assert document.find(f".//{{{namespace}}}pgSz").get(f"{{{namespace}}}w") == "11906"
-        assert document.find(f".//{{{namespace}}}pgMar").get(f"{{{namespace}}}left") == "1417"
+        assert document.find(f".//{{{namespace}}}pgMar").get(f"{{{namespace}}}left") == "1020"
     assert not path.with_suffix(".a4.docx").exists()
 
 

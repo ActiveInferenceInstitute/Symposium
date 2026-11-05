@@ -15,6 +15,7 @@ from typing import Any
 from icalendar import Calendar, Event
 from PIL import Image
 
+from .book_cover_facts import PUBLIC_CONTACT
 from .models import (
     EMAIL,
     PRIVATE_LINK,
@@ -142,18 +143,23 @@ def _allowed_artifacts(bundle: PublicBundle) -> set[str]:
     )
 
 
-def _scan_text(raw: bytes) -> None:
+def _scan_text(raw: bytes, *, book_contact: bool = False) -> None:
     import html
 
     try:
         text = html.unescape(raw.decode("utf-8"))
     except UnicodeError as exc:
         raise PublicationError("Public text must be UTF-8") from exc
-    if EMAIL.search(text) or PRIVATE_LINK.search(text) or "/Users/" in text or "/Volumes/" in text:
+    if (
+        any(not book_contact or match.group() != PUBLIC_CONTACT for match in EMAIL.finditer(text))
+        or PRIVATE_LINK.search(text)
+        or "/Users/" in text
+        or "/Volumes/" in text
+    ):
         raise PublicationError("Private contact, document link, or local path in public artifact")
 
 
-def _check_pdf(raw: bytes) -> None:
+def _check_pdf(raw: bytes, *, book_contact: bool = False) -> None:
     """Inspect parsed text and objects; this does not replace native visual/OCR review."""
     from pypdf import PdfReader
     from pypdf.errors import PyPdfError
@@ -222,7 +228,8 @@ def _check_pdf(raw: bytes) -> None:
                         if set(destination) != {"/Base"}:
                             raise PublicationError("Unexpected PDF URI configuration")
                         destination = destination["/Base"]
-                    public_url(destination, "PDF destination")
+                    if not book_contact or destination != "mailto:" + PUBLIC_CONTACT:
+                        public_url(destination, "PDF destination")
                 if node.get("/S") == "/URI" and "/URI" not in node:
                     raise PublicationError("PDF URI action has no destination")
                 if isinstance(node, StreamObject) and node.get("/Type") == "/Metadata":
@@ -230,7 +237,7 @@ def _check_pdf(raw: bytes) -> None:
                     decoded_bytes += len(data)
                     if decoded_bytes > MAX_FILE_BYTES:
                         raise PublicationError("Decoded PDF data exceeds its bound")
-                    _scan_text(data)
+                    _scan_text(data, book_contact=book_contact)
                 pending.extend(
                     (
                         value,
@@ -245,7 +252,7 @@ def _check_pdf(raw: bytes) -> None:
             elif action:
                 raise PublicationError("Malformed PDF action")
             elif isinstance(node, str):
-                _scan_text(node.encode("utf-8"))
+                _scan_text(node.encode("utf-8"), book_contact=book_contact)
         for page in reader.pages:
             contents = page.get_contents()
             if contents is not None:
@@ -255,7 +262,7 @@ def _check_pdf(raw: bytes) -> None:
             text = page.extract_text()
             if not isinstance(text, str):
                 raise PublicationError("PDF text extraction failed")
-            _scan_text(text.encode("utf-8"))
+            _scan_text(text.encode("utf-8"), book_contact=book_contact)
     except PublicationError:
         raise
     except (PyPdfError, ValueError, TypeError, KeyError, OSError, RecursionError) as exc:
@@ -263,6 +270,8 @@ def _check_pdf(raw: bytes) -> None:
 
 
 def _check_artifact(name: str, raw: bytes) -> None:
+    # Only these two reviewed book artifacts may carry the organizational cover contact.
+    book_contact = name in {"book.pdf", "book.docx"}
     if name.endswith((".md", ".ics")):
         _scan_text(raw)
     if name.endswith(".ics"):
@@ -281,11 +290,11 @@ def _check_artifact(name: str, raw: bytes) -> None:
                     if entry.file_size > MAX_FILE_BYTES:
                         raise PublicationError("Oversized Word member")
                     if entry.filename.endswith((".xml", ".rels")):
-                        _scan_text(archive.read(entry))
+                        _scan_text(archive.read(entry), book_contact=book_contact)
         except zipfile.BadZipFile as exc:
             raise PublicationError("Invalid Word document") from exc
     if name.endswith(".pdf"):
-        _check_pdf(raw)
+        _check_pdf(raw, book_contact=book_contact)
 
 
 def write_artifact_index(bundle: PublicBundle, artifacts_dir: Path) -> Path:
