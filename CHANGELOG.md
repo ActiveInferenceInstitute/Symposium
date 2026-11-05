@@ -2,31 +2,37 @@
 
 All notable changes to the Symposium package.
 
-## [3.2.0] — 2026-11-05 (publication pending)
+## [3.2.0] — 2026-11-05 (book published; GitHub software release pending)
 
-The book DOI **10.5281/zenodo.23986505 is reserved**. Zenodo publication, the GitHub
-versioned release, remote CI and released-byte verification remain pending; this
-entry records the prepared changes, not a completed remote publication.
+The book is published on Zenodo at
+[10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505), with public
+metadata, DOI resolution and all six unauthenticated asset SHA-256 checks verified.
+The GitHub versioned software release remains pending under the repository's
+publication controls; source push, remote CI and website deployment remain pending.
 
 - Prepare the *2026 Active Inference Symposium — Presenter Program* in PDF and
   editable Word through the native docxology/template integration, with 18 mm
   margins, dated institutional cover, all exact presenter/group credits, generated
-  cover and page-two artwork, and the reserved book DOI.
+  cover and page-two artwork, and the published book DOI.
 - Include supplied public affiliations, ORCIDs and backgrounds only through exact
   whole-label joins from approved 2026 public sources. Preserve absent profiles,
   composite credits, the 57 source contributions and three pending abstracts.
 - Improve participant and presenter chart readability, shared histogram bins and
   cross-process network-layout ordering. Bind charts to validated ordered inputs,
   explicit missingness, method parameters and artifact hashes.
-- Keep the new 55-person public analysis cohort separate from the retained
+- Keep the new 55-record public analysis cohort separate from the retained
   November 1 public program's 45 previously approved participant profiles. Refresh
   only the book bytes and corresponding public manifest digests in that historical
   tree; do not claim renewed consent or publish private captures or provider drafts.
 - Scope the authorized organizational email exception to the exact PDF/Word book
   artifact names while retaining participant, other-email, private-link, local-path
   and PDF active-content rejection.
-- Reconcile citation and release documentation with version 3.2.0 and the reserved
+- Reconcile citation and release documentation with version 3.2.0 and the published
   book DOI. See [the release record](docs/release_3_2_0.md) for status and scope.
+- Validate the DOI book source with 776 passed tests, 9 skips and 89.85% coverage;
+  lint and format checks pass. Independently review all 62 PDF and 62 Word-preview
+  pages; all 43 required book checks pass. These are local results, distinct from
+  pending remote CI.
 
 ### November 1 public-program candidate
 

@@ -262,7 +262,8 @@ uv run symposium organize book --bundle "$SYMPOSIUM_PRIVATE_DIR/projection/progr
   --template-root "$TEMPLATE_ROOT" --render
 ```
 
-The example uses the real reserved version 3.2.0 book identifier; other books need
+The example uses the published version 3.2.0 book identifier,
+[10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505); other books need
 their own actual reservation. The exact supplied identifier is recorded as
 `publication.doi` in the staged project configuration and as `doi`/`doi_url` in its
 design manifest. It is printed on both covers and linked through `https://doi.org/`

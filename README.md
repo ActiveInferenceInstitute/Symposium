@@ -10,8 +10,11 @@ proposals, text visualizations, and calendar exports for the Active Inference Sy
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
 and the [PDF](data/public/2026/book.pdf) and [Word](data/public/2026/book.docx) books.
-The book DOI **10.5281/zenodo.23986505 is reserved; Zenodo publication and the GitHub
-v3.2.0 release are pending verification**. See the [release record](docs/release_3_2_0.md).
+The book is published on Zenodo: [10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505).
+The **GitHub v3.2.0 software release remains pending** under the repository's
+publication controls; source push, remote CI and website deployment are still
+pending. See the [release record](docs/release_3_2_0.md) for the six verified Zenodo
+assets and book hashes.
 Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
 
@@ -230,7 +233,7 @@ online and free, November 12–13 (UTC). The public build uses only the verified
 `data/public/2026` snapshot; it requires no organizer credentials or paid AI service.
 That retained snapshot is dated **November 1, 2026**: 57 contributions, 18 explicit
 UTC sessions, and 45 previously approved participant profiles. The new participant
-analysis uses the separately admitted **55-person public 2026 view**, rechecked
+analysis uses the separately admitted **55-record public 2026 view**, rechecked
 November 5; 15 supplied no substantive answers. The historical 45-row snapshot is
 not an analysis fallback or a claim of renewed consent. The book keeps three
 missing abstracts explicitly pending and credits the Institute followed by all
@@ -261,10 +264,10 @@ For the software:
 }
 ```
 
-For the book, the reserved reference is: Active Inference Institute and the published
+For the book: Active Inference Institute and the published
 presenter/group credits (2026), *2026 Active Inference Symposium — Presenter Program*,
-version 3.2.0, DOI **10.5281/zenodo.23986505**. The DOI record is not yet published;
-confirm its public record before using it as a released citation. Full book credits
+version 3.2.0, published November 5, 2026,
+DOI [10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505). Full book credits
 remain in the PDF/Word cover and citation metadata. The repository and release
 metadata use the [MIT license](LICENSE).
 

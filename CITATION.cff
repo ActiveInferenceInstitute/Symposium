@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "For the software, cite this primary entry. The separate book citation is under references. Version 3.2.0 publication is pending; the book DOI is reserved and not yet published."
+message: "For the software, cite this primary entry; the GitHub version 3.2.0 software release remains pending. The separate book citation under references was published on Zenodo on 2026-11-05. Its DOI identifies the book, not a software archive."
 title: "Symposium: Research Analysis Tools for Active Inference Symposium"
 abstract: "Research analysis and project generation tools for the Active Inference Symposium: presenter/participant analysis, research profile and project-proposal generation, and data visualization."
 authors:
@@ -18,8 +18,9 @@ references:
     title: "2026 Active Inference Symposium — Presenter Program"
     version: "3.2.0"
     doi: "10.5281/zenodo.23986505"
-    status: in-preparation
-    notes: "DOI reserved; Zenodo publication pending verification. Credits preserve the institution followed by all exact published presenter/group display labels; these are not a verified distinct-person count."
+    date-published: "2026-11-05"
+    url: "https://doi.org/10.5281/zenodo.23986505"
+    notes: "Published on Zenodo. Credits preserve the institution followed by all exact published presenter/group display labels; these are not a verified distinct-person count. The GitHub software release remains separate and pending."
     authors:
       - name: "Active Inference Institute"
       - name: "Bradly Alicea"
