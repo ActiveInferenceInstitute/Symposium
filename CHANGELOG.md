@@ -2,10 +2,37 @@
 
 All notable changes to the Symposium package.
 
-## [3.2.0] — 2026-11-01 (release candidate)
+## [3.2.0] — 2026-11-05 (publication pending)
+
+The book DOI **10.5281/zenodo.23986505 is reserved**. Zenodo publication, the GitHub
+versioned release, remote CI and released-byte verification remain pending; this
+entry records the prepared changes, not a completed remote publication.
+
+- Prepare the *2026 Active Inference Symposium — Presenter Program* in PDF and
+  editable Word through the native docxology/template integration, with 18 mm
+  margins, dated institutional cover, all exact presenter/group credits, generated
+  cover and page-two artwork, and the reserved book DOI.
+- Include supplied public affiliations, ORCIDs and backgrounds only through exact
+  whole-label joins from approved 2026 public sources. Preserve absent profiles,
+  composite credits, the 57 source contributions and three pending abstracts.
+- Improve participant and presenter chart readability, shared histogram bins and
+  cross-process network-layout ordering. Bind charts to validated ordered inputs,
+  explicit missingness, method parameters and artifact hashes.
+- Keep the new 55-person public analysis cohort separate from the retained
+  November 1 public program's 45 previously approved participant profiles. Refresh
+  only the book bytes and corresponding public manifest digests in that historical
+  tree; do not claim renewed consent or publish private captures or provider drafts.
+- Scope the authorized organizational email exception to the exact PDF/Word book
+  artifact names while retaining participant, other-email, private-link, local-path
+  and PDF active-content rejection.
+- Reconcile citation and release documentation with version 3.2.0 and the reserved
+  book DOI. See [the release record](docs/release_3_2_0.md) for status and scope.
+
+### November 1 public-program candidate
 
 - Refresh the public program candidate to 57 presentations and 18 explicit UTC
-  sessions, with 45 participant profiles projected from current affirmative consent.
+  sessions, with 45 participant profiles projected from affirmative consent captured
+  for that dated snapshot.
 - Regenerate dossiers, participant briefs, the UTC calendar, and draft PDF/Word
   abstract books; retain pending abstracts and the recorded portrait omission.
 - Support typed Docs datetime epochs as UTC seconds while rejecting malformed

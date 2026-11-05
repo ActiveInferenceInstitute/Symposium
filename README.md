@@ -6,10 +6,13 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 3.1 connects Symposium methods to relevant public Institute repositories, with searchable workflows and machine-readable discovery.**
+**Version 3.2 prepares the 2026 Presenter Program and improves public participant and presenter visualizations.**
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
-and the working abstract book. Private organizing inputs remain outside this repository;
+and the [PDF](data/public/2026/book.pdf) and [Word](data/public/2026/book.docx) books.
+The book DOI **10.5281/zenodo.23986505 is reserved; Zenodo publication and the GitHub
+v3.2.0 release are pending verification**. See the [release record](docs/release_3_2_0.md).
+Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
 
 ## Find a method or repository
@@ -197,8 +200,10 @@ The report identifies additions, removals, changed public fields and artifact ch
 Participant removals require organizer review; the report does not guess why consent
 or identity changed. Readiness reports content gaps separately from file integrity;
 `--require-complete` fails when a published abstract or session title is missing.
-Neither command certifies fresh consent or publishes changes. The current approved
-roster and book remain unchanged by these software improvements. See the
+Neither command certifies fresh consent or publishes changes. The v3.2.0 book refresh
+preserves the approved November 1 program roster and source abstracts. Presenter
+profiles use only exact whole-label matches from reviewed current public sources.
+See the
 [methods guide](docs/methods.md) for the boundaries between source-grounded public
 materials and optional AI-generated research drafts.
 
@@ -223,6 +228,13 @@ presents approved abstracts, consenting participant profiles, available dossiers
 abstract-book downloads, and explicitly scheduled sessions. The 2026 Symposium is
 online and free, November 12–13 (UTC). The public build uses only the verified
 `data/public/2026` snapshot; it requires no organizer credentials or paid AI service.
+That retained snapshot is dated **November 1, 2026**: 57 contributions, 18 explicit
+UTC sessions, and 45 previously approved participant profiles. The new participant
+analysis uses the separately admitted **55-person public 2026 view**, rechecked
+November 5; 15 supplied no substantive answers. The historical 45-row snapshot is
+not an analysis fallback or a claim of renewed consent. The book keeps three
+missing abstracts explicitly pending and credits the Institute followed by all
+52 published presenter/group display labels, without splitting composite credits.
 See the [publication and organizer guide](docs/organizing_publication.md) for source
 mapping, approval checks, native abstract-book production, and deployment boundaries.
 
@@ -237,6 +249,8 @@ mapping, approval checks, native abstract-book production, and deployment bounda
 
 ## Citation
 
+For the software:
+
 ```bibtex
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
@@ -246,5 +260,12 @@ mapping, approval checks, native abstract-book production, and deployment bounda
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }
 ```
+
+For the book, the reserved reference is: Active Inference Institute and the published
+presenter/group credits (2026), *2026 Active Inference Symposium — Presenter Program*,
+version 3.2.0, DOI **10.5281/zenodo.23986505**. The DOI record is not yet published;
+confirm its public record before using it as a released citation. Full book credits
+remain in the PDF/Word cover and citation metadata. The repository and release
+metadata use the [MIT license](LICENSE).
 
 Maintained by the [Active Inference Institute](https://activeinference.institute/).

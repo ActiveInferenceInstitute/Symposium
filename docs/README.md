@@ -18,8 +18,10 @@ remain evidence of their own releases, not current test or deployment results.
 | [API workflows](api_usage.md) | Optional paid workflow boundaries |
 | [Background research](perplexity_research.md) | Reviewing externally generated drafts |
 | [Visualization](csv_visualization_guide.md) | Local text plots and reproducibility limits |
+| [2026 participant and presenter figures](visualizations_2026.md) | Public-cohort charts, approved-program summaries, missingness and reproducible artifact evidence |
 | [Architecture](architecture.md) | Module responsibilities and separate data paths |
 | [Development](development.md) | Checks, evidence and release boundaries |
+| [3.2.0 release record](release_3_2_0.md) | Presenter Program, reserved book DOI, public-data scope and publication status |
 | [Contributing](contributing.md) | Scoped changes and review expectations |
 | [Migration](migration.md) | Runtime transition and preserved historical inputs |
 | [Design](DESIGN.md) | Public explorer design contract |

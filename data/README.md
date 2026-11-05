@@ -1,5 +1,19 @@
 # Symposium data
 
+`public/2026/` is the retained approved **November 1, 2026** public snapshot:
+57 contributions, 18 explicit UTC sessions, and 45 previously approved participant
+profiles. Version 3.2.0 updates its reviewed PDF/Word book artifacts and their
+manifest hashes while preserving the program, portraits, dossiers, participant
+briefs and calendar. Its date does not imply current or renewed participant consent.
+
+The new participant analyses use a separate admitted 55-person public 2026 cohort,
+rechecked November 5; 15 have no substantive answers. That cohort is not copied into
+the historical public snapshot or replaced by its 45 participant rows. Raw captures,
+consent records, source row identifiers, private execution evidence and generated
+provider drafts remain outside this public data tree. Absence from one snapshot
+does not by itself establish a withdrawal or an identity change. See the
+[3.2.0 release record](../docs/release_3_2_0.md).
+
 `inputs/aif_2024/` contains historical presenter exports and registrations.
 `inputs/aif_2025/` contains historical participant registrations.
 `inputs/aif_2026/` is the empty current-edition workspace, based on the 2025 survey
