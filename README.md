@@ -6,15 +6,15 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 3.2 prepares the 2026 Presenter Program and improves public participant and presenter visualizations.**
+**Version 3.2 provides the 2026 Presenter Program and improves public participant and presenter visualizations.**
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
 and the [PDF](data/public/2026/book.pdf) and [Word](data/public/2026/book.docx) books.
 The book is published on Zenodo: [10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505).
-The **GitHub v3.2.0 software release remains pending** under the repository's
-publication controls; source push, remote CI and website deployment are still
-pending. See the [release record](docs/release_3_2_0.md) for the six verified Zenodo
-assets and book hashes.
+The [GitHub v3.2.0 software release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.2.0) is published.
+Its six attached book-package assets match the published Zenodo files by SHA-256;
+remote CI and the updated Pages deployment are verified. See the
+[release record](docs/release_3_2_0.md) for downloads, book hashes and verification scope.
 Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
 

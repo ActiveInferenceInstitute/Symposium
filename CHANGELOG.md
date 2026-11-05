@@ -2,13 +2,14 @@
 
 All notable changes to the Symposium package.
 
-## [3.2.0] — 2026-11-05 (book published; GitHub software release pending)
+## [3.2.0] — 2026-11-05
 
 The book is published on Zenodo at
 [10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505), with public
 metadata, DOI resolution and all six unauthenticated asset SHA-256 checks verified.
-The GitHub versioned software release remains pending under the repository's
-publication controls; source push, remote CI and website deployment remain pending.
+The [GitHub v3.2.0 software release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.2.0) is published.
+All six attached book-package assets match the frozen Zenodo package by SHA-256;
+remote CI and the updated Pages deployment are verified.
 
 - Prepare the *2026 Active Inference Symposium — Presenter Program* in PDF and
   editable Word through the native docxology/template integration, with 18 mm
@@ -32,7 +33,7 @@ publication controls; source push, remote CI and website deployment remain pendi
 - Validate the DOI book source with 776 passed tests, 9 skips and 89.85% coverage;
   lint and format checks pass. Independently review all 62 PDF and 62 Word-preview
   pages; all 43 required book checks pass. These are local results, distinct from
-  pending remote CI.
+  the independently verified remote CI and deployment results.
 
 ### November 1 public-program candidate
 

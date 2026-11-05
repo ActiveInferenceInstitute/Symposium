@@ -21,7 +21,7 @@ remain evidence of their own releases, not current test or deployment results.
 | [2026 participant and presenter figures](visualizations_2026.md) | Public-cohort charts, approved-program summaries, missingness and reproducible artifact evidence |
 | [Architecture](architecture.md) | Module responsibilities and separate data paths |
 | [Development](development.md) | Checks, evidence and release boundaries |
-| [3.2.0 release record](release_3_2_0.md) | Published Zenodo book, verified asset hashes, public-data scope and pending GitHub software release |
+| [3.2.0 release record](release_3_2_0.md) | Published book and GitHub release, verified asset hashes, public-data scope and deployment results |
 | [Contributing](contributing.md) | Scoped changes and review expectations |
 | [Migration](migration.md) | Runtime transition and preserved historical inputs |
 | [Design](DESIGN.md) | Public explorer design contract |

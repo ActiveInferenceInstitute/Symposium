@@ -16,8 +16,11 @@ does not by itself establish a withdrawal or an identity change. See the
 
 The book is published separately on Zenodo at
 [10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505). Its public download
-hashes match the independently reviewed PDF/Word files. The GitHub software release
-and website deployment remain pending under the repository's publication controls.
+hashes match the independently reviewed PDF/Word files. The
+[GitHub v3.2.0 release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.2.0) carries the same six book-package
+assets with verified public SHA-256 hashes. The updated Pages deployment and
+its hosted PDF/Word downloads are verified; this changes neither the historical
+snapshot date nor the separate analysis cohort.
 
 `inputs/aif_2024/` contains historical presenter exports and registrations.
 `inputs/aif_2025/` contains historical participant registrations.
