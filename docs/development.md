@@ -16,7 +16,10 @@ uv build
 The pytest configuration in [pyproject.toml](../pyproject.toml) enables coverage
 and an 80% gate; this is a configured threshold, not a claimed current score.
 [CI](../.github/workflows/ci.yml) configures Python 3.12, 3.13 and 3.14;
-a matrix entry is not evidence of a successful remote run. Live-provider tests are
+a matrix entry is not evidence of a successful remote run. The workflow also
+runs the pinned GNN conformance baseline (see `.github/GNN.md`); the repository
+carries no `.gnn.md` model file, so the job validates the pinned upstream
+exemplar. Live-provider tests are
 opt-in through `--run-real-api -m real_api` and require authorization and credentials. Default
 checks must not require paid requests.
 
