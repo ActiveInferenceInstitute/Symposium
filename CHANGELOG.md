@@ -4,24 +4,28 @@ All notable changes to the Symposium package.
 
 ## [Unreleased] — 2026-11-08
 
-Program refresh of the public 2026 tree from the current published sources
-(Public Program Feed and master program, captured 2026-11-08 UTC). Organizer-approved
-by Daniel Friedman; a full v3.2.1 refresh remains open for the items listed below.
+Refresh of the public 2026 program from the current sources, captured 2026-11-08 UTC
+(Public Program Feed and master program), projected with the repository's own
+`project_snapshot` rules. Organizer-approved by Daniel Friedman.
 
 - Sessions (18 → 19): Majid D. Beni moves to 11:00–12:00 UTC on November 13; new
   livestreamed session "Learning Active Inference in 2026: Textbook Group Review"
-  (Fraser Paterson, Andrew Pashea, Daniel Friedman) at 13:00–14:00 UTC; Luca Possati's
-  14:00 slot is now "Active Inference and Design: Live Q&A" on his prerecorded talk.
+  (Fraser Paterson, Andrew Pashea, Daniel Friedman) at 13:00–14:00 UTC, with its
+  program abstract; Luca Possati's 14:00 slot is now "Active Inference and Design:
+  Live Q&A" on his prerecorded talk.
 - Presentations (57 → 58): adds the Textbook Group Review and the Possati Q&A; applies
   the Michael Lennon retitle, the NEST presenter credit order
   (John H. Clippinger, Holly Grimm, Daniel Friedman) and the Avel Guénin—Carlut
-  abstract fix. Unchanged talks keep their hash-verified pictures; new talk IDs carry no
-  pictures until the media step runs.
-- Regenerate `program.ics`, the affected dossiers (four added, one updated, three
-  retired with their talk IDs) and the `publication.json` digests; snapshot date
-  2026-11-08. `verify_public_tree`, the local site build and the full test suite pass.
-- Not refreshed here: participant profiles (still the 45 approved on November 1),
-  new portraits, and the PDF/Word book, which remains the v3.2.0 Zenodo edition.
+  abstract fix. Two program abstracts remain pending (Karl Friston, Mike Levin).
+- Portraits: the NEST combined presenter image is fetched from the public program
+  document through `attach_public_portraits` (sanitized JPEG); unchanged talks keep
+  their hash-verified pictures.
+- Regenerate `program.ics`, the affected dossiers and the
+  `publication.json` digests; snapshot date 2026-11-08. The site test now expects
+  two pending abstracts. `verify_public_tree`, the local site build and the test
+  suite pass.
+- Not refreshed here: participant profiles (still the 45 approved on November 1)
+  and the PDF/Word book, which remains the v3.2.0 Zenodo edition.
 
 ## [3.2.0] — 2026-11-05
 
