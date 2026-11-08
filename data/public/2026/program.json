@@ -706,8 +706,8 @@
       "title": "Working Groups Sessions (2 sessions: Opening & Charter; Outcomes & Next Steps)"
     },
     {
-      "abstract": "",
-      "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "abstract": "A live review of the Active Inference Institute’s 2026 Textbook Group on Sanjeev Namjoshi’s Fundamentals of Active Inference (2026). Since April 2026 the group has worked through the book chapter by chapter in open online meetings, with recorded sessions, shared meeting notes, a public question page, and an open-source companion repository of equations, methods, visualizations and animations. Facilitators Fraser Paterson, Andrew Pashea and Daniel Friedman look back on the chapters covered so far, the questions and stumbling blocks that came up along the way, and the resources the group has built, and discuss what it takes to learn Active Inference in 2026. Textbook Group participants and Symposium attendees are welcome to join the conversation live or through the livestream chat. The group continues with Chapter 13 after the Symposium and is open to new participants.",
+      "abstract_sha256": "64573fee324d3122b50785703b284e6dfc8feb2dd42e6adec774b535845c55c7",
       "contribution_type": "Livestreamed panel or group session",
       "id": "talk-5529b456dc308ef2",
       "pictures": [],
@@ -1116,7 +1116,13 @@
       "abstract_sha256": "c2aae3f2b251c10ed9becb892f1c7d48dce4cf7e9dbee61657ecb42594febc2b",
       "contribution_type": "Pre-recorded Video presentation",
       "id": "talk-a1b55a90a3543912",
-      "pictures": [],
+      "pictures": [
+        {
+          "alt": "John H. Clippinger, Holly Grimm, Daniel Friedman — submitted presenter image",
+          "path": "assets/portraits/0f276c1f46039fd4b998df65d3178733f3013e6cf98e8616ded2767e6d2f11d8.jpg",
+          "sha256": "0f276c1f46039fd4b998df65d3178733f3013e6cf98e8616ded2767e6d2f11d8"
+        }
+      ],
       "presenter": "John H. Clippinger, Holly Grimm, Daniel Friedman",
       "source_url": "https://2026symposium.activeinference.institute/",
       "title": "Coupling energy-system models with a seam you can read and an agent you can audit: Active Inference in the NEST programme"
