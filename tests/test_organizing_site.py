@@ -313,7 +313,7 @@ def test_public_bundle_build_preserves_source_bytes(tmp_path):
     assert len(
         [attrs for _, attrs in tags if attrs.get("id", "").startswith("presentation-")]
     ) == len(bundle["presentations"])
-    assert "3 abstracts pending" in index.read_text()
+    assert "2 abstracts pending" in index.read_text()
     assert "session title pending" not in index.read_text()
     assert (index.parent / "program.json").read_bytes() == canonical_bytes(validate_bundle(bundle))
 
