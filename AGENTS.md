@@ -18,6 +18,35 @@ Paths in the last column without a root are under `src/symposium/`. Inspect the
 actual parser in `src/symposium/cli/` before documenting a command. Preserve existing
 user work and historical evidence. User/global workspace instructions remain binding.
 
+## Top-level layout
+
+| Path | Contents |
+|---|---|
+| `src/symposium/` | Installable package: `cli/`, `core/`, `analysis/`, `generation/`, `organizing/`, `visualization/`, `io/`, `calendar/`. |
+| `tests/` | Pytest suite mirroring `src/`; `tests/README.md` and `tests/AGENTS.md` are the entry points. |
+| `docs/` | Modular operator and developer guides; [`docs/README.md`](docs/README.md) is the index. |
+| `data/` | `inputs/` (historical + 2026 scaffold), `public/2026/` (approved snapshot), `catechisms/`, `prompts/`, `templates/`, `domains/`. See [`data/README.md`](data/README.md). |
+| `outputs/` | Tracked example run state (e.g. `outputs/2025_symposium/people/`); new runs write here. |
+| `archive/` | Historical ISM code, inputs and generated artifacts; see [`archive/README.md`](archive/README.md). |
+| `run.py`, `launch.py`, `symposium.sh` | Interactive menu, launcher and shell wrapper. |
+| `pyproject.toml`, `uv.lock`, `.python-version` | Package metadata and the locked Python 3.12 environment. |
+| `.aii/` | InstituteOS sidecar metadata; [`README.md`](.aii/README.md) explains it. |
+| `.github/workflows/` | `ci.yml` (lint + tests) and `pages.yml` (public site deployment). |
+
+## Test and lint
+
+```bash
+uv sync --locked --extra dev
+uv run ruff check src/ tests/ run.py launch.py
+uv run ruff format --check src/ tests/ run.py launch.py
+uv run python -m pytest
+```
+
+`pytest` enforces the 80% coverage gate declared in `pyproject.toml`. Live-provider
+tests are opt-in via `uv run python -m pytest --run-real-api -m real_api` and need
+credentials. A checkout whose `.venv` has not been synced cannot run the suite
+offline; see [`TODO.md`](TODO.md).
+
 ## Public/private boundary
 
 Approved `data/public/2026/` and the research scaffold `data/inputs/aif_2026/` are

@@ -51,7 +51,7 @@
 
 | Task | Command | Working directory | Description |
 | --- | --- | --- | --- |
-| `test` | `python -m pytest` | `.` | Run the test suite. |
+| `test` | `uv run python -m pytest` | `.` | Run the test suite through the locked uv environment. |
 
 ## Validation
 

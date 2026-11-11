@@ -16,6 +16,33 @@ verbatim and do not establish current runtime or scientific validation.
 
 ---
 
+## Environment prerequisites (verified 2026-11-11)
+
+Blocking items for running the checks in this checkout; not code defects.
+
+- [ ] **`.venv` is not usable here.** The committed environment contract is
+  `uv sync --locked --extra dev` (Python 3.12, `python-version` = 3.12), but the
+  local `.venv` has no third-party packages installed: `uv run --no-sync python -c
+  "import pandas"` fails with `ModuleNotFoundError: No module named 'pandas'`.
+  Recreate the environment with `uv sync --locked --extra dev` once network is
+  available.
+- [ ] **Offline dependency cache is incomplete (wheel gap).** `uv sync --locked
+  --extra dev --offline` resolves the lock but then fails:
+  `Failed to download pandas==3.1.0` / `Network connectivity is disabled, but the
+  requested data wasn't found in the cache`. The lock pins `pandas==3.1.0` and
+  `scipy==1.18.1`; the local uv cache holds only `.lock` reservation files for the
+  `cp312-cp312-macosx_11_0_arm64` / `cp312-…-macosx_14_0_arm64` wheels, not the
+  wheel payloads (cp313/cp314 variants are present). Populate the cache on a
+  networked machine, or run on a host that can reach PyPI.
+- [ ] **The test suite cannot run in this checkout.** Because of the two items
+  above, `uv run python -m pytest` (the command documented in `README.md`,
+  `AGENTS.md`, `.aii/README.md` and `pyproject.toml`'s `addopts` with the 80%
+  coverage gate) is not executable offline; documentation was validated
+  statically instead. An owner with a synchronized environment should re-run the
+  suite before any release.
+
+---
+
 ## Completed / Closed
 
 Items resolved during the 2026-08-01 hostile red-team pass.
