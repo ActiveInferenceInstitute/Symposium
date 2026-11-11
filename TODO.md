@@ -43,6 +43,17 @@ Blocking items for running the checks in this checkout; not code defects.
 
 ---
 
+## Data assets (verified 2026-11-11)
+
+- [ ] **`data/prompts/` is not read by the package.** `System_Prompts.json`,
+  `project.txt`, `TechTree.txt` and `raoadmap2agents.txt` are static prompt texts;
+  no module in `src/`, `run.py` or `launch.py` loads them (the active prompts are
+  embedded inline). Decide whether to wire these assets into a workflow or retire
+  them, and keep [`data/prompts/README.md`](data/prompts/README.md) accurate either
+  way.
+
+---
+
 ## Completed / Closed
 
 Items resolved during the 2026-08-01 hostile red-team pass.
