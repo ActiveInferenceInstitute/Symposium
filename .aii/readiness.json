@@ -1,0 +1,11 @@
+{
+  "schema": "aii-readiness/v1",
+  "repo": "ActiveInferenceInstitute/Symposium",
+  "tier": "python-service",
+  "standard_version": "1.0.0",
+  "baseline": {
+    "commit": "1cca3246b9258f87f5e36eb419c65785f070d8ea",
+    "measured_at": "2026-11-10"
+  },
+  "waivers": []
+}

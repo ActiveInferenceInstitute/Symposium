@@ -272,3 +272,11 @@ remain in the PDF/Word cover and citation metadata. The repository and release
 metadata use the [MIT license](LICENSE).
 
 Maintained by the [Active Inference Institute](https://activeinference.institute/).
+
+## InstituteOS sidecar
+
+This repository carries a committed [`.aii/`](.aii/README.md) sidecar with curated
+InstituteOS metadata (`aii-sidecar/v1`): category, maturity, ecosystem relations,
+key artifacts, provenance, and portable tasks. It is read by
+[InstituteOS](https://github.com/ActiveInferenceInstitute/InstituteOS) tooling and
+does not affect the project's build or runtime.

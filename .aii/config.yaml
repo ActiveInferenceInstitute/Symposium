@@ -1,12 +1,14 @@
-# AII sidecar — InstituteOS metadata. Schema: instituteos.platform.aii_sidecar
+# AII sidecar — InstituteOS metadata. Schema: aii_platform.aii_sidecar
 meta:
-  updated: '2026-06-30'
+  sidecar_version: 1.2.1
+  updated: '2026-11-10'
 repo:
   name: Symposium
   slug: symposium
   full_name: ActiveInferenceInstitute/Symposium
-  description: '> Research analysis and project generation tools for the Active Inference
-    Symposium'
+  description: Python tools for presenter research profiles, participant learning
+    plans, project proposals, text visualizations, and calendar exports for the Active
+    Inference Symposium.
 institute:
   category: research-software
   maturity: released
@@ -34,24 +36,48 @@ artifacts:
 - path: LICENSE
   kind: doc
   description: License.
+- path: AGENTS.md
+  kind: doc
+  description: Agent guidance.
+- path: CITATION.cff
+  kind: citation
+  description: Machine-readable citation metadata.
+- path: tests
+  kind: test
+  description: Test suite.
+- path: docs
+  kind: doc
+  description: Documentation tree.
+- path: CHANGELOG.md
+  kind: doc
+  description: Changelog.
 provenance:
   license: MIT
   citation:
+    doi: 10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505
     text: Active Inference Institute — Symposium.
 instituteos:
   tags:
   - symposium
   - research
-  - analysis
-  - project
-  - generation
+  - learning-plans
+  - visualization
   - python
 capabilities:
 - python-package
 - tested
 - documentation
 - dataset
+- ci
+- citation
 tasks:
   test:
     cmd: python -m pytest
     description: Run the test suite.
+docs:
+- README.md
+- AGENTS.md
+- docs/INTEGRATION.md
+- docs/README.md
+- docs/AGENTS.md
+schema: aii-sidecar/v1

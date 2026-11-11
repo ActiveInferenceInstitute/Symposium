@@ -20,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    timeout-minutes: 120
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
@@ -45,6 +46,7 @@ jobs:
         with:
           path: _site
   deploy:
+    timeout-minutes: 60
     if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
