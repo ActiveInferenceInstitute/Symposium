@@ -13,9 +13,9 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-    "pandas>=2.0.0",
+    "pandas>=3.1.1",
     "numpy>=1.24.0",
-    "openai>=3.42.0",
+    "openai>=3.45.0",
     "python-dotenv>=1.0.0",
     "backoff>=2.0.0",
     "matplotlib>=3.7.0",
