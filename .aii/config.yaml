@@ -1,7 +1,7 @@
 # AII sidecar — InstituteOS metadata. Schema: aii_platform.aii_sidecar
 meta:
   sidecar_version: 1.2.1
-  updated: '2026-11-10'
+  updated: '2026-11-11'
 repo:
   name: Symposium
   slug: symposium
@@ -54,7 +54,7 @@ artifacts:
 provenance:
   license: MIT
   citation:
-    doi: 10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505
+    doi: 10.5281/zenodo.23986505
     text: Active Inference Institute — Symposium.
 instituteos:
   tags:
