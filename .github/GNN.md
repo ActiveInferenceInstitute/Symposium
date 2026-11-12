@@ -36,13 +36,18 @@ installed `gnn.__version__` to equal `tag` without its `v`, then:
 
 - **Repository sketches.** Every `*.gnn.md` in the tree must parse with
   `gnn.parsers.basic.parse_gnn_formal` with no `parse_errors`, pass
-  `validate_gnn_syntax`, and be accepted by `gnn.type_checker.GNNTypeChecker`.
+  `validate_gnn_syntax` (called with `is_content=True`), and be accepted by
+  `gnn.type_checker.GNNTypeChecker`. `validate_gnn_files` returns `True` when every file
+  validates, `2` when files are invalid or none were found, and `False` on a hard
+  failure; the gate requires exactly `True` and reports any other value.
 - **No sketches.** It fetches
   `https://raw.githubusercontent.com/<repository>/<revision>/input/gnn_files/basics/static_perception.md`
   and applies the same parse, syntax and type checks to that exemplar.
 
 The run prints one JSON line: `gnn-version`, `pin-revision`, `models`, `source`
-(`repository` or `pinned-exemplar`) and `result`.
+(`repository` or `pinned-exemplar`) and `result`. `result` depends on the source:
+`repository-content-passed` when repository sketches were checked, and
+`pinned-exemplar-baseline-passed` when only the pinned upstream exemplar was.
 
 This repository currently has no `*.gnn.md` sketch, so the job checks the pinned
 exemplar. That is a pipeline and pin conformance baseline, not a claim that the
