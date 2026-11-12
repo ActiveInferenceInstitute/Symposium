@@ -2,7 +2,26 @@
 
 All notable changes to the Symposium package.
 
-## [Unreleased] — 2026-11-08
+## [3.3.0] — 2026-11-12
+
+The final-lineup book is published on Zenodo at
+[10.5281/zenodo.24161029](https://doi.org/10.5281/zenodo.24161029), a new version of
+concept record 10.5281/zenodo.23986504; all six deposited files were read back
+anonymously and match the reviewed package. See
+[the release record](docs/release_3_3_0.md).
+
+- Refresh `data/public/2026/` from the November 12 organizer snapshot: 55
+  contributions (37 prerecorded, 14 livestreamed, 3 workshops, keynote), 19 UTC
+  sessions and 119 consenting participant profiles. Prerecorded talks without a
+  submitted video and withdrawn contributions are removed; new contributions added.
+- Regenerate dossiers, participant briefs, the CRLF UTC calendar, portraits and the
+  public manifest; keep the two pending abstracts explicit.
+- Render the version 3.3.0 PDF/Word book (60 PDF pages) with the version DOI on the
+  cover, the same artwork, 51 credit entries and exact-match public profiles.
+- Derive the site test's pending-abstract count from the bundle instead of a literal.
+- Bump the package, citation and book credits to 3.3.0.
+
+### November 8 public-program refresh
 
 Refresh of the public 2026 program from the current sources, captured 2026-11-08 UTC
 (Public Program Feed and master program), projected with the repository's own

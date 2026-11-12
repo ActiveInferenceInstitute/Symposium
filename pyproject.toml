@@ -1,6 +1,6 @@
 [project]
 name = "symposium"
-version = "3.2.0"
+version = "3.3.0"
 description = "Research analysis and project generation for Active Inference Symposium"
 authors = [{name = "Active Inference Institute"}]
 requires-python = ">=3.12"
