@@ -2,6 +2,23 @@
 
 All notable changes to the Symposium package.
 
+## [Unreleased] — 2026-11-12 (individual book credits)
+
+- The designed book credits each person named in a presenter label once, after the
+  Institute: a comma or an ampersand separates people ("Jesse Parent & Avery Lim" →
+  "Jesse Parent", "Avery Lim"), spellings are kept exactly, and exact repeats are
+  removed. Composite labels were kept whole before, which made the Zenodo creators of
+  version 3.3.0 51 credit entries rather than people. Contribution "Presenter:" lines
+  and whole-label presenter profiles are unchanged.
+- `organize book --credit-identifiers PATH` admits an organizer-reviewed private JSON
+  file of ORCIDs (check character verified) and affiliations for individual credits;
+  the values reach the Template author list and the private build manifest records
+  who supplied them. Names must match a cover credit exactly; nothing is inferred from
+  registrations or near-matching names.
+- Record the November 12 hand edit of the version 3.3.0 Zenodo metadata (56
+  individual creators; ORCIDs for Jesse Parent and Avery Lim) in the
+  [3.3.0 release record](docs/release_3_3_0.md); the deposited files are unchanged.
+
 ## [Unreleased] — 2026-11-12 (gate and documentation)
 
 ### Participant figure legibility
