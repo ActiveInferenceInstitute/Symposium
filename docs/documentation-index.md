@@ -56,6 +56,7 @@ is the hub (what to read for which job); this page is the complete list, and
 
 | Document | Read it for |
 | --- | --- |
+| [3.3.0](release_3_3_0.md) | Final-lineup book, lineup changes, verified asset hashes, public-data scope |
 | [3.2.0](release_3_2_0.md) | Published book and GitHub release, asset hashes, deployment results |
 | [2.2.1](release_2_2_1.md) | 2.2.1 release record |
 | [2.2.0](release_2_2_0.md) | 2.2.0 release record |

@@ -4,9 +4,8 @@ Use Python 3.12+ and the committed uv lock. The development pin is 3.12.
 
 ```bash
 uv sync --locked --extra dev --python 3.12
-uv run --no-sync python -m pytest
-uv run --no-sync ruff check src/ tests/ run.py launch.py
-uv run --no-sync ruff format --check src/ tests/ run.py launch.py
+./gate.sh test         # full suite with the 80% coverage gate
+./gate.sh test-fast    # package-module suites only, --no-cov
 ```
 
 The pytest configuration enables line coverage, terminal/HTML reports and an 80%
@@ -51,11 +50,13 @@ answers into fixtures or test reports.
 ## CI and evidence
 
 [CI](../.github/workflows/ci.yml) configures Ubuntu jobs on Python 3.12, 3.13 and
-3.14. It runs lint, formatting, the test/coverage gate, distribution building, edition
-validation and actual approved-public-tree verification/site rendering. The workflow
-also runs the pinned GNN conformance baseline (see `.github/GNN.md`). This is not
+3.14. Every job calls one or more [`./gate.sh`](../gate.sh) arms rather than
+restating commands: `lint` and `docs` once, `test` across the matrix, `build` and
+`program` on the 3.12 pin, and `gnn` in the `gnn-conformance` job (display name
+`gnn conformance (pinned)`, see [.github/GNN.md](../.github/GNN.md)). This is not
 cross-platform CI; macOS checks require separate evidence, and Windows is not
-established by this matrix.
+established by this matrix. Recorded arm wall times are generated in
+[gate measurements](../docs/_generated/gate-measurements.md).
 
 For GitVault work, keep runtimes, environments, temporary files, caches and retained
 artifacts on the mounted volume and use the local lease policy. Follow

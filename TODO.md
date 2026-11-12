@@ -16,9 +16,24 @@ verbatim and do not establish current runtime or scientific validation.
 
 ---
 
-## Environment prerequisites (verified 2026-11-11)
+## Environment prerequisites — resolved 2026-11-12
 
-Blocking items for running the checks in this checkout; not code defects.
+The 2026-11-11 observation below was accurate then; it no longer describes this
+checkout.
+
+- [x] **`.venv` is usable.** `uv sync --locked --extra dev` completed against the
+  committed lock (Python 3.12.16, pandas 3.1.0, scipy 1.18.1), and
+  `uv run --no-sync python -c "import pandas"` now succeeds.
+- [x] **The wheel gap is closed for the development pin.** The same sync populated
+  the `cp312-…-arm64` wheels that were missing; no lock or version change was made.
+- [x] **The test suite runs here.** `uv run --no-sync python -m pytest --no-header`
+  passed in this checkout: 776 passed, 9 skipped, coverage 89.76% (80% gate), 549.59s.
+  The same run is the `test` arm of [`./gate.sh`](gate.sh); recorded per-arm wall
+  times are generated in
+  [gate measurements](docs/_generated/gate-measurements.md). This is one host's run,
+  not cross-platform or release evidence.
+
+### Retained 2026-11-11 record
 
 - [ ] **`.venv` is not usable here.** The committed environment contract is
   `uv sync --locked --extra dev` (Python 3.12, `python-version` = 3.12), but the

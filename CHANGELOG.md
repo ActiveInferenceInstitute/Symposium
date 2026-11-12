@@ -2,6 +2,44 @@
 
 All notable changes to the Symposium package.
 
+## [Unreleased] — 2026-11-12 (gate and documentation)
+
+One local gate, and CI calls it instead of restating commands.
+
+- Add `gate.sh`: one documented entry point with separately runnable arms `lint`,
+  `test`, `test-fast`, `build`, `program`, `site`, `docs` and `gnn`
+  (`./gate.sh list`, `./gate.sh all`). Every arm runs with `--no-sync`, so
+  environment setup stays with the caller. The default arm is `test-fast`: the six
+  package-module suites (`tests/test_core`, `test_io`, `test_cli`, `test_analysis`,
+  `test_generation`, `test_calendar`) without coverage instrumentation, explicitly
+  not a substitute for `test`.
+- `.github/workflows/ci.yml` now has `lint`, `test`, `build` and `gnn-conformance`
+  jobs that call those arms. Lint, documentation, distribution build, edition
+  validation and public-site rendering ran inside each of the three matrix entries
+  before; each now runs once (lint/docs on 3.12, build/program on the 3.12 pin). The
+  test arm is unchanged: the full suite with the 80% coverage gate.
+- GNN conformance: `.github/gnn-pin.json` (schema `gnn-importer-pin/v1`,
+  `v5.0.3`, `8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1`) is now the only place the
+  revision is written. The workflow's inline heredoc moved to
+  `scripts/gnn_conformance.py`, which validates the pin instead of restating the tag
+  and revision. Job key `gnn-conformance`, display name `gnn conformance (pinned)`;
+  see [.github/GNN.md](.github/GNN.md).
+- `.github/workflows/pages.yml` renders the site through the `site` arm instead of
+  an inline Python snippet.
+- Documentation: add [`docs/documentation-index.md`](docs/documentation-index.md)
+  (flat index, checked for completeness), `docs/_generated/` with the script-generated
+  [gate measurements](docs/_generated/gate-measurements.md), and
+  `scripts/check_docs.py` (relative links, index completeness, arm list) as the
+  `docs` arm. Refresh `docs/README.md`, `docs/development.md`,
+  `docs/contributing.md`, `tests/README.md`, `README.md` and `AGENTS.md`.
+- No types arm: `mypy` is configured in `pyproject.toml` but has never been a gate
+  and reports 89 errors in 26 files (mostly missing third-party stubs) on this
+  checkout. A passing type check is not claimed.
+- Wall time per arm on the host that refreshed it is generated in
+  [gate measurements](docs/_generated/gate-measurements.md); one run per arm, not a
+  benchmark.
+
+## [Unreleased] — 2026-11-08
 ## [3.3.0] — 2026-11-12
 
 The final-lineup book is published on Zenodo at

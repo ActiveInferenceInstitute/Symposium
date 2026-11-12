@@ -228,15 +228,17 @@ materials and optional AI-generated research drafts.
 
 ```bash
 uv sync --locked --extra dev
-uv run ruff check src/ tests/ run.py launch.py
-uv run ruff format --check src/ tests/ run.py launch.py
-uv run python -m pytest
-uv build
+./gate.sh          # default arm: test-fast
+./gate.sh all      # every arm (see ./gate.sh list)
 ```
 
-The coverage regression gate is 80%. Tests cover historical workflows, real temporary
-CSV files, offline onboarding, failure cases, and generated reports. Tests requiring
-live providers are opt-in (`uv run python -m pytest --run-real-api -m real_api`) and require credentials.
+[`gate.sh`](gate.sh) is the one entry point, and each arm is the exact command the
+workflow job runs. The coverage regression gate is 80%. Tests cover historical
+workflows, real temporary CSV files, offline onboarding, failure cases, and generated
+reports. Tests requiring live providers are opt-in (`uv run python -m pytest
+--run-real-api -m real_api`) and require credentials. Recorded wall times per arm are
+generated in [gate measurements](docs/_generated/gate-measurements.md); the pinned GNN
+conformance baseline is described in [.github/GNN.md](.github/GNN.md).
 
 ## Public Symposium program
 
