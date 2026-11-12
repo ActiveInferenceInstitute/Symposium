@@ -72,3 +72,7 @@ outputs/*_symposium/
 
 # Local agent verification records
 .omo/
+
+# Local gate environment and rendered site
+.gate/
+_site/
