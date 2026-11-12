@@ -70,7 +70,7 @@ def test_cover_when_event_omitted_keeps_existing_prepare_call_compatible(
 def test_cover_when_event_staged_records_facts_and_all_exact_presenter_credits(
     tmp_path: Path, event_artwork: BookDesign
 ) -> None:
-    # Given fifty-two exact published labels, including an atomic composite.
+    # Given fifty-two exact published labels, including a three-person composite.
     data = validate_bundle(bundle())
     presentations = [
         dict(data["presentations"][0], presenter=f"Presenter {index:02d}") for index in range(52)
@@ -81,10 +81,10 @@ def test_cover_when_event_staged_records_facts_and_all_exact_presenter_credits(
     project.mkdir()
     # When the native PDF front matter and its manifest are staged.
     receipt = stage_book_design(project, prepared)
-    # Then every exact credit and the source-bound cover facts survive in the shared design.
-    assert receipt["authors"] == ["Active Inference Institute"] + [
-        talk["presenter"] for talk in presentations
-    ]
+    # Then every named person and the source-bound cover facts survive in the shared design.
+    individuals = [talk["presenter"] for talk in presentations]
+    individuals[20:21] = ["Ada Example", "Benoît Sample", "Chen Exemplar"]
+    assert receipt["authors"] == ["Active Inference Institute"] + individuals
     assert receipt["event_dates"] == "November 4–6, 2026 (UTC)"
     assert receipt["website_url"] == PUBLIC_WEBSITE and receipt["contact_email"] == PUBLIC_CONTACT
     assert receipt["margin_mm"] == BOOK_MARGIN_MM == 18
