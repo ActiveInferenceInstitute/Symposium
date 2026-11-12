@@ -55,7 +55,7 @@ artifacts:
 provenance:
   license: MIT
   citation:
-    doi: 10.5281/zenodo.23986505
+    doi: 10.5281/zenodo.24161029
     text: Active Inference Institute — Symposium.
 instituteos:
   tags:
