@@ -1,0 +1,11 @@
+# Symposium public sources
+
+This static, organizer-approved snapshot is not live synchronization or independent research verification. Consult the official program for revisions. Do not infer attendance, credentials, endorsement, or scientific validity from inclusion.
+
+- [Program](https://activeinferenceinstitute.github.io/Symposium/index.html): approved presentations, explicit schedule and public directory.
+- [Methods](https://activeinferenceinstitute.github.io/Symposium/methods.html): local workflows, credential boundaries and manual repository handoffs.
+- [Catalog](https://activeinferenceinstitute.github.io/Symposium/ecosystem.json): curated repository evidence pinned to reviewed revisions.
+- [Discovery index](https://activeinferenceinstitute.github.io/Symposium/search-index.json): methods and approved presentations; excludes participant self-reports.
+- [Official program](https://2026symposium.activeinference.institute/): organizer revision authority.
+
+Participant profiles are consented self-reports, not independently verified biographies. Avoid enriching or inferring personal facts. Private source records, credentials and unapproved data are outside this snapshot. Catalog review date: 2026-11-01. This guidance does not control crawler access or guarantee indexing.
