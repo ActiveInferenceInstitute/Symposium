@@ -106,17 +106,31 @@ def strip_code(text: str) -> str:
     return strip_inline_code(HTML_COMMENT.sub("", "".join(kept)))
 
 
+def _paragraph_end(text: str, start: int) -> int:
+    """Return the index of the blank line that ends this paragraph, or the text end."""
+    match = re.compile(r"\n[ \t]*\n").search(text, start)
+    return match.start() if match else len(text)
+
+
 def _skip_link_tail(text: str, cursor: int) -> int:
-    """Return the index just past a link's optional title and closing parenthesis."""
+    """Return the index just past a link's optional title and closing parenthesis.
+
+    A malformed tail (unterminated quote or parenthesis, or a close that falls in a
+    later paragraph) is not allowed to consume the rest of the document: the scan
+    resumes at ``cursor`` so later links are still checked.
+    """
+    limit = _paragraph_end(text, cursor)
     probe = cursor
-    while probe < len(text) and text[probe].isspace():
+    while probe < limit and text[probe].isspace():
         probe += 1
-    if probe < len(text) and text[probe] in "\"'":
+    if probe < limit and text[probe] in "\"'":
         end = text.find(text[probe], probe + 1)
-        probe = len(text) if end == -1 else end + 1
-    elif probe < len(text) and text[probe] == "(":
+        if end == -1 or end > limit:
+            return cursor
+        probe = end + 1
+    elif probe < limit and text[probe] == "(":
         depth = 0
-        while probe < len(text):
+        while probe < limit:
             if text[probe] == "(":
                 depth += 1
             elif text[probe] == ")":
@@ -125,8 +139,12 @@ def _skip_link_tail(text: str, cursor: int) -> int:
                     probe += 1
                     break
             probe += 1
+        if depth != 0:
+            return cursor
     close = text.find(")", probe)
-    return close + 1 if close != -1 else probe
+    if close == -1 or close > limit:
+        return cursor
+    return close + 1
 
 
 def inline_destinations(text: str) -> list[str]:
