@@ -15,7 +15,7 @@ from symposium.organizing.artifacts import (
     stage_abstract_book,
     write_dossiers,
 )
-from symposium.organizing.book_design import BookDesign
+from symposium.organizing.book_design import BookDesign, load_credit_identifiers
 from symposium.organizing.book_profiles import load_book_profiles
 from symposium.organizing.bridge import (
     InstituteOSTransport,
@@ -107,6 +107,11 @@ def add_organize_parser(subparsers: argparse._SubParsersAction) -> None:
     children["book"].add_argument("--frontispiece-image", type=Path)
     children["book"].add_argument("--book-title")
     children["book"].add_argument("--doi", help="Reserved bare DOI for the designed book cover")
+    children["book"].add_argument(
+        "--credit-identifiers",
+        type=Path,
+        help="Private, organizer-reviewed JSON of ORCIDs/affiliations for individual credits",
+    )
     children["book"].add_argument(
         "--public-participants",
         type=Path,
@@ -330,8 +335,21 @@ def _run(args: argparse.Namespace) -> None:
             raise PublicationError("--book-title requires the paired book artwork inputs")
         if args.doi is not None and args.cover_image is None:
             raise PublicationError("--doi requires the paired book artwork inputs")
+        if args.credit_identifiers is not None and args.cover_image is None:
+            raise PublicationError("--credit-identifiers requires the paired book artwork inputs")
+        identifiers = (
+            load_credit_identifiers(_private(args.credit_identifiers, boundary))
+            if args.credit_identifiers is not None
+            else ()
+        )
         design = (
-            BookDesign(args.cover_image, args.frontispiece_image, args.book_title, doi=args.doi)
+            BookDesign(
+                args.cover_image,
+                args.frontispiece_image,
+                args.book_title,
+                doi=args.doi,
+                credit_identifiers=identifiers,
+            )
             if args.cover_image is not None
             else None
         )
