@@ -159,6 +159,21 @@ def _prepare_design(
     )
 
 
+def _config_authors(prepared: PreparedBookDesign) -> list[dict[str, str]]:
+    """Name every cover credit; add only organizer-reviewed ORCIDs and affiliations."""
+    identifiers = {identifier.name: identifier for identifier in prepared.identifiers}
+    authors = []
+    for name in prepared.credits:
+        author = {"name": name}
+        identifier = identifiers.get(name)
+        if identifier is not None and identifier.orcid:
+            author["orcid"] = identifier.orcid
+        if identifier is not None and identifier.affiliation:
+            author["affiliation"] = identifier.affiliation
+        authors.append(author)
+    return authors
+
+
 def _stage_prepared_book(
     public: PublicBundle,
     workspace: Path,
@@ -178,7 +193,7 @@ def _stage_prepared_book(
             else f"{_literal(event['title'])} — Book of Abstracts (Working Program)",
             "year": event["year"],
         },
-        "authors": [{"name": label} for label in prepared.credits] if prepared else [],
+        "authors": _config_authors(prepared) if prepared else [],
         "publication": {
             "transmission_bookends": {"enabled": False},
             **({"doi": prepared.doi} if prepared is not None and prepared.doi else {}),
