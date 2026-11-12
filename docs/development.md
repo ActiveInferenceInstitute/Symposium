@@ -25,7 +25,7 @@ command, so a local run and CI cannot drift. Environment setup (`uv sync --locke
 | `test-fast` | `python -m pytest --no-header -q --no-cov -m "not real_api"` over the package-module suites (`tests/test_core`, `test_io`, `test_cli`, `test_analysis`, `test_generation`, `test_calendar`): the default arm, and not a substitute for `test` |
 | `build` | `uv build` (sdist and wheel) |
 | `program` | CLI version, edition scaffold validation, approved public tree, readiness, site render into a temporary directory |
-| `site` | `symposium organize site` into `$GATE_SITE_OUT` (default `_site`); the Pages workflow sets it |
+| `site` | `symposium organize site` into `$GATE_SITE_OUT`, or a fresh temporary directory when unset; an existing path is refused (the Pages workflow sets `_site`) |
 | `docs` | [`scripts/check_docs.py`](../scripts/check_docs.py): relative links, docs index completeness, gate-arm list |
 | `gnn` | pinned GNN parser in an isolated `.gate/gnn` environment; [`scripts/gnn_conformance.py`](../scripts/gnn_conformance.py) verifies it against `.github/gnn-pin.json` |
 

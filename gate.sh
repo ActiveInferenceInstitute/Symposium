@@ -40,10 +40,19 @@ arm_build() {
   uv build
 }
 
-# Approved-public-tree verification plus site rendering, into $GATE_SITE_OUT.
+# Approved-public-tree verification plus site rendering. The renderer refuses an
+# existing output directory, so an unset $GATE_SITE_OUT picks a fresh temporary
+# path and a set one must not exist yet.
 arm_site() {
-  uv run --no-sync symposium organize site \
-    --public-dir "$PUBLIC_DIR" --output-dir "${GATE_SITE_OUT:-_site}"
+  local out="${GATE_SITE_OUT:-}"
+  if [ -z "$out" ]; then
+    out="$(mktemp -d)/site"
+    printf 'site: rendering into %s\n' "$out"
+  elif [ -e "$out" ]; then
+    printf 'site: %s already exists; point GATE_SITE_OUT at a new path\n' "$out" >&2
+    return 1
+  fi
+  uv run --no-sync symposium organize site --public-dir "$PUBLIC_DIR" --output-dir "$out"
 }
 
 # Offline scaffolding and the checked-in approved program.
