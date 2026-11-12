@@ -1,10 +1,10 @@
-# Today&#8217;s Dialogue&#44; Tomorrow&#8217;s Inheritance&#58; Active Inference for Networks That Learn Together&#46;
+# Seeing the System Together&#58; Active Inference for Networks That Learn Together
 
 Presenter: Michael Lennon
 
 Contribution: Pre&#45;recorded Video presentation
 
-Public ID: talk&#45;411510fca178636f
+Public ID: talk&#45;761def3ebf0aefd9
 
 ## Submitted abstract
 
@@ -37,4 +37,4 @@ These approved event resources are starting points; topic relevance and author i
 - pymdp: https&#58;&#47;&#47;github&#46;com&#47;infer&#45;actively&#47;pymdp
 - Reproducible publication template: https&#58;&#47;&#47;github&#46;com&#47;docxology&#47;template
 
-OpenAlex discovery-only search (not a verified identity or literature match): https&#58;&#47;&#47;openalex&#46;org&#47;works&#63;search&#61;Today&#37;E2&#37;80&#37;99s&#37;20Dialogue&#37;2C&#37;20Tomorrow&#37;E2&#37;80&#37;99s&#37;20Inheritance&#37;3A&#37;20Active&#37;20Inference&#37;20for&#37;20Networks&#37;20That&#37;20Learn&#37;20Together&#46;
+OpenAlex discovery-only search (not a verified identity or literature match): https&#58;&#47;&#47;openalex&#46;org&#47;works&#63;search&#61;Seeing&#37;20the&#37;20System&#37;20Together&#37;3A&#37;20Active&#37;20Inference&#37;20for&#37;20Networks&#37;20That&#37;20Learn&#37;20Together

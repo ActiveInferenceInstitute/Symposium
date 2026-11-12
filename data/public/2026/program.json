@@ -17,7 +17,7 @@
     "participant_registration_url": "https://registersymposium2026.activeinference.institute/",
     "presenter_registration_url": "https://2026present.activeinference.institute/",
     "program_url": "https://2026symposium.activeinference.institute/",
-    "snapshot_date_utc": "2026-11-01",
+    "snapshot_date_utc": "2026-11-08",
     "start_date": "2026-11-12",
     "timezone": "UTC",
     "title": "6th Applied Active Inference Symposium",
@@ -706,6 +706,16 @@
       "title": "Working Groups Sessions (2 sessions: Opening & Charter; Outcomes & Next Steps)"
     },
     {
+      "abstract": "A live review of the Active Inference Institute’s 2026 Textbook Group on Sanjeev Namjoshi’s Fundamentals of Active Inference (2026). Since April 2026 the group has worked through the book chapter by chapter in open online meetings, with recorded sessions, shared meeting notes, a public question page, and an open-source companion repository of equations, methods, visualizations and animations. Facilitators Fraser Paterson, Andrew Pashea and Daniel Friedman look back on the chapters covered so far, the questions and stumbling blocks that came up along the way, and the resources the group has built, and discuss what it takes to learn Active Inference in 2026. Textbook Group participants and Symposium attendees are welcome to join the conversation live or through the livestream chat. The group continues with Chapter 13 after the Symposium and is open to new participants.",
+      "abstract_sha256": "64573fee324d3122b50785703b284e6dfc8feb2dd42e6adec774b535845c55c7",
+      "contribution_type": "Livestreamed panel or group session",
+      "id": "talk-5529b456dc308ef2",
+      "pictures": [],
+      "presenter": "Fraser Paterson, Andrew Pashea & Daniel Friedman",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Learning Active Inference in 2026: Textbook Group Review"
+    },
+    {
       "abstract": "People naturally express their beliefs about a topic, situation, or problem in the form of narrative. CogNarr is a soon-to-be-released, open-source, interactive tool that lets a writer transform narrative into an explicit, formal semantic graph, which they can inspect and correct until it faithfully reflects their belief model. A CogNarr story graph captures a narrative's argument structure, its timing, and the modality of its claims, including predictions and conditionals, together with the uncertainty attached to each. In general it expresses the verifiable meaning of what a person wishes to say, while reducing the ambiguity of natural language. As such, it could be of use in modeling the beliefs that active-inference processes operate over, and as a framework within which active-inference methods could be employed to infer semantic meaning from text. Because it makes a person's beliefs explicit, transparent, and shareable, CogNarr has potential wherever consequential beliefs are expressed as narrative, from medicine and governance to public polling and accident reporting. As well, CogNarr story graphs support accurate agent-agent communication. The collective-cognition aim behind the project is alignment of shared belief models during decision-making processes in the large-group setting. The talk will be a preview of features and capabilities, with some discussion of potential applications.",
       "abstract_sha256": "bd1c5a829a23b0d6596a0afaec580fc1b0cccccbc5d90c313603267ed871417f",
       "contribution_type": "Livestreamed panel or group session",
@@ -722,14 +732,14 @@
       "title": "CogNarr Story Graph: A Formal Semantics for Narrative as a Belief Model"
     },
     {
-      "abstract": "This panel explores how active inference and the free-energy principle can contribute to a unified account of psychological and social evolution. It examines how cognition, affect, social interaction, cultural practices, and institutions emerge through processes of prediction, adaptation, learning, and uncertainty reduction. By bringing together perspectives from cognitive science, philosophy, anthropology, and social theory, the panel asks how individual and collective forms of agency co-evolve and how shared models of the world shape both minds and societies.",
-      "abstract_sha256": "12b176c5a59666084949b58298f112f62e42197b832c927ea4f4a5f13a02d1d9",
+      "abstract": "Live Q&A and discussion with Luca Possati on his prerecorded talk “Active Inference and Design”, which treats design as an applied domain for active inference: the designer–artifact–user system understood through uncertainty reduction, precision, affordance and expected free energy. Watch the video beforehand and bring your questions.",
+      "abstract_sha256": "1b890fe8ccd27db01b0a62fc18f66be867530251f986e1d5e3f99e8c2e5a796e",
       "contribution_type": "Livestreamed panel or group session",
-      "id": "talk-9b837c85c83dfb82",
+      "id": "talk-23c96996d43a557a",
       "pictures": [],
       "presenter": "Luca Possati",
       "source_url": "https://2026symposium.activeinference.institute/",
-      "title": "Active Inference and the Evolution of Mind and Society"
+      "title": "Active Inference and Design: Live Q&A"
     },
     {
       "abstract": "Active inference frames biological and cognitive agency as the imperatives of self-evidencing—maintaining systemic integrity by minimising variational free energy within an open, stochastic environment. Under this formalism, agents, from single cells to complex organisms, persist by regulating their internal states against entropic dissipation, enacting a Markov blanket that partitions self from world. This imperative entails sophisticated inference, balancing epistemic drives against pragmatic preferences, thereby constituting adaptive agency.\nThis talk extends this foundational picture of selfhood to the domain of political communities and global justice theory, demonstrating that the same dynamical constraints that govern individual persistence scale hierarchically to structure collective organisation and inter-state conduct. Drawing on the Free Energy Principle, political communities are modelled as open, self-organising systems embedded within a nested hierarchy of interacting Markov blankets. Their stability is not intrinsic but relational, contingent upon continuous exchange of information, resources, and institutional constraints with their environment.\nWithin this multiscale architecture, global justice emerges as an active regulatory imperative: a homeostatic constraint that maintains a nonequilibrium steady state across coupled societies. We formalise this through the expected free energy decomposition, where just policies balance risk—adherence to shared normative constraints such as human rights and non-aggression—against ambiguity—the active resolution of uncertainty arising from structural interdependence.\nThe normative implications are acute. We identify a pervasive pathology of self-organisation, wherein dominant or insular political regimes mis-specify themselves as closed systems. By suppressing external coupling and attenuating sensory evidence, they optimise local coherence at the expense of systemic stability. Drawing parallels to oncogenic cellular proliferation and psychotic cognitive inference, we argue that such closure systematically underestimates global risk and propagates destabilising volatility. Ultimately, we contend that justice is not a static distributive outcome nor a single-level contractual procedure, but the dynamic property of a multiscale system that successfully synchronises its trajectories under persistent uncertainty. This offers a unified, first-principles framework for linking the philosophy of agency to the normative demands of a deeply interconnected global order.",
@@ -912,8 +922,8 @@
       "title": "Inferring the Unseen"
     },
     {
-      "abstract": "The Free Energy Principle offers a physically grounded account of intentional properties in mind and life, framed within Dynamical Systems Theory. Because of this generality, it was proposed as a formal basis to study biological autonomy, autopoiesis, and enactive cognition. Yet, those approaches are defined by a relational understanding of mind and life, centred on the description of engagement with the world as a constructive process where agents are “laying down a path in walking”. Building from Rosen’s relational biology, we argue that such processes are by construction outside a “Newtonian” description in terms of well-defined observables and their dynamics. Rather, we draw from Fields’ demonstration of the emergence of contextuality – the participatory production of observables against which the agent regulates their activity – in classical, thermodynamically bounded processes of observation. We suggest a complementarity between Friston’s classical FEP and Fields et al.’s “quantum” (or, in our account, relational) FEP, describing respectively the dynamics within a biological / cognitive space of relevant observables and the physical processes underlying the construction of that space. Finally, we propose a structural realist interpretation of this complementarity within the “closure of constraints” account of biological autonomy, where both principles are understood to act on a physically embedded system of biological constraints rather than an abstract mathematical space assumed to fully represent biological / cognitive organization. This approach foregrounds the synthesis between mathematical and theoretical approaches to biological autonomy, thus supporting a principled approach to both analyzing the organization of natural systems and attempting the implementation of artificial autonomy.\n\n\n\nThis presentation is adapted from Guénin--Carlut, Avel. 2026. “A Tale of Two Principles - Towards a Relational Perspective on the FEP.” https://hal.science/hal-05697510\n?\n., currently under review at the Entropy Special Issue “Active Inference in Cognitive Neuroscience”.",
-      "abstract_sha256": "c170e3299f8292d8fefbd89206cd6527953048a9b86da362d1115f3cebba9269",
+      "abstract": "The Free Energy Principle offers a physically grounded account of intentional properties in mind and life, framed within Dynamical Systems Theory. Because of this generality, it was proposed as a formal basis to study biological autonomy, autopoiesis, and enactive cognition. Yet, those approaches are defined by a relational understanding of mind and life, centred on the description of engagement with the world as a constructive process where agents are “laying down a path in walking”. Building from Rosen’s relational biology, we argue that such processes are by construction outside a “Newtonian” description in terms of well-defined observables and their dynamics. Rather, we draw from Fields’ demonstration of the emergence of contextuality – the participatory production of observables against which the agent regulates their activity – in classical, thermodynamically bounded processes of observation. We suggest a complementarity between Friston’s classical FEP and Fields et al.’s “quantum” (or, in our account, relational) FEP, describing respectively the dynamics within a biological / cognitive space of relevant observables and the physical processes underlying the construction of that space. Finally, we propose a structural realist interpretation of this complementarity within the “closure of constraints” account of biological autonomy, where both principles are understood to act on a physically embedded system of biological constraints rather than an abstract mathematical space assumed to fully represent biological / cognitive organization. This approach foregrounds the synthesis between mathematical and theoretical approaches to biological autonomy, thus supporting a principled approach to both analyzing the organization of natural systems and attempting the implementation of artificial autonomy.\n\n\n\nThis presentation is adapted from Guénin--Carlut, Avel. 2026. “A Tale of Two Principles - Towards a Relational Perspective on the FEP.” https://hal.science/hal-05697510, currently under review at the Entropy Special Issue “Active Inference in Cognitive Neuroscience”.",
+      "abstract_sha256": "6890c35fa7883b0e3880a4832e19a1aaefd7c0e67eac9674298789a50baf4a36",
       "contribution_type": "Pre-recorded Video presentation",
       "id": "talk-5f1d4f1776db95c2",
       "pictures": [],
@@ -1070,16 +1080,6 @@
       "title": "VAMAI: Variational Affordance Mapping and Active Inference for Training-Free UAV Navigation"
     },
     {
-      "abstract": "",
-      "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "contribution_type": "Pre-recorded Video presentation",
-      "id": "talk-e486df293cd09fef",
-      "pictures": [],
-      "presenter": "Holly Grimm, John H. Clippinger, Daniel Ari Friedman",
-      "source_url": "https://2026symposium.activeinference.institute/",
-      "title": "Coupling energy-system models with a seam you can read and an agent you can audit: Active Inference in the NEST programme"
-    },
-    {
       "abstract": "How can a prosocial agent reconcile self-protection with convergence toward mutual cooperation? Classic reactive strategies, such as Tit-for-Tat (TFT) and Win-Stay Lose-Shift (WSLS), perform well only under restrictive conditions. Recent neurocomputational studies show that the brain dynamically updates beliefs over hidden intentions for adaptive social inference. Meanwhile, emerging accounts of social neuroscience suggest that social valuation may be regulated with reference to an internal setpoint, as an agent balances internalized prosocial motives against its current resource state.\nBuilding on both, we propose an active inference agent for the iterated Prisoner’s Dilemma where prosociality is endogenously regulated. This includes (i) perspective-taking, approximated via particle filter Bayesian inference over the opponent’s model parameters; (ii) distributional reinforcement learning, implemented as quantile regression temporal difference learning and Dyna planning with generative replay; (iii) prosociality regulator, which dynamically controls the weight placed on the other’s expected utility relative to a setpoint; and (iv) a self-model, which memorizes partner-specific social expectations and learned reward distributions across interactions.\nIn preliminary simulations, our agent robustly tracks fluctuating opponent intentions and differentiates reciprocating from exploitative partners. Under non-stationary payoffs in mixed memory-one populations, it achieves higher long-run average payoffs than any other tested strategy after a learning phase, while maintaining mutual cooperation at a level above TFT and WSLS yet below ALLC and GTFT. These findings highlight setpoint-referenced regulation as a candidate computational foundation for adaptive prosociality, offering mechanistic insights into how self-protection and mutual cooperation can be jointly realized and an extensible blueprint for socially aligned embodied agents.",
       "abstract_sha256": "161af41147ed6bde7d7618a3ee16d0125b7348cfd3484cf188eded4c3ce4f7e4",
       "contribution_type": "Pre-recorded Video presentation",
@@ -1110,6 +1110,22 @@
       "presenter": "Jean-François Cloutier",
       "source_url": "https://2026symposium.activeinference.institute/",
       "title": "Who knows"
+    },
+    {
+      "abstract": "Decarbonisation decisions span scales no single model covers. Energy-system, city and building-stock models must exchange results despite different assumptions and resolutions. Manual coupling depends on expert judgement; LLM orchestration adds a need for inspectable decisions. NEST, a three-year Schmidt Sciences DEVI programme led by Open Earth Foundation with IIASA, CEU and the Active Inference Institute, makes those boundaries explicit.\nFirst, the seam. Each exchanged variable carries a declared unit, convention, geography and mapping rule sourced to its owner. IIASA’s MESSAGEix–STURM boundary for Western Europe reveals why this matters: two solvers reach the same objective but different fuel prices, making solver choice part of the interface.\nSecond, uncertainty. We are testing generative models specified in GNN, with RxInfer as the first backend, to carry beliefs across seams. Cross-backend equivalence and free-energy-based coupling criteria remain to be tested. Known-precision synthetic controls pass latent-state calibration; introducing parameter uncertainty produces failures in both states and noise precisions. Those uncertainty estimates are not yet qualified for real coupling outputs.\nThird, the agent, audited. OEF’s durable orchestrator exports a trace contract that AII’s independent consumer checks for schema compatibility, hash integrity and accounting reconciliation. Two real exports, scripted and LLM-driven, pass those checks. These checks do not validate the energy-model computation or establish autonomous discovery of a coupling method.\nWe close with a proposed federation of project agents across the DEVI cohort: models declare their boundaries, couplings leave inspectable records, and groups can reason about systems no participant sees whole.",
+      "abstract_sha256": "c2aae3f2b251c10ed9becb892f1c7d48dce4cf7e9dbee61657ecb42594febc2b",
+      "contribution_type": "Pre-recorded Video presentation",
+      "id": "talk-a1b55a90a3543912",
+      "pictures": [
+        {
+          "alt": "John H. Clippinger, Holly Grimm, Daniel Friedman — submitted presenter image",
+          "path": "assets/portraits/0f276c1f46039fd4b998df65d3178733f3013e6cf98e8616ded2767e6d2f11d8.jpg",
+          "sha256": "0f276c1f46039fd4b998df65d3178733f3013e6cf98e8616ded2767e6d2f11d8"
+        }
+      ],
+      "presenter": "John H. Clippinger, Holly Grimm, Daniel Friedman",
+      "source_url": "https://2026symposium.activeinference.institute/",
+      "title": "Coupling energy-system models with a seam you can read and an agent you can audit: Active Inference in the NEST programme"
     },
     {
       "abstract": "World models allow an agent to represent, predict, and act upon its environment. Yet humans, biological organisms, and artificial agents never observe the world directly: they encounter it only through a limited sensorimotor interface. How, then, can an agent acquire a useful model of a complex, partially observed world through active inference?\nIn this talk, I outline a research program for active world modeling: the joint process of learning a model of the world and selecting actions that improve that model. I argue that four ingredients are central to this program. First, world-model learning should be formulated as probabilistic inference under uncertainty, coupled to actions that pursue expected free energy. Second, agents require sufficiently expressive, yet computationally searchable, spaces of possible world models. Third, sample-efficient learning depends on strong inductive biases — the core knowledge systems observed in human children. I illustrate these ideas with recent work on universal structured model spaces and language-model inductive biases in partially observable environments. Finally, I discuss the unresolved challenge of integrating these components into scalable agents capable of open-ended exploration and model discovery.\nTogether, these results suggest a path toward understanding and emulating how humans and machines learn world models through active inference.",
@@ -1151,11 +1167,11 @@
       "abstract": "Imagine the Economics Nobel in 2036 is awarded for the 1st time to a community: the Active Inference Community. Scientists, communities, and institutions now tackle tangled social and ecological challenges more reliably, because they learn together within, between, and beyond their disciplines. What did we build to get there?\nThis talk works backwards from that future, building on last year’s invitation to grow the learning capacity of our networks. It proposes machine-assisted collective learning infrastructure enabled by active inference: an organ through which diverse networks sense, make sense, infer, compass, and coordinate adaptive decisions across ways of knowing.\nIts architecture is a loop of Evidence, Dialogue, and Adapt, circling a field of memory three layers deep at every scale. The map holds what is measured and recorded. The compass holds interior perceptions and shared hopes that orient action, even in the dark. The ground holds what we inherit, biologically and culturally, from immune memory to language and norms. Each layer is evidence of a different kind, and none certifies another. Friedman’s meta-pragmatic mechanisms, defined for a single agent and extended here to groups, arbitrate how far to trust each layer and when to revise it.\nStories from development practice, ecology, and network science serve as modelling targets: project dialects that bind teams and wall them off, lessons trapped at the wrong scale, forests managed for what could be measured. Today’s dialogue, it turns out, is tomorrow’s inheritance.\nThe talk is frank about AI’s double edge: pre-trained models are canned, but the medium around them can learn, and the same tools can homogenise dialogue, breed confident wrongness, or let agents narrate their own history.\nListeners will leave with a flipped version of an old parable, fresh metaphors for explaining active inference, and an invitation to help build the organ.",
       "abstract_sha256": "a697794f407c85b1c79b57371e9acc883d99e36b0ff0fddb4241da2085a33b64",
       "contribution_type": "Pre-recorded Video presentation",
-      "id": "talk-411510fca178636f",
+      "id": "talk-761def3ebf0aefd9",
       "pictures": [],
       "presenter": "Michael Lennon",
       "source_url": "https://2026symposium.activeinference.institute/",
-      "title": "Today’s Dialogue, Tomorrow’s Inheritance: Active Inference for Networks That Learn Together."
+      "title": "Seeing the System Together: Active Inference for Networks That Learn Together"
     },
     {
       "abstract": "Tiny social units of Pliocene Hominina fostered exchange among and between adults, youngsters and babies, about information gleaned and garnered by Active Inference. Henceforth, human evolution would involve the prehistory of \"Homo informatio\" whose biological, social, technological, and cultural legacy is an outcome of evolutionary 'snakes and ladders' autopoiesis and self-evidencing, indicated by archaeological irregular regularities and regular irrrgularities in the worldwide Pleistocene spatiotemporal record (as only is to be expected by the itinerancy of stochastic markovian processes), and of uneven imperceptible network-spread between social units, individuals, and, naturally, their cerebral neuronal microcircuits. Spreading, deep, informational networks characterised and underpinned human evolution during four million years. They do so still. \"Mighty oaks from litte acorns grow\", Geoffrey Chaucer, dixit in \"Troilus and Creysede\" in 1374.",
@@ -1537,6 +1553,14 @@
       "title": "Explicating and Comparing Prediction Architectures of Theories of Consciousness and its Application to INTREPID"
     },
     {
+      "end_utc": "2026-11-13T12:00:00Z",
+      "id": "session-e22945fbb0c505fc",
+      "kind": "Livestream Session",
+      "presenter": "Majid D. Beni",
+      "start_utc": "2026-11-13T11:00:00Z",
+      "title": "From Self-Evidencing to Global Governance: Active Inference and the Dynamics of Justice"
+    },
+    {
       "end_utc": "2026-11-13T13:00:00Z",
       "id": "session-643951a3731bf120",
       "kind": "Livestream Session",
@@ -1546,19 +1570,19 @@
     },
     {
       "end_utc": "2026-11-13T14:00:00Z",
-      "id": "session-0b80cf1a50dd81f2",
+      "id": "session-96a5e33ca3c2a5c2",
       "kind": "Livestream Session",
-      "presenter": "Majid D. Beni",
+      "presenter": "Fraser Paterson, Andrew Pashea, Daniel Friedman",
       "start_utc": "2026-11-13T13:00:00Z",
-      "title": "From Self-Evidencing to Global Governance: Active Inference and the Dynamics of Justice"
+      "title": "Learning Active Inference in 2026: Textbook Group Review"
     },
     {
       "end_utc": "2026-11-13T15:00:00Z",
-      "id": "session-5ae2ee1184879762",
+      "id": "session-c53d56a12950477a",
       "kind": "Livestream Session",
       "presenter": "Luca Possati",
       "start_utc": "2026-11-13T14:00:00Z",
-      "title": "Active Inference and the Evolution of Mind and Society"
+      "title": "Active Inference and Design: Live Q&A"
     },
     {
       "end_utc": "2026-11-13T17:00:00Z",
