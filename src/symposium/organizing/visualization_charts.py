@@ -49,7 +49,25 @@ def save_chart(figure: Figure, path: Path) -> ChartReceipt:
         canvas = FigureCanvasAgg(figure)
         canvas.draw()
         renderer = canvas.get_renderer()
-        texts = [text for text in figure.findobj(Text) if text.get_visible() and text.get_text()]
+        # Tick labels of a switched-off axis, or of ticks outside the view limits,
+        # stay "visible" but are never drawn; they must not count as overlaps.
+        undrawn: set[int] = set()
+        for axes in figure.axes:
+            for axis in (axes.xaxis, axes.yaxis):
+                if not axes.axison:
+                    undrawn.update(id(text) for text in axis.findobj(Text))
+                    continue
+                low, high = sorted(axis.get_view_interval())
+                slack = 1e-9 * max(abs(high - low), 1.0)
+                for tick in [*axis.get_major_ticks(), *axis.get_minor_ticks()]:
+                    location = tick.get_loc()
+                    if location is not None and not low - slack <= location <= high + slack:
+                        undrawn.update((id(tick.label1), id(tick.label2)))
+        texts = [
+            text
+            for text in figure.findobj(Text)
+            if text.get_visible() and text.get_text() and id(text) not in undrawn
+        ]
         boxes = [text.get_window_extent(renderer) for text in texts]
         overlaps = sum(
             int(first.overlaps(second))
@@ -181,17 +199,34 @@ def participant_network(features: TextFeatures) -> NetworkSummary:
             edge_color=TEAL,
             with_labels=False,
         )
-        labels = {identifier: str(identifier)[7:15] for identifier in connected}
-        label_positions = {
-            identifier: (xy[0], xy[1] + 0.14) for identifier, xy in positions.items()
-        }
-        nx.draw_networkx_labels(connected, label_positions, labels=labels, ax=axes[0], font_size=10)
+        # Each node ID is pushed away from that node's own edges, so it cannot sit
+        # on an edge or on the edge's midpoint weight label in any orientation.
+        for identifier, xy in positions.items():
+            away = np.zeros(2)
+            for neighbor in connected.neighbors(identifier):
+                step = np.asarray(xy) - np.asarray(positions[neighbor])
+                away += step / (np.linalg.norm(step) or 1.0)
+            if np.linalg.norm(away) < 0.5:
+                # Interior node of a straight chain: go perpendicular to its edges.
+                neighbor = next(iter(connected.neighbors(identifier)))
+                step = np.asarray(positions[neighbor]) - np.asarray(xy)
+                away = np.array([-step[1], step[0]])
+            away = away / (np.linalg.norm(away) or 1.0)
+            axes[0].text(
+                xy[0] + 0.1 * away[0],
+                xy[1] + 0.1 * away[1],
+                str(identifier)[7:15],
+                fontsize=10,
+                ha="left" if away[0] > 0.3 else "right" if away[0] < -0.3 else "center",
+                va="bottom" if away[1] > 0.3 else "top" if away[1] < -0.3 else "center",
+            )
         nx.draw_networkx_edge_labels(
             connected,
             positions,
             ax=axes[0],
             edge_labels={(u, v): f"{weight:.2f}" for u, v, weight in edges},
             font_size=10,
+            rotate=False,
         )
         axes[0].margins(0.3)
     else:
