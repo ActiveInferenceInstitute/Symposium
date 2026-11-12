@@ -8,6 +8,7 @@ on:
       - 'src/symposium/organizing/**'
       - 'pyproject.toml'
       - 'uv.lock'
+      - 'gate.sh'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -32,16 +33,9 @@ jobs:
       - name: Install locked public renderer
         run: uv sync --locked --python 3.12
       - name: Verify approved publication and build static site
-        run: |
-          uv run --no-sync python - <<'PY'
-          from pathlib import Path
-          from symposium.organizing.publication import verify_public_tree
-          from symposium.organizing.site import build_site
-
-          public_root = Path('data/public/2026')
-          bundle = verify_public_tree(public_root)
-          build_site(bundle, Path('_site'), assets_dir=public_root, artifacts_dir=public_root)
-          PY
+        env:
+          GATE_SITE_OUT: _site
+        run: ./gate.sh site
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
