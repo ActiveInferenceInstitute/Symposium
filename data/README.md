@@ -1,26 +1,24 @@
 # Symposium data
 
-`public/2026/` is the retained approved **November 1, 2026** public snapshot:
-57 contributions, 18 explicit UTC sessions, and 45 previously approved participant
-profiles. Version 3.2.0 updates its reviewed PDF/Word book artifacts and their
-manifest hashes while preserving the program, portraits, dossiers, participant
-briefs and calendar. Its date does not imply current or renewed participant consent.
+`public/2026/` is the approved **November 12, 2026** public snapshot, the final
+presenter lineup: 55 contributions, 19 explicit UTC sessions and 119 consenting
+participant profiles. Version 3.3.0 regenerates its program, portraits, dossiers,
+participant briefs, calendar, PDF/Word books and manifest from that snapshot. Its
+date does not imply consent beyond the affirmative answers captured for it.
 
-The new participant analyses use a separate admitted 55-record public 2026 cohort,
-rechecked November 5; 15 have no substantive answers. That cohort is not copied into
-the historical public snapshot or replaced by its 45 participant rows. Raw captures,
-consent records, source row identifiers, private execution evidence and generated
-provider drafts remain outside this public data tree. Absence from one snapshot
-does not by itself establish a withdrawal or an identity change. See the
-[3.2.0 release record](../docs/release_3_2_0.md).
+The participant analyses still use a separate admitted 55-record public 2026 cohort,
+captured November 5; 15 have no substantive answers. Raw captures, consent records,
+source row identifiers, private execution evidence and generated provider drafts
+remain outside this public data tree. Absence from one snapshot does not by itself
+establish a withdrawal or an identity change. See the
+[3.3.0 release record](../docs/release_3_3_0.md).
 
-The book is published separately on Zenodo at
-[10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505). Its public download
-hashes match the independently reviewed PDF/Word files. The
-[GitHub v3.2.0 release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.2.0) carries the same six book-package
-assets with verified public SHA-256 hashes. The updated Pages deployment and
-its hosted PDF/Word downloads are verified; this changes neither the historical
-snapshot date nor the separate analysis cohort.
+The version 3.3.0 book is published separately on Zenodo at
+[10.5281/zenodo.24161029](https://doi.org/10.5281/zenodo.24161029); its public
+downloads match the checked-in `book.pdf` and `book.docx` byte for byte. The
+[GitHub v3.3.0 release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.3.0)
+carries the same six book-package files. The earlier 3.2.0 edition remains at
+[10.5281/zenodo.23986505](https://doi.org/10.5281/zenodo.23986505).
 
 `inputs/aif_2024/` contains historical presenter exports and registrations.
 `inputs/aif_2025/` contains historical participant registrations.

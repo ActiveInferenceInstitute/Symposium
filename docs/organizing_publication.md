@@ -277,7 +277,7 @@ independent review of every final PDF/Word page and exact file hashes, publish t
 authorized record and versioned release. Read back the public record, download the
 actual hosted files and compare them with those reviewed hashes before changing
 documentation from reserved/pending to published. Track CI and website deployment
-outcomes separately. See the [3.2.0 release record](release_3_2_0.md) for current status.
+outcomes separately. See the [3.3.0 release record](release_3_3_0.md) for current status.
 
 Review the native outputs and copy only the reviewed PDF/DOCX into the artifact
 staging directory as `book.pdf` and `book.docx`. The renderer applies a documented,
