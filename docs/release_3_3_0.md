@@ -47,6 +47,34 @@ co-organizing-team table: 8 labels. Supplied self-reports are not verified
 institutional or identity claims. The cover and page-two artwork are the same
 generated conceptual illustrations as version 3.2.0.
 
+## Zenodo metadata edit after publication
+
+On November 12, 2026 (about 18:15 UTC), at the organizer's request, the Zenodo record
+metadata of version 3.3.0 was edited by hand; no file changed, and the six deposited
+files above are still the published package.
+
+- **Creators: 51 credit entries became 56 individual creators.** Composite credits
+  were split into the people they name, each added person placed after their
+  co-presenter: Dan Corva and Kevin Backhouse; Fraser Paterson (Andrew Pashea and
+  Daniel Friedman were already listed); John Boik and Glen EP Ropella; Antonio
+  Lucas-Alba and Héctor M. Manrique; Harshil Shah; Satyaki Maitra; Jesse Parent and
+  Avery Lim; John H. Clippinger and Holly Grimm; Michael Walker.
+- **Jesse Parent and Avery Lim** carry the ORCIDs and the affiliation (JOPRO) they
+  supplied in writing to the organizers.
+- Comma-separated credits had been deposited with the text after the first comma as
+  given names (for example family name "Dan Corva", given name "Kevin Backhouse");
+  the edited entries keep each full name as the family name, like the single
+  presenters.
+- The description sentence on creator entries now reads "Creator entries list each
+  named presenter once, with Active Inference Institute first."
+
+The deposited PDF and Word book are unchanged: their covers still list the 51 credit
+labels, and contribution 36 still carries its submitted title, "From Minimal Regulators
+to World Models: Boundary-Relative Distinctions for Factoring Generative Models"; the
+presenters retitled it on November 12 to "From Minimal Model Systems to World Models:
+Boundary-Relative Distinctions for Factoring Generative Models". Both are corrected
+only in a new version.
+
 ## Public data and analyses
 
 `data/public/2026/` is refreshed from the November 12 organizer snapshot. Participant

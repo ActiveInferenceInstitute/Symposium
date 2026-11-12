@@ -1,10 +1,12 @@
-"""Optional, source-bound book artwork and exact presenter cover credits."""
+"""Optional, source-bound book artwork and individual presenter cover credits."""
 
 from __future__ import annotations
 
 import hashlib
 import io
+import json
 import os
+import re
 import stat
 from collections.abc import Sequence
 from dataclasses import dataclass, replace
@@ -30,6 +32,10 @@ from .models import PublicationError, PublicEvent, PublicPresentation
 
 INSTITUTION: Final = "Active Inference Institute"
 MAX_IMAGE_BYTES: Final = 20 * 1024 * 1024
+MAX_IDENTIFIER_BYTES: Final = 1024 * 1024
+CREDIT_SEPARATOR: Final = re.compile(r"[,&]")
+ORCID_ID: Final = re.compile(r"[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]")
+IDENTIFIER_FIELDS: Final = frozenset({"name", "orcid", "affiliation", "basis"})
 
 
 class BookDesignError(PublicationError):
@@ -42,6 +48,20 @@ class BookDesignError(PublicationError):
 
 
 @dataclass(frozen=True, slots=True)
+class CreditIdentifier:
+    """Organizer-reviewed public identifiers for one individually credited presenter.
+
+    ``basis`` records where the values came from (for example the presenter's own
+    written request); it stays in the private build manifest and is never rendered.
+    """
+
+    name: str
+    orcid: str | None
+    affiliation: str | None
+    basis: str
+
+
+@dataclass(frozen=True, slots=True)
 class BookDesign:
     """Explicit local PNG inputs; submitted presenter labels remain authoritative."""
 
@@ -51,6 +71,7 @@ class BookDesign:
     website_url: str = PUBLIC_WEBSITE
     contact_email: str = PUBLIC_CONTACT
     doi: str | None = None
+    credit_identifiers: tuple[CreditIdentifier, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -69,6 +90,7 @@ class PreparedBookDesign:
     contact_email: str
     content_width_pt: float
     doi: str | None = None
+    identifiers: tuple[CreditIdentifier, ...] = ()
 
 
 class ImageReceipt(TypedDict):
@@ -77,9 +99,17 @@ class ImageReceipt(TypedDict):
     size: int
 
 
+class AuthorIdentifierReceipt(TypedDict):
+    name: str
+    orcid: str | None
+    affiliation: str | None
+    basis: str
+
+
 class DesignReceipt(TypedDict):
     title: str
     authors: list[str]
+    author_identifiers: list[AuthorIdentifierReceipt]
     credit_columns: list[list[str]]
     author_font_pt: int
     cover_physical_page: int
@@ -135,6 +165,114 @@ def _lines(text: str, font: ImageFont.FreeTypeFont, width_pt: float) -> int:
     return lines
 
 
+def credit_names(label: str) -> tuple[str, ...]:
+    """Split one published presenter label into the people it names, in label order.
+
+    A comma or an ampersand separates people in the published program's credits
+    ("Dan Corva, Kevin Backhouse"; "Jesse Parent & Avery Lim"). Each part keeps its
+    exact published spelling; no name is normalized, reordered or merged with a
+    near-match. A label whose split would leave an empty part stays whole.
+    """
+    parts = tuple(part.strip() for part in CREDIT_SEPARATOR.split(label))
+    if len(parts) == 1 or not all(parts):
+        return (label.strip(),)
+    return parts
+
+
+def _orcid_checksum_ok(orcid: str) -> bool:
+    """Check the ISO 7064 MOD 11-2 check character of a bare ORCID iD."""
+    digits = orcid.replace("-", "")
+    total = 0
+    for char in digits[:-1]:
+        total = (total + int(char)) * 2
+    result = (12 - total % 11) % 11
+    return digits[-1] == ("X" if result == 10 else str(result))
+
+
+def _single_line(value: object, field: str, limit: int) -> str:
+    if not isinstance(value, str) or not value.strip() or len(value) > limit:
+        raise BookDesignError(f"Credit identifier {field} must be bounded nonempty text")
+    if any(ord(char) < 32 for char in value) or value != value.strip():
+        raise BookDesignError(f"Credit identifier {field} must be trimmed single-line text")
+    return value
+
+
+def load_credit_identifiers(path: Path) -> tuple[CreditIdentifier, ...]:
+    """Admit an organizer-reviewed JSON list of presenter ORCIDs and affiliations.
+
+    The file is ``{"schema_version": 1, "people": [{"name", "orcid", "affiliation",
+    "basis"}]}``. ``name`` must later equal one individual cover credit exactly;
+    ``orcid`` is a bare iD with a valid check character or ``null``; ``affiliation``
+    is display text or ``null``; ``basis`` says who supplied the values.
+    """
+    if not path.is_absolute() or ".." in path.parts:
+        raise BookDesignError("Credit identifier path must be absolute without traversal", path)
+    try:
+        if not stat.S_ISREG(path.stat(follow_symlinks=False).st_mode):
+            raise BookDesignError("Credit identifiers must be a regular file", path)
+        flags = os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK
+        with os.fdopen(os.open(path, flags), "rb") as stream:
+            raw = stream.read(MAX_IDENTIFIER_BYTES + 1)
+    except OSError as error:
+        raise BookDesignError("Credit identifiers cannot be read safely", path) from error
+    if len(raw) > MAX_IDENTIFIER_BYTES:
+        raise BookDesignError("Credit identifiers exceed their byte limit", path)
+    try:
+        document = json.loads(raw)
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise BookDesignError("Credit identifiers must be UTF-8 JSON", path) from error
+    if (
+        not isinstance(document, dict)
+        or set(document) != {"schema_version", "people"}
+        or type(document["schema_version"]) is not int
+        or document["schema_version"] != 1
+        or not isinstance(document["people"], list)
+        or not document["people"]
+        or len(document["people"]) > 1000
+    ):
+        raise BookDesignError("Credit identifiers need schema_version 1 and a people list", path)
+    identifiers = []
+    for entry in document["people"]:
+        if not isinstance(entry, dict) or set(entry) != IDENTIFIER_FIELDS:
+            raise BookDesignError("Each credit identifier needs exactly its four fields", path)
+        orcid, affiliation = entry["orcid"], entry["affiliation"]
+        if orcid is not None and (
+            not isinstance(orcid, str)
+            or not ORCID_ID.fullmatch(orcid)
+            or not _orcid_checksum_ok(orcid)
+        ):
+            raise BookDesignError("Credit identifier ORCID must be a valid bare iD", path)
+        if orcid is None and affiliation is None:
+            raise BookDesignError("Credit identifier must supply an ORCID or affiliation", path)
+        identifiers.append(
+            CreditIdentifier(
+                name=_single_line(entry["name"], "name", 200),
+                orcid=orcid,
+                affiliation=None
+                if affiliation is None
+                else _single_line(affiliation, "affiliation", 300),
+                basis=_single_line(entry["basis"], "basis", 300),
+            )
+        )
+    if len({identifier.name for identifier in identifiers}) != len(identifiers):
+        raise BookDesignError("Credit identifiers name a person more than once", path)
+    return tuple(identifiers)
+
+
+def _bind_identifiers(
+    identifiers: tuple[CreditIdentifier, ...], credits: tuple[str, ...]
+) -> tuple[CreditIdentifier, ...]:
+    """Bind identifiers to exact individual credits, in cover order, refusing extras."""
+    by_name = {identifier.name: identifier for identifier in identifiers}
+    unknown = sorted(set(by_name) - set(credits[1:]))
+    if unknown:
+        raise BookDesignError(
+            "Credit identifiers name people who are not individual cover credits: "
+            + ", ".join(unknown)
+        )
+    return tuple(by_name[name] for name in credits if name in by_name)
+
+
 def _credit_columns(
     credits: tuple[str, ...], width_pt: float
 ) -> tuple[tuple[tuple[str, ...], ...], int]:
@@ -162,7 +300,11 @@ def prepare_book_design(
     *,
     event: PublicEvent | None = None,
 ) -> PreparedBookDesign:
-    """Parse assets before output creation and deduplicate only exact display labels."""
+    """Parse assets before output creation and credit each named presenter once.
+
+    Labels are split with :func:`credit_names` and deduplicated only by exact
+    equality, in deterministic contribution order, after the Institute.
+    """
     title = design.title if design.title is not None else default_title
     if not title.strip() or len(title) > 240 or any(ord(c) < 32 for c in title):
         raise BookDesignError("Cover title must be bounded single-line text")
@@ -171,8 +313,11 @@ def prepare_book_design(
         doi=parse_cover_doi(design.doi),
     )
     content_width = facts.content_width_pt
-    labels = tuple(dict.fromkeys(talk["presenter"] for talk in presentations))
-    credits = (INSTITUTION,) + tuple(label for label in labels if label != INSTITUTION)
+    names = tuple(
+        dict.fromkeys(name for talk in presentations for name in credit_names(talk["presenter"]))
+    )
+    credits = (INSTITUTION,) + tuple(name for name in names if name != INSTITUTION)
+    identifiers = _bind_identifiers(design.credit_identifiers, credits)
     columns, credit_height = _credit_columns(credits[1:], content_width)
     title_font = ImageFont.truetype(
         str(Path(get_data_path()) / "fonts/ttf/DejaVuSerif-Bold.ttf"), 240
@@ -204,6 +349,7 @@ def prepare_book_design(
         facts.contact_email,
         content_width,
         facts.doi,
+        identifiers,
     )
 
 
@@ -262,6 +408,15 @@ def stage_book_design(project: Path, prepared: PreparedBookDesign) -> DesignRece
     return DesignReceipt(
         title=prepared.title,
         authors=list(prepared.credits),
+        author_identifiers=[
+            AuthorIdentifierReceipt(
+                name=identifier.name,
+                orcid=identifier.orcid,
+                affiliation=identifier.affiliation,
+                basis=identifier.basis,
+            )
+            for identifier in prepared.identifiers
+        ],
         credit_columns=[list(column) for column in prepared.columns],
         author_font_pt=9,
         cover_physical_page=1,
