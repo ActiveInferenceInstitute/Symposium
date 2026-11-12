@@ -44,7 +44,7 @@ def check_parsed(path: Path) -> None:
     parsed = parse_gnn_formal(path)
     if parsed is None or getattr(parsed, "parse_errors", None):
         raise SystemExit(f"{path} did not parse cleanly")
-    valid, errors = validate_gnn_syntax(path.read_text(encoding="utf-8"))
+    valid, errors = validate_gnn_syntax(path.read_text(encoding="utf-8"), is_content=True)
     if not valid:
         raise SystemExit(f"{path} syntax errors: {errors!r}")
 
@@ -57,8 +57,13 @@ def type_check(models: list[Path], output_dir: Path) -> None:
     model_dir.mkdir()
     for index, sketch in enumerate(models):
         shutil.copy2(sketch, model_dir / f"{index:03d}_{sketch.name}")
-    if not GNNTypeChecker().validate_gnn_files(model_dir, output_dir):
-        raise SystemExit(f"GNN type checker rejected {len(models)} sketch(es)")
+    # validate_gnn_files returns True (every file valid), 2 (invalid files or no
+    # files found) or False (hard failure); a bare ``not`` would let 2 through.
+    outcome = GNNTypeChecker().validate_gnn_files(model_dir, output_dir)
+    if outcome is not True:
+        raise SystemExit(
+            f"GNN type checker did not accept {len(models)} sketch(es) (returned {outcome!r})"
+        )
 
 
 def requirement(pin: dict[str, str]) -> str:
@@ -97,6 +102,10 @@ def main() -> int:
             type_check([exemplar], output_dir)
             source, checked = "pinned-exemplar", 1
 
+    result = (
+        "repository-content-passed" if source == "repository" else "pinned-exemplar-baseline-passed"
+    )
+
     print(
         json.dumps(
             {
@@ -104,7 +113,7 @@ def main() -> int:
                 "pin-revision": pin["revision"],
                 "models": checked,
                 "source": source,
-                "result": "verified",
+                "result": result,
             },
             sort_keys=True,
         )
