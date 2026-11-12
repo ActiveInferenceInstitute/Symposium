@@ -14,9 +14,11 @@ uv sync --locked --extra dev --python 3.12
 ## The gate
 
 [`gate.sh`](../gate.sh) is the single entry point. Each arm is one documented
-command, and every workflow job runs `./gate.sh <arm>` instead of restating the
+command, and the workflow jobs run `./gate.sh <arm>` instead of restating the
 command, so a local run and CI cannot drift. Environment setup (`uv sync --locked
---extra dev`) is the caller's job; every arm runs with `--no-sync`.
+--extra dev`) is the caller's job: every project `uv run` invocation uses
+`--no-sync`, while `build` runs `uv build` and `gnn` creates its own isolated
+environment. `test-fast` is local-only; CI runs `test`.
 
 | Arm | What it runs |
 | --- | --- |
@@ -36,7 +38,9 @@ subprocess workflow suites, so passing it is not repository-wide health — `tes
 is the gate. `./gate.sh list` prints the arms; `./gate.sh all` runs them in that
 order. Wall times for each arm on the machine that last refreshed it are generated
 in [gate measurements](_generated/gate-measurements.md) — a single run, not a
-benchmark. Refresh with `uv run --no-sync python scripts/gate_metrics.py refresh`.
+benchmark. Refresh with `uv run --no-sync python scripts/gate_metrics.py refresh`;
+`--only` re-measures named arms and refuses once HEAD moved, and `redraw`
+re-renders the prose without measuring.
 
 There is no types arm. `pyproject.toml` configures mypy and the dev extra ships it,
 but no gate has ever run it: `uv run --no-sync mypy src/symposium` reports 89 errors
@@ -48,11 +52,12 @@ requires clearing those first; until then a passing type check is not claimed.
 [CI](../.github/workflows/ci.yml) has four jobs, each calling one or more arms:
 `lint` (lint + docs, once), `test` (matrix on Python 3.12, 3.13 and 3.14), `build`
 (build + program, on the 3.12 pin) and `gnn-conformance` (display name
-`gnn conformance (pinned)`). Lint and documentation used to run inside all three
-matrix entries and the build/program steps ran three times; they now run once.
-A matrix entry is not evidence of a successful remote run. The workflow uses
-`astral-sh/setup-uv` (pinned to `0.13.5`) rather than the shared
-`ActiveInferenceInstitute/.github` `setup-python-uv` composite action. The pinned
+`gnn conformance (pinned)`). Lint, the distribution build, edition validation and the
+public-site render used to run inside all three matrix entries; they now run once,
+and the documentation arm is new. A matrix entry is not evidence of a successful
+remote run. The workflow uses the `astral-sh/setup-uv` action, SHA-pinned at v10.3.3
+with uv `0.13.5`, rather than the shared `ActiveInferenceInstitute/.github`
+`setup-python-uv` composite action. The pinned
 GNN baseline is described in [.github/GNN.md](../.github/GNN.md). Live-provider
 tests are opt-in through `--run-real-api -m real_api` and require authorization and
 credentials; default checks must not require paid requests.

@@ -141,11 +141,10 @@ or funding eligibility.
 ## Release checks
 
 ```bash
-uv run ruff check src/ tests/ run.py launch.py
-uv run ruff format --check src/ tests/ run.py launch.py
-uv run python -m pytest
-uv build
+./gate.sh lint
+./gate.sh test
+./gate.sh build
 ```
 
-See [development](development.md) for current verification commands. The
-[2.2.1 release record](release_2_2_1.md) preserves historical evidence only.
+See [development](development.md) for the arm list and current verification commands.
+The [2.2.1 release record](release_2_2_1.md) preserves historical evidence only.

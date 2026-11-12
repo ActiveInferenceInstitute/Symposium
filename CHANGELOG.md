@@ -14,13 +14,13 @@ One local gate, and CI calls it instead of restating commands.
   `test_generation`, `test_calendar`) without coverage instrumentation, explicitly
   not a substitute for `test`.
 - `.github/workflows/ci.yml` now has `lint`, `test`, `build` and `gnn-conformance`
-  jobs that call those arms. Lint, documentation, distribution build, edition
-  validation and public-site rendering ran inside each of the three matrix entries
-  before; each now runs once (lint/docs on 3.12, build/program on the 3.12 pin). The
-  test arm is unchanged: the full suite with the 80% coverage gate.
+  jobs that call those arms. Lint, the distribution build, edition validation and the
+  public-site render ran inside each of the three matrix entries before; each now runs
+  once (lint/docs on 3.12, build/program on the 3.12 pin), and the documentation check
+  is new. The test arm is unchanged: the full suite with the 80% coverage gate.
 - GNN conformance: `.github/gnn-pin.json` (schema `gnn-importer-pin/v1`,
-  `v5.0.3`, `8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1`) is now the only place the
-  revision is written. The workflow's inline heredoc moved to
+  `v5.0.3`, `8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1`) is now the sole executable
+  source of the revision. The workflow's inline heredoc moved to
   `scripts/gnn_conformance.py`, which validates the pin instead of restating the tag
   and revision. Job key `gnn-conformance`, display name `gnn conformance (pinned)`;
   see [.github/GNN.md](.github/GNN.md).
