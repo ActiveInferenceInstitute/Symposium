@@ -110,6 +110,18 @@ def environment() -> dict[str, str]:
     }
 
 
+def resolve_commit(ref: str) -> str:
+    """Return the full commit id for a stored revision, or the ref when unknown."""
+    result = subprocess.run(
+        ["git", "rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    return result.stdout.strip() or ref
+
+
 def render(history: list[dict]) -> str:
     newest = history[-1]
     lines = [
@@ -180,7 +192,7 @@ def refresh(label: str | None, only: list[str]) -> int:
         # would attribute these numbers to the wrong commit.
         entry = history[-1]
         current = environment()
-        if entry.get("commit") != current["commit"]:
+        if resolve_commit(str(entry.get("commit"))) != resolve_commit(current["commit"]):
             print(
                 f"refusing partial refresh: entry is at {entry.get('commit')}, "
                 f"HEAD is {current['commit']}; run a full refresh",
@@ -197,6 +209,9 @@ def refresh(label: str | None, only: list[str]) -> int:
         entry["arms"] = [rows[arm] for arm in order]
         for key in ("timestamp", "host", "python", "uv"):
             entry[key] = current[key]
+        # Persist the synthesized table before measuring: an arm that reads the
+        # document (docs checks the arm list) must already see its own row.
+        write()
         for arm in selected:
             entry["arms"][order.index(arm)] = run_arm(arm)
             write()

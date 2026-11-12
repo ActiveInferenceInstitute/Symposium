@@ -29,8 +29,7 @@ INDEX_REL = "docs/documentation-index.md"
 MEASUREMENTS_REL = "docs/_generated/gate-measurements.md"
 FENCE_OPEN = re.compile(r"^(`{3,}|~{3,})")
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
-INLINE_CODE = re.compile(r"(`+)(?:(?!\1).)+?\1", re.DOTALL)
-REFERENCE = re.compile(r"^[ ]{0,3}\[[^\]]+\]:[ \t]*(<[^>]*>|\S+)", re.MULTILINE)
+REFERENCE = re.compile(r"^[ ]{0,3}\[[^\]]+\]:[ \t]*(?:\n[ \t]*)?(<[^>]*>|\S+)", re.MULTILINE)
 ARM_HEADER = "| Arm | Status |"
 
 
@@ -43,6 +42,41 @@ def tracked_markdown() -> list[Path]:
     ).stdout
     paths = [Path(p) for p in out.decode("utf-8").split("\0") if p]
     return [p for p in paths if not p.as_posix().startswith(SCAN_EXCLUDES)]
+
+
+def strip_inline_code(text: str) -> str:
+    """Blank inline code spans, matching backtick runs of exactly equal length."""
+    out = []
+    index = 0
+    while index < len(text):
+        if text[index] != "`":
+            out.append(text[index])
+            index += 1
+            continue
+        run_end = index
+        while run_end < len(text) and text[run_end] == "`":
+            run_end += 1
+        run = run_end - index
+        probe = run_end
+        closing = -1
+        while probe < len(text):
+            if text[probe] != "`":
+                probe += 1
+                continue
+            candidate_end = probe
+            while candidate_end < len(text) and text[candidate_end] == "`":
+                candidate_end += 1
+            if candidate_end - probe == run:
+                closing = probe
+                break
+            probe = candidate_end
+        if closing == -1:
+            out.append(text[index:run_end])
+            index = run_end
+            continue
+        out.append(" ")
+        index = closing + run
+    return "".join(out)
 
 
 def strip_code(text: str) -> str:
@@ -69,7 +103,30 @@ def strip_code(text: str) -> str:
         ):
             fence = None
         kept.append("\n")
-    return INLINE_CODE.sub("", HTML_COMMENT.sub("", "".join(kept)))
+    return strip_inline_code(HTML_COMMENT.sub("", "".join(kept)))
+
+
+def _skip_link_tail(text: str, cursor: int) -> int:
+    """Return the index just past a link's optional title and closing parenthesis."""
+    probe = cursor
+    while probe < len(text) and text[probe].isspace():
+        probe += 1
+    if probe < len(text) and text[probe] in "\"'":
+        end = text.find(text[probe], probe + 1)
+        probe = len(text) if end == -1 else end + 1
+    elif probe < len(text) and text[probe] == "(":
+        depth = 0
+        while probe < len(text):
+            if text[probe] == "(":
+                depth += 1
+            elif text[probe] == ")":
+                depth -= 1
+                if depth == 0:
+                    probe += 1
+                    break
+            probe += 1
+    close = text.find(")", probe)
+    return close + 1 if close != -1 else probe
 
 
 def inline_destinations(text: str) -> list[str]:
@@ -81,14 +138,15 @@ def inline_destinations(text: str) -> list[str]:
         if start == -1:
             return found
         cursor = start + 2
-        while cursor < len(text) and text[cursor] in " \t":
+        while cursor < len(text) and text[cursor].isspace():
             cursor += 1
         if cursor < len(text) and text[cursor] == "<":
             end = text.find(">", cursor + 1)
             if end == -1:
-                return found
+                index = start + 2
+                continue
             found.append(text[cursor + 1 : end])
-            index = end + 1
+            index = _skip_link_tail(text, end + 1)
             continue
         depth = 0
         begin = cursor
@@ -103,11 +161,11 @@ def inline_destinations(text: str) -> list[str]:
                 if depth == 0:
                     break
                 depth -= 1
-            elif char in " \t\n" and depth == 0:
+            elif char.isspace() and depth == 0:
                 break
             cursor += 1
         found.append(text[begin:cursor])
-        index = cursor + 1
+        index = _skip_link_tail(text, cursor)
 
 
 def links_in(text: str) -> list[str]:
