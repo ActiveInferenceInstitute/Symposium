@@ -32,7 +32,7 @@ def artwork(tmp_path: Path) -> BookDesign:
     return BookDesign(cover, spread, "2026 Synthetic Symposium — Presenter Program")
 
 
-def test_cover_credits_when_exact_labels_repeat_preserve_composites(
+def test_cover_credits_when_labels_are_composite_name_each_person_once(
     tmp_path: Path, artwork: BookDesign
 ) -> None:
     # Given a published composite label, an independent individual, and an exact repeat.
@@ -46,10 +46,10 @@ def test_cover_credits_when_exact_labels_repeat_preserve_composites(
     data["presentations"] = talks
     # When the optional book is staged.
     project = stage_abstract_book(data, tmp_path / "book", design=artwork)
-    # Then source display labels are exact, deduplicated only by equality, and institutional-first.
+    # Then each named person is credited once with exact spelling, institutional-first.
     config = json.loads((project / "manuscript/config.yaml").read_text())
     credits = [author["name"] for author in config["authors"]]
-    assert credits == ["Active Inference Institute", "Ada", "ada", "Ada & Bob", "Áda"]
+    assert credits == ["Active Inference Institute", "Ada", "ada", "Bob", "Áda"]
     manifest = json.loads((project / "abstract_manifest.json").read_text())
     assert manifest["design"]["authors"] == credits
     assert [name for column in manifest["design"]["credit_columns"] for name in column] == credits[
