@@ -220,6 +220,40 @@ Verify its run result, the deployed `/Symposium/` URL, source-attribution conten
 search/reset, keyboard disclosure controls, mobile layout, and available downloads
 against the current approved manifest after release.
 
+### Branch publishing when Actions is unavailable
+
+GitHub's built-in branch publisher does not depend on repository Actions minutes,
+so it can serve the same verified output while custom workflows cannot run. Since
+November 12, 2026 the repository's Pages source is the `gh-pages` branch at `/`
+(build type `legacy`). That branch holds only the static output of the same
+`verify_public_tree` and `build_site` calls the workflow makes, built locally from
+`main`, plus `.nojekyll` and a `.gitattributes` of `* -text` so the CRLF calendar and
+every other file are committed byte for byte.
+
+```bash
+SITE="$SYMPOSIUM_PRIVATE_DIR/pages-site"   # must not exist yet
+uv run python - "$SITE" <<'PY'
+import sys
+from pathlib import Path
+from symposium.organizing.publication import verify_public_tree
+from symposium.organizing.site import build_site
+root = Path("data/public/2026")
+build_site(verify_public_tree(root), Path(sys.argv[1]), assets_dir=root, artifacts_dir=root)
+PY
+touch "$SITE/.nojekyll"; printf '* -text\n' > "$SITE/.gitattributes"
+git -C "$SITE" init -q -b gh-pages && git -C "$SITE" add -A
+git -C "$SITE" commit -q -m "Publish the approved site built from main $(git rev-parse --short HEAD)"
+git -C "$SITE" fetch -q https://github.com/ActiveInferenceInstitute/Symposium.git gh-pages
+git -C "$SITE" reset --soft FETCH_HEAD && git -C "$SITE" commit -q --amend --no-edit
+git -C "$SITE" push https://github.com/ActiveInferenceInstitute/Symposium.git gh-pages
+```
+
+The fetch and soft reset make the new snapshot a descendant of the published branch,
+so the push is an ordinary fast-forward. After the Pages build reports `built`, compare
+every published file with the local output byte for byte. To return to the workflow,
+set the Pages source back to GitHub Actions; the `pages.yml` deploy then replaces the
+branch-built site.
+
 ## Command-line workflow
 
 `uv run symposium organize --help` lists the operator commands. Keep
