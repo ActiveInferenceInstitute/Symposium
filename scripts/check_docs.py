@@ -5,10 +5,13 @@ used by local runs and CI.
 
 Checks:
   1. Every relative link in tracked Markdown resolves, outside archived/historical
-     trees and generated output. Anchors are not resolved; only the target file.
+     trees and generated output. Fenced blocks (backtick or tilde), inline code
+     spans, HTML comments and raw HTML are not treated as links. Anchors are not
+     resolved; only the target file.
   2. ``docs/documentation-index.md`` lists every Markdown file under ``docs/``.
-  3. ``docs/_generated/gate-measurements.md`` lists exactly the arms that
-     ``./gate.sh list`` reports, so a new arm cannot land undocumented.
+  3. The current arm table in ``docs/_generated/gate-measurements.md`` names exactly
+     the arms that ``./gate.sh list`` reports, in both directions, so a new or
+     removed arm cannot land undocumented. Historical tables are ignored.
 """
 
 from __future__ import annotations
@@ -22,11 +25,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SCAN_EXCLUDES = ("archive/", "outputs/", ".venv/", ".gate/", "node_modules/", "htmlcov/")
 SKIP_SCHEMES = ("http://", "https://", "mailto:", "tel:", "ftp://", "data:")
-FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
-INLINE_CODE = re.compile(r"`[^`\n]*`")
+INDEX_REL = "docs/documentation-index.md"
+MEASUREMENTS_REL = "docs/_generated/gate-measurements.md"
+FENCE_OPEN = re.compile(r"^(`{3,}|~{3,})")
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
-LINK = re.compile(r"\]\(\s*(<[^>]*>|[^)\s]+)(?:\s+[^)]*)?\)")
-DEFINITION = re.compile(r"^\s*\[[^\]]+\]:\s*(\S+)", re.MULTILINE)
+INLINE_CODE = re.compile(r"(`+)(?:(?!\1).)+?\1", re.DOTALL)
+REFERENCE = re.compile(r"^[ ]{0,3}\[[^\]]+\]:[ \t]*(<[^>]*>|\S+)", re.MULTILINE)
+ARM_HEADER = "| Arm | Status |"
 
 
 def tracked_markdown() -> list[Path]:
@@ -37,15 +42,82 @@ def tracked_markdown() -> list[Path]:
         capture_output=True,
     ).stdout
     paths = [Path(p) for p in out.decode("utf-8").split("\0") if p]
-    return [p for p in paths if not str(p).startswith(SCAN_EXCLUDES)]
+    return [p for p in paths if not p.as_posix().startswith(SCAN_EXCLUDES)]
+
+
+def strip_code(text: str) -> str:
+    """Blank out fenced blocks, inline code spans and HTML comments."""
+    kept = []
+    fence: tuple[str, int] | None = None
+    for line in text.splitlines(keepends=True):
+        stripped = line.lstrip(" \t")
+        indent = len(line) - len(stripped)
+        match = FENCE_OPEN.match(stripped)
+        if fence is None:
+            if indent <= 3 and match:
+                fence = (match.group(1)[0], len(match.group(1)))
+                kept.append("\n")
+                continue
+            kept.append(line)
+            continue
+        if (
+            indent <= 3
+            and match
+            and match.group(1)[0] == fence[0]
+            and len(match.group(1)) >= fence[1]
+            and stripped.strip() == match.group(1)
+        ):
+            fence = None
+        kept.append("\n")
+    return INLINE_CODE.sub("", HTML_COMMENT.sub("", "".join(kept)))
+
+
+def inline_destinations(text: str) -> list[str]:
+    """Yield link destinations, honouring <angle> targets and nested parentheses."""
+    found = []
+    index = 0
+    while True:
+        start = text.find("](", index)
+        if start == -1:
+            return found
+        cursor = start + 2
+        while cursor < len(text) and text[cursor] in " \t":
+            cursor += 1
+        if cursor < len(text) and text[cursor] == "<":
+            end = text.find(">", cursor + 1)
+            if end == -1:
+                return found
+            found.append(text[cursor + 1 : end])
+            index = end + 1
+            continue
+        depth = 0
+        begin = cursor
+        while cursor < len(text):
+            char = text[cursor]
+            if char == "\\":
+                cursor += 2
+                continue
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                if depth == 0:
+                    break
+                depth -= 1
+            elif char in " \t\n" and depth == 0:
+                break
+            cursor += 1
+        found.append(text[begin:cursor])
+        index = cursor + 1
 
 
 def links_in(text: str) -> list[str]:
-    stripped = FENCE.sub("", text)
-    stripped = HTML_COMMENT.sub("", stripped)
-    stripped = INLINE_CODE.sub("", stripped)
-    found = [m.group(1) for m in LINK.finditer(stripped)]
-    found += [m.group(1) for m in DEFINITION.finditer(stripped)]
+    body = strip_code(text)
+    found = inline_destinations(body)
+    for match in REFERENCE.finditer(body):
+        target = match.group(1).strip()
+        if target.startswith("<") and target.endswith(">"):
+            target = target[1:-1]
+        found.append(target)
     return found
 
 
@@ -58,7 +130,7 @@ def resolve(source: Path, target: str) -> Path | None:
         return None
     if target.lower().startswith(SKIP_SCHEMES):
         return None
-    target = target.split("#", 1)[0]
+    target = target.split("#", 1)[0].split("?", 1)[0]
     if not target:
         return None
     target = urllib.parse.unquote(target)
@@ -79,38 +151,57 @@ def check_links(files: list[Path]) -> list[str]:
 
 
 def check_index() -> list[str]:
-    index_path = ROOT / "docs" / "documentation-index.md"
+    index_path = ROOT / INDEX_REL
     if not index_path.exists():
-        return ["docs/documentation-index.md is missing"]
-    referenced = {
-        resolve(Path("docs/documentation-index.md"), t)
-        for t in links_in(index_path.read_text(encoding="utf-8"))
-    }
+        return [f"{INDEX_REL} is missing"]
+    referenced = {resolve(Path(INDEX_REL), t) for t in links_in(index_path.read_text("utf-8"))}
     documented = {
-        (ROOT / p).resolve()
-        for p in tracked_markdown()
-        if str(p).startswith("docs/") and p.name != "documentation-index.md"
+        (ROOT / path).resolve()
+        for path in tracked_markdown()
+        if path.as_posix().startswith("docs/") and path.as_posix() != INDEX_REL
     }
     return [
-        f"docs file not listed in docs/documentation-index.md: {p.relative_to(ROOT)}"
-        for p in sorted(documented - referenced)
+        f"docs file not listed in {INDEX_REL}: {path.relative_to(ROOT)}"
+        for path in sorted(documented - referenced)
     ]
+
+
+def current_arm_rows(text: str) -> set[str]:
+    """Arm names in the first (current-run) table only, excluding history tables."""
+    rows: set[str] = set()
+    inside = False
+    for line in text.splitlines():
+        if line.startswith(ARM_HEADER):
+            inside = True
+            continue
+        if not inside:
+            continue
+        if not line.startswith("|"):
+            break
+        cell = line.strip().strip("|").split("|")[0].strip().strip("`").strip()
+        if cell and not set(cell) <= {"-", " "}:
+            rows.add(cell)
+    return rows
 
 
 def check_gate_arms() -> list[str]:
-    measurements = ROOT / "docs" / "_generated" / "gate-measurements.md"
+    measurements = ROOT / MEASUREMENTS_REL
     if not measurements.exists():
-        return ["docs/_generated/gate-measurements.md is missing"]
+        return [f"{MEASUREMENTS_REL} is missing"]
     out = subprocess.run(
         ["./gate.sh", "list"], cwd=ROOT, check=True, capture_output=True, text=True
     ).stdout
-    arms = {line.strip() for line in out.splitlines() if line.strip()}
-    text = measurements.read_text(encoding="utf-8")
-    documented = {m.group(1) for m in re.finditer(r"^\|\s*`?([a-z][a-z-]*)`?\s*\|", text, re.M)}
-    return [
-        f"gate arm missing from docs/_generated/gate-measurements.md: {arm}"
-        for arm in sorted(arms - documented)
+    expected = {line.strip() for line in out.splitlines() if line.strip()}
+    documented = current_arm_rows(measurements.read_text(encoding="utf-8"))
+    problems = [
+        f"gate arm missing from the current table in {MEASUREMENTS_REL}: {arm}"
+        for arm in sorted(expected - documented)
     ]
+    problems += [
+        f"stale gate arm in the current table in {MEASUREMENTS_REL}: {arm}"
+        for arm in sorted(documented - expected)
+    ]
+    return problems
 
 
 def main() -> int:
