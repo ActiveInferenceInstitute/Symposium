@@ -52,7 +52,8 @@ answers into fixtures or test reports.
 
 [CI](../.github/workflows/ci.yml) configures Ubuntu jobs on Python 3.12, 3.13 and
 3.14. It runs lint, formatting, the test/coverage gate, distribution building, edition
-validation and actual approved-public-tree verification/site rendering. This is not
+validation and actual approved-public-tree verification/site rendering. The workflow
+also runs the pinned GNN conformance baseline (see `.github/GNN.md`). This is not
 cross-platform CI; macOS checks require separate evidence, and Windows is not
 established by this matrix.
 
