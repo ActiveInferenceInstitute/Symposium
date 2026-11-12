@@ -1,18 +1,45 @@
 # Symposium TODO / Backlog
 
-## Current intake work — 2026-10-27
+## Current intake work — 2026-11-12
 
-- [ ] Review each fresh organizer snapshot, consent exclusions and ambiguous identities.
-- [ ] Resolve pending abstracts and unconfirmed sessions from authoritative organizer input.
-- [ ] Generate and visually inspect candidate native artifacts before public staging.
-- [ ] Run public integrity/readiness checks and review the private update report before integration.
-- [ ] Verify the deployed site and downloads against the approved manifest after an authorized release.
-- [ ] Authorize and separately review any optional paid research workflows; never auto-publish drafts.
+The November 12 organizer snapshot has now been reviewed, staged and published as
+version 3.3.0, which supersedes the 2026-10-27 intake list. What follows is the state
+of that intake, with the residual items that are still open.
+
+- [x] **Organizer snapshot, consent exclusions and ambiguous identities reviewed.**
+  119 consenting participants in the published projection (latest answer per email is
+  an affirmative "Yes" and no answer for the same email is "No"); two previously
+  listed participants no longer appear and were removed without inferring a reason.
+  ✓ [`docs/release_3_3_0.md`](docs/release_3_3_0.md)
+- [ ] **One withheld registration still needs an organizer decision.** A consenting
+  registration is withheld because its affiliations field contains contact
+  information requiring review; the repository records the fact but not the redaction
+  or a re-review. Owner: organizers. ✓ same record, "Public data and analyses".
+- [ ] **Two abstracts are still pending, and cannot be authored here.**
+  `data/public/2026/program.json` carries 55 presentations; no `abstract` exists for
+  `talk-350722794e66b4b8` ("Active Inference and Free Energy Principle in 2026") or
+  `talk-b5f346f866630c4c` ("Evolution, Emergence, Prediction."). The site shows them
+  as missing rather than inventing text. Owner: those presenters / organizers.
+- [x] **Native artifacts generated and visually inspected.** All 60 PDF pages were
+  reviewed and the Word book contains every contribution title and the version DOI
+  (text equivalence alone would not have established this). ✓ release record.
+- [x] **Public integrity/readiness checks ran.** `./gate.sh program` passes (54.02 s
+  at `b43415b` in the [gate measurements](docs/_generated/gate-measurements.md)), and
+  the six deposited assets were downloaded unauthenticated and matched byte-for-byte.
+  ✓ gate measurements + release record.
+- [x] **Deployed site and downloads verified against the manifest (2026-11-12).**
+  `https://activeinferenceinstitute.github.io/Symposium/` served `index.html`
+  (`90cdff7d…`), `program.json` (`217b4a45…`) and `downloads/book.pdf`
+  (`9308767e…`) byte-identical to `origin/gh-pages` and to
+  `data/public/2026/book.pdf`; `data/public/2026/` has not changed since the
+  publishing build (`7ecac04`), so the served snapshot is the current approved tree.
+- [ ] **No optional paid research workflow has been authorized.** Nothing in this
+  repository records an approval, and the standing rule is unchanged: generated
+  drafts never enter the public projection automatically. Owner: organizers.
 
 See [operator workflow](docs/organizing_publication.md) and [methods](docs/methods.md).
-These are continuing organizer/release tasks, not claims that a new intake or
-publication has occurred. Historical completed/deferred records below are retained
-verbatim and do not establish current runtime or scientific validation.
+These remain continuing organizer/release tasks; the completed records below are
+historical evidence and do not establish current runtime or scientific validation.
 
 ---
 
@@ -32,15 +59,15 @@ checkout.
   [gate measurements](docs/_generated/gate-measurements.md) rather than copied here.
   This is one host's run, not cross-platform or release evidence.
 
-### Retained 2026-11-11 record
+### Retained 2026-11-11 record (superseded — history only, no action)
 
-- [ ] **`.venv` is not usable here.** The committed environment contract is
+- **`.venv` is not usable here.** The committed environment contract is
   `uv sync --locked --extra dev` (Python 3.12, `python-version` = 3.12), but the
   local `.venv` has no third-party packages installed: `uv run --no-sync python -c
   "import pandas"` fails with `ModuleNotFoundError: No module named 'pandas'`.
   Recreate the environment with `uv sync --locked --extra dev` once network is
   available.
-- [ ] **Offline dependency cache is incomplete (wheel gap).** `uv sync --locked
+- **Offline dependency cache is incomplete (wheel gap).** `uv sync --locked
   --extra dev --offline` resolves the lock but then fails:
   `Failed to download pandas==3.1.0` / `Network connectivity is disabled, but the
   requested data wasn't found in the cache`. The lock pins `pandas==3.1.0` and
@@ -48,7 +75,7 @@ checkout.
   `cp312-cp312-macosx_11_0_arm64` / `cp312-…-macosx_14_0_arm64` wheels, not the
   wheel payloads (cp313/cp314 variants are present). Populate the cache on a
   networked machine, or run on a host that can reach PyPI.
-- [ ] **The test suite cannot run in this checkout.** Because of the two items
+- **The test suite could not run in that checkout.** Because of the two items
   above, `uv run python -m pytest` (the command documented in `README.md`,
   `AGENTS.md`, `.aii/README.md` and `pyproject.toml`'s `addopts` with the 80%
   coverage gate) is not executable offline; documentation was validated
@@ -57,18 +84,64 @@ checkout.
 
 ---
 
-## Data assets (verified 2026-11-11)
+## Data assets (re-checked 2026-11-12)
 
 - [ ] **`data/prompts/` is not read by the package.** `System_Prompts.json`,
   `project.txt`, `TechTree.txt` and `raoadmap2agents.txt` are static prompt texts;
-  no module in `src/`, `run.py` or `launch.py` loads them (the active prompts are
-  embedded inline). Decide whether to wire these assets into a workflow or retire
-  them, and keep [`data/prompts/README.md`](data/prompts/README.md) accurate either
-  way.
+  no module in `src/`, `run.py`, `launch.py` or `scripts/` loads them (the active
+  prompts are embedded inline). Decide whether to wire these assets into a workflow
+  or retire them, and keep [`data/prompts/README.md`](data/prompts/README.md)
+  accurate either way. Owner: maintainer. Blocked on that product decision, not on
+  any external input.
+
+---
+
+## Drift verified 2026-11-12
+
+- [ ] **The GNN pin is one release behind the estate cutover.**
+  [`.github/gnn-pin.json`](.github/gnn-pin.json) records `v5.0.3` at
+  `8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1`. Upstream tag `v5.1.0` resolves to
+  `75c834bd8519dc7b5adc4d24f16bf393cfd1ecdf` (GitHub API, 2026-11-12), and the
+  exemplar the arm fetches (`input/gnn_files/basics/static_perception.md`) still
+  exists at that revision, so the bump is mechanical: update `revision` and `tag`,
+  then run `./gate.sh gnn`, which installs into its own `.gate/gnn` environment and
+  prints version, revision and result. Owner: maintainer of this repository's GNN
+  adoption. Only the local arm can confirm it — hosted CI is not evidence (next
+  item).
+- **Hosted CI cannot be cited as evidence right now.** The organization's Actions
+  minutes are billing-locked, so no `ci.yml` or `pages.yml` run in this repository
+  proves anything; the local arms recorded in the
+  [gate measurements](docs/_generated/gate-measurements.md) are the evidence, and
+  Pages is served from the `gh-pages` branch for the same reason (see
+  [`docs/organizing_publication.md`](docs/organizing_publication.md)).
 
 ---
 
 ## Completed / Closed
+
+### 2026-11-12 — gate, release and publishing
+- [x] **One gate entry point** — `gate.sh` with separately runnable arms `lint`,
+  `test`, `test-fast`, `build`, `program`, `site`, `docs` and `gnn`;
+  `ci.yml`/`pages.yml` call the arms instead of restating commands. ✓ `c1c2361`
+  (PR #20), review follow-up `9d95d09` (PR #21)
+- [x] **Generated gate measurements** — `docs/_generated/gate-measurements.md` (host,
+  commit, counts, per-arm wall time) refreshed by `scripts/gate_metrics.py`. ✓
+  `c1c2361`
+- [x] **GNN importer pin has one executable source** — `.github/gnn-pin.json`
+  (schema `gnn-importer-pin/v1`, `v5.0.3`, `8f293d9b`) with
+  `scripts/gnn_conformance.py` and the `gnn-conformance` job. ✓ `b43415b` (PR #18)
+- [x] **2026 presenter program v3.3.0 published** — final 55-contribution lineup,
+  119 consenting participants, 19 explicit UTC sessions; book on Zenodo
+  (10.5281/zenodo.24161029) with six byte-verified assets plus the GitHub `v3.3.0`
+  release. ✓ `ca53d34`, merge `7ecac04` (PR #19),
+  [`docs/release_3_3_0.md`](docs/release_3_3_0.md)
+- [x] **Sidecar cites the v3.3.0 book DOI.** ✓ `8bf36aa` (PR #24)
+- [x] **Pages served from the `gh-pages` branch while Actions is unavailable** —
+  locally built, byte-verified `verify_public_tree` + `build_site` output plus
+  `.nojekyll` and `* -text` so the CRLF calendar stays exact. ✓ `b3fb4c3` (PR #22)
+- [x] **Participant network-figure legibility** — node IDs placed off their own
+  edges, the overlap diagnostic counts only drawn text, and a regression test renders
+  three network shapes. ✓ `70f54f1`, merge `9cedd72` (PR #23)
 
 Items resolved during the 2026-08-01 hostile red-team pass.
 
@@ -199,7 +272,8 @@ Docs:
 - [x] **Ruff-only tooling + lint cleanup:** removed `black` (dev dep + `[tool.black]`) in favor
   of `ruff format`; whole `src/` + `tests/` reformatted and `ruff check` clean (0 errors).
   Removed further dead code/unused imports and renamed ambiguous `l`/`G` names.
-- [x] **R3 — real-API opt-in marker** (see Major section; implemented).
+- [x] **R3 — real-API opt-in marker** — live-LLM tests are gated behind the `real_api`
+  marker registered in `pyproject.toml`; run them with `-m real_api` (keys required).
 - [x] **Coverage ~86%:** added tests for `io/readers`, `cli/analyze` (backgrounds/curricula),
   `cli/generate`, and `core/config` (set/save/ensure_paths/get_path).
 
@@ -211,24 +285,25 @@ The three originally-deferred Majors (M1 coverage, M2 run.py orchestration, M3 l
 were substantially addressed in the 2026-08-01 completion pass (see Completed/Closed below).
 What remains below are the residual / aspirational follow-ups not fully closed.
 
-### R1 — Push coverage from ~86% to the documented >90% target
-- **Status:** overall coverage ~86% (up from ~48% in the first pass) with a `--cov-fail-under=80`
-  regression gate. Low-coverage modules now: `cli/analyze.py` (~74%), `cli/generate.py` (~81%),
-  `io/readers.py` (~84%).
-- **Suggested fix:** add remaining edge-case tests (error paths, empty inputs) to climb above
-  90%; then raise `--cov-fail-under` to match.
+### R1 — Push coverage from 89.76% to the documented >90% target
+- **Status:** the full arm recorded 776 passed, 9 skipped and 89.76% coverage at `b43415b`
+  ([gate measurements](docs/_generated/gate-measurements.md)); the regression gate in
+  `pyproject.toml` is still `--cov-fail-under=80`. The per-module figures (~74%
+  `cli/analyze.py` etc.) predate the coverage uplift and are not reproduced by any current
+  record, so they are no longer restated here.
+- **Suggested fix:** add the remaining edge-case tests (error paths, empty inputs) to climb
+  above 90%, then raise `--cov-fail-under` to match. Owner: maintainer; no external blocker,
+  only unmeasured headroom.
 
-### R2 — Full consolidation of the `run.py` interactive menu into the package
-- **Status:** the subprocess shell-out to the console script was removed (calls package
-  functions in-process) and `run.py` was hardened; duplicated config/API-client wiring across
-  the menu methods remains.
-- **Suggested fix:** extract the remaining duplicated config/client/path wiring into the
-  `symposium.cli` / `symposium.*` public surface and have the menu methods delegate to it.
-
-### R3 — Real-API tests opt-in marker — DONE
-- **Status:** live-LLM tests are now gated behind the `real_api` pytest marker (registered in
-  `pyproject.toml`), so routine runs never spend unexpectedly; run them via `-m real_api`
-  (still requiring API keys). Moved to Completed.
+### R2 — Consolidate the `APIClient.create` wiring that now lives in the CLI
+- **Status:** the menu duplication is gone — every `run.py` operation delegates to
+  `SymposiumRunner.create_api_client` / `load_config` (`run.py:44-56`). The same
+  `Config(...)` + `APIClient.create(...)` construction (provider plus
+  `get_api_config`/`get_api_key`) is now repeated six times:
+  `src/symposium/cli/analyze.py:40,75,118,153` and `src/symposium/cli/generate.py:19,56`.
+- **Suggested fix:** one helper (on `Config`, or a small factory beside `APIClient.create`)
+  that both the CLI commands and `run.py` call, so provider/key handling cannot drift between
+  the two entry points. Owner: maintainer.
 
 ---
 
@@ -324,10 +399,18 @@ All items below were implemented in this pass (commits `669643f`, `98ae63d`, `a6
 ### Open / deferred
 - None from this pass. (Pre-existing R1/R2 residuals in the Major section above
   remain open; R3 is done.)
-- Mypy cleanliness is a pre-existing environment-dependent issue (stub availability);
-  a follow-up could add `mypy src/symposium` to CI once it passes.
-- Heavy suites (Julia/LaTeX) do not apply — this is a Python repo; the full pytest
-  suite was run locally (188 passed / 8 skipped / 86.26%, gate 80%).
+- [ ] **Mypy is still far from clean** (re-measured 2026-11-12):
+  `uv run --no-sync mypy src/symposium` reports **89 errors in 26 files**. Most are
+  missing third-party stubs (`pandas-stubs`, `types-networkx`, and no `py.typed` for
+  `sklearn.feature_extraction.text`), which `mypy --install-types` or dev-dependency
+  additions would settle. The rest are real annotations, e.g.
+  `src/symposium/core/api.py:108` (a `str | None` returned as `str`),
+  `src/symposium/core/__init__.py:40` (a `str | Path` passed to a `Path` parameter)
+  and `src/symposium/generation/profiles.py:157` (unannotated `results`). Add
+  `mypy src/symposium` to the `lint` arm only after it passes. Owner: maintainer.
+- Heavy suites (Julia/LaTeX) do not apply — this is a Python repo; the current full
+  suite result is the generated gate measurement (776 passed, 9 skipped, 89.76%,
+  gate 80%), not the 188-test figure from this pass.
 
 ---
 
@@ -340,10 +423,8 @@ All items below were implemented in this pass (commits `669643f`, `98ae63d`, `a6
   A delegation reviewer flagged the `mock_api_client` fixture as violating a claimed "no-mock"
   policy; that policy is **not** part of this repo, so the mock infrastructure was intentionally
   left in place (an unmatched drive-by "fix" would have contradicted the repo).
-- **Dead non-test demo:** `tests/test_visualization/test_pca_visualizations.py` is a standalone
-  demo (0 tests collected by pytest, writes `test_pca_output/` when run directly). Left as-is to
-  avoid deleting a runnable example; a follow-up should either add real `PCAAnalyzer` asserts or
-  move it to an `examples/` dir.
-- Real-API tests (`TestRealAPIWorkflows`, `TestRealAPIIntegration`) are intentional live-LLM
-  checks and skip when keys are absent; a dedicated opt-in marker to prevent surprise spend when
-  keys are present is a follow-up consideration (tracked under M1's test-architecture cleanup).
+- **`test_pca_visualizations.py` is no longer a demo.** It now collects 10 `PCAAnalyzer` tests
+  that write into `tmp_path` (checked 2026-11-12); the earlier "0 tests collected, writes
+  `test_pca_output/`" note described the pre-uplift file and has been removed.
+- Real-API tests (`TestRealAPIWorkflows`, `TestRealAPIIntegration`) skip when keys are absent
+  and are gated behind the `real_api` marker; no opt-in work remains outstanding (R3).
