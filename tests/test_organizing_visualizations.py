@@ -313,3 +313,33 @@ def test_comparison_histograms_share_actual_bar_geometry(
         assert sum(bar.get_height() for bar in second.patches) == len(bundle["presentations"])
     finally:
         plt.close(figure)
+
+
+@pytest.mark.parametrize(
+    "pairs",
+    [
+        ((0, 1), (1, 2)),
+        ((0, 1), (1, 2), (3, 4), (4, 5)),
+        ((0, 1), (0, 2), (0, 3)),
+    ],
+)
+def test_network_node_ids_do_not_collide_with_edge_weights(
+    pairs: tuple[tuple[int, int], ...], tmp_path: Path
+) -> None:
+    from scipy.sparse import csr_matrix
+
+    from symposium.organizing.visualization_charts import participant_network, save_chart
+    from symposium.organizing.visualization_data import PublicId, TextFeatures
+
+    # Two isolated records, as in a real cohort, keep the isolate panel populated.
+    count = 3 + max(index for pair in pairs for index in pair)
+    ids = tuple(PublicId(f"person-{index:016x}") for index in range(count))
+    cosine = np.zeros((count, count))
+    for first, second in pairs:
+        cosine[first, second] = cosine[second, first] = 0.3
+    empty = csr_matrix((count, 0))
+    features = TextFeatures(ids, empty, empty, (), tuple(range(count)), cosine)
+    summary = participant_network(features)
+    receipt = save_chart(summary.figure, tmp_path / "network.png")
+    assert len(summary.edges) == len(pairs)
+    assert receipt.overlapping_text_pairs == 0

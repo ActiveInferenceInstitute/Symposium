@@ -54,7 +54,7 @@ these charts are not anonymized data.
 | `participant-coverage.png` | All captured participants, including zero-answer records; per-field answer counts and answered-field distribution. |
 | `participant-topic-weights.png` | Count-based two-topic LDA, shown as a one-dimensional weight histogram; complementary weights are not separate spatial axes. |
 | `participant-nmf.png` | Two TF-IDF NMF component weights with symlog axes; no overlapping point labels. Full public-ID coordinates are in `data/participant-nmf-key.csv`. |
-| `participant-text-network.png` | Text cosine edges at `>= 0.2`, enlarged with labels only on connected records; isolated records remain counted and drawn separately. All IDs and edge weights remain in `data/network.json`. |
+| `participant-text-network.png` | Text cosine edges at `>= 0.2`, enlarged with labels only on connected records; each ID is placed away from its own edges so it cannot cover an edge weight. Isolated records remain counted and drawn separately. All IDs and edge weights remain in `data/network.json`. |
 | `presenter-program-overview.png` | Contribution-type counts and descriptive mean-TF-IDF abstract terms. Counts distinguish contribution records, missing abstracts and distinct exact trimmed presenter display/group strings, preserving case. Group strings are not split into verified people. |
 | `cohort-text-comparison.png` | Separate participant-answer and presentation-abstract length/completeness distributions. It does not compare separately fitted semantic coordinates. |
 
@@ -73,9 +73,10 @@ not externally validated themes.
 
 `visualizations.json` binds program/capture/participant hashes, exact row orders,
 missing-text masks, actual model classes, model statuses, seed, installed package
-versions, figure/data hashes, and final-draw text-box diagnostics. Nonzero text-box
-overlap counts require inspection; even zero counts do not replace an independent
-visual review. The manifest does not certify lock compatibility or live freshness.
+versions, figure/data hashes, and final-draw text-box diagnostics. The diagnostic
+counts only text that is actually drawn: tick labels of a hidden axis or of a tick
+outside the view limits are excluded. Nonzero text-box overlap counts require
+inspection; even zero counts do not replace an independent visual review. The manifest does not certify lock compatibility or live freshness.
 
 ## Verification
 

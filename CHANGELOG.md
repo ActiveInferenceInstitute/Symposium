@@ -4,6 +4,16 @@ All notable changes to the Symposium package.
 
 ## [Unreleased] — 2026-11-12 (gate and documentation)
 
+### Participant figure legibility
+
+- The participant text-network figure places each node ID away from that node's own
+  edges. IDs placed above their node covered the similarity weight of any vertical
+  edge, which happened on the November 12 cohort.
+- The final-draw overlap diagnostic in `visualizations.json` counts only drawn text.
+  Tick labels of hidden axes and of ticks outside the view limits were counted before,
+  which reported overlaps that never appear in the image.
+- A regression test renders three network shapes and requires zero overlaps.
+
 One local gate, and CI calls it instead of restating commands.
 
 - Add `gate.sh`: one documented entry point with separately runnable arms `lint`,
