@@ -1,5 +1,9 @@
 # Symposium documentation
 
+This page is the hub: pick the guide for the job. [Documentation index](documentation-index.md)
+is the flat list of every long-lived document, including release records and
+hand-written policy; `./gate.sh docs` fails when a `docs/` file is missing from it.
+
 Current operator guides describe the source interfaces. Historical release records
 remain evidence of their own releases, not current test or deployment results.
 
@@ -7,6 +11,8 @@ remain evidence of their own releases, not current test or deployment results.
 |---|---|
 | [Installation](installation.md) | Python 3.12+, locked uv setup and offline checks |
 | [uv setup](../UV_SETUP.md) | Environment selection and troubleshooting |
+| [Development](development.md) | Gate arms, CI jobs, checks and release boundaries |
+| [Gate measurements](_generated/gate-measurements.md) | Generated wall time per gate arm (script-refreshed) |
 | [Organizer publication](organizing_publication.md) | Private intake, consent, artifacts, review and Pages |
 | [Integration catalog](integrations.md) | Reviewed repository evidence and task-specific handoffs |
 | [Discovery and indexing](discovery.md) | Canonical pages, sitemap, machine indexes and crawler limits |
@@ -20,8 +26,8 @@ remain evidence of their own releases, not current test or deployment results.
 | [Visualization](csv_visualization_guide.md) | Local text plots and reproducibility limits |
 | [2026 participant and presenter figures](visualizations_2026.md) | Public-cohort charts, approved-program summaries, missingness and reproducible artifact evidence |
 | [Architecture](architecture.md) | Module responsibilities and separate data paths |
-| [Development](development.md) | Checks, evidence and release boundaries |
 | [3.3.0 release record](release_3_3_0.md) | Final-lineup book on Zenodo, lineup changes, verified asset hashes and public-data scope |
+| [GNN conformance](../.github/GNN.md) | Pin file, revision, parsing scope and workflow job key |
 | [3.2.0 release record](release_3_2_0.md) | Published book and GitHub release, verified asset hashes, public-data scope and deployment results |
 | [Contributing](contributing.md) | Scoped changes and review expectations |
 | [Migration](migration.md) | Runtime transition and preserved historical inputs |

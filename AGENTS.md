@@ -37,10 +37,19 @@ user work and historical evidence. User/global workspace instructions remain bin
 
 ```bash
 uv sync --locked --extra dev
-uv run ruff check src/ tests/ run.py launch.py
-uv run ruff format --check src/ tests/ run.py launch.py
-uv run python -m pytest
+./gate.sh              # default arm: test-fast
+./gate.sh all          # every arm
+./gate.sh list         # arm names
 ```
+
+[`gate.sh`](gate.sh) is the single entry point: `lint`, `test`, `test-fast`, `build`,
+`program`, `site`, `docs` and `gnn`. Every `.github/workflows` job runs one of those
+arms, so the local and CI commands are the same text. Arm wall times on the host that
+last refreshed them are generated in
+[docs/_generated/gate-measurements.md](docs/_generated/gate-measurements.md); never
+hand-edit those numbers. There is no types arm: `mypy` is configured in
+`pyproject.toml` but has never been a gate and reports 89 errors (mostly missing
+third-party stubs). See [development](docs/development.md).
 
 `pytest` enforces the 80% coverage gate declared in `pyproject.toml`. Live-provider
 tests are opt-in via `uv run python -m pytest --run-real-api -m real_api` and need

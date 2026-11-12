@@ -13,7 +13,31 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Every job runs `./gate.sh <arm>`. The arm definitions live only in gate.sh, so a
+# local run and this workflow cannot drift; see docs/development.md. Lint and docs
+# run once here rather than in every matrix entry, and the build/program arms run
+# on the 3.12 pin instead of all three interpreters.
+
+env:
+  UV_VERSION: "0.13.5"
+
 jobs:
+  lint:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+      - name: Install locked dependencies
+        run: uv sync --locked --extra dev --python 3.12
+      - name: Lint arm
+        run: ./gate.sh lint
+      - name: Documentation arm
+        run: ./gate.sh docs
+
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
@@ -21,135 +45,45 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.12", "3.13", "3.14"]
-    env:
-      UV_PYTHON: ${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          version: "0.13.5"
+          version: ${{ env.UV_VERSION }}
           python-version: ${{ matrix.python-version }}
       - name: Install locked dependencies
         run: uv sync --locked --extra dev --python "${{ matrix.python-version }}"
-      - name: Lint
-        run: uv run --no-sync ruff check src/ tests/ run.py launch.py
-      - name: Format
-        run: uv run --no-sync ruff format --check src/ tests/ run.py launch.py
-      - name: Tests and coverage gate
-        run: uv run --no-sync python -m pytest --no-header
-      - name: Build distribution
-        run: uv build
-      - name: Offline edition scaffold
-        run: |
-          uv run --no-sync symposium --version
-          uv run --no-sync symposium edition validate --year 2026
-      - name: Verify approved public program and renderer
-        run: |
-          uv run --no-sync symposium organize check-public --public-dir data/public/2026
-          uv run --no-sync symposium organize readiness --public-dir data/public/2026
-          uv run --no-sync symposium organize site --public-dir data/public/2026 --output-dir "$RUNNER_TEMP/symposium-public-site"
+      - name: Test arm
+        run: ./gate.sh test
 
-  # GNN pin: .github/gnn-pin.json (v5.0.3, 8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1)
+  build:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+      - name: Install locked dependencies
+        run: uv sync --locked --extra dev --python 3.12
+      - name: Build arm
+        run: ./gate.sh build
+      - name: Program arm
+        run: ./gate.sh program
+
+  # Pin: .github/gnn-pin.json (schema gnn-importer-pin/v1). The arm installs the
+  # pinned parser in an isolated environment and verifies it; it needs no project
+  # dependency environment.
   gnn-conformance:
     name: gnn conformance (pinned)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Set up Python
-        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
+          version: ${{ env.UV_VERSION }}
           python-version: "3.12"
-      - name: Install pinned GNN parser
-        run: |
-          python -m pip install --disable-pip-version-check defusedxml psutil pyyaml
-          python - <<'PY'
-          import json
-          import subprocess
-          import sys
-          from pathlib import Path
-
-          pin = json.loads(Path(".github/gnn-pin.json").read_text(encoding="utf-8"))
-          assert pin["repository"] == "ActiveInferenceInstitute/Generalized_Notation_Notation"
-          assert pin["tag"] == "v5.0.3"
-          assert pin["revision"] == "8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1"
-          spec = (
-              "generalized-notation-notation @ "
-              f"git+https://github.com/{pin['repository']}.git@{pin['revision']}"
-          )
-          subprocess.check_call(
-              [sys.executable, "-m", "pip", "install", "--disable-pip-version-check", "--no-deps", spec]
-          )
-          PY
-      - name: Verify pinned parser and repository sketches
-        run: |
-          python - <<'PY'
-          import json
-          import shutil
-          import tempfile
-          import urllib.request
-          from pathlib import Path
-
-          from gnn import __version__
-          from gnn.parsers.basic import parse_gnn_formal, validate_gnn_syntax
-          from gnn.type_checker import GNNTypeChecker
-
-          pin = json.loads(Path(".github/gnn-pin.json").read_text(encoding="utf-8"))
-          expected_version = pin["tag"].removeprefix("v")
-          if __version__ != expected_version:
-              raise SystemExit(f"installed GNN {__version__!r} does not match {pin['tag']!r}")
-
-          sketches = sorted(Path(".").rglob("*.gnn.md"))
-          if sketches:
-              for sketch in sketches:
-                  parsed = parse_gnn_formal(sketch)
-                  if parsed is None or getattr(parsed, "parse_errors", None):
-                      raise SystemExit(f"{sketch} did not parse cleanly")
-                  valid, errors = validate_gnn_syntax(sketch.read_text(encoding="utf-8"))
-                  if not valid:
-                      raise SystemExit(f"{sketch} syntax errors: {errors!r}")
-              with tempfile.TemporaryDirectory(prefix="repo-gnn-") as output_dir:
-                  model_dir = Path(output_dir) / "models"
-                  model_dir.mkdir()
-                  for index, sketch in enumerate(sketches):
-                      shutil.copy2(sketch, model_dir / f"{index:03d}_{sketch.name}")
-                  if not GNNTypeChecker().validate_gnn_files(model_dir, Path(output_dir)):
-                      raise SystemExit("GNN type checker rejected the repository sketches")
-              checked = len(sketches)
-              source = "repository"
-          else:
-              exemplar_url = (
-                  "https://raw.githubusercontent.com/ActiveInferenceInstitute/"
-                  "Generalized_Notation_Notation/"
-                  f"{pin['revision']}/input/gnn_files/basics/static_perception.md"
-              )
-              with tempfile.TemporaryDirectory(prefix="pinned-exemplar-") as output_dir:
-                  exemplar = Path(output_dir) / "static_perception.md"
-                  urllib.request.urlretrieve(exemplar_url, exemplar)
-                  parsed = parse_gnn_formal(exemplar)
-                  if parsed is None or getattr(parsed, "parse_errors", None):
-                      raise SystemExit("pinned exemplar did not parse cleanly")
-                  valid, errors = validate_gnn_syntax(exemplar.read_text(encoding="utf-8"))
-                  if not valid:
-                      raise SystemExit(f"pinned exemplar syntax errors: {errors!r}")
-                  model_dir = Path(output_dir) / "models"
-                  model_dir.mkdir()
-                  shutil.copy2(exemplar, model_dir / exemplar.name)
-                  if not GNNTypeChecker().validate_gnn_files(model_dir, Path(output_dir)):
-                      raise SystemExit("GNN type checker rejected the pinned exemplar")
-              checked = 1
-              source = "pinned-exemplar"
-
-          print(
-              json.dumps(
-                  {
-                      "gnn-version": __version__,
-                      "pin-revision": pin["revision"],
-                      "models": checked,
-                      "source": source,
-                      "result": "verified",
-                  },
-                  sort_keys=True,
-              )
-          )
-          PY
+      - name: GNN conformance arm
+        run: ./gate.sh gnn
