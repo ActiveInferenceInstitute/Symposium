@@ -6,6 +6,7 @@ on:
     paths:
       - 'data/public/2026/**'
       - 'src/symposium/organizing/**'
+      - 'src/symposium/cli/**'
       - 'pyproject.toml'
       - 'uv.lock'
       - 'gate.sh'

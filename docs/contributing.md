@@ -11,9 +11,9 @@ Use Python 3.12 for development and synchronize once with
 [`./gate.sh`](../gate.sh): `./gate.sh lint`, `./gate.sh test` (full, with the
 coverage gate), `./gate.sh test-fast`, `./gate.sh docs`, `./gate.sh build`,
 `./gate.sh program` and `./gate.sh gnn`. Run `./gate.sh all` before proposing a
-change; each arm is the exact command CI runs, and there is no separate CI-only
-recipe. Follow the existing 100-character Ruff configuration and module
-interfaces; document actual behavior and failure conditions.
+change; CI runs the same arms (except the local-only `test-fast`), so there is no
+separate CI-only recipe. Follow the existing 100-character Ruff configuration and
+module interfaces; document actual behavior and failure conditions.
 
 A useful change description states the original problem, resulting behavior,
 validation commands and evidence, and remaining limits. Documentation examples

@@ -51,7 +51,7 @@
 
 | Task | Command | Working directory | Description |
 | --- | --- | --- | --- |
-| `test` | `uv run python -m pytest` | `.` | Run the test suite through the locked uv environment. |
+| `test` | `./gate.sh test` | `.` | Run the full test suite and coverage gate through the repository gate. |
 
 ## Validation
 

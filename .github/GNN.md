@@ -10,8 +10,9 @@ The canonical pin is [`.github/gnn-pin.json`](gnn-pin.json), schema
 | `tag` | `v5.0.3` |
 | `recorded` | `2026-11-12` |
 
-The pin file is the only place that revision is written. The job reads it and does
-not restate it, so a bump is one edit.
+The pin file is the sole executable source of that revision: the job reads it and
+does not restate it, so a bump is one edit. The table above copies the values for
+readers only.
 
 ## Job
 

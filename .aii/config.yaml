@@ -73,8 +73,8 @@ capabilities:
 - citation
 tasks:
   test:
-    cmd: uv run python -m pytest
-    description: Run the test suite through the locked uv environment.
+    cmd: ./gate.sh test
+    description: Run the full test suite and coverage gate through ./gate.sh.
 docs:
 - README.md
 - AGENTS.md

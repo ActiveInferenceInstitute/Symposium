@@ -43,8 +43,9 @@ uv sync --locked --extra dev
 ```
 
 [`gate.sh`](gate.sh) is the single entry point: `lint`, `test`, `test-fast`, `build`,
-`program`, `site`, `docs` and `gnn`. Every `.github/workflows` job runs one of those
-arms, so the local and CI commands are the same text. Arm wall times on the host that
+`program`, `site`, `docs` and `gnn`. The `ci.yml` jobs call those arms instead of
+restating commands, and `pages.yml` calls `site`, so the local and CI commands are the
+same text; `test-fast` is local-only. Arm wall times on the host that
 last refreshed them are generated in
 [docs/_generated/gate-measurements.md](docs/_generated/gate-measurements.md); never
 hand-edit those numbers. There is no types arm: `mypy` is configured in

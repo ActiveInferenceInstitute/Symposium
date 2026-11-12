@@ -169,12 +169,11 @@ An empty schedule template is not a confirmed event schedule.
 ## Verification
 
 ```bash
-uv run ruff check src/ tests/ run.py launch.py
-uv run ruff format --check src/ tests/ run.py launch.py
-uv run python -m pytest
-uv build
+./gate.sh lint
+./gate.sh test
+./gate.sh build
 ```
 
 Live-provider tests require explicit opt-in with `--run-real-api -m real_api`. Refer to the
-[development guide](development.md) for current checks. Historical release records
-do not establish current test outcomes.
+[development guide](development.md) for the arm list and current checks. Historical
+release records do not establish current test outcomes.

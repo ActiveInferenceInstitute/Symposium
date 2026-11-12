@@ -8,10 +8,12 @@ platform boundaries and the separate Template renderer environment.
 uv sync --locked --extra dev --python 3.12
 uv run --no-sync symposium --help
 uv run --no-sync python -c 'import sys; print(sys.prefix); print(sys.base_prefix)'
-uv run --no-sync python -m pytest
+./gate.sh test
 ```
 
 Run from the checkout. No activation or bare `pytest` invocation is needed.
+[`./gate.sh`](gate.sh) is the one verification entry point; its arms are listed in
+[development](docs/development.md).
 `uv sync --locked` checks the committed resolution; dependency upgrades require a
 reviewed lockfile change. `uv run --no-sync` uses the already synchronized environment.
 If another environment is active, unset `VIRTUAL_ENV` before selecting the project

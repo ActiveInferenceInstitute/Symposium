@@ -232,8 +232,10 @@ uv sync --locked --extra dev
 ./gate.sh all      # every arm (see ./gate.sh list)
 ```
 
-[`gate.sh`](gate.sh) is the one entry point, and each arm is the exact command the
-workflow job runs. The coverage regression gate is 80%. Tests cover historical
+[`gate.sh`](gate.sh) is the one entry point. The workflow jobs call these arms
+instead of restating commands (`test-fast` is local-only), so the coverage gate and
+the lint, build, program and documentation checks are the same text in both places.
+The coverage regression gate is 80%. Tests cover historical
 workflows, real temporary CSV files, offline onboarding, failure cases, and generated
 reports. Tests requiring live providers are opt-in (`uv run python -m pytest
 --run-real-api -m real_api`) and require credentials. Recorded wall times per arm are
