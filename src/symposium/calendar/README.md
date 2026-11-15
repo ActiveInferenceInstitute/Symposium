@@ -29,6 +29,20 @@ exporter.export_symposium_schedule(
 )
 ```
 
+### Timestamp and publication guarantees
+
+`ScheduleExporter` accepts ISO datetime strings and `datetime` objects. `Z` and
+explicit offsets preserve their instant; naive values use the configured timezone.
+Invalid supplied timestamps raise `ValueError` instead of becoming the current time.
+
+Calendar serialization completes before publication. The exporter writes, flushes,
+syncs and closes its own same-directory temporary file before atomic replacement.
+A failed publication preserves an existing destination and cleans only that
+operation's temporary file.
+
+This legacy exporter is separate from approved-public calendar generation. These
+guarantees do not regenerate or requalify released calendars or books.
+
 ## Export Formats
 
 ### ICS (iCalendar)

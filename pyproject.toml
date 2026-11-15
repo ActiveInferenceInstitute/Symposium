@@ -74,10 +74,14 @@ exclude = [
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
-addopts = "--cov=src/symposium --cov-report=html --cov-report=term --cov-fail-under=80"
+addopts = "--cov=src/symposium --cov-report=html --cov-report=term"
 markers = [
     "real_api: tests that call live LLM provider APIs (opt-in via -m real_api; require API keys)",
 ]
+
+[tool.coverage.report]
+fail_under = 90.01
+precision = 2
 
 [tool.ruff]
 line-length = 100

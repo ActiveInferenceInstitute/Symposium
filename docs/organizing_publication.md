@@ -230,6 +230,11 @@ November 12, 2026 the repository's Pages source is the `gh-pages` branch at `/`
 `main`, plus `.nojekyll` and a `.gitattributes` of `* -text` so the CRLF calendar and
 every other file are committed byte for byte.
 
+Actual publication requires separate approval. Bind `PUBLISH_REMOTE` to the reviewed
+publication remote and `SOURCE_COMMIT` to the reviewed revision used for the approved
+build. The following continuation requires an existing `gh-pages` branch and a fresh
+private site directory; it is not a branch-initialization or force-push recipe.
+
 ```bash
 SITE="$SYMPOSIUM_PRIVATE_DIR/pages-site"   # must not exist yet
 uv run python - "$SITE" <<'PY'
@@ -241,18 +246,40 @@ root = Path("data/public/2026")
 build_site(verify_public_tree(root), Path(sys.argv[1]), assets_dir=root, artifacts_dir=root)
 PY
 touch "$SITE/.nojekyll"; printf '* -text\n' > "$SITE/.gitattributes"
-git -C "$SITE" init -q -b gh-pages && git -C "$SITE" add -A
-git -C "$SITE" commit -q -m "Publish the approved site built from main $(git rev-parse --short HEAD)"
-git -C "$SITE" fetch -q https://github.com/ActiveInferenceInstitute/Symposium.git gh-pages
-git -C "$SITE" reset --soft FETCH_HEAD && git -C "$SITE" commit -q --amend --no-edit
-git -C "$SITE" push https://github.com/ActiveInferenceInstitute/Symposium.git gh-pages
+(
+  set -eu
+  test ! -e "$SITE/.git"
+  git -C "$SITE" init -q -b gh-pages
+  git -C "$SITE" add -A
+  STAGED_TREE="$(git -C "$SITE" write-tree)"
+  git -C "$SITE" fetch -q "$PUBLISH_REMOTE" refs/heads/gh-pages
+  PUBLISHED="$(git -C "$SITE" rev-parse --verify 'FETCH_HEAD^{commit}')"
+  git -C "$SITE" update-ref refs/heads/gh-pages "$PUBLISHED" ""
+  test "$(git -C "$SITE" write-tree)" = "$STAGED_TREE"
+  if test "$STAGED_TREE" = "$(git -C "$SITE" rev-parse "$PUBLISHED^{tree}")"; then
+    printf '%s\n' 'Approved site unchanged; no commit or push required.'
+  else
+    git -C "$SITE" commit -q -m "Publish approved site built from main $SOURCE_COMMIT"
+    test "$(git -C "$SITE" rev-parse 'HEAD^')" = "$PUBLISHED"
+    test "$(git -C "$SITE" rev-parse 'HEAD^{tree}')" = "$STAGED_TREE"
+    git -C "$SITE" merge-base --is-ancestor "$PUBLISHED" HEAD
+    git -C "$SITE" push "$PUBLISH_REMOTE" HEAD:refs/heads/gh-pages
+  fi
+)
 ```
 
-The fetch and soft reset make the new snapshot a descendant of the published branch,
-so the push is an ordinary fast-forward. After the Pages build reports `built`, compare
-every published file with the local output byte for byte. To return to the workflow,
-set the Pages source back to GitHub Actions; the `pages.yml` deploy then replaces the
-branch-built site.
+The fresh branch is anchored at the fetched tip without changing the staged index.
+An ordinary new commit therefore has that tip as its parent and the captured staged
+tree as its tree. Identical trees require neither a commit nor a push. A concurrently
+advanced remote must reject an ordinary stale push; do not force, reset or amend
+around it.
+
+A disposable-local-remote proof on 2026-11-13 exercised changed and identical trees,
+exact parent/ancestry, committed CRLF calendar bytes, and stale-push rejection. It
+did not publish or verify a hosted site. After an authorized Pages build reports
+`built`, compare published files with the approved local output byte for byte.
+Returning Pages to GitHub Actions remains a separate owner-approved deployment
+change.
 
 ## Command-line workflow
 

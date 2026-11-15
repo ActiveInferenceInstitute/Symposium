@@ -168,7 +168,10 @@ def validate_mapping(config: object) -> dict[str, Any]:
             or len(set(mapping.values())) != len(fields)
         ):
             raise PublicationError("Source field mapping must be complete, unique, and allowlisted")
-    return json.loads(canonical_bytes(config))
+    detached = json.loads(canonical_bytes(config))
+    if not isinstance(detached, dict):
+        raise PublicationError("Invalid bridge mapping schema")
+    return detached
 
 
 def pull_snapshot(

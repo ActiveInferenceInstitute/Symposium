@@ -1,7 +1,6 @@
 """Core functionality for the symposium package."""
 
 from pathlib import Path
-from typing import Any, Dict
 
 from symposium.core.api import (
     APIClient,
@@ -13,6 +12,7 @@ from symposium.core.api import (
 from symposium.core.config import Config
 from symposium.core.data_loader import DataLoader
 from symposium.core.logging_utils import setup_logging
+from symposium.core.participant_schema import Participant
 
 __all__ = [
     "APIClient",
@@ -28,7 +28,7 @@ __all__ = [
 
 
 # Convenience function for loading participant data
-def load_participant_data(csv_path: str | Path) -> Dict[str, Dict[str, Any]]:
+def load_participant_data(csv_path: str | Path) -> dict[str, Participant]:
     """Load participant data from Public_Participant_Information.csv format.
 
     Args:
@@ -37,4 +37,4 @@ def load_participant_data(csv_path: str | Path) -> Dict[str, Dict[str, Any]]:
     Returns:
         Dictionary mapping participant names to their complete data
     """
-    return DataLoader.load_participant_data(csv_path)
+    return DataLoader.load_participant_data(Path(csv_path))

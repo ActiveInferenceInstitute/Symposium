@@ -31,6 +31,15 @@ class TestDataLoader:
         with pytest.raises(FileNotFoundError):
             DataLoader.load_json(temp_dir / "nonexistent.json")
 
+    @pytest.mark.parametrize("content", ["[]", "null", "42", "true", '"text"'])
+    def test_load_json_rejects_non_object(self, tmp_path, content):
+        path = tmp_path / "input.json"
+        path.write_text(content, encoding="utf-8")
+
+        with pytest.raises(ValueError, match="JSON object") as error:
+            DataLoader.load_json(path)
+        assert str(path) in str(error.value)
+
     def test_load_markdown(self, sample_markdown_file):
         """Test loading markdown file."""
         content = DataLoader.load_markdown(sample_markdown_file)
@@ -78,3 +87,18 @@ class TestDataLoader:
         assert "Test_Presenter" in presenters
         assert "topics" in presenters["Test_Presenter"]
         assert "works" in presenters["Test_Presenter"]
+
+
+@pytest.mark.parametrize("as_string", [False, True])
+def test_public_participant_loader_accepts_path_and_string(tmp_path, as_string):
+    from symposium.core import load_participant_data
+
+    csv_path = tmp_path / "participants.csv"
+    csv_path.write_text(
+        "share_publicly,name,background\nYes,Allowed,Research\nNo,Withheld,Private\n",
+        encoding="utf-8",
+    )
+    result = load_participant_data(str(csv_path) if as_string else csv_path)
+    assert set(result) == {"Allowed"}
+    assert result["Allowed"]["background"] == "Research"
+    assert result == DataLoader.load_participant_data(csv_path)

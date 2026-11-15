@@ -7,7 +7,7 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import TypedDict
 
-from .models import PublicBundle, PublicLink, PublicPicture, content_hash
+from .models import PublicBundle, content_hash
 from .publication import verify_public_tree
 
 
@@ -61,17 +61,17 @@ class UpdateReport(TypedDict):
 
 
 def _content_readiness(bundle: PublicBundle) -> ReadinessReport:
-    abstracts = sorted(
+    abstracts: list[PublicReference] = sorted(
         (
-            {"id": talk["id"], "name": talk["presenter"]}
+            PublicReference(id=talk["id"], name=talk["presenter"])
             for talk in bundle["presentations"]
             if not talk["abstract"].strip()
         ),
         key=lambda item: item["id"],
     )
-    sessions = sorted(
+    sessions: list[PublicReference] = sorted(
         (
-            {"id": session["id"], "name": session["presenter"]}
+            PublicReference(id=session["id"], name=session["presenter"])
             for session in bundle["sessions"]
             if not session["title"].strip()
         ),
@@ -100,8 +100,8 @@ def readiness(public_dir: Path) -> ReadinessReport:
 
 
 def _changes(
-    previous: Sequence[Mapping[str, str | list[PublicPicture] | list[PublicLink] | int]],
-    candidate: Sequence[Mapping[str, str | list[PublicPicture] | list[PublicLink] | int]],
+    previous: Sequence[Mapping[str, object]],
+    candidate: Sequence[Mapping[str, object]],
     label: str,
 ) -> RecordChanges:
     before = {str(row["id"]): row for row in previous}

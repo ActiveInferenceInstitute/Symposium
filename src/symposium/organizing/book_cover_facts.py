@@ -70,7 +70,11 @@ def parse_cover_doi(value: str | None) -> str | None:
 
 def cover_metadata_rows(value: CoverMetadata) -> tuple[tuple[str, int], ...]:
     """Keep the same visible metadata order and Word half-point sizes in every cover."""
-    rows = ((value.event_dates, 20), (value.website_url, 18), (value.contact_email, 18))
+    rows: tuple[tuple[str, int], ...] = (
+        (value.event_dates, 20),
+        (value.website_url, 18),
+        (value.contact_email, 18),
+    )
     if value.doi:
         rows += (("DOI: " + value.doi, 18),)
     return tuple(row for row in rows if row[0])

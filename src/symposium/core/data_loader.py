@@ -2,10 +2,13 @@
 
 import json
 import logging
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any, Dict, Optional
 
 import pandas as pd
+
+from symposium.core.participant_schema import Participant
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +35,7 @@ class DataLoader:
             if not filepath.exists():
                 raise FileNotFoundError(f"CSV file not found: {filepath}")
 
-            df = pd.read_csv(filepath, **kwargs)
+            df: pd.DataFrame = pd.read_csv(filepath, **kwargs)
             logger.debug(f"Loaded CSV file: {filepath} ({len(df)} rows)")
             return df
 
@@ -52,6 +55,7 @@ class DataLoader:
 
         Raises:
             FileNotFoundError: If file doesn't exist
+            ValueError: If the JSON root is not an object
             Exception: For other loading errors
         """
         try:
@@ -59,7 +63,9 @@ class DataLoader:
                 raise FileNotFoundError(f"JSON file not found: {filepath}")
 
             with open(filepath, "r", encoding="utf-8") as f:
-                data = json.load(f)
+                data: object = json.load(f)
+            if not isinstance(data, dict):
+                raise ValueError(f"JSON data in {filepath} must be a JSON object")
 
             logger.debug(f"Loaded JSON file: {filepath}")
             return data
@@ -115,7 +121,7 @@ class DataLoader:
         Returns:
             Dictionary mapping presenter names to their data
         """
-        presenters = {}
+        presenters: dict[str, dict[str, str | Path | pd.DataFrame]] = {}
 
         # Convert string to Path if needed
         if isinstance(base_path, str):
@@ -192,7 +198,7 @@ class DataLoader:
         Returns:
             Dictionary mapping participant names to their profiles
         """
-        participants = {}
+        participants: dict[str, dict[str, object]] = {}
 
         # Convert string to Path if needed
         if isinstance(base_path, str):
@@ -286,7 +292,7 @@ class DataLoader:
         return " ".join(words[:words_needed])
 
     @staticmethod
-    def load_participant_data(csv_path: Path) -> Dict[str, Dict[str, Any]]:
+    def load_participant_data(csv_path: Path) -> dict[str, Participant]:
         """Load consenting participants after validating schema and output names."""
         from symposium.core.participant_schema import load_participants
 
@@ -294,7 +300,7 @@ class DataLoader:
 
     @staticmethod
     def get_column_summary(
-        participant_data: Dict[str, Dict[str, Any]], column: str
+        participant_data: Mapping[str, Mapping[str, object]], column: str
     ) -> Dict[str, Any]:
         """Get summary statistics for a specific column across all participants.
 
@@ -339,7 +345,7 @@ class DataLoader:
             }
 
     @staticmethod
-    def format_participant_for_api(participant_data: Dict[str, Any]) -> str:
+    def format_participant_for_api(participant_data: Mapping[str, object]) -> str:
         """Format participant data for API consumption.
 
         Args:

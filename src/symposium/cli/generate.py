@@ -17,13 +17,7 @@ def generate_profiles(args):
     try:
         # Setup configuration and API
         config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
-        api_client = APIClient.create(
-            provider=args.api_provider or config.get("api.provider"),
-            **{
-                **config.get_api_config(args.api_provider),
-                "api_key": config.get_api_key(args.api_provider),
-            },
-        )
+        api_client = APIClient.from_config(config, provider=args.api_provider)
 
         # Load domain context if provided
         domain_context = None
@@ -38,6 +32,8 @@ def generate_profiles(args):
             domain_context,
             include_methods=args.include_methods,
         )
+        if not results:
+            raise ValueError("No eligible researchers; no profiles were generated")
 
         logger.info(f"✅ Successfully generated profiles for {len(results)} researchers")
         logger.info(f"📁 Profiles saved to {args.output_dir}")
@@ -54,13 +50,7 @@ def generate_projects(args):
     try:
         # Setup configuration and API
         config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
-        api_client = APIClient.create(
-            provider=args.api_provider or config.get("api.provider"),
-            **{
-                **config.get_api_config(args.api_provider),
-                "api_key": config.get_api_key(args.api_provider),
-            },
-        )
+        api_client = APIClient.from_config(config, provider=args.api_provider)
 
         # Generate projects
         generator = ProjectGenerator(api_client, config.to_dict().get("data", {}))
@@ -76,6 +66,8 @@ def generate_projects(args):
             catechisms_dir=catechisms_dir,
             collaborators_file=collaborators_file,
         )
+        if not results:
+            raise ValueError("No eligible participant profiles; no proposals were generated")
 
         logger.info(f"✅ Successfully generated proposals for {len(results)} participants")
         logger.info(f"📁 Proposals saved to {args.output_dir}")

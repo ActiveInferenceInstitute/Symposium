@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import io
 import zipfile
 from collections.abc import Sequence
 from pathlib import Path
@@ -27,7 +28,9 @@ def _package_xml(element: ET.Element, namespace: str) -> bytes:
             raise BookDesignError("Native DOCX package vocabulary has an unexpected namespace")
         node.tag = node.tag[len(namespace) :]
     root.set("xmlns", namespace[1:-1])
-    return ET.tostring(root, encoding="utf-8", xml_declaration=True)
+    output = io.BytesIO()
+    ET.ElementTree(root).write(output, encoding="utf-8", xml_declaration=True)
+    return output.getvalue()
 
 
 def _paragraph(

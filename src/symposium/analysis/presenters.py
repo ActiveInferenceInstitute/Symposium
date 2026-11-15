@@ -6,7 +6,8 @@ from typing import Any, Dict, Optional
 
 import pandas as pd
 
-from symposium.core.api import BaseAPIProvider
+from symposium.core.api import BaseAPIProvider, PaymentRequiredError
+from symposium.core.batch import BatchIncompleteError
 from symposium.core.data_loader import DataLoader
 
 logger = logging.getLogger(__name__)
@@ -174,27 +175,41 @@ Please provide a comprehensive analysis including:
             max_rows: Maximum rows to load per file
 
         Returns:
-            Dictionary mapping presenter names to analysis text
+            Fully persisted analyses. An incomplete batch raises BatchIncompleteError;
+            payment errors stop immediately. Existing and partial files are retained.
         """
         from symposium.io.writers import ReportWriter
 
         presenters = self.load_presenter_data(data_path, max_rows)
-        results = {}
+        results: Dict[str, str] = {}
+        failures: Dict[str, str] = {}
 
         for presenter_name, presenter_data in presenters.items():
             try:
                 logger.info(f"Analyzing presenter: {presenter_name}")
                 analysis = self.analyze_presenter(presenter_data, domain_context)
-                results[presenter_name] = analysis
 
                 # Save report
                 ReportWriter.save_presenter_report(
                     presenter_name, analysis, output_dir, "research_profile"
                 )
+                results[presenter_name] = analysis
 
+            except PaymentRequiredError:
+                logger.error(
+                    "Payment stopped batch: %d/%d fully persisted; partial files retained in %s",
+                    len(results),
+                    len(presenters),
+                    output_dir,
+                )
+                raise
             except Exception as e:
                 logger.error(f"Error analyzing presenter {presenter_name}: {e}")
+                failures[presenter_name] = str(e)
                 continue
+
+        if failures:
+            raise BatchIncompleteError(len(presenters), results, failures, output_dir)
 
         logger.info(f"Completed analysis for {len(results)} presenters")
         return results

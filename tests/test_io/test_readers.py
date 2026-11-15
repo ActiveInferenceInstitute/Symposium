@@ -23,6 +23,16 @@ def test_read_json(tmp_path):
     assert ReportReader.read_json(p) == {"k": "v", "n": 1}
 
 
+@pytest.mark.parametrize("content", ["[]", "null", "42", "true", '"text"'])
+def test_read_json_rejects_non_object(tmp_path, content):
+    path = tmp_path / "input.json"
+    path.write_text(content, encoding="utf-8")
+
+    with pytest.raises(ValueError, match="JSON object") as error:
+        ReportReader.read_json(path)
+    assert str(path) in str(error.value)
+
+
 def test_read_csv(tmp_path):
     p = tmp_path / "a.csv"
     pd.DataFrame({"a": [1, 2], "b": ["x", "y"]}).to_csv(p, index=False)

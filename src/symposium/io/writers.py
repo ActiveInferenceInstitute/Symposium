@@ -79,7 +79,7 @@ class ReportWriter:
             filepath = Path(filepath)
             filepath.parent.mkdir(parents=True, exist_ok=True)
 
-            data = {"timestamp": datetime.now().isoformat(), "content": content}
+            data: dict[str, object] = {"timestamp": datetime.now().isoformat(), "content": content}
 
             if metadata:
                 data["metadata"] = metadata

@@ -43,9 +43,45 @@ benchmark. Refresh with `uv run --no-sync python scripts/gate_metrics.py refresh
 re-renders the prose without measuring.
 
 There is no types arm. `pyproject.toml` configures mypy and the dev extra ships it,
-but no gate has ever run it: `uv run --no-sync mypy src/symposium` reports 89 errors
-in 26 files, mostly missing third-party stubs (verified 2026-11-12). Adding the arm
-requires clearing those first; until then a passing type check is not claimed.
+but it has not joined a gate. The 2026-11-12 observation was 89 errors in 26 files.
+On 2026-11-13, source repairs and separately provisioned third-party stubs reduced
+the first post-stub diagnostic run to 27 errors in seven files, checking all 51
+package modules. That run still had missing `adjustText`/`wordcloud` typing and
+incompatible sparse/community declarations; it did not establish a passing check.
+That repository-specific diagnostic environment preserved all 64 existing
+dependency versions and is not a new locked development requirement.
+Add mypy to lint only after complete, reproducible qualification.
+
+`python scripts/check_types.py` checks the complete package using the existing
+mypy rules. It requires the exact diagnostic dependency versions recorded in
+`typings/bindings.json`; it never installs packages or changes runtime versions.
+Local `adjustText` and `wordcloud` declarations describe only the consumed APIs.
+The word-cloud renderer passes the real `to_array()` result to Matplotlib rather
+than pretending that WordCloud implements NumPy's dtype-taking array protocol.
+
+Upstream declaration corrections are generated in a temporary directory and
+passed through mypy's `--shadow-file`: CSR array/matrix vectorizer results,
+sparse-array consumer inputs and NetworkX mutable/frozen community sets.
+Installed package files remain unchanged.
+Both package versions and exact upstream declaration hashes must match; a mismatch
+requires new API review and qualification, not automatic rebinding. Temporary
+projections preserve the installed declarations and license text outside these
+narrow corrections. This diagnostic is not a new CI gate or scientific proof.
+
+On 2026-11-15, the complete-package command reported no issues in all 51 source
+files while preserving all 64 original runtime distribution versions. Real
+synthetic API checks exercised both sparse interfaces through LSA, NMF and LDA,
+mutable/frozen community sets, empty/nonempty label adjustment and the actual
+word-cloud renderer. Wrong-version and changed-declaration controls refused
+before projection. Earlier typing and formatting failures remain historical
+evidence; these software checks do not approve research inputs or publication.
+
+The coverage guard is `fail_under = 90.01` with `precision = 2`. The admitted
+2026-11-13 offline suite passed 902 tests with nine paid-provider tests deselected
+and measured 5,013/5,547 statements (90.37%). Its zero-precision threshold failure
+remains recorded; a separate reporting-only check reused the database and passed
+with the corrected precision. Do not rerun successful tests just to relabel that
+historical failure or hand-edit the generated gate measurements.
 
 ## Continuous integration
 

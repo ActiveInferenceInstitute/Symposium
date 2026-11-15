@@ -193,11 +193,19 @@ class Config:
 
         Returns:
             API configuration dictionary
+
+        Raises:
+            ValueError: If the provider settings are not an object with string keys.
         """
         if provider is None:
             provider = self.get("api.provider")
 
-        return self.get(f"api.{provider}", {})
+        api_config: object = self.get(f"api.{provider}", {})
+        if not isinstance(api_config, dict) or any(not isinstance(key, str) for key in api_config):
+            raise ValueError(
+                f"Configuration field 'api.{provider}' must be an object with string keys"
+            )
+        return api_config
 
     def get_api_key(self, provider: Optional[str] = None) -> Optional[str]:
         """Get API key for a provider.
@@ -207,12 +215,19 @@ class Config:
 
         Returns:
             API key or None if not found
+
+        Raises:
+            ValueError: If a configured API key is neither a string nor None.
         """
         if provider is None:
             provider = self.get("api.provider")
 
         # Try config first, then environment, then legacy key file
-        api_key = self.get(f"api.{provider}.api_key")
+        api_key: object = self.get(f"api.{provider}.api_key")
+        if api_key is not None and not isinstance(api_key, str):
+            raise ValueError(
+                f"Configuration field 'api.{provider}.api_key' must be a string or null"
+            )
 
         if api_key:
             return api_key
@@ -233,14 +248,19 @@ class Config:
             provider: Provider name
 
         Returns:
-            API key or None if not found
+            API key or None if missing or invalid; loading failures are logged.
         """
         key_file = Path("llm_keys.key")
         if key_file.exists():
             try:
                 with open(key_file, "r") as f:
-                    keys = json.load(f)
-                return keys.get(provider)
+                    keys: object = json.load(f)
+                if not isinstance(keys, dict):
+                    raise ValueError("Legacy key file must be a JSON object")
+                api_key: object = keys.get(provider)
+                if api_key is not None and not isinstance(api_key, str):
+                    raise ValueError(f"Legacy API key field '{provider}' must be a string or null")
+                return api_key
             except Exception as e:
                 logger.warning(f"Could not load legacy key file: {e}")
         return None

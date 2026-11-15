@@ -333,3 +333,38 @@ def test_openrouter_uses_configured_generation_parameters():
     provider.get_response("Offline prompt", temperature=0.1, max_tokens=50)
     assert requests[1]["temperature"] == 0.1
     assert requests[1]["max_tokens"] == 50
+
+
+def test_runner_background_flow_uses_selected_config(tmp_path, monkeypatch, offline_api_requests):
+    selected = tmp_path / "selected.json"
+    selected.write_text(
+        json.dumps(
+            {
+                "edition": {"year": 2026},
+                "paths": {
+                    "data_dir": str(tmp_path / "data"),
+                    "outputs_dir": str(tmp_path / "outputs"),
+                },
+                "api": {
+                    "provider": "openrouter",
+                    "openrouter": {"api_key": "offline-router"},
+                    "perplexity": {"api_key": "file-perplexity", "model": "selected-perplexity"},
+                },
+            }
+        )
+    )
+    (tmp_path / "config.json").write_text('{"api":{"provider":"invalid"}}')
+    expected_key = "environment-perplexity"
+    monkeypatch.setenv("PERPLEXITY_API_KEY", expected_key)
+    runner = load_runner().SymposiumRunner(config_file=selected)
+    runner.edition.participants_csv.parent.mkdir(parents=True)
+    runner.edition.participants_csv.write_text(registration(tmp_path).read_text())
+    monkeypatch.setattr("builtins.input", lambda prompt: "2")
+    runner.analyze_participants()
+    (request,) = offline_api_requests
+    assert request.url.host == "api.perplexity.ai"
+    assert request.headers["Authorization"] == f"Bearer {expected_key}"
+    assert json.loads(request.content)["model"] == "selected-perplexity"
+    (report,) = runner.edition.output_dir.rglob("*background_research.json")
+    assert json.loads(report.read_text())["content"] == "Offline provider response"
+    assert not list(runner.edition.output_dir.rglob("*profile_analysis*"))

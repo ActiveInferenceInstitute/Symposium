@@ -295,7 +295,7 @@ def validate_bundle(value: object) -> PublicBundle:
         except ValueError as exc:
             raise PublicationError("Session timestamps must be ISO-8601 UTC") from exc
         if (
-            any(t.utcoffset() is None or t.utcoffset().total_seconds() != 0 for t in times)
+            any((offset := t.utcoffset()) is None or offset.total_seconds() != 0 for t in times)
             or times[1] <= times[0]
         ):
             raise PublicationError("Session needs an increasing explicit UTC interval")
