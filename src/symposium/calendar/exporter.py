@@ -1,9 +1,11 @@
 """Calendar export functionality for symposium schedules."""
 
 import logging
+import os
 import uuid
 from datetime import datetime, timedelta
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 from typing import Any, Dict, List, Optional
 
 import pytz
@@ -65,7 +67,8 @@ class ScheduleExporter:
             event: Raw event data
 
         Returns:
-            Structured event dictionary or None if invalid
+            Structured event dictionary or None for missing required fields.
+            Invalid timestamps raise ValueError instead of publishing invented times.
         """
         try:
             # Required fields validation
@@ -77,21 +80,13 @@ class ScheduleExporter:
                 logger.warning(f"Event missing start_time: {event}")
                 return None
 
-            # Check if already structured (datetime objects)
-            start_time = event["start_time"]
-            if hasattr(start_time, "strftime"):  # Already a datetime object
-                start_dt = start_time
-            else:  # Need to parse string
-                start_dt = self._parse_datetime(str(start_time))
-
+            start_dt = self._parse_datetime(event["start_time"])
             end_time = event.get("end_time")
-            if hasattr(end_time, "strftime"):  # Already a datetime object
-                end_dt = end_time
-            else:  # Need to parse string or calculate from duration
-                if end_time:
-                    end_dt = self._parse_datetime(str(end_time))
-                else:
-                    end_dt = start_dt + timedelta(hours=event.get("duration_hours", 1))
+            end_dt = (
+                self._parse_datetime(end_time)
+                if end_time
+                else start_dt + timedelta(hours=event.get("duration_hours", 1))
+            )
 
             # Structure the event
             structured = {
@@ -110,38 +105,21 @@ class ScheduleExporter:
 
             return structured
 
+        except ValueError:
+            raise
         except Exception as e:
             logger.error(f"Error structuring event {event.get('title', 'Unknown')}: {e}")
             return None
 
-    def _parse_datetime(self, time_str: str) -> datetime:
-        """Parse datetime string into timezone-aware datetime.
-
-        Args:
-            time_str: Time string in various formats
-
-        Returns:
-            Timezone-aware datetime object
-        """
-        # Try different datetime formats
-        formats = [
-            "%Y-%m-%d %H:%M:%S",
-            "%Y-%m-%dT%H:%M:%S",
-            "%Y-%m-%d %H:%M",
-            "%Y-%m-%dT%H:%M",
-            "%Y-%m-%d",
-        ]
-
-        for fmt in formats:
-            try:
-                dt = datetime.strptime(time_str, fmt)
-                return self.timezone.localize(dt)
-            except ValueError:
-                continue
-
-        # If no format matches, assume current time + offset
-        logger.warning(f"Could not parse datetime: {time_str}")
-        return datetime.now(self.timezone)
+    def _parse_datetime(self, time_str: str | datetime) -> datetime:
+        """Preserve ISO instants; interpret naive values in the configured timezone."""
+        try:
+            dt = time_str if isinstance(time_str, datetime) else datetime.fromisoformat(time_str)
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"Invalid event datetime: {time_str!r}") from exc
+        if dt.tzinfo is None:
+            return self.timezone.localize(dt)
+        return dt.astimezone(self.timezone)
 
     def create_ics_calendar(
         self,
@@ -241,29 +219,44 @@ class ScheduleExporter:
         Returns:
             Success status
         """
+        temporary_path: Path | None = None
         try:
             # Create calendar
             cal = self.create_ics_calendar(events, calendar_name, description)
 
-            # Ensure output directory exists
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-
             # Convert to ICS format (this is where errors might occur)
             ics_content = cal.to_ical()
 
-            # Write to file
-            with open(output_path, "wb") as f:
-                f.write(ics_content)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with NamedTemporaryFile(
+                mode="wb",
+                dir=output_path.parent,
+                prefix=f".{output_path.name}.",
+                suffix=".tmp",
+                delete=False,
+            ) as temporary:
+                temporary_path = Path(temporary.name)
+                if temporary.write(ics_content) != len(ics_content):
+                    raise OSError("Incomplete calendar write")
+                temporary.flush()
+                os.fsync(temporary.fileno())
+            os.replace(temporary_path, output_path)
+            temporary_path = None
 
             logger.info(f"ICS calendar exported to {output_path}")
             return True
 
         except Exception as e:
             logger.error(f"Error exporting ICS file: {e}")
-            # Clean up partial file if it exists
-            if output_path.exists():
-                output_path.unlink()
             return False
+        finally:
+            if temporary_path is not None:
+                try:
+                    temporary_path.unlink(missing_ok=True)
+                except OSError as exc:
+                    logger.warning(
+                        "Could not remove calendar temporary file %s: %s", temporary_path, exc
+                    )
 
     def export_symposium_schedule(
         self,
@@ -366,7 +359,7 @@ class ScheduleExporter:
         Returns:
             Validation report dictionary
         """
-        report = {
+        report: Dict[str, Any] = {
             "total_events": len(events),
             "valid_events": 0,
             "warnings": [],
@@ -374,7 +367,7 @@ class ScheduleExporter:
             "conflicts": [],
         }
 
-        event_times = []
+        event_times: list[tuple[datetime, datetime]] = []
 
         for event in events:
             # Check required fields
@@ -387,7 +380,11 @@ class ScheduleExporter:
                 continue
 
             # Structure event to get datetime objects
-            structured_event = self._structure_event(event)
+            try:
+                structured_event = self._structure_event(event)
+            except ValueError as exc:
+                report["errors"].append(f"Invalid event time for {event['title']}: {exc}")
+                continue
             if not structured_event:
                 report["errors"].append(f"Event could not be structured: {event['title']}")
                 continue

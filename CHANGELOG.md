@@ -2,6 +2,33 @@
 
 All notable changes to the Symposium package.
 
+## [Unreleased] — 2026-11-13 (offline correctness qualification)
+
+- Treat HTTP 402 as terminal before OpenRouter's retry-text classification.
+- Count presenter/profile/project completion only after all requested reports are
+  persisted; retain completed/partial files and fail incomplete or empty CLI work.
+- Consolidate configured provider creation in `APIClient.from_config`, preserving
+  explicit config selection, overrides and Perplexity background workflows.
+- Preserve ISO timestamp instants and reject invalid timestamps in the legacy
+  calendar exporter; publish through an owned temporary file and atomic replacement
+  without deleting an existing destination on failure.
+- Reject non-object JSON report/data roots and malformed provider options/keys;
+  retain the existing `Participant` record schema and private credential boundaries.
+- Reject public PDF pages without indirect identity and invalid snapshot timestamp
+  types before publication output creation.
+- Qualify the 90.01% coverage floor with precision 2 using retained coverage from
+  902 passing offline tests (5,013/5,547 statements, 90.37%); keep the original
+  fractional-precision failure and dated generated measurements as historical evidence.
+- Replace the future branch-publication reset/amend recipe with an ordinary
+  fetched-parent commit. Disposable local proof covers staged bytes, CRLF,
+  identical-tree no-op and stale-push rejection; no hosted publication occurred.
+- Qualify all 51 package modules with version-bound local typing while preserving
+  all 64 original runtime versions; no parser pin or scientific artifact changed.
+- Add an explicitly version-bound complete-package typing command, consumed
+  plotting declarations and temporary CSR/community signature corrections.
+  Preserve installed package files, numerical versions, checked modules and
+  error rules; use WordCloud's actual array conversion at the plotting boundary.
+
 ## [Unreleased] — 2026-11-12 (gate and documentation)
 
 ### Participant figure legibility

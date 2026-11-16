@@ -38,13 +38,7 @@ def analyze_presenters(args):
     try:
         # Setup configuration and API
         config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
-        api_client = APIClient.create(
-            provider=args.api_provider or config.get("api.provider"),
-            **{
-                **config.get_api_config(args.api_provider),
-                "api_key": config.get_api_key(args.api_provider),
-            },
-        )
+        api_client = APIClient.from_config(config, provider=args.api_provider)
 
         # Load domain context if provided
         domain_context = None
@@ -56,6 +50,8 @@ def analyze_presenters(args):
         results = analyzer.analyze_all_presenters(
             Path(args.data_dir), Path(args.output_dir), domain_context, max_rows=args.max_rows
         )
+        if not results:
+            raise ValueError("No eligible presenters; no reports were generated")
 
         logger.info(f"✅ Successfully analyzed {len(results)} presenters")
         logger.info(f"📁 Reports saved to {args.output_dir}")
@@ -73,12 +69,11 @@ def analyze_participants(args):
         expected = _participant_count(args.csv_file)
         # Setup configuration and API
         config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
-        api_client = APIClient.create(
-            provider=args.api_provider or config.get("api.provider"),
-            **{
-                **config.get_api_config(args.api_provider),
-                "api_key": config.get_api_key(args.api_provider),
-            },
+        api_client = APIClient.from_config(config, provider=args.api_provider)
+        background_client = (
+            APIClient.from_config(config, provider="perplexity")
+            if args.include_background_research
+            else None
         )
 
         # Analyze participants
@@ -88,6 +83,7 @@ def analyze_participants(args):
             Path(args.output_dir),
             include_background_research=args.include_background_research,
             include_curriculum=args.include_curriculum,
+            perplexity_client=background_client,
         )
 
         _require_complete(results, expected)
@@ -116,10 +112,7 @@ def analyze_participant_backgrounds(args):
         expected = _participant_count(args.csv_file)
         # Setup configuration and API
         config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
-        api_client = APIClient.create(
-            provider="perplexity",  # Force Perplexity for background research
-            **{**config.get_api_config("perplexity"), "api_key": config.get_api_key("perplexity")},
-        )
+        api_client = APIClient.from_config(config, provider="perplexity")
 
         # Analyze participants with background research only
         analyzer = ParticipantAnalyzer(api_client, config.to_dict().get("data", {}))
@@ -151,13 +144,7 @@ def generate_participant_curricula(args):
         expected = _participant_count(args.csv_file)
         # Setup configuration and API
         config = Config(config_file=Path(args.config) if getattr(args, "config", None) else None)
-        api_client = APIClient.create(
-            provider=args.api_provider or config.get("api.provider"),
-            **{
-                **config.get_api_config(args.api_provider),
-                "api_key": config.get_api_key(args.api_provider),
-            },
-        )
+        api_client = APIClient.from_config(config, provider=args.api_provider)
 
         # Analyze participants with curricula only
         analyzer = ParticipantAnalyzer(api_client, config.to_dict().get("data", {}))

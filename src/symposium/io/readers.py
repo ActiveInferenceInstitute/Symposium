@@ -40,11 +40,16 @@ class ReportReader:
             filepath: Path to JSON file
 
         Returns:
-            Parsed JSON data
+            Dictionary with JSON data
+
+        Raises:
+            ValueError: If the JSON root is not an object
         """
         try:
             with open(filepath, "r", encoding="utf-8") as f:
-                data = json.load(f)
+                data: object = json.load(f)
+            if not isinstance(data, dict):
+                raise ValueError(f"JSON data in {filepath} must be a JSON object")
             logger.debug(f"Read JSON file: {filepath}")
             return data
         except Exception as e:
@@ -63,7 +68,7 @@ class ReportReader:
             DataFrame with CSV data
         """
         try:
-            df = pd.read_csv(filepath, **kwargs)
+            df: pd.DataFrame = pd.read_csv(filepath, **kwargs)
             logger.debug(f"Read CSV file: {filepath} ({len(df)} rows)")
             return df
         except Exception as e:

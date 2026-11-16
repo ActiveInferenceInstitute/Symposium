@@ -48,11 +48,11 @@ restating commands, and `pages.yml` calls `site`, so the local and CI commands a
 same text; `test-fast` is local-only. Arm wall times on the host that
 last refreshed them are generated in
 [docs/_generated/gate-measurements.md](docs/_generated/gate-measurements.md); never
-hand-edit those numbers. There is no types arm: `mypy` is configured in
-`pyproject.toml` but has never been a gate and reports 89 errors (mostly missing
-third-party stubs). See [development](docs/development.md).
+hand-edit those numbers. There is no types arm: use the version-bound
+`python scripts/check_types.py` diagnostic, which retains all configured mypy
+rules and package modules. See [development](docs/development.md) for its scope.
 
-`pytest` enforces the 80% coverage gate declared in `pyproject.toml`. Live-provider
+`pytest` enforces the 90.01% coverage gate declared in `pyproject.toml`. Live-provider
 tests are opt-in via `uv run python -m pytest --run-real-api -m real_api` and need
 credentials. A checkout whose `.venv` has not been synced cannot run the suite
 offline; see [`TODO.md`](TODO.md).
@@ -88,8 +88,8 @@ conventions to follow when changing Symposium.
 
 - Unit tests for functions, integration tests for end-to-end workflows, and
   live-provider tests only behind the opt-in `real_api` marker.
-- Coverage regression gate: `--cov-fail-under=80` in `pyproject.toml`; raising
-  it is tracked in `TODO.md`.
+- Coverage regression gate: `fail_under = 90.01` with `precision = 2` in
+  `pyproject.toml`; retain historical measurements without restamping them.
 - Mocking is expected where it keeps tests deterministic: realistic fixtures
   and edge cases instead of live calls.
 - `ruff check` and `ruff format --check` are the lint and format gates; CI runs

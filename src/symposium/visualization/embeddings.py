@@ -14,6 +14,7 @@ import matplotlib.patheffects as path_effects
 import matplotlib.pyplot as plt
 import seaborn as sns
 from adjustText import adjust_text
+from sklearn.base import BaseEstimator
 from sklearn.decomposition import PCA, TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from wordcloud import WordCloud
@@ -56,6 +57,7 @@ class DimensionReducer:
             max_doc_freq = 0.90 if n_docs >= 3 else 1.0
 
             # TF-IDF vectorization with improved parameters
+            vectorizer: TfidfVectorizer | None
             vectorizer = TfidfVectorizer(
                 max_features=10000,  # Increased for better representation
                 stop_words="english",
@@ -77,6 +79,8 @@ class DimensionReducer:
                     f"(n_samples={n_samples}, n_features={n_features}). Using {max_components} components."
                 )
                 n_components = max_components
+
+            reducer: BaseEstimator
 
             if method.lower() == "pca":
                 # Enhanced PCA with whitening
@@ -379,7 +383,7 @@ class TextVisualizer:
 
             # Plot with enhanced styling
             plt.figure(figsize=(24, 12))
-            plt.imshow(wordcloud, interpolation="bilinear")
+            plt.imshow(wordcloud.to_array(), interpolation="bilinear")
             plt.axis("off")
             plt.title(title, fontsize=24, fontweight="bold", pad=20)
             plt.tight_layout()

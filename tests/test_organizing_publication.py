@@ -408,6 +408,26 @@ def test_pdf_real_parse_public_text_links_and_metadata(inputs, tmp_path):
     assert verify_public_tree(tmp_path / "public") == inputs[0]
 
 
+def test_pdf_page_without_indirect_reference_is_rejected(inputs, tmp_path):
+    import io
+
+    from pypdf import PdfWriter
+    from pypdf.generic import ArrayObject, DictionaryObject, NameObject
+
+    writer = PdfWriter()
+    page = writer.add_blank_page(width=612, height=792)
+    pages = writer.root_object["/Pages"]
+    pages[NameObject("/Kids")] = ArrayObject([DictionaryObject(page)])
+    output = io.BytesIO()
+    writer.write(output)
+    artifacts = tmp_path / "artifacts"
+    artifacts.mkdir()
+    (artifacts / "book.pdf").write_bytes(output.getvalue())
+    with pytest.raises(PublicationError, match="PDF page has no indirect reference"):
+        write_artifact_index(inputs[0], artifacts)
+    assert not (artifacts / "artifact_index.json").exists()
+
+
 @pytest.mark.parametrize(
     "fault",
     [
@@ -548,3 +568,16 @@ def test_snapshot_capture_retains_explicit_utc_contract(inputs, tmp_path):
             apply=True,
             as_of="2026-10-26T01:30:01Z",
         )
+
+
+@pytest.mark.parametrize("fault", ["missing", "null", "nontext"])
+def test_snapshot_capture_requires_string_timestamp_before_output(inputs, tmp_path, fault):
+    bundle, snapshot, ledger = inputs
+    if fault == "missing":
+        del snapshot["observed_at"]
+    else:
+        snapshot["observed_at"] = None if fault == "null" else b"2026-10-26T12:00:00Z"
+    output = tmp_path / "rejected-timestamp"
+    with pytest.raises(PublicationError, match="Expected explicit UTC timestamp"):
+        stage_public(bundle, snapshot, ledger, output, apply=True, as_of=NOW)
+    assert not output.exists()

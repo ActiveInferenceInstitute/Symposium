@@ -1,5 +1,6 @@
 """Test configuration and fixtures for symposium package tests."""
 
+import json
 import shutil
 import tempfile
 from pathlib import Path
@@ -49,6 +50,58 @@ def mock_api_client():
     client = Mock()
     client.get_response = Mock(return_value="Mock API response")
     return client
+
+
+@pytest.fixture
+def offline_api_requests(monkeypatch, tmp_path):
+    """Exercise the real SDK/configuration path without opening network connections."""
+    import httpx
+    from openai import OpenAI
+
+    monkeypatch.chdir(tmp_path)
+    for name in (
+        "API_PROVIDER",
+        "PERPLEXITY_API_KEY",
+        "OPENROUTER_API_KEY",
+        "SYMPOSIUM_YEAR",
+        "SYMPOSIUM_DATA_DIR",
+        "SYMPOSIUM_OUTPUTS_DIR",
+    ):
+        monkeypatch.delenv(name, raising=False)
+    requests = []
+    clients = []
+
+    def respond(request):
+        requests.append(request)
+        payload = json.loads(request.content)
+        return httpx.Response(
+            200,
+            json={
+                "id": "offline-completion",
+                "object": "chat.completion",
+                "created": 0,
+                "model": payload["model"],
+                "choices": [
+                    {
+                        "index": 0,
+                        "finish_reason": "stop",
+                        "message": {"role": "assistant", "content": "Offline provider response"},
+                    }
+                ],
+            },
+        )
+
+    def create_client(**kwargs):
+        client = OpenAI(**kwargs, http_client=httpx.Client(transport=httpx.MockTransport(respond)))
+        clients.append(client)
+        return client
+
+    monkeypatch.setattr("symposium.core.api.OpenAI", create_client)
+    try:
+        yield requests
+    finally:
+        for client in clients:
+            client.close()
 
 
 @pytest.fixture

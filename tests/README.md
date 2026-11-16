@@ -4,14 +4,15 @@ Use Python 3.12+ and the committed uv lock. The development pin is 3.12.
 
 ```bash
 uv sync --locked --extra dev --python 3.12
-./gate.sh test         # full suite with the 80% coverage gate
+./gate.sh test         # full suite with the 90.01% coverage gate
 ./gate.sh test-fast    # package-module suites only, --no-cov
 ```
 
-The pytest configuration enables line coverage, terminal/HTML reports and an 80%
-regression gate. These settings do not establish complete coverage or scientific,
-visual, native-render or deployment correctness. Inspect the actual result and
-retained failures for the revision being tested.
+The pytest configuration enables line coverage, terminal/HTML reports and a 90.01%
+regression floor with two-decimal reporting precision. The precision is required
+for that fractional floor. These settings do not establish complete coverage or
+scientific, visual, native-render or deployment correctness. Inspect the actual
+result and retained failures for the revision being tested.
 
 ## Focused checks
 

@@ -42,6 +42,28 @@ class TestConfig:
         api_config = config.get_api_config("perplexity")
         assert api_config["model"] == "sonar"
 
+    @pytest.mark.parametrize("settings", [None, False, 0, "synthetic-secret", ["synthetic-secret"]])
+    def test_get_api_config_rejects_non_object(self, tmp_path, settings):
+        config_file = tmp_path / "config.json"
+        config_file.write_text(json.dumps({"api": {"custom": settings}}), encoding="utf-8")
+        config = Config(config_file=config_file, load_env=False)
+
+        with pytest.raises(ValueError, match="api.custom") as error:
+            config.get_api_config("custom")
+        assert "synthetic-secret" not in str(error.value)
+
+    def test_get_api_config_rejects_non_string_keys(self):
+        config = Config(load_env=False)
+        config.set("api.custom", {1: "synthetic-secret"})
+
+        with pytest.raises(ValueError, match="api.custom") as error:
+            config.get_api_config("custom")
+        assert "synthetic-secret" not in str(error.value)
+
+    def test_get_api_config_missing_provider(self):
+        config = Config(load_env=False)
+        assert config.get_api_config("custom") == {}
+
     def test_get_api_key(self):
         """Test getting API key."""
         config = Config(load_env=False)
@@ -54,6 +76,78 @@ class TestConfig:
         config = Config(load_env=True)
         # Must read the exact key we injected, proving env vars are actually consumed.
         assert config.get_api_key("perplexity") == "env_perplexity_key"
+
+    @pytest.mark.parametrize(
+        "key", [False, 0, 17, [], ["synthetic-secret"], {"token": "synthetic-secret"}]
+    )
+    def test_get_api_key_rejects_non_string(self, tmp_path, monkeypatch, key):
+        monkeypatch.chdir(tmp_path)
+        config_file = tmp_path / "config.json"
+        config_file.write_text(json.dumps({"api": {"custom": {"api_key": key}}}), encoding="utf-8")
+        config = Config(config_file=config_file, load_env=False)
+
+        with pytest.raises(ValueError, match="api.custom.api_key") as error:
+            config.get_api_key("custom")
+        assert "synthetic-secret" not in str(error.value)
+
+    @pytest.mark.parametrize("provider", ["perplexity", "openrouter"])
+    @pytest.mark.parametrize("empty_key", [None, ""])
+    def test_get_api_key_preserves_precedence(self, tmp_path, monkeypatch, provider, empty_key):
+        monkeypatch.chdir(tmp_path)
+        env_name = f"{provider.upper()}_API_KEY"
+        monkeypatch.setenv(env_name, "environment-key")
+        (tmp_path / "llm_keys.key").write_text(
+            json.dumps({provider: "legacy-key"}), encoding="utf-8"
+        )
+        config = Config(load_env=False)
+        config.set(f"api.{provider}.api_key", "configured-key")
+        assert config.get_api_key(provider) == "configured-key"
+
+        config.set(f"api.{provider}.api_key", empty_key)
+        assert config.get_api_key(provider) == "environment-key"
+        monkeypatch.delenv(env_name)
+        assert config.get_api_key(provider) is None
+
+    @pytest.mark.parametrize(
+        "keys",
+        [
+            ["synthetic-secret"],
+            "synthetic-secret",
+            None,
+            {"legacy": False},
+            {"legacy": 0},
+            {"legacy": []},
+            {"legacy": ["synthetic-secret"]},
+            {"legacy": {"token": "synthetic-secret"}},
+        ],
+    )
+    def test_legacy_api_key_rejects_malformed_values(self, tmp_path, monkeypatch, caplog, keys):
+        monkeypatch.chdir(tmp_path)
+        (tmp_path / "llm_keys.key").write_text(json.dumps(keys), encoding="utf-8")
+        config = Config(load_env=False)
+
+        assert config.get_api_key("legacy") is None
+        assert caplog.records
+        assert "synthetic-secret" not in caplog.text
+
+    @pytest.mark.parametrize(
+        "keys,expected",
+        [
+            ({"legacy": "legacy-key"}, "legacy-key"),
+            ({"legacy": ""}, ""),
+            ({"legacy": None}, None),
+            ({}, None),
+        ],
+    )
+    def test_legacy_api_key_preserves_valid_values(
+        self, tmp_path, monkeypatch, caplog, keys, expected
+    ):
+        monkeypatch.chdir(tmp_path)
+        (tmp_path / "llm_keys.key").write_text(json.dumps(keys), encoding="utf-8")
+        config = Config(load_env=False)
+
+        assert config.get_api_key("legacy") == expected
+        assert not caplog.records
 
     def test_load_real_configuration(self):
         """Test loading default configuration without external side effects."""

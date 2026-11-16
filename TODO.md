@@ -285,25 +285,26 @@ The three originally-deferred Majors (M1 coverage, M2 run.py orchestration, M3 l
 were substantially addressed in the 2026-08-01 completion pass (see Completed/Closed below).
 What remains below are the residual / aspirational follow-ups not fully closed.
 
-### R1 — Push coverage from 89.76% to the documented >90% target
-- **Status:** the full arm recorded 776 passed, 9 skipped and 89.76% coverage at `b43415b`
-  ([gate measurements](docs/_generated/gate-measurements.md)); the regression gate in
-  `pyproject.toml` is still `--cov-fail-under=80`. The per-module figures (~74%
-  `cli/analyze.py` etc.) predate the coverage uplift and are not reproduced by any current
-  record, so they are no longer restated here.
-- **Suggested fix:** add the remaining edge-case tests (error paths, empty inputs) to climb
-  above 90%, then raise `--cov-fail-under` to match. Owner: maintainer; no external blocker,
-  only unmeasured headroom.
+### R1 — Greater-than-90% coverage target (qualified 2026-11-13)
+- **Measured:** the admitted full offline run passed 902 tests, deselected nine
+  paid-provider tests, and covered 5,013 of 5,547 statements (90.373174689%).
+  Its initial exit was 1 because the fractional 90.01 floor used zero display
+  precision. The separate source-bound reporting run reused that coverage database
+  without rerunning tests and exited 0 with precision 2 and floor 90.01.
+- **Guard:** `[tool.coverage.report]` now declares `fail_under = 90.01` and
+  `precision = 2`. The existing generated 776-test/89.76% record remains historical;
+  it was not rewritten. Later focused annotation checks are not a fresh full-suite
+  coverage measurement. This closes the measured target/guard obligation, not
+  scientific, hosted or release acceptance.
 
-### R2 — Consolidate the `APIClient.create` wiring that now lives in the CLI
-- **Status:** the menu duplication is gone — every `run.py` operation delegates to
-  `SymposiumRunner.create_api_client` / `load_config` (`run.py:44-56`). The same
-  `Config(...)` + `APIClient.create(...)` construction (provider plus
-  `get_api_config`/`get_api_key`) is now repeated six times:
-  `src/symposium/cli/analyze.py:40,75,118,153` and `src/symposium/cli/generate.py:19,56`.
-- **Suggested fix:** one helper (on `Config`, or a small factory beside `APIClient.create`)
-  that both the CLI commands and `run.py` call, so provider/key handling cannot drift between
-  the two entry points. Owner: maintainer.
+### R2 — Configured-provider construction (qualified 2026-11-13)
+- **Completed:** `APIClient.from_config` serves all six CLI construction sites and
+  the interactive runner; the redundant runner factory is removed.
+- The admitted offline suite covers explicit config-file selection, environment
+  precedence, explicit key/options overrides, conflicting provider options and
+  forced Perplexity for participant background work. See
+  [the API contract](docs/api_guide.md). No paid-provider authentication or
+  availability is claimed.
 
 ---
 
@@ -397,20 +398,21 @@ All items below were implemented in this pass (commits `669643f`, `98ae63d`, `a6
   ✓ `82ea73a`
 
 ### Open / deferred
-- None from this pass. (Pre-existing R1/R2 residuals in the Major section above
-  remain open; R3 is done.)
-- [ ] **Mypy is still far from clean** (re-measured 2026-11-12):
-  `uv run --no-sync mypy src/symposium` reports **89 errors in 26 files**. Most are
-  missing third-party stubs (`pandas-stubs`, `types-networkx`, and no `py.typed` for
-  `sklearn.feature_extraction.text`), which `mypy --install-types` or dev-dependency
-  additions would settle. The rest are real annotations, e.g.
-  `src/symposium/core/api.py:108` (a `str | None` returned as `str`),
-  `src/symposium/core/__init__.py:40` (a `str | Path` passed to a `Path` parameter)
-  and `src/symposium/generation/profiles.py:157` (unannotated `results`). Add
-  `mypy src/symposium` to the `lint` arm only after it passes. Owner: maintainer.
-- Heavy suites (Julia/LaTeX) do not apply — this is a Python repo; the current full
-  suite result is the generated gate measurement (776 passed, 9 skipped, 89.76%,
-  gate 80%), not the 188-test figure from this pass.
+- None from this documentation pass. R1/R2 now have separate 2026-11-13 offline
+  qualification records above; R3 remains done.
+- [ ] **Complete package typing remains open.** The 2026-11-12 baseline was 89
+  errors in 26 files. Subsequent source repairs and a separately authorized Python
+  3.12 typing environment preserve all 64 existing dependency versions; the first
+  post-stub run reported 27 errors in seven files across all 51 package modules.
+  This is a diagnostic result, not a passing gate. `adjustText` and `wordcloud`
+  remain untyped, and the selected sklearn/SciPy and NetworkX stubs disagree at
+  sparse-matrix and community-partition boundaries. Do not change scientific
+  computations, fabricate stubs or suppress imports to obtain a pass.
+  Add `mypy src/symposium` to `lint` only after complete qualification with a
+  compatible reproducible dependency set. Owner: maintainer.
+- Heavy suites (Julia/LaTeX) do not apply to this Python repo. The generated
+  776-test/89.76%/80%-gate record and the 188-test figure remain historical, not
+  current qualification. See the later source-bound R1 observation above.
 
 ---
 

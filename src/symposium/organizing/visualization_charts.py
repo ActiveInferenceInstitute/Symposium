@@ -101,7 +101,12 @@ def topic_distribution(topics: TopicWeights, total: int) -> Figure:
     """Show complementary two-topic LDA weights in one dimension without endpoint labels."""
     figure, axis = plt.subplots(figsize=(11, 5), layout="constrained")
     if topics.weights.size:
-        axis.hist(topics.weights[:, 0], bins=np.linspace(0, 1, 16), color=BLUE, edgecolor="white")
+        axis.hist(
+            topics.weights[:, 0],
+            bins=[float(edge) for edge in np.linspace(0, 1, 16)],
+            color=BLUE,
+            edgecolor="white",
+        )
         axis.set(
             xlim=(0, 1), xlabel="Topic 1 weight (Topic 2 = 1 − Topic 1)", ylabel="Participants"
         )
@@ -168,7 +173,7 @@ class NetworkSummary:
 
 def participant_network(features: TextFeatures) -> NetworkSummary:
     """Enlarge connected text edges; group isolated nodes without unreadable labels."""
-    graph = nx.Graph()
+    graph: nx.Graph[str] = nx.Graph()
     graph.add_nodes_from(features.ids)
     edges = tuple(
         (str(features.ids[i]), str(features.ids[j]), float(features.cosine[i, j]))
@@ -181,7 +186,7 @@ def participant_network(features: TextFeatures) -> NetworkSummary:
         str(identifier) for identifier in features.ids if graph.degree(identifier) == 0
     )
     # Small subgraph views can iterate a hash-dependent node set. Keep source order.
-    connected = nx.Graph()
+    connected: nx.Graph[str] = nx.Graph()
     connected.add_nodes_from(identifier for identifier in features.ids if graph.degree(identifier))
     connected.add_weighted_edges_from(edges)
     figure, axes = plt.subplots(

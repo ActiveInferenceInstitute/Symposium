@@ -4,7 +4,8 @@ import logging
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from symposium.core.api import BaseAPIProvider
+from symposium.core.api import BaseAPIProvider, PaymentRequiredError
+from symposium.core.batch import BatchIncompleteError
 from symposium.core.data_loader import DataLoader
 from symposium.io.readers import ReportReader
 
@@ -188,7 +189,8 @@ Before finalizing, analyze multiple potential project directions and select the 
             collaborators_file: Optional file with collaborators list
 
         Returns:
-            Dictionary mapping participant names to proposals
+            Fully persisted proposals. An incomplete batch raises BatchIncompleteError;
+            payment errors stop immediately. Existing and partial files are retained.
         """
         from symposium.io.writers import ReportWriter
 
@@ -202,7 +204,8 @@ Before finalizing, analyze multiple potential project directions and select the 
 
         # Load participant profiles
         participants = self.data_loader.load_participant_profiles(profiles_dir)
-        results = {}
+        results: Dict[str, str] = {}
+        failures: Dict[str, str] = {}
 
         for participant_name, participant_data in participants.items():
             try:
@@ -217,16 +220,27 @@ Before finalizing, analyze multiple potential project directions and select the 
                     collaborators,
                 )
 
-                results[participant_name] = proposal
-
                 # Save proposal
                 ReportWriter.save_project_proposal(
                     participant_name, proposal, output_dir, catechism_type
                 )
+                results[participant_name] = proposal
 
+            except PaymentRequiredError:
+                logger.error(
+                    "Payment stopped batch: %d/%d fully persisted; partial files retained in %s",
+                    len(results),
+                    len(participants),
+                    output_dir,
+                )
+                raise
             except Exception as e:
                 logger.error(f"Error generating proposal for {participant_name}: {e}")
+                failures[participant_name] = str(e)
                 continue
+
+        if failures:
+            raise BatchIncompleteError(len(participants), results, failures, output_dir)
 
         logger.info(f"Completed project generation for {len(results)} participants")
         return results

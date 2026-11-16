@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict
 
+from symposium.core.api import APIClient
 from symposium.core.config import Config
 from symposium.core.edition import Edition
 
@@ -44,16 +45,6 @@ class SymposiumRunner:
     def load_config(self) -> Dict[str, Any]:
         """Return the shared configuration used by the CLI and runner."""
         return self.configuration.to_dict()
-
-    def create_api_client(self, provider):
-        """Apply configured credentials and model parameters consistently."""
-        from symposium.core.api import APIClient
-
-        options = dict(self.configuration.get_api_config(provider))
-        options.pop("api_key", None)
-        return APIClient.create(
-            provider, api_key=self.configuration.get_api_key(provider), **options
-        )
 
     def display_header(self):
         """Display the main header."""
@@ -242,16 +233,18 @@ class SymposiumRunner:
 
             if include_background:
                 logger.debug("Creating Perplexity API client (Sonar model) for background research")
-                perplexity_client = self.create_api_client("perplexity")
+                perplexity_client = APIClient.from_config(self.configuration, provider="perplexity")
                 print("   🔍 Using Perplexity Sonar for background research")
 
             if include_analysis or include_curriculum:
                 logger.debug("Creating OpenRouter API client (Claude) for analysis and curricula")
-                openrouter_client = self.create_api_client("openrouter")
+                openrouter_client = APIClient.from_config(self.configuration, provider="openrouter")
                 print("   🤖 Using OpenRouter Claude for analysis and curricula")
 
             # Use OpenRouter as primary client for analyzer (it does profile analysis)
             primary_client = openrouter_client if openrouter_client else perplexity_client
+            if primary_client is None:
+                raise ValueError("The selected analysis requires a configured provider")
             analyzer = ParticipantAnalyzer(primary_client, self.config.get("data", {}))
             logger.debug("Participant analyzer created")
 
@@ -333,7 +326,7 @@ class SymposiumRunner:
         try:
             from symposium.analysis.participants import ParticipantAnalyzer
 
-            client = self.create_api_client("openrouter")
+            client = APIClient.from_config(self.configuration, provider="openrouter")
             analyzer = ParticipantAnalyzer(client, self.config.get("data", {}))
 
             output_base = self.edition.output_dir / "column_summaries"
@@ -413,7 +406,7 @@ class SymposiumRunner:
 
             # Create Perplexity API client (Sonar model for background research)
             logger.info(f"Creating Perplexity API client (Sonar model) for {participant_name}")
-            client = self.create_api_client("perplexity")
+            client = APIClient.from_config(self.configuration, provider="perplexity")
             analyzer = ParticipantAnalyzer(client, self.config.get("data", {}))
             print("   🔍 Using Perplexity Sonar for research")
 
@@ -505,7 +498,7 @@ class SymposiumRunner:
 
             # Create OpenRouter API client (Claude for curriculum)
             logger.info(f"Creating OpenRouter API client (Claude) for {participant_name}")
-            client = self.create_api_client("openrouter")
+            client = APIClient.from_config(self.configuration, provider="openrouter")
             analyzer = ParticipantAnalyzer(client, self.config.get("data", {}))
             print("   🤖 Using OpenRouter Claude for curriculum")
 
@@ -687,7 +680,7 @@ class SymposiumRunner:
 
             for provider in providers:
                 try:
-                    client = self.create_api_client(provider)
+                    client = APIClient.from_config(self.configuration, provider=provider)
                     response = client.get_response(
                         "Respond with 'test successful' if you receive this.",
                         "You are a helpful assistant.",

@@ -1,11 +1,15 @@
 """Tests for presenter analysis module."""
 
+import json
 from unittest.mock import patch
 
 import pandas as pd
 import pytest
 
 from symposium.analysis.presenters import PresenterAnalyzer
+from symposium.core.api import PaymentRequiredError
+from symposium.core.batch import BatchIncompleteError
+from symposium.io.writers import ReportWriter
 
 
 class TestPresenterAnalyzer:
@@ -111,9 +115,68 @@ class TestPresenterAnalyzer:
         works_df = pd.DataFrame({"title": ["Paper 1"], "publication_year": [2023]})
         works_df.to_csv(presenter_dir / "works-test.csv", index=False)
 
-        # Mock API to raise exception
         with patch.object(analyzer.api_client, "get_response", side_effect=Exception("API Error")):
-            results = analyzer.analyze_all_presenters(temp_dir, temp_dir / "outputs")
+            with pytest.raises(BatchIncompleteError) as exc:
+                analyzer.analyze_all_presenters(temp_dir, temp_dir / "outputs")
+        assert exc.value.completed == {}
+        assert set(exc.value.failures) == {"Test_Presenter"}
+        assert exc.value.requested == 1
 
-        # Should continue processing despite errors
-        assert results == {}
+    @pytest.mark.parametrize("format_name", ["markdown", "json"])
+    def test_batch_counts_only_persisted_reports(
+        self, analyzer, sample_presenter_data, tmp_path, monkeypatch, format_name
+    ):
+        presenters = {
+            name: {**sample_presenter_data, "name": name} for name in ("First", "Second", "Later")
+        }
+        monkeypatch.setattr(analyzer, "load_presenter_data", lambda *a, **k: presenters)
+        method = f"save_{format_name}_report"
+        original = getattr(ReportWriter, method)
+
+        def save(content, filepath, *args, **kwargs):
+            if filepath.parent.name == "Second":
+                raise OSError("Synthetic storage failure")
+            return original(content, filepath, *args, **kwargs)
+
+        monkeypatch.setattr(ReportWriter, method, save)
+        output = tmp_path / "reports"
+        with pytest.raises(BatchIncompleteError) as exc:
+            analyzer.analyze_all_presenters(tmp_path, output)
+        assert exc.value.requested == 3
+        assert set(exc.value.completed) == {"First", "Later"}
+        assert set(exc.value.failures) == {"Second"}
+        assert exc.value.output_dir == output
+        for name in ("First", "Later"):
+            report = output / name / f"{name}_research_profile"
+            assert (
+                json.loads(report.with_suffix(".json").read_text())["content"]
+                == "Mock API response"
+            )
+            assert "Mock API response" in report.with_suffix(".md").read_text()
+        partial = output / "Second" / "Second_research_profile"
+        assert partial.with_suffix(".md").exists() is (format_name == "json")
+        assert not partial.with_suffix(".json").exists()
+
+    def test_payment_stops_after_preserving_completed_presenter(
+        self, analyzer, sample_presenter_data, tmp_path, monkeypatch
+    ):
+        presenters = {
+            name: {**sample_presenter_data, "name": name} for name in ("First", "Second", "Later")
+        }
+        monkeypatch.setattr(analyzer, "load_presenter_data", lambda *a, **k: presenters)
+        analyzer.api_client.get_response.side_effect = [
+            "Persisted presenter",
+            PaymentRequiredError("Cannot generate without credits", "openrouter"),
+            "Must not be requested",
+        ]
+        output = tmp_path / "reports"
+        with pytest.raises(PaymentRequiredError):
+            analyzer.analyze_all_presenters(tmp_path, output)
+        assert analyzer.api_client.get_response.call_count == 2
+        first = output / "First" / "First_research_profile"
+        assert (
+            json.loads(first.with_suffix(".json").read_text())["content"] == "Persisted presenter"
+        )
+        assert "Persisted presenter" in first.with_suffix(".md").read_text()
+        assert not (output / "Second").exists()
+        assert not (output / "Later").exists()

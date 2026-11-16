@@ -1,6 +1,7 @@
 """Network analysis and visualization tools."""
 
 import logging
+from collections.abc import Hashable, Mapping
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -10,6 +11,7 @@ import numpy as np
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import networkx as nx
+from numpy.typing import NDArray
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -61,7 +63,7 @@ class NetworkAnalyzer:
             similarity_matrix = cosine_similarity(term_matrix.T)
 
             # Create graph
-            g = nx.Graph()
+            g: "nx.Graph[str]" = nx.Graph()
 
             # Add nodes
             for term in top_terms:
@@ -128,6 +130,7 @@ class NetworkAnalyzer:
             plt.figure(figsize=(20, 20))
 
             # Choose layout
+            pos: Mapping[Hashable, NDArray[np.float32] | NDArray[np.float64]]
             if layout == "spring":
                 pos = nx.spring_layout(graph, k=2, iterations=50, seed=self.random_state)
             elif layout == "circular":
@@ -208,9 +211,10 @@ class NetworkAnalyzer:
             communities = list(nx.community.greedy_modularity_communities(graph))
 
             # Calculate community metrics
+            community_details: list[dict[str, object]] = []
             analysis = {
                 "n_communities": len(communities),
-                "communities": [],
+                "communities": community_details,
                 "modularity": nx.community.modularity(graph, communities),
             }
 
@@ -225,7 +229,7 @@ class NetworkAnalyzer:
                     "density": nx.density(community_subgraph),
                     "avg_clustering": nx.average_clustering(community_subgraph),
                 }
-                analysis["communities"].append(community_info)
+                community_details.append(community_info)
 
             logger.info(
                 f"Found {len(communities)} communities with modularity {analysis['modularity']:.3f}"

@@ -1,10 +1,12 @@
 """Tests for calendar export functionality."""
 
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 import icalendar
 import pytest
 
+import symposium.calendar.exporter as exporter_module
 from symposium.calendar.exporter import ScheduleExporter
 
 
@@ -123,14 +125,13 @@ class TestScheduleExporter:
             assert result.month == 6
             assert result.day == 15
 
-    def test_parse_datetime_invalid(self):
-        """Test parsing invalid datetime."""
+    @pytest.mark.parametrize(
+        "value", ["invalid_datetime", "2025-02-30T09:00:00", "2025-06-15T09:00:00+25:00", ""]
+    )
+    def test_parse_datetime_invalid(self, value):
         exporter = ScheduleExporter()
-        result = exporter._parse_datetime("invalid_datetime")
-
-        assert result is not None
-        # Should return current time if parsing fails
-        assert isinstance(result, datetime)
+        with pytest.raises(ValueError):
+            exporter._parse_datetime(value)
 
     def test_parse_schedule_data_dict_format(self, sample_schedule_data):
         """Test parsing schedule data in dictionary format."""
@@ -312,3 +313,136 @@ Event 2,2025-06-15 10:00:00,Second event,Room B,Session
         events = exporter.parse_schedule_data("invalid format")
 
         assert len(events) == 0
+
+    @pytest.mark.parametrize(
+        "value,utc_hour",
+        [
+            ("2025-06-15T13:00:00Z", 13),
+            ("2025-06-15T09:00:00-04:00", 13),
+            ("2025-06-15T15:00:00+02:00", 13),
+            ("2025-06-15 09:00:00", 13),
+            ("2025-06-15T09:00:00", 13),
+            ("2025-06-15 09:00", 13),
+            ("2025-06-15T09:00", 13),
+            ("2025-06-15", 4),
+            (datetime(2025, 6, 15, 9), 13),
+            (datetime(2025, 6, 15, 13, tzinfo=timezone.utc), 13),
+        ],
+    )
+    def test_export_round_trips_instants_and_naive_timezone(self, tmp_path, value, utc_hour):
+        exporter = ScheduleExporter({"timezone": "America/New_York"})
+        output = tmp_path / "schedule.ics"
+        output.write_bytes(b"previous calendar\r\n")
+        assert exporter.export_symposium_schedule(
+            [{"title": "Synthetic event", "start_time": value}], output
+        )
+        calendar = icalendar.Calendar.from_ical(output.read_bytes())
+        events = [component for component in calendar.walk() if component.name == "VEVENT"]
+        assert len(events) == 1
+        expected = datetime(2025, 6, 15, utc_hour, tzinfo=timezone.utc)
+        assert events[0].decoded("dtstart").astimezone(timezone.utc) == expected
+        assert events[0].decoded("dtend").astimezone(timezone.utc) == expected + timedelta(hours=1)
+        assert str(events[0]["summary"]) == "Synthetic event"
+        assert set(tmp_path.iterdir()) == {output}
+
+    @pytest.mark.parametrize("field", ["start_time", "end_time"])
+    def test_invalid_timestamp_rejects_whole_publication(self, exporter, tmp_path, field):
+        output = tmp_path / "schedule.ics"
+        original = b"previous calendar\r\n"
+        output.write_bytes(original)
+        invalid = {
+            "title": "Invalid event",
+            "start_time": "2025-06-15T09:00:00Z",
+            "end_time": "2025-06-15T10:00:00Z",
+            field: "not-a-timestamp",
+        }
+        schedule = [
+            {"title": "Valid event", "start_time": "2025-06-15T08:00:00Z"},
+            invalid,
+        ]
+        assert not exporter.export_symposium_schedule(schedule, output)
+        assert output.read_bytes() == original
+        assert set(tmp_path.iterdir()) == {output}
+        report = exporter.validate_schedule(schedule)
+        assert report["valid_events"] == 1
+        assert len(report["errors"]) == 1
+
+    @pytest.mark.parametrize(
+        "failure",
+        [
+            "construction",
+            "serialization",
+            "creation",
+            "write",
+            "short_write",
+            "flush",
+            "close",
+            "sync",
+            "replace",
+        ],
+    )
+    def test_failed_publication_preserves_existing_bytes_and_other_temps(
+        self, exporter, sample_schedule_data, tmp_path, monkeypatch, failure
+    ):
+        output = tmp_path / "schedule.ics"
+        original = b"previous calendar\r\n\x00"
+        output.write_bytes(original)
+        unrelated = tmp_path / ".schedule.ics.someone-else.tmp"
+        unrelated.write_bytes(b"not owned by this export")
+        events = exporter.parse_schedule_data(sample_schedule_data)
+        owned_temps = []
+
+        def fail(*args, **kwargs):
+            raise OSError("Synthetic publication failure")
+
+        if failure == "construction":
+            monkeypatch.setattr(exporter, "create_ics_calendar", fail)
+        elif failure == "serialization":
+            monkeypatch.setattr(icalendar.Calendar, "to_ical", fail)
+        elif failure == "creation":
+            monkeypatch.setattr(exporter_module, "NamedTemporaryFile", fail)
+        elif failure in ("write", "short_write", "flush", "close"):
+            create_temporary = exporter_module.NamedTemporaryFile
+
+            class BrokenTemporary:
+                def __init__(self, **kwargs):
+                    self.file = create_temporary(**kwargs)
+                    self.name = self.file.name
+                    owned_temps.append(Path(self.name))
+
+                def __enter__(self):
+                    return self
+
+                def __exit__(self, *args):
+                    result = self.file.__exit__(*args)
+                    if failure == "close":
+                        raise OSError("Synthetic close failure")
+                    return result
+
+                def write(self, content):
+                    if failure in ("write", "short_write"):
+                        self.file.write(content[:7])
+                        if failure == "short_write":
+                            return 7
+                        raise OSError("Synthetic partial write")
+                    return self.file.write(content)
+
+                def flush(self):
+                    if failure == "flush":
+                        raise OSError("Synthetic flush failure")
+                    return self.file.flush()
+
+                def fileno(self):
+                    return self.file.fileno()
+
+            monkeypatch.setattr(exporter_module, "NamedTemporaryFile", BrokenTemporary)
+        elif failure == "sync":
+            monkeypatch.setattr(exporter_module.os, "fsync", fail)
+        else:
+            monkeypatch.setattr(exporter_module.os, "replace", fail)
+
+        assert not exporter.export_ics_file(events, output)
+        assert output.read_bytes() == original
+        assert unrelated.read_bytes() == b"not owned by this export"
+        assert all(not path.exists() for path in owned_temps)
+        assert set(tmp_path.iterdir()) == {output, unrelated}

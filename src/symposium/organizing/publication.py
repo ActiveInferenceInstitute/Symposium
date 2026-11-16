@@ -37,7 +37,8 @@ def _utc(value: str) -> datetime:
         parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
     except (ValueError, AttributeError) as exc:
         raise PublicationError("Expected explicit UTC timestamp") from exc
-    if parsed.utcoffset() is None or parsed.utcoffset().total_seconds() != 0:
+    offset = parsed.utcoffset()
+    if offset is None or offset.total_seconds() != 0:
         raise PublicationError("Expected explicit UTC timestamp")
     return parsed
 
@@ -176,9 +177,12 @@ def _check_pdf(raw: bytes, *, book_contact: bool = False) -> None:
             raise PublicationError("Encrypted public PDF is not permitted")
         if not 0 < len(reader.pages) <= 1000:
             raise PublicationError("PDF page count exceeds its bound")
-        page_ids = {
-            (p.indirect_reference.idnum, p.indirect_reference.generation) for p in reader.pages
-        }
+        page_ids: set[tuple[int, int]] = set()
+        for page in reader.pages:
+            reference = page.indirect_reference
+            if not isinstance(reference, IndirectObject):
+                raise PublicationError("PDF page has no indirect reference")
+            page_ids.add((reference.idnum, reference.generation))
         pending = [(reader.trailer, 0, False)]
         seen: set[tuple[int, int]] = set()
         visits = 0
@@ -191,6 +195,8 @@ def _check_pdf(raw: bytes, *, book_contact: bool = False) -> None:
             if isinstance(node, IndirectObject):
                 identity = (node.idnum, node.generation)
                 resolved = node.get_object()
+                if resolved is None:
+                    raise PublicationError("Unresolved PDF indirect reference")
                 if action:
                     if not isinstance(resolved, DictionaryObject) or resolved.get("/S") not in {
                         "/URI",
@@ -369,7 +375,10 @@ def stage_public(
     bundle = validate_bundle(bundle)
     if type(max_age_seconds) is not int or not 0 < max_age_seconds <= 86400:
         raise PublicationError("Snapshot age limit must be positive and at most one day")
-    observed = _utc(snapshot.get("observed_at"))
+    observed_at = snapshot.get("observed_at")
+    if not isinstance(observed_at, str):
+        raise PublicationError("Expected explicit UTC timestamp")
+    observed = _utc(observed_at)
     if (
         "snapshot_date_utc" in bundle["event"]
         and bundle["event"]["snapshot_date_utc"]

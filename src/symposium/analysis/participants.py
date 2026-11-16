@@ -2,11 +2,13 @@
 
 import logging
 import time
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any, Dict, Optional
 
 from symposium.core.api import BaseAPIProvider, PaymentRequiredError
 from symposium.core.data_loader import DataLoader
+from symposium.core.participant_schema import Participant
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +27,7 @@ class ParticipantAnalyzer:
         self.config = config or {}
         self.data_loader = DataLoader()
 
-    def load_participant_data(self, csv_path: Path) -> Dict[str, Dict[str, Any]]:
+    def load_participant_data(self, csv_path: Path) -> dict[str, Participant]:
         """Load participant data from CSV file.
 
         Args:
@@ -36,7 +38,7 @@ class ParticipantAnalyzer:
         """
         return self.data_loader.load_participant_data(csv_path)
 
-    def generate_background_research_prompt(self, participant_data: Dict[str, Any]) -> str:
+    def generate_background_research_prompt(self, participant_data: Mapping[str, object]) -> str:
         """Generate background research prompt for a participant.
 
         Args:
@@ -132,7 +134,7 @@ GOAL: Create the most comprehensive, well-sourced research profile possible usin
 
         return prompt
 
-    def generate_curriculum_prompt(self, participant_data: Dict[str, Any]) -> str:
+    def generate_curriculum_prompt(self, participant_data: Mapping[str, object]) -> str:
         """Generate personalized curriculum prompt for a participant.
 
         Args:
@@ -237,7 +239,7 @@ Tailor this curriculum specifically to their background, interests, and stated l
         return prompt
 
     def research_participant_background(
-        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
+        self, participant_data: Mapping[str, object], system_prompt: Optional[str] = None
     ) -> str:
         """Research a participant's background using internet search.
 
@@ -282,7 +284,7 @@ Tailor this curriculum specifically to their background, interests, and stated l
         return response
 
     def generate_personalized_curriculum(
-        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
+        self, participant_data: Mapping[str, object], system_prompt: Optional[str] = None
     ) -> str:
         """Generate a personalized Active Inference curriculum.
 
@@ -307,7 +309,7 @@ Tailor this curriculum specifically to their background, interests, and stated l
         return response
 
     def analyze_participant_profile(
-        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
+        self, participant_data: Mapping[str, object], system_prompt: Optional[str] = None
     ) -> str:
         """Analyze a participant's profile for symposium participation.
 
@@ -404,7 +406,7 @@ Please provide a comprehensive profile analysis including:
         return prompt
 
     def analyze_participant(
-        self, participant_data: Dict[str, Any], system_prompt: Optional[str] = None
+        self, participant_data: Mapping[str, object], system_prompt: Optional[str] = None
     ) -> str:
         """Analyze a participant's profile.
 

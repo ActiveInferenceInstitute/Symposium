@@ -4,7 +4,8 @@ import logging
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from symposium.core.api import BaseAPIProvider
+from symposium.core.api import BaseAPIProvider, PaymentRequiredError
+from symposium.core.batch import BatchIncompleteError
 from symposium.core.data_loader import DataLoader
 
 logger = logging.getLogger(__name__)
@@ -143,7 +144,8 @@ Please be specific and technical in your analysis."""
             include_methods: Whether to generate methods documentation
 
         Returns:
-            Dictionary mapping researcher names to their profiles
+            Fully persisted profiles. An incomplete batch raises BatchIncompleteError;
+            payment errors stop immediately. Existing and partial files are retained.
         """
         from symposium.analysis.presenters import PresenterAnalyzer
         from symposium.io.writers import ReportWriter
@@ -154,33 +156,47 @@ Please be specific and technical in your analysis."""
             data_path, max_rows=self.config.get("max_rows_per_file", 10)
         )
 
-        results = {}
+        results: Dict[str, Dict[str, str]] = {}
+        failures: Dict[str, str] = {}
 
         for researcher_name, researcher_data in presenters.items():
             try:
                 logger.info(f"Generating profile for: {researcher_name}")
-                results[researcher_name] = {}
 
                 # Generate research profile
                 profile = analyzer.analyze_presenter(researcher_data, domain_context)
-                results[researcher_name]["profile"] = profile
 
                 ReportWriter.save_presenter_report(
                     researcher_name, profile, output_dir, "research_profile"
                 )
+                researcher_results = {"profile": profile}
 
                 # Generate methods documentation if requested
                 if include_methods:
                     methods = self.generate_research_methods(researcher_data, domain_context)
-                    results[researcher_name]["methods"] = methods
 
                     ReportWriter.save_presenter_report(
                         researcher_name, methods, output_dir, "research_methods"
                     )
+                    researcher_results["methods"] = methods
 
+                results[researcher_name] = researcher_results
+
+            except PaymentRequiredError:
+                logger.error(
+                    "Payment stopped batch: %d/%d fully persisted; partial files retained in %s",
+                    len(results),
+                    len(presenters),
+                    output_dir,
+                )
+                raise
             except Exception as e:
                 logger.error(f"Error generating profile for {researcher_name}: {e}")
+                failures[researcher_name] = str(e)
                 continue
+
+        if failures:
+            raise BatchIncompleteError(len(presenters), results, failures, output_dir)
 
         logger.info(f"Completed profile generation for {len(results)} researchers")
         return results

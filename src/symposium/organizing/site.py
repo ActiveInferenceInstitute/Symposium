@@ -127,14 +127,14 @@ def build_site(
         else ""
     )
     actions = "".join(
-        _link(event.get(key, ""), label, "button" if index == 0 else "")
-        for index, (key, label) in enumerate(
+        _link(url, label, "button" if index == 0 else "")
+        for index, (url, label) in enumerate(
             [
-                ("participant_registration_url", "Register to participate"),
-                ("presenter_registration_url", "Presenter registration"),
-                ("program_url", "Official program"),
-                ("community_url", "Join the community"),
-                ("donate_url", "Support the Institute"),
+                (event["participant_registration_url"], "Register to participate"),
+                (event["presenter_registration_url"], "Presenter registration"),
+                (event["program_url"], "Official program"),
+                (event["community_url"], "Join the community"),
+                (event["donate_url"], "Support the Institute"),
             ]
         )
     )
@@ -157,30 +157,33 @@ def build_site(
 <summary><span class="eyebrow">{_escape(p.get("contribution_type", "Presentation"))}</span><h3>{_escape(p["title"])}</h3><span>{_escape(p["presenter"])}</span>{'<span class="pending">Abstract pending</span>' if not p["abstract"].strip() else ""}<span class="read-label">{"Read abstract" if p["abstract"].strip() else "View presentation details"}</span></summary>
 <div class="record-body"><div class="prose">{_escape(p["abstract"] if p["abstract"].strip() else "No program abstract has been published for this presentation yet.")}</div><div class="pictures">{"".join(images[p["id"]])}</div><div class="cluster">{_link(p.get("source_url", ""), "Approved source")}{dossiers}<a href="#presentation-{quote(p["id"])}">Link to abstract</a></div></div></details>''')
     participant_rows = []
-    fields = [
-        ("background", "Background"),
-        ("pragmatic_value", "Pragmatic value"),
-        ("epistemic_value", "Epistemic value"),
-        ("active_inference_application", "Applications of Active Inference"),
-        ("challenges", "Challenges"),
-        ("learning_needs", "Learning needs"),
-        ("future_impact", "Future impact"),
-    ]
-    for p in bundle.get("participants", []):
-        affiliations = p.get("affiliations", [])
+    for participant in bundle["participants"]:
+        affiliations = participant["affiliations"]
         if isinstance(affiliations, list):
             affiliations = "; ".join(affiliations)
-        content = "".join(
-            f'<h4>{label}</h4><p class="prose">{_escape(p[key])}</p>'
-            for key, label in fields
-            if p.get(key)
+        profile_content = "".join(
+            f'<h4>{label}</h4><p class="prose">{_escape(value)}</p>'
+            for value, label in (
+                (participant["background"], "Background"),
+                (participant["pragmatic_value"], "Pragmatic value"),
+                (participant["epistemic_value"], "Epistemic value"),
+                (
+                    participant["active_inference_application"],
+                    "Applications of Active Inference",
+                ),
+                (participant["challenges"], "Challenges"),
+                (participant["learning_needs"], "Learning needs"),
+                (participant["future_impact"], "Future impact"),
+            )
+            if value
         )
-        orcid = p.get("orcid", "")
+        orcid = participant["orcid"]
         brief = _link(
-            downloads.get(f"participants/{p['id']}.md", ""), "Participant brief · Markdown"
+            downloads.get(f"participants/{participant['id']}.md", ""),
+            "Participant brief · Markdown",
         )
         participant_rows.append(
-            f'<details class="record" data-record id="participant-{_escape(p["id"])}"><summary><h3>{_escape(p["name"])}</h3><span>{_escape(affiliations)}</span><span class="read-label">Explore profile</span></summary><div class="record-body">{content}{_link(orcid if orcid.startswith("https://") else "https://orcid.org/" + orcid, "ORCID") if orcid else ""}<div class="cluster">{brief}</div></div></details>'
+            f'<details class="record" data-record id="participant-{_escape(participant["id"])}"><summary><h3>{_escape(participant["name"])}</h3><span>{_escape(affiliations)}</span><span class="read-label">Explore profile</span></summary><div class="record-body">{profile_content}{_link(orcid if orcid.startswith("https://") else "https://orcid.org/" + orcid, "ORCID") if orcid else ""}<div class="cluster">{brief}</div></div></details>'
         )
     sessions = []
     for s in bundle.get("sessions", []):

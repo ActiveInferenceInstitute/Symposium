@@ -1,0 +1,76 @@
+{
+  "versions": {
+    "mypy": "2.4.1",
+    "adjustText": "1.4.0",
+    "wordcloud": "1.9.6",
+    "scikit-learn": "1.9.1",
+    "scikit-learn-stubs": "0.0.3",
+    "scipy": "1.18.1",
+    "scipy-stubs": "1.18.1.1",
+    "networkx": "3.7",
+    "types-networkx": "3.6.1.20261108"
+  },
+  "projections": [
+    {
+      "distribution": "scikit-learn-stubs",
+      "path": "sklearn-stubs/feature_extraction/text.pyi",
+      "sha256": "402d47bae27cad1b8c944213b982d7b85bed47dfe48db38a8d740db96adf3327",
+      "corrections": [
+        {
+          "old": ") -> ndarray | spmatrix: ...",
+          "new": ") -> sp.csr_array | sp.csr_matrix: ...",
+          "count": 1
+        },
+        {
+          "old": "def transform(self, raw_documents: list[str] | ndarray | Iterable) -> spmatrix: ...",
+          "new": "def transform(self, raw_documents: list[str] | ndarray | Iterable) -> sp.csr_array | sp.csr_matrix: ...",
+          "count": 2
+        },
+        {
+          "old": "def transform(self, X: MatrixLike, copy: bool = True) -> spmatrix: ...",
+          "new": "def transform(self, X: MatrixLike, copy: bool = True) -> sp.csr_array | sp.csr_matrix: ...",
+          "count": 1
+        },
+        {
+          "old": "def fit_transform(self, raw_documents: list[str] | ndarray | Iterable, y: None | ndarray = None) -> spmatrix: ...",
+          "new": "def fit_transform(self, raw_documents: list[str] | ndarray | Iterable, y: None | ndarray = None) -> sp.csr_array | sp.csr_matrix: ...",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "distribution": "scikit-learn-stubs",
+      "path": "sklearn-stubs/_typing.pyi",
+      "sha256": "360afaed47bd08d88a7d3685a0033f10bb00e643e0e7bc5136b35669be656dde",
+      "corrections": [
+        {
+          "old": "from scipy.sparse import spmatrix",
+          "new": "from scipy.sparse import sparray, spmatrix",
+          "count": 1
+        },
+        {
+          "old": "MatrixLike: typing_extensions.TypeAlias = np.ndarray | pd.DataFrame | spmatrix",
+          "new": "MatrixLike: typing_extensions.TypeAlias = np.ndarray | pd.DataFrame | sparray | spmatrix",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "distribution": "types-networkx",
+      "path": "networkx-stubs/algorithms/community/quality.pyi",
+      "sha256": "68483c610172a90e90fad8555a42e076021975e3b9257406f491f9008e411fae",
+      "corrections": [
+        {
+          "old": "from collections.abc import Iterable",
+          "new": "from collections.abc import Iterable, Set as AbstractSet",
+          "count": 1
+        },
+        {
+          "old": "communities: Iterable[set[Incomplete]]",
+          "new": "communities: Iterable[AbstractSet[Incomplete]]",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

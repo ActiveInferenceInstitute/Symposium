@@ -12,7 +12,10 @@ from .models import (
     PublicationError,
     PublicBundle,
     PublicEvent,
+    PublicParticipant,
+    PublicPresentation,
     PublicResource,
+    PublicSession,
     content_hash,
     public_id,
     text_hash,
@@ -65,18 +68,24 @@ def cell_text(value: Any, *, depth: int = 0) -> str:
                 raise PublicationError(
                     "Typed datetime epoch is outside the supported range"
                 ) from exc
-        if value.get("type") == "dt" and isinstance(value.get("input"), str):
-            return value["input"]
-        if isinstance(value.get("name"), str):
-            return value["name"]
-        if isinstance(value.get("text"), str):
-            return value["text"]
-        if isinstance(value.get("root"), dict):
-            return cell_text(value["root"].get("children", []), depth=depth + 1)
-        if isinstance(value.get("children"), list):
-            return "".join(cell_text(child, depth=depth + 1) for child in value["children"])
-        if value.get("type") == "urlref" and isinstance(value.get("url"), str):
-            return value["url"]
+        input_text = value.get("input")
+        if value.get("type") == "dt" and isinstance(input_text, str):
+            return input_text
+        name = value.get("name")
+        if isinstance(name, str):
+            return name
+        text = value.get("text")
+        if isinstance(text, str):
+            return text
+        root = value.get("root")
+        if isinstance(root, dict):
+            return cell_text(root.get("children", []), depth=depth + 1)
+        children = value.get("children")
+        if isinstance(children, list):
+            return "".join(cell_text(child, depth=depth + 1) for child in children)
+        url = value.get("url")
+        if value.get("type") == "urlref" and isinstance(url, str):
+            return url
     raise PublicationError("Unsupported rich-cell value requires private review")
 
 
@@ -121,7 +130,7 @@ def project_snapshot(
     tables = snapshot.get("tables")
     if not isinstance(tables, dict) or set(tables) != {"presentations", "participants", "sessions"}:
         raise PublicationError("Incomplete private source snapshot")
-    public: dict[str, Any] = {
+    public: PublicBundle = {
         "schema_version": 1,
         "event": event,
         "presentations": [],
@@ -158,7 +167,7 @@ def project_snapshot(
         try:
             values = _values(row, mapping["sources"]["presentations"]["fields"])
             title, presenter = values["title"], values["presenter"]
-            record = {
+            presentation: PublicPresentation = {
                 "id": public_id("talk", presenter, title),
                 "presenter": presenter,
                 "title": title,
@@ -168,7 +177,10 @@ def project_snapshot(
                 "pictures": [],
                 "abstract_sha256": text_hash(values["abstract"]),
             }
-            candidate = {**public, "presentations": [*public["presentations"], record]}
+            candidate: PublicBundle = {
+                **public,
+                "presentations": [*public["presentations"], presentation],
+            }
             validate_bundle(candidate)
             try:
                 media = _picture_urls(
@@ -183,7 +195,7 @@ def project_snapshot(
                         "reason": "Unrecognized picture attachment withheld; text remains published",
                     }
                 )
-            if not record["abstract"].strip():
+            if not presentation["abstract"].strip():
                 ledger["warnings"].append(
                     {
                         "kind": "presentation",
@@ -191,17 +203,17 @@ def project_snapshot(
                         "reason": "No program abstract published yet; keep explicit pending state",
                     }
                 )
-            public["presentations"].append(record)
+            public["presentations"].append(presentation)
             ledger["included"].append(
                 {
                     "kind": "presentation",
                     "source_row": source_id,
-                    "public_id": record["id"],
+                    "public_id": presentation["id"],
                     "approval": "published-program",
-                    "content_sha256": content_hash(record),
+                    "content_sha256": content_hash(presentation),
                 }
             )
-            ledger["media"][record["id"]] = media
+            ledger["media"][presentation["id"]] = media
         except (ValueError, TypeError, KeyError) as exc:
             ledger["excluded"].append(
                 {
@@ -210,7 +222,7 @@ def project_snapshot(
                     "reason": type(exc).__name__ + ": " + str(exc),
                 }
             )
-    eligible: list[tuple[str, dict[str, Any]]] = []
+    eligible: list[tuple[str, PublicParticipant]] = []
     for row in tables["participants"]["rows"]:
         source_id = row["rowId"]
         try:
@@ -230,20 +242,20 @@ def project_snapshot(
                 )
                 continue
             values = _values(row, fields)
-            record = {
+            participant_values = {
                 key: (values[key].strip() if values[key].strip() not in NULL_VALUES else "")
                 for key in PARTICIPANT_FIELDS
             }
-            if not record["name"]:
+            if not participant_values["name"]:
                 ledger["excluded"].append(
                     {"kind": "participant", "source_row": source_id, "reason": "Blank registration"}
                 )
                 continue
-            if record["orcid"] and not re.fullmatch(
+            if participant_values["orcid"] and not re.fullmatch(
                 r"(?:https://orcid\.org/)?[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]",
-                record["orcid"],
+                participant_values["orcid"],
             ):
-                record["orcid"] = ""
+                participant_values["orcid"] = ""
                 ledger["warnings"].append(
                     {
                         "kind": "participant",
@@ -251,9 +263,21 @@ def project_snapshot(
                         "reason": "Non-identifier ORCID response omitted; original retained privately",
                     }
                 )
-            record["id"] = public_id("person", record["name"].casefold())
-            validate_bundle({**public, "participants": [record]})
-            eligible.append((source_id, record))
+            participant: PublicParticipant = {
+                "id": public_id("person", participant_values["name"].casefold()),
+                "name": participant_values["name"],
+                "affiliations": participant_values["affiliations"],
+                "orcid": participant_values["orcid"],
+                "background": participant_values["background"],
+                "pragmatic_value": participant_values["pragmatic_value"],
+                "epistemic_value": participant_values["epistemic_value"],
+                "active_inference_application": participant_values["active_inference_application"],
+                "challenges": participant_values["challenges"],
+                "learning_needs": participant_values["learning_needs"],
+                "future_impact": participant_values["future_impact"],
+            }
+            validate_bundle({**public, "participants": [participant]})
+            eligible.append((source_id, participant))
         except (ValueError, TypeError, KeyError) as exc:
             ledger["excluded"].append(
                 {
@@ -262,9 +286,9 @@ def project_snapshot(
                     "reason": type(exc).__name__ + ": " + str(exc),
                 }
             )
-    names = Counter(record["name"].casefold() for _, record in eligible)
-    for source_id, record in eligible:
-        if names[record["name"].casefold()] > 1:
+    names = Counter(person["name"].casefold() for _, person in eligible)
+    for source_id, person in eligible:
+        if names[person["name"].casefold()] > 1:
             ledger["excluded"].append(
                 {
                     "kind": "participant",
@@ -273,14 +297,14 @@ def project_snapshot(
                 }
             )
             continue
-        public["participants"].append(record)
+        public["participants"].append(person)
         ledger["included"].append(
             {
                 "kind": "participant",
                 "source_row": source_id,
-                "public_id": record["id"],
+                "public_id": person["id"],
                 "approval": "affirmative-registration-consent",
-                "content_sha256": content_hash(record),
+                "content_sha256": content_hash(person),
             }
         )
     for row in tables["sessions"]["rows"]:
@@ -301,16 +325,23 @@ def project_snapshot(
                 if parsed.utcoffset() is None:
                     raise PublicationError("Source timestamp has no timezone")
                 values[key] = parsed.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
-            record = {"id": public_id("session", values["title"], values["start_utc"]), **values}
-            validate_bundle({**public, "sessions": [*public["sessions"], record]})
-            public["sessions"].append(record)
+            session: PublicSession = {
+                "id": public_id("session", values["title"], values["start_utc"]),
+                "title": values["title"],
+                "presenter": values["presenter"],
+                "kind": values["kind"],
+                "start_utc": values["start_utc"],
+                "end_utc": values["end_utc"],
+            }
+            validate_bundle({**public, "sessions": [*public["sessions"], session]})
+            public["sessions"].append(session)
             ledger["included"].append(
                 {
                     "kind": "session",
                     "source_row": source_id,
-                    "public_id": record["id"],
+                    "public_id": session["id"],
                     "approval": "published-schedule",
-                    "content_sha256": content_hash(record),
+                    "content_sha256": content_hash(session),
                 }
             )
         except (ValueError, TypeError, KeyError) as exc:

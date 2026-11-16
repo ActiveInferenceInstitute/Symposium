@@ -96,7 +96,7 @@ def _methods(catalog: Catalog, base: str) -> str:
         commands = "".join(
             f"<li><code>uv run {_escape(command)}</code></li>" for command in workflow["commands"]
         )
-        repositories = "".join(
+        repository_links = "".join(
             f'<a href="#repository-{_escape(key)}">{_escape(key)}</a>'
             for key in workflow["repository_ids"]
         )
@@ -104,7 +104,7 @@ def _methods(catalog: Catalog, base: str) -> str:
             ", ".join(credential_labels[key] for key in workflow["credential_ids"]) or "None"
         )
         workflows.append(
-            f'''<article class="resource workflow" data-record tabindex="-1" id="workflow-{_escape(workflow["id"])}"><h3>{_escape(workflow["title"])}</h3><p>{_escape(workflow["summary"])}</p><ul>{commands}</ul><p><strong>Credential requirements:</strong> {_escape(credentials)}</p><div class="cluster"><a href="{_escape(workflow["docs_url"])}">Workflow documentation</a>{repositories}</div></article>'''
+            f'''<article class="resource workflow" data-record tabindex="-1" id="workflow-{_escape(workflow["id"])}"><h3>{_escape(workflow["title"])}</h3><p>{_escape(workflow["summary"])}</p><ul>{commands}</ul><p><strong>Credential requirements:</strong> {_escape(credentials)}</p><div class="cluster"><a href="{_escape(workflow["docs_url"])}">Workflow documentation</a>{repository_links}</div></article>'''
         )
     repositories = []
     for repository in catalog["repositories"]:

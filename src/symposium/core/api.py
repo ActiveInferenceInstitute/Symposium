@@ -3,10 +3,13 @@
 import logging
 import os
 from abc import ABC, abstractmethod
-from typing import Optional
+from typing import Any, Optional
 
 import backoff
 from openai import APIStatusError, OpenAI
+from openai.types.chat import ChatCompletionMessageParam
+
+from symposium.core.config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -90,7 +93,7 @@ class PerplexityProvider(BaseAPIProvider):
             Exception: For other API errors
         """
         try:
-            messages = []
+            messages: list[ChatCompletionMessageParam] = []
             if system_prompt:
                 messages.append({"role": "system", "content": system_prompt})
             messages.append({"role": "user", "content": prompt})
@@ -105,7 +108,10 @@ class PerplexityProvider(BaseAPIProvider):
             if not response or not response.choices:
                 raise ValueError("Empty response from Perplexity API")
 
-            return response.choices[0].message.content
+            content = response.choices[0].message.content
+            if not content:
+                raise ValueError("Empty response from Perplexity API")
+            return content
 
         except APIStatusError as exc:
             if exc.status_code == 402:
@@ -140,10 +146,8 @@ class OpenRouterProvider(BaseAPIProvider):
         max_tries=5,
         max_time=300,
         giveup=lambda e: (
-            not (
-                isinstance(e, Exception)
-                and ("rate" in str(e).lower() or "timeout" in str(e).lower())
-            )
+            isinstance(e, PaymentRequiredError)
+            or not ("rate" in str(e).lower() or "timeout" in str(e).lower())
         ),
     )
     def _get_response_with_retry(
@@ -224,6 +228,32 @@ class APIClient:
     """Factory class for creating API provider instances."""
 
     @staticmethod
+    def from_config(
+        config: Config,
+        provider: str | None = None,
+        *,
+        api_key: str | None = None,
+        **overrides: Any,
+    ) -> BaseAPIProvider:
+        """Construct one explicitly selected provider from resolved configuration.
+
+        Config owns file/environment precedence. An explicit provider or key
+        overrides that selection. Credentials are removed from copied options,
+        so they cannot collide with the factory's explicit api_key argument.
+        """
+        selected = provider if provider is not None else config.get("api.provider")
+        if not isinstance(selected, str) or selected.lower() not in ("perplexity", "openrouter"):
+            raise ValueError("Unsupported provider; choose 'perplexity' or 'openrouter'")
+        selected = selected.lower()
+        options = dict(config.get_api_config(selected))
+        options.pop("api_key", None)
+        options.update(overrides)
+        if "provider" in options:
+            raise ValueError("Provider options must not override provider selection")
+        key = api_key if api_key is not None else config.get_api_key(selected)
+        return APIClient.create(provider=selected, api_key=key, **options)
+
+    @staticmethod
     def create(provider: str, api_key: Optional[str] = None, **kwargs) -> BaseAPIProvider:
         """Create an API provider instance.
 
@@ -247,10 +277,8 @@ class APIClient:
             elif provider == "openrouter":
                 api_key = os.getenv("OPENROUTER_API_KEY")
 
-            if api_key is None:
-                raise ValueError(
-                    f"API key for {provider} not provided and not found in environment"
-                )
+        if not api_key:
+            raise ValueError(f"API key for {provider} not provided and not found in environment")
 
         if provider == "perplexity":
             return PerplexityProvider(api_key, **kwargs)
