@@ -9,6 +9,7 @@ from xml.sax.saxutils import escape
 
 import pytest
 from pypdf import PdfWriter
+from pypdf.actions import JavaScript
 from pypdf.generic import (
     ArrayObject,
     DecodedStreamObject,
@@ -54,7 +55,7 @@ def _pdf(text: str, *, uri: str = "https://example.org/", active: bool = False) 
     page[NameObject("/Annots")] = ArrayObject([annotation])
     writer.add_metadata({"/Title": "Synthetic public book"})
     if active:
-        writer.add_js("app.alert('synthetic');")
+        writer.add_open_action(JavaScript("app.alert('synthetic');"))
     target = io.BytesIO()
     writer.write(target)
     return target.getvalue()
