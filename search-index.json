@@ -288,11 +288,11 @@
       "url": "index.html#presentation-talk-f41341ff72644ef5"
     },
     {
-      "id": "talk-7013ce9d23d8fd4d",
+      "id": "talk-69615e74fffd064e",
       "kind": "presentation",
       "text": "As AI systems increasingly mediate access to scientific knowledge, how they communicate complex theories becomes consequential for public understanding. Active inference presents a distinctive challenge: its mathematical and computational foundations offer explanatory resources, yet accessible accounts must distinguish formal results, empirical evidence, and emerging interpretations. Simplification can support understanding, but can also obscure uncertainty or encourage misleading conclusions about personal experience.\nBuilding on Pereira and Chamberlin’s manuscript, this foundational study will explore recommendations for large AI companies communicating active inference to general audiences. Its central question is how AI communication can preserve scientific integrity while helping people understand both the framework's core concepts and their potential relevance to everyday life. Particular attention will be given to the difference between being able to repeat an explanation and developing an understanding that supports reflection, judgment, and appropriate application.\nThe project will draw on literature spanning active inference, science communication, human–AI interaction, and learning. It will examine candidate communication approaches, including layered explanations, everyday examples, explicit statements of uncertainty, and prompts that connect abstract concepts to users' existing knowledge. A potential evaluation framework could consider conceptual accuracy, accessibility, perceived personal relevance, and the ability to distinguish supported implications from speculation. This framework could guide empirical evaluation of approaches.\nThe proposed contribution is an initial set of communication principles and research questions for AI developers, researchers, and educators. Rather than assuming that greater accessibility necessarily produces better understanding, the study will examine the tensions between clarity, scientific fidelity, personal relevance, and unwarranted certainty. The broader aim is to support communication that enables people to engage meaningfully with complex science without presenting a theoretical framework as a comprehensive explanation of their lives. This thirty minute presentation will outline the rationale, proposed framework, and recommendations emerging from the work, alongside priorities for further research and evaluation.",
-      "title": "Inferring the Unseen",
-      "url": "index.html#presentation-talk-7013ce9d23d8fd4d"
+      "title": "A First Principle Perspective for AI Safety",
+      "url": "index.html#presentation-talk-69615e74fffd064e"
     },
     {
       "id": "talk-354181e0a9360578",
@@ -386,11 +386,11 @@
       "url": "index.html#presentation-talk-a8117f67e8bf3d7d"
     },
     {
-      "id": "talk-ebebeaad2bad66f7",
+      "id": "talk-4924bb4662299572",
       "kind": "presentation",
       "text": "A good regulator’s model is a reduced representation that preserves useful variety (Alicea, Hough, Nelson and Parent, 2026). For active inference, this raises a design question: before any content is learned, which distinctions between sources and channels should an agent’s generative model keep apart?\nWe propose two taxonomies drawn from minimal regulators. Causal Standpoint Routes, derived from Turing’s networked machine, classify any influence across a boundary by where it starts, where it ends, and whether it passes through another system. The four immediate routes are the Markov blanket’s own dependencies. Four mediated routes cover reports relayed through another agent, actions delegated to tools, chains of external causes, and stored state. Allostatic Kinds, derived from Ashby’s homeostat, describe what an agent regulates through each coupling: set points as preferred outcomes, the sign of each coupling, and allostasis when preferences shift. Both are relative to where the boundary is drawn, which is what lets them carry across domains.\nThe routes add no new inference machinery. They propose how to factor the model so that existing machinery, such as epistemic value and novelty, targets the right channels: probing an intermediary, for example, rather than only the world behind it. Merging channels predicts specific failures. Internally generated content treated as sensory fits the precision account of hallucination. In language models, prompt injection, invented sources and long-context drift look like the same breakdowns.\nWe outline two tests: pymdp agents factored by route, compared under environmental shift with agents factored by matched irrelevant distinctions; and whether reinforcing these distinctions in LLM agents reduces source confusion more than unrelated errors. We present proposals and study designs, not results, and put one open claim to the audience: that mediated routes correspond to nested blankets and deeper levels of the generative model.",
-      "title": "From Minimal Regulators to World Models: Boundary-Relative Distinctions for Factoring Generative Models",
-      "url": "index.html#presentation-talk-ebebeaad2bad66f7"
+      "title": "From Minimal Model Systems to World Models: Boundary-Relative Distinctions for Factoring Generative Models",
+      "url": "index.html#presentation-talk-4924bb4662299572"
     },
     {
       "id": "talk-a1b55a90a3543912",
