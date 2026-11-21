@@ -6,14 +6,13 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 3.4.0 prepares the final 2026 Presenter Program.**
+**Version 3.4.0 publishes the final 2026 Presenter Program.**
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
 and the [PDF](data/public/2026/book.pdf) and [Word](data/public/2026/book.docx) books.
-The [3.4.0 release record](docs/release_3_4_0.md) tracks the final book and its
-publication status. The [November 12 edition](docs/release_3_3_0.md) remains
-available on [Zenodo](https://doi.org/10.5281/zenodo.24161029) and
-[GitHub](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.3.0).
+Find the final book on [Zenodo](https://doi.org/10.5281/zenodo.24409077) and the
+[GitHub v3.4.0 release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.4.0). See the
+[release record](docs/release_3_4_0.md) for downloads and verification.
 Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
 
@@ -248,13 +247,11 @@ presents approved abstracts, consenting participant profiles, available dossiers
 abstract-book downloads, and explicitly scheduled sessions. The 2026 Symposium is
 online and free, November 12–13 (UTC). The public build uses only the verified
 `data/public/2026` snapshot; it requires no organizer credentials or paid AI service.
-The snapshot is dated **November 12, 2026**: 55 contributions, 19 explicit UTC
-sessions, and 119 consenting participant profiles. Prerecorded talks without a
-submitted video and withdrawn contributions are removed. The participant charts
-still use the separately admitted **55-record public 2026 view** of November 5;
-they were not regenerated for this edition. The book keeps two missing abstracts
-explicitly pending and credits the Institute followed by all 50 published
-presenter/group display labels, without splitting composite credits.
+The **November 21, 2026 UTC** snapshot includes 55 contributions, 19 UTC
+sessions, and 131 consenting participant profiles. The participant charts use
+the separately admitted **55-record public 2026 view** of November 5. The book
+marks two abstracts pending and credits Active Inference Institute first,
+followed by each named presenter once.
 See the [publication and organizer guide](docs/organizing_publication.md) for source
 mapping, approval checks, native abstract-book production, and deployment boundaries.
 
@@ -281,8 +278,7 @@ For the software:
 }
 ```
 
-The [final book release record](docs/release_3_4_0.md) tracks citation and
-publication details. The [all-versions book DOI](https://doi.org/10.5281/zenodo.23986504)
+For the book, cite the [version DOI](https://doi.org/10.5281/zenodo.24409077). The [all-versions book DOI](https://doi.org/10.5281/zenodo.23986504)
 resolves to the latest published edition. The repository and release
 metadata use the [MIT license](LICENSE).
 

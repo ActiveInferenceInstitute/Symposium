@@ -6,6 +6,7 @@ authors:
   - name: "Active Inference Institute"
     website: "https://activeinference.institute/"
 version: "3.4.0"
+date-released: "2026-11-21"
 license: "MIT"
 url: "https://github.com/ActiveInferenceInstitute/Symposium"
 keywords:
@@ -19,7 +20,8 @@ references:
     version: "3.4.0"
     doi: "10.5281/zenodo.24409077"
     url: "https://doi.org/10.5281/zenodo.24409077"
-    notes: "Final edition. The DOI is reserved in Zenodo pending publication. Authors follow the rendered book credits."
+    date-published: "2026-11-21"
+    notes: "Final edition published on Zenodo. Authors follow the rendered book credits."
     authors:
       - name: "Active Inference Institute"
       - name: "Bradly Alicea"

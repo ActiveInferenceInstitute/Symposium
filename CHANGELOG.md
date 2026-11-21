@@ -2,7 +2,7 @@
 
 All notable changes to the Symposium package.
 
-## [3.4.0] — Release candidate
+## [3.4.0] — 2026-11-21
 
 - Refresh the final 2026 program, dossiers, participant briefs, calendar, portraits,
   and PDF and Word books from the November 21 UTC organizer snapshot.
