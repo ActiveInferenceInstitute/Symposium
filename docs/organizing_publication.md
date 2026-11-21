@@ -133,10 +133,26 @@ alone does not establish layout quality. A draft book is labeled as a draft.
 The optional `BookDesign(cover_image, frontispiece_image, title=None, doi=None)` argument to
 `stage_abstract_book` and `render_abstract_book` adds a designed cover and a second
 physical page containing generated conceptual artwork. Its author order starts
-with **Active Inference Institute**, followed by every unique exact presenter
-display label in the deterministic contribution order. Composite presenter labels
-are retained as submitted; the adapter does not split names, merge near-matches,
-or invent affiliations. The cover includes the validated event dates, `https://symposium.activeinference.institute/`,
+with **Active Inference Institute**, followed by every person named in the
+presenter display labels, in the deterministic contribution order. A comma or an
+ampersand separates people in a published label ("Dan Corva, Kevin Backhouse";
+"Jesse Parent & Avery Lim"), so each person becomes one author, credited once and
+spelled exactly as published; a split that would leave an empty part keeps the label
+whole. The adapter does not merge near-matches (for example "Jes Parent" and
+"Jesse Parent") or invent affiliations. Each contribution's own "Presenter:" line
+keeps its whole published label, and exact presenter profiles still bind to whole
+labels only.
+
+ORCIDs and affiliations for individual authors come only from an optional private
+file the organizer reviews, passed as `--credit-identifiers` to `organize book`
+(with the cover artwork): `{"schema_version": 1, "people": [{"name", "orcid",
+"affiliation", "basis"}]}`. `name` must equal an individual cover credit exactly;
+`orcid` is a bare iD whose check character is verified, or `null`; `affiliation` is
+display text or `null`; `basis` records who supplied the values (for example the
+presenter's written request) and stays in the private build manifest. The values
+reach the Template author list (and therefore the book's metadata and the Zenodo
+creators prepared from it); they are not inferred from registrations, email or
+near-matching names. The cover includes the validated event dates, `https://symposium.activeinference.institute/`,
 and the explicitly supplied organizational contact `blanket@activeinference.institute`.
 These cover contacts do not relax participant contact-field exclusions. The cover
 uses three columns at nine points and refuses a
