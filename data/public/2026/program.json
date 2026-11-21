@@ -17,7 +17,7 @@
     "participant_registration_url": "https://registersymposium2026.activeinference.institute/",
     "presenter_registration_url": "https://2026present.activeinference.institute/",
     "program_url": "https://2026symposium.activeinference.institute/",
-    "snapshot_date_utc": "2026-11-12",
+    "snapshot_date_utc": "2026-11-21",
     "start_date": "2026-11-12",
     "timezone": "UTC",
     "title": "6th Applied Active Inference Symposium",
@@ -129,6 +129,19 @@
       "pragmatic_value": "Networking and industry opportunities"
     },
     {
+      "active_inference_application": "all over, I think this way and work this way",
+      "affiliations": "The George Washington University",
+      "background": "clinical psychologist",
+      "challenges": "math",
+      "epistemic_value": "application to developmental psych and clinical psych",
+      "future_impact": "Clinical applications and models - not sure if this is big, but this is what I do",
+      "id": "person-943168c6ce13aed3",
+      "learning_needs": "Application to psychology and biology",
+      "name": "Alexey Tolchinsky",
+      "orcid": "0009-0009-4721-515X",
+      "pragmatic_value": "Karl Friston’s talk, Alison Gopnik’s talk, Michael Friston’s talk, Luca Possati’s talk."
+    },
+    {
       "active_inference_application": "",
       "affiliations": "Universidad Alberto Hurtado",
       "background": "PhD candidate in Philosophy at Universidad Alberto Hurtado (Chile). My thesis addresses persistent visual illusions and the epistemology of perception in predictive cognitive architectures. I co-run an Active Inference reading group and work on data visualization and user-machine interaction at Digital Quasar. Personal website: https://a.lfre.do\nOn the community side, I take part in the Santiago Mind & Cognition group at Universidad Alberto Hurtado, and we recently started a joint effort with Universidad de Chile’s Cognitive Studies Centre: an Active Inference Reading Group.",
@@ -152,6 +165,19 @@
       "learning_needs": "",
       "name": "Alianna Maren",
       "orcid": "0000-0002-4262-305X",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-e1d6f87b895a63b0",
+      "learning_needs": "",
+      "name": "Andrea lolli",
+      "orcid": "",
       "pragmatic_value": ""
     },
     {
@@ -337,6 +363,19 @@
       "pragmatic_value": ""
     },
     {
+      "active_inference_application": "",
+      "affiliations": "Active Inference Research",
+      "background": "Math Physics Engineering Art",
+      "challenges": "Information overload",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-7ab4449955a400a3",
+      "learning_needs": "",
+      "name": "Cere Davis",
+      "orcid": "0000-0003-0732-9549",
+      "pragmatic_value": "Insight"
+    },
+    {
       "active_inference_application": "Information architecture/AI applications",
       "affiliations": "",
       "background": "",
@@ -507,6 +546,19 @@
     },
     {
       "active_inference_application": "",
+      "affiliations": "University of Glasgow",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-f44b7e30470bbf28",
+      "learning_needs": "Reading groups",
+      "name": "Fraser",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
       "affiliations": "Institut de Neurosciences de la Timone",
       "background": "",
       "challenges": "",
@@ -582,6 +634,19 @@
       "name": "Henry Notroff",
       "orcid": "",
       "pragmatic_value": "Challenge Based Learning."
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "Coma Science Group, GIGA Consciousness, University of Liège, Belgium",
+      "background": "Medicine and neuromodulation",
+      "challenges": "",
+      "epistemic_value": "Clinical",
+      "future_impact": "",
+      "id": "person-79b29ed32490e41f",
+      "learning_needs": "",
+      "name": "Hozan Mohammadi",
+      "orcid": "0000-0001-7757-860X",
+      "pragmatic_value": "Clinical aspects"
     },
     {
       "active_inference_application": "",
@@ -738,6 +803,19 @@
       "name": "Justin Riddiough",
       "orcid": "",
       "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "I am currently at the exploratory and conceptual-comparison stage, rather than applying Active Inference directly. My doctoral research independently develops a formal framework for cognitive organisation and transformation. I am investigating where Active Inference offers complementary explanations, methodological insights or useful theoretical challenges, particularly within educational psychology.",
+      "affiliations": "Signum Magnum College",
+      "background": "I hold an MA in Educational Psychology and am currently a PhD candidate in Education at Signum Magnum College, Malta. My completed dissertation manuscript, A Reflexive Cognitive Manifold, develops a formal-theoretical framework for cognitive coherence, contextual transformation, reflexive organisation and decision architectures. My research interests include metacognition, self-regulated learning, formal epistemology and cognitive science. I have also authored independent research preprints and two books addressing cognition and learning.",
+      "challenges": "Translating abstract mathematical models into clear, testable explanations; distinguishing Active Inference from competing frameworks; and demonstrating practical value through rigorous empirical validation. Accessibility across disciplines is another important challenge, particularly in education.",
+      "epistemic_value": "Understanding how Active Inference explains belief updating, cognitive adaptation and decision-making, and how it distinguishes formal mathematical coherence from explanatory and empirical validity. I am also interested in its relationship to alternative cognitive architectures.",
+      "future_impact": "By contributing to adaptive educational environments that respond to uncertainty, learner feedback and changing cognitive states. A particularly promising direction would be interpretable, empirically evaluated models of learning and self-regulation that can inform educational practice.",
+      "id": "person-f0de3e6d73842063",
+      "learning_needs": "A structured introduction connecting the mathematical foundations of Active Inference to cognitive psychology, metacognition, decision-making and learning. Worked examples, visual explanations and open-access educational case studies would be particularly valuable.",
+      "name": "Jérôme Jaouad Yousfi",
+      "orcid": "0009-0002-1412-4365",
+      "pragmatic_value": "Identifying relevant research, practical modelling approaches and potential academic contacts. I am particularly interested in how Active Inference could inform theoretical models of learning, cognitive coherence and self-regulated learning."
     },
     {
       "active_inference_application": "I am an independent researcher activist trying to figure out how to highlight the role of healing from trauma into the active inference community…I participate in other communities but I feel that active inference is a core concept that is not understood outside of this domain and that is tragic.",
@@ -974,6 +1052,19 @@
       "pragmatic_value": ""
     },
     {
+      "active_inference_application": "Computational Psychiatry",
+      "affiliations": "NeuroTechX",
+      "background": "Computational neuroimaging",
+      "challenges": "",
+      "epistemic_value": "SOTA in application areas",
+      "future_impact": "",
+      "id": "person-abb9cf1c1d191544",
+      "learning_needs": "tutorials",
+      "name": "Morgan Hough",
+      "orcid": "0000-0001-5256-413X",
+      "pragmatic_value": "livestream"
+    },
+    {
       "active_inference_application": "",
       "affiliations": "Student",
       "background": "I had done Computation Neuroscience course from Neuromatch Academy and currently I am doing Bachelors in Artificial Intelligence",
@@ -1143,6 +1234,19 @@
       "pragmatic_value": ""
     },
     {
+      "active_inference_application": "I am applying by building a product for tracking cognition and fuse it with upcoming wearable hardware",
+      "affiliations": "Worldview",
+      "background": "Mechanical Engineer turned co-founder for an energy storage startup, now looking into cognitive security and to build product along those line",
+      "challenges": "I feel the publicity and awareness",
+      "epistemic_value": "Yes",
+      "future_impact": "By introducing cognition tracking in upcoming electronic devices",
+      "id": "person-9eb707fd1511cba5",
+      "learning_needs": "Practical application cases",
+      "name": "Rajkaushik Borgohain",
+      "orcid": "",
+      "pragmatic_value": "To see the application cases"
+    },
+    {
       "active_inference_application": "",
       "affiliations": "",
       "background": "",
@@ -1204,6 +1308,19 @@
       "id": "person-e0e3a2b6471d044a",
       "learning_needs": "",
       "name": "Ryan",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-0bb2f846a2fc0478",
+      "learning_needs": "",
+      "name": "Sahana Murali",
       "orcid": "",
       "pragmatic_value": ""
     },
@@ -1318,6 +1435,19 @@
       "challenges": "",
       "epistemic_value": "",
       "future_impact": "",
+      "id": "person-c96976a1b41f53df",
+      "learning_needs": "",
+      "name": "Sebastian Wittekindt",
+      "orcid": "",
+      "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
       "id": "person-b37c4cd4f1a728c5",
       "learning_needs": "",
       "name": "Seungho Lee",
@@ -1388,6 +1518,19 @@
       "name": "Simone Chandler",
       "orcid": "",
       "pragmatic_value": ""
+    },
+    {
+      "active_inference_application": "I use it in my psychosocial workshops and in my InFiguration Action Method and InFusion Space Modelling workshop method",
+      "affiliations": "Global PsychoSocial Network, Aiding Dramatic Change in Development (ADCID)",
+      "background": "I have been part of the Active Inference institute and paper interviewing Karl Friston. developed Socio-",
+      "challenges": "Getting beyond in silico modelling and into lived complexity",
+      "epistemic_value": "How beyond representation, multi level work is being addressed using Max Entropy alongside active inference",
+      "future_impact": "Applied active inference can become the method underpinning that can beyond warm data labs and into self modelling instruments for participatory sense finding and sensemaking. Bring beyond representation wayfinding to life and grounding us in ways the semantic spaces of LLMs cannot",
+      "id": "person-203b04ac6e740982",
+      "learning_needs": "I want to be able to create dynamic causal modeling of my immersive creative spatial activities and tracking tech. Then connect that back to active inference and expected free energy parameters reported by participants",
+      "name": "Stephen Sillett",
+      "orcid": "https://orcid.org/0000-0003-1046-1946",
+      "pragmatic_value": "To get a change to invite participants to workshops using embodied spatial approaches to create non representational instruments for self modelling dynamics"
     },
     {
       "active_inference_application": "still learning; applying techniques to TVB (https://thevirtualbrain.org), conf.  Virtual Brain Inference (VBI), a flexible and integrative toolkit for efficient probabilistic inference on whole-brain models",
@@ -1466,6 +1609,19 @@
       "name": "Timothy Van Meter",
       "orcid": "",
       "pragmatic_value": "Skills and practical advances"
+    },
+    {
+      "active_inference_application": "",
+      "affiliations": "CrowdSmart",
+      "background": "",
+      "challenges": "",
+      "epistemic_value": "",
+      "future_impact": "",
+      "id": "person-2d23aaef7d72e553",
+      "learning_needs": "",
+      "name": "Tom Kehler",
+      "orcid": "",
+      "pragmatic_value": ""
     },
     {
       "active_inference_application": "Linguistic evolution",
@@ -1871,7 +2027,7 @@
       "abstract": "As AI systems increasingly mediate access to scientific knowledge, how they communicate complex theories becomes consequential for public understanding. Active inference presents a distinctive challenge: its mathematical and computational foundations offer explanatory resources, yet accessible accounts must distinguish formal results, empirical evidence, and emerging interpretations. Simplification can support understanding, but can also obscure uncertainty or encourage misleading conclusions about personal experience.\nBuilding on Pereira and Chamberlin’s manuscript, this foundational study will explore recommendations for large AI companies communicating active inference to general audiences. Its central question is how AI communication can preserve scientific integrity while helping people understand both the framework's core concepts and their potential relevance to everyday life. Particular attention will be given to the difference between being able to repeat an explanation and developing an understanding that supports reflection, judgment, and appropriate application.\nThe project will draw on literature spanning active inference, science communication, human–AI interaction, and learning. It will examine candidate communication approaches, including layered explanations, everyday examples, explicit statements of uncertainty, and prompts that connect abstract concepts to users' existing knowledge. A potential evaluation framework could consider conceptual accuracy, accessibility, perceived personal relevance, and the ability to distinguish supported implications from speculation. This framework could guide empirical evaluation of approaches.\nThe proposed contribution is an initial set of communication principles and research questions for AI developers, researchers, and educators. Rather than assuming that greater accessibility necessarily produces better understanding, the study will examine the tensions between clarity, scientific fidelity, personal relevance, and unwarranted certainty. The broader aim is to support communication that enables people to engage meaningfully with complex science without presenting a theoretical framework as a comprehensive explanation of their lives. This thirty minute presentation will outline the rationale, proposed framework, and recommendations emerging from the work, alongside priorities for further research and evaluation.",
       "abstract_sha256": "fcfc11fc0b871107bf6574eb14579fbabe42a31981b7fae1eebeb05e491c8c6e",
       "contribution_type": "Pre-recorded Video presentation",
-      "id": "talk-7013ce9d23d8fd4d",
+      "id": "talk-69615e74fffd064e",
       "pictures": [
         {
           "alt": "Anna Pereira — submitted presenter image",
@@ -1881,7 +2037,7 @@
       ],
       "presenter": "Anna Pereira",
       "source_url": "https://2026symposium.activeinference.institute/",
-      "title": "Inferring the Unseen"
+      "title": "A First Principle Perspective for AI Safety"
     },
     {
       "abstract": "A conversation between Héctor M. Manrique and Antonio Lucas-Alba (University of Zaragoza) on how drivers understand traffic signs. Active Inference offers a complementary framework for interpreting drivers’ preferred mental models as low-complexity generative models, which reduce uncertainty about both the traffic situation and the actions available to the driver. In this work, it helps explain why exit-event signs can be understood with little elaboration, whereas mainline-event signs, especially those without an arrowhead, leave more action policies open and so increase decisional ambiguity.",
@@ -2071,11 +2227,11 @@
       "abstract": "A good regulator’s model is a reduced representation that preserves useful variety (Alicea, Hough, Nelson and Parent, 2026). For active inference, this raises a design question: before any content is learned, which distinctions between sources and channels should an agent’s generative model keep apart?\nWe propose two taxonomies drawn from minimal regulators. Causal Standpoint Routes, derived from Turing’s networked machine, classify any influence across a boundary by where it starts, where it ends, and whether it passes through another system. The four immediate routes are the Markov blanket’s own dependencies. Four mediated routes cover reports relayed through another agent, actions delegated to tools, chains of external causes, and stored state. Allostatic Kinds, derived from Ashby’s homeostat, describe what an agent regulates through each coupling: set points as preferred outcomes, the sign of each coupling, and allostasis when preferences shift. Both are relative to where the boundary is drawn, which is what lets them carry across domains.\nThe routes add no new inference machinery. They propose how to factor the model so that existing machinery, such as epistemic value and novelty, targets the right channels: probing an intermediary, for example, rather than only the world behind it. Merging channels predicts specific failures. Internally generated content treated as sensory fits the precision account of hallucination. In language models, prompt injection, invented sources and long-context drift look like the same breakdowns.\nWe outline two tests: pymdp agents factored by route, compared under environmental shift with agents factored by matched irrelevant distinctions; and whether reinforcing these distinctions in LLM agents reduces source confusion more than unrelated errors. We present proposals and study designs, not results, and put one open claim to the audience: that mediated routes correspond to nested blankets and deeper levels of the generative model.",
       "abstract_sha256": "4ed0db0078f10078dabd955fd6bc348980647830ba1675b5fa268da4ced848c0",
       "contribution_type": "Pre-recorded Video presentation",
-      "id": "talk-ebebeaad2bad66f7",
+      "id": "talk-4924bb4662299572",
       "pictures": [],
       "presenter": "Jesse Parent & Avery Lim",
       "source_url": "https://2026symposium.activeinference.institute/",
-      "title": "From Minimal Regulators to World Models: Boundary-Relative Distinctions for Factoring Generative Models"
+      "title": "From Minimal Model Systems to World Models: Boundary-Relative Distinctions for Factoring Generative Models"
     },
     {
       "abstract": "Decarbonisation decisions span scales no single model covers. Energy-system, city and building-stock models must exchange results despite different assumptions and resolutions. Manual coupling depends on expert judgement; LLM orchestration adds a need for inspectable decisions. NEST, a three-year Schmidt Sciences DEVI programme led by Open Earth Foundation with IIASA, CEU and the Active Inference Institute, makes those boundaries explicit.\nFirst, the seam. Each exchanged variable carries a declared unit, convention, geography and mapping rule sourced to its owner. IIASA’s MESSAGEix–STURM boundary for Western Europe reveals why this matters: two solvers reach the same objective but different fuel prices, making solver choice part of the interface.\nSecond, uncertainty. We are testing generative models specified in GNN, with RxInfer as the first backend, to carry beliefs across seams. Cross-backend equivalence and free-energy-based coupling criteria remain to be tested. Known-precision synthetic controls pass latent-state calibration; introducing parameter uncertainty produces failures in both states and noise precisions. Those uncertainty estimates are not yet qualified for real coupling outputs.\nThird, the agent, audited. OEF’s durable orchestrator exports a trace contract that AII’s independent consumer checks for schema compatibility, hash integrity and accounting reconciliation. Two real exports, scripted and LLM-driven, pass those checks. These checks do not validate the energy-model computation or establish autonomous discovery of a coupling method.\nWe close with a proposed federation of project agents across the DEVI cohort: models declare their boundaries, couplings leave inspectable records, and groups can reason about systems no participant sees whole.",

@@ -6,15 +6,14 @@
 Python tools for presenter research profiles, participant learning plans, project
 proposals, text visualizations, and calendar exports for the Active Inference Symposium.
 
-**Version 3.3 publishes the final-lineup 2026 Presenter Program.**
+**Version 3.4.0 prepares the final 2026 Presenter Program.**
 Explore the [2026 public program](https://ActiveInferenceInstitute.github.io/Symposium/),
 including abstracts, consenting participant profiles, downloadable source dossiers,
 and the [PDF](data/public/2026/book.pdf) and [Word](data/public/2026/book.docx) books.
-The book is published on Zenodo: [10.5281/zenodo.24161029](https://doi.org/10.5281/zenodo.24161029)
-(version 3.3.0; the earlier [3.2.0 edition](docs/release_3_2_0.md) remains available).
-The [GitHub v3.3.0 software release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.3.0)
-attaches the same six book-package files. See the
-[release record](docs/release_3_3_0.md) for downloads, book hashes and verification scope.
+The [3.4.0 release record](docs/release_3_4_0.md) tracks the final book and its
+publication status. The [November 12 edition](docs/release_3_3_0.md) remains
+available on [Zenodo](https://doi.org/10.5281/zenodo.24161029) and
+[GitHub](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.3.0).
 Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
 
@@ -217,9 +216,9 @@ The report identifies additions, removals, changed public fields and artifact ch
 Participant removals require organizer review; the report does not guess why consent
 or identity changed. Readiness reports content gaps separately from file integrity;
 `--require-complete` fails when a published abstract or session title is missing.
-Neither command certifies fresh consent or publishes changes. The v3.3.0 book uses
-the November 12 final program lineup and its source abstracts. Presenter
+Neither command certifies fresh consent or publishes changes. Presenter
 profiles use only exact whole-label matches from reviewed current public sources.
+See the [final book release record](docs/release_3_4_0.md) for the program snapshot.
 See the
 [methods guide](docs/methods.md) for the boundaries between source-grounded public
 materials and optional AI-generated research drafts.
@@ -276,17 +275,15 @@ For the software:
 @software{symposium2026,
   title = {Symposium: Research Analysis Tools for Active Inference Symposium},
   author = {Active Inference Institute},
-  version = {3.3.0},
+  version = {3.4.0},
   year = {2026},
   url = {https://github.com/ActiveInferenceInstitute/Symposium}
 }
 ```
 
-For the book: Active Inference Institute and the published
-presenter/group credits (2026), *2026 Active Inference Symposium — Presenter Program*,
-version 3.3.0, published November 12, 2026,
-DOI [10.5281/zenodo.24161029](https://doi.org/10.5281/zenodo.24161029). Full book credits
-remain in the PDF/Word cover and citation metadata. The repository and release
+The [final book release record](docs/release_3_4_0.md) tracks citation and
+publication details. The [all-versions book DOI](https://doi.org/10.5281/zenodo.23986504)
+resolves to the latest published edition. The repository and release
 metadata use the [MIT license](LICENSE).
 
 Maintained by the [Active Inference Institute](https://activeinference.institute/).

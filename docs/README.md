@@ -26,6 +26,7 @@ remain evidence of their own releases, not current test or deployment results.
 | [Visualization](csv_visualization_guide.md) | Local text plots and reproducibility limits |
 | [2026 participant and presenter figures](visualizations_2026.md) | Public-cohort charts, approved-program summaries, missingness and reproducible artifact evidence |
 | [Architecture](architecture.md) | Module responsibilities and separate data paths |
+| [3.4.0 release record](release_3_4_0.md) | Final 2026 book, individual credits, recordings and publication status |
 | [3.3.0 release record](release_3_3_0.md) | Final-lineup book on Zenodo, lineup changes, verified asset hashes and public-data scope |
 | [GNN conformance](../.github/GNN.md) | Pin file, revision, parsing scope and workflow job key |
 | [3.2.0 release record](release_3_2_0.md) | Published book and GitHub release, verified asset hashes, public-data scope and deployment results |

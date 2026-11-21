@@ -2,6 +2,18 @@
 
 All notable changes to the Symposium package.
 
+## [3.4.0] — Release candidate
+
+- Refresh the final 2026 program, dossiers, participant briefs, calendar, portraits,
+  and PDF and Word books from the November 21 UTC organizer snapshot.
+- Correct the contributions by Jesse Parent and Avery Lim and by Anna Pereira.
+  Keep the Karl Friston and Mike Levin abstracts explicitly pending.
+- Credit each named presenter once, include the organizer-reviewed identifiers for
+  Jesse Parent and Avery Lim, and acknowledge the confirmed video co-authors
+  separately.
+- Include the two livestream recordings and record the release package in the
+  [3.4.0 release record](docs/release_3_4_0.md).
+
 ## [Unreleased] — 2026-11-13 (offline correctness qualification)
 
 - Treat HTTP 402 as terminal before OpenRouter's retry-text classification.
