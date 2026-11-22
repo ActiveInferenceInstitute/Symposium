@@ -39,11 +39,12 @@ Refresh the catalog when a relevant interface or source changes:
 | `index.html` | Approved program; canonical URL is the site directory |
 | `methods.html` | Searchable methods/workflows and public repository handoffs |
 | `ecosystem.json` | Versioned catalog with reviewed provenance |
-| `search-index.json` | Methods, workflows, repository summaries and approved presentations |
+| `search-index.json` | Methods, workflows, repository summaries, approved presentations and available proceedings |
+| `proceedings.json` | The published book’s version and concept DOIs, issue date and official files, when recorded for the edition |
 | `sitemap.xml` | Canonical HTML page URLs, without fragment pseudo-pages or guessed modification dates |
 | `llms.txt` | Source/reuse guidance and links for machine readers |
 
-Both HTML pages include canonical/social metadata and safely escaped JSON-LD. Event
+Both HTML pages include canonical/social metadata and safely escaped JSON-LD. The program links the published book as a related Book entity when available. Event
 metadata uses approved event dates; it adds no inferred cost, attendance, location,
 acceptance, credentials or scientific validation. Metadata is a description, not a
 claim of rich-result eligibility. Participant self-reports are excluded from the

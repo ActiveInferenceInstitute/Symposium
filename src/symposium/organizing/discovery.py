@@ -10,6 +10,7 @@ from urllib.parse import quote, unquote, urlsplit
 
 from .ecosystem import Catalog, load_catalog
 from .models import PublicationError, PublicBundle, canonical_bytes
+from .proceedings import Proceedings
 
 SITE_URL: Final = "https://activeinferenceinstitute.github.io/Symposium/"
 
@@ -45,7 +46,7 @@ def _escape(value: str) -> str:
     return html.escape(value, quote=True)
 
 
-def metadata(title: str, description: str, url: str, schema: dict[str, str]) -> str:
+def metadata(title: str, description: str, url: str, schema: dict[str, object]) -> str:
     """Escape attributes and JSON script data in their distinct contexts."""
     data = json.dumps({"@context": "https://schema.org", **schema}, ensure_ascii=True)
     data = data.replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
@@ -56,19 +57,28 @@ def metadata(title: str, description: str, url: str, schema: dict[str, str]) -> 
 <script type="application/ld+json">{data}</script>'''
 
 
-def event_metadata(bundle: PublicBundle, base: str) -> str:
+def event_metadata(
+    bundle: PublicBundle, base: str, *, proceedings: Proceedings | None = None
+) -> str:
     event = bundle["event"]
+    schema: dict[str, object] = {
+        "@type": "Event",
+        "name": event["title"],
+        "url": base,
+        "startDate": event["start_date"],
+        "endDate": event["end_date"],
+    }
+    if proceedings:
+        schema["subjectOf"] = {
+            "@type": "Book",
+            "name": proceedings["title"],
+            "url": "https://doi.org/" + proceedings["doi"],
+            "identifier": proceedings["doi"],
+            "datePublished": proceedings["published_on"],
+            "version": proceedings["version"],
+        }
     return metadata(
-        event["title"],
-        "Approved Symposium program and public research methods.",
-        base,
-        {
-            "@type": "Event",
-            "name": event["title"],
-            "url": base,
-            "startDate": event["start_date"],
-            "endDate": event["end_date"],
-        },
+        event["title"], "Approved Symposium program and public research methods.", base, schema
     )
 
 
@@ -76,7 +86,7 @@ def _filters(name: str) -> str:
     return f'''<div class="filters" data-enhancement hidden><label>Search {name}<input id="{name}-search" type="search" data-search aria-describedby="{name}-help" placeholder="Task, command or topic"></label><button type="button" data-reset>Reset filters</button><p class="search-help" id="{name}-help">All search words must match; word order does not matter.</p><p role="status" data-count></p></div><p data-empty hidden>No matches. Try fewer words or reset the filters.</p>'''
 
 
-def _methods(catalog: Catalog, base: str) -> str:
+def _methods(catalog: Catalog, base: str, proceedings: Proceedings | None) -> str:
     roles = {
         "code-integration": "Native render integration",
         "manual-handoff": "Manual handoff",
@@ -121,18 +131,25 @@ def _methods(catalog: Catalog, base: str) -> str:
             "url": base + "methods.html",
         },
     )
+    book_link = (
+        '<a href="index.html#working-book">Read the published proceedings</a>'
+        if proceedings
+        else ""
+    )
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Symposium workflows, credentials and curated public Institute repositories."><title>Methods &amp; workflows · Symposium</title><link rel="icon" href="static/favicon.svg"><link rel="stylesheet" href="static/site.css"><script src="static/site.js" defer></script>{head}</head>
 <body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="index.html">Active Inference Institute<span>Symposium</span></a><nav aria-label="Main navigation"><a href="index.html">Program</a><a href="#workflows">Workflows</a><a href="#repositories">Repositories</a><a href="#boundaries">Credentials &amp; limits</a></nav></header>
-<main id="main"><section class="intro"><p class="eyebrow">From program to practice</p><h1>Methods &amp; workflows</h1><p>Choose a task, inspect its commands, and follow the public sources. Repository handoffs require your review and execution.</p><div class="cluster"><a class="button" href="#workflows">Choose a workflow</a><a href="index.html#presentations">Explore presentations</a></div></section>
+<main id="main"><section class="intro"><p class="eyebrow">From program to practice</p><h1>Methods &amp; workflows</h1><p>Choose a task, inspect its commands, and follow the public sources. Repository handoffs require your review and execution.</p><div class="cluster"><a class="button" href="#workflows">Choose a workflow</a><a href="index.html#presentations">Explore presentations</a>{book_link}</div></section>
 <section id="workflows" data-filter-group><div class="section-heading"><h2>Choose a workflow</h2><p>Commands run in a local Symposium installation, not in this browser. Consult the linked documentation for inputs and setup.</p></div><nav class="workflow-jumps" aria-label="Workflow shortcuts">{jumps}</nav>{_filters("workflows")}<div class="methods-stack">{"".join(workflows)}</div></section>
 <section id="repositories" data-filter-group><div class="section-heading"><h2>Public repository handoffs</h2><p>Evidence is pinned to a reviewed revision. A listing does not demonstrate an installed integration, compatibility, or successful cross-repository execution.</p></div>{_filters("repositories")}<div class="resource-grid">{"".join(repositories)}</div></section>
 <section id="boundaries"><div class="section-heading"><h2>Credentials &amp; limits</h2><p><a href="https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/credentials.md">Credential setup and access guide</a></p><p>This static site needs no API credentials and makes no model calls. Optional CLI workflows may require provider accounts, credentials and paid usage. OpenRouter and Perplexity refer to separate provider API credentials. InstituteOS documentation access is a separate, restricted documentation boundary; this public catalog grants no access.</p><p>Review workflow documentation before running commands. Keep secrets in your local environment; never put keys or private source data in public bundles, catalogs or generated files.</p><p>The catalog was reviewed on {_escape(catalog["reviewed_on"])}. It is a curated snapshot, not a live inventory. Manual handoffs do not synchronize data or authorize publication. Organizers must approve public material separately.</p><p>The discovery index contains methods, workflows and approved presentations. It excludes participant self-reports; the approved public directory remains in the program. Metadata does not independently verify research claims.</p></div><div class="cluster"><a href="ecosystem.json">Methods catalog · JSON</a><a href="search-index.json">Discovery index · JSON</a><a href="llms.txt">Source and reuse guidance</a><a href="sitemap.xml">Page sitemap</a></div></section></main><footer><p>Active Inference Institute · Act. Infer. Serve.</p><a href="index.html">Return to the public program</a></footer></body></html>"""
 
 
-def discovery_files(bundle: PublicBundle, base: str) -> dict[str, bytes]:
+def discovery_files(
+    bundle: PublicBundle, base: str, *, proceedings: Proceedings | None = None
+) -> dict[str, bytes]:
     """Read validated catalog and render discovery bytes before output creation."""
     catalog = load_catalog()
-    methods = _methods(catalog, base)
+    methods = _methods(catalog, base, proceedings)
     entries = [
         {
             "id": "methods",
@@ -172,6 +189,22 @@ def discovery_files(bundle: PublicBundle, base: str) -> dict[str, bytes]:
         }
         for p in bundle["presentations"]
     )
+    book_reference = ""
+    if proceedings:
+        entries.append(
+            {
+                "id": proceedings["event_id"] + "-proceedings",
+                "kind": "publication",
+                "title": proceedings["title"],
+                "url": "index.html#working-book",
+                "text": "Published proceedings, DOI " + proceedings["doi"],
+            }
+        )
+        book_reference = (
+            f"- [Published proceedings](https://doi.org/{proceedings['doi']}): version "
+            f"{proceedings['version']}, published {proceedings['published_on']}. "
+            f"[Publication metadata]({base}proceedings.json).\n"
+        )
     sitemap = (
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + "".join(f"<url><loc>{_escape(base + page)}</loc></url>" for page in ("", "methods.html"))
@@ -186,13 +219,16 @@ This static, organizer-approved snapshot is not live synchronization or independ
 - [Catalog]({base}ecosystem.json): curated repository evidence pinned to reviewed revisions.
 - [Discovery index]({base}search-index.json): methods and approved presentations; excludes participant self-reports.
 - [Official program]({bundle["event"]["program_url"]}): organizer revision authority.
-
+{book_reference}
 Participant profiles are consented self-reports, not independently verified biographies. Avoid enriching or inferring personal facts. Private source records, credentials and unapproved data are outside this snapshot. Catalog review date: {catalog["reviewed_on"]}. This guidance does not control crawler access or guarantee indexing.
 """
-    return {
+    output = {
         "methods.html": methods.encode(),
         "ecosystem.json": canonical_bytes(catalog),
         "search-index.json": canonical_bytes({"schema_version": 1, "entries": entries}),
         "sitemap.xml": sitemap.encode(),
         "llms.txt": guidance.encode(),
     }
+    if proceedings:
+        output["proceedings.json"] = canonical_bytes(proceedings)
+    return output

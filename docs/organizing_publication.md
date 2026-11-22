@@ -34,8 +34,10 @@ never belong in this directory or Pages artifacts.
 The generated HTML contains the full readable content. Native disclosure controls
 work without JavaScript. JavaScript adds search, contribution-type filtering, reset,
 result counts, anchor expansion, and UTC/local timezone display. Relative links
-work under the `/Symposium/` project path. Download links appear only when their
-files exist. No analytics, runtime CDN, remote fonts, or private SDK is required.
+work under the `/Symposium/` project path. Local download links appear only when their
+files exist. Edition-bound published proceedings link to their Zenodo record and official
+files and have a separate public `proceedings.json` citation record. The published
+book metadata does not change the approved program bundle. No analytics, runtime CDN, remote fonts, or private SDK is required.
 
 ## Private source mapping and snapshot
 
