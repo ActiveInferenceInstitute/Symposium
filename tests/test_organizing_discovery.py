@@ -139,6 +139,7 @@ def test_methods_navigation_and_sources_work_without_javascript(bundle, tmp_path
 def test_final_2026_proceedings_are_discoverable_without_changing_program(bundle, tmp_path):
     published = bundle["event"]
     published.update(id="symposium-2026", start_date="2026-11-12", end_date="2026-11-13")
+    bundle["sessions"][0].update(start_utc="2026-11-12T12:00:00Z", end_utc="2026-11-12T13:00:00Z")
     index = build_site(bundle, tmp_path / "site")
     root = index.parent
     source = index.read_text()
