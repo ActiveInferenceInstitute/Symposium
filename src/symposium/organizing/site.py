@@ -152,7 +152,10 @@ def build_site(
         for name, label in [
             ("book.pdf", "Local book copy · PDF" if proceedings else "Abstract book · PDF"),
             ("book.docx", "Local book copy · Word" if proceedings else "Abstract book · Word"),
-            ("program.ics", "Add scheduled sessions · ICS"),
+            (
+                "program.ics",
+                "Download the schedule · ICS" if proceedings else "Add scheduled sessions · ICS",
+            ),
         ]
     )
     book_guidance = (
