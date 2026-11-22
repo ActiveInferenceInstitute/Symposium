@@ -107,6 +107,7 @@ def test_discovery_excludes_participant_profiles_and_has_no_person_schema(bundle
         assert '"@type": "Person"' not in text
     assert "PRIVATE-SEO-SENTINEL" in index.read_text()
     assert json.loads((index.parent / "program.json").read_text()) == bundle
+    assert not (index.parent / "proceedings.json").exists()
 
 
 def test_methods_navigation_and_sources_work_without_javascript(bundle, tmp_path):
@@ -133,6 +134,42 @@ def test_methods_navigation_and_sources_work_without_javascript(bundle, tmp_path
         re.search(r'<script type="application/ld\+json">(.*?)</script>', methods, re.S)[1]
     )
     assert data["@type"] == "CollectionPage"
+
+
+def test_final_2026_proceedings_are_discoverable_without_changing_program(bundle, tmp_path):
+    published = bundle["event"]
+    published.update(id="symposium-2026", start_date="2026-11-12", end_date="2026-11-13")
+    bundle["sessions"][0].update(start_utc="2026-11-12T12:00:00Z", end_utc="2026-11-12T13:00:00Z")
+    index = build_site(bundle, tmp_path / "site")
+    root = index.parent
+    source = index.read_text()
+    methods = (root / "methods.html").read_text()
+    book = json.loads((root / "proceedings.json").read_text())
+    assert book["doi"] == "10.5281/zenodo.24409077"
+    assert book["concept_doi"] == "10.5281/zenodo.23986504"
+    assert book["published_on"] == "2026-11-21"
+    links = {attrs.get("href") for _, attrs in Tags(source).tags}
+    assert {
+        "#working-book",
+        "https://doi.org/" + book["doi"],
+        "https://doi.org/" + book["concept_doi"],
+        book["pdf_url"],
+        book["docx_url"],
+        book["release_url"],
+        "proceedings.json",
+    } <= links
+    assert published["participant_registration_url"] not in links
+    assert published["presenter_registration_url"] not in links
+    assert 'href="index.html#working-book"' in methods
+    assert "https://doi.org/" + book["doi"] in (root / "llms.txt").read_text()
+    entries = json.loads((root / "search-index.json").read_text())["entries"]
+    assert [e["url"] for e in entries if e["kind"] == "publication"] == ["index.html#working-book"]
+    event_metadata = json.loads(
+        re.search(r'<script type="application/ld\+json">(.*?)</script>', source, re.S)[1]
+    )
+    assert event_metadata["subjectOf"]["identifier"] == book["doi"]
+    assert event_metadata["subjectOf"]["@type"] == "Book"
+    assert json.loads((root / "program.json").read_text()) == bundle
 
 
 def test_sitemap_escapes_canonical_path(bundle, tmp_path):
