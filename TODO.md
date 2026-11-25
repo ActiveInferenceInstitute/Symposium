@@ -98,16 +98,6 @@ checkout.
 
 ## Drift verified 2026-11-12
 
-- [ ] **The GNN pin is one release behind the estate cutover.**
-  [`.github/gnn-pin.json`](.github/gnn-pin.json) records `v5.0.3` at
-  `8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1`. Upstream tag `v5.1.0` resolves to
-  `75c834bd8519dc7b5adc4d24f16bf393cfd1ecdf` (GitHub API, 2026-11-12), and the
-  exemplar the arm fetches (`input/gnn_files/basics/static_perception.md`) still
-  exists at that revision, so the bump is mechanical: update `revision` and `tag`,
-  then run `./gate.sh gnn`, which installs into its own `.gate/gnn` environment and
-  prints version, revision and result. Owner: maintainer of this repository's GNN
-  adoption. Only the local arm can confirm it — hosted CI is not evidence (next
-  item).
 - **Hosted CI cannot be cited as evidence right now.** The organization's Actions
   minutes are billing-locked, so no `ci.yml` or `pages.yml` run in this repository
   proves anything; the local arms recorded in the
@@ -118,6 +108,14 @@ checkout.
 ---
 
 ## Completed / Closed
+
+### 2026-11-24 — GNN pin
+- [x] **GNN importer pin at the estate cutover release** — `.github/gnn-pin.json`
+  now records `v5.1.0` at `75c834bd8519dc7b5adc4d24f16bf393cfd1ecdf` (recorded
+  2026-11-24), previously `v5.0.3` at `8f293d9ba810e6eda5c09842d9c7ed9ffa5f92c1`;
+  the table in `.github/GNN.md` moved with it. The ecosystem record for GNN in
+  `src/symposium/organizing/resources/ecosystem.json` is a separately dated
+  evidence snapshot and is unchanged.
 
 ### 2026-11-12 — gate, release and publishing
 - [x] **One gate entry point** — `gate.sh` with separately runnable arms `lint`,
