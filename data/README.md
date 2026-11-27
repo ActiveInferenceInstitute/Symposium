@@ -11,7 +11,7 @@ captured November 5; 15 have no substantive answers. Raw captures, consent recor
 source row identifiers, private execution evidence and generated provider drafts
 remain outside this public data tree. Absence from one snapshot does not by itself
 establish a withdrawal or an identity change. See the
-[3.3.0 release record](../docs/release_3_3_0.md).
+[3.3.0 release record](../docs/releases/release_3_3_0.md).
 
 The version 3.3.0 book is published separately on Zenodo at
 [10.5281/zenodo.24161029](https://doi.org/10.5281/zenodo.24161029); its public
@@ -36,7 +36,7 @@ Populate current authorized registrations in
 `inputs/aif_2026/Public_Participant_Information.csv`. Add one current topic CSV and
 one works CSV per presenter under `inputs/aif_2026/presenters/<Presenter_Name>/`.
 Do not copy historical registrations into the new year. See the
-[2026 organizer guide](../docs/2026_setup.md) for all 14 registration fields,
+[2026 organizer guide](../docs/guides/2026_setup.md) for all 14 registration fields,
 consent rules, presenter layout, validation behavior, and processing examples.
 
 Other directories contain proposal catechisms, system prompts, templates, and

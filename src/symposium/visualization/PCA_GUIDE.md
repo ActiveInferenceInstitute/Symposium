@@ -324,6 +324,6 @@ analyzer.create_biplot(pca, reduced_matrix, vectorizer, labels, "outputs/biplot.
 
 - [Visualization Module Documentation](README.md)
 - [Active Inference Symposium Data](../../../data/README.md)
-- [CLI Usage Guide](../../../docs/user_guide.md)
-- [API Documentation](../../../docs/api_guide.md)
+- [CLI Usage Guide](../../../docs/guides/user_guide.md)
+- [API Documentation](../../../docs/reference/api_guide.md)
 

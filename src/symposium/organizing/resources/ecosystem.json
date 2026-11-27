@@ -137,7 +137,7 @@
         "fundamentals"
       ],
       "credential_ids": [],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/2026_setup.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/2026_setup.md"
     },
     {
       "id": "express-models",
@@ -150,7 +150,7 @@
         "ontology"
       ],
       "credential_ids": [],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/architecture/methods.md"
     },
     {
       "id": "check-program",
@@ -162,7 +162,7 @@
       ],
       "repository_ids": [],
       "credential_ids": [],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/organizing_publication.md"
     },
     {
       "id": "private-intake",
@@ -175,7 +175,7 @@
       "credential_ids": [
         "instituteos-docs"
       ],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/organizing_publication.md"
     },
     {
       "id": "review-intake",
@@ -188,7 +188,7 @@
         "working-groups"
       ],
       "credential_ids": [],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/architecture/methods.md"
     },
     {
       "id": "render-book",
@@ -203,7 +203,7 @@
         "template"
       ],
       "credential_ids": [],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/organizing_publication.md"
     },
     {
       "id": "openrouter-drafts",
@@ -218,7 +218,7 @@
       "credential_ids": [
         "openrouter"
       ],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/api_usage.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/reference/api_usage.md"
     },
     {
       "id": "perplexity-research",
@@ -233,7 +233,7 @@
       "credential_ids": [
         "perplexity"
       ],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/perplexity_research.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/reference/perplexity_research.md"
     },
     {
       "id": "continue-collaboration",
@@ -246,7 +246,7 @@
         "journal-utilities"
       ],
       "credential_ids": [],
-      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md"
+      "docs_url": "https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/architecture/methods.md"
     }
   ]
 }

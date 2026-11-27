@@ -78,7 +78,7 @@ only in a new version.
 ## Public data and analyses
 
 `data/public/2026/` is refreshed from the November 12 organizer snapshot. Participant
-charts in the [visualization guide](visualizations_2026.md) are unchanged from
+charts in the [visualization guide](../guides/visualizations_2026.md) are unchanged from
 version 3.2.0 and still describe the 55-record November 5 public cohort; they were not
 regenerated for this edition. Raw captures, source row identifiers, consent ledgers,
 local build receipts and credentials are excluded from the release.

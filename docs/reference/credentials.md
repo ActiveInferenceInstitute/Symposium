@@ -39,7 +39,7 @@ GitHub Pages builds use approved public files and GitHub's workflow authenticati
 without organizer or provider credentials. Normal local Git/GitHub authentication is
 separate from model keys. Search Console submission/inspection requires an authorized
 site property and account access, rather than a key embedded in this repository;
-see [discovery](discovery.md).
+see [discovery](../architecture/discovery.md).
 
 Keep credentials in a private secret store or operator-owned runtime environment.
 If using the existing local `.env` support for providers, preserve the file and keep it

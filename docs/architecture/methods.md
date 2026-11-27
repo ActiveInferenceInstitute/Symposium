@@ -10,7 +10,7 @@ reviewed commit. Only the native Template adapter is an installed cross-reposito
 render integration. Other links direct separate workflows, without automatic data
 transfer, compatibility claims or scientific validation.
 
-Use [credentials](credentials.md) to select optional services and [discovery](discovery.md)
+Use [credentials](../reference/credentials.md) to select optional services and [discovery](discovery.md)
 to understand what is indexed. Catalog changes follow the refresh procedure there.
 
 ## Approved public content
@@ -71,8 +71,8 @@ Keep drafts private and review material claims against primary sources, includin
 identity, provenance, quotations and dates. No generated draft is automatically
 published by the organizer pipeline.
 
-[CSV schema and preflight](2026_setup.md) cover structural input checks; the
-[API guide](api_guide.md) covers actual configuration and error handling. Prompt
+[CSV schema and preflight](../guides/2026_setup.md) cover structural input checks; the
+[API guide](../reference/api_guide.md) covers actual configuration and error handling. Prompt
 requests for citations or comprehensive research are not guarantees of accuracy.
 
 ## Artifacts and interpretation
@@ -82,7 +82,7 @@ quality. Native rendering uses the separate Template Python 3.14 pipeline; a ren
 exit status and extracted text do not replace page-by-page visual review. Website
 verification needs actual browser, keyboard, responsive and download checks.
 
-[Text visualization](csv_visualization_guide.md) is exploratory corpus analysis.
+[Text visualization](../guides/csv_visualization_guide.md) is exploratory corpus analysis.
 Retain input hashes/order, options, lockfile, actual method, warnings and outputs.
 Distances and clusters describe a representation of text, not validated scientific
 relationships or assessments of people. No publication, test result, rendering or

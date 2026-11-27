@@ -130,7 +130,7 @@ Credentials: none
 
 - `uv run symposium edition validate --year 2026`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/2026_setup.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/2026_setup.md)
 
 ## Express and reproduce models
 
@@ -139,7 +139,7 @@ Choose notation, vocabulary and computational tools for a contribution. These ar
 Credentials: none
 
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/architecture/methods.md)
 
 ## Check the public program
 
@@ -150,7 +150,7 @@ Credentials: none
 - `uv run symposium organize check-public --public-dir data/public/2026`
 - `uv run symposium organize readiness --public-dir data/public/2026`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/organizing_publication.md)
 
 ## Capture a private organizing snapshot
 
@@ -160,7 +160,7 @@ Credentials: instituteos-docs
 
 - `uv run symposium organize pull --help`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/organizing_publication.md)
 
 ## Review a candidate intake
 
@@ -170,7 +170,7 @@ Credentials: none
 
 - `uv run symposium organize review-update --previous-public-dir data/public/2026 --candidate-public-dir "$CANDIDATE_PUBLIC_DIR" --output "$SYMPOSIUM_PRIVATE_DIR/update-review.json" --public-root .`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/architecture/methods.md)
 
 ## Assemble and render the abstract book
 
@@ -182,7 +182,7 @@ Credentials: none
 - `uv run symposium organize participant-briefs --help`
 - `uv run symposium organize book --help`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/organizing_publication.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/guides/organizing_publication.md)
 
 ## Optional OpenRouter research drafts
 
@@ -192,7 +192,7 @@ Credentials: openrouter
 
 - `uv run symposium analyze participants --csv-file "$SYMPOSIUM_PRIVATE_DIR/registrations.csv" --output-dir "$SYMPOSIUM_PRIVATE_DIR/drafts" --api-provider openrouter`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/api_usage.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/reference/api_usage.md)
 
 ## Optional Perplexity research drafts
 
@@ -202,7 +202,7 @@ Credentials: perplexity
 
 - `uv run symposium analyze presenters --data-dir "$SYMPOSIUM_PRIVATE_DIR/presenters" --output-dir "$SYMPOSIUM_PRIVATE_DIR/drafts" --api-provider perplexity`
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/perplexity_research.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/reference/perplexity_research.md)
 
 ## Continue after the event
 
@@ -211,4 +211,4 @@ Use public archives for context and draft group procedures for follow-through. R
 Credentials: none
 
 
-[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/methods.md)
+[Documentation](https://github.com/ActiveInferenceInstitute/Symposium/blob/main/docs/architecture/methods.md)

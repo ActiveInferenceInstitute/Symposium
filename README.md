@@ -12,7 +12,7 @@ including abstracts, consenting participant profiles, downloadable source dossie
 and the [PDF](data/public/2026/book.pdf) and [Word](data/public/2026/book.docx) books.
 Find the final book on [Zenodo](https://doi.org/10.5281/zenodo.24409077) and the
 [GitHub v3.4.0 release](https://github.com/ActiveInferenceInstitute/Symposium/releases/tag/v3.4.0). See the
-[release record](docs/release_3_4_0.md) for downloads and verification.
+[release record](docs/releases/release_3_4_0.md) for downloads and verification.
 Private organizing inputs remain outside this repository;
 2024/2025 archives and the offline 2026 intake templates are preserved.
 
@@ -33,7 +33,7 @@ Private organizing inputs remain outside this repository;
 ## Find a method or repository
 
 Start with the [searchable methods hub](https://activeinferenceinstitute.github.io/Symposium/methods.html),
-[workflow catalog](docs/integrations.md), or [methods and evidence boundaries](docs/methods.md).
+[workflow catalog](docs/architecture/integrations.md), or [methods and evidence boundaries](docs/architecture/methods.md).
 Nine workflows link ten reviewed public repositories, with pinned source evidence
 and explicit handoff limits. The native Template renderer is an existing integration;
 other cards guide separate learning, modeling, transcription or collaboration work.
@@ -47,7 +47,7 @@ uv run symposium organize capabilities
 These commands run offline without API keys. The website publishes a page sitemap,
 canonical/structured metadata, public discovery index and source guidance. Participant
 self-reports are excluded from the additional discovery index. See
-[indexing](docs/discovery.md) and [optional credentials](docs/credentials.md).
+[indexing](docs/architecture/discovery.md) and [optional credentials](docs/reference/credentials.md).
 
 ## Quick start for 2026
 
@@ -77,7 +77,7 @@ uv run symposium edition validate --year 2026 --require-data
 ```
 
 The last command deliberately exits nonzero until both eligible participants and
-valid presenter exports are present. Follow the [2026 organizer guide](docs/2026_setup.md)
+valid presenter exports are present. Follow the [2026 organizer guide](docs/guides/2026_setup.md)
 to populate the workspace, validate it, and run analysis.
 
 ```text
@@ -201,7 +201,7 @@ renderer continues to use its own Python 3.14 environment.
 
 Keep raw registrations, real source mappings, consent decisions and candidate
 workspaces outside public checkouts. Build the candidate with the
-[organizing workflow](docs/organizing_publication.md), then compare its verified
+[organizing workflow](docs/guides/organizing_publication.md), then compare its verified
 public files with the current snapshot:
 
 ```bash
@@ -217,9 +217,9 @@ or identity changed. Readiness reports content gaps separately from file integri
 `--require-complete` fails when a published abstract or session title is missing.
 Neither command certifies fresh consent or publishes changes. Presenter
 profiles use only exact whole-label matches from reviewed current public sources.
-See the [final book release record](docs/release_3_4_0.md) for the program snapshot.
+See the [final book release record](docs/releases/release_3_4_0.md) for the program snapshot.
 See the
-[methods guide](docs/methods.md) for the boundaries between source-grounded public
+[methods guide](docs/architecture/methods.md) for the boundaries between source-grounded public
 materials and optional AI-generated research drafts.
 
 ## Development and verification
@@ -252,17 +252,19 @@ sessions, and 131 consenting participant profiles. The participant charts use
 the separately admitted **55-record public 2026 view** of November 5. The book
 marks two abstracts pending and credits Active Inference Institute first,
 followed by each named presenter once.
-See the [publication and organizer guide](docs/organizing_publication.md) for source
+See the [publication and organizer guide](docs/guides/organizing_publication.md) for source
 mapping, approval checks, native abstract-book production, and deployment boundaries.
 
 ## Documentation
 
-- [Method catalog](docs/integrations.md), [indexing](docs/discovery.md), [credentials](docs/credentials.md).
-- [2026 organizer guide](docs/2026_setup.md): inputs, schema, readiness, analysis, review.
+[Manuscript source and rendering](docs/manuscript/README.md).
+
+- [Method catalog](docs/architecture/integrations.md), [indexing](docs/architecture/discovery.md), [credentials](docs/reference/credentials.md).
+- [2026 organizer guide](docs/guides/2026_setup.md): inputs, schema, readiness, analysis, review.
 - [Documentation index](docs/README.md): user, API, architecture, and development guides.
 - [Data guide](data/README.md): historical and current data organization.
 - [Changelog](CHANGELOG.md), [citation](CITATION.cff), [license](LICENSE).
-- [Contributing](docs/contributing.md), [issues](https://github.com/ActiveInferenceInstitute/Symposium/issues).
+- [Contributing](docs/development/contributing.md), [issues](https://github.com/ActiveInferenceInstitute/Symposium/issues).
 
 ## Citation
 

@@ -48,5 +48,5 @@ symposium analyze presenters \
 
 - Any Markdown file works — the path is passed explicitly via `--domain-file`.
 - The optional `--collaborators-file` (project generation) is likewise user-provided.
-- See [docs/user_guide.md](../../docs/user_guide.md#custom-domain-knowledge) for more on
+- See [docs/user_guide.md](../../docs/guides/user_guide.md#custom-domain-knowledge) for more on
   domain context and custom catechisms.

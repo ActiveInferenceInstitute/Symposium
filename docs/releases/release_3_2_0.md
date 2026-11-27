@@ -68,7 +68,7 @@ Presenter charts count contributions separately from display labels: 57
 contributions, 52 distinct published presenter/group labels, and 3 missing
 abstracts. A display-label count is not a distinct-person count. The new chart API
 retains row order, missingness, actual method parameters and file digests; see the
-[visualization guide](visualizations_2026.md).
+[visualization guide](../guides/visualizations_2026.md).
 
 The 55-record analysis cohort does not overwrite the historical 45-row program
 snapshot. A name's absence from either source is not, by itself, evidence of
@@ -82,9 +82,9 @@ excluded from the public release.
 The software remains *Symposium: Research Analysis Tools for Active Inference
 Symposium*, version 3.2.0, maintained by Active Inference Institute. The published
 DOI identifies the **book**, not a separately archived software package. Cite the
-appropriate work using [CITATION.cff](../CITATION.cff) and the exact credits in the
+appropriate work using [CITATION.cff](../../CITATION.cff) and the exact credits in the
 book. The software's GitHub release date is November 5, 2026.
-Repository and release metadata retain the [MIT license](../LICENSE); this release
+Repository and release metadata retain the [MIT license](../../LICENSE); this release
 does not import a historical CC-BY statement.
 
 ## Published book-package assets

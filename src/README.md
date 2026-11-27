@@ -16,7 +16,7 @@ re-exports `APIClient`, `Config`, `ScheduleExporter` and `__version__`.
 | `visualization/` | Embedding, network, distribution and PCA plots (`visualization/embeddings.py`, `visualization/networks.py`, `visualization/distributions.py`, `visualization/pca_analysis.py`). | [visualization/README.md](symposium/visualization/README.md) |
 | `io/` | Report readers and writers (`io/readers.py`, `io/writers.py`). | [io/README.md](symposium/io/README.md) |
 | `calendar/` | `ScheduleExporter` for ICS, JSON and CSV schedules (`calendar/exporter.py`). | [calendar/README.md](symposium/calendar/README.md) |
-| `organizing/` | Private intake and consent projection, approved-public staging, book artifacts, catalog/discovery and the static site. | [organizing/AGENTS.md](symposium/organizing/AGENTS.md) and [organizing workflow](../docs/organizing_publication.md) |
+| `organizing/` | Private intake and consent projection, approved-public staging, book artifacts, catalog/discovery and the static site. | [organizing/AGENTS.md](symposium/organizing/AGENTS.md) and [organizing workflow](../docs/guides/organizing_publication.md) |
 
 ## How the pieces fit
 

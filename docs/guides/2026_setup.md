@@ -3,7 +3,7 @@
 This guide covers the optional research-input scaffold under `data/inputs/aif_2026/`.
 It is separate from the approved organizer snapshot in `data/public/2026/`. Empty
 research templates do not imply an empty public program. For new public intake,
-start with [organizer publication](organizing_publication.md) and [methods](methods.md).
+start with [organizer publication](organizing_publication.md) and [methods](../architecture/methods.md).
 Current package support begins at Python 3.12; use the 3.12 development pin.
 
 ## Install and select an edition
@@ -133,7 +133,7 @@ profile is an AI draft, not a verified assessment of a person.
 
 Initialize no confirmed schedule until organizers supply actual sessions and dates.
 The existing `ScheduleExporter` Python API exports organizer-supplied schedules to
-ICS/JSON/CSV; see [calendar documentation](../src/symposium/calendar/README.md).
+ICS/JSON/CSV; see [calendar documentation](../../src/symposium/calendar/README.md).
 Proposal generation uses a user-provided domain context, existing catechism templates,
 and optional collaborator context. Neither operation establishes scientific findings
 or funding eligibility.
@@ -146,5 +146,5 @@ or funding eligibility.
 ./gate.sh build
 ```
 
-See [development](development.md) for the arm list and current verification commands.
-The [2.2.1 release record](release_2_2_1.md) preserves historical evidence only.
+See [development](../development/development.md) for the arm list and current verification commands.
+The [2.2.1 release record](../releases/release_2_2_1.md) preserves historical evidence only.

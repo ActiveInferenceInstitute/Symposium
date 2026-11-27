@@ -14,4 +14,4 @@ so editing them does not change analysis or generation output.
 Prompts are read as UTF-8 text; keep edits plain text and avoid embedding secrets
 or private URLs. Provider credentials live in the ignored `.env`, never here. See
 [`../README.md`](../README.md) for the data layout and the
-[credentials guide](../../docs/credentials.md) for provider boundaries.
+[credentials guide](../../docs/reference/credentials.md) for provider boundaries.

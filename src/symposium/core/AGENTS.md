@@ -1,7 +1,7 @@
 # Core source map
 
-Read [the API contract](../../../docs/api_guide.md) and
-[credential boundaries](../../../docs/credentials.md) before changing provider or
+Read [the API contract](../../../docs/reference/api_guide.md) and
+[credential boundaries](../../../docs/reference/credentials.md) before changing provider or
 configuration behavior. Inspect the actual source before updating defaults or claims.
 
 | File | Owns |
@@ -25,5 +25,5 @@ than importing private organizer records into generic research workflows.
 
 Reproduce failure paths and verify changes with the declared uv test toolchain. Keep
 marked live-provider tests disabled unless explicitly authorized with `--run-real-api`.
-Use the [development guide](../../../docs/development.md) for actual checks and match
+Use the [development guide](../../../docs/development/development.md) for actual checks and match
 performance, accuracy and release claims to observed evidence.

@@ -61,5 +61,5 @@ established by this matrix. Recorded arm wall times are generated in
 
 For GitVault work, keep runtimes, environments, temporary files, caches and retained
 artifacts on the mounted volume and use the local lease policy. Follow
-[development](../docs/development.md) and [methods](../docs/methods.md) for command,
+[development](../docs/development/development.md) and [methods](../docs/architecture/methods.md) for command,
 privacy, rendering and interpretation boundaries.

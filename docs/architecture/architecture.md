@@ -23,7 +23,7 @@ ledger → reviewed artifacts → fresh staged public tree → verified static s
 files. An artifact index binds derived outputs to their bundle. The private bridge
 and optional InstituteOS transport are not Pages runtime dependencies. Native book
 rendering invokes a separately installed Template pipeline with a separate Python
-3.14 environment. See [organizer publication](organizing_publication.md).
+3.14 environment. See [organizer publication](../guides/organizing_publication.md).
 
 ## Research path
 
@@ -37,7 +37,7 @@ analysis/generation never enter the public projection automatically.
 constructs provider instances; it does not switch providers automatically. Participant
 CLI batches detect incomplete results, while other legacy workflows may retain
 per-item failures. Inspect outputs and errors rather than relying only on exit zero.
-See [API guide](api_guide.md) and [methods](methods.md).
+See [API guide](../reference/api_guide.md) and [methods](methods.md).
 
 Historical 2024/2025 data and archived workflows are retained independently. New
 intake must use current authorization and a fresh review; history is not an input

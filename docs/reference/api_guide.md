@@ -2,7 +2,7 @@
 
 The public organizer workflow requires no LLM API. The optional research workflows
 use `APIClient.from_config(config, provider=None, api_key=None, **kwargs)` from
-[`core.api`](../src/symposium/core/api.py). `APIClient.create` remains the direct
+[`core.api`](../../src/symposium/core/api.py). `APIClient.create` remains the direct
 factory for callers supplying provider settings themselves. Supported identifiers are
 `perplexity` and `openrouter`; returned providers expose
 `get_response(prompt, system_prompt=None, **kwargs)`. Calling that method can incur
@@ -15,7 +15,7 @@ only; it does not load dotenv files, authenticate, check permissions or spend cr
 
 ## Configuration contract
 
-`Config` in [`core.config`](../src/symposium/core/config.py) loads defaults, an
+`Config` in [`core.config`](../../src/symposium/core/config.py) loads defaults, an
 explicit JSON file, then supported environment values. It loads `.env` only from
 the current directory. CLI JSON selection precedes the command:
 
@@ -24,7 +24,7 @@ uv run symposium --config config.json analyze participants --help
 ```
 
 An explicitly selected invalid or missing JSON file is an error during execution.
-Use [config.example.json](../config.example.json) as a starting point, keeping
+Use [config.example.json](../../config.example.json) as a starting point, keeping
 credentials in private environment configuration. Supported environment overrides
 include `PERPLEXITY_API_KEY`, `OPENROUTER_API_KEY`, `API_PROVIDER`, `SYMPOSIUM_YEAR`,
 `SYMPOSIUM_DATA_DIR`, `SYMPOSIUM_OUTPUTS_DIR`, and `LOG_LEVEL`.
@@ -94,4 +94,4 @@ completion.
 Token estimates and truncation are local heuristics, not proof that a provider's
 context constraints are met. Returned prose and citations are unverified model
 output. Review sources, identity matching, privacy and factual claims before use;
-never automatically publish the outputs. See [research methods](methods.md).
+never automatically publish the outputs. See [research methods](../architecture/methods.md).

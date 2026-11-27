@@ -10,7 +10,7 @@ uv run symposium analyze backgrounds --help
 ```
 
 For an explicitly authorized paid run, supply `--csv-file` and `--output-dir` as
-shown in the [user guide](user_guide.md), configure a private `PERPLEXITY_API_KEY`,
+shown in the [user guide](../guides/user_guide.md), configure a private `PERPLEXITY_API_KEY`,
 and keep results outside the public checkout. Review whether provider transmission
 is authorized before submitting personal information. Limit inputs to what the task
 requires. The consent filter is an input gate, not a comprehensive privacy review.
@@ -24,5 +24,5 @@ participant self-reports remain distinct from independently verified facts.
 A payment error stops processing. Other failures may leave partial reports; inspect
 logs and output completeness. No background report is automatically added to the
 public program. For deterministic source-based public dossiers and briefs, use
-[organizer publication](organizing_publication.md). See [methods](methods.md) for
+[organizer publication](../guides/organizing_publication.md). See [methods](../architecture/methods.md) for
 evidence and interpretation limits.

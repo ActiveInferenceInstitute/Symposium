@@ -12,7 +12,7 @@ All notable changes to the Symposium package.
   Jesse Parent and Avery Lim, and acknowledge the confirmed video co-authors
   separately.
 - Include the two livestream recordings and record the release package in the
-  [3.4.0 release record](docs/release_3_4_0.md).
+  [3.4.0 release record](docs/releases/release_3_4_0.md).
 
 ## [Unreleased] — 2026-11-13 (offline correctness qualification)
 
@@ -56,7 +56,7 @@ All notable changes to the Symposium package.
   registrations or near-matching names.
 - Record the November 12 hand edit of the version 3.3.0 Zenodo metadata (56
   individual creators; ORCIDs for Jesse Parent and Avery Lim) in the
-  [3.3.0 release record](docs/release_3_3_0.md); the deposited files are unchanged.
+  [3.3.0 release record](docs/releases/release_3_3_0.md); the deposited files are unchanged.
 
 ## [Unreleased] — 2026-11-12 (gate and documentation)
 
@@ -96,8 +96,8 @@ One local gate, and CI calls it instead of restating commands.
   (flat index, checked for completeness), `docs/_generated/` with the script-generated
   [gate measurements](docs/_generated/gate-measurements.md), and
   `scripts/check_docs.py` (relative links, index completeness, arm list) as the
-  `docs` arm. Refresh `docs/README.md`, `docs/development.md`,
-  `docs/contributing.md`, `tests/README.md`, `README.md` and `AGENTS.md`.
+  `docs` arm. Refresh `docs/README.md`, `docs/development/development.md`,
+  `docs/development/contributing.md`, `tests/README.md`, `README.md` and `AGENTS.md`.
 - No types arm: `mypy` is configured in `pyproject.toml` but has never been a gate
   and reports 89 errors in 26 files (mostly missing third-party stubs) on this
   checkout. A passing type check is not claimed.
@@ -112,7 +112,7 @@ The final-lineup book is published on Zenodo at
 [10.5281/zenodo.24161029](https://doi.org/10.5281/zenodo.24161029), a new version of
 concept record 10.5281/zenodo.23986504; all six deposited files were read back
 anonymously and match the reviewed package. See
-[the release record](docs/release_3_3_0.md).
+[the release record](docs/releases/release_3_3_0.md).
 
 - Refresh `data/public/2026/` from the November 12 organizer snapshot: 55
   contributions (37 prerecorded, 14 livestreamed, 3 workshops, keynote), 19 UTC
@@ -177,7 +177,7 @@ remote CI and the updated Pages deployment are verified.
   artifact names while retaining participant, other-email, private-link, local-path
   and PDF active-content rejection.
 - Reconcile citation and release documentation with version 3.2.0 and the published
-  book DOI. See [the release record](docs/release_3_2_0.md) for status and scope.
+  book DOI. See [the release record](docs/releases/release_3_2_0.md) for status and scope.
 - Validate the DOI book source with 776 passed tests, 9 skips and 89.85% coverage;
   lint and format checks pass. Independently review all 62 PDF and 62 Word-preview
   pages; all 43 required book checks pass. These are local results, distinct from
@@ -302,11 +302,11 @@ remote CI and the updated Pages deployment are verified.
   (`--registration-file`, `--input-csv`, `visualize wordclouds`), README
   structure/coverage/outputs-tracking/citation claims, and the API retry examples
   (`tenacity` → `backoff`).
-- Rewrote `docs/csv_visualization_guide.md` against real CLI/run.py behavior
+- Rewrote `docs/guides/csv_visualization_guide.md` against real CLI/run.py behavior
   (word clouds via `run.py` option 3; Markdown-only `visualize` CLI).
 - Documented `data/domains/` as user-provided (`data/domains/README.md`,
   `config.example.json` `domains_dir`), updated `data/README.md` and
-  `docs/api_usage.md` (participant count, config source, rate-limit facts).
+  `docs/reference/api_usage.md` (participant count, config source, rate-limit facts).
 
 ### Tooling & code quality
 - **Ruff-only tooling cleanup:** removed `black` (dev dependency + `[tool.black]`) in favor of

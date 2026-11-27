@@ -34,10 +34,10 @@ Verify both `sys.prefix` and `sys.base_prefix` before running source workflows.
 
 Public verification, projection, dossiers, participant briefs, calendar export,
 and website building do not need LLM credentials. For explicitly authorized paid
-analysis, create a private `.env` based on [.env.example](../.env.example) and
-configuration based on [config.example.json](../config.example.json). Preserve an
+analysis, create a private `.env` based on [.env.example](../../.env.example) and
+configuration based on [config.example.json](../../config.example.json). Preserve an
 existing file rather than replacing credentials with a template. Select JSON with
-`uv run symposium --config config.json ...`. See [API configuration](api_guide.md).
+`uv run symposium --config config.json ...`. See [API configuration](../reference/api_guide.md).
 
 If imports fail, verify the working directory and rerun locked synchronization.
 If the lock is incompatible, report that error rather than silently replacing the
@@ -45,4 +45,4 @@ lock. If a paid provider fails, retain the actual error and partial outputs; cli
 construction does not verify authentication, model availability, or credit balance.
 
 Continue with [organizer publishing](organizing_publication.md),
-[2026 inputs](2026_setup.md), or [development](development.md).
+[2026 inputs](2026_setup.md), or [development](../development/development.md).

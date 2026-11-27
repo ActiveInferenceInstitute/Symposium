@@ -132,7 +132,7 @@ def render(history: list[dict]) -> str:
         "Wall time per `./gate.sh` arm on the host that last refreshed this file.",
         "An arm is one documented command; CI runs `lint`, `test`, `build`, `program`,",
         "`site`, `docs` and `gnn`, and `test-fast` is local-only. See",
-        "[development](../development.md) and [gate.sh](../../gate.sh).",
+        "[development](../development/development.md) and [gate.sh](../../gate.sh).",
         "",
         f"Latest run: {newest['timestamp']} at commit `{newest['commit']}` on",
         f"{newest['host']}, Python {newest['python']}, uv {newest['uv']}"

@@ -1,7 +1,7 @@
 # uv setup for Symposium
 
 The project uses a committed `uv.lock` and a Python 3.12 development pin. Current
-package support starts at Python 3.12. See [installation](docs/installation.md) for
+package support starts at Python 3.12. See [installation](docs/guides/installation.md) for
 platform boundaries and the separate Template renderer environment.
 
 ```bash
@@ -13,7 +13,7 @@ uv run --no-sync python -c 'import sys; print(sys.prefix); print(sys.base_prefix
 
 Run from the checkout. No activation or bare `pytest` invocation is needed.
 [`./gate.sh`](gate.sh) is the one verification entry point; its arms are listed in
-[development](docs/development.md).
+[development](docs/development/development.md).
 `uv sync --locked` checks the committed resolution; dependency upgrades require a
 reviewed lockfile change. `uv run --no-sync` uses the already synchronized environment.
 If another environment is active, unset `VIRTUAL_ENV` before selecting the project
@@ -27,4 +27,4 @@ prefixes must resolve on GitVault. A symlinked `.venv` alone is insufficient evi
 For the interactive research menu: `uv run --no-sync python run.py --year 2026`.
 Some menu actions invoke paid providers. Setup, CLI help and public-tree checks do
 not. Configure keys only when that analysis is authorized; see the
-[API guide](docs/api_guide.md). Never print `.env` contents for troubleshooting.
+[API guide](docs/reference/api_guide.md). Never print `.env` contents for troubleshooting.
