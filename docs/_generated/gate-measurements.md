@@ -5,7 +5,7 @@
 Wall time per `./gate.sh` arm on the host that last refreshed this file.
 An arm is one documented command; CI runs `lint`, `test`, `build`, `program`,
 `site`, `docs` and `gnn`, and `test-fast` is local-only. See
-[development](../development.md) and [gate.sh](../../gate.sh).
+[development](../development/development.md) and [gate.sh](../../gate.sh).
 
 Latest run: 2026-11-12 13:13 UTC at commit `b43415b` on
 macOS-27.0.1-arm64-arm-64bit, Python 3.12.16, uv 0.13.7 (after: ./gate.sh arms).

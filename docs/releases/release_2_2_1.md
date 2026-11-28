@@ -35,4 +35,4 @@ The 2026 workspace still contains empty templates. Add authorized registrations,
 current presenter exports, and confirmed schedule information, then run strict
 preflight. No live provider requests or scientific validation are implied.
 
-See the [2026 organizer guide](2026_setup.md).
+See the [2026 organizer guide](../guides/2026_setup.md).

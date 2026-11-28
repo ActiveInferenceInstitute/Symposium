@@ -10,7 +10,7 @@ of that intake, with the residual items that are still open.
   119 consenting participants in the published projection (latest answer per email is
   an affirmative "Yes" and no answer for the same email is "No"); two previously
   listed participants no longer appear and were removed without inferring a reason.
-  ✓ [`docs/release_3_3_0.md`](docs/release_3_3_0.md)
+  ✓ [`docs/releases/release_3_3_0.md`](docs/releases/release_3_3_0.md)
 - [ ] **One withheld registration still needs an organizer decision.** A consenting
   registration is withheld because its affiliations field contains contact
   information requiring review; the repository records the fact but not the redaction
@@ -37,7 +37,7 @@ of that intake, with the residual items that are still open.
   repository records an approval, and the standing rule is unchanged: generated
   drafts never enter the public projection automatically. Owner: organizers.
 
-See [operator workflow](docs/organizing_publication.md) and [methods](docs/methods.md).
+See [operator workflow](docs/guides/organizing_publication.md) and [methods](docs/architecture/methods.md).
 These remain continuing organizer/release tasks; the completed records below are
 historical evidence and do not establish current runtime or scientific validation.
 
@@ -103,7 +103,7 @@ checkout.
   proves anything; the local arms recorded in the
   [gate measurements](docs/_generated/gate-measurements.md) are the evidence, and
   Pages is served from the `gh-pages` branch for the same reason (see
-  [`docs/organizing_publication.md`](docs/organizing_publication.md)).
+  [`docs/guides/organizing_publication.md`](docs/guides/organizing_publication.md)).
 
 ---
 
@@ -132,7 +132,7 @@ checkout.
   119 consenting participants, 19 explicit UTC sessions; book on Zenodo
   (10.5281/zenodo.24161029) with six byte-verified assets plus the GitHub `v3.3.0`
   release. ✓ `ca53d34`, merge `7ecac04` (PR #19),
-  [`docs/release_3_3_0.md`](docs/release_3_3_0.md)
+  [`docs/releases/release_3_3_0.md`](docs/releases/release_3_3_0.md)
 - [x] **Sidecar cites the v3.3.0 book DOI.** ✓ `8bf36aa` (PR #24)
 - [x] **Pages served from the `gh-pages` branch while Actions is unavailable** —
   locally built, byte-verified `verify_public_tree` + `build_site` output plus
@@ -301,7 +301,7 @@ What remains below are the residual / aspirational follow-ups not fully closed.
 - The admitted offline suite covers explicit config-file selection, environment
   precedence, explicit key/options overrides, conflicting provider options and
   forced Perplexity for participant background work. See
-  [the API contract](docs/api_guide.md). No paid-provider authentication or
+  [the API contract](docs/reference/api_guide.md). No paid-provider authentication or
   availability is claimed.
 
 ---
@@ -317,7 +317,7 @@ All items below were implemented in this pass (commits `669643f`, `98ae63d`, `a6
 
 ### Minor
 - [x] **M-01 `black` references in docs** — README.md (tooling bullet + Development
-  section), docs/installation.md, docs/development.md, docs/contributing.md still
+  section), docs/guides/installation.md, docs/development/development.md, docs/development/contributing.md still
   documented `black`; black was removed in the ruff-only tooling pass. Replaced with
   `ruff format` / `ruff format --check`. ✓ `a6d171e`
 - [x] **M-02 README "outputs/ (gitignored)" claim** — `outputs/` is tracked in git

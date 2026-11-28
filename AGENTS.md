@@ -8,11 +8,11 @@ not evidence of autonomous orchestration, provider failover or verified outcomes
 
 | When changing | Read first |
 |---|---|
-| Public intake, consent, manifests, dossiers or native book rendering | [Organizer workflow](docs/organizing_publication.md) and [organizing map](src/symposium/organizing/AGENTS.md) |
-| Method signposting, repository catalog or website indexing | [Discovery contract](docs/discovery.md), [method boundaries](docs/methods.md), `organizing/ecosystem.py` and `organizing/discovery.py` |
-| Provider configuration or paid research | [Credential boundaries](docs/credentials.md), [API contract](docs/api_guide.md) and actual `core/api.py` / `core/config.py` |
-| Research-input schema or editions | [2026 input guide](docs/2026_setup.md) and `core/edition.py` |
-| Tests, packages or releases | [Development](docs/development.md), [test guide](tests/README.md), `pyproject.toml` and actual workflow files |
+| Public intake, consent, manifests, dossiers or native book rendering | [Organizer workflow](docs/guides/organizing_publication.md) and [organizing map](src/symposium/organizing/AGENTS.md) |
+| Method signposting, repository catalog or website indexing | [Discovery contract](docs/architecture/discovery.md), [method boundaries](docs/architecture/methods.md), `organizing/ecosystem.py` and `organizing/discovery.py` |
+| Provider configuration or paid research | [Credential boundaries](docs/reference/credentials.md), [API contract](docs/reference/api_guide.md) and actual `core/api.py` / `core/config.py` |
+| Research-input schema or editions | [2026 input guide](docs/guides/2026_setup.md) and `core/edition.py` |
+| Tests, packages or releases | [Development](docs/development/development.md), [test guide](tests/README.md), `pyproject.toml` and actual workflow files |
 
 Paths in the last column without a root are under `src/symposium/`. Inspect the
 actual parser in `src/symposium/cli/` before documenting a command. Preserve existing
@@ -50,7 +50,7 @@ last refreshed them are generated in
 [docs/_generated/gate-measurements.md](docs/_generated/gate-measurements.md); never
 hand-edit those numbers. There is no types arm: use the version-bound
 `python scripts/check_types.py` diagnostic, which retains all configured mypy
-rules and package modules. See [development](docs/development.md) for its scope.
+rules and package modules. See [development](docs/development/development.md) for its scope.
 
 `pytest` enforces the 90.01% coverage gate declared in `pyproject.toml`. Live-provider
 tests are opt-in via `uv run python -m pytest --run-real-api -m real_api` and need

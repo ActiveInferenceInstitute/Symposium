@@ -11,5 +11,5 @@ reads. Each file supplies the question/section scaffold the generator fills in.
 
 The `--catechisms-dir` option points the CLI at a directory of such templates; the
 shipped set is the default. Keep templates as Markdown so generated proposals stay
-readable. See the [user guide](../../docs/user_guide.md) for proposal examples and
+readable. See the [user guide](../../docs/guides/user_guide.md) for proposal examples and
 [`../README.md`](../README.md) for the broader data layout.

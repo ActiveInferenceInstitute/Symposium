@@ -3,7 +3,7 @@
 Use [organizer publication](organizing_publication.md) for the approved public
 program and next intake. This guide describes the separate optional research
 workflows; [2026 input setup](2026_setup.md) documents their CSV schema and preflight.
-Current package support begins at Python 3.12. Read [methods](methods.md) before
+Current package support begins at Python 3.12. Read [methods](../architecture/methods.md) before
 interpreting or publishing outputs.
 
 ## Installation and configuration
@@ -163,7 +163,7 @@ The menu offers the same selected-edition participant and visualization workflow
 `launch.py` and `symposium.sh` forward the same year/config arguments.
 
 Calendar export remains a Python API through `symposium.ScheduleExporter`, using
-organizer-supplied events. See [calendar documentation](../src/symposium/calendar/README.md).
+organizer-supplied events. See [calendar documentation](../../src/symposium/calendar/README.md).
 An empty schedule template is not a confirmed event schedule.
 
 ## Verification
@@ -175,5 +175,5 @@ An empty schedule template is not a confirmed event schedule.
 ```
 
 Live-provider tests require explicit opt-in with `--run-real-api -m real_api`. Refer to the
-[development guide](development.md) for the arm list and current checks. Historical
+[development guide](../development/development.md) for the arm list and current checks. Historical
 release records do not establish current test outcomes.

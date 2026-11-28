@@ -356,7 +356,7 @@ independent review of every final PDF/Word page and exact file hashes, publish t
 authorized record and versioned release. Read back the public record, download the
 actual hosted files and compare them with those reviewed hashes before changing
 documentation from reserved/pending to published. Track CI and website deployment
-outcomes separately. See the [3.4.0 release record](release_3_4_0.md) for current status.
+outcomes separately. See the [3.4.0 release record](../releases/release_3_4_0.md) for current status.
 
 Review the native outputs and copy only the reviewed PDF/DOCX into the artifact
 staging directory as `book.pdf` and `book.docx`. The renderer applies a documented,
@@ -427,4 +427,4 @@ and artifact differences after verifying both trees. Its destination must be out
 the public checkout and both trees. It never integrates the candidate, deletes
 records, infers renames, or interprets absence as consent revocation. Review changes
 and resolve identity/consent questions with organizers before publication. See
-[methods and evidence boundaries](methods.md).
+[methods and evidence boundaries](../architecture/methods.md).

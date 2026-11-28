@@ -1,0 +1,24 @@
+paper:
+  title: "Evidence and Approval Boundaries in the Active Inference Symposium Program"
+  subtitle: "A reproducible public projection from organizer data to the presenter program"
+
+authors:
+  - name: "Active Inference Institute"
+
+publication:
+  repository_url: "https://github.com/ActiveInferenceInstitute/Symposium"
+  release_status: "unreleased"
+
+metadata:
+  language: "en"
+  license: "MIT"
+
+manuscript_dir: "docs/manuscript"
+
+render:
+  formats:
+    pdf: true
+    html: false
+    slides: false
+    docx: false
+    epub: false

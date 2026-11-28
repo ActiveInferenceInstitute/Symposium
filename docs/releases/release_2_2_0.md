@@ -71,7 +71,7 @@ are retained in the local agent evidence directory.
 - Warnings from small statistical fixtures and plotting-library deprecations remain.
   Generated profiles, recommendations, and proposals are drafts requiring review.
 
-See the [2026 organizer guide](2026_setup.md) for the next operational steps.
+See the [2026 organizer guide](../guides/2026_setup.md) for the next operational steps.
 
 ## Post-publication CI finding
 

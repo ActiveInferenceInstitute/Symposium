@@ -7,7 +7,7 @@ JavaScript. Filtered anchor navigation reveals the requested record before focus
 
 ## One curated catalog
 
-[`ecosystem.json`](../src/symposium/organizing/resources/ecosystem.json) is the reviewed
+[`ecosystem.json`](../../src/symposium/organizing/resources/ecosystem.json) is the reviewed
 source for the hub, CLI and [integration document](integrations.md). Records include
 stable IDs, integration roles, use cases, handoff limits, reviewed dates and README
 evidence pinned to exact public commits. Dates record review, not live availability.
@@ -29,7 +29,7 @@ Refresh the catalog when a relevant interface or source changes:
    attribution and draft/adoption status. Exclude private repository/document handles.
 3. Update repository/workflow records together, validate all references and inspect
    the generated Markdown and website. A catalog addition does not install an adapter.
-4. Regenerate `docs/integrations.md` from `organize methods --format markdown`, review
+4. Regenerate `docs/architecture/integrations.md` from `organize methods --format markdown`, review
    its diff and run the actual site/CLI/package checks before publishing.
 
 ## Published discovery surfaces

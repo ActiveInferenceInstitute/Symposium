@@ -56,4 +56,4 @@ participant command also exposes `--include-column-summaries`. Inputs are the
 consent-filtered research registration CSV, not the approved public snapshot.
 Do not run these actions as an offline installation test. Verify authorization,
 review draft summaries against responses, and keep private outputs out of Pages.
-See [methods](methods.md) and [API configuration](api_guide.md).
+See [methods](../architecture/methods.md) and [API configuration](../reference/api_guide.md).

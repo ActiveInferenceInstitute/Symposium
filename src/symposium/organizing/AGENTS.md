@@ -1,8 +1,8 @@
 # Organizing methods map
 
 This module owns private transport and deterministic approved-public publication.
-Read [the operator workflow](../../../docs/organizing_publication.md) before changing
-source/approval handling, and [method discovery](../../../docs/discovery.md) before
+Read [the operator workflow](../../../docs/guides/organizing_publication.md) before changing
+source/approval handling, and [method discovery](../../../docs/architecture/discovery.md) before
 changing the catalog or website.
 
 | Owner | Boundary |
@@ -11,7 +11,7 @@ changing the catalog or website.
 | `projection.py`, `models.py`, `media.py` | Allowlisted public schema, explicit consent projection and approved images |
 | `publication.py` | Source-bound staging, manifests, deterministic dossiers/briefs and calendar |
 | `artifacts.py`, `book_design.py`, `book_cover_facts.py`, `book_design_docx.py`, `book_profiles.py` | Optional separate Template pipeline, dated cover/frontispiece, individual cover credits with optional reviewed ORCIDs, exact public presenter profiles and reviewed artifact binding |
-| `visualizations.py`, `visualization_data.py`, `visualization_charts.py`, `visualization_program.py` | Authorized public-cohort and approved-program charts, explicit missingness and source-bound artifact evidence; see [visualization guide](../../../docs/visualizations_2026.md) |
+| `visualizations.py`, `visualization_data.py`, `visualization_charts.py`, `visualization_program.py` | Authorized public-cohort and approved-program charts, explicit missingness and source-bound artifact evidence; see [visualization guide](../../../docs/guides/visualizations_2026.md) |
 | `review.py` | Verified-tree readiness and private read-only candidate comparisons |
 | `ecosystem.py`, `resources/ecosystem.json` | Exact-schema reviewed public repository catalog and presence-only credential metadata |
 | `discovery.py` | Canonical metadata, methods HTML, machine indexes, sitemap and source guidance |
