@@ -6,9 +6,9 @@ The canonical pin is [`.github/gnn-pin.json`](gnn-pin.json), schema
 | Field | Value |
 | --- | --- |
 | `repository` | `ActiveInferenceInstitute/Generalized_Notation_Notation` |
-| `revision` | `75c834bd8519dc7b5adc4d24f16bf393cfd1ecdf` |
-| `tag` | `v5.1.0` |
-| `recorded` | `2026-11-24` |
+| `revision` | `4a7cccce6d4d7cb483f00323ec5cdd79300f3464` |
+| `tag` | `v5.2.0` |
+| `recorded` | `2026-11-28` |
 
 The pin file is the sole executable source of that revision: the job reads it and
 does not restate it, so a bump is one edit. The table above copies the values for
